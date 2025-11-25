@@ -2,6 +2,8 @@
 layout: default
 title: Home
 permalink: /
+toc: false
+breadcrumbs: false
 ---
 
 # CWKA Engineering Wiki
@@ -9,8 +11,11 @@ permalink: /
 Welcome to the Engineering Department documentation and workflows wiki.
 
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/search.html" style="display: inline-block; padding: 0.75rem 1.5rem; background: #0366d6; color: white; text-decoration: none; border-radius: 6px; font-weight: 500;">
+  <a href="/search.html" style="display: inline-block; padding: 0.75rem 1.5rem; background: #0366d6; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; margin: 0 0.5rem;">
     🔍 Search the Wiki
+  </a>
+  <a href="/overview/site-map.html" style="display: inline-block; padding: 0.75rem 1.5rem; background: #28a745; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; margin: 0 0.5rem;">
+    🗺️ Site Map
   </a>
 </div>
 
@@ -101,4 +106,5 @@ Common resources:
 - [Engineering Roles & Core Competencies](/overview/engineering-roles.html) - Role descriptions
 - [Project Delivery Overview](/overview/project-delivery.html) - Complete workflow
 - [Glossary](/overview/glossary.html) - Terms and definitions
+- [Site Map](/overview/site-map.html) - Visual hierarchy of all pages
 

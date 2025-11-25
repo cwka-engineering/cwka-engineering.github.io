@@ -1,0 +1,22 @@
+{% if page.breadcrumbs != false %}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  {% assign path_parts = page.permalink | remove_first: '/' | split: '/' %}
+  {% assign current_path = '' %}
+  {% for part in path_parts %}
+    {% if part != '' and part != 'index.html' %}
+      {% assign clean_part = part | replace: '.html', '' %}
+      {% assign current_path = current_path | append: '/' | append: clean_part %}
+      {% assign part_name = clean_part | replace: '-', ' ' | capitalize %}
+      {% if forloop.last %}
+        <span>/</span>
+        <span class="current">{{ page.title }}</span>
+      {% else %}
+        <span>/</span>
+        <a href="{{ current_path }}.html">{{ part_name }}</a>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</nav>
+{% endif %}
+
