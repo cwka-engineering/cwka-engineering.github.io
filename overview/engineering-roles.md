@@ -6,7 +6,11 @@ permalink: /overview/engineering-roles.html
 
 # Overview of Engineering Roles & Core Competencies
 
+> **Related Documents**: [Project Delivery Overview](/overview/project-delivery.html) | [FE Workflow](/workflows/fabrication-engineer.html) | [PE Workflow](/workflows/production-engineer.html) | [Glossary](/overview/glossary.html)
+
 The Engineering department is responsible for transforming concepts into products by clearly communicating complex information. Engineers analyze data from various sources (drawings, models, specifications) and synthesize it into actionable information.
+
+For definitions of acronyms and terms used in this document, see the [Glossary](/overview/glossary.html).
 
 ## Fabrication Engineer (FE)
 

@@ -13,6 +13,7 @@ Welcome to the Engineering Department documentation and workflows wiki.
 ### Overview
 - [Engineering Roles & Core Competencies](/overview/engineering-roles.html)
 - [Project Delivery Overview](/overview/project-delivery.html)
+- [Glossary](/overview/glossary.html)
 
 ### Workflows
 - [FE to PE Release Step by Step SOP](/workflows/fe-to-pe-release.html)

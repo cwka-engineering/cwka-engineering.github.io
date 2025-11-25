@@ -6,7 +6,13 @@ permalink: /standards/layer-organization.html
 
 # Layer Organization
 
+> **Related Documents**: [Rhino Drafting and Layouts](/standards/rhino-drafting-layouts.html) | [Folder Structure](/standards/folder-structure.html)
+
 Rhino models use parent layers based on project phases: PRECON, DE, FE, PE. Each phase increases in Level of Detail (LOD).
+
+## Overview
+
+Proper layer organization ensures consistency across projects and facilitates collaboration between Design Engineering (DE), Fabrication Engineering (FE), and Production Engineering (PE) phases.
 
 ## 00_CWKA-DWG (Drawing)
 

@@ -6,6 +6,21 @@ permalink: /standards/rhino-drafting-layouts.html
 
 # Rhino Drafting and Layouts
 
+> **Related Documents**: [Layer Organization](/standards/layer-organization.html) | [Folder Structure](/standards/folder-structure.html)
+
+This document covers drafting standards and layout conventions for Rhino drawings.
+
+## Table of Contents
+
+1. [Layout Structure & Page Content](#layout-structure--page-content)
+2. [Creating Details](#creating-details)
+3. [Section Views](#section-views)
+4. [Clipping Planes & Sections](#clipping-planes--sections)
+5. [Hatches & Section Styles](#hatches--section-styles)
+6. [Dimensions & Annotations](#dimensions--annotations)
+7. [Display Modes for Drafting](#display-modes-for-drafting)
+8. [Printing Considerations](#printing-considerations)
+
 ## Layout Structure & Page Content
 
 Layouts follow a "Hundred level page number" system:

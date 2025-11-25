@@ -6,9 +6,21 @@ permalink: /workflows/production-engineer.html
 
 # Production Engineer (PE) Workflow Outline
 
+> **Related Documents**: [Project Delivery Overview](/overview/project-delivery.html) | [FE to PE Release SOP](/workflows/fe-to-pe-release.html) | [Layer Organization](/standards/layer-organization.html)
+
+## Table of Contents
+
+1. [Overview](#1-overview)
+2. [Templates & File Structure](#2-templates--file-structure)
+3. [Rhino Layer Management](#3-rhino-layer-management)
+4. [Processing the Model](#4-processing-the-model)
+5. [Rhino Workflow](#5-rhino-workflow)
+6. [Master Parts List](#6-master-parts-list)
+7. [Lay-Up Summary](#7-lay-up-summary)
+
 ## 1. Overview
 
-The Production Engineer (PE) workflow is focused on preparing jobs for production.
+The Production Engineer (PE) workflow is focused on preparing jobs for production. This workflow begins after receiving a job release from the Fabrication Engineer (FE).
 
 ## 2. Templates & File Structure
 
@@ -21,6 +33,7 @@ Box\CWKA Team Folders\EngineeringTeam\Production Engineering\PE to Floor SOP\TEM
 ### File Structure
 Files produced by PE are stored on the Z: drive.
 - Copy the template folder into the respective project folder and rename it using the PROJ.JOB naming convention (e.g., 1086.018).
+- Follow the [Folder Structure](/standards/folder-structure.html#03_pe_releases) standards for organization.
 - Inside each job folder, there are two subfolders:
   - Production_Files
   - Production_Drawings
@@ -44,6 +57,8 @@ Files produced by PE are stored on the Z: drive.
 ### Layer Structure
 All geometry created by PE lives under the layer:
 - 04_CWKA-PE
+
+For complete layer organization standards, see [Layer Organization](/standards/layer-organization.html#04_cwka-pe-production-engineering).
 
 A sublayer named MACHINING is created under 04_CWKA-PE for all programming geometry:
 - Perimeter geometry
@@ -79,17 +94,37 @@ A sublayer named MACHINING is created under 04_CWKA-PE for all programming geome
 - **SK Creation** – creates sketches for nested and single part programs
 
 ### Accuracy Checks
-- Ensure material layers match Epicor BOM
-- Ensure all parts are named
-- Use Rhino commands to check:
-  - SelDup – for duplicate parts
-  - SelBadObjects – for bad geometry
-  - SelOpenPolysrf – for open polysurfaces
-- Ensure scribe is added if needed
-- Confirm Epicor production quantity matches modeled quantity
-- Ensure parts are modeled respecting:
-  - Material sizes
-  - Machining requirements (e.g., dowels, hardware, cutouts, dados/rabs)
+
+Before proceeding with programming, verify the following:
+
+1. **Material Verification**
+   - Ensure material layers match Epicor BOM
+   - Verify all materials are correctly assigned to parts
+
+2. **Part Naming**
+   - Ensure all parts are named according to standards
+   - Use `_SelName` command to verify part names match shipping components
+
+3. **Geometry Quality**
+   - Use Rhino commands to check:
+     - `SelDup` – for duplicate parts
+     - `SelBadObjects` – for bad geometry
+     - `SelOpenPolysrf` – for open polysurfaces
+   - Fix any geometry issues before proceeding
+
+4. **Quantity Verification**
+   - Confirm Epicor production quantity matches modeled quantity
+   - Check for missing or extra parts
+
+5. **Scribe Requirements**
+   - Ensure scribe is added if needed (see [Layer Organization - Scribes](/standards/layer-organization.html#scribes))
+   - Verify scribe geometry is properly grouped
+
+6. **Modeling Requirements**
+   - Ensure parts are modeled respecting:
+     - Material sizes (see [Layer Organization - Material Size](/standards/layer-organization.html#material-size))
+     - Machining requirements (e.g., dowels, hardware, cutouts, dados/rabs)
+     - Grain direction for wood materials
 
 ## 5. Rhino Workflow
 
@@ -172,4 +207,38 @@ Naming Convention:
 PRE_EpicorPartNumbersWithoutZeros_MetricThicknessInMM
 ```
 (e.g., PRE_438_331_7_19)
+
+## 8. Troubleshooting
+
+### Common Issues
+
+**Parts not laying flat correctly**
+- Verify parts are on correct material layers
+- Check that parts are closed polysurfaces
+- Ensure parts are not grouped incorrectly
+- Try running Lay Flat on individual parts
+
+**Nesting optimization fails**
+- Verify material sizes are correct
+- Check that parts fit within material dimensions
+- Ensure grain direction is properly oriented
+- Review part quantities match Epicor
+
+**Master Parts List quantities don't match**
+- Verify all parts are included (except MT parts)
+- Check that nested sheets are properly paired
+- Ensure beam saw parts are accounted for
+- Re-run Sheet Pairing if needed
+
+**Machining geometry not generating**
+- Verify parts are named correctly
+- Check that material thickness matches layer naming
+- Ensure parts are on correct material layers
+- Review Geometry Creation script settings
+
+**Can't find PE release files**
+- Verify job was released in Epicor
+- Check correct project folder location
+- Confirm file naming matches Epicor job number
+- Contact FE if files are missing
 

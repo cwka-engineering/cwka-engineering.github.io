@@ -6,7 +6,11 @@ permalink: /tools/approvals-process.html
 
 # PA (Project Advisor) Approvals Process
 
+> **Related Documents**: [FE Workflow](/workflows/fabrication-engineer.html) | [Project Delivery Overview](/overview/project-delivery.html)
+
 All project jobs must undergo the PA approval process before FE release to ensure build strategies are reviewed and signed off, and to identify escalation points for fabrication and assembly.
+
+**When to Use**: Submit for approval after finalizing shop drawings but before releasing to Production Engineering. See [FE Workflow - PE Release Preparation](/workflows/fabrication-engineer.html#vii-pe-release-preparation) for context.
 
 ## Installing the Approvals App
 
@@ -22,8 +26,9 @@ Submit your fabrication drawing set to the assigned PA using the "Approvals" app
 - They are formatted to fit the "Production Notes" area in the upper-right corner of the new drawing template.
 
 ### Importing Stamps
-- Release stamps are located at a LINK. Use Box Sync to sync this folder.
+- Release stamps are located in the Engineering Team Box folder. Use Box Sync to sync this folder.
 - In Bluebeam, go to "Tools," hover over "Stamp," select "Change Stamp Folder," and choose the synced Box folder.
+- **Note**: Contact the Engineering team lead for the exact Box folder path if not already configured.
 
 ### Placing a Stamp
 - Once the folder is redirected, click the desired stamp, and you'll be prompted to place it.

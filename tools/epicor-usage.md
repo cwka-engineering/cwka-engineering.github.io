@@ -6,9 +6,13 @@ permalink: /tools/epicor-usage.html
 
 # Epicor Usage in Engineering
 
+> **Related Documents**: [Time Entry](/tools/time-entry.html) | [FE Workflow](/workflows/fabrication-engineer.html) | [FE to PE Release](/workflows/fe-to-pe-release.html)
+
 ## I. Overview
 
 Epicor is the central system used by the Engineering Department to manage project data, workflows, and production readiness. It integrates with tools like Rhino and Toggl to streamline operations from design to release.
+
+**Note**: For time entry procedures, see [Time Entry](/tools/time-entry.html). For job release procedures, see [FE to PE Release](/workflows/fe-to-pe-release.html).
 
 ## II. Core Functions of Epicor
 
@@ -43,15 +47,20 @@ Epicor is the central system used by the Engineering Department to manage projec
 **Purpose**: Create and manage parts.
 
 **Part Creation**:
-- Search for next available part number.
-- Use naming conventions (GM, Custom, WC).
+- Search for next available part number using the Part search function.
+- Use naming conventions:
+  - **GM**: General Material (standard catalog items)
+  - **Custom**: Custom project-specific parts
+  - **WC**: Wood Component parts
+- Consult with Engineering Assistant (EA) if unsure about part numbering.
 
 **Required Fields**:
-- Part Number, Description, UOM, Group, Class, Search.
+- Part Number, Description, UOM (Unit of Measure), Group, Class, Search.
 
 **Editing Rules**:
-- Part numbers are permanent.
-- Descriptions editable only if not BOM'd.
+- Part numbers are permanent once created - cannot be changed.
+- Descriptions editable only if not BOM'd (Bill of Materials).
+- If a part is already BOM'd, contact EA or Engineering Director for changes.
 
 ### 4. Job Entry
 **Purpose**: Manage and release jobs.
@@ -76,13 +85,16 @@ Epicor is the central system used by the Engineering Department to manage projec
 ## IV. Engineering Responsibilities
 
 ### A. BOM Management
-- Engineers BOM materials and hardware.
-- Assign operations for material consumption.
-- Use Rhino Toolkit for Autobomb and nesting optimization.
+- Engineers create BOM (Bill of Materials) for materials and hardware.
+- Assign operations for material consumption tracking.
+- Use Rhino Toolkit for Auto-BOM generation and nesting optimization.
+- **Best Practice**: Review BOM quantities before finalizing to ensure accuracy.
 
 ### B. Material & Hardware Ordering
-- Confirm all items are ordered and received.
-- Use "Purchase Direct" to notify PMs.
+- Confirm all items are ordered and received before job release.
+- Use "Purchase Direct" flag in Epicor to notify Project Managers (PMs) of items requiring purchase.
+- Track order status in Epicor to ensure materials arrive on schedule.
+- **Important**: Do not release jobs to PE until all materials are confirmed received.
 
 ### C. Job Status Updates
 - Ensure "Engineering Complete" is checked.
@@ -92,4 +104,32 @@ Epicor is the central system used by the Engineering Department to manage projec
 ### D. Data Accuracy
 - Maintain clean BOM data for drawings.
 - Ensure accuracy for downstream processes.
+
+## V. Troubleshooting
+
+### Common Issues
+
+**Can't access Submittal Dashboard**
+- Verify you have FE role permissions in Epicor
+- Check that you're accessing the correct Epicor site (West)
+- Contact IT or Engineering Director if access issues persist
+
+**Part number search returns no results**
+- Verify you're using correct naming convention (GM, Custom, WC)
+- Check with EA for next available part number
+- Ensure you're searching in the correct part class
+
+**BOM Complete checkbox won't check**
+- Verify all BOM line items have required fields filled
+- Check that quantities are entered
+- Ensure all materials have Part Masters
+- Review for any error messages in Epicor
+
+**Job won't release**
+- Verify all three checkboxes are checked:
+  - Field Dimensions Received
+  - Shop Drawings Approved
+  - BOM Complete
+- Check that Engineering Complete is also checked
+- Ensure no error messages appear in Job Entry screen
 

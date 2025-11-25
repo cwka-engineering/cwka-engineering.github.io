@@ -6,6 +6,10 @@ permalink: /tools/time-entry.html
 
 # Time Entry
 
+> **Related Documents**: [Epicor Usage](/tools/epicor-usage.html)
+
+This document covers time entry procedures using both Epicor and Toggl for Engineering staff.
+
 ## Time Codes
 
 ### Indirect Entries

@@ -6,12 +6,24 @@ permalink: /workflows/fabrication-engineer.html
 
 # Fabrication Engineer (FE) Workflow Outline
 
+> **Related Documents**: [Project Delivery Overview](/overview/project-delivery.html) | [FE to PE Release SOP](/workflows/fe-to-pe-release.html) | [Epicor Usage](/tools/epicor-usage.html) | [Approvals Process](/tools/approvals-process.html)
+
+## Table of Contents
+
+1. [Getting Started](#i-getting-started)
+2. [Epicor Interaction](#ii-epicor-interaction)
+3. [Engineering Toolkit Usage](#iii-engineering-toolkit-usage)
+4. [Part Naming](#iv-part-naming)
+5. [Shipping Components (SCs)](#v-shipping-components-scs)
+6. [Takeoffs](#vi-takeoffs)
+7. [PE Release Preparation](#vii-pe-release-preparation)
+
 ## I. Getting Started
 
 ### Finding Assignments
-- Access the Epicor Submittal Dashboard via The CW site.
+- Access the Epicor Submittal Dashboard via The CW site. See [Epicor Usage](/tools/epicor-usage.html#1-submittal-dashboard) for details.
 - Filter by your name to view submittal/post-submittal tasks not yet released to PE.
-- Understand job types:
+- Understand job types (see [Glossary](/overview/glossary.html#job-types)):
   - **Engineering Jobs**: Start with "E", match 1:1 with production jobs.
   - **Bucket Jobs**: Project-wide tasks like design, coordination, meetings, BIM.
 
@@ -21,7 +33,7 @@ permalink: /workflows/fabrication-engineer.html
 
 ### Template Usage
 - Download the latest FE template from DFWCWKA internal > templates.
-- Save your copy in:
+- Save your copy following the [Folder Structure](/standards/folder-structure.html#01_fe_models) standards:
   - `awarded > [project code] > 03 Engineering > 02 Working Drawings and Models > FE Models`
 - Create a folder using _PROJ.JOB_ScopeDescription format.
 - Save Rhino file as Project.Job_FE_ShortDescription.
@@ -29,8 +41,9 @@ permalink: /workflows/fabrication-engineer.html
 ## II. Epicor Interaction
 
 ### Updating Submittal Status
-- Use Epicor (West site) > Production Report.
+- Use Epicor (West site) > Production Report. See [Epicor Usage - Production Report](/tools/epicor-usage.html#2-production-report) for details.
 - Filter by your name and update submittal status after internal review.
+- Status options: Submitted, Revise and Resubmit, Approved, Production Complete.
 
 ### Engineering & BOM Completion
 - Check both Engineering Complete and BOM Complete boxes before release.
@@ -42,11 +55,13 @@ permalink: /workflows/fabrication-engineer.html
 
 ### Launching Toolkit
 - Open Rhino > Synapse panel > Grasshopper > Load latest FE toolkit.
+- **Note**: If the toolkit doesn't appear, ensure Grasshopper is installed and the latest toolkit version is available in the shared Engineering Team folder.
 
 ### First Run Setup
-- Log into Epicor via the toolkit.
-- Pull payload from Setup tab > click reset (CW logo appears).
-- Toolkit checks plugin versions.
+- Log into Epicor via the toolkit using your Epicor credentials.
+- Pull payload from Setup tab > click reset (CW logo appears when successful).
+- Toolkit checks plugin versions automatically.
+- **Troubleshooting**: If login fails, verify Epicor access and check with IT if credentials need updating.
 
 ### Restoring Model/Layout Space
 - Use Template tab to restore model and layout spaces.
@@ -94,6 +109,7 @@ permalink: /workflows/fabrication-engineer.html
 ### SC List
 - Use Excel template from:
   - `CWKA Team Folders > Engineering Team > PRODUCTION ENGINEERING > PE to Floor SOP > Shipping Components_Template`
+- For detailed SC creation process, see [FE to PE Release - File Organization](/workflows/fe-to-pe-release.html#2-file-organization--folder-setup).
 
 ### Modeling Toolkit
 - Enter SC descriptions.
@@ -137,6 +153,8 @@ Ensure:
 
 ### Finalizing Shop Drawings
 - Ensure completeness: materials, hardware, sizes, build strategy, SCs.
+- Follow [Rhino Drafting and Layouts](/standards/rhino-drafting-layouts.html) standards.
+- Submit for approval using the [Approvals Process](/tools/approvals-process.html).
 
 ### Creating PE File
 - Clean version: no clutter, blocks, unused layers.
@@ -147,4 +165,30 @@ Ensure:
 ### Notify PE Team
 - Post release in CO Production Eng chat.
 - Include links to all relevant files.
+
+## VIII. Troubleshooting
+
+### Common Issues
+
+**Toolkit won't connect to Epicor**
+- Verify Epicor credentials are correct
+- Check network connection
+- Ensure Epicor site is accessible
+- Contact IT if issues persist
+
+**BOM quantities don't match model**
+- Verify all parts are named correctly
+- Check material cache classes are offline
+- Ensure scrap percentages are appropriate
+- Re-run Auto-BOM if needed
+
+**Can't find job in Submittal Dashboard**
+- Verify job is assigned to you in Epicor
+- Check job status (should be Submittal or Post-Submittal)
+- Contact PM or EA if job assignment is incorrect
+
+**Shipping Components list won't export**
+- Ensure all SC descriptions are entered in Modeling Toolkit
+- Verify SC numbers are assigned correctly
+- Check that groups are properly named
 

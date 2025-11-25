@@ -6,9 +6,11 @@ permalink: /standards/folder-structure.html
 
 # Folder Structure & File Management Outline
 
+> **Related Documents**: [FE Workflow](/workflows/fabrication-engineer.html) | [PE Workflow](/workflows/production-engineer.html) | [FE to PE Release](/workflows/fe-to-pe-release.html)
+
 ## Project Organization Overview
 
-The CWK Engineering folder structure organizes all project-related files.
+The CWK Engineering folder structure organizes all project-related files. Consistent folder structure ensures efficient file location and collaboration across the engineering team.
 
 ## PROJECT ROOT FOLDER
 

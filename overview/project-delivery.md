@@ -6,6 +6,10 @@ permalink: /overview/project-delivery.html
 
 # Project Delivery Overview – Engineering Workflow
 
+> **Related Documents**: [Engineering Roles](/overview/engineering-roles.html) | [FE Workflow](/workflows/fabrication-engineer.html) | [PE Workflow](/workflows/production-engineer.html) | [FE to PE Release](/workflows/fe-to-pe-release.html)
+
+This document provides a high-level overview of the complete engineering workflow from project assignment through closeout.
+
 ## Phase 1: Project Assignment & Initial Setup (Pre-Contract & Design Engineering Initiation)
 
 ### Engineering receives a new scope of work
@@ -136,6 +140,8 @@ Check:
 - "BOM Complete"
 
 ## Phase 3: FE Release to Production Engineering (PE Handoff)
+
+> **For detailed step-by-step instructions, see [FE to PE Release Step by Step SOP](/workflows/fe-to-pe-release.html).**
 
 Ensure:
 - All material/hardware/vendor work BOM'd, ordered, received

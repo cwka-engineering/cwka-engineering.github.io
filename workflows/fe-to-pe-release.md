@@ -8,6 +8,8 @@ permalink: /workflows/fe-to-pe-release.html
 
 ## 1. Understand the Job Structure
 
+For detailed definitions, see the [Glossary](/overview/glossary.html).
+
 - **Group Submittal**: A package of multiple jobs submitted together to the client.
 - **Primary Job**: Subset of the project or group submittal.
 - **WC Jobs**: Wood Component manufacturing jobs.
@@ -47,6 +49,8 @@ Refer to [Rhino Drafting and Layouts](/standards/rhino-drafting-layouts.html) fo
 
 ## 4. Epicor Release Process
 
+For more information on Epicor, see [Epicor Usage in Engineering](/tools/epicor-usage.html).
+
 1. Navigate to the UD40: Shipping Components - Kinetic workbench
 2. In the shipping components Excel sheet for the job, copy the ProjectID, JobNum, SC PartNum, Description, and Order Qty columns, excluding the headings
 3. On the workbench page, right click and Paste New.
@@ -65,7 +69,22 @@ Refer to [Rhino Drafting and Layouts](/standards/rhino-drafting-layouts.html) fo
 
 ## 5. Form Submission (FE to PE Release Form)
 
-Access the form via FE to PE Release Form
+Access the form via FE to PE Release Form (typically available through the Engineering Team SharePoint or internal forms system).
+
+**Note**: Ensure all prerequisites from [Phase 3: FE Release to Production Engineering](/overview/project-delivery.html#phase-3-fe-release-to-production-engineering-pe-handoff) are complete before submitting.
+
+### Required Information
+Fill in all required fields:
+- **Name**: Your name
+- **Project**: Project number and name
+- **Job numbers**: Include all jobs being released (e.g., 1085.016, 1085.017)
+- **Part numbers**: Key part numbers if applicable
+- **Site of fabrication**: Manufacturing site location
+- **File paths**: Use Windows Explorer file paths (not Box links)
+  - Example: `C:\BoxSync\Box\Awarded\1085_ProjectName\03 Engineering\02_WORKING_Drawings_Models\03_PE_Releases\1085.016_Description`
+- **Notes**: Include any special instructions or context
+  - Example: "Includes PROJ.WC.00007 and PROJ.MT.00003"
+  - Note any special handling requirements
 
 Fill in:
 - Name
