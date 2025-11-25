@@ -14,7 +14,6 @@ just_the_docs:
   search:
     heading_anchor_links: true
   aux_links:
-    "Search": /search.html
     "Site Map": /overview/site-map.html
   color_scheme: light
   color_mode_toggle: true

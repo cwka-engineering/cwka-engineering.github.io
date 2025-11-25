@@ -9,12 +9,13 @@ permalink: /
 Welcome to the Engineering Department documentation and workflows wiki.
 
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="/search.html" style="display: inline-block; padding: 0.75rem 1.5rem; background: #0366d6; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; margin: 0 0.5rem;">
-    🔍 Search the Wiki
-  </a>
-  <a href="/overview/site-map.html" style="display: inline-block; padding: 0.75rem 1.5rem; background: #28a745; color: white; text-decoration: none; border-radius: 6px; font-weight: 500; margin: 0 0.5rem;">
+  <a href="/overview/site-map.html" style="display: inline-block; padding: 0.75rem 1.5rem; background: #28a745; color: white; text-decoration: none; border-radius: 6px; font-weight: 500;">
     🗺️ Site Map
   </a>
+</div>
+
+<div style="margin: 1.5rem 0; padding: 1rem; background: #f6f8fa; border-left: 4px solid #2563eb; border-radius: 4px;">
+  <strong>💡 Tip:</strong> Use the search box in the top navigation bar to quickly find content across the wiki.
 </div>
 
 ## Getting Started
