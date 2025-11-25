@@ -4,11 +4,12 @@
 
 ### ✅ Updated Files
 
-1. **`Gemfile`** - Added `just-the-docs` gem
+1. **`Gemfile`** - Changed to use Jekyll 4.3 and `just-the-docs` gem (removed `github-pages` gem)
 2. **`_config.yml`** - Changed theme and added navigation structure
 3. **`index.md`** - Simplified front matter (removed toc/breadcrumbs flags)
 4. **`assets/css/custom.css`** - Simplified to minimal overrides
 5. **`_includes/head-custom.html`** - Updated for compatibility
+6. **`.github/workflows/pages.yml`** - NEW: GitHub Actions workflow for building and deploying
 
 ### 🗑️ Excluded Files (No Longer Needed)
 
@@ -67,12 +68,31 @@ Check that:
 - ✅ Search works (both built-in and custom)
 - ✅ Mobile view is responsive
 
-### 4. Deploy to GitHub Pages
+### 4. Configure GitHub Pages
 
-Just commit and push - GitHub Pages will automatically:
-- Install the `just-the-docs` gem
-- Build with the new theme
-- Deploy your updated site
+Since `just-the-docs` isn't included in the default GitHub Pages gems, we're using **GitHub Actions** to build the site:
+
+1. **GitHub Actions workflow** (`.github/workflows/pages.yml`) has been created
+   - Automatically builds on every push to `main`
+   - Installs the `just-the-docs` gem
+   - Deploys to GitHub Pages
+
+2. **Enable GitHub Pages** (if not already):
+   - Go to repository Settings → Pages
+   - Under "Source", select **"GitHub Actions"** (not "Deploy from a branch")
+   - Save
+
+3. **Commit and push**:
+   ```bash
+   git add .
+   git commit -m "Migrate to Just the Docs with GitHub Actions"
+   git push
+   ```
+
+4. **Watch the build**:
+   - Go to the "Actions" tab in your repository
+   - You'll see the workflow running
+   - Once complete, your site will be live!
 
 ## Navigation Structure
 
