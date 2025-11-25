@@ -1,22 +1,31 @@
 {% if page.toc != false %}
-<div class="toc-sidebar" id="toc-sidebar">
-  <h3>On This Page</h3>
-  <ul id="toc-list"></ul>
-</div>
-
 <script>
 (function() {
+  // Create TOC sidebar element and append to body
+  function createTOCSidebar() {
+    let sidebar = document.getElementById('toc-sidebar');
+    if (!sidebar) {
+      sidebar = document.createElement('div');
+      sidebar.id = 'toc-sidebar';
+      sidebar.className = 'toc-sidebar';
+      sidebar.innerHTML = '<h3>On This Page</h3><ul id="toc-list"></ul>';
+      document.body.appendChild(sidebar);
+    }
+    return sidebar;
+  }
+  
   // Generate TOC from headings
   function generateTOC() {
     const headings = document.querySelectorAll('.wrapper h2, .wrapper h3, .wrapper h4, .page-content h2, .page-content h3, .page-content h4');
+    const sidebar = createTOCSidebar();
     const tocList = document.getElementById('toc-list');
     
     if (!tocList || headings.length === 0) {
-      const sidebar = document.getElementById('toc-sidebar');
-      if (sidebar) sidebar.style.display = 'none';
+      sidebar.style.display = 'none';
       return;
     }
     
+    sidebar.style.display = 'block';
     tocList.innerHTML = '';
     let tocLevel = 0;
     
@@ -73,14 +82,31 @@
     
     window.addEventListener('scroll', updateActiveTOC);
     updateActiveTOC();
+    
+    // Adjust content margin after TOC is generated
+    adjustContentMargin();
   }
   
   // Adjust main content margin when TOC is present
   function adjustContentMargin() {
     const toc = document.getElementById('toc-sidebar');
-    const content = document.querySelector('.page-content, .wrapper');
-    if (toc && content && window.innerWidth > 1200) {
-      content.classList.add('page-content-with-toc');
+    const wrapper = document.querySelector('.wrapper');
+    const pageContent = document.querySelector('.page-content');
+    
+    if (toc && toc.style.display !== 'none' && window.innerWidth > 1200) {
+      if (wrapper) {
+        wrapper.classList.add('page-content-with-toc');
+      }
+      if (pageContent) {
+        pageContent.classList.add('page-content-with-toc');
+      }
+    } else {
+      if (wrapper) {
+        wrapper.classList.remove('page-content-with-toc');
+      }
+      if (pageContent) {
+        pageContent.classList.remove('page-content-with-toc');
+      }
     }
   }
   
@@ -88,15 +114,20 @@
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
       generateTOC();
-      adjustContentMargin();
     });
   } else {
     generateTOC();
-    adjustContentMargin();
   }
   
   // Adjust on resize
-  window.addEventListener('resize', adjustContentMargin);
+  window.addEventListener('resize', function() {
+    adjustContentMargin();
+    // Regenerate TOC if needed (in case headings changed)
+    const headings = document.querySelectorAll('.wrapper h2, .wrapper h3, .wrapper h4');
+    if (headings.length > 0) {
+      generateTOC();
+    }
+  });
 })();
 </script>
 {% endif %}
