@@ -8,7 +8,7 @@
       sidebar = document.createElement('div');
       sidebar.id = 'toc-sidebar';
       sidebar.className = 'toc-sidebar';
-      sidebar.innerHTML = '<h3>On This Page</h3><ul id="toc-list"></ul>';
+      sidebar.innerHTML = '<h3>On This Page</h3><div class="toc-list-container"><ul id="toc-list"></ul></div>';
       // Append directly to body, right after the opening body tag content
       // This ensures it's not constrained by any wrapper or footer
       const main = document.querySelector('main');
@@ -24,15 +24,66 @@
       sidebar.style.top = '60px';
       sidebar.style.right = '20px';
       sidebar.style.zIndex = '1000';
+      
+      // Create and append scroll-to-top button to sidebar
+      createScrollToTopButton(sidebar);
     }
     return sidebar;
+  }
+  
+  // Create scroll-to-top button and add to sidebar
+  function createScrollToTopButton(sidebar) {
+    let scrollButton = document.getElementById('scroll-to-top');
+    if (!scrollButton) {
+      scrollButton = document.createElement('button');
+      scrollButton.id = 'scroll-to-top';
+      scrollButton.className = 'scroll-to-top';
+      scrollButton.setAttribute('aria-label', 'Scroll to top');
+      scrollButton.innerHTML = '↑';
+      sidebar.appendChild(scrollButton);
+      
+      // Add click handler
+      scrollButton.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+      
+      // Show/hide based on scroll position
+      function toggleScrollButton() {
+        if (window.scrollY > 300) {
+          scrollButton.classList.add('visible');
+        } else {
+          scrollButton.classList.remove('visible');
+        }
+      }
+      
+      window.addEventListener('scroll', toggleScrollButton);
+      toggleScrollButton();
+    }
+    return scrollButton;
   }
   
   // Generate TOC from headings
   function generateTOC() {
     const headings = document.querySelectorAll('.wrapper h2, .wrapper h3, .wrapper h4, .page-content h2, .page-content h3, .page-content h4');
     const sidebar = createTOCSidebar();
-    const tocList = document.getElementById('toc-list');
+    // Get or create the TOC list container
+    let tocContainer = sidebar.querySelector('.toc-list-container');
+    if (!tocContainer) {
+      tocContainer = document.createElement('div');
+      tocContainer.className = 'toc-list-container';
+      const h3 = sidebar.querySelector('h3');
+      if (h3) {
+        sidebar.insertBefore(tocContainer, h3.nextSibling);
+      } else {
+        sidebar.appendChild(tocContainer);
+      }
+    }
+    let tocList = document.getElementById('toc-list');
+    if (!tocList) {
+      tocList = document.createElement('ul');
+      tocList.id = 'toc-list';
+      tocContainer.appendChild(tocList);
+    }
     
     if (!tocList || headings.length === 0) {
       sidebar.style.display = 'none';
@@ -56,7 +107,10 @@
       const text = heading.textContent.trim();
       
       const li = document.createElement('li');
-      li.className = `toc-level-${level - 1}`;
+      // H2 = level 2 -> toc-level-1, H3 = level 3 -> toc-level-2, H4 = level 4 -> toc-level-3
+      const tocLevel = level - 1;
+      li.className = `toc-level-${tocLevel}`;
+      li.setAttribute('data-level', tocLevel);
       
       const a = document.createElement('a');
       a.href = `#${id}`;
@@ -106,6 +160,7 @@
     const toc = document.getElementById('toc-sidebar');
     const wrapper = document.querySelector('.wrapper');
     const pageContent = document.querySelector('.page-content');
+    const main = document.querySelector('main');
     const isVisible = toc && 
                      toc.style.display !== 'none' && 
                      window.getComputedStyle(toc).display !== 'none' &&
@@ -116,13 +171,17 @@
       document.body.classList.add('toc-visible');
       if (wrapper) {
         wrapper.classList.add('page-content-with-toc');
-        // Also set inline style as backup to ensure it's applied
         wrapper.style.setProperty('margin-right', '290px', 'important');
         wrapper.style.setProperty('max-width', 'calc(100% - 310px)', 'important');
+        wrapper.style.setProperty('padding-right', '20px', 'important');
       }
       if (pageContent) {
         pageContent.classList.add('page-content-with-toc');
         pageContent.style.setProperty('margin-right', '290px', 'important');
+      }
+      if (main) {
+        main.style.setProperty('margin-right', '290px', 'important');
+        main.style.setProperty('max-width', 'calc(100% - 290px)', 'important');
       }
     } else {
       // TOC is hidden - remove margin
@@ -131,10 +190,15 @@
         wrapper.classList.remove('page-content-with-toc');
         wrapper.style.removeProperty('margin-right');
         wrapper.style.removeProperty('max-width');
+        wrapper.style.removeProperty('padding-right');
       }
       if (pageContent) {
         pageContent.classList.remove('page-content-with-toc');
         pageContent.style.removeProperty('margin-right');
+      }
+      if (main) {
+        main.style.removeProperty('margin-right');
+        main.style.removeProperty('max-width');
       }
     }
   }

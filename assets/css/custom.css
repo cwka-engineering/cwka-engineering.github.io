@@ -32,7 +32,7 @@
   right: 20px !important;
   width: 250px !important;
   max-height: calc(100vh - 80px) !important;
-  overflow-y: auto;
+  overflow: visible !important;
   background: #f6f8fa !important;
   border: 1px solid #e1e4e8 !important;
   border-radius: 6px;
@@ -45,6 +45,27 @@
   left: auto !important;
   bottom: auto !important;
   transform: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* TOC list container - scrollable */
+#toc-sidebar .toc-list-container,
+.toc-sidebar .toc-list-container {
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0; /* Important for flex scrolling */
+  margin: 0;
+  padding: 0;
+}
+
+#toc-sidebar #toc-list,
+.toc-sidebar #toc-list,
+#toc-sidebar ul,
+.toc-sidebar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .toc-sidebar h3 {
@@ -69,46 +90,61 @@
 }
 
 /* H2 headings - Top level (toc-level-1) */
+#toc-sidebar li.toc-level-1,
 .toc-sidebar li.toc-level-1 {
-  padding-left: 0;
-  margin-top: 0.5rem;
-  margin-bottom: 0.25rem;
-  font-weight: 600;
+  padding-left: 0 !important;
+  margin-top: 0.75rem !important;
+  margin-bottom: 0.25rem !important;
+  font-weight: 600 !important;
+  border-left: none !important;
 }
 
+#toc-sidebar li.toc-level-1:first-child,
 .toc-sidebar li.toc-level-1:first-child {
-  margin-top: 0;
+  margin-top: 0 !important;
 }
 
+#toc-sidebar li.toc-level-1 > a,
 .toc-sidebar li.toc-level-1 > a {
-  font-weight: 600;
-  color: #24292e;
+  font-weight: 600 !important;
+  color: #24292e !important;
+  font-size: 0.875rem !important;
 }
 
 /* H3 headings - Second level (toc-level-2) */
+#toc-sidebar li.toc-level-2,
 .toc-sidebar li.toc-level-2 {
-  padding-left: 1rem;
-  margin-top: 0.25rem;
-  font-weight: 500;
+  padding-left: 1.25rem !important;
+  margin-top: 0.4rem !important;
+  margin-bottom: 0.2rem !important;
+  font-weight: 500 !important;
+  border-left: 2px solid #e1e4e8 !important;
+  margin-left: 0 !important;
 }
 
+#toc-sidebar li.toc-level-2 > a,
 .toc-sidebar li.toc-level-2 > a {
-  font-weight: 500;
-  color: #0366d6;
-  font-size: 0.9375rem;
+  font-weight: 500 !important;
+  color: #0366d6 !important;
+  font-size: 0.875rem !important;
 }
 
 /* H4 headings - Third level (toc-level-3) */
+#toc-sidebar li.toc-level-3,
 .toc-sidebar li.toc-level-3 {
-  padding-left: 2rem;
-  margin-top: 0.2rem;
-  font-weight: 400;
+  padding-left: 2.5rem !important;
+  margin-top: 0.3rem !important;
+  margin-bottom: 0.15rem !important;
+  font-weight: 400 !important;
+  border-left: 2px solid #d1d5da !important;
+  margin-left: 0 !important;
 }
 
+#toc-sidebar li.toc-level-3 > a,
 .toc-sidebar li.toc-level-3 > a {
-  font-weight: 400;
-  color: #586069;
-  font-size: 0.875rem;
+  font-weight: 400 !important;
+  color: #586069 !important;
+  font-size: 0.8125rem !important;
 }
 
 .toc-sidebar a {
@@ -130,22 +166,27 @@
 
 /* Main content area adjustment when TOC is present */
 .page-content-with-toc .wrapper,
-.wrapper.page-content-with-toc {
+.wrapper.page-content-with-toc,
+body.toc-visible .wrapper {
   margin-right: 290px !important;
-  padding-right: 0 !important;
+  padding-right: 20px !important;
   max-width: calc(100% - 310px) !important;
+  box-sizing: border-box !important;
 }
 
 /* Also adjust the main page-content container */
-.page-content.page-content-with-toc {
+.page-content.page-content-with-toc,
+body.toc-visible .page-content {
   margin-right: 290px !important;
   padding-right: 0 !important;
+  box-sizing: border-box !important;
 }
 
-/* Ensure body doesn't overflow when TOC is present */
-body.toc-visible .wrapper {
-  max-width: calc(100% - 310px) !important;
+/* Ensure main element doesn't overflow */
+body.toc-visible main {
   margin-right: 290px !important;
+  max-width: calc(100% - 290px) !important;
+  box-sizing: border-box !important;
 }
 
 @media (max-width: 1200px) {
@@ -301,31 +342,44 @@ hr {
   }
 }
 
-/* Scroll to top button */
-.scroll-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 40px;
-  height: 40px;
-  background: #0366d6;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  z-index: 99;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+/* Scroll to top button - now in sidebar */
+#toc-sidebar .scroll-to-top,
+.toc-sidebar .scroll-to-top {
+  position: relative !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 36px;
+  background: #0366d6 !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  display: none !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  margin-top: 1rem !important;
+  padding: 0.5rem !important;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+  transition: background-color 0.2s ease !important;
+  z-index: 1 !important;
+  box-sizing: border-box !important;
 }
 
-.scroll-to-top:hover {
-  background: #005cc5;
+#toc-sidebar .scroll-to-top:hover,
+.toc-sidebar .scroll-to-top:hover {
+  background: #005cc5 !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15) !important;
 }
 
-.scroll-to-top.visible {
-  display: flex;
+#toc-sidebar .scroll-to-top:active,
+.toc-sidebar .scroll-to-top:active {
+  background: #004085 !important;
+}
+
+#toc-sidebar .scroll-to-top.visible,
+.toc-sidebar .scroll-to-top.visible {
+  display: flex !important;
 }
 
