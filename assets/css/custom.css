@@ -101,8 +101,21 @@
 /* Main content area adjustment when TOC is present */
 .page-content-with-toc .wrapper,
 .wrapper.page-content-with-toc {
-  margin-right: 280px;
-  max-width: calc(100% - 300px);
+  margin-right: 290px !important;
+  padding-right: 0 !important;
+  max-width: calc(100% - 310px) !important;
+}
+
+/* Also adjust the main page-content container */
+.page-content.page-content-with-toc {
+  margin-right: 290px !important;
+  padding-right: 0 !important;
+}
+
+/* Ensure body doesn't overflow when TOC is present */
+body.toc-visible .wrapper {
+  max-width: calc(100% - 310px) !important;
+  margin-right: 290px !important;
 }
 
 @media (max-width: 1200px) {
@@ -111,9 +124,11 @@
   }
   
   .page-content-with-toc .wrapper,
-  .wrapper.page-content-with-toc {
-    margin-right: 0;
-    max-width: 100%;
+  .wrapper.page-content-with-toc,
+  .page-content.page-content-with-toc,
+  body.toc-visible .wrapper {
+    margin-right: 0 !important;
+    max-width: 100% !important;
   }
 }
 

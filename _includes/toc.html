@@ -106,20 +106,35 @@
     const toc = document.getElementById('toc-sidebar');
     const wrapper = document.querySelector('.wrapper');
     const pageContent = document.querySelector('.page-content');
+    const isVisible = toc && 
+                     toc.style.display !== 'none' && 
+                     window.getComputedStyle(toc).display !== 'none' &&
+                     window.innerWidth > 1200;
     
-    if (toc && toc.style.display !== 'none' && window.innerWidth > 1200) {
+    if (isVisible) {
+      // TOC is visible - add margin to content
+      document.body.classList.add('toc-visible');
       if (wrapper) {
         wrapper.classList.add('page-content-with-toc');
+        // Also set inline style as backup to ensure it's applied
+        wrapper.style.setProperty('margin-right', '290px', 'important');
+        wrapper.style.setProperty('max-width', 'calc(100% - 310px)', 'important');
       }
       if (pageContent) {
         pageContent.classList.add('page-content-with-toc');
+        pageContent.style.setProperty('margin-right', '290px', 'important');
       }
     } else {
+      // TOC is hidden - remove margin
+      document.body.classList.remove('toc-visible');
       if (wrapper) {
         wrapper.classList.remove('page-content-with-toc');
+        wrapper.style.removeProperty('margin-right');
+        wrapper.style.removeProperty('max-width');
       }
       if (pageContent) {
         pageContent.classList.remove('page-content-with-toc');
+        pageContent.style.removeProperty('margin-right');
       }
     }
   }
