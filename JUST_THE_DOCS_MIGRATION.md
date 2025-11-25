@@ -34,9 +34,9 @@ The following custom files are now excluded since Just the Docs provides these f
 - Mobile-responsive
 
 ### Built-in Search
-- Just the Docs has its own search functionality
-- Your custom search page at `/search.html` still works
-- Both options available
+- Just the Docs has its own native search functionality
+- Accessible via the search box in the top navigation bar
+- Full-text search across all wiki content
 
 ### Better Layout
 - Content doesn't scroll under sidebar

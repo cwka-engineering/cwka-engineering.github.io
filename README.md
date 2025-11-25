@@ -14,9 +14,11 @@ The wiki is published via GitHub Pages. Visit the site at: **https://cwka-engine
 ├── standards/         # Drafting standards, layer organization, folder structure
 ├── tools/             # Epicor, time entry, and approvals documentation
 ├── ingest/            # Staging area for new documents (excluded from site)
+├── assets/            # Custom CSS and styling
+├── _includes/         # Custom includes (head-custom.html for CSS)
 ├── _config.yml        # Jekyll configuration for GitHub Pages
 ├── index.md           # Main landing page
-└── search.html        # Site-wide search functionality
+└── .github/workflows/ # GitHub Actions workflow for building and deploying
 ```
 
 ## Contributing
@@ -25,8 +27,8 @@ To update documentation:
 
 1. **For new content**: Place documents in the `ingest/` folder for review
 2. **For existing content**: Edit the appropriate markdown file in its category folder
-3. **Commit and push** changes
-4. **GitHub Pages** will automatically rebuild the site
+3. **Commit and push** changes to the `main` branch
+4. **GitHub Actions** will automatically build and deploy the site to GitHub Pages
 
 ### Content Organization
 
@@ -50,7 +52,7 @@ The `ingest/` folder is a staging area for new documents. See `ingest/README.md`
 
 ### Search
 
-Site-wide search functionality is available via the search page, powered by Lunr.js for client-side full-text search.
+Built-in site-wide search functionality is available in the top navigation bar, powered by Just the Docs' native search feature.
 
 ### Cross-Referencing
 
@@ -79,7 +81,8 @@ Each major document includes:
      - Tools & Systems
 
 3. **Enhanced Navigation** ✅
-   - Added table of contents to longer documents
+   - Automatic table of contents on all pages (Just the Docs built-in)
+   - Persistent sidebar navigation with organized structure
    - Reorganized homepage with multiple entry points (Getting Started, By Role, By Task, Reference)
    - Improved document structure with clear sections
 
@@ -95,9 +98,11 @@ Each major document includes:
    - Uniform code block formatting
    - Consistent link formatting
 
-6. **Site-Wide Search** ✅
-   - Implemented client-side search using Lunr.js
-   - Full-text search across all wiki content
+6. **Theme Migration** ✅
+   - Migrated from Minima to Just the Docs theme
+   - Built-in search, TOC, and navigation features
+   - Professional documentation-focused design
+   - GitHub Actions workflow for automated deployment
 
 ### Integration Statistics
 
@@ -114,15 +119,17 @@ For detailed integration history, see `ingest/INTEGRATION_COMPLETE.md`.
 
 ### Jekyll Configuration
 
-- **Theme**: Minima
-- **Collections**: Pages collection configured for organized content structure
-- **Exclusions**: `ingest/` folder and other non-content files excluded from Jekyll processing
+- **Theme**: Just the Docs
+- **Build System**: GitHub Actions (`.github/workflows/pages.yml`)
+- **Deployment**: Automated via GitHub Pages
+- **Exclusions**: `ingest/` folder and documentation files excluded from Jekyll processing
 
-### Search Implementation
+### Features
 
-- **Technology**: Lunr.js (client-side JavaScript)
-- **Index**: Generated from all wiki pages
-- **Features**: Full-text search with title boosting
+- **Built-in Search**: Just the Docs native search functionality
+- **Automatic TOC**: Table of contents generated from page headings
+- **Sidebar Navigation**: Persistent navigation sidebar with organized structure
+- **Responsive Design**: Mobile-friendly layout
 
 ## Maintenance Notes
 
