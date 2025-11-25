@@ -26,7 +26,7 @@
 
 /* Table of Contents Sidebar */
 .toc-sidebar {
-  position: fixed;
+  position: fixed !important;
   top: 60px;
   right: 20px;
   width: 250px;
@@ -38,6 +38,7 @@
   padding: 1rem;
   font-size: 0.875rem;
   z-index: 100;
+  margin: 0;
 }
 
 .toc-sidebar h3 {

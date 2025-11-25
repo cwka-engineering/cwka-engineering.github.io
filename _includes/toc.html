@@ -8,7 +8,7 @@
 (function() {
   // Generate TOC from headings
   function generateTOC() {
-    const headings = document.querySelectorAll('.page-content h2, .page-content h3, .page-content h4');
+    const headings = document.querySelectorAll('.wrapper h2, .wrapper h3, .wrapper h4, .page-content h2, .page-content h3, .page-content h4');
     const tocList = document.getElementById('toc-list');
     
     if (!tocList || headings.length === 0) {
