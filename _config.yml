@@ -72,7 +72,6 @@ exclude:
   - USABILITY_IMPROVEMENTS.md
   - WIKI_PLATFORM_OPTIONS.md
   - ingest/
-  - _layouts/default.html  # Use Just the Docs default layout
   - _includes/toc.html      # Just the Docs has built-in TOC
   - _includes/breadcrumbs.html  # Just the Docs has built-in breadcrumbs
   - _includes/scroll-to-top.html  # Not needed with Just the Docs
