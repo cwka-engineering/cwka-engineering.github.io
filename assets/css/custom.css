@@ -64,21 +64,51 @@
 
 .toc-sidebar li {
   margin: 0.25rem 0;
-  padding-left: 0.75rem;
+  padding-left: 0;
+  list-style: none;
 }
 
+/* H2 headings - Top level (toc-level-1) */
 .toc-sidebar li.toc-level-1 {
   padding-left: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.toc-sidebar li.toc-level-1:first-child {
+  margin-top: 0;
+}
+
+.toc-sidebar li.toc-level-1 > a {
+  font-weight: 600;
+  color: #24292e;
+}
+
+/* H3 headings - Second level (toc-level-2) */
+.toc-sidebar li.toc-level-2 {
+  padding-left: 1rem;
+  margin-top: 0.25rem;
   font-weight: 500;
 }
 
-.toc-sidebar li.toc-level-2 {
-  padding-left: 0.75rem;
+.toc-sidebar li.toc-level-2 > a {
+  font-weight: 500;
+  color: #0366d6;
+  font-size: 0.9375rem;
 }
 
+/* H4 headings - Third level (toc-level-3) */
 .toc-sidebar li.toc-level-3 {
-  padding-left: 1.5rem;
-  font-size: 0.8125rem;
+  padding-left: 2rem;
+  margin-top: 0.2rem;
+  font-weight: 400;
+}
+
+.toc-sidebar li.toc-level-3 > a {
+  font-weight: 400;
+  color: #586069;
+  font-size: 0.875rem;
 }
 
 .toc-sidebar a {
