@@ -9,7 +9,21 @@
       sidebar.id = 'toc-sidebar';
       sidebar.className = 'toc-sidebar';
       sidebar.innerHTML = '<h3>On This Page</h3><ul id="toc-list"></ul>';
-      document.body.appendChild(sidebar);
+      // Append directly to body, right after the opening body tag content
+      // This ensures it's not constrained by any wrapper or footer
+      const main = document.querySelector('main');
+      if (main && main.parentNode === document.body) {
+        // Insert after main but before footer
+        document.body.insertBefore(sidebar, main.nextSibling);
+      } else {
+        // Fallback: append to body
+        document.body.appendChild(sidebar);
+      }
+      // Force positioning to ensure it's fixed
+      sidebar.style.position = 'fixed';
+      sidebar.style.top = '60px';
+      sidebar.style.right = '20px';
+      sidebar.style.zIndex = '1000';
     }
     return sidebar;
   }
