@@ -4,18 +4,12 @@ title: Home
 permalink: /
 ---
 
-# CWKA Engineering Wiki
+# CWK/DFW Engineering Wiki
 
 Welcome to the Engineering Department documentation and workflows wiki.
 
-<div style="text-align: center; margin: 2rem 0;">
-  <a href="/overview/site-map.html" style="display: inline-block; padding: 0.75rem 1.5rem; background: #28a745; color: white; text-decoration: none; border-radius: 6px; font-weight: 500;">
-    🗺️ Site Map
-  </a>
-</div>
-
 <div style="margin: 1.5rem 0; padding: 1rem; background: #f6f8fa; border-left: 4px solid #2563eb; border-radius: 4px;">
-  <strong>💡 Tip:</strong> Use the search box in the top navigation bar to quickly find content across the wiki.
+  <strong>💡 Tip:</strong> Use the search box in the top navigation bar to quickly find content across the wiki. The sidebar navigation shows the complete structure of all pages.
 </div>
 
 ## Getting Started
@@ -105,5 +99,4 @@ Common resources:
 - [Engineering Roles & Core Competencies](/overview/engineering-roles.html) - Role descriptions
 - [Project Delivery Overview](/overview/project-delivery.html) - Complete workflow
 - [Glossary](/overview/glossary.html) - Terms and definitions
-- [Site Map](/overview/site-map.html) - Visual hierarchy of all pages
 

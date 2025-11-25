@@ -1,4 +1,4 @@
-title: CWKA Engineering Wiki
+title: CWK/DFW Engineering Wiki
 description: Engineering department documentation and workflows
 theme: just-the-docs
 
@@ -13,8 +13,7 @@ just_the_docs:
   search_enabled: true
   search:
     heading_anchor_links: true
-  aux_links:
-    "Site Map": /overview/site-map.html
+  aux_links: {}
   color_scheme: light
   color_mode_toggle: true
 

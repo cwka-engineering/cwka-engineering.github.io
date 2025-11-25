@@ -28,7 +28,7 @@ Essential links and resources for new Engineering Department team members.
 
 - **Rhino v8 (Tabloid layouts) template**: [Box.com Link](https://digifabshop.box.com/s/n93tqh5z3pi6v5rrtzhk0rihkmcml9nb)
 - **'Gotham' font family**: [Box.com Link](https://digifabshop.box.com/s/u1plgcsisgwquoxyjscg7muwnfbk28hx)
-- **Rhino Grasshopper 'CWKA Engineering Toolkit'**: [Box.com Link](https://digifabshop.box.com/s/ytpeoi2h2ta1bumlhggqm8t8osb5fbre)
+- **Rhino Grasshopper 'CWK/DFW Engineering Toolkit'**: [Box.com Link](https://digifabshop.box.com/s/ytpeoi2h2ta1bumlhggqm8t8osb5fbre)
 - **Required plugins**: [Box.com Link](https://digifabshop.box.com/s/9plgd3b0d50eiyz0611u3p7pkwzytlqi)
 
 > **Related**: [FE Workflow - Engineering Toolkit Usage](/workflows/fabrication-engineer.html#engineering-toolkit-usage) | [Rhino Drafting and Layouts](/standards/rhino-drafting-layouts.html)

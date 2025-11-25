@@ -91,7 +91,7 @@ This document outlines better alternatives to the Minima Jekyll theme for a more
 **Example Structure**:
 ```yaml
 # mkdocs.yml
-site_name: CWKA Engineering Wiki
+site_name: CWK/DFW Engineering Wiki
 theme:
   name: material
   features:
@@ -192,7 +192,7 @@ theme:
 ### Example mkdocs.yml Structure
 
 ```yaml
-site_name: CWKA Engineering Wiki
+site_name: CWK/DFW Engineering Wiki
 site_description: Engineering department documentation and workflows
 site_url: https://cwka-engineering.github.io
 
