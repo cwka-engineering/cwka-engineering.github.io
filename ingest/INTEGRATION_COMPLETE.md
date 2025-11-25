@@ -4,7 +4,24 @@ This document summarizes the integration of content from transcripts and documen
 
 ## ✅ Completed Integrations
 
-### 1. Engineering Assistant (EA) Workflow
+### 1. Onboarding Quick Start Links
+**Source**: `ingest/Onboarding Quick Start Links.md`
+
+**Created**: `overview/onboarding-quick-start.md`
+- Comprehensive onboarding resource with essential links
+- Engineering Wiki and training video links
+- Rhino resources (templates, fonts, toolkit, plugins)
+- Epicor access and resources
+- Engineering Department calendar
+- Troubleshooting contacts
+- Microsoft Teams channels (Engineering, Releases, Requests, Epicor)
+- Teams Apps (Approvals)
+- Box.com setup instructions
+
+**Updated**:
+- `index.md` - Added to "Getting Started" section as first item
+
+### 2. Engineering Assistant (EA) Workflow
 **Source**: `ingest/Engineering Assistant (EA).md`
 
 **Created**: `workflows/engineering-assistant.md`
@@ -19,7 +36,7 @@ This document summarizes the integration of content from transcripts and documen
 - `index.md` - Added EA to navigation
 - `tools/epicor-usage.md` - Added scheduling dashboard information
 
-### 2. Epicor Usage Documentation
+### 3. Epicor Usage Documentation
 **Sources**: Multiple Epicor transcripts
 
 **Enhanced**: `tools/epicor-usage.md`
@@ -39,7 +56,7 @@ This document summarizes the integration of content from transcripts and documen
 - [^transcript-epicor-time]: Epicor Time Tracking
 - [^transcript-epicor-scheduling]: Epicor Eng. Scheduling
 
-### 3. Time Entry Documentation
+### 4. Time Entry Documentation
 **Source**: `ingest/transcripts/Toggl Time Entry-en-US.txt`
 
 **Enhanced**: `tools/time-entry.md`
@@ -52,7 +69,7 @@ This document summarizes the integration of content from transcripts and documen
 **Footnotes Added**:
 - [^transcript-toggl]: Toggl Time Entry
 
-### 4. Fabrication Engineer Workflow
+### 5. Fabrication Engineer Workflow
 **Sources**: Multiple toolkit transcripts
 
 **Enhanced**: `workflows/fabrication-engineer.md`
@@ -66,14 +83,14 @@ This document summarizes the integration of content from transcripts and documen
 - [^transcript-drafting-toolkit]: Drafting Toolkit
 - [^transcript-modeling-toolkit]: Modeling Toolkit
 
-### 5. Glossary
+### 6. Glossary
 **Enhanced**: `overview/glossary.md`
 - Added Toggl structure terms (Client, Project, Tag)
 - Expanded Epicor terms with new dashboards and features
 - Enhanced Job Types with submittal/post-submittal distinctions
 - Added toolkit-related terms
 
-### 6. Rhino Drafting and Layouts Standards
+### 7. Rhino Drafting and Layouts Standards
 **Sources**: Layouts, Details, and Annotations; Printing transcripts
 
 **Enhanced**: `standards/rhino-drafting-layouts.md`
@@ -86,7 +103,7 @@ This document summarizes the integration of content from transcripts and documen
 - [^transcript-layouts]: Layouts, Details, and Annotations
 - [^transcript-printing]: Printing
 
-### 7. Layer Organization Standards
+### 8. Layer Organization Standards
 **Source**: Rhino Modeling transcript
 
 **Enhanced**: `standards/layer-organization.md`
@@ -96,7 +113,7 @@ This document summarizes the integration of content from transcripts and documen
 **Footnotes Added**:
 - [^transcript-rhino-modeling]: Rhino Modeling
 
-### 8. FE Workflow - File Structure
+### 9. FE Workflow - File Structure
 **Source**: File Structure transcript
 
 **Enhanced**: `workflows/fabrication-engineer.md`
@@ -108,7 +125,7 @@ This document summarizes the integration of content from transcripts and documen
 
 ## ✅ Additional Integrations Completed
 
-### 9. Advanced Toolkit Functions
+### 10. Advanced Toolkit Functions
 **Sources**: `Adv. Toolkit Functions-en-US.txt`, `Adv. Toolkit Functions II-en-US.txt`
 
 **Enhanced**: `workflows/fabrication-engineer.md`
@@ -131,7 +148,7 @@ This document summarizes the integration of content from transcripts and documen
 - [^transcript-adv-toolkit]: Adv. Toolkit Functions
 - [^transcript-adv-toolkit-ii]: Adv. Toolkit Functions II
 
-### 10. Getting Started Workflow
+### 11. Getting Started Workflow
 **Source**: `Getting Started-en-US.txt`
 
 **Enhanced**: `workflows/fabrication-engineer.md`
@@ -144,7 +161,7 @@ This document summarizes the integration of content from transcripts and documen
 **Footnotes Added**:
 - [^transcript-getting-started]: Getting Started
 
-### 11. Rhino Modeling & Layouts
+### 12. Rhino Modeling & Layouts
 **Sources**: `Rhino Modeling-en-US.txt`, `Layouts, Details, and Annotations-en-US.txt`, `Printing-en-US.txt`
 
 **Enhanced**: `standards/rhino-drafting-layouts.md`
@@ -172,7 +189,7 @@ This document summarizes the integration of content from transcripts and documen
 
 ## 📊 Integration Statistics
 
-- **Documents Created**: 1 (EA Workflow)
+- **Documents Created**: 2 (EA Workflow, Onboarding Quick Start)
 - **Documents Significantly Enhanced**: 7 (Epicor Usage, Time Entry, FE Workflow, Glossary, Rhino Drafting, Layer Organization, Index)
 - **Footnotes Added**: 25+ transcript citations
 - **New Sections Added**: 20+
