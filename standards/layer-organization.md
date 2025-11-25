@@ -8,7 +8,20 @@ permalink: /standards/layer-organization.html
 
 > **Related Documents**: [Rhino Drafting and Layouts](/standards/rhino-drafting-layouts.html) | [Folder Structure](/standards/folder-structure.html)
 
-Rhino models use parent layers based on project phases: PRECON, DE, FE, PE. Each phase increases in Level of Detail (LOD).
+Rhino models use parent layers based on project phases: PRECON, DE, FE, PE. Each phase increases in Level of Detail (LOD). [^transcript-rhino-modeling]
+
+**Layer Organization Philosophy**: [^transcript-rhino-modeling]
+- **First Level**: Based on design process phase (PRECON, DE, FE, PE) - indicates when geometry was introduced (provenance of piece of geometry - was it introduced during precon, design engineering, FE, or PE?)
+- **Second Level (FE)**: Based on geometry type:
+  - **PUR (Purchased)**: Represents purchased materials in Epicor
+  - **MFG (Manufactured)**: Represents manufactured materials in Epicor
+  - **CON (Construction)**: Construction geometry without real-world analog (helps create other geometry)
+- **Third Level**: Material classes (fabric, upholstery, glass, hardware, etc.) that map directly to Epicor
+- **Placeholder Layers**: [^transcript-rhino-modeling] When starting modeling, you can create placeholder layers (e.g., "GMSGI XXXX shop ply three quarter") as notes to yourself. Come back later and correct using toolkit to pull correct layer. This is a fast way to get started - get ideas down quickly, correct later. Obviously not releasable until corrected.
+
+[^transcript-rhino-modeling]: Source: Training Video Transcript - "Rhino Modeling"
+
+[^transcript-rhino-modeling]: Source: Training Video Transcript - "Rhino Modeling"
 
 ## Overview
 
@@ -16,16 +29,25 @@ Proper layer organization ensures consistency across projects and facilitates co
 
 ## 00_CWKA-DWG (Drawing)
 
-- Layout-specific layers & clipping layers.
+- Layout-specific layers & clipping layers. [^transcript-layouts]
 - Used in any phase.
 - Includes: line weights, dimensions, notes.
+- **Primary Layers**: [^transcript-layouts]
+  - Line weights (1, 3, 20, point, point 2, 4)
+  - Dim and note layers
+  - Symbol tag (for blocks inserted in layout space)
+  - Title block, revisions (changed only on special occasions)
+
+[^transcript-layouts]: Source: Training Video Transcript - "Layouts, Details, and Annotations"
 
 ## 01_CWKA-PRECON
 
 - Intake models for estimation & modeling.
 - Includes:
-  - IN-2D: Plans, elevations, tabular data.
-  - IN-3D: Client models, point clouds.
+  - IN-2D: Plans, elevations, tabular data. [^transcript-printing] Can include master plans imported from separate files.
+  - IN-3D: Client models, point clouds. [^transcript-printing] Can include laser scans, but not recommended to have laser scan in working file - not good practice for file performance.
+
+[^transcript-printing]: Source: Training Video Transcript - "Printing"
 
 ## 02_CWKA-DE (Design Engineering)
 
@@ -41,8 +63,12 @@ Proper layer organization ensures consistency across projects and facilitates co
 - Converts to fabrication-ready geometry.
 - Layers:
   - CON: Guide geometry.
-  - MFG: Manufactured parts (feeder jobs).
-  - PUR: Purchased materials (Epicor-based).
+  - MFG: Manufactured parts (feeder jobs). [^transcript-rhino-modeling] Includes MT (Metal), WC (Wood Component), and PRE (Freelan laminations - custom sheet goods).
+  - PUR: Purchased materials (Epicor-based). [^transcript-rhino-modeling] Includes classes for fabric, upholstery, glass, hardware - these map directly to Epicor.
+- **Clip Planes Sublayer**: [^transcript-layouts] Under 03_CWKA-FE, there is a sublayer called "clip planes" - this is where you create all clipping planes for layouts.
+
+[^transcript-rhino-modeling]: Source: Training Video Transcript - "Rhino Modeling"
+[^transcript-layouts]: Source: Training Video Transcript - "Layouts, Details, and Annotations"
 
 ## 04_CWKA-PE (Production Engineering)
 

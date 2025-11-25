@@ -41,6 +41,12 @@ Essential documents for PE work:
 - **[FE to PE Release](/workflows/fe-to-pe-release.html)** - What to expect from FE
 - **[Epicor Usage](/tools/epicor-usage.html)** - Epicor procedures for PE
 
+### Engineering Assistant (EA)
+Essential documents for EA work:
+
+- **[EA Workflow](/workflows/engineering-assistant.html)** - Complete workflow guide for job creation and management
+- **[Epicor Usage](/tools/epicor-usage.html)** - Epicor procedures and screens
+
 ### All Engineers
 Common resources:
 
@@ -83,6 +89,12 @@ Common resources:
 - [Epicor Usage in Engineering](/tools/epicor-usage.html) - Epicor procedures
 - [Time Entry](/tools/time-entry.html) - Time logging
 - [Approvals Process](/tools/approvals-process.html) - Approval workflow
+
+### Workflows
+- [Fabrication Engineer (FE) Workflow](/workflows/fabrication-engineer.html) - Complete FE procedures
+- [Production Engineer (PE) Workflow](/workflows/production-engineer.html) - Complete PE procedures
+- [FE to PE Release](/workflows/fe-to-pe-release.html) - Release procedures
+- [Engineering Assistant (EA) Workflow](/workflows/engineering-assistant.html) - Job creation and management
 
 ### Documentation
 - [Engineering Roles & Core Competencies](/overview/engineering-roles.html) - Role descriptions

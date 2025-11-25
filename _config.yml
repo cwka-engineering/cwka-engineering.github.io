@@ -15,4 +15,5 @@ exclude:
   - vendor
   - "*.ini"
   - IMPROVEMENTS.md
+  - ingest/
 

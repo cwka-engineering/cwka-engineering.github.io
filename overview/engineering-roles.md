@@ -54,8 +54,17 @@ Clearly state actions and their purpose, proactively identify problems, effectiv
 
 ## Engineering Assistant (EA)
 
-- Manage Epicor materials database, ensuring standardization of entries and timely response to new part requests.
-- Create Jobs in coordination with PM and Engineers, updating sales orders and producing Epicor entries, including primary jobs, sample jobs, mockups, and manufacturing jobs.
-- Update job scheduling due to ship date changes using scheduling workbenches in Epicor.
-- Monitor data health, troubleshoot part entries, and gain familiarity with all of Epicor's function and utility.
+The Engineering Assistant plays a central role in setting up and managing various job types within Epicor.
+
+**Key Responsibilities**:
+- Manage Epicor materials database, ensuring standardization of entries and timely response to new part requests
+- Create Jobs in coordination with PM and Engineers, updating sales orders and producing Epicor entries, including:
+  - Primary jobs
+  - Sample jobs (SMP)
+  - Mockups
+  - Manufacturing jobs (WC and MT)
+- Update job scheduling due to ship date changes using scheduling workbenches in Epicor
+- Monitor data health, troubleshoot part entries, and gain familiarity with all of Epicor's function and utility
+
+**For detailed procedures**, see the [Engineering Assistant (EA) Workflow](/workflows/engineering-assistant.html).
 
