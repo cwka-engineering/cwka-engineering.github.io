@@ -1,10 +1,64 @@
 title: CWKA Engineering Wiki
 description: Engineering department documentation and workflows
-theme: minima
+theme: just-the-docs
 
 # Site settings
 baseurl: ""
 url: "https://cwka-engineering.github.io"
+
+# Just the Docs configuration
+just_the_docs:
+  # Main navigation
+  nav_external_links: true
+  search_enabled: true
+  search:
+    heading_anchor_links: true
+  aux_links:
+    "Search": /search.html
+    "Site Map": /overview/site-map.html
+  color_scheme: light
+  color_mode_toggle: true
+
+# Main navigation structure
+nav:
+  - title: Home
+    url: /
+  - title: Getting Started
+    children:
+      - title: Onboarding Quick Start
+        url: /overview/onboarding-quick-start.html
+      - title: Engineering Roles
+        url: /overview/engineering-roles.html
+      - title: Glossary
+        url: /overview/glossary.html
+      - title: Project Delivery Overview
+        url: /overview/project-delivery.html
+  - title: Workflows
+    children:
+      - title: Fabrication Engineer (FE)
+        url: /workflows/fabrication-engineer.html
+      - title: Production Engineer (PE)
+        url: /workflows/production-engineer.html
+      - title: Engineering Assistant (EA)
+        url: /workflows/engineering-assistant.html
+      - title: FE to PE Release
+        url: /workflows/fe-to-pe-release.html
+  - title: Standards
+    children:
+      - title: Rhino Drafting and Layouts
+        url: /standards/rhino-drafting-layouts.html
+      - title: Layer Organization
+        url: /standards/layer-organization.html
+      - title: Folder Structure & File Management
+        url: /standards/folder-structure.html
+  - title: Tools
+    children:
+      - title: Epicor Usage
+        url: /tools/epicor-usage.html
+      - title: Time Entry
+        url: /tools/time-entry.html
+      - title: Approvals Process
+        url: /tools/approvals-process.html
 
 # Exclude files from processing
 exclude:
@@ -16,5 +70,10 @@ exclude:
   - "*.ini"
   - IMPROVEMENTS.md
   - USABILITY_IMPROVEMENTS.md
+  - WIKI_PLATFORM_OPTIONS.md
   - ingest/
+  - _layouts/default.html  # Use Just the Docs default layout
+  - _includes/toc.html      # Just the Docs has built-in TOC
+  - _includes/breadcrumbs.html  # Just the Docs has built-in breadcrumbs
+  - _includes/scroll-to-top.html  # Not needed with Just the Docs
 

@@ -2,8 +2,6 @@
 layout: default
 title: Home
 permalink: /
-toc: false
-breadcrumbs: false
 ---
 
 # CWKA Engineering Wiki
