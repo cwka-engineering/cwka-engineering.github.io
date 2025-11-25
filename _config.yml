@@ -17,46 +17,114 @@ just_the_docs:
   color_scheme: light
   color_mode_toggle: true
 
-# Main navigation structure
+# Main navigation structure - organized to match homepage
 nav:
   - title: Home
     url: /
   - title: Getting Started
     children:
-      - title: Onboarding Quick Start
+      - title: Onboarding Quick Start Links
         url: /overview/onboarding-quick-start.html
-      - title: Engineering Roles
+      - title: Engineering Roles & Core Competencies
         url: /overview/engineering-roles.html
       - title: Glossary
         url: /overview/glossary.html
       - title: Project Delivery Overview
         url: /overview/project-delivery.html
-  - title: Workflows
+  - title: By Role
     children:
       - title: Fabrication Engineer (FE)
-        url: /workflows/fabrication-engineer.html
+        children:
+          - title: FE Workflow
+            url: /workflows/fabrication-engineer.html
+          - title: FE to PE Release
+            url: /workflows/fe-to-pe-release.html
+          - title: Approvals Process
+            url: /tools/approvals-process.html
+          - title: Epicor Usage
+            url: /tools/epicor-usage.html
       - title: Production Engineer (PE)
-        url: /workflows/production-engineer.html
+        children:
+          - title: PE Workflow
+            url: /workflows/production-engineer.html
+          - title: FE to PE Release
+            url: /workflows/fe-to-pe-release.html
+          - title: Epicor Usage
+            url: /tools/epicor-usage.html
       - title: Engineering Assistant (EA)
-        url: /workflows/engineering-assistant.html
-      - title: FE to PE Release
-        url: /workflows/fe-to-pe-release.html
-  - title: Standards
+        children:
+          - title: EA Workflow
+            url: /workflows/engineering-assistant.html
+          - title: Epicor Usage
+            url: /tools/epicor-usage.html
+      - title: All Engineers
+        children:
+          - title: Time Entry
+            url: /tools/time-entry.html
+          - title: Project Delivery Overview
+            url: /overview/project-delivery.html
+  - title: By Task
     children:
-      - title: Rhino Drafting and Layouts
-        url: /standards/rhino-drafting-layouts.html
-      - title: Layer Organization
-        url: /standards/layer-organization.html
-      - title: Folder Structure & File Management
-        url: /standards/folder-structure.html
-  - title: Tools
+      - title: Create or modify drawings
+        children:
+          - title: Rhino Drafting and Layouts
+            url: /standards/rhino-drafting-layouts.html
+          - title: Layer Organization
+            url: /standards/layer-organization.html
+      - title: Find or organize files
+        children:
+          - title: Folder Structure & File Management
+            url: /standards/folder-structure.html
+      - title: Use Epicor
+        children:
+          - title: Epicor Usage in Engineering
+            url: /tools/epicor-usage.html
+          - title: Time Entry
+            url: /tools/time-entry.html
+      - title: Release a job
+        children:
+          - title: FE to PE Release
+            url: /workflows/fe-to-pe-release.html
+      - title: Submit for approval
+        children:
+          - title: Approvals Process
+            url: /tools/approvals-process.html
+  - title: Reference
     children:
-      - title: Epicor Usage
-        url: /tools/epicor-usage.html
-      - title: Time Entry
-        url: /tools/time-entry.html
-      - title: Approvals Process
-        url: /tools/approvals-process.html
+      - title: Standards & Conventions
+        children:
+          - title: Rhino Drafting and Layouts
+            url: /standards/rhino-drafting-layouts.html
+          - title: Layer Organization
+            url: /standards/layer-organization.html
+          - title: Folder Structure & File Management
+            url: /standards/folder-structure.html
+      - title: Tools & Systems
+        children:
+          - title: Epicor Usage in Engineering
+            url: /tools/epicor-usage.html
+          - title: Time Entry
+            url: /tools/time-entry.html
+          - title: Approvals Process
+            url: /tools/approvals-process.html
+      - title: Workflows
+        children:
+          - title: Fabrication Engineer (FE) Workflow
+            url: /workflows/fabrication-engineer.html
+          - title: Production Engineer (PE) Workflow
+            url: /workflows/production-engineer.html
+          - title: FE to PE Release
+            url: /workflows/fe-to-pe-release.html
+          - title: Engineering Assistant (EA) Workflow
+            url: /workflows/engineering-assistant.html
+      - title: Documentation
+        children:
+          - title: Engineering Roles & Core Competencies
+            url: /overview/engineering-roles.html
+          - title: Project Delivery Overview
+            url: /overview/project-delivery.html
+          - title: Glossary
+            url: /overview/glossary.html
 
 # Exclude files from processing
 exclude:
