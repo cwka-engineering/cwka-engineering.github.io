@@ -1,0 +1,17 @@
+title: CWKA Engineering Wiki
+description: Engineering department documentation and workflows
+theme: minima
+
+# Site settings
+baseurl: ""
+url: "https://cwka-engineering.github.io"
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - "*.ini"
+
