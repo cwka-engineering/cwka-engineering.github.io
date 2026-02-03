@@ -37,6 +37,7 @@ Layouts follow a "Hundred level page number" system:
 *   This system categorizes drawing types.
     
 
+<<<<<<< Updated upstream
 **Layout Management**: \[^transcript-layouts\] In the layouts panel, you can:
 
 *   Move layouts via arrows or click and drag to reposition
@@ -121,6 +122,43 @@ Layouts follow a "Hundred level page number" system:
     
 *   **XXXX.XXX.SKXX**: Sketches – for quick feedback, not part of submission set
     
+=======
+## Standard Page Types
+
+- **XXXX.T00**: Title Sheet – includes project index
+- **XXXX.G00**: General Requirements and Schedules – includes material tags and bill of materials
+- **XXXX.XXX.1XX**: Reference Plans – includes: [^transcript-layouts]
+  - Overall floor plans
+  - Enlarged plans
+  - Key plans for site context
+  - VIF (Verify in Field) plans
+  - **Note**: For freestanding items without site context, 100-level pages may not be needed. Can import site plans via work session for larger projects.
+- **XXXX.XXX.2XX**: Shop Drawings – for client submission, typically includes: [^transcript-layouts]
+  - Isometric views (often first page for freestanding items)
+  - BOM (Bill of Materials)
+  - Plans
+  - Elevations
+  - Sections
+  - Details
+  - **Note**: First 200-level page often shows an isometric view for freestanding items, or elevation for large interior wall paneling jobs. Pre-populated detail views are included in templates.
+- **XXXX.XXX.3XX**: Install & Shipping Drawings – for install team, includes: [^transcript-layouts]
+  - Shipping Components list (usually first 300-level page)
+  - Installation supplements
+  - Z-clip locations
+  - Install sequence drawings
+  - **Name Positions**: [^transcript-layouts] For freestanding fixtures that are very detailed, can use name positions to generate exploded isometric on 300-level page without bloating file with additional models. Time-stamp location of parts in Rhino space at given save moment. Toggle between assembled and exploded positions. **Note**: No name positions per layout page - must print all assembled first, then all exploded (can't mix on same page).
+- **XXXX.XXX.4XX**: Fabrication Supplements – for shop team, includes: [^transcript-layouts]
+  - Layups
+  - Veneer Sequence
+  - Glue-up Jig
+  - Bucks (jigs/fixtures)
+  - Create 400-level drawings for each WC/MT/IP part.
+  - First drawing = 400, then 401, etc.
+  - Drawing number = WC/MT/IP code (e.g., 1102.MT.00007.400)
+  - **Note**: This is an internal series for shop floor needs, not typically part of client submittal.
+- **NOTE**: Rhino tabs can have the same name but must be manually labeled using layout user text.
+- **XXXX.XXX.SKXX**: Sketches – for quick feedback, not part of submission set
+>>>>>>> Stashed changes
 
 ### Schedules
 
@@ -152,8 +190,11 @@ Layouts follow a "Hundred level page number" system:
 
 **Setting Views**: \[^transcript-layouts\] Use the dropdown filter "Set View" to choose isometric, plan, elevation, or other view types that best capture your scope.
 
+<<<<<<< Updated upstream
 \[^transcript-layouts\]: Source: Training Video Transcript - "Layouts, Details, and Annotations"
 
+=======
+>>>>>>> Stashed changes
 ## Labeling Details
 
 *   Use the "Legends and Symbols" block, specifically the "Detail Title" block.
@@ -215,10 +256,13 @@ Layouts follow a "Hundred level page number" system:
 
 **Naming**: \[^transcript-layouts\] You can name clipping planes, but for simple projects with only one section, naming may not be necessary.
 
+<<<<<<< Updated upstream
 **Flipping Direction**: \[^transcript-layouts\] Can flip the direction of the clipping plane if needed.
 
 \[^transcript-layouts\]: Source: Training Video Transcript - "Layouts, Details, and Annotations"
 
+=======
+>>>>>>> Stashed changes
 ## Hatches & Section Styles
 
 *   Hatch patterns are set in the Section Style column within the Layer Manager
@@ -237,6 +281,7 @@ Layouts follow a "Hundred level page number" system:
 
 ### Standard Hatch Settings
 
+<<<<<<< Updated upstream
 *   **Pattern**: \[^transcript-layouts\] Select appropriate pattern (e.g., "plywood" for plywood materials).
     
 *   **Pattern Color**: \[^transcript-layouts\] Typically gray (prints dark gray for lighter appearance).
@@ -252,6 +297,8 @@ Layouts follow a "Hundred level page number" system:
 
 \[^transcript-layouts\]: Source: Training Video Transcript - "Layouts, Details, and Annotations"
 
+=======
+>>>>>>> Stashed changes
 ### Custom Hatch Rotation
 
 *   For objects with grain direction different from the material's default (e.g., perpendicular wood grain):
@@ -288,6 +335,7 @@ Layouts follow a "Hundred level page number" system:
 
 ### Material Tags
 
+<<<<<<< Updated upstream
 *   **Workflow**: \[^transcript-layouts\] Use Leader command, then go under Notes layer. Press Shift to enable ortho for straight leaders.
     
 *   **Tag Types**: \[^transcript-layouts\] Material tag, material tag and finish tag, specialty hardware tag - all are blocks with attributes.
@@ -303,6 +351,8 @@ Layouts follow a "Hundred level page number" system:
 
 \[^transcript-layouts\]: Source: Training Video Transcript - "Layouts, Details, and Annotations"
 
+=======
+>>>>>>> Stashed changes
 ### Dimension Placement
 
 *   Maintain a gap between dimension line and geometry (prevents merging and improves readability)
@@ -389,6 +439,7 @@ Layouts follow a "Hundred level page number" system:
 
 ### Project Cover Page
 
+<<<<<<< Updated upstream
 *   **Photo Insertion**: \[^transcript-printing\] Project cover page (front page) has option to insert a photo. This was not common practice at CW previously, but may become standard moving forward.
     
 
@@ -409,3 +460,19 @@ Layouts follow a "Hundred level page number" system:
 *   **NOTE**: create a Layer State with all your settings BEFORE you change all display colors to black.
     
 *   Otherwise, use Bluebeam's color processing tool to convert vector colors to black
+=======
+## Hidden Linework in Technical Mode
+
+- Hidden lines appear light gray
+- If print colors are set to black:
+  - Print layout as a separate PDF
+  - Create a Layer State with all CWKA/Digi scope geometry set to black and Print as previously mentioned.
+- **NOTE**: create a Layer State with all your settings BEFORE you change all display colors to black.
+- Otherwise, use Bluebeam's color processing tool to convert vector colors to black
+
+## Footnotes
+
+[^transcript-layouts]: Source: Training Video Transcript - "Layouts, Details, and Annotations"
+[^transcript-printing]: Source: Training Video Transcript - "Printing"
+
+>>>>>>> Stashed changes

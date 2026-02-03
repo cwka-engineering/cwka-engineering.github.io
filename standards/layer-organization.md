@@ -11,6 +11,7 @@ Rhino models use parent layers based on project phases: PRECON, DE, FE, PE. Each
 
 **Layer Organization Philosophy**: \[^transcript-rhino-modeling\]
 
+<<<<<<< Updated upstream
 *   **First Level**: Based on design process phase (PRECON, DE, FE, PE) - indicates when geometry was introduced (provenance of piece of geometry - was it introduced during precon, design engineering, FE, or PE?)
     
 *   **Second Level (FE)**: Based on geometry type:
@@ -30,6 +31,8 @@ Rhino models use parent layers based on project phases: PRECON, DE, FE, PE. Each
 
 \[^transcript-rhino-modeling\]: Source: Training Video Transcript - "Rhino Modeling"
 
+=======
+>>>>>>> Stashed changes
 ## Overview
 
 Proper layer organization ensures consistency across projects and facilitates collaboration between Design Engineering (DE), Fabrication Engineering (FE), and Production Engineering (PE) phases.
@@ -53,9 +56,13 @@ Proper layer organization ensures consistency across projects and facilitates co
     *   Title block, revisions (changed only on special occasions)
         
 
+<<<<<<< Updated upstream
 \[^transcript-layouts\]: Source: Training Video Transcript - "Layouts, Details, and Annotations"
 
 ## 01\_CWKA-PRECON
+=======
+## 01_CWKA-PRECON
+>>>>>>> Stashed changes
 
 *   Intake models for estimation & modeling.
     
@@ -66,9 +73,13 @@ Proper layer organization ensures consistency across projects and facilitates co
     *   IN-3D: Client models, point clouds. \[^transcript-printing\] Can include laser scans, but not recommended to have laser scan in working file - not good practice for file performance.
         
 
+<<<<<<< Updated upstream
 \[^transcript-printing\]: Source: Training Video Transcript - "Printing"
 
 ## 02\_CWKA-DE (Design Engineering)
+=======
+## 02_CWKA-DE (Design Engineering)
+>>>>>>> Stashed changes
 
 *   Converts approximate to precise geometry.
     
@@ -98,9 +109,13 @@ Proper layer organization ensures consistency across projects and facilitates co
 *   **Clip Planes Sublayer**: \[^transcript-layouts\] Under 03\_CWKA-FE, there is a sublayer called "clip planes" - this is where you create all clipping planes for layouts.
     
 
+<<<<<<< Updated upstream
 \[^transcript-rhino-modeling\]: Source: Training Video Transcript - "Rhino Modeling" \[^transcript-layouts\]: Source: Training Video Transcript - "Layouts, Details, and Annotations"
 
 ## 04\_CWKA-PE (Production Engineering)
+=======
+## 04_CWKA-PE (Production Engineering)
+>>>>>>> Stashed changes
 
 *   Toolpaths, reference geometry, fabrication info.
     
@@ -430,8 +445,17 @@ Example: PRE\_438\_331\_7\_19
 
 ### Tag Types
 
+<<<<<<< Updated upstream
 *   General: MDF, EB, PB, PLY, OSB, ML, PLAM, PL, GL, SS, FU, ST, MT, HW
     
 *   Wood/Veneer: VN (Veneer), WD (Solid Wood)
     
 *   Finish: PT (Paint), FN (Other finishes)
+=======
+## Footnotes
+
+[^transcript-rhino-modeling]: Source: Training Video Transcript - "Rhino Modeling"
+[^transcript-layouts]: Source: Training Video Transcript - "Layouts, Details, and Annotations"
+[^transcript-printing]: Source: Training Video Transcript - "Printing"
+
+>>>>>>> Stashed changes

@@ -28,6 +28,7 @@ permalink: /workflows/fabrication-engineer.html
 
 ### Finding Assignments
 
+<<<<<<< Updated upstream
 *   Access the Epicor Submittal Dashboard via The CW site. See [Epicor Usage](/tools/epicor-usage.html#1-submittal-dashboard) for details.
     
 *   Filter by your name to view submittal/post-submittal tasks not yet released to PE.
@@ -41,6 +42,8 @@ permalink: /workflows/fabrication-engineer.html
 
 \[^transcript-getting-started\]: Source: Training Video Transcript - "Getting Started"
 
+=======
+>>>>>>> Stashed changes
 ### Verifying Scope
 
 *   **Working Set Location**: \[^transcript-file-structure\] Working set is in `01_INCOMING_Documents > 02_Working_Set`. This contains organized contract drawings used by engineers.
@@ -52,6 +55,7 @@ permalink: /workflows/fabrication-engineer.html
 
 ### Template Usage
 
+<<<<<<< Updated upstream
 *   **Template Location**: \[^transcript-file-structure\] Download the latest FE template from `DFWCWKA internal > templates`. This file is locked and should only be updated by designated personnel.
     
 *   **Save Your Copy**: \[^transcript-file-structure\]
@@ -69,6 +73,8 @@ permalink: /workflows/fabrication-engineer.html
 
 \[^transcript-file-structure\]: Source: Training Video Transcript - "File Structure"
 
+=======
+>>>>>>> Stashed changes
 ## II. Epicor Interaction
 
 ### Updating Submittal Status
@@ -94,6 +100,7 @@ permalink: /workflows/fabrication-engineer.html
 
 ### Launching Toolkit
 
+<<<<<<< Updated upstream
 *   Open Rhino > Synapse panel > Grasshopper > Load latest FE toolkit. \[^transcript-toolkit-setup\]
     
 *   **Location**: Navigate to `DFWCWKA internal > Engineering resource > shared GH for Grasshopper > FE Engineering Toolkit`
@@ -107,6 +114,8 @@ permalink: /workflows/fabrication-engineer.html
 
 \[^transcript-toolkit-setup\]: Source: Training Video Transcript - "Toolkit Setup"
 
+=======
+>>>>>>> Stashed changes
 ### First Run Setup
 
 *   **Plugin Requirements**: \[^transcript-toolkit-setup\] Starting with Rhino 8, use the built-in Package Manager (run command `PackageManager`) to install required plugins. The toolkit requires specific plugins - if you try to launch without them, it will fail and show a reset button listing required plugins.
@@ -124,6 +133,7 @@ permalink: /workflows/fabrication-engineer.html
 
 ### Restoring Model/Layout Space
 
+<<<<<<< Updated upstream
 *   **Template Tab**: \[^transcript-drafting-toolkit\] Use Template tab in Drafting Toolkit to restore model and layout spaces.
     
 *   **Restore Model Space**: Pulls in and merges all latest data from the template - adds missing layers, geometry, etc. You can turn on/off specific items to restore.
@@ -135,8 +145,11 @@ permalink: /workflows/fabrication-engineer.html
 
 \[^transcript-drafting-toolkit\]: Source: Training Video Transcript - "Drafting Toolkit"
 
+=======
+>>>>>>> Stashed changes
 ### Epicor Metadata & Submittal Scope
 
+<<<<<<< Updated upstream
 *   **Auto-Assignment**: \[^transcript-drafting-toolkit\] By default, toolkit automatically assigns submittal scope to match the file name (e.g., file `1091.008_FE` → scope `1091.008`). Assumes you've intentionally named the file following conventions.
     
 *   **Submittal Scope vs Actual Job Number**: \[^transcript-adv-toolkit-ii\] **Important distinction** - Submittal scope is what appears on all pages as page titles (e.g., "Judd.MT.7"). This may differ from the actual Epicor job number (e.g., "9194.M.004"). For catalog items or special cases, you may want submittal scope to be the catalog name while actual job pulls different metadata. If you enter actual job number, it will pre-populate metadata but may not print correct name on pages.
@@ -162,6 +175,8 @@ permalink: /workflows/fabrication-engineer.html
 
 \[^transcript-adv-toolkit-ii\]: Source: Training Video Transcript - "Adv. Toolkit Functions II"
 
+=======
+>>>>>>> Stashed changes
 ### Project Tab
 
 *   Publish changes to populate T00 layout with Epicor schedule.
@@ -190,6 +205,7 @@ permalink: /workflows/fabrication-engineer.html
 
 ### Parts List Tab
 
+<<<<<<< Updated upstream
 *   **L00 - Master Parts List**: \[^transcript-adv-toolkit\] Standardized format for parts schedules within drawing sets. This is a targeted parts list (e.g., for metal shop) - not the comprehensive master parts list Excel that PE creates. Use when you need a parts schedule in the drawing set in addition to Excel.
     
 *   **L001 - Pick List**: \[^transcript-adv-toolkit\] Backend model space page for BOM information while working on scope. Not typically printed for external audience - primarily for FE engineer's use during design. Facilitates takeoffs and BOM tracking.
@@ -201,10 +217,13 @@ permalink: /workflows/fabrication-engineer.html
 
 \[^transcript-adv-toolkit\]: Source: Training Video Transcript - "Adv. Toolkit Functions"
 
+=======
+>>>>>>> Stashed changes
 ## IV. Part Naming
 
 ### Grouping & Naming
 
+<<<<<<< Updated upstream
 *   **Grouping First**: \[^transcript-adv-toolkit-ii\] Parts must be grouped into logical groups based on how they need to be sent to shop or field before naming.
     
 *   **Group Names**: \[^transcript-adv-toolkit-ii\] Use Set Group Name for SC numbers (e.g., SC005). For MT parts, you can use MT prefix (e.g., "MT7") - the integer is important, but prefix can vary. Using SC or MT is most sensible since that's what it will be at the end.
@@ -220,8 +239,11 @@ permalink: /workflows/fabrication-engineer.html
 
 \[^transcript-adv-toolkit-ii\]: Source: Training Video Transcript - "Adv. Toolkit Functions II"
 
+=======
+>>>>>>> Stashed changes
 ### Modeling Toolkit
 
+<<<<<<< Updated upstream
 *   **Material Search**: \[^transcript-modeling-toolkit\] First tab in Modeling Toolkit provides material search functionality:
     
     *   **Forward Lookup**: When you know a part number and want to find its details
@@ -247,8 +269,11 @@ permalink: /workflows/fabrication-engineer.html
 
 \[^transcript-modeling-toolkit\]: Source: Training Video Transcript - "Modeling Toolkit"
 
+=======
+>>>>>>> Stashed changes
 ### Publishing & Editing
 
+<<<<<<< Updated upstream
 *   Bake attributes into metadata.
     
 *   **Replace Name Segments**: \[^transcript-adv-toolkit\] Use "Replace Name Segments" tab to change specific segments of part names without affecting others. For example, if job number changes from 8 to 12, you can update just that segment while keeping shipping component numbers and P numbers intact. Useful when reusing similar designs across multiple projects.
@@ -258,6 +283,8 @@ permalink: /workflows/fabrication-engineer.html
 
 \[^transcript-adv-toolkit\]: Source: Training Video Transcript - "Adv. Toolkit Functions" \[^transcript-adv-toolkit-ii\]: Source: Training Video Transcript - "Adv. Toolkit Functions II"
 
+=======
+>>>>>>> Stashed changes
 ## V. Shipping Components (SCs)
 
 ### SC List
@@ -271,6 +298,7 @@ permalink: /workflows/fabrication-engineer.html
 
 ### Modeling Toolkit
 
+<<<<<<< Updated upstream
 *   **Enter SC Descriptions**: \[^transcript-adv-toolkit\] After naming parts, toolkit identifies shipping components. You must provide descriptions for each SC (e.g., "spacer", "base carcass", "seat cushion", "back cushion"). Publish changes to document, then export shipping component list directly for PE release.
     
 *   **Future Enhancement**: \[^transcript-adv-toolkit\] Work in progress to add button that directly publishes to UD40IN Epicor, eliminating need for PE to manually enter SC data.
@@ -280,6 +308,8 @@ permalink: /workflows/fabrication-engineer.html
 
 \[^transcript-adv-toolkit\]: Source: Training Video Transcript - "Adv. Toolkit Functions"
 
+=======
+>>>>>>> Stashed changes
 ## VI. Takeoffs
 
 ### Auto-BOM
@@ -353,6 +383,7 @@ permalink: /workflows/fabrication-engineer.html
 
 ### 2D Nesting
 
+<<<<<<< Updated upstream
 *   **Purpose**: \[^transcript-adv-toolkit\] Refine takeoff for sheet goods. Shows optimization of parts within sheets.
     
 *   **Workflow**: \[^transcript-adv-toolkit\]
@@ -370,6 +401,8 @@ permalink: /workflows/fabrication-engineer.html
 
 \[^transcript-adv-toolkit\]: Source: Training Video Transcript - "Adv. Toolkit Functions"
 
+=======
+>>>>>>> Stashed changes
 ## VII. PE Release Preparation
 
 ### Material Checks
@@ -447,8 +480,21 @@ permalink: /workflows/fabrication-engineer.html
 
 **Shipping Components list won't export**
 
+<<<<<<< Updated upstream
 *   Ensure all SC descriptions are entered in Modeling Toolkit
     
 *   Verify SC numbers are assigned correctly
     
 *   Check that groups are properly named
+=======
+## Footnotes
+
+[^transcript-getting-started]: Source: Training Video Transcript - "Getting Started"
+[^transcript-file-structure]: Source: Training Video Transcript - "File Structure"
+[^transcript-toolkit-setup]: Source: Training Video Transcript - "Toolkit Setup"
+[^transcript-drafting-toolkit]: Source: Training Video Transcript - "Drafting Toolkit"
+[^transcript-modeling-toolkit]: Source: Training Video Transcript - "Modeling Toolkit"
+[^transcript-adv-toolkit]: Source: Training Video Transcript - "Adv. Toolkit Functions"
+[^transcript-adv-toolkit-ii]: Source: Training Video Transcript - "Adv. Toolkit Functions II"
+
+>>>>>>> Stashed changes

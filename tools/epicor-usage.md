@@ -23,8 +23,6 @@ Epicor now operates with multiple sites (CWK and Digifab Shop). [^transcript-epi
 - **Site-Specific Cards**: Cards labeled with (CW) or (DF) only work in their corresponding site
 - **Global Cards**: Cards without site labels work from either site but display site-specific data
 
-[^transcript-epicor-home]: Source: Training Video Transcript - "Epicor Home Screen"
-
 ## II. Core Functions of Epicor
 
 ### A. Centralized Data Management
@@ -50,8 +48,6 @@ Epicor now operates with multiple sites (CWK and Digifab Shop). [^transcript-epi
 
 **Related**: Material Transmittal Log - backend for Rhino toolkit to print material tags and specifications onto layouts. Shows approval status for material/finish tags, hardware samples, etc. [^transcript-epicor-project-materials]
 
-[^transcript-epicor-project-materials]: Source: Training Video Transcript - "Epicor Project Materials"
-
 ## III. Key Dashboards & Screens
 
 ### 1. Submittal Dashboard
@@ -66,8 +62,6 @@ Epicor now operates with multiple sites (CWK and Digifab Shop). [^transcript-epi
 - Pulls in submittal status from the transmittal log managed by PMs.
 - **Dashboard Integration**: [^transcript-getting-started] Pulls in information from other dashboards in the system - combines data from multiple sources in one place.
 
-[^transcript-getting-started]: Source: Training Video Transcript - "Getting Started"
-
 **Best Practice**: [^transcript-epicor-scheduling] Start each day by checking the Submittal Dashboard:
 - Filter to your name
 - Sort by PE start date
@@ -76,9 +70,6 @@ Epicor now operates with multiple sites (CWK and Digifab Shop). [^transcript-epi
 - Verify hours estimates are correct
 
 **Note**: Must be launched from the CW site, but includes assignments from both sites. [^transcript-getting-started]
-
-[^transcript-epicor-scheduling]: Source: Training Video Transcript - "Epicor Eng. Scheduling"
-[^transcript-getting-started]: Source: Training Video Transcript - "Getting Started"
 
 ### 2. Production Report
 **Purpose**: Update submittal statuses and track manufacturing jobs. [^transcript-epicor-jobs]
@@ -113,8 +104,6 @@ Epicor now operates with multiple sites (CWK and Digifab Shop). [^transcript-epi
 - **Best Practice for PE**: [^transcript-epicor-scheduling] Start each day by checking the Global Production Report or site-specific report to review assignments and PE start dates.
 
 **Note**: The Project Backlog has been retired. The Production Report is now the standard tool. [^transcript-epicor-jobs]
-
-[^transcript-epicor-jobs]: Source: Training Video Transcript - "Epicor Jobs & Production Report"
 
 ### 3. Part
 **Purpose**: Create and manage parts (material codes). [^transcript-epicor-parts]
@@ -152,8 +141,6 @@ Epicor now operates with multiple sites (CWK and Digifab Shop). [^transcript-epi
 - **Part Transaction History**: Shows inventory history (credits/debits) for any material code - purchase dates, issue dates, on-hand quantity changes over time.
 - **Cycle Count**: Shows current on-hand quantities for materials with at least quantity of 1 in the current site. Useful for checking inventory before BOMing materials.
 
-[^transcript-epicor-parts]: Source: Training Video Transcript - "Epicor Parts"
-
 ### 4. Job Entry
 **Purpose**: Manage and release jobs.
 
@@ -186,8 +173,6 @@ Epicor now operates with multiple sites (CWK and Digifab Shop). [^transcript-epi
 - **Excel Template**: Track time in Excel, paste into Time Details at end of week
 - **Toggl**: Recommended for desk workers - see [Time Entry - Toggl](/tools/time-entry.html#time-entry---toggl) for details
 
-[^transcript-epicor-time]: Source: Training Video Transcript - "Epicor Time Tracking"
-
 ### 6. Scheduling Dashboards
 **Purpose**: Manage job scheduling and ship dates.
 
@@ -205,8 +190,6 @@ Epicor now operates with multiple sites (CWK and Digifab Shop). [^transcript-epi
 **Note**: Both Global Production Report and Submittal Dashboard have access to information across the entire organization but only launch from the CW site. [^transcript-epicor-scheduling]
 
 **Note**: For detailed scheduling procedures, see [Engineering Assistant (EA) Workflow](/workflows/engineering-assistant.html#job-scheduling).
-
-[^transcript-epicor-scheduling]: Source: Training Video Transcript - "Epicor Eng. Scheduling"
 
 ## IV. Engineering Responsibilities
 
@@ -258,4 +241,14 @@ Epicor now operates with multiple sites (CWK and Digifab Shop). [^transcript-epi
   - BOM Complete
 - Check that Engineering Complete is also checked
 - Ensure no error messages appear in Job Entry screen
+
+## Footnotes
+
+[^transcript-epicor-home]: Source: Training Video Transcript - "Epicor Home Screen"
+[^transcript-epicor-project-materials]: Source: Training Video Transcript - "Epicor Project Materials"
+[^transcript-epicor-scheduling]: Source: Training Video Transcript - "Epicor Eng. Scheduling"
+[^transcript-getting-started]: Source: Training Video Transcript - "Getting Started"
+[^transcript-epicor-jobs]: Source: Training Video Transcript - "Epicor Jobs & Production Report"
+[^transcript-epicor-parts]: Source: Training Video Transcript - "Epicor Parts"
+[^transcript-epicor-time]: Source: Training Video Transcript - "Epicor Time Tracking"
 
