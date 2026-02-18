@@ -1,3 +1,5 @@
+---
+layout: default
 title: Fabrication Engineer (FE) Workflow
 permalink: /workflows/fabrication-engineer.html
 redirect_to: /workflows/fabrication-engineer/

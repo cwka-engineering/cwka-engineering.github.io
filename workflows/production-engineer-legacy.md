@@ -1,3 +1,5 @@
+---
+layout: default
 title: Production Engineer (PE) Workflow
 permalink: /workflows/production-engineer.html
 redirect_to: /workflows/production-engineer/
