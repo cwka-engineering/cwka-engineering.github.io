@@ -1,1 +1,37 @@
-<!-- Custom head content cleared - relying on theme native mermaid support -->
+{% if page.mermaid %}
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', async () => {
+        // Initialize with specific settings
+        mermaid.initialize({ startOnLoad: false, theme: 'default' });
+
+        // Select all code blocks that Jekyll/Rouge marks as mermaid
+        // Standard Jekyll output is <div class="language-mermaid">...</div> or <pre><code class="language-mermaid">...</code></pre>
+        const mermaidBlocks = document.querySelectorAll('.language-mermaid, pre.mermaid, pre > code.language-mermaid');
+
+        for (const block of mermaidBlocks) {
+            // Get the raw mermaid code
+            let content = block.textContent;
+
+            // Create formatting container
+            const div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = content;
+
+            // Find the outermost wrapper to replace (e.g. the <pre> or <div class="highlighter-rouge">)
+            const wrapper = block.closest('.highlighter-rouge') || block.closest('pre') || block;
+
+            if (wrapper && wrapper.parentNode) {
+                wrapper.parentNode.replaceChild(div, wrapper);
+            }
+        }
+
+        // Run mermaid
+        await mermaid.run({
+            querySelector: '.mermaid'
+        });
+    });
+</script>
+{% endif %}
