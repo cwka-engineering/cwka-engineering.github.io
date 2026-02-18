@@ -3,7 +3,7 @@ layout: default
 title: Part Naming
 permalink: /workflows/fabrication-engineer/part-naming.html
 nav_order: 4
-parent: Fabrication Engineer
+parent: Fabrication Engineer (FE)
 grand_parent: Workflows
 ---
 

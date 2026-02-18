@@ -3,7 +3,7 @@ layout: default
 title: Getting Started
 permalink: /workflows/fabrication-engineer/getting-started.html
 nav_order: 1
-parent: Fabrication Engineer
+parent: Fabrication Engineer (FE)
 grand_parent: Workflows
 ---
 

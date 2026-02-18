@@ -3,7 +3,7 @@ layout: default
 title: Model Processing
 permalink: /workflows/production-engineer/processing.html
 nav_order: 2
-parent: Production Engineer (PE) Workflow
+parent: Production Engineer (PE)
 grand_parent: Workflows
 ---
 

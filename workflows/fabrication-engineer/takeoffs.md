@@ -3,7 +3,7 @@ layout: default
 title: Takeoffs
 permalink: /workflows/fabrication-engineer/takeoffs.html
 nav_order: 6
-parent: Fabrication Engineer
+parent: Fabrication Engineer (FE)
 grand_parent: Workflows
 ---
 

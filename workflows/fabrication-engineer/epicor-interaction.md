@@ -3,7 +3,7 @@ layout: default
 title: Epicor Interaction
 permalink: /workflows/fabrication-engineer/epicor-interaction.html
 nav_order: 2
-parent: Fabrication Engineer
+parent: Fabrication Engineer (FE)
 grand_parent: Workflows
 ---
 

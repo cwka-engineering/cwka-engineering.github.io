@@ -3,7 +3,7 @@ layout: default
 title: Deliverables
 permalink: /workflows/production-engineer/deliverables.html
 nav_order: 3
-parent: Production Engineer (PE) Workflow
+parent: Production Engineer (PE)
 grand_parent: Workflows
 ---
 

@@ -3,7 +3,7 @@ layout: default
 title: Troubleshooting
 permalink: /workflows/production-engineer/troubleshooting.html
 nav_order: 4
-parent: Production Engineer (PE) Workflow
+parent: Production Engineer (PE)
 grand_parent: Workflows
 ---
 

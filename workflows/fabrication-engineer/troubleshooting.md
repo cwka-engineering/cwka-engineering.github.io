@@ -3,7 +3,7 @@ layout: default
 title: Troubleshooting
 permalink: /workflows/fabrication-engineer/troubleshooting.html
 nav_order: 8
-parent: Fabrication Engineer
+parent: Fabrication Engineer (FE)
 grand_parent: Workflows
 ---
 

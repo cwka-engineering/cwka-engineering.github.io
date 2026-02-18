@@ -3,7 +3,7 @@ layout: default
 title: Setup & Organization
 permalink: /workflows/production-engineer/setup.html
 nav_order: 1
-parent: Production Engineer (PE) Workflow
+parent: Production Engineer (PE)
 grand_parent: Workflows
 ---
 
