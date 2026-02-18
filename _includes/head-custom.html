@@ -7,3 +7,35 @@
   }
 </style>
 
+{% if page.mermaid %}
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: false });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Find all code blocks with language-mermaid
+    const elements = document.querySelectorAll('pre.language-mermaid code, .language-mermaid .highlight pre code');
+    
+    elements.forEach((el) => {
+      // Create cleaner container
+      const div = document.createElement('div');
+      div.className = 'mermaid';
+      div.textContent = el.textContent;
+      
+      // Replace the entire code block container
+      const pre = el.closest('pre');
+      const container = el.closest('div.language-mermaid') || pre;
+      
+      if (container && container.parentNode) {
+        container.parentNode.replaceChild(div, container);
+      }
+    });
+
+    // Run mermaid on the new .mermaid elements
+    mermaid.run({
+        querySelector: '.mermaid'
+    });
+  });
+</script>
+{% endif %}
+
