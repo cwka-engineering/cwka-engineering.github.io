@@ -3,12 +3,26 @@ layout: default
 title: Project Delivery Overview
 permalink: /overview/project-delivery.html
 parent: Overview
+mermaid: true
 ---
 # Project Delivery Overview – Engineering Workflow
 
 > **Related Documents**: [Engineering Roles](/overview/engineering-roles.html) | [FE Workflow](/workflows/fabrication-engineer.html) | [PE Workflow](/workflows/production-engineer.html) | [FE to PE Release](/workflows/fe-to-pe-release.html)
 
 This document provides a high-level overview of the complete engineering workflow from project assignment through closeout.
+
+## Workflow Visualization
+
+```mermaid
+graph LR
+P1[Phase 1<br/>Assignment] --> P2[Phase 2<br/>Fab Eng]
+P2 --> P3[Phase 3<br/>Handoff]
+P3 --> P4[Phase 4<br/>Prod Eng]
+P4 --> P5[Phase 5<br/>Closeout]
+style P1 fill:#f9f,stroke:#333,stroke-width:2px
+style P2 fill:#bbf,stroke:#333,stroke-width:2px
+style P4 fill:#bfb,stroke:#333,stroke-width:2px
+```
 
 ## Phase 1: Project Assignment & Initial Setup (Pre-Contract & Design Engineering Initiation)
 
@@ -58,6 +72,22 @@ This document provides a high-level overview of the complete engineering workflo
     
 
 ## Phase 2: Fabrication Engineering (FE) – Core Work
+
+```mermaid
+graph LR
+subgraph Setup
+A[Start] --> B[Template]
+B --> C[Toolkit]
+end
+subgraph Modeling
+C --> D[Drafting]
+D --> E[Naming]
+end
+subgraph Output
+E --> F[BOM]
+F --> G[Drawings]
+end
+```
 
 ### Toolkit & Setup
 
@@ -270,6 +300,17 @@ Place:
     
 
 ## Phase 4: Production Engineering (PE) Phase
+
+```mermaid
+graph LR
+A[Release] --> B[Setup]
+B --> C[Processing]
+C --> D{QC}
+D -- Undo --> C
+D -- Pass --> E[Output]
+E --> F[Parts List]
+E --> G[CNC]
+```
 
 *   Access job folder → Copy & rename template folders
     
