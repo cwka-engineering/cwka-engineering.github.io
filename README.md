@@ -10,14 +10,22 @@ The wiki is published via GitHub Pages. Visit the site at: **https://cwka-engine
 
 ```
 ├── overview/          # Role descriptions, project delivery, glossary, onboarding
-├── workflows/         # Step-by-step workflows for FE, PE, and EA
+├── workflows/         # Step-by-step workflows (FE, PE, EA)
+│   ├── fabrication-engineer/
+│   ├── production-engineer/
+│   └── ...
 ├── standards/         # Drafting standards, layer organization, folder structure
+│   ├── rhino-drafting/
+│   ├── layer-organization/
+│   └── ...
 ├── tools/             # Epicor, time entry, and approvals documentation
+│   ├── epicor/
+│   └── ...
 ├── ingest/            # Staging area for new documents (excluded from site)
 ├── assets/            # Custom CSS and styling
 ├── _includes/         # Custom includes (head-custom.html for CSS)
 ├── _config.yml        # Jekyll configuration for GitHub Pages
-├── index.md           # Main landing page
+├── index.md           # Main landing page (excluded from nav)
 └── .github/workflows/ # GitHub Actions workflow for building and deploying
 ```
 
@@ -33,9 +41,9 @@ To update documentation:
 ### Content Organization
 
 - **Overview** (`overview/`) - Role descriptions, project delivery overview, glossary, onboarding resources
-- **Workflows** (`workflows/`) - Step-by-step procedures for Fabrication Engineers, Production Engineers, and Engineering Assistants
-- **Standards** (`standards/`) - Drafting standards, layer organization, folder structure conventions
-- **Tools** (`tools/`) - Epicor procedures, time entry, approvals process
+- **Workflows** (`workflows/`) - Role-specific workflow procedures (FE, PE, EA) organized hierarchically
+- **Standards** (`standards/`) - Drafting standards, layer organization, and folder structure conventions
+- **Tools** (`tools/`) - Software-specific guides for Epicor, time entry, and approvals
 
 ### Ingest Process
 
@@ -45,10 +53,12 @@ The `ingest/` folder is a staging area for new documents. See `ingest/README.md`
 
 ### Navigation
 
-- **Getting Started** - Onboarding links, role descriptions, glossary, project overview
-- **By Role** - Role-specific essential documents (FE, PE, EA)
-- **By Task** - Task-oriented navigation (drawings, files, Epicor, releases, approvals)
-- **Reference** - Complete reference documentation organized by category
+- **Overview** - General engineering knowledge, roles, and onboarding
+- **Workflows** - Step-by-step procedures by role (FE, PE, EA)
+- **Standards** - Reference material for drafting, layers, and file management
+- **Tools** - Guides for software and systems (Epicor, Toggl, Teams)
+
+The sidebar navigation is **auto-generated** based on the folder structure and `parent` / `nav_order` front matter in each file.
 
 ### Search
 
@@ -103,6 +113,25 @@ Each major document includes:
    - Built-in search, TOC, and navigation features
    - Professional documentation-focused design
    - GitHub Actions workflow for automated deployment
+
+### Restructuring 2026 (Major Update) ✅
+
+Transformed the wiki from a flat list of monolithic documents into a hierarchical knowledge base:
+
+1.  **Hierarchy Implemented**:
+    -   Structured content under **Overview**, **Workflows**, **Standards**, and **Tools**.
+    -   Configured auto-generated sidebar navigation.
+
+2.  **Content Split & Focused**:
+    -   **Fabrication Engineer Workflow**: Split into 9 focused pages.
+    -   **Production Engineer Workflow**: Split into 5 focused pages.
+    -   **Rhino Drafting**: Split into 8 focused pages.
+    -   **Layer Organization**: Split into 6 focused pages.
+    -   **Epicor Usage**: Split into 6 focused pages.
+
+3.  **Navigation Improvements**:
+    -   Added "Related Documents" and "Next Steps" cross-linking.
+    -   Cleaned up sidebar to show only active, relevant content.
 
 ### Integration Statistics
 
