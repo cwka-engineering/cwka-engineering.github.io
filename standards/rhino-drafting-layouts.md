@@ -1,5 +1,3 @@
----
-layout: default
 title: Rhino Drafting and Layouts
 permalink: /standards/rhino-drafting-layouts.html
 redirect_to: /standards/rhino-drafting/

@@ -1,5 +1,3 @@
----
-layout: default
 title: Epicor Usage in Engineering
 permalink: /tools/epicor-usage.html
 redirect_to: /tools/epicor/

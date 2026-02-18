@@ -2,6 +2,7 @@
 layout: default
 title: Home
 permalink: /
+nav_exclude: true
 ---
 
 # CWK/DFW Engineering Wiki

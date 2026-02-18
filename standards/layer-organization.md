@@ -1,5 +1,3 @@
----
-layout: default
 title: Layer Organization
 permalink: /standards/layer-organization.html
 redirect_to: /standards/layer-organization/
