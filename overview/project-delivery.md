@@ -2,6 +2,7 @@
 layout: default
 title: Project Delivery Overview
 permalink: /overview/project-delivery.html
+parent: Overview
 ---
 # Project Delivery Overview – Engineering Workflow
 

@@ -2,6 +2,7 @@
 layout: default
 title: Onboarding Quick Start Links
 permalink: /overview/onboarding-quick-start.html
+parent: Overview
 ---
 # Onboarding Quick Start Links
 

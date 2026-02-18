@@ -2,6 +2,7 @@
 layout: default
 title: Folder Structure & File Management
 permalink: /standards/folder-structure.html
+parent: Standards
 ---
 
 # Folder Structure & File Management Outline

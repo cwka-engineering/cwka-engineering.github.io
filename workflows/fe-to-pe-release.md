@@ -1,7 +1,9 @@
+```
 ---
 layout: default
-title: FE to PE Release Step by Step SOP
+title: FE to PE Release Procedure
 permalink: /workflows/fe-to-pe-release.html
+parent: Workflows
 ---
 
 # FE to PE Release Step by Step SOP

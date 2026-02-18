@@ -2,6 +2,7 @@
 layout: default
 title: Approvals Process
 permalink: /tools/approvals-process.html
+parent: Tools
 ---
 
 # PA (Project Advisor) Approvals Process

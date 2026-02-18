@@ -2,6 +2,7 @@
 layout: default
 title: Time Entry
 permalink: /tools/time-entry.html
+parent: Tools
 ---
 
 # Time Entry

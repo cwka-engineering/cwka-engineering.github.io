@@ -18,87 +18,10 @@ just_the_docs:
   color_mode_toggle: true
 
 # Main navigation structure - organized to match homepage
-nav:
-  - title: Home
-    url: /
-  - title: Getting Started
-    children:
-      - title: Onboarding Quick Start Links
-        url: /overview/onboarding-quick-start.html
-      - title: Engineering Roles & Core Competencies
-        url: /overview/engineering-roles.html
-      - title: Glossary
-        url: /overview/glossary.html
-      - title: Project Delivery Overview
-        url: /overview/project-delivery.html
-  - title: By Role
-    children:
-      - title: FE - Workflow
-        url: /workflows/fabrication-engineer.html
-      - title: FE - FE to PE Release
-        url: /workflows/fe-to-pe-release.html
-      - title: FE - Approvals Process
-        url: /tools/approvals-process.html
-      - title: FE - Epicor Usage
-        url: /tools/epicor-usage.html
-      - title: PE - Workflow
-        url: /workflows/production-engineer.html
-      - title: PE - FE to PE Release
-        url: /workflows/fe-to-pe-release.html
-      - title: PE - Epicor Usage
-        url: /tools/epicor-usage.html
-      - title: EA - Workflow
-        url: /workflows/engineering-assistant.html
-      - title: EA - Epicor Usage
-        url: /tools/epicor-usage.html
-      - title: All Engineers - Time Entry
-        url: /tools/time-entry.html
-      - title: All Engineers - Project Delivery
-        url: /overview/project-delivery.html
-  - title: By Task
-    children:
-      - title: Create/modify drawings - Rhino Drafting
-        url: /standards/rhino-drafting-layouts.html
-      - title: Create/modify drawings - Layer Organization
-        url: /standards/layer-organization.html
-      - title: Find/organize files - Folder Structure
-        url: /standards/folder-structure.html
-      - title: Use Epicor - Epicor Usage
-        url: /tools/epicor-usage.html
-      - title: Use Epicor - Time Entry
-        url: /tools/time-entry.html
-      - title: Release a job - FE to PE Release
-        url: /workflows/fe-to-pe-release.html
-      - title: Submit for approval - Approvals Process
-        url: /tools/approvals-process.html
-  - title: Reference
-    children:
-      - title: Standards - Rhino Drafting
-        url: /standards/rhino-drafting-layouts.html
-      - title: Standards - Layer Organization
-        url: /standards/layer-organization.html
-      - title: Standards - Folder Structure
-        url: /standards/folder-structure.html
-      - title: Tools - Epicor Usage
-        url: /tools/epicor-usage.html
-      - title: Tools - Time Entry
-        url: /tools/time-entry.html
-      - title: Tools - Approvals Process
-        url: /tools/approvals-process.html
-      - title: Workflows - FE Workflow
-        url: /workflows/fabrication-engineer.html
-      - title: Workflows - PE Workflow
-        url: /workflows/production-engineer.html
-      - title: Workflows - FE to PE Release
-        url: /workflows/fe-to-pe-release.html
-      - title: Workflows - EA Workflow
-        url: /workflows/engineering-assistant.html
-      - title: Documentation - Engineering Roles
-        url: /overview/engineering-roles.html
-      - title: Documentation - Project Delivery
-        url: /overview/project-delivery.html
-      - title: Documentation - Glossary
-        url: /overview/glossary.html
+# nav:
+#   - title: Home
+#     url: /
+# ... (nav section removed to allow auto-generation)
 
 # Exclude files from processing
 exclude:

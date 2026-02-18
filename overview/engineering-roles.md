@@ -2,6 +2,7 @@
 layout: default
 title: Engineering Roles & Core Competencies
 permalink: /overview/engineering-roles.html
+parent: Overview
 ---
 
 # Overview of Engineering Roles & Core Competencies

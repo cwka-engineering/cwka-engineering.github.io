@@ -2,6 +2,7 @@
 layout: default
 title: Glossary
 permalink: /overview/glossary.html
+parent: Overview
 ---
 
 # Engineering Glossary
