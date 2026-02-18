@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Fabrication Engineer
+title: Fabrication Engineer (FE)
 permalink: /workflows/fabrication-engineer/
 nav_order: 1
 parent: Workflows

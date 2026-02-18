@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Engineering Assistant (EA) Workflow
+title: Engineering Assistant (EA)
 permalink: /workflows/engineering-assistant.html
 parent: Workflows
 ---
