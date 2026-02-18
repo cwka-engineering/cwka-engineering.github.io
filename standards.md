@@ -18,6 +18,6 @@ Documentation standards and conventions for engineering work.
 
 ## Quick Links by Topic
 
-- **Layouts**: [Rhino Drafting - Layout Structure](/standards/rhino-drafting/)
+- **Layouts**: [Rhino Drafting - Layout Structure](/standards/rhino-drafting/layout-structure.html)
 - **Layers**: [Layer Organization Overview](/standards/layer-organization/)
 - **File Management**: [Folder Structure](/standards/folder-structure.html)

@@ -18,6 +18,6 @@ Guides for using engineering software and systems.
 
 ## Quick Links by Tool
 
-- **Epicor Dashboards**: [Submittal Dashboard](/tools/epicor/submittal-dashboard.html) | [Production Report](/tools/epicor/production-report.html)
-- **Time Tracking**: [Toggl Setup](/tools/time-entry/toggl-setup.html)
+- **Epicor Dashboards**: [Submittal Dashboard](/tools/epicor/dashboards.html#submittal-dashboard) | [Production Report](/tools/epicor/production-report.html)
+- **Time Tracking**: [Toggl Setup](/tools/time-entry.html#time-entry---toggl)
 - **Approvals**: [Approvals Process](/tools/approvals-process.html)
