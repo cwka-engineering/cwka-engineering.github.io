@@ -11,7 +11,7 @@ has_children: true
 
 Complete workflow for Fabrication Engineers from project assignment through PE release.
 
-> **Related Documents**: [Project Delivery Overview](/overview/project-delivery.html) | [FE to PE Release SOP](/workflows/fe-to-pe-release.html)
+> **Related Documents**: [Project Delivery Overview](/overview/project-delivery.html) | [FE to PE Release](/workflows/fe-to-pe-release.html) (checklist and procedure)
 
 ## Workflow Overview
 
@@ -23,13 +23,13 @@ The FE workflow consists of these key phases:
 4. **[Part Naming](/workflows/fabrication-engineer/part-naming.html)** - Naming conventions and procedures
 5. **[Shipping Components](/workflows/fabrication-engineer/shipping-components.html)** - Creating and managing SC lists
 6. **[Takeoffs](/workflows/fabrication-engineer/takeoffs.html)** - Auto-BOM, 1D/2D nesting, and material optimization
-7. **[PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html)** - Final steps before releasing to PE
+7. **[PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html)** - Final steps before releasing to PE (then complete [FE to PE Release](/workflows/fe-to-pe-release.html))
 8. **[Troubleshooting](/workflows/fabrication-engineer/troubleshooting.html)** - Common issues and solutions
 
 ## Quick Links
 
 - **New to FE?** Start with [Getting Started](/workflows/fabrication-engineer/getting-started.html)
-- **Ready to release?** See [PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html)
+- **Ready to release?** [PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html) → [FE to PE Release checklist](/workflows/fe-to-pe-release.html#pre-release-checklist)
 - **Having issues?** Check [Troubleshooting](/workflows/fabrication-engineer/troubleshooting.html)
 
 ## Related Resources

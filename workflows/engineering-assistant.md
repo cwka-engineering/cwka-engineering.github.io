@@ -7,7 +7,7 @@ parent: Workflows
 
 # Engineering Assistant (EA) Workflow
 
-> **Related Documents**: [Engineering Roles](/overview/engineering-roles.html) | [Epicor Usage](/tools/epicor-usage.html) | [Project Delivery Overview](/overview/project-delivery.html)
+> **Related Documents**: [Engineering Roles](/overview/engineering-roles.html) | [Epicor Usage](/tools/epicor-usage.html) | [Project Delivery Overview](/overview/project-delivery.html) | [Information and artifact flow (DRAFT)](/overview/project-delivery.html#information-artifact-flow)
 
 The Engineering Assistant (EA) plays a central role in setting up and managing various job types within Epicor. This document covers the procedures for creating and managing different job types.
 

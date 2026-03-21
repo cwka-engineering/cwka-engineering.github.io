@@ -6,9 +6,9 @@ parent: Overview
 ---
 # Onboarding Quick Start Links
 
-> **Related Documents**: [Engineering Roles & Core Competencies](/overview/engineering-roles.html) | [Project Delivery Overview](/overview/project-delivery.html) | [Glossary](/overview/glossary.html)
+> **Related Documents**: [Engineering Roles & Core Competencies](/overview/engineering-roles.html) | [Engineer Progression Framework](/overview/engineer-progression-framework.html) | [Project Delivery Overview](/overview/project-delivery.html) | [Glossary](/overview/glossary.html)
 
-Essential links and resources for new Engineering Department team members.
+Essential links and resources for new Engineering Department team members. Wondering how Engineer I → II works? Read the [Engineer Progression Framework](/overview/engineer-progression-framework.html).
 
 ### Training Videos
 

@@ -14,6 +14,7 @@ Essential information for new and current engineering team members.
 
 - **[Onboarding Quick Start](/overview/onboarding-quick-start.html)** - Essential links and resources for new team members
 - **[Engineering Roles](/overview/engineering-roles.html)** - Role definitions and core competencies
+- **[Engineer Progression Framework](/overview/engineer-progression-framework.html)** - Engineer I → II advancement (merit-based)
 - **[Glossary](/overview/glossary.html)** - Terms, acronyms, and definitions used in engineering
 - **[Project Delivery](/overview/project-delivery/)** - End-to-end engineering workflow overview
 

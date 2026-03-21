@@ -2,7 +2,7 @@
 
 This folder is a staging area for new documents that need to be reviewed and incorporated into the wiki.
 
-**Status**: ✅ All previous content has been processed and integrated into the wiki. This folder is ready for new documents.
+**Status**: ✅ Latest batch (`ingest/docs`, March 2026) processed; source files moved to [`ingest/archive/2026-03-wiki-integration/`](archive/2026-03-wiki-integration/). See [`INTEGRATION_COMPLETE.md`](INTEGRATION_COMPLETE.md).
 
 ## Purpose
 

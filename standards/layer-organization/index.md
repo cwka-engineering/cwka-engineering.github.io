@@ -11,7 +11,7 @@ has_children: true
 
 Standard layer structure and organization for Rhino models.
 
-> **Related Documents**: [Rhino Drafting](/standards/rhino-drafting/) | [Folder Structure](/standards/folder-structure.html)
+> **Related Documents**: [Rhino Drafting](/standards/rhino-drafting/) | [Folder Structure](/standards/folder-structure.html) | [FE to PE Release](/workflows/fe-to-pe-release.html)
 
 ## Overview
 

@@ -12,6 +12,7 @@ parent: Overview
 - **DE (Design Engineering)**: Phase that converts approximate geometries to precise geometries, develops build strategies and assembly details
 - **FE (Fabrication Engineer)**: Engineer responsible for developing design engineering geometries into fabrication-ready geometries and creating shop drawings
 - **PE (Production Engineer)**: Engineer responsible for toolpaths, reference geometries, and production programming
+- **Engineer I / Engineer II**: Level distinctions for FE and PE roles; advancement follows the [Engineer Progression Framework](/overview/engineer-progression-framework.html) (merit-based, not tenure-only)
 - **EA (Engineering Assistant)**: Support role managing Epicor materials database and job creation
 - **PM (Project Manager)**: Manages project coordination and client communication
 - **PA (Project Advisor)**: Reviews and approves build strategies before FE release
@@ -46,7 +47,13 @@ parent: Overview
   - **Global Production Report**: Read-only, all open jobs from both sites
   - **Site-Specific Production Report**: Updatable, jobs for one site (CW or DF)
 - **Job Entry**: Screen for managing and releasing jobs
-- **UD40 (UD40IN)**: Shipping Components - Kinetic workbench. Future enhancement: toolkit may directly publish SC data here.
+- **UD40 (UD40IN)**: Shipping Components — Kinetic workbench. Future enhancement: toolkit may directly publish SC data here.
+- **UD37**: Shipping Components dashboard used for **CMG** jobs (use **UD40** for standard jobs). See [FE to PE Release](/workflows/fe-to-pe-release.html) checklist.
+- **Rel Opr. (Related Operation)**: Epicor field tying each BOM material to the correct operation; see [FE to PE Release](/workflows/fe-to-pe-release.html) checklist.
+- **Added Mtl**: Checkbox used when materials are added to the BOM after initial release; flag changes per Epicor practice.
+- **SelName audit**: Release review stepping through **SelName** so each part name maps only to matching geometry (see [FE to PE Release](/workflows/fe-to-pe-release.html)).
+- **Specialist spike**: Progression concept: demonstrated senior-level strength in at least two of four pillars (see [Engineer Progression Framework](/overview/engineer-progression-framework.html)).
+- **TSC (Technical Steering Committee)**: Invited senior contributors may support department R&D and standards initiatives; referenced in role expectations.
 - **Project Materials Dashboard**: View all materials for all jobs on a project in one place
 - **Material Transmittal Log**: Backend for Rhino toolkit to print material tags and specifications
 - **Submittal Scope**: What appears on all pages as page titles. May differ from actual Epicor job number (e.g., catalog items).

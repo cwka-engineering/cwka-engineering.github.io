@@ -9,16 +9,18 @@ grand_parent: Tools
 
 # Job Management
 
-> **Related**: [Production Report](/tools/epicor/production-report.html) | [Part Management](/tools/epicor/part-management.html)
+> **Related**: [Production Report](/tools/epicor/production-report.html) | [Part Management](/tools/epicor/part-management.html) | [FE to PE Release](/workflows/fe-to-pe-release.html)
 
 ## Job Entry
 
 **Purpose**: Manage and release jobs.
 
-**Release Checklist**:
+**Top-level release checklist** (Epicor):
 1. Field Dimensions Received
 2. Shop Drawings Approved
 3. BOM Complete
+
+Fabrication Engineers must also satisfy the full **[FE to PE Release checklist](/workflows/fe-to-pe-release.html#pre-release-checklist)** before marking **Released** and submitting the FE→PE form.
 
 **Special Jobs**:
 - Engineering Bucket Jobs
@@ -28,9 +30,11 @@ grand_parent: Tools
 
 ### BOM Management
 - Create BOM for materials and hardware.
-- Assign operations for tracking.
+- Assign **Related Operation** (**Rel Opr.**) for each line so materials roll up correctly.
 - Use Rhino Toolkit for Auto-BOM.
-- **Review BOM quantities before finalizing.**
+- **Review BOM quantities before finalizing.** Post-release BOM line additions must be flagged with **Added Mtl** per process.
+- **Engineering Complete**: Check per material line once quantities and part numbers are verified (see [FE to PE Release](/workflows/fe-to-pe-release.html)).
+- **Fixed QTY**: Verify for each material except where **CMG** rules differ; see FE→PE checklist.
 
 ### Material & Hardware Ordering
 - Confirm items ordered/received before release.
@@ -38,9 +42,15 @@ grand_parent: Tools
 - **Important**: Do not release jobs until materials are confirmed.
 
 ### Job Status Updates
-- Ensure "Engineering Complete" is checked.
-- Update submittal statuses.
+- Ensure **Engineering Complete** is set appropriately on BOM lines.
+- Update submittal statuses (**Submittal Status**, **Submitted Date**, **PA Approved** as applicable).
+- Set **Fabrication Engineer** on the job (may display as **Production Team** on Job Entry) before release.
 - Release jobs and notify PE.
+
+## Shipping components upload
+
+- **UD40**: Shipping Components — Kinetic workbench for most jobs.
+- **UD37**: Use for **CMG** jobs instead of UD40 (see [Glossary](/overview/glossary.html)).
 
 ## Time Entry
 

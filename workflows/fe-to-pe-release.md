@@ -1,14 +1,101 @@
-```
 ---
 layout: default
 title: FE to PE Release Procedure
 permalink: /workflows/fe-to-pe-release.html
 parent: Workflows
+nav_order: 3
 ---
 
-# FE to PE Release Step by Step SOP
+# FE to PE Release
 
-## 1. Understand the Job Structure
+> **Related Documents**: [Project Delivery — Phase 3](/overview/project-delivery.html#phase-3-fe-release-to-production-engineering-pe-handoff) | [PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html) | [Rhino Drafting](/standards/rhino-drafting/) | [Layer Organization](/standards/layer-organization/) | [Epicor Job Management](/tools/epicor/job-management.html) | [Glossary](/overview/glossary.html)
+
+This page has two parts: a **pre-release checklist** (what must be true before you mark the job **Released** in Epicor and submit the **FE to PE Release** form) and a **step-by-step procedure** (how to organize files, update Epicor, and notify the team). Complete the checklist first, then follow the procedure.
+
+---
+
+## Pre-release checklist
+{: #pre-release-checklist}
+
+By marking **Released** in Epicor and completing the **FE to PE Release** form in the dedicated channel, you certify that your deliverables meet the requirements below (aligned with department standards).
+
+### Approval prerequisites
+{: #approval-prerequisites}
+
+- **Build strategy**: Project Advisor has reviewed and approved; **PA Approved** is checked in Epicor where applicable.
+- **Client review**: The client has reviewed the submittal (drawings, models, mockups, samples) and approved; **Submittal Status** is set to **Approved** in Epicor, and **Submitted Date** reflects the last submittal or resubmittal.
+
+### 1. Rhino model geometry and hygiene
+{: #checklist-rhino-geometry}
+
+For command-level detail, see [Rhino Drafting](/standards/rhino-drafting/) and [Part Naming](/workflows/fabrication-engineer/part-naming.html).
+
+- **Cleanup**: Run **Purge** to remove unused blocks, layers, and styles; run **SelDup** to remove duplicate geometry. No layouts (and no layout-only layers/blocks) in the release file unless required by standards. No empty layers. No nested "assembly" blocks that violate release conventions.
+- **Object integrity**: No bad objects (**SelBadObjects**), no open polysurfaces (**SelOpenPolysrf**), no extrusions where polysurfaces are required (**SelExtrusion**); use **ConvertExtrusion** where needed.
+- **Part name uniqueness**: Unlike geometries must not share the same part name. Use **SelName** and step through names so each name refers only to identical parts (or a single part). If two unlike parts shared a name, split names using the next unused **P###** in the series for the shipping component.
+- **Naming conventions**: File name, polysurface, and block names match team standards and Epicor/database compatibility. Hardware blocks use bracketed hardware tags; manufactured linked blocks follow MFG part format. **UserText**: Standard document and object keys (thickness, volume, project ID, etc.) are populated via the [Engineering Toolkit](/workflows/fabrication-engineer/toolkit-setup.html).
+- **Material thickness**: Modeled thickness matches physical materials within company tolerances; confirm stock-on-hand thicknesses with Production Management when needed. Common sheet goods: follow nominal vs. shop-ply conventions in [Material Modeling](/standards/layer-organization/material-modeling.html) and team practice.
+- **Bent metal**: Correct inside bend radius and thickness; 2D flat patterns/unfolds include appropriate bend deductions.
+
+### 2. Layering and organization
+{: #checklist-layers}
+
+See [Layer Organization](/standards/layer-organization/) and [Codes & Tags](/standards/layer-organization/codes-and-tags.html).
+
+- Layer names begin with the material tag pattern required for BOM alignment (e.g. **03_CWKA-FE::PUR::…** / **MFG** parent structure as documented). Handoff layers live under the correct FE PUR/MFG parents; **CON** reference data on **03_CWKA-FE::CON** as applicable.
+- Purge construction-only geometry from the release file. "By Others" geometry may remain when it drives machining coordination.
+
+### 3. ERP, BOM, and material validation
+{: #checklist-bom-erp}
+
+See [Epicor Job Management](/tools/epicor/job-management.html), [Takeoffs](/workflows/fabrication-engineer/takeoffs.html), and [Part Management](/tools/epicor/part-management.html).
+
+- **BOM sync**: Every material tag used in the Rhino model appears on the Epicor BOM; cross-check tags in the model against the BOM.
+- **Parts master**: Every BOM line ties to a row in Epicor **Parts** (no improvised "part-on-the-fly" lines). Request global materials via the Part Requests channel; project-specific and manufactured parts via Part Entry as per process. Allow for **24-hour** sync where applicable.
+- **Related operation**: Each material is assigned to the correct **Rel Opr.** (Related Operation). Post-release BOM changes must be flagged with **Added Mtl** per Epicor practice.
+- **Takeoffs**: BOM gross quantities and board footage follow company standards; solid lumber (SL) minimum dimensions belong in the material description where required.
+- **Fixed quantity**: **Fixed QTY** is verified for each material **except** where CMG rules differ—so parent job quantity does not incorrectly multiply materials.
+- Do not add bulk overage percentage beyond the agreed takeoff amount to BOM quantities.
+
+### 4. Production readiness and tooling
+{: #checklist-production-tooling}
+
+See [Shipping Components](/workflows/fabrication-engineer/shipping-components.html).
+
+- **Shipping components**: Model is split into shipping units. A shipping component is a completed rigid assembly that leaves the shop with one tag. Multiples of **like** geometry may share one SC; **unlike** loose parts cannot share a single SC number.
+- **ERP upload**: Upload the shipping components list to **UD40** (Shipping Components — Kinetic workbench), or **UD37** for **CMG** jobs. Names and quantities must match the model.
+- **Tooling**: Verify shop bed sizes (e.g. NY CNC 5×12, metal laser 5×10), site drill conventions, and for laser: hole diameter not smaller than material thickness. Support PM/Purchasing to order new dies or custom tooling before job start when needed.
+- **Nesting**: Parts fit within sheet rules—not the full nominal sheet is nestable. Use **1/2"** perimeter clear for wood CNC; **greater of 1/4" or material thickness** for metal laser unless otherwise specified.
+- **Manufactured part jobs**: Coordinate with the Project Advisor (PA); submit the Job Request Form, create folders, and remember MFG jobs can release ahead of parent jobs.
+
+### 5. Final handoff and documentation
+{: #checklist-final-handoff}
+
+- **PE Rhino file names** (prefix before `_PE`):  
+  - **Standard job**: `PROJ.NUM` — e.g. `1105.007_PE.3dm`, `1105.007_PE_20250124.3dm`  
+  - **Manufactured part**: `PROJ.MT` or `PROJ.WC` + five-digit part — e.g. `1103.MT.00004_PE.3dm`  
+  - **Catalog item**: two-character account + two-character category + three digits — e.g. `CM.BE.001_PE.3dm`  
+  - **Catalog manufactured part**: account + MT or WC + five digits — e.g. `CM.MT.00005_PE.3dm`  
+  - **Isodate** after `_PE` when using date form: `PROJ.JOB_PE_20250124.3dm`
+- **File organization**: Move the purged PE Rhino file to `03_PE_Releases/PROJ.JOB/Production_Files`. Copy the full PDF fabrication set (including finish/material schedules) to `Production_Drawings`.
+- **Geometry state**: Model reflects geometry as it comes **off the machine** (e.g. sharp corners where round-overs are bench-applied).
+- **PDFs**: Prefer **vector** PDFs where possible; each shipping component called out clearly on drawings.
+- **Epicor (job level)**: **Engineering Complete** checked per material after quantity/part verification; **BOM Complete** and **Field Dimensions Received** complete; **Fabrication Engineer** (may appear as **Production Team** on Job Entry) set to your name.
+
+### Communication and handoff meeting
+{: #communication-handoff-meeting}
+
+- Submit the **FE to PE Release** form and **tag the assigned PM** in the resulting channel post.
+- If release is **after** the scheduled start date, coordinate with adjacent departments and state that coordination in the release post **Notes**.
+- **Mandatory handoff meeting** when any apply: custom tooling/dies; oversized parts needing special nesting; complex non-standard "By Others" integration; details that deviate from established company norms. Request the meeting in the form **Notes**; PE may also request a meeting after file review.
+
+---
+
+## Step-by-step procedure
+{: #step-by-step-procedure}
+
+### 1. Understand the job structure
+{: #sop-job-structure}
 
 For detailed definitions, see the [Glossary](/overview/glossary.html).
 
@@ -17,87 +104,85 @@ For detailed definitions, see the [Glossary](/overview/glossary.html).
 - **WC Jobs**: Wood Component manufacturing jobs.
 - **MT Jobs**: Metal Component or Kit of Parts manufacturing jobs.
 
-## 2. File Organization & Folder Setup
+### 2. File organization and folder setup
+{: #sop-file-organization}
 
-### Navigate to PE Release Folder
+#### Navigate to the PE release folder
+
 Use Windows Explorer paths (not Box links):
+
 ```
 C:\BoxSync\Box\Awarded\PROJECT\03 Engineering\02_WORKING_Drawings_Models\03_PE_Releases
 ```
 
-### Create a New Release Folder
-- Copy the template folder: _PROJ.JOB_ScopeDescription
-- Example: 1102.011_Maitre D Stand
-- Create Missing Subfolders
+#### Create a new release folder
 
-If not present, and releasing a manufacturing job manually create:
-- 00_MT_WC_IP_MfgParts
+- Copy the template folder: `_PROJ.JOB_ScopeDescription`
+- Example: `1102.011_Maitre D Stand`
+- Create missing subfolders.
+
+If not present, and releasing a manufacturing job manually, create:
+
+- `00_MT_WC_IP_MfgParts`
 
 Include files in their respective folders:
+
 - **Production_Files**
-  - Rhino PE Model File
-  - Shipping components (SC) list - when releasing a primary job, not strictly required for manufacturing jobs.
+  - Rhino PE model file
+  - Shipping components (SC) list — when releasing a primary job, not strictly required for manufacturing jobs.
 - **Production_Drawings**
-  - Drawing Set PDF
+  - Drawing set PDF
 
-### File Naming Conventions
-- Rhino model: `[EpicorCode]_PE_YYYYMMDD`
+#### File naming conventions
+
+- Rhino model: `[EpicorCode]_PE_YYYYMMDD` (see also **PE Rhino file names** in the checklist above for catalog/MFG patterns).
 - PDF drawings: `[EpicorCode]_ScopeDescription`
-- SC List: `[EpicorCode]_SHIPPING_COMPONENTS`
+- SC list: `[EpicorCode]_SHIPPING_COMPONENTS`
 
-## 3. Model & Drawing Preparation: Drafting Standards
+### 3. Model and drawing preparation
+{: #sop-model-drawing}
 
-Refer to [Rhino Drafting and Layouts](/standards/rhino-drafting-layouts.html) for detailed drafting standards.
+Refer to [Rhino Drafting](/standards/rhino-drafting/) for drafting standards and the [pre-release checklist](#pre-release-checklist) for release-specific requirements.
 
-## 4. Epicor Release Process
+### 4. Epicor release process
+{: #sop-epicor-release}
 
-For more information on Epicor, see [Epicor Usage in Engineering](/tools/epicor-usage.html).
+For more information on Epicor, see [Epicor Usage in Engineering](/tools/epicor-usage.html) and [Job Management](/tools/epicor/job-management.html).
 
-1. Navigate to the UD40: Shipping Components - Kinetic workbench
-2. In the shipping components Excel sheet for the job, copy the ProjectID, JobNum, SC PartNum, Description, and Order Qty columns, excluding the headings
-3. On the workbench page, right click and Paste New.
-4. Repeat this process for all jobs being released (you don't need to refresh the page or save in between, they can all be uploaded at once.)
-5. Once all shipping components are added, click update in the top right dropdown, and refresh the page
-6. Navigate to the Project using the filter to ensure that all records have been processed successfully.
-7. Go to Epicor > Job Entry
-8. For each line item on the BOM check the following:
-   - Engineering Complete: Quantities verified
-   - Fixed Quantity: Checked unless releasing catalog items, confirm with PM or Engineering Director.
-   - Make Direct: For manufactured parts only.
-   - All materials have a Part Master
-9. **NOTE**: All job specific engineering comments associated to BOM materials (eg., "pull from inventory, PM to verify, use alternate if unavailable, etc.") must be appended to the part description in the BOM.
-10. Hit BOM Complete: All parts and materials accounted for
-11. Hit Release in the Job Entry Page.
+1. Navigate to **UD40**: Shipping Components — Kinetic workbench (use **UD37** for CMG — see [Glossary](/overview/glossary.html)).
+2. In the shipping components Excel sheet for the job, copy the ProjectID, JobNum, SC PartNum, Description, and Order Qty columns, excluding the headings.
+3. On the workbench page, right-click and **Paste New**.
+4. Repeat for all jobs being released (you can paste multiple jobs before refreshing).
+5. Click **Update** in the top-right dropdown and refresh the page.
+6. Open the **Project** filter to confirm records processed successfully.
+7. Go to Epicor **Job Entry**.
+8. For each BOM line:
+   - **Engineering Complete**: Quantities verified.
+   - **Fixed Quantity**: Checked unless releasing catalog items — confirm with PM or Engineering Director.
+   - **Make Direct**: For manufactured parts only.
+   - All materials have a Part Master.
+9. **NOTE**: Job-specific engineering comments on BOM materials (e.g. pull from inventory, PM to verify, use alternate if unavailable) must be appended to the **part description** on the BOM.
+10. **BOM Complete**: All parts and materials accounted for.
+11. **Release** on the Job Entry page.
 
-## 5. Form Submission (FE to PE Release Form)
+### 5. Form submission (FE to PE release form)
+{: #sop-fe-pe-form}
 
-Access the form via FE to PE Release Form (typically available through the Engineering Team SharePoint or internal forms system).
+Access the form via the FE to PE Release Form (typically through the Engineering Team SharePoint or internal forms system).
 
-**Note**: Ensure all prerequisites from [Phase 3: FE Release to Production Engineering](/overview/project-delivery.html#phase-3-fe-release-to-production-engineering-pe-handoff) are complete before submitting.
+**Note**: Complete [Phase 3](/overview/project-delivery.html#phase-3-fe-release-to-production-engineering-pe-handoff) prerequisites and the [pre-release checklist](#pre-release-checklist) before submitting.
 
-### Required Information
-Fill in all required fields:
+#### Required information
+
 - **Name**: Your name
 - **Project**: Project number and name
-- **Job numbers**: Include all jobs being released (e.g., 1085.016, 1085.017)
+- **Job numbers**: All jobs being released (e.g. 1085.016, 1085.017)
 - **Part numbers**: Key part numbers if applicable
 - **Site of fabrication**: Manufacturing site location
-- **File paths**: Use Windows Explorer file paths (not Box links)
-  - Example: `C:\BoxSync\Box\Awarded\1085_ProjectName\03 Engineering\02_WORKING_Drawings_Models\03_PE_Releases\1085.016_Description`
-- **Notes**: Include any special instructions or context
-  - Example: "Includes PROJ.WC.00007 and PROJ.MT.00003"
-  - Note any special handling requirements
+- **File paths**: Windows Explorer paths (not Box links), e.g. `C:\BoxSync\Box\Awarded\1085_ProjectName\03 Engineering\02_WORKING_Drawings_Models\03_PE_Releases\1085.016_Description`
+- **Notes**: Special instructions, included jobs (e.g. "Includes PROJ.WC.00007 and PROJ.MT.00003"), handoff meeting requests, or late-start coordination
 
-Fill in:
-- Name
-- Project
-- Job numbers (include all jobs being released)
-- Part numbers
-- Site of fabrication
-- Use Windows Explorer file paths, not Box links
-- Notes on included jobs (e.g., "Includes PROJ.WC.00007 and PROJ.MT.00003")
+If releasing a **Group Submittal** or **Primary Job** with manufacturing jobs:
 
-If releasing a Group Submittal or Primary Job with Manufacturing Jobs:
-- Combine the client submittal drawings with the job submittal drawings to provide full context.
-- Clearly highlight the job scope in the production drawing set.
-
+- Combine client submittal drawings with job submittal drawings for full context.
+- Clearly highlight job scope in the production drawing set.

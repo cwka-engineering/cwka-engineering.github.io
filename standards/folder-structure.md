@@ -89,7 +89,7 @@ Also includes:
 
 ### 03_PE_Releases
 
-Dedicated to completed work ready for production:
+Dedicated to completed work ready for production. Release contents and naming must also satisfy [FE to PE Release](/workflows/fe-to-pe-release.html).
 
 - Subfolders copied from _PROJ.JOB_ScopeDescription template and renamed per job.
 - Inside:

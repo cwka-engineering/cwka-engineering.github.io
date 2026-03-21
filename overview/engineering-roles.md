@@ -7,34 +7,50 @@ parent: Overview
 
 # Overview of Engineering Roles & Core Competencies
 
-> **Related Documents**: [Project Delivery Overview](/overview/project-delivery.html) | [FE Workflow](/workflows/fabrication-engineer.html) | [PE Workflow](/workflows/production-engineer.html) | [Glossary](/overview/glossary.html)
+> **Related Documents**: [Project Delivery Overview](/overview/project-delivery.html) | [Engineer Progression Framework](/overview/engineer-progression-framework.html) | [FE Workflow](/workflows/fabrication-engineer.html) | [PE Workflow](/workflows/production-engineer.html) | [Glossary](/overview/glossary.html)
 
 The Engineering department is responsible for transforming concepts into products by clearly communicating complex information. Engineers analyze data from various sources (drawings, models, specifications) and synthesize it into actionable information.
 
 For definitions of acronyms and terms used in this document, see the [Glossary](/overview/glossary.html).
 
+**Career levels**: Fabrication and Production Engineers are hired and developed as **Engineer I** or **Engineer II** aligned to role needs. Advancement from I to II follows the [Engineer Progression Framework](/overview/engineer-progression-framework.html) (merit-based; not automatic with tenure).
+
 ## Fabrication Engineer (FE)
 
-Focuses on developing design engineering (DE) geometries into fabrication-ready geometries.
+Focuses on developing design engineering (DE) geometries into fabrication-ready geometries. The end goal is models that are manageable in programming and can be assembled after fabrication.
 
-- The end goal is models that are manageable in programming and can be assembled after fabrication.
-- Responsible for creating shop drawings, which describe material, hardware, size, build strategy, and necessary shipping components.
-- Ensures all material, hardware, and work by outside vendors are ordered and received before approval.
-- Picks up redlines from approved drawing sets and reflects changes in shop drawings.
-- Creates a clean, separate PE file for handoff.
-- Creates the shipping component list.
-- Responsible for the top three checks in Epicor before releasing a job: Field Dimensions Received, Shop Drawings Approved, and BOM Complete.
+**Shared expectations (all FE levels)**
+
+- Create shop drawings that describe material, hardware, size, build strategy, and shipping components.
+- Ensure material, hardware, and outside-vendor scope are ordered and received before approval where applicable.
+- Pick up redlines from approved drawing sets and update shop drawings.
+- Produce a clean PE handoff file, shipping component list, and meet Epicor release expectations ([FE to PE Release](/workflows/fe-to-pe-release.html)): Field Dimensions Received, Shop Drawings Approved, BOM Complete, and the full pre-release checklist.
+
+### Fabrication Engineer I
+
+Core contributor: executes fabrication-level 3D and 2D with **minimal oversight** once onboarded; partners with PMs and senior engineers; tracks time accurately and respects labor budgets; contributes observations to improve workflows. Typically **1–3 years** relevant experience; strong Rhino and drafting proficiency; detail-oriented. *Preferred*: related degree; basic Grasshopper.
+
+### Fabrication Engineer II
+
+Senior contributor and **formal mentor**: leads complex modeling and client/PM-facing technical contact on significant work; solves hard geometry, data, or workflow problems (e.g. advanced parametric workflows); **mentors FE Is** on quality, time entry, and budgets; may be invited to the **TSC** for department standards and R&D. Typically **4–6 years** relevant experience; advanced Rhino and Grasshopper; demonstrated mentorship. *Preferred*: related degree; experience leading client-facing technical discussions.
 
 ## Production Engineer (PE)
 
-Handles all program-related toolpaths, reference geometries, and additional information needed to fabricate a job.
+Handles program-related toolpaths, reference geometries, and information needed to fabricate jobs on the floor.
 
-- Assembles the final release package.
-- Produces a Master Parts List and Lay-up Summary.
-- Copies the PE Rhino file from FE and makes it the working Rhino file for production.
-- Creates a fully cleaned-up '_SHOP' Rhino model if needed for the shop floor.
-- Places completed shop drawings from FE into the Production_Drawings folder.
-- Places all SK's related to production release, including cut sheets for CNC machines.
+**Shared expectations (all PE levels)**
+
+- Assemble the production release package: Master Parts List, Lay-up Summary, CAM outputs as required.
+- Take the PE Rhino file from FE as the working production file; produce a cleaned **_SHOP** model when needed.
+- Place FE shop drawings in **Production_Drawings** and production SKs/cut sheets for CNC.
+
+### Production Engineer I
+
+Core execution: develops **3- and 5-axis** CNC programs and fixtures with increasing independence; supports operators; documents best practices; tracks time and budgets accurately. Typically **1–3 years** relevant experience; **Mastercam** proficiency; solid machining fundamentals. *Preferred*: manufacturing technology credential; operator experience.
+
+### Production Engineer II
+
+Senior expert and **mentor**: leads **complex production runs** and advanced CAM/fixture strategy; mentors PE Is; drives measurable workflow improvements; troubleshoots critical floor issues. Typically **5+ years** experience; strong Mastercam and advanced fabrication strategy. *Preferred*: degree in related field; **5-axis** experience. May be invited to **TSC** (e.g. production workflow initiatives).
 
 ## General Engineer Competencies
 

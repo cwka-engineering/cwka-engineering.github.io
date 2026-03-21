@@ -7,9 +7,68 @@ mermaid: true
 ---
 # Project Delivery Overview – Engineering Workflow
 
-> **Related Documents**: [Engineering Roles](/overview/engineering-roles.html) | [FE Workflow](/workflows/fabrication-engineer.html) | [PE Workflow](/workflows/production-engineer.html) | [FE to PE Release](/workflows/fe-to-pe-release.html)
+> **Related Documents**: [Engineering Roles](/overview/engineering-roles.html) | [Engineering Assistant Workflow](/workflows/engineering-assistant.html) | [FE Workflow](/workflows/fabrication-engineer.html) | [PE Workflow](/workflows/production-engineer.html) | [FE to PE Release](/workflows/fe-to-pe-release.html)
 
 This document provides a high-level overview of the complete engineering workflow from project assignment through closeout.
+
+## Information and artifact flow (DRAFT)
+{: #information-artifact-flow}
+
+> This diagram is adapted from the internal **Engineering Information Flow (DRAFT)**. It highlights **artifacts** (files, lists, Epicor records) and **roles**; dotted-line “form” steps in the original map correspond to submissions such as the [FE to PE Release](/workflows/fe-to-pe-release.html) form. For procedural detail, use the phase sections below and the linked workflows—not this figure alone.
+
+```mermaid
+flowchart TB
+  subgraph award [Award and setup]
+    CA[Contract awarded]
+    SO[Sales order]
+    WS[Working set / PM markup]
+  end
+  CA --> SO
+  SO --> WS
+  subgraph epicorSys [Epicor]
+    EJ[Jobs operations materials]
+  end
+  WS --> EJ
+  EA[Engineering Assistant]
+  EA --> EJ
+  subgraph fe [Fabrication Engineering]
+    FEM[FE model 3dm]
+    FED[FE drawings PDF]
+    BOM[BOM]
+    SC[SC list CSV]
+    TO[Takeoffs]
+  end
+  EJ --> FEM
+  FEM --> BOM
+  FEM --> FED
+  FEM --> SC
+  FEM --> TO
+  subgraph clientLoop [Client and approvals]
+    RFI[RFI submittal status]
+    AR[Approvals and redlines]
+  end
+  FED --> RFI
+  RFI --> CLIENT[Client]
+  AR --> FEM
+  FEPE[FE to PE release form]
+  BOM --> FEPE
+  SC --> FEPE
+  FEM --> FEPE
+  FEPE --> PEM[PE model 3dm]
+  subgraph pe [Production Engineering]
+    MPL[Master parts list]
+    JT[Job traveler]
+    CF[Machine cutfiles]
+    SHOP[Shop model drawings stickers]
+  end
+  PEM --> MPL
+  PEM --> CF
+  PEM --> SHOP
+  EJ --> JT
+```
+
+- **EA** work (job creation, part creation, scheduling) feeds the same Epicor project context FE and PE use—see [Engineering Assistant Workflow](/workflows/engineering-assistant.html).
+- **FE → PE** is the controlled handoff from fabrication-ready data to production programming; see [FE to PE Release](/workflows/fe-to-pe-release.html).
 
 ## Workflow Visualization
 
