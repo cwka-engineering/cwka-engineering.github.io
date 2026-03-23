@@ -7,7 +7,11 @@ parent: Overview
 
 # Overview of Engineering Roles & Core Competencies
 
+<<<<<<< Updated upstream
 > **Related Documents**: [Project Delivery Overview](/overview/project-delivery.html) | [Engineer Progression Framework](/overview/engineer-progression-framework.html) | [FE Workflow](/workflows/fabrication-engineer.html) | [PE Workflow](/workflows/production-engineer.html) | [Glossary](/overview/glossary.html)
+=======
+> **Related Documents**: [Project Delivery Overview](/overview/project-delivery.html) | [FE Workflow](/workflows/fabrication-engineer/) | [PE Workflow](/workflows/production-engineer/) | [Glossary](/overview/glossary.html)
+>>>>>>> Stashed changes
 
 The Engineering department is responsible for transforming concepts into products by clearly communicating complex information. Engineers analyze data from various sources (drawings, models, specifications) and synthesize it into actionable information.
 
