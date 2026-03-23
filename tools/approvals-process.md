@@ -7,11 +7,11 @@ parent: Tools
 
 # PA (Project Advisor) Approvals Process
 
-> **Related Documents**: [FE Workflow](/workflows/fabrication-engineer.html) | [Project Delivery Overview](/overview/project-delivery.html)
+> **Related Documents**: [FE Workflow](/workflows/fabrication-engineer/) | [Project Delivery Overview](/overview/project-delivery.html)
 
 All project jobs must undergo the PA approval process before FE release to ensure build strategies are reviewed and signed off, and to identify escalation points for fabrication and assembly.
 
-**When to Use**: Submit for approval after finalizing shop drawings but before releasing to Production Engineering. See [FE Workflow - PE Release Preparation](/workflows/fabrication-engineer.html#vii-pe-release-preparation) for context.
+**When to Use**: Submit for approval after finalizing shop drawings but before releasing to Production Engineering. See [FE Workflow - PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html) for context.
 
 ## Installing the Approvals App
 

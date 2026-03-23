@@ -7,7 +7,7 @@ parent: Standards
 
 # Folder Structure & File Management Outline
 
-> **Related Documents**: [FE Workflow](/workflows/fabrication-engineer.html) | [PE Workflow](/workflows/production-engineer.html) | [FE to PE Release](/workflows/fe-to-pe-release.html)
+> **Related Documents**: [FE Workflow](/workflows/fabrication-engineer/) | [PE Workflow](/workflows/production-engineer/) | [FE to PE Release](/workflows/fe-to-pe-release.html)
 
 ## Project Organization Overview
 
