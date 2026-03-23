@@ -17,11 +17,12 @@ Welcome to the Engineering Department documentation and workflows wiki.
 
 **New to the Engineering Department?** Start here:
 
-1. **[Onboarding Quick Start Links](/overview/onboarding-quick-start.html)** - Essential links and resources for new team members
-2. **[Engineering Roles & Core Competencies](/overview/engineering-roles.html)** - Understand your role and responsibilities
-3. **[Glossary](/overview/glossary.html)** - Learn common terms and acronyms
-4. **[Project Delivery Overview](/overview/project-delivery.html)** - See the complete workflow from start to finish
-5. **[Engineer Progression Framework](/overview/engineer-progression-framework.html)** - How Engineer I → II advancement works
+1. **[Engineering Manifesto](/overview/manifesto.html)** - Who we are and how we work
+2. **[Onboarding Quick Start Links](/overview/onboarding-quick-start.html)** - Essential links and resources for new team members
+3. **[Engineering Roles & Core Competencies](/overview/engineering-roles.html)** - Understand your role and responsibilities
+4. **[Glossary](/overview/glossary.html)** - Learn common terms and acronyms
+5. **[Project Delivery Overview](/overview/project-delivery.html)** - See the complete workflow from start to finish
+6. **[Engineer Progression Framework](/overview/engineer-progression-framework.html)** - How Engineer I → II advancement works
 
 ---
 

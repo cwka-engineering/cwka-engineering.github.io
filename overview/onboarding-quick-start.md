@@ -30,7 +30,7 @@ Essential links and resources for new Engineering Department team members. Wonde
     *   **Required plugins**: [Box.com Link](https://digifabshop.box.com/s/9plgd3b0d50eiyz0611u3p7pkwzytlqi)
         
 
-> **Related**: [FE Workflow - Engineering Toolkit Usage](/workflows/fabrication-engineer.html#engineering-toolkit-usage) | [Rhino Drafting and Layouts](/standards/rhino-drafting-layouts.html)
+> **Related**: [FE Workflow - Engineering Toolkit Usage](/workflows/fabrication-engineer/#engineering-toolkit-usage) | [Rhino Drafting and Layouts](/standards/rhino-drafting/)
 
 ## Important Links - Epicor
 
@@ -43,13 +43,13 @@ Essential links and resources for new Engineering Department team members. Wonde
 *   **Excel template for pasted time entry into Epicor**: [Box.com Link](https://digifabshop.box.com/s/2iwowy9tzeg0io8frmogpqp0chyv96l1)
     
 
-> **Related**: [Epicor Usage in Engineering](/tools/epicor-usage.html) | [Time Entry](/tools/time-entry.html)
+> **Related**: [Epicor Usage in Engineering](/tools/epicor/) | [Time Entry](/tools/time-entry.html)
 
 ## Engineering Department Calendar
 
-*   **Web view**: [Outlook Calendar](https://outlook.office365.com/owa/calendar/347aac1a230f4c0d82fc650a01e9b2f4@digifabshop.com/dd8fbebc6a7f48969a0baa8639ec11b49451338758022573081/calendar.html)
+*   **Web view**: [Outlook Calendar](https://outlook.office360.com/owa/calendar/347aac1a230f4c0d82fc650a01e9b2f4@digifabshop.com/dd8fbebc6a7f48969a0baa8639451338758022573081/calendar.html)
     
-*   **ICS for Outlook**: [Calendar ICS File](https://outlook.office365.com/owa/calendar/347aac1a230f4c0d82fc650a01e9b2f4@digifabshop.com/dd8fbebc6a7f48969a0baa8639ec11b49451338758022573081/calendar.ics)
+*   **ICS for Outlook**: [Calendar ICS File](https://outlook.office360.com/owa/calendar/347aac1a230f4c0d82fc650a01e9b2f4@digifabshop.com/dd8fbebc6a7f48969a0baa8639451338758022573081/calendar.ics)
     
 
 ## Primary Troubleshooting Contacts

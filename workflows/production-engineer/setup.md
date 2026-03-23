@@ -9,7 +9,7 @@ grand_parent: Workflows
 
 # Setup & Organization
 
-> **Related**: [Folder Structure](/standards/folder-structure.html) | [Layer Organization](/standards/layer-organization.html)
+> **Related**: [Folder Structure](/standards/folder-structure.html) | [Layer Organization](/standards/layer-organization/)
 
 ## Templates
 
@@ -49,7 +49,7 @@ Files produced by PE are stored on the Z: drive.
 All geometry created by PE lives under the layer:
 -   **04_CWKA-PE**
 
-For complete layer organization standards, see [Layer Organization](/standards/layer-organization.html#04_cwka-pe-production-engineering).
+For complete layer organization standards, see [Layer Organization](/standards/layer-organization/#04_cwka-pe-production-engineering).
 
 A sublayer named **MACHINING** is created under `04_CWKA-PE` for all programming geometry:
 -   Perimeter geometry

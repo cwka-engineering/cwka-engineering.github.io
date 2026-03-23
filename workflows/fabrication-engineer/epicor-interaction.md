@@ -13,7 +13,7 @@ grand_parent: Workflows
 
 ## Updating Submittal Status
 
-- Use Epicor (West site) > Production Report. See [Epicor Usage - Production Report](/tools/epicor-usage.html#2-production-report) for details.
+- Use Epicor (West site) > Production Report. See [Epicor Usage - Production Report](/tools/epicor/#2-production-report) for details.
 - Filter by your name and update submittal status after internal review.
 - Status options: Submitted, Revise and Resubmit, Approved, Production Complete.
 
@@ -32,5 +32,5 @@ grand_parent: Workflows
 
 ## See Also
 
-- [Production Report](/tools/epicor-usage.html#2-production-report) - Detailed Epicor procedures
+- [Production Report](/tools/epicor/#2-production-report) - Detailed Epicor procedures
 - [FE to PE Release SOP](/workflows/fe-to-pe-release.html) - Complete release process

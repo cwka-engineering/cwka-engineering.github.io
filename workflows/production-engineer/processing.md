@@ -52,7 +52,7 @@ grand_parent: Workflows
     -   Check for missing or extra parts
 
 5.  **Scribe Requirements**
-    -   Ensure scribe is added if needed (see [Layer Organization - Scribes](/standards/layer-organization.html#scribes))
+    -   Ensure scribe is added if needed (see [Layer Organization - Scribes](/standards/layer-organization/#scribes))
     -   Verify scribe geometry is properly grouped
 
 6.  **Modeling Requirements**
