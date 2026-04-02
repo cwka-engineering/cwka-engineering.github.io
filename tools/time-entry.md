@@ -7,7 +7,7 @@ parent: Tools
 
 # Time Entry
 
-> **Related Documents**: [Epicor Usage](/tools/epicor-usage.html)
+> **Related Documents**: [Epicor Usage](/tools/epicor/)
 
 This document covers time entry procedures using both Epicor and Toggl for Engineering staff.
 

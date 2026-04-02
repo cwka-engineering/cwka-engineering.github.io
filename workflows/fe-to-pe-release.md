@@ -147,7 +147,7 @@ Refer to [Rhino Drafting](/standards/rhino-drafting/) for drafting standards and
 ### 4. Epicor release process
 {: #sop-epicor-release}
 
-For more information on Epicor, see [Epicor Usage in Engineering](/tools/epicor-usage.html) and [Job Management](/tools/epicor/job-management.html).
+For more information on Epicor, see [Epicor Usage in Engineering](/tools/epicor/) and [Job Management](/tools/epicor/job-management.html).
 
 1. Navigate to **UD40**: Shipping Components — Kinetic workbench (use **UD37** for CMG — see [Glossary](/overview/glossary.html)).
 2. In the shipping components Excel sheet for the job, copy the ProjectID, JobNum, SC PartNum, Description, and Order Qty columns, excluding the headings.

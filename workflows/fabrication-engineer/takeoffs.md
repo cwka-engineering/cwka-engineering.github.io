@@ -71,7 +71,7 @@ grand_parent: Workflows
 
 ## See Also
 
-- [Epicor Usage](/tools/epicor-usage.html) - BOM management in Epicor
+- [Epicor Usage](/tools/epicor/) - BOM management in Epicor
 
 ## Footnotes
 

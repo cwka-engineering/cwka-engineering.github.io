@@ -48,7 +48,7 @@ grand_parent: Workflows
 ## See Also
 
 - [Engineering Toolkit](/workflows/fabrication-engineer/toolkit-setup.html) - Setup and configuration
-- [Epicor Usage](/tools/epicor-usage.html) - Epicor troubleshooting
+- [Epicor Usage](/tools/epicor/) - Epicor troubleshooting
 - [Getting Started](/workflows/fabrication-engineer/getting-started.html) - Basic procedures
 
 ## Footnotes

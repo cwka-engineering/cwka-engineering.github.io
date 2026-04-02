@@ -34,7 +34,7 @@ The FE workflow consists of these key phases:
 
 ## Related Resources
 
-- [Epicor Usage](/tools/epicor-usage.html) - Detailed Epicor procedures
+- [Epicor Usage](/tools/epicor/) - Detailed Epicor procedures
 - [Rhino Drafting Standards](/standards/rhino-drafting/) - Drawing conventions
 - [Layer Organization](/standards/layer-organization/) - Layer structure standards
 - [Approvals Process](/tools/approvals-process.html) - Submitting for PA approval

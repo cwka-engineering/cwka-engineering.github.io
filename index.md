@@ -17,11 +17,12 @@ Welcome to the Engineering Department documentation and workflows wiki.
 
 **New to the Engineering Department?** Start here:
 
-1. **[Onboarding Quick Start Links](/overview/onboarding-quick-start.html)** - Essential links and resources for new team members
-2. **[Engineering Roles & Core Competencies](/overview/engineering-roles.html)** - Understand your role and responsibilities
-3. **[Glossary](/overview/glossary.html)** - Learn common terms and acronyms
-4. **[Project Delivery Overview](/overview/project-delivery.html)** - See the complete workflow from start to finish
-5. **[Engineer Progression Framework](/overview/engineer-progression-framework.html)** - How Engineer I → II advancement works
+1. **[Engineering Manifesto](/overview/manifesto.html)** - Who we are and how we work
+2. **[Onboarding Quick Start Links](/overview/onboarding-quick-start.html)** - Essential links and resources for new team members
+3. **[Engineering Roles & Core Competencies](/overview/engineering-roles.html)** - Understand your role and responsibilities
+4. **[Glossary](/overview/glossary.html)** - Learn common terms and acronyms
+5. **[Project Delivery Overview](/overview/project-delivery.html)** - See the complete workflow from start to finish
+6. **[Engineer Progression Framework](/overview/engineer-progression-framework.html)** - How Engineer I → II advancement works
 
 ---
 
@@ -30,23 +31,23 @@ Welcome to the Engineering Department documentation and workflows wiki.
 ### Fabrication Engineer (FE)
 Essential documents for FE work:
 
-- **[FE Workflow](/workflows/fabrication-engineer.html)** - Complete workflow guide
+- **[FE Workflow](/workflows/fabrication-engineer/)** - Complete workflow guide
 - **[FE to PE Release](/workflows/fe-to-pe-release.html)** - Step-by-step release process
 - **[Approvals Process](/tools/approvals-process.html)** - How to submit for PA approval
-- **[Epicor Usage](/tools/epicor-usage.html)** - Epicor dashboards and procedures
+- **[Epicor Usage](/tools/epicor/)** - Epicor dashboards and procedures
 
 ### Production Engineer (PE)
 Essential documents for PE work:
 
-- **[PE Workflow](/workflows/production-engineer.html)** - Complete workflow guide
+- **[PE Workflow](/workflows/production-engineer/)** - Complete workflow guide
 - **[FE to PE Release](/workflows/fe-to-pe-release.html)** - What to expect from FE
-- **[Epicor Usage](/tools/epicor-usage.html)** - Epicor procedures for PE
+- **[Epicor Usage](/tools/epicor/)** - Epicor procedures for PE
 
 ### Engineering Assistant (EA)
 Essential documents for EA work:
 
 - **[EA Workflow](/workflows/engineering-assistant.html)** - Complete workflow guide for job creation and management
-- **[Epicor Usage](/tools/epicor-usage.html)** - Epicor procedures and screens
+- **[Epicor Usage](/tools/epicor/)** - Epicor procedures and screens
 
 ### All Engineers
 Common resources:
@@ -61,14 +62,14 @@ Common resources:
 ### I need to...
 
 **Create or modify drawings:**
-- [Rhino Drafting and Layouts](/standards/rhino-drafting-layouts.html) - Drafting standards
-- [Layer Organization](/standards/layer-organization.html) - Layer structure and conventions
+- [Rhino Drafting and Layouts](/standards/rhino-drafting/) - Drafting standards
+- [Layer Organization](/standards/layer-organization/) - Layer structure and conventions
 
 **Find or organize files:**
 - [Folder Structure & File Management](/standards/folder-structure.html) - Where files go
 
 **Use Epicor:**
-- [Epicor Usage in Engineering](/tools/epicor-usage.html) - Epicor procedures
+- [Epicor Usage in Engineering](/tools/epicor/) - Epicor procedures
 - [Time Entry](/tools/time-entry.html) - Logging time
 
 **Release a job:**
@@ -82,18 +83,18 @@ Common resources:
 ## Reference
 
 ### Standards & Conventions
-- [Rhino Drafting and Layouts](/standards/rhino-drafting-layouts.html) - Drawing standards
-- [Layer Organization](/standards/layer-organization.html) - Rhino layer structure
+- [Rhino Drafting and Layouts](/standards/rhino-drafting/) - Drawing standards
+- [Layer Organization](/standards/layer-organization/) - Rhino layer structure
 - [Folder Structure & File Management](/standards/folder-structure.html) - File organization
 
 ### Tools & Systems
-- [Epicor Usage in Engineering](/tools/epicor-usage.html) - Epicor procedures
+- [Epicor Usage in Engineering](/tools/epicor/) - Epicor procedures
 - [Time Entry](/tools/time-entry.html) - Time logging
 - [Approvals Process](/tools/approvals-process.html) - Approval workflow
 
 ### Workflows
-- [Fabrication Engineer (FE) Workflow](/workflows/fabrication-engineer.html) - Complete FE procedures
-- [Production Engineer (PE) Workflow](/workflows/production-engineer.html) - Complete PE procedures
+- [Fabrication Engineer (FE) Workflow](/workflows/fabrication-engineer/) - Complete FE procedures
+- [Production Engineer (PE) Workflow](/workflows/production-engineer/) - Complete PE procedures
 - [FE to PE Release](/workflows/fe-to-pe-release.html) - Release procedures
 - [Engineering Assistant (EA) Workflow](/workflows/engineering-assistant.html) - Job creation and management
 

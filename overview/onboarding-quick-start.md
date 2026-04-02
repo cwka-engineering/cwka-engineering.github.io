@@ -1,9 +1,9 @@
 ---
-
-## layout: default
+layout: default
 title: Onboarding Quick Start Links
 permalink: /overview/onboarding-quick-start.html
 parent: Overview
+---
 
 # Onboarding Quick Start Links
 
@@ -31,9 +31,9 @@ Essential links and resources for new Engineering Department team members. Wonde
 - **Synapse**: After installing **Synapse**, load **Synapse RCP** once under **Rhino Options** → **Plug-ins** so the Synapse panel is available. Details: [Engineering Toolkit (Setup)](/workflows/fabrication-engineer/toolkit/).
 - **Box / backups**: Turn **off** Rhino’s `.bak` sidecar backups if your workflow uses Box (avoids extra clutter); keep **autosave** on. Optional: place autosave in a convenient folder under `%AppData%` paths if you relocate it.
 - **File locking**: Leave Rhino file locking enabled unless IT standard says otherwise—it helps detect when another user has a file open.
-- **Moving settings between Rhino versions** (e.g. future major upgrades): You can use `**OptionsExport`** in the older version and `**OptionsImport**` in the newer one, and/or copy selected files from the prior version’s `%AppData%\McNeel\Rhinoceros\<version>\settings` folder—handy when upgrading across major releases; not required for day-to-day onboarding.
+- **Moving settings between Rhino versions** (e.g. future major upgrades): You can use **`OptionsExport`** in the older version and **`OptionsImport`** in the newer one, and/or copy selected files from the prior version’s `%AppData%\McNeel\Rhinoceros\<version>\settings` folder—handy when upgrading across major releases; not required for day-to-day onboarding.
 
-> **Related**: [FE Workflow - Engineering Toolkit Usage](/workflows/fabrication-engineer.html#engineering-toolkit-usage) | [Rhino Drafting and Layouts](/standards/rhino-drafting-layouts.html)
+> **Related**: [FE Workflow - Engineering Toolkit Usage](/workflows/fabrication-engineer/#engineering-toolkit-usage) | [Rhino Drafting and Layouts](/standards/rhino-drafting/)
 
 ## Important Links - Epicor
 
@@ -43,7 +43,7 @@ Essential links and resources for new Engineering Department team members. Wonde
 - **Epicor Kinetic Engineering homescreen layout**: [Box.com Link](https://digifabshop.box.com/s/6apk54g4s80q2psbge1y5w5hr1ajtva2)
 - **Excel template for pasted time entry into Epicor**: [Box.com Link](https://digifabshop.box.com/s/2iwowy9tzeg0io8frmogpqp0chyv96l1)
 
-> **Related**: [Epicor Usage in Engineering](/tools/epicor-usage.html) | [Time Entry](/tools/time-entry.html)
+> **Related**: [Epicor Usage in Engineering](/tools/epicor/) | [Time Entry](/tools/time-entry.html)
 
 ## Engineering Department Calendar
 
