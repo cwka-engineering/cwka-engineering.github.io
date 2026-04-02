@@ -26,7 +26,9 @@ grand_parent: Workflows
 - **Confirm Assignment**: After confirming scope in drawings, verify in Epicor that the submittal is assigned to you.
 
 ## Template Usage
+{: #template-usage}
 
+- **Tabloid standard**: Download and use the **Tabloid** FE template for normal work. Other page sizes are **exceptional**; the team does not maintain separate templates for other sizes—see [Layout Structure — Sheet size](/standards/rhino-drafting/layout-structure.html#sheet-size-and-template).
 - **Template Location**: [^transcript-file-structure] Download the latest FE template from `DFWCWKA internal > templates`. This file is locked and should only be updated by designated personnel.
 - **Save Your Copy**: [^transcript-file-structure]
   - Open the template

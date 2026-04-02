@@ -20,6 +20,7 @@ Epicor integrates with tools like Rhino and Toggl to streamline operations from 
 **Key Functions**:
 - **Centralized Data**: Stores part numbers, materials, job statuses.
 - **Workflow Integration**: Supports BOM creation, naming, and job release.
+- **Rhino**: Fabrication engineers use the **[Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html)** in Rhino for read-only Epicor lookups (parts, job BOMs, material schedules) and for publishing that data onto drawing layouts—see that page for how dashboards and transmittal data connect.
 
 ## Multi-Site Configuration
 
@@ -33,14 +34,16 @@ Epicor operates with multiple sites (CWK and Digifab Shop). [^transcript-epicor-
 ## Topic Index
 
 1. **[Dashboards](/tools/epicor/dashboards.html)** - Submittal, Project Materials, and Scheduling dashboards
-2. **[Production Report](/tools/epicor/production-report.html)** - Using the Production Report for status updates
-3. **[Part Management](/tools/epicor/part-management.html)** - Creating and managing parts (GM, WC, Custom)
-4. **[Job Management](/tools/epicor/job-management.html)** - Job entry, release checklists, and responsibilities
-5. **[Troubleshooting](/tools/epicor/troubleshooting.html)** - Common issues and solutions
+2. **[Drafting Toolkit (Rhino)](/workflows/fabrication-engineer/toolkit/drafting.html)** - Epicor part/BOM/schedule readout and layout publish from Rhino
+3. **[Production Report](/tools/epicor/production-report.html)** - Using the Production Report for status updates
+4. **[Part Management](/tools/epicor/part-management.html)** - Creating and managing parts (GM, WC, Custom)
+5. **[Job Management](/tools/epicor/job-management.html)** - Job entry, release checklists, and responsibilities
+6. **[Troubleshooting](/tools/epicor/troubleshooting.html)** - Common issues and solutions
 
 ## Quick Links
 
 - **My Assignments**: [Submittal Dashboard](/tools/epicor/dashboards.html#submittal-dashboard)
+- **Rhino / layouts**: [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html)
 - **Status Updates**: [Production Report](/tools/epicor/production-report.html)
 - **New Parts**: [Part Management](/tools/epicor/part-management.html)
 

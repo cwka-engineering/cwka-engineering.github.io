@@ -88,6 +88,8 @@ parent: Overview
 ## Tools & Systems
 
 - **Engineering Toolkit**: Grasshopper-based toolkit for Rhino integration with Epicor
+  - **Drafting Tab**: Read-only Epicor lookups (parts, job BOMs, material schedules) and publishing to drawing layouts—the same workflow demonstrated historically as the in-Rhino “Epicor toolkit” before it was folded into the shared toolkit. See [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html).
+  - **Modeling Tab**: Modeling, part naming, and related workflows (including shared hardware library behavior from McMaster-Carr requests). See [Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html).
   - **FE Toolkit**: Currently available, PE toolkit in development
   - **Synapse**: Plugin required for toolkit - enables custom UI within Rhino
   - **Package Manager**: Rhino 8 built-in plugin manager (like an App Store)

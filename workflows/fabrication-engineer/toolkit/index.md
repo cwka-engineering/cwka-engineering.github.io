@@ -12,6 +12,11 @@ has_children: true
 
 > **Related**: [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html) | [Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html)
 
+## Drafting vs Modeling
+
+- **Drafting**: [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html) — Epicor-driven **schedules and BOM** on layouts, part lookup, template/layout restore, and **publish** workflows that keep drawings aligned with Epicor and the PM-maintained material schedule.
+- **Modeling**: [Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html) — Part naming, **L00/L001** style outputs, analysis, and **hardware** integration (including the shared library populated via McMaster-Carr requests).
+
 ## Launching Toolkit
 
 - **Open Rhino**: Synapse panel > Grasshopper > Load latest FE toolkit. [^transcript-toolkit-setup]
@@ -24,7 +29,7 @@ has_children: true
 
 ### Plugin Requirements
 - **PackageManager**: [^transcript-toolkit-setup] Starting with Rhino 8, use the built-in Package Manager (run command `PackageManager`) to install required plugins. The toolkit requires specific plugins - if you try to launch without them, it will fail and show a reset button listing required plugins.
-- **Required Plugin**: Synapse - allows custom UI within Rhino. The Synapse panel must be in the foreground when launching Grasshopper.
+- **Required Plugin**: Synapse - allows custom UI within Rhino. The Synapse panel must be in the foreground when launching Grasshopper. After installing Synapse from Package Manager, **load Synapse RCP** once: **Rhino Options** → **Plug-ins** → find **Synapse RCP** (remote control panel) → right-click → **Load Plug-in** (or equivalent) so the Synapse panel appears.
 
 ### Login (Epicor Data)
 - **Login**: [^transcript-toolkit-setup] Type your Epicor username, hit enter (caches username). Enter password, hit enter (caches password). Both are cached to disk for future use.

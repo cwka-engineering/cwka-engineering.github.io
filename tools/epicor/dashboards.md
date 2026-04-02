@@ -44,7 +44,7 @@ grand_parent: Tools
 - Group and filter capabilities
 - Summary functions for quantity tracking
 
-**Related**: Material Transmittal Log - backend for Rhino toolkit to print material tags.
+**Rhino integration**: The material schedule and approval context that PMs maintain in Epicor and related processes feed the **[Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html)** in Rhino for **job BOM** and **general requirements / schedule** publish workflows. Use the Drafting Toolkit to keep drawing layouts aligned with Epicor; see also **Material Transmittal** / project materials practice on this dashboard.
 
 ## Scheduling Dashboards
 

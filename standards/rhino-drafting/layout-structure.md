@@ -11,6 +11,12 @@ grand_parent: Standards
 
 > **Related**: [Printing](/standards/rhino-drafting/printing.html) | [Rhino Drafting Overview](/standards/rhino-drafting/)
 
+## Sheet size and template
+{: #sheet-size-and-template}
+
+- **Standard**: Engineering uses a **single Tabloid** layout template for **all** projects. Use the current FE template from the team location (see [Getting Started](/workflows/fabrication-engineer/getting-started.html#template-usage)).
+- **Other sizes**: Non-standard sheet sizes are reserved for **unusual circumstances only**. The department does **not** maintain alternate templates for other sizes—if an exception is required, coordinate with template owners and project leadership.
+
 ## Page Numbering System
 
 Layouts follow a "Hundred level page number" system:

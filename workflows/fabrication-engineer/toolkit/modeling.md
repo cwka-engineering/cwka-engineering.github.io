@@ -11,6 +11,11 @@ grand_parent: Fabrication Engineer (FE)
 
 > **Related**: [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html) | [Takeoffs](/workflows/fabrication-engineer/takeoffs.html)
 
+## Shared hardware library (McMaster-Carr)
+
+- When you request hardware models through the **McMaster-Carr API** from the Modeling toolkit workflow, those models are **added automatically** to a **shared engineering hardware library** in the background—you do not need to maintain a separate folder structure by hand. [^transcript-integration-2026]
+- Continue to use **blocks** for hardware in models per release and naming standards ([FE to PE Release](/workflows/fe-to-pe-release.html), [Takeoffs](/workflows/fabrication-engineer/takeoffs.html)); the library helps keep everyone on consistent geometry over time.
+
 ## Parts List Tab
 
 ### L00 - Master Parts List
@@ -35,3 +40,4 @@ grand_parent: Fabrication Engineer (FE)
 
 ## Footnotes
 [^transcript-adv-toolkit]: Source: Training Video Transcript - "Adv. Toolkit Functions"
+[^transcript-integration-2026]: Department practice as of wiki integration (2026); confirm UI labels in the current Modeling tab.

@@ -1,8 +1,10 @@
 # Training Video Transcripts
 
-This folder contains transcripts from training videos that need to be reviewed and incorporated into the wiki.
+This folder contains transcripts from training videos and meetings. Plaintext (`.txt`) can be generated from `.docx` using [`../Convert-DocxToPlainText.ps1`](../Convert-DocxToPlainText.ps1).
 
-**Status**: ✅ All previous transcripts have been processed and integrated into the wiki. This folder is ready for new transcripts.
+**Latest integration (2026-04)**: Content from the three `.txt` files in this folder was incorporated into the wiki (see [`../INTEGRATION_COMPLETE.md`](../INTEGRATION_COMPLETE.md) — section **2026-04 — Transcript batch**). Source `.txt` / `.docx` files remain here for reference.
+
+**Status**: ✅ Latest batch integrated. This folder is ready for new transcripts when needed.
 
 ## Special Handling Required
 
