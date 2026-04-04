@@ -6,3 +6,9 @@ vendor/
 .bundle/
 Gemfile.lock
 
+# Source transcripts and archives (large, not for publication)
+ingest/transcripts/*.txt
+ingest/transcripts/*.docx
+ingest/archive/**/*.txt
+ingest/archive/**/*.docx
+

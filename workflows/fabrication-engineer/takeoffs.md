@@ -63,7 +63,7 @@ Modeling Toolkit → **2D Nesting**. Select the sheet material (width/length pre
   3. Choose stick length (default 8 feet, can try 10, 12, etc.)
   4. Show optimization - displays parts placed within sticks with waste per stick shown in red
   5. View overall waste percentage
-- **Considerations**: [^transcript-adv-toolkit] Stick length selection must be done in coordination with purchasing and shop - FE is not ultimately the person who selects stick length. This tool provides information to give to purchaser (e.g., Bill Carr for wood, EN for metal).
+- **Considerations**: [^transcript-adv-toolkit] Stick length selection must be done in coordination with purchasing and shop — FE is not ultimately the person who selects stick length. This tool provides information to give to the purchaser (e.g., the wood buyer for wood, the metals coordinator for metal).
 - **Export Options**: [^transcript-adv-toolkit]
   - Cut list of specific lengths (quantity of each cut length with part numbers)
   - Text representation of optimization (stick-by-stick cutting sequence for best yield)
