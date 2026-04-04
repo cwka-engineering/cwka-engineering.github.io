@@ -11,6 +11,16 @@ grand_parent: Standards
 
 > **Related**: [Details](/standards/rhino-drafting/details.html) | [Hatches](/standards/rhino-drafting/hatches.html)
 
+## How do I create a clipping plane for a section cut?
+{: #how-to-create-clipping-plane}
+
+Use the **Clipping Plane** command on the `03_CWKA-FE::CON::CLIP` sublayer. Set **Custom Depth** (e.g., 12 inches) to limit what's visible — useful for clearing adjacent scope/visual noise. In clipping plane properties, toggle the plane on/off per layout detail view. Flip direction if the section faces the wrong way.
+
+## How do I create a section tag that links to the detail page?
+{: #how-to-create-section-tag}
+
+Insert the **detail tag** block from Legends and Symbols. Link the block attributes to the detail page number and detail number. The tag follows the section detail correctly across layouts.
+
 ## Section Views
 
 - Use the **detail tag** block from Legends and Symbols to create section reference tags.

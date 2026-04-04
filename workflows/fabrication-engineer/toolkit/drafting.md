@@ -62,6 +62,11 @@ The Drafting Toolkit is the in-Rhino interface for **read-only Epicor lookups** 
 - **Restore Layout Space**: Pulls in latest versions of layout pages from template. Hover over pages to see descriptions (e.g., "Master Parts List", "Fabrication Drawing", "G00 General Schedule"). Can choose specific pages to restore.
 - **After Modeling Changes**: [^transcript-drafting-toolkit] Good practice - after making changes to model space (importing geometry, modeling new parts), click the reset button to ensure toolkit grabs the freshest data from model space.
 
+## How do I set drawing variables (submittal scope, project metadata)?
+{: #how-to-set-drawing-variables}
+
+Drafting Toolkit → **Setup tab**. The submittal scope is auto-populated from the filename; override any field manually. Publish changes to write variables to Rhino Doc UserText. These variables populate throughout all drawing layouts.
+
 ## Epicor Metadata & Submittal Scope
 
 - **Auto-Assignment**: [^transcript-drafting-toolkit] By default, toolkit automatically assigns submittal scope to match the file name (e.g., file `1091.008_FE` → scope `1091.008`). Assumes you've intentionally named the file following conventions.
@@ -76,14 +81,25 @@ The Drafting Toolkit is the in-Rhino interface for **read-only Epicor lookups** 
 - **Group Submittals**: Specify multiple job numbers for group submittals.
 - **Default View**: [^transcript-drafting-toolkit] Setup tab shows Epicor metadata expanded by default, submittal scope hidden (can expand/collapse as needed).
 
-## Project Tab
+## How do I populate the T00 (Title/Project) page?
+{: #how-to-populate-t00}
 
-- Publish changes to populate **T00** layout with Epicor schedule.
-- Manually fill in architect and project address.
+Drafting Toolkit → **Project tab** → **Publish Changes**. Manually fill fields not tracked in Epicor (architect, project address). The toolkit auto-populates project metadata from Epicor for the rest.
 
-## Schedules Tab
+## How do I populate the G00 (General Requirements/Schedules) page?
+{: #how-to-populate-g00}
 
-- Populate **G00** schedules page.
+Drafting Toolkit → **Schedules tab**. Enter the project number, select the G00 layout, and publish. Data is pulled from the Material Transmittal Log. If a material doesn't appear, the PM may not have added it to the TRA yet — communicate with your PM. See [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html).
+
+## How do I publish BOM data to the pick list (L001)?
+{: #how-to-publish-bom-to-l001}
+
+Drafting Toolkit → **Schedules tab** → BOM section. Enter the job number, cache the data, review the data table, then publish. Can filter to hardware-only or show the full BOM.
+
+## How do I handle a group submittal in the toolkit?
+{: #how-to-handle-group-submittal}
+
+Set submittal scope to `PROJ.GS.001` format, then specify the individual jobs covered (e.g., 1091.008, 1091.009, 1091.010). BOM pulls will cover all specified jobs.
 
 ## Tags Tables & BOM
 

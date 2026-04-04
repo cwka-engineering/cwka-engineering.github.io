@@ -11,6 +11,16 @@ grand_parent: Workflows
 
 > **Related**: [Part Naming](/workflows/fabrication-engineer/part-naming.html) | [PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html)
 
+## How do I add SC descriptions after part naming?
+{: #how-to-add-sc-descriptions}
+
+Modeling Toolkit → after naming, the toolkit identifies shipping components. Provide a description for each SC (e.g., "spacer", "base carcass", "seat cushion"). Click **Publish Changes** to write to the document.
+
+## How do I export the SC list for PE release?
+{: #how-to-export-sc-list}
+
+Modeling Toolkit → after publishing SC descriptions, use the **Export** function to generate the shipping components Excel file. The exported file is formatted for paste-insert into Epicor UD40. Place the exported file in the PE release folder under `Production_Files`.
+
 ## SC List
 
 - Use Excel template from:

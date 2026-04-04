@@ -54,36 +54,64 @@ parent: Overview
 - **SelName audit**: Release review stepping through **SelName** so each part name maps only to matching geometry (see [FE to PE Release](/workflows/fe-to-pe-release.html)).
 - **Specialist spike**: Progression concept: demonstrated senior-level strength in at least two of four pillars (see [Engineer Progression Framework](/overview/engineer-progression-framework.html)).
 - **TSC (Technical Steering Committee)**: Invited senior contributors may support department R&D and standards initiatives; referenced in role expectations.
-- **Project Materials Dashboard**: View all materials for all jobs on a project in one place
-- **Material Transmittal Log**: Backend for Rhino toolkit to print material tags and specifications
+- **Project Materials Dashboard**: View all materials for all jobs on a project in one place. Enter 4-digit project number, group by ClassID or material code for cross-job BOM review.
+- **PM Materials Dashboard**: Epicor dashboard where PMs manage shop drawing submittal status, tag materials to the TRA, and signal purchasing readiness. Information flows from the Material Transmittal Log into this dashboard (one-way).
+- **Material Transmittal Log**: Epicor dashboard (CW Material Transmittal Log — Kinetic) that tracks submittal status of all materials, finishes, and hardware on a project. Structured as a TRA job (format: `ProjectNumber.TRA`) with four subassemblies: Finish Tags, Veneer and Solid Wood Tags, General Material Tags, and Hardware Tags. The PM maintains this log. The Engineering Toolkit pulls from it to populate the G00 page. See [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html).
 - **Submittal Scope**: What appears on all pages as page titles. May differ from actual Epicor job number (e.g., catalog items).
 - **Engineering Bucket Jobs**: Project-wide tasks (format: PROJ.ENG). Operations include: Design, Engineering, Fabrication Engineering, Lead Coordination, Project Meetings, BIM Coordination.
-- **Time Phase Inquiry**: Shows which jobs a material code is currently BOM'd to (demand tracking)
+- **Time Phase Inquiry**: Shows which jobs a material code is currently BOM'd to (demand tracking). Access via Epicor search.
 - **Part Transaction History**: Shows inventory history (credits/debits) for any material code
 - **Cycle Count**: Shows current on-hand quantities for materials in current site
+- **Truck Entry**: Epicor screen where PMs create and manage ship dates. Truck IDs follow format `#### – Truck ##` (e.g., `1091 – Truck 01`). "Need By" is the on-site date; "Ship By" is the departure date. These dates cascade into Sales Order releases, which set job Required By dates. See [Scheduling Chain](/overview/scheduling-chain.html).
+- **Office MES**: Digital time clock in Epicor. Options: Start Production (manufacturing jobs), Start Indirect (bucket/indirect jobs), Start Rework.
 
 ## Drawing & Layout Terms
 
-- **T00**: Title Sheet
-- **G00**: General Requirements and Schedules
-- **1XX**: Reference Plans
-- **2XX**: Shop Drawings
-- **3XX**: Install & Shipping Drawings
-- **4XX**: Fabrication Supplements
-- **SKXX**: Sketches (not for submission)
+- **T00**: Title Sheet — project cover page with job index.
+- **G00**: General Requirements and Schedules — material/finish tags populated from TRA via the Engineering Toolkit. See [Cover Sheet & Common Pages](/standards/rhino-drafting/cover-sheet-common-pages.html).
+- **1XX**: Reference Plans — overall floor plans, enlarged plans, RCPs, VIF plans.
+- **2XX**: Shop Drawings — ordered as: (1) Iso/BOM, (2) Plans, (3) Elevations, (4) Sections, (5) Details.
+- **3XX**: Install & Shipping Drawings — shipping components list and installation supplements (assembly instructions specific to site conditions).
+- **4XX**: Fabrication Supplements (internal use) — layup ("wedding cake") assembly information, veneer sequence drawings, glue-up jig drawings.
+- **SKXX**: Sketches — for quick feedback from relevant parties (structural consultation, client meetings, pre-submittal). Not included in the submission set.
 - **Detail View**: Specific view on a layout page. Must be locked once finalized to prevent accidental shifting.
-- **Clipping Plane**: Creates section cuts through geometry. Can set custom depth to control visibility range.
+- **Clipping Plane**: Creates section cuts through geometry. Lives on `03_CWKA-FE::CON::CLIP` layer. Can set custom depth to control visibility range.
 - **Section Style**: Hatch pattern assigned to a layer. Configured in Layer Manager > Section Style column.
-- **Name Positions**: Time-stamped locations of parts in Rhino space. Used to toggle between assembled and exploded views.
-- **Master Parts List (L00)**: Standardized parts schedule format for drawing sets (targeted list, not comprehensive PE Excel).
+- **Named Positions**: Time-stamped locations of parts in Rhino space. Used to toggle between assembled and exploded views. Best set at the end of the modeling process when geometry is fabrication-ready, because altering a geometry's volume gives it a new GUID and breaks the association. Use the "Append" function to re-register geometry if this happens.
+- **Master Parts List (L00)**: Standardized parts schedule format for drawing sets.
 - **Pick List (L001)**: Backend model space page for BOM information during design (not typically printed externally).
+
+## Epicor Material Class Codes
+
+Every material and part number in Epicor is assigned a material class. These are distinct from drawing material tags (see [Material Tag Vocabulary](/standards/reference-tables/material-tag-vocabulary.html)).
+
+| Code | Definition |
+|------|-----------|
+| WC | Cabinet or Wood Component (custom) |
+| FU | Fabric/Upholstery |
+| FM | Finish Material (ordered specific to project) |
+| GL | Glass |
+| HW | Hardware (excluding electrical) |
+| LE | Lighting/Electrical |
+| MT | Custom Metal parts/assemblies |
+| IM | GM Metal (inventory metal raw material) |
+| MC | Misc (avoid if possible) |
+| SG | Sheet Goods (excluding metal and solid surface) |
+| SH | Shop Supplies (general consumables) |
+| SL | Solid Lumber |
+| SS | Solid Surface |
+| ST | Stone |
+| TO | Tooling (project-specific) |
 
 ## Material Terms
 
-- **Lay-up**: Pre-laminated material assembly
-- **Edgebanding (EB)**: Material applied to exposed edges
-- **Scribe**: Oversized dimension for field fitting
-- **VIF (Verify in Field)**: Dimensions to be verified on-site
+- **Lay-up (PRE)**: Pre-laminated material assembly. Uses a specific code system: `PRE_[face]_[core]_[backer]_[thickness in mm]`. Numbers are Epicor GM.SG.XXXXX codes with leading zeros dropped. See [Lay-Up Formulas](/standards/reference-tables/lay-up-formulas.html).
+- **Edgebanding (EB)**: Material applied to exposed edges. Do not model for straight, square edges (edgebander handles these). Model for: post-lam, solid wood EB, curved edges, notches, cutouts, and edges that can't go through the edgebander.
+- **Scribe**: Oversized dimension for field fitting. Created by copying finished geometry, extending the face to oversized dimension, and moving to `04_CWKA-PE::REF`.
+- **VIF (Verify in Field)**: Dimensions to be verified on-site. Uses the `CWKA_2024-VIF` annotation style.
+- **Material Tag**: Project-specific identifier for a material or finish, used on drawings and in the Material Transmittal Log. Format: abbreviation + double-digit number with no spaces/hyphens/underscores (e.g., PLY01, MDF02, FN03). See [Material Tag Vocabulary](/standards/reference-tables/material-tag-vocabulary.html).
+- **ARCH Tag**: Architect's tag designation for the same material. Cross-referenced on the G00 page alongside the CWK material tag.
+- **Transmittal Number**: Tracking number for material submittals, format T###.## (e.g., T5.01)
 
 ## Tools & Systems
 

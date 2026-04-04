@@ -11,6 +11,21 @@ grand_parent: Tools
 
 > **Related**: [Production Report](/tools/epicor/production-report.html) | [Job Management](/tools/epicor/job-management.html)
 
+## How do I view all materials for a project?
+{: #how-to-view-project-materials}
+
+Open the **Project Materials Dashboard**. Enter the project number. Group by job number to review BOMs across multiple jobs, or group by material class/code to see total quantities needed for purchasing. Use summary functions for quantity tracking.
+
+## How do I check material demand for a job?
+{: #how-to-check-demand}
+
+In the Project Materials Dashboard, filter to the specific job. Review BOM quantities, check **Fixed QTY** status, and compare against the material transmittal approval status. For Rhino-level BOM data, use the [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html) job BOM lookup.
+
+## How do I check current inventory levels?
+{: #how-to-check-inventory}
+
+Use Epicor's **Part Transaction History** or **Quantity Adjustment** views to check on-hand inventory for a specific part number. For a project-wide view, the Project Materials Dashboard shows demand vs. availability context. Coordinate with the PM for purchasing decisions.
+
 ## Submittal Dashboard
 
 **Purpose**: Homepage for Fabrication Engineers (FEs). [^transcript-epicor-scheduling] This is your assignment homepage when you receive a new scope of work. [^transcript-getting-started]

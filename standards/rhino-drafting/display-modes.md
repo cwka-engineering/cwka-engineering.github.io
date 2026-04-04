@@ -11,6 +11,16 @@ grand_parent: Standards
 
 > **Related**: [Printing](/standards/rhino-drafting/printing.html) | [Hatches](/standards/rhino-drafting/hatches.html)
 
+## How do I use Pen mode for clean vector output?
+{: #how-to-use-pen-mode}
+
+Set the detail view display to **Pen** mode (must be downloaded and installed — see [Onboarding Quick Start](/overview/onboarding-quick-start.html#how-to-import-display-modes)). Pen produces vector output with no hidden lines. Set **Output Color** to **Print Color** in the print window.
+
+## How do I use Technical mode to show hidden lines?
+{: #how-to-use-technical-mode}
+
+Set the detail view display to **Technical** mode (must be downloaded and installed). Technical produces vector output with hidden lines rendered as light gray. Set **Output Color** to **Print Display**. If you need all-black output, create a **Layer State** first, then set all scope geometry to black and print. Alternatively, use Bluebeam's color processing tool post-print.
+
 ## Monochrome
 
 - Shows silhouette and curvature well

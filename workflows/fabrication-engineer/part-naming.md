@@ -11,6 +11,31 @@ grand_parent: Workflows
 
 > **Related**: [Engineering Toolkit](/workflows/fabrication-engineer/toolkit-setup.html) | [Shipping Components](/workflows/fabrication-engineer/shipping-components.html)
 
+## How do I group parts before naming?
+{: #how-to-group-parts}
+
+Parts must be grouped into logical groups based on how they ship before naming. Use **Set Group Name** for SC numbers (e.g., SC005). For MT parts, use MT prefix (e.g., "MT7"). Blocks won't appear in the "Select Name" list — explode or work with geometry directly.
+
+## How do I generate part names using the toolkit?
+{: #how-to-generate-names}
+
+Modeling Toolkit → **Part Naming** tab → **Generate Names** for active groups. Preview attributes (thickness, dimensions, area, volume) and use **Shade Unique** to visually verify part types before publishing.
+
+## How do I name manufactured (MT) parts?
+{: #how-to-name-mfg-parts}
+
+Toggle to **Manufactured Part mode** in the Part Naming tab. This triggers additional geometry analysis (cuts on ends, shape analysis, length comparisons). Remember to turn it off when done. When incorporating MT parts into a parent job, **do not rename them** — MT parts keep their original names.
+
+## How do I replace name segments (e.g., job number changed)?
+{: #how-to-replace-name-segments}
+
+Modeling Toolkit → **Replace Name Segments** tab. Change specific segments (e.g., job number from 8 to 12) without affecting SC numbers or P numbers. Useful when reusing designs across projects.
+
+## How do I audit part name uniqueness before release?
+{: #how-to-audit-names}
+
+Use **SelName** and step through each name to verify unlike geometries don't share the same part name. If two unlike parts share a name, split using the next unused **P###** in the series. All parts must be named via the toolkit (not manually) for downstream BOM workflows to work.
+
 ## Grouping & Naming
 
 - **Grouping First**: [^transcript-adv-toolkit-ii] Parts must be grouped into logical groups based on how they need to be sent to shop or field before naming.

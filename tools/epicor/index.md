@@ -13,6 +13,16 @@ Central system for managing project data, workflows, and production readiness.
 
 > **Related Documents**: [Time Entry](/tools/time-entry.html) | [FE Workflow](/workflows/fabrication-engineer/) | [Approvals Process](/tools/approvals-process.html)
 
+## How do I import and set up my Epicor layout?
+{: #how-to-import-layout}
+
+In Epicor, navigate to your home screen. Right-click the card area → **Import Layout** to load a shared layout file from the Engineering Team folder. Arrange cards by dragging/dropping. Site-specific cards (labeled CW or DF) only work in their corresponding site — see [Multi-Site Operations](/tools/epicor/multi-site-operations.html).
+
+## How do I personalize dashboard columns?
+{: #how-to-personalize-columns}
+
+Right-click any column header → **Personalize**. Add, remove, or reorder columns. Save personalization so it persists across sessions. Common additions: PE Start Date, Submittal Status, Hours Booked, Fixed QTY status.
+
 ## Overview
 
 Epicor integrates with tools like Rhino and Toggl to streamline operations from design to release.
@@ -38,7 +48,8 @@ Epicor operates with multiple sites (CWK and Digifab Shop). [^transcript-epicor-
 3. **[Production Report](/tools/epicor/production-report.html)** - Using the Production Report for status updates
 4. **[Part Management](/tools/epicor/part-management.html)** - Creating and managing parts (GM, WC, Custom)
 5. **[Job Management](/tools/epicor/job-management.html)** - Job entry, release checklists, and responsibilities
-6. **[Troubleshooting](/tools/epicor/troubleshooting.html)** - Common issues and solutions
+6. **[Multi-Site Operations](/tools/epicor/multi-site-operations.html)** - CWK/DFW site switching, site-specific behavior, time entry
+7. **[Troubleshooting](/tools/epicor/troubleshooting.html)** - Common issues and solutions
 
 ## Quick Links
 

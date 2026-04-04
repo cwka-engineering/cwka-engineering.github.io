@@ -13,23 +13,66 @@ parent: Standards
 
 The CWK Engineering folder structure organizes all project-related files. Consistent folder structure ensures efficient file location and collaboration across the engineering team.
 
+## Full Box Hierarchy
+
+```
+Box/
+  Awarded/
+    [4-digit ProjectCode]_[ProjectDescription]/
+      01 Precon/
+      02 Project Management/
+        05_Material_Finish_Log/
+      03 Engineering/
+        01_INCOMING_Documents/
+          00_Contract_Drawings_from_Precon/
+          01_Addendum_Drawings_Post_Contract/
+          02_Working_Set/
+          03_Spec_Sheets/
+          04_Coordination_Documents/
+            _AdjacentSub_Drawings_Models/
+            _Processed_Laser_Scans/
+        02_WORKING_Drawings_Models/
+          00_Lead_Project_Eng/
+            _Shared_Display_Modes/
+            _Shared_GH/
+          01_FE_Models/
+            [PROJ.JOB_ScopeDescription]/
+            00_GS_Master_Models/
+          02_CoverSheet_CommonPages/
+          03_PE_Releases/
+            [PROJ.JOB_ScopeDescription]/
+              Production_Files/
+              Production_Drawings/
+            00_MT_WC_IP_MfgParts/
+              [PROJ.M.000 or PROJ.W.000]/
+        03_OUTGOING_Submittals/
+          [PROJ.JOB_ScopeDescription]/
+            00_Internal_Review/
+            01_Outgoing/
+            02_Returned/
+      04 Purchasing/
+      05 Shipping/
+```
+
+Always use **Windows Explorer paths** (not Box links) when referencing file locations in release forms and team communications.
+
 ## PROJECT ROOT FOLDER
 
-- Location: Contains all active projects.
-- Example: Awarded
+- Location: `Box/Awarded/`
+- Contains all active projects
 
 ## SPECIFIC PROJECT FOLDER
 
 **Naming Convention**:
 ```
-Project Number_Project Description_Year Awarded
+[4-digit ProjectCode]_[ProjectDescription]
 ```
-Example: `1085_Lucas Retail Expansion and Security Pavilion_HD_2024`
+Example: `1085_Lucas Retail Expansion and Security Pavilion`
 
 ## DEPARTMENTS Folder
 
 Contains folders for all company departments:
-- 01 Sales
+- 01 Sales (Precon)
 - 02 Project Management
 - 03 Engineering
 - 04 Purchasing
@@ -56,67 +99,62 @@ Contains all job-related documents received to date:
 
 #### 04_Coordination_Documents
 - Documentation for installation coordination:
-  - _AdjacentSub_Drawings_Models: Floor plans, 3D models.
-  - _Processed_Laser_Scans: Cleaned 3D laser scan files.
+  - `_AdjacentSub_Drawings_Models/`: Floor plans, 3D models from adjacent trades.
+  - `_Processed_Laser_Scans/`: Cleaned 3D laser scan files.
 
 ### 02_WORKING_Drawings_Models
 
 Houses working drawings and models:
 
 #### 00_Lead_Project_Eng
-- _Shared_Display_Modes: For consistent submittal appearance.
-- _Shared_GH: Shared Grasshopper scripts.
+- `_Shared_Display_Modes/`: Project-specific display modes for consistent submittal appearance.
+- `_Shared_GH/`: Shared Grasshopper scripts.
 
 #### 01_FE_Models
-- Individual job folders for each project.
-- Copied from _PROJ.JOB_ScopeDescription template.
-- FE working file naming:
-  - `Project Number.Job Number_FE`
-  - Example: `1085.016_FE`
-- PE release file naming:
-  - `Project Number.Job Number_PE YearMonthDay`
-  - Example: `1085.016_PE 20241122`
+- Individual job folders copied from `_PROJ.JOB_ScopeDescription` template and renamed to your job.
+- **FE working file naming**: `[PROJ.JOB]_FE_[Description].3dm` — e.g., `1094.002_FE_CashWrap.3dm`
+- **PE release file naming**: `[PROJ.JOB]_PE_YYYYMMDD.3dm` — e.g., `1105.007_PE_20250124.3dm`
+- `00_GS_Master_Models/`: Grouped submittals master models.
 
-Also includes:
-- 00_GS_Master_Models: Grouped submittals.
-- 02_CoverSheet_CommonPages: Project-level documents:
-  - Cover Sheet (job index)
-  - General Requirements
-  - Master Floorplan (Keyplan)
-  - Partition Plan
-  - Pre-Submittal Set
-  - Typical Details
+#### 02_CoverSheet_CommonPages
+Project-level documents that attach to any full project submittal or record set:
+- **Cover Sheet**: Full project job index
+- **General Requirements**: Finish/material tags generated via the Engineering Toolkit from the TRA log
+- **Master Floorplan / Keyplan**: Per level, showing all awarded scope
+- **Partition Plans**: Field dimensions, ceiling heights, blocking, electrical, load calcs if needed
+- **Pre-Submittal Sets**: Scope/design intent clarification
+- **Typical Details**: Interaction between adjacent scopes
+
+This set is also included with drawing packages given to the install team.
 
 ### 03_PE_Releases
 
-Dedicated to completed work ready for production. Release contents and naming must also satisfy [FE to PE Release](/workflows/fe-to-pe-release.html).
+Dedicated to completed work ready for production. Release contents and naming must also satisfy the [FE to PE Release](/workflows/fe-to-pe-release.html) checklist.
 
-- Subfolders copied from _PROJ.JOB_ScopeDescription template and renamed per job.
-- Inside:
-  - **Production_Drawings**: Completed shop drawings by FE and SKs by PE.
-  - **Production_Files**:
-    - Shipping component list
-    - Master Parts List template
-    - PE Rhino file
-    - Optional _SHOP Rhino model
+- Subfolders copied from `_PROJ.JOB_ScopeDescription` template and renamed per job.
+- Inside each release folder:
+  - **Production_Files/**: PE Rhino file, SC list, Master Parts List, Lay-Up Summary, optional SHOP model
+  - **Production_Drawings/**: Completed shop drawings by FE and SKs by PE
 
-Also includes:
-- HOLZMA Cut List
-- MAZAK Programs:
-  - _SYMBOLS
-  - {MAZAK Project}
-- 03_WEEKE Programs folder
+#### 00_MT_WC_IP_MfgParts
+Manufacturing part folders for WC, MT, and IP jobs.
+
+**MFG parts naming convention:**
+- The enclosing **folder** is named using the Epicor **job number** with three trailing digits — e.g., `1130.M.005`
+- The Rhino **file** within is named using the Epicor **part number** with five trailing digits — e.g., `1130.MT.00022_PE.3dm`
 
 ### 03_OUTGOING_Submittals
 
-For complete drawings ready to submit:
+Three-folder submittal review workflow. See [Submittal Review Cycle](/workflows/fabrication-engineer/submittal-review.html).
 
-#### 00InternalReview
-- Completed shop drawings needing review before submission.
+Each job has its own subfolder (`PROJ.JOB_ScopeDescription/`) containing:
+
+#### 00_Internal_Review
+- Completed shop drawings placed here for QA before submission.
 
 #### 01_Outgoing
-- Satisfactorily reviewed and updated shop drawings sent to the client for approval.
+- Reviewed and updated drawings sent to the client for approval. The PM exports a clean (comment-free) PDF copy here after PA approval.
 
 #### 02_Returned
-- Submitted drawings returned by the architect, to be reviewed by FE.
+- Drawings returned by the architect with markups, to be reviewed and picked up by FE.
 

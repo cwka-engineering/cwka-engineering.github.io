@@ -57,6 +57,17 @@ Common resources:
 
 ---
 
+## Quick Reference — "How do I…?"
+
+Find step-by-step answers organized by section:
+
+- **[Overview Quick Reference](/overview/quick-reference.html)** — Onboarding, setup, roles
+- **[Workflows Quick Reference](/workflows/quick-reference.html)** — FE/PE workflows, toolkit, release procedures
+- **[Standards Quick Reference](/standards/quick-reference.html)** — Drafting, sections, hatches, display modes
+- **[Tools Quick Reference](/tools/quick-reference.html)** — Epicor, time entry, approvals
+
+---
+
 ## By Task
 
 ### I need to...

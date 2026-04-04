@@ -11,6 +11,11 @@ grand_parent: Standards
 
 > **Related**: [Display Modes](/standards/rhino-drafting/display-modes.html) | [Layout Structure](/standards/rhino-drafting/layout-structure.html)
 
+## How do I print to PDF from Rhino?
+{: #how-to-print-to-pdf}
+
+Use **Microsoft Print to PDF** (recommended — good balance of quality and file size). Always use **Print Preview** to review pages before printing. Locked objects will **not print** — check for locked geometry if output is missing content. For monochrome display mode, try raster output if vector has issues. Shading and shadows require raster output.
+
 ## Basic Principles
 
 - **Locked Objects**: [^transcript-printing] Locked objects will **not print** - whether locked in Rhino space or layout space. If geometry isn't showing up in prints, check if it's locked.

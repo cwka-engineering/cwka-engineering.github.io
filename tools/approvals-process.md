@@ -14,14 +14,17 @@ All project jobs must undergo the PA approval process before FE release to ensur
 **When to Use**: Submit for approval after finalizing shop drawings but before releasing to Production Engineering. See [FE Workflow - PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html) for context.
 
 ## Installing the Approvals App
+{: #how-to-install-approvals-app}
 
 Navigate to the Microsoft Teams App Store, search for "Approvals," and click "Add" to install.
 
 ## Submitting for Approval
+{: #how-to-submit-for-approval}
 
 Submit your fabrication drawing set to the assigned PA using the "Approvals" app in Microsoft Teams.
 
 ## Drawing Stamps
+{: #how-to-stamp-approved-set}
 
 - Stamps are available for approving/releasing drawing packages.
 - They are formatted to fit the "Production Notes" area in the upper-right corner of the new drawing template.
@@ -87,15 +90,23 @@ In the Additional Details field, include:
 - If the PA is unavailable, the PM will follow up.
 
 ### If Denied
+{: #how-to-respond-to-denial}
+
 - The Fabrication Engineer (FE):
-  - Reviews all comments.
-  - Submits a new request following the same steps.
+  - Picks up **all** Bluebeam comments from both PM and PA.
+  - Revises drawings.
+  - Submits a **new** approval request following the same steps (do not reuse the denied request).
 
 ### Finalization After Approval
 - The PM:
   - Generates a clean, comment-free PDF of the reviewed file.
   - Places it in the "01_Outgoing" folder.
   - This version becomes the official client submittal.
+
+## Tracking Submittal Status
+{: #how-to-track-submittal-status}
+
+Track submittal progress in the Epicor [Production Report](/tools/epicor/production-report.html). Update the "Submittal" status field as the submittal progresses (Internal Review → Submitted → Approved/Resubmitted).
 
 ## Important Notes
 

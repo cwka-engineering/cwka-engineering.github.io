@@ -11,6 +11,16 @@ grand_parent: Workflows
 
 > **Related**: [Folder Structure](/standards/folder-structure.html) | [Layer Organization](/standards/layer-organization/)
 
+## How do I set up the PE folder structure for a new job?
+{: #how-to-setup-pe-folder}
+
+Copy the template folder from `Box\CWKA Team Folders\EngineeringTeam\Production Engineering\PE to Floor SOP\TEMPLATES` into the respective project folder on the Z: drive. Rename using PROJ.JOB convention (e.g., `1086.018`). The template contains `Production_Files` and `Production_Drawings` subfolders pre-populated with placeholders.
+
+## How do I set up the SHOP model from an FE release?
+{: #how-to-setup-shop-model}
+
+Open the PE Rhino file from `Production_Files`. Verify the FE layer structure is intact (`03_CWKA-FE`). Create the `04_CWKA-PE` layer with `MACHINING` sublayer for all programming geometry (perimeters, cutouts, pockets, drill points, surfaces). Use the PE naming conventions for machining layers (e.g., `THRU CUT OUT 1.5`, `8MM DRILL PT 0.25`).
+
 ## Templates
 
 Located in:

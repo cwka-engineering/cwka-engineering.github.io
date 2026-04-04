@@ -11,6 +11,16 @@ grand_parent: Workflows
 
 > **Related**: [Setup & Organization](/workflows/production-engineer/setup.html) | [Deliverables](/workflows/production-engineer/deliverables.html)
 
+## How do I process parts through the PE Grasshopper scripts?
+{: #how-to-process-parts}
+
+Run scripts in order: **Lay Flat** (lay parts on C-plane) → separate beam saw vs nested parts → orient for grain (length = X) → **Open Nest** (optimize into sheets) → **Sheet Pairing** (populate part list) → **Geometry Creation** (perimeter, cutout, drill point geometry) → **Sheet/Part Name Text** → **SK Creation**. Repeat for each material class (SG, SS, SL).
+
+## How do I run accuracy checks (QA/QC) before programming?
+{: #how-to-run-accuracy-checks}
+
+Before programming, verify: (1) material layers match Epicor BOM, (2) all parts named to standard (`_SelName` to check), (3) run `SelDup`, `SelBadObjects`, `SelOpenPolysrf` and fix issues, (4) Epicor production qty matches modeled qty, (5) scribes added where needed and properly grouped, (6) parts respect material sizes and grain direction.
+
 ## Grasshopper Scripts Used
 
 1.  **Lay Flat** – lays parts flat on the C-plane

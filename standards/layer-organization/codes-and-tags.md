@@ -46,9 +46,23 @@ Example: `PRE_438_331_7_19`
 - Used by engineering toolkit for drawing schedules.
 
 ### Tag Types
-- **General**: MDF, EB, PB, PLY, OSB, ML, PLAM, PL, GL, SS, FU, ST, MT, HW
-- **Wood/Veneer**: VN (Veneer), WD (Solid Wood)
-- **Finish**: PT (Paint), FN (Other finishes)
+
+For the complete tag vocabulary with examples for every material category, see [Material Tag Vocabulary](/standards/reference-tables/material-tag-vocabulary.html).
+
+Summary of common tag abbreviations:
+
+| Category | Tags |
+|----------|------|
+| **General materials** | CONC, GL, HDF, HDU, LAM, LVL, MDF, MDO, MEL, MT, PB, PL, PLTR, PLY, SG, SS, ST |
+| **Wood/Veneer/EB** | EB (Edgebanding), VN (Veneer), WD (Solid Wood) |
+| **Finishes** | FN (all finishes — paint, powder coat, lacquer, stain) |
+| **Fabric** | FA (Fabric, upholstery foam) |
+| **Hardware** | HW, LT, BRACKET, CATCH, CASTER, DRAWER SLIDES, GROMMET, HINGES, LOCK, POWER, PULL, RECEPTACLE, TABLE LEG |
+
+### ARCH Tags
+
+The architect's tag designation for the same material. Cross-referenced on the G00 General Requirements page alongside the CWK material tag. The PM maintains the ARCH-to-CWK mapping in the Material Transmittal Log.
 
 ## Next Steps
 - Review [Standard Layers](/standards/layer-organization/standard-layers.html)
+- See [Material Tag Vocabulary](/standards/reference-tables/material-tag-vocabulary.html) for the full reference

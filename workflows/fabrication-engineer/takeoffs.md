@@ -11,6 +11,21 @@ grand_parent: Workflows
 
 > **Related**: [Part Naming](/workflows/fabrication-engineer/part-naming.html) | [Engineering Toolkit](/workflows/fabrication-engineer/toolkit-setup.html)
 
+## How do I run Auto-BOM to generate a first-pass takeoff?
+{: #how-to-run-auto-bom}
+
+Modeling Toolkit → **Auto-BOM** tab. All parts must be toolkit-named, all six material classes cached (via Reverse Lookup), and all materials must have fully qualified Epicor dimension fields. Click **Run** to generate the BOM approximation. Apply scrap percentages, review the preview table, then publish to L001 or export to Excel.
+
+## How do I use 1D nesting to refine linear material takeoffs?
+{: #how-to-1d-nesting}
+
+Modeling Toolkit → **1D Nesting**. Select a material bombed per length (fabric, WC parts), select the job, choose stick length (8 ft default — coordinate with purchasing for actual length). View optimization with waste per stick shown in red. Export cut list or text optimization for the purchaser.
+
+## How do I use 2D nesting to refine sheet good takeoffs?
+{: #how-to-2d-nesting}
+
+Modeling Toolkit → **2D Nesting**. Select the sheet material (width/length pre-populated from Epicor), select the job, run optimization. Compare actual nested sheet count against Auto-BOM's area estimate. Publish refined quantities back to the BOM.
+
 ## Auto-BOM
 
 - **Purpose**: [^transcript-adv-toolkit] Provides first-pass BOM approximation based on model geometry. **Not guaranteed to be correct** - it's a starting point for refinement.

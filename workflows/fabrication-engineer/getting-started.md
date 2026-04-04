@@ -12,6 +12,7 @@ grand_parent: Workflows
 > **Related**: [Epicor Interaction](/workflows/fabrication-engineer/epicor-interaction.html) | [Engineering Toolkit](/workflows/fabrication-engineer/toolkit-setup.html)
 
 ## Finding Assignments
+{: #how-to-find-assignments}
 
 - Access the Epicor Submittal Dashboard via The CW site. See [Epicor Usage](/tools/epicor/#1-submittal-dashboard) for details.
 - Filter by your name to view submittal/post-submittal tasks not yet released to PE.
@@ -20,22 +21,33 @@ grand_parent: Workflows
   - **Bucket Jobs**: [^transcript-getting-started] Project-wide tasks like design, coordination, meetings, BIM. Format: PROJ.ENG. When clocking into bucket job, select from operations: Design, Engineering, Fabrication Engineering, Lead Coordination, Project Meetings, BIM Coordination.
 
 ## Verifying Scope
+{: #how-to-verify-scope}
 
 - **Working Set Location**: [^transcript-file-structure] Working set is in `01_INCOMING_Documents > 02_Working_Set`. This contains organized contract drawings used by engineers.
-- **Verify Job Number**: [^transcript-file-structure] Open the working set in Bluebeam. Use the annotations tool (box with three lines) to search by job number. Confirm what's included in the scope for that job number by checking the drawings.
+- **Verify Job Number**: [^transcript-file-structure] Open the working set in Bluebeam. Use the annotations panel (blue box with three lines) to search by job number. Jump to the relevant page and confirm what's included in the scope.
 - **Confirm Assignment**: After confirming scope in drawings, verify in Epicor that the submittal is assigned to you.
 
-## Template Usage
-{: #template-usage}
+## How do I set up a new project folder on Box?
+{: #how-to-set-up-project-folder}
 
-- **Tabloid standard**: Download and use the **Tabloid** FE template for normal work. Other page sizes are **exceptional**; the team does not maintain separate templates for other sizes—see [Layout Structure — Sheet size](/standards/rhino-drafting/layout-structure.html#sheet-size-and-template).
-- **Template Location**: [^transcript-file-structure] Download the latest FE template from `DFWCWKA internal > templates`. This file is locked and should only be updated by designated personnel.
-- **Save Your Copy**: [^transcript-file-structure]
-  - Open the template
-  - Save as a copy in the project folder following [Folder Structure](/standards/folder-structure.html#01_fe_models) standards:
-    - `awarded > [project code] > 03 Engineering > 02 Working Drawings and Models > FE Models`
-  - Create a new folder using `_PROJ.JOB_ScopeDescription` format (copy from template folder)
-  - Save Rhino file as `Project.Job_FE_ShortDescription`
+Navigate to `Box/Awarded/`. Copy the template project folder. Rename with 4-digit code + description. Populate department subfolders. See [Folder Structure](/standards/folder-structure.html) for the full hierarchy.
+
+## How do I set up a new FE job folder?
+{: #how-to-set-up-job-folder}
+
+Navigate to `01_FE_Models/`. Copy the `_PROJ.JOB_ScopeDescription` template. Rename to your job (e.g., `1094.002_CashWrap`).
+
+## How do I create a new Rhino file from the template?
+{: #how-to-create-rhino-file}
+
+1. Open the latest template from `DFWCWKA internal > templates`. This file is locked — do not modify it directly.
+2. **Save As** to your job folder with correct naming: `PROJ.JOB_FE_Description.3dm`
+3. See [Layout Structure — Sheet size](/standards/rhino-drafting/layout-structure.html#sheet-size-and-template) for template selection guidance.
+
+## How do I import the working set plan into my Rhino model?
+{: #how-to-import-working-set}
+
+**Insert → Linked → Layer Style: Active → Block Instance**. Disable rotation/scale/insertion point prompts to maintain coordinate system alignment. The working set lives on the `01_CWKA-PRECON::IN-2D` layer.
 
 ## Next Steps
 

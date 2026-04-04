@@ -11,6 +11,16 @@ parent: Tools
 
 This document covers time entry procedures using both Epicor and Toggl for Engineering staff.
 
+## How do I clock into a job using Office MES?
+{: #how-to-clock-in-mes}
+
+Office MES → **Start Production** (manufacturing jobs) or **Start Indirect** (bucket jobs) or **Start Rework**. Search for the job, select the operation, and clock in. End the activity and add a labor note when done.
+
+## How do I record rework time?
+{: #how-to-record-rework}
+
+Office MES → **Start Rework** (same job pool as production, flagged differently in backend). In Time and Expense Entry, check the Rework box and select Machine Error, providing a quick description.
+
 ## Time Codes
 
 ### Indirect Entries
@@ -56,6 +66,11 @@ For direct labor on specific jobs.
 ### Rework
 - For rework on jobs, clock into the job as regular.
 - In Time and Expense Entry, check Rework box and select Machine Error, providing a quick description.
+
+## How do I set up Toggl for CWK time tracking?
+{: #how-to-setup-toggl}
+
+Organization schema: **Client** = Project Number, **Project** = Job Number, **Tag** = Operation. Use bracket formatting: `[DIR]` for direct, `[I&D]` for indirect codes. Install the desktop app (not just browser). See full setup below.
 
 ## Time Entry - Toggl
 
@@ -111,6 +126,7 @@ To simplify time entry and timekeeping for Engineering staff and avoid Epicor's 
 - Use indirect tags like `[IND] Company Meetings`, `[IND] Training`, etc.
 
 ### Creating Time Entries in Toggl
+{: #how-to-setup-toggl-entry}
 
 **Method 1: Manual Entry** [^transcript-toggl]
 1. Click "What are you working on?" in Toggl
@@ -129,6 +145,16 @@ To simplify time entry and timekeeping for Engineering staff and avoid Epicor's 
 Toggl data is reformatted using a spreadsheet and then copied/pasted into Epicor Time Entry. The spreadsheet maps Toggl's structure (Client/Project/Tag) to Epicor's structure (Job/Operation).
 
 [^transcript-toggl]: Source: Training Video Transcript - "Toggl Time Entry"
+
+## How do I export Toggl data for Epicor upload?
+{: #how-to-export-toggl}
+
+From the Toggl desktop app → **Export/Import** dialogue → select date range (typically one week) → export as CSV. Open the Excel template, delete duplicate/mistaken entries, copy data (excluding headers) into the Toggl IN tab.
+
+## How do I bulk-upload time entries to Epicor?
+{: #how-to-bulk-upload}
+
+In the spreadsheet, move data to the **WORKING - Kinetic** tab (auto-maps Toggl structure to Epicor format). Process one site at a time — adjust the site tab, include Blanks for indirect entries from your home site. In Epicor **Time & Expense Entry**, right-click in Time Details → **Paste New** (ensure Edit Mode is active). Ignore "Parameter OpCode is not found" if "All records have been processed successfully" appears. Switch sites and repeat for the other site's entries.
 
 ### Time Upload Procedure
 

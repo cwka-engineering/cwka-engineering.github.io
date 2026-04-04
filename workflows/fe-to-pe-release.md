@@ -10,6 +10,46 @@ nav_order: 3
 
 > **Related Documents**: [Project Delivery — Phase 3](/overview/project-delivery.html#phase-3-fe-release-to-production-engineering-pe-handoff) | [PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html) | [Rhino Drafting](/standards/rhino-drafting/) | [Layer Organization](/standards/layer-organization/) | [Epicor Job Management](/tools/epicor/job-management.html) | [Glossary](/overview/glossary.html)
 
+## How do I set up the PE release folder?
+{: #how-to-setup-release-folder}
+
+Navigate to `03_PE_Releases` in the project's Engineering folder. Copy the template folder `_PROJ.JOB_ScopeDescription` and rename it (e.g., `1102.011_Maitre D Stand`). Subfolders include `Production_Files` (Rhino PE model, SC list) and `Production_Drawings` (PDF drawing set).
+
+## How do I set up a manufactured parts (MFG) folder?
+{: #how-to-setup-mfg-folder}
+
+If releasing a manufacturing job, create `00_MT_WC_IP_MfgParts` inside the release folder if not already present. Place MFG part files here using the naming convention: `PROJ.MT.XXXXX_PE.3dm` or `PROJ.WC.XXXXX_PE.3dm`.
+
+## How do I clean and prepare the PE Rhino file?
+{: #how-to-clean-pe-file}
+
+Run **Purge** (remove unused blocks, layers, styles), **SelDup** (remove duplicates), **SelBadObjects** and **SelOpenPolysrf** (fix geometry issues), **SelExtrusion** + **ConvertExtrusion** (convert extrusions to polysurfaces). Remove all layouts unless required. Verify part name uniqueness with **SelName**. Name the file `[EpicorCode]_PE_YYYYMMDD.3dm`.
+
+## How do I upload shipping components to Epicor?
+{: #how-to-upload-scs}
+
+Navigate to **UD40** (or **UD37** for CMG). Copy ProjectID, JobNum, SC PartNum, Description, and Order Qty columns from the SC Excel file (excluding headers). Right-click in the workbench → **Paste New**. Click **Update** and refresh. Open the **Project** filter to confirm records processed.
+
+## How do I complete the Epicor release process?
+{: #how-to-epicor-release}
+
+In **Job Entry**, for each BOM line verify: **Engineering Complete** checked, **Fixed Quantity** checked (unless catalog), **Make Direct** for MFG parts, all materials have a Part Master. Append any engineering comments to the part description. Check **BOM Complete**, then click **Release**.
+
+## How do I submit the FE to PE Release form?
+{: #how-to-submit-release-form}
+
+Access the form via the Engineering Team SharePoint. Fill in: your name, project number/name, all job numbers, key part numbers, site of fabrication, Windows Explorer file paths (not Box links), and notes (included MFG jobs, handoff meeting requests, late-start coordination). Tag the assigned PM in the resulting channel post.
+
+## How do I handle a late release (after scheduled start date)?
+{: #how-to-handle-late-release}
+
+Coordinate with adjacent departments before submitting. State the coordination in the release form **Notes** field. The late release impacts the [Scheduling Chain](/overview/scheduling-chain.html) — downstream operations may need rescheduling.
+
+## How do I request a handoff meeting with PE?
+{: #how-to-request-handoff-meeting}
+
+A handoff meeting is mandatory when: custom tooling/dies are needed, oversized parts require special nesting, complex "By Others" integration exists, or details deviate from company norms. Request the meeting in the FE to PE Release form **Notes** field. PE may also request a meeting after file review.
+
 This page has two parts: a **pre-release checklist** (what must be true before you mark the job **Released** in Epicor and submit the **FE to PE Release** form) and a **step-by-step procedure** (how to organize files, update Epicor, and notify the team). Complete the checklist first, then follow the procedure.
 
 ---

@@ -11,6 +11,21 @@ grand_parent: Standards
 
 > **Related**: [Sections & Clipping](/standards/rhino-drafting/sections-clipping.html) | [Printing](/standards/rhino-drafting/printing.html)
 
+## How do I assign section styles to material layers?
+{: #how-to-assign-section-styles}
+
+In the **Layer Manager**, double-click the **Section Style** column for the target layer. Select the appropriate hatch pattern (e.g., "plywood" for plywood). Set pattern color to gray, background to white, boundary to black. The toolkit pre-assigns section styles when importing materials, but manual adjustment is often needed.
+
+## How do I adjust hatch rotation for grain direction?
+{: #how-to-adjust-hatch-rotation}
+
+For objects with grain direction different from the material default (e.g., perpendicular wood grain): go to **Properties → Section Style → Custom** and adjust the rotation angle.
+
+## How do I configure hatching for hardware and thin-gauge steel?
+{: #how-to-configure-hardware-hatching}
+
+Use **hairline print width** and a **solid white hatch** for hardware and thin-gauge steel. This improves legibility and avoids visual clutter in section views.
+
 ## Hatch Patterns
 
 - Hatch patterns are set in the **Section Style** column within the Layer Manager.

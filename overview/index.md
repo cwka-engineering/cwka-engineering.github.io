@@ -18,6 +18,9 @@ Essential information for new and current engineering team members.
 - **[Engineer Progression Framework](/overview/engineer-progression-framework.html)** - Engineer I → II advancement (merit-based)
 - **[Glossary](/overview/glossary.html)** - Terms, acronyms, and definitions used in engineering
 - **[Project Delivery](/overview/project-delivery.html)** - End-to-end engineering workflow overview
+- **[Scheduling Chain](/overview/scheduling-chain.html)** - How dates flow from truck entry to operation start
+- **[Purchasing Signal Chain](/overview/purchasing-signal-chain.html)** - Four gates that trigger material purchasing
+- **[Quick Reference](/overview/quick-reference.html)** - "How do I…?" task index for Overview topics
 
 ## By Role
 

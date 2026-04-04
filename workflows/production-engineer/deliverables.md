@@ -11,6 +11,21 @@ grand_parent: Workflows
 
 > **Related**: [Model Processing](/workflows/production-engineer/processing.html) | [Troubleshooting](/workflows/production-engineer/troubleshooting.html)
 
+## How do I create the Master Parts List?
+{: #how-to-create-master-parts-list}
+
+Use the Excel template from `PE to Floor SOP\TEMPLATES`. Populate from the Grasshopper **Part List** and **Sheet Pairing** script outputs. Include all parts except MT. Sort alphanumerically by part name. Fill columns: Part Name, Qty, Material (Epicor part number), Machining (NEST/BEAM SAW/HARDWOODS), Sheet Name, Width/Length (grain-aware), EB columns, Comments.
+
+## How do I create the Lay-Up Summary?
+{: #how-to-create-layup-summary}
+
+Create when pre-laminating material is required. Name using the format `PRE_EpicorPartNumbersWithoutZeros_MetricThicknessInMM` (e.g., `PRE_438_331_7_19`). Include: material code (Rhino layer name), description, materials being glued up, and quantities. Reference [Lay-Up Formulas](/standards/reference-tables/lay-up-formulas.html) for thickness calculations.
+
+## How do I mark a job as Programming Complete?
+{: #how-to-mark-programming-complete}
+
+After all parts are processed, nested, programmed (Mastercam), and posted: verify the Master Parts List is complete, Lay-Up Summary is done (if applicable), all SK drawings are generated, and G-code files are in `Machining_Posts`. Update the job status in Epicor and notify the production team.
+
 ## Master Parts List
 
 The Master Parts List is the primary document for production tracking.

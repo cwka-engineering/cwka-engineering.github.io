@@ -11,6 +11,16 @@ grand_parent: Standards
 
 > **Related**: [Layout Structure](/standards/rhino-drafting/layout-structure.html) | [Sections & Clipping](/standards/rhino-drafting/sections-clipping.html)
 
+## How do I create a detail view on a layout?
+{: #how-to-create-detail-view}
+
+Use the **Detail** command → select "add" → draw the detail boundary on the layout. Name the detail view (e.g., "front view") — this name ties into the detail title block. Use **Set View** dropdown for isometric, plan, elevation, etc. Use **Hide in Detail** or toggle the secondary layer light bulb to control visibility per detail. **Lock the detail** once finalized to prevent accidental shifting and dimension disconnection.
+
+## How do I connect a detail title to a detail view?
+{: #how-to-connect-detail-title}
+
+Insert the **Detail Title** block from Legends and Symbols. Connect block attributes using text fields: **object name** (links to detail view name) and **object scale** (links to detail view scale). Place the detail title on the "Detail Title" layer.
+
 ## Creating Detail Views
 
 1. Use the **Detail** command and select "add" to create new detailed views on a layout. [^transcript-layouts]

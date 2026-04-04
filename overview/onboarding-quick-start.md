@@ -16,24 +16,123 @@ Essential links and resources for new Engineering Department team members. Wonde
 - **CWK/DFW Training Videos**: [Training Videos (SharePoint)](https://digifabshop.sharepoint.com/sites/Engineering/Engineering%20Wiki/Training%20Videos.aspx)
   - Transcripts are searchable
 
-## Important Links - Rhino
+## Rhino Setup
 
 ### Templates and Resources
 
 - **Rhino v8 (Tabloid layouts) template**: [Box.com Link](https://digifabshop.box.com/s/n93tqh5z3pi6v5rrtzhk0rihkmcml9nb)
-  - **'Gotham' font family**: [Box.com Link](https://digifabshop.box.com/s/u1plgcsisgwquoxyjscg7muwnfbk28hx)
-- **Rhino Grasshopper 'CWK/DFW Engineering Toolkit'**: [Box.com Link](https://digifabshop.box.com/s/ytpeoi2h2ta1bumlhggqm8t8osb5fbre)
+- **’Gotham’ font family**: [Box.com Link](https://digifabshop.box.com/s/u1plgcsisgwquoxyjscg7muwnfbk28hx)
+- **Rhino Grasshopper ‘CWK/DFW Engineering Toolkit’**: [Box.com Link](https://digifabshop.box.com/s/ytpeoi2h2ta1bumlhggqm8t8osb5fbre)
 - **Required plugins**: [Box.com Link](https://digifabshop.box.com/s/9plgd3b0d50eiyz0611u3p7pkwzytlqi)
+- **Display modes (.ini files)**: Available in the Engineering Resources folder on Box
+- **BOM Template**: Available on Box (Engineering Resources)
+- **WC Drawing Template**: Available on Box (Engineering Resources)
+- **PA Release Stamps**: Available on Box (synced to Bluebeam stamps folder)
 
-### Rhino workstation (recommended)
+### How do I install Rhino 8 and transfer settings from Rhino 7?
+{: #how-to-install-rhino}
 
-- **Package Manager**: Run `PackageManager` in Rhino to install required plugins from the team list (see Box link above). Keep automatic plugin updates enabled unless IT directs otherwise.
-- **Synapse**: After installing **Synapse**, load **Synapse RCP** once under **Rhino Options** → **Plug-ins** so the Synapse panel is available. Details: [Engineering Toolkit (Setup)](/workflows/fabrication-engineer/toolkit/).
-- **Box / backups**: Turn **off** Rhino’s `.bak` sidecar backups if your workflow uses Box (avoids extra clutter); keep **autosave** on. Optional: place autosave in a convenient folder under `%AppData%` paths if you relocate it.
-- **File locking**: Leave Rhino file locking enabled unless IT standard says otherwise—it helps detect when another user has a file open.
-- **Moving settings between Rhino versions** (e.g. future major upgrades): You can use **`OptionsExport`** in the older version and **`OptionsImport`** in the newer one, and/or copy selected files from the prior version’s `%AppData%\McNeel\Rhinoceros\<version>\settings` folder—handy when upgrading across major releases; not required for day-to-day onboarding.
+Use **`OptionsExport`** in Rhino 7 and **`OptionsImport`** in Rhino 8 to migrate your settings. You can also copy selected files from `%AppData%\McNeel\Rhinoceros\<version>\settings`. Note that some settings do not transfer across major versions — re-import display modes and verify plugin compatibility after migration.
+
+### How do I install required Rhino plugins via Package Manager?
+{: #how-to-install-plugins}
+
+Run `PackageManager` in Rhino 8. Install all required plugins from the department’s requirements list (see Box link above). The toolkit will fail to launch if required plugins are missing. Keep automatic plugin updates enabled unless IT directs otherwise.
+
+### How do I set up Synapse for the Engineering Toolkit?
+{: #how-to-setup-synapse}
+
+After installing **Synapse** via Package Manager, load **Synapse RCP** once: **Rhino Options** → **Plug-ins** → find **Synapse RCP** → right-click → **Load Plug-in**. The Synapse panel must be in the foreground before launching Grasshopper and opening the toolkit. See [Engineering Toolkit (Setup)](/workflows/fabrication-engineer/toolkit/) for full details.
+
+### How do I import the department’s custom display modes?
+{: #how-to-import-display-modes}
+
+**File → Properties → View → Display Modes → Import** → select `.ini` files from the Engineering Resources folder on Box. Standard display modes:
+
+| Mode | Use Case |
+|------|----------|
+| **Monochrome** | Plans, elevations, parallel details. Clean silhouette. May require raster output. |
+| **Arctic with Outlines** | Sections, isometrics, section details. |
+| **Pen** | Vector output, no hidden lines. Clean line drawings. |
+| **Technical** | Vector output with hidden lines (light gray). Use Bluebeam color processing for black visible lines. |
+
+Project-specific display modes live in `00_Lead_Project_Eng/_Shared_Display_Modes`.
+
+### How do I install the Gotham font family?
+{: #how-to-install-fonts}
+
+Download from Box (see link above). Install system-wide (right-click → Install for all users).
+
+### How do I set up Bluebeam release stamps?
+{: #how-to-setup-bluebeam-stamps}
+
+1. Sync the stamps folder from Box (Engineering Team folder).
+2. In Bluebeam: **Tools → Stamp → Change Stamp Folder** → select the synced folder.
+3. Use Bluebeam **grid snaps** for alignment when placing stamps.
+4. Stamps are formatted for the "Production Notes" area (upper-right corner of the drawing template).
+
+### How do I configure Rhino backup and autosave settings for Box?
+{: #how-to-configure-backups}
+
+- Turn **off** Rhino’s `.bak` sidecar backups if your workflow uses Box (avoids clutter).
+- Keep **autosave** on. Optionally relocate the autosave path.
+- Leave **file locking** enabled — it helps detect when another user has a file open.
 
 > **Related**: [FE Workflow - Engineering Toolkit Usage](/workflows/fabrication-engineer/#engineering-toolkit-usage) | [Rhino Drafting and Layouts](/standards/rhino-drafting/)
+
+---
+
+## Suggested Reading Order
+{: #suggested-reading-order}
+
+A structured path through the wiki for new engineers. Adapt timing to your pace and role.
+
+### Week 1: Orientation & Context
+
+1. [Engineering Manifesto](/overview/manifesto.html) — Department values and beliefs
+2. [Engineering Roles](/overview/engineering-roles.html) — Understand your role and responsibilities
+3. [Project Delivery Overview](/overview/project-delivery.html) — How a project flows through Engineering
+4. [Scheduling Chain](/overview/scheduling-chain.html) — How dates drive operations
+5. [Purchasing Signal Chain](/overview/purchasing-signal-chain.html) — What triggers material purchasing
+6. [Glossary](/overview/glossary.html) — Terms, codes, and acronyms (bookmark for reference)
+
+### Week 2: Tools & Environment
+
+7. This page (Onboarding Quick Start) — Complete all Rhino and Epicor setup
+8. [Folder Structure](/standards/folder-structure.html) — Where files live on Box
+9. [Epicor Usage](/tools/epicor/) — Epicor overview and dashboards
+10. [Multi-Site Operations](/tools/epicor/multi-site-operations.html) — CWK/DFW site switching
+11. [Time Entry](/tools/time-entry.html) — Toggl + Epicor time tracking
+
+### Week 3: Modeling & Standards
+
+12. [Layer Organization](/standards/layer-organization/) — Layer structure and naming
+13. [Material Modeling](/standards/layer-organization/material-modeling.html) — Solid bodies, thickness, edgebanding
+14. [Modeling Techniques](/standards/layer-organization/modeling-techniques.html) — Scribes, Named Positions, referencing
+15. [Reference Tables](/standards/reference-tables/) — File naming, cleanup commands, sheet sizes, drill sizes
+
+### Week 4: FE Workflow
+
+16. [FE Getting Started](/workflows/fabrication-engineer/getting-started.html) — Assignments and project setup
+17. [Design Engineering Phase](/workflows/fabrication-engineer/design-engineering.html) — DE phase workflow
+18. [Engineering Toolkit](/workflows/fabrication-engineer/toolkit/) — Setup, drafting, and modeling tabs
+19. [Part Naming](/workflows/fabrication-engineer/part-naming.html) — Naming conventions and toolkit usage
+20. [Shipping Components](/workflows/fabrication-engineer/shipping-components.html) — SC creation and export
+21. [Takeoffs](/workflows/fabrication-engineer/takeoffs.html) — Auto-BOM and nesting
+
+### Week 5+: Drafting, Release & Advanced
+
+22. [Rhino Drafting Standards](/standards/rhino-drafting/) — Layout structure, sections, hatches, printing
+23. [Submittal Review](/workflows/fabrication-engineer/submittal-review.html) — Three-folder review cycle
+24. [Material Transmittal](/workflows/fabrication-engineer/material-transmittal.html) — TRA log
+25. [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html) — BOM validation and Epicor upload
+26. [Approvals Process](/tools/approvals-process.html) — PA approval workflow
+27. [FE to PE Release](/workflows/fe-to-pe-release.html) — Checklist and release procedure
+28. [Solid Wood Components](/workflows/fabrication-engineer/solid-wood-components.html) — WC workflow
+29. [Computational Fabrication](/workflows/computational-fabrication.html) — Advanced practice and automation
+30. [Engineer Progression Framework](/overview/engineer-progression-framework.html) — How advancement works
+
+---
 
 ## Important Links - Epicor
 

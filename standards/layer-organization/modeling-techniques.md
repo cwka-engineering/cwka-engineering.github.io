@@ -11,6 +11,16 @@ grand_parent: Standards
 
 > **Related**: [Standard Layers](/standards/layer-organization/standard-layers.html) | [Manufactured Parts](/standards/layer-organization/manufactured-parts.html)
 
+## How do I create scribes for CNC machining?
+{: #how-to-create-scribes}
+
+Duplicate the finished geometry. Keep the same part name. Extend the face to an oversized dimension (larger than the actual part). Move to `04_CWKA-PE::REF` sublayer. Group with the finished geometry so PE can identify the scribe relationship. The scribe tells the CNC where to machine alignment marks on oversized stock before trimming to final size.
+
+## How do I set up Named Positions for exploded views?
+{: #how-to-setup-named-positions}
+
+Use the **Named Positions** command. Save positions (e.g., "default" for assembled, "exploded" for exploded view). Toggle between saved states for different layout views. **Important**: set Named Positions only after the model is fabrication-ready — altered geometry gets a new GUID and must be manually appended to each position. You cannot mix assembled and exploded views on the same layout page.
+
 ## Scribes
 
 - Duplicate finished geometry.

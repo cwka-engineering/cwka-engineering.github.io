@@ -9,7 +9,17 @@ grand_parent: Standards
 
 # Dimensions & Annotations
 
-> **Related**: [Details](/standards/rhino-drafting/details.html) | [Printing](/standards/rhino-drafting/printing.html)
+> **Related**: [Details](/standards/rhino-drafting/details.html) | [Printing](/standards/rhino-drafting/printing.html) | [Annotation Styles Reference](/standards/rhino-drafting/annotation-styles-reference.html)
+
+## How do I place material tag leaders on a drawing?
+{: #how-to-place-material-tag-leaders}
+
+Use the **Leader** command on the **Notes** layer. Press **Shift** to enable ortho for straight leaders. Then **Insert Block** and choose the appropriate tag block: material tag, material tag + finish tag, or specialty hardware tag. Enter the material code (e.g., "PI01") and place. Add grain direction, grain match, and aligned symbols as needed.
+
+## How do I set the annotation style for a detail view?
+{: #how-to-set-annotation-style}
+
+Select the annotation and change its style in Properties. Four standard styles are available: **GEN** (default/general), **A-SITE** (site context/architectural reference), **VIF** (verify-in-field dimensions), **MTL** (material-specific annotations). See [Annotation Styles Reference](/standards/rhino-drafting/annotation-styles-reference.html) for when to use each.
 
 ## Dimensions
 

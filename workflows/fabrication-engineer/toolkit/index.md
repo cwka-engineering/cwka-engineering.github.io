@@ -18,6 +18,7 @@ has_children: true
 - **Modeling**: [Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html) — Part naming, **L00/L001** style outputs, analysis, and **hardware** integration (including the shared library populated via McMaster-Carr requests).
 
 ## Launching Toolkit
+{: #how-to-launch-toolkit}
 
 - **Open Rhino**: Synapse panel > Grasshopper > Load latest FE toolkit. [^transcript-toolkit-setup]
 - **Location**: `DFWCWKA internal > Engineering resource > shared GH for Grasshopper > FE Engineering Toolkit`
@@ -32,14 +33,31 @@ has_children: true
 - **Required Plugin**: Synapse - allows custom UI within Rhino. The Synapse panel must be in the foreground when launching Grasshopper. After installing Synapse from Package Manager, **load Synapse RCP** once: **Rhino Options** → **Plug-ins** → find **Synapse RCP** (remote control panel) → right-click → **Load Plug-in** (or equivalent) so the Synapse panel appears.
 
 ### Login (Epicor Data)
+{: #how-to-login-epicor}
+
 - **Login**: [^transcript-toolkit-setup] Type your Epicor username, hit enter (caches username). Enter password, hit enter (caches password). Both are cached to disk for future use.
 - **Troubleshooting**: If login fails, verify Epicor access and check with IT if credentials need updating.
 
 ### Pull Payload
+{: #how-to-pull-payload}
+
 - **Action**: [^transcript-toolkit-setup] On first run only - go to Setup tab, expand "Toolkit Payload", click "Pull Payload" to download CW/DFW-specific information from server. Wait for CW logo to appear in reset button.
 
 ### Reset / Verify
+{: #how-to-reset-toolkit}
+
 - **Reset**: [^transcript-toolkit-setup] Click reset button (always shows an error - ignore it). Reset will verify plugin versions and show list of required plugins if any are missing. When complete, username and password will be hidden (cached).
+- **When to reset**: After any significant model space changes (importing geometry, modeling new parts), click reset to ensure the toolkit grabs the freshest data.
+
+### How do I restore model space from the template?
+{: #how-to-restore-model-space}
+
+Drafting Toolkit → **Template tab** → **Restore Model Space**. Pulls in and merges latest data from the template — adds missing layers, geometry, annotation styles. You can toggle specific items on/off.
+
+### How do I restore layout pages from the template?
+{: #how-to-restore-layout-space}
+
+Drafting Toolkit → **Template tab** → **Restore Layout Space**. Select specific pages or restore all. Hover over page names for descriptions (e.g., "Master Parts List", "G00 General Schedule").
 
 ## Footnotes
 [^transcript-toolkit-setup]: Source: Training Video Transcript - "Toolkit Setup"

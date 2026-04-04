@@ -24,6 +24,8 @@ The drafting standards ensure consistency across all CWKA engineering drawings.
 5. **[Annotations](/standards/rhino-drafting/annotations.html)** - Dimensions, leaders, and material tags
 6. **[Display Modes](/standards/rhino-drafting/display-modes.html)** - View modes for drafting (Monochrome, Auto-Cad, Technical)
 7. **[Printing](/standards/rhino-drafting/printing.html)** - Output settings and PDF creation
+8. **[Cover Sheet & Common Pages](/standards/rhino-drafting/cover-sheet-common-pages.html)** - T00, G00, keyplan, partition plans, typical details
+9. **[Annotation Styles Reference](/standards/rhino-drafting/annotation-styles-reference.html)** - GEN, A-SITE, VIF, MTL style definitions
 
 ## Quick Links
 
