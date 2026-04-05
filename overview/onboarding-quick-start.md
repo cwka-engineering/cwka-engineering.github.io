@@ -37,7 +37,7 @@ Use **`OptionsExport`** in Rhino 7 and **`OptionsImport`** in Rhino 8 to migrate
 ### How do I install required Rhino plugins via Package Manager?
 {: #how-to-install-plugins}
 
-Run `PackageManager` in Rhino 8. Install all required plugins from the department’s requirements list (see Box link above). The toolkit will fail to launch if required plugins are missing. Keep automatic plugin updates enabled unless IT directs otherwise.
+Run `PackageManager` in Rhino 8. Install all required plugins from the department’s requirements list (see Box link above). The toolkit will fail to launch if required plugins are missing. Keep automatic plugin updates enabled unless IT directs otherwise.[^transcript-rhino8-kickoff-i]
 
 ### How do I set up Synapse for the Engineering Toolkit?
 {: #how-to-setup-synapse}
@@ -199,3 +199,5 @@ In order for the whole team to share direct File Explorer links, we have adopted
 
 > **Related**: [Folder Structure & File Management](/standards/folder-structure.html)
 
+## Footnotes
+[^transcript-rhino8-kickoff-i]: Source: [Training Video — "Rhino 8 Kickoff Pt I"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQClvTAp_DlXSImI44GZjhPoAUjkAO2ROrfgSxu2Sy_oyQc?e=vWqkSZ)

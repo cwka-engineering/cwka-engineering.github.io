@@ -77,6 +77,6 @@ Use **SelName** and step through each name to verify unlike geometries don't sha
 
 ## Footnotes
 
-[^transcript-modeling-toolkit]: Source: Training Video Transcript - "Modeling Toolkit"
-[^transcript-adv-toolkit]: Source: Training Video Transcript - "Adv. Toolkit Functions"
-[^transcript-adv-toolkit-ii]: Source: Training Video Transcript - "Adv. Toolkit Functions II"
+[^transcript-modeling-toolkit]: Source: [Training Video — "Modeling Toolkit"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQAfRPseXSLqTpdpXZWrN-KtAXlXRMID0jUqj5csZ27k9ds?e=eAgoTd)
+[^transcript-adv-toolkit]: Source: [Training Video — "Adv. Toolkit Functions"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQCALi3cuUMuSLsJ6G-5Rn4TAYr-NLZorJ-lfNYPkyrSaOA?e=AJEJ4d)
+[^transcript-adv-toolkit-ii]: Source: [Training Video — "Adv. Toolkit Functions II"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQB1ApOz1Dz_SoENHn-RPCSqAcMM0ikM3h9gyF5DxIqLwWc?e=Ec0Lq3)

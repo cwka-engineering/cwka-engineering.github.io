@@ -44,4 +44,4 @@ Modeling Toolkit → after publishing SC descriptions, use the **Export** functi
 
 ## Footnotes
 
-[^transcript-adv-toolkit]: Source: Training Video Transcript - "Adv. Toolkit Functions"
+[^transcript-adv-toolkit]: Source: [Training Video — "Adv. Toolkit Functions"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQCALi3cuUMuSLsJ6G-5Rn4TAYr-NLZorJ-lfNYPkyrSaOA?e=AJEJ4d)

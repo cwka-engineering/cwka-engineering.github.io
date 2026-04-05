@@ -78,6 +78,6 @@ Use Epicor's **Part Transaction History** or **Quantity Adjustment** views to ch
 - [Engineering Assistant Workflow](/workflows/engineering-assistant/) - Job scheduling details
 
 ## Footnotes
-[^transcript-epicor-scheduling]: Source: Training Video Transcript - "Epicor Eng. Scheduling"
-[^transcript-getting-started]: Source: Training Video Transcript - "Getting Started"
-[^transcript-epicor-project-materials]: Source: Training Video Transcript - "Epicor Project Materials"
+[^transcript-epicor-scheduling]: Source: [Training Video — "Epicor Eng. Scheduling"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQBFqFHaP_2RS7smowJrv3utAc1B524O73vQKAb27EQQDQc?e=yT7OQa)
+[^transcript-getting-started]: Source: [Training Video — "Getting Started"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQCEUKEug6xQT5MbOuegC5FTATe0eReTEDki0eO7FDWTDYg?e=G0GMA1)
+[^transcript-epicor-project-materials]: Source: [Training Video — "Epicor Project Materials"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQD8u0w8HEjGTrDZIIG5-AJYAUwLBQo9xZU5LnYaEFRGNzc?e=MlosTg)

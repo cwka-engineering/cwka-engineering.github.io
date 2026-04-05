@@ -34,12 +34,12 @@ Use descriptive placeholder names (e.g., SG1, MDF2) under DE or FE layers. Updat
 ## How do I insert hardware blocks from the library?
 {: #how-to-insert-hardware}
 
-Modeling Toolkit → Hardware section. Search by Epicor part number. The embedded block is auto-placed on the correct layer with correct naming.
+Modeling Toolkit → Hardware section. Search by Epicor part number. The embedded block is auto-placed on the correct layer with correct naming.[^transcript-blocks]
 
 ## How do I create a higher-order hardware assembly block?
 {: #how-to-create-assembly-block}
 
-Nest individual hardware blocks within a macro-level block (e.g., "AZ Clip Assembly Double"). Place whole assemblies rather than individual pieces for complex hardware groupings.
+Nest individual hardware blocks within a macro-level block (e.g., "AZ Clip Assembly Double"). Place whole assemblies rather than individual pieces for complex hardware groupings.[^transcript-blocks]
 
 ## How do I model a pre-laminated (PRE) lay-up?
 {: #how-to-model-pre-layup}
@@ -55,7 +55,7 @@ Modeling Toolkit → **Reverse Lookup**. Select each of the six material classes
 
 ## Shared hardware library (McMaster-Carr)
 
-- When you request hardware models through the **McMaster-Carr API** from the Modeling toolkit workflow, those models are **added automatically** to a **shared engineering hardware library** in the background—you do not need to maintain a separate folder structure by hand. [^transcript-integration-2026]
+- When you request hardware models through the **McMaster-Carr API** from the Modeling toolkit workflow, those models are **added automatically** to a **shared engineering hardware library** in the background—you do not need to maintain a separate folder structure by hand. [^transcript-rhino8-kickoff-ii]
 - Continue to use **blocks** for hardware in models per release and naming standards ([FE to PE Release](/workflows/fe-to-pe-release.html), [Takeoffs](/workflows/fabrication-engineer/takeoffs.html)); the library helps keep everyone on consistent geometry over time.
 
 ## Parts List Tab
@@ -81,5 +81,7 @@ Modeling Toolkit → **Reverse Lookup**. Select each of the six material classes
 - Proceed to [Takeoffs](/workflows/fabrication-engineer/takeoffs.html) for BOM generation workflow.
 
 ## Footnotes
-[^transcript-adv-toolkit]: Source: Training Video Transcript - "Adv. Toolkit Functions"
+[^transcript-adv-toolkit]: Source: [Training Video — "Adv. Toolkit Functions"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQCALi3cuUMuSLsJ6G-5Rn4TAYr-NLZorJ-lfNYPkyrSaOA?e=AJEJ4d)
 [^transcript-integration-2026]: Department practice as of wiki integration (2026); confirm UI labels in the current Modeling tab.
+[^transcript-rhino8-kickoff-ii]: Source: [Training Video — "Rhino 8 Kickoff Pt II"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQDPcGdpPFE7R4qYb8JE-0pEAWP7lZ3x3-mehH6F1qiQJVg?e=VaMdtA)
+[^transcript-blocks]: Source: [Training Video — "Blocks"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQB6m1C6NVjESosK0IY1J9KqASuqa3wKbrNgKD7bu8S-_HM?e=SYCulO)

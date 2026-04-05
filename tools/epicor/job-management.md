@@ -62,4 +62,4 @@ For procedure details, see [Time Entry](/tools/time-entry.html). [^transcript-ep
 - When uploading: upload one site, switch sites, then upload the other.
 
 ## Footnotes
-[^transcript-epicor-time]: Source: Training Video Transcript - "Epicor Time Tracking"
+[^transcript-epicor-time]: Source: [Training Video — "Epicor Time Tracking"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQABIwF4w6H6Ta3UsXmQ5yi0Aec0QJHoPjqkFGCCs-FMvqE?e=9d6YW6)

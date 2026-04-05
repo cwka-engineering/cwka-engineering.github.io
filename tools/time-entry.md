@@ -144,7 +144,7 @@ To simplify time entry and timekeeping for Engineering staff and avoid Epicor's 
 ### Methodology
 Toggl data is reformatted using a spreadsheet and then copied/pasted into Epicor Time Entry. The spreadsheet maps Toggl's structure (Client/Project/Tag) to Epicor's structure (Job/Operation).
 
-[^transcript-toggl]: Source: Training Video Transcript - "Toggl Time Entry"
+[^transcript-toggl]: Source: [Training Video — "Toggl Time Entry"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQC2_Xi2AYXFSpXYjlYQpMeLAeI4FNIDtrRGsaMtWmLIMfc?e=hrO2o9)
 
 ## How do I export Toggl data for Epicor upload?
 {: #how-to-export-toggl}
@@ -197,5 +197,5 @@ In the spreadsheet, move data to the **WORKING - Kinetic** tab (auto-maps Toggl 
    - Switch Epicor site (CW to DF or vice versa)
    - Repeat upload process for that site's entries
 
-[^transcript-epicor-time]: Source: Training Video Transcript - "Epicor Time Tracking"
+[^transcript-epicor-time]: Source: [Training Video — "Epicor Time Tracking"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQABIwF4w6H6Ta3UsXmQ5yi0Aec0QJHoPjqkFGCCs-FMvqE?e=9d6YW6)
 

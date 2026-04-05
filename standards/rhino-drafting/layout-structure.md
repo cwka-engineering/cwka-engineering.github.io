@@ -14,7 +14,7 @@ grand_parent: Standards
 ## Sheet size and template
 {: #sheet-size-and-template}
 
-- **Standard**: Engineering uses a **single Tabloid** layout template for **all** projects. Use the current FE template from the team location (see [Getting Started](/workflows/fabrication-engineer/getting-started.html#template-usage)).
+- **Standard**: Engineering uses a **single Tabloid** layout template for **all** projects. Use the current FE template from the team location (see [Getting Started](/workflows/fabrication-engineer/getting-started.html#template-usage)).[^transcript-rhino8-kickoff-i]
 - **Other sizes**: Non-standard sheet sizes are reserved for **unusual circumstances only**. The department does **not** maintain alternate templates for other sizes—if an exception is required, coordinate with template owners and project leadership.
 
 ## Page Numbering System
@@ -101,4 +101,5 @@ For shop team (internal use). Includes: [^transcript-layouts]
 - Review [Printing Considerations](/standards/rhino-drafting/printing.html)
 
 ## Footnotes
-[^transcript-layouts]: Source: Training Video Transcript - "Layouts, Details, and Annotations"
+[^transcript-layouts]: Source: [Training Video — "Layouts, Details, and Annotations"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQDCib7picOsRbne5WY5zqqKAYZVduR5IUrhgLRcL2a8y5o?e=GD3AVG)
+[^transcript-rhino8-kickoff-i]: Source: [Training Video — "Rhino 8 Kickoff Pt I"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQClvTAp_DlXSImI44GZjhPoAUjkAO2ROrfgSxu2Sy_oyQc?e=vWqkSZ)

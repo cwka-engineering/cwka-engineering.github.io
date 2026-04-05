@@ -50,4 +50,4 @@ Insert the **Detail Title** block from Legends and Symbols. Connect block attrib
 - Add [Dimensions & Annotations](/standards/rhino-drafting/annotations.html)
 
 ## Footnotes
-[^transcript-layouts]: Source: Training Video Transcript - "Layouts, Details, and Annotations"
+[^transcript-layouts]: Source: [Training Video — "Layouts, Details, and Annotations"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQDCib7picOsRbne5WY5zqqKAYZVduR5IUrhgLRcL2a8y5o?e=GD3AVG)

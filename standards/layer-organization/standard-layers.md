@@ -71,6 +71,6 @@ Toolpaths, reference geometry, and fabrication programming info.
 - Learn about [Modeling Techniques](/standards/layer-organization/modeling-techniques.html)
 
 ## Footnotes
-[^transcript-layouts]: Source: Training Video Transcript - "Layouts, Details, and Annotations"
-[^transcript-printing]: Source: Training Video Transcript - "Printing"
-[^transcript-rhino-modeling]: Source: Training Video Transcript - "Rhino Modeling"
+[^transcript-layouts]: Source: [Training Video — "Layouts, Details, and Annotations"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQDCib7picOsRbne5WY5zqqKAYZVduR5IUrhgLRcL2a8y5o?e=GD3AVG)
+[^transcript-printing]: Source: [Training Video — "Printing"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQCQlzuMthZ2QIwTvDPNyfACAV7hehiDupbtFBVJBqIVEI0?e=tpO9MY)
+[^transcript-rhino-modeling]: Source: [Training Video — "Rhino Modeling"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQAEsOqJGD60QbPyIRL0GoP6AZwY7DLBxDgzmFS_XFgwl2o?e=hDHY8a)

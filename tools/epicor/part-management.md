@@ -52,5 +52,5 @@ Use the **Part** dashboard. [^transcript-epicor-parts]
 - **Cycle Count**: Shows current on-hand quantities.
 
 ## Footnotes
-[^transcript-epicor-parts]: Source: Training Video Transcript - "Epicor Parts"
-[^transcript-epicor-jobs]: Source: Training Video Transcript - "Epicor Jobs & Production Report"
+[^transcript-epicor-parts]: Source: [Training Video — "Epicor Parts"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQD5WCJWo0ntQa_XO6kYOc65AcQW6B-pm4E0dLMaTHwY2G0?e=8O7TN0)
+[^transcript-epicor-jobs]: Source: [Training Video — "Epicor Jobs & Production Report"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQD_xqL4ks6oQ46EtS9TU66GAQ3DcQV93GaqUVAf3KvtHNc?e=EtZeL7)

@@ -29,8 +29,8 @@ Use **Microsoft Print to PDF** (recommended — good balance of quality and file
 
 ## Output Types
 
-- **Vector vs Raster**: [^transcript-printing] If using monochrome and struggling with vector output, try raster output instead.
-- **Shading**: [^transcript-printing] Shading is a raster feature by definition - can only be printed in raster mode. Shadows and shading require raster output.
+- **Vector vs Raster**: [^transcript-printing][^transcript-raster-vs-vector] If using monochrome and struggling with vector output, try raster output instead.
+- **Shading**: [^transcript-printing][^transcript-raster-vs-vector] Shading is a raster feature by definition - can only be printed in raster mode. Shadows and shading require raster output.
 
 ## Master Plan Integration
 
@@ -48,4 +48,5 @@ Use **Microsoft Print to PDF** (recommended — good balance of quality and file
 - [Folder Structure](/standards/folder-structure.html) - File management
 
 ## Footnotes
-[^transcript-printing]: Source: Training Video Transcript - "Printing"
+[^transcript-printing]: Source: [Training Video — "Printing"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQCQlzuMthZ2QIwTvDPNyfACAV7hehiDupbtFBVJBqIVEI0?e=tpO9MY)
+[^transcript-raster-vs-vector]: Source: [Training Video — "Raster vs Vector"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQD3p9Ht9IfOQ78KGOpvW3ldAWQ8-ZdwWZvjX8IKhWmiHCQ?e=JsiSsr)

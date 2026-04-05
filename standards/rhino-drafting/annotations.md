@@ -46,4 +46,4 @@ Select the annotation and change its style in Properties. Four standard styles a
 - Learn about [Printing Considerations](/standards/rhino-drafting/printing.html)
 
 ## Footnotes
-[^transcript-layouts]: Source: Training Video Transcript - "Layouts, Details, and Annotations"
+[^transcript-layouts]: Source: [Training Video — "Layouts, Details, and Annotations"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQDCib7picOsRbne5WY5zqqKAYZVduR5IUrhgLRcL2a8y5o?e=GD3AVG)

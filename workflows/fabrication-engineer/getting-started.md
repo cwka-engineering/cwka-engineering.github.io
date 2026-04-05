@@ -40,7 +40,7 @@ Navigate to `01_FE_Models/`. Copy the `_PROJ.JOB_ScopeDescription` template. Ren
 ## How do I create a new Rhino file from the template?
 {: #how-to-create-rhino-file}
 
-1. Open the latest template from `DFWCWKA internal > templates`. This file is locked — do not modify it directly.
+1. Open the latest template from `DFWCWKA internal > templates`. This file is locked — do not modify it directly.[^transcript-rhino8-kickoff-i]
 2. **Save As** to your job folder with correct naming: `PROJ.JOB_FE_Description.3dm`
 3. See [Layout Structure — Sheet size](/standards/rhino-drafting/layout-structure.html#sheet-size-and-template) for template selection guidance.
 
@@ -62,5 +62,6 @@ Navigate to `01_FE_Models/`. Copy the `_PROJ.JOB_ScopeDescription` template. Ren
 
 ## Footnotes
 
-[^transcript-getting-started]: Source: Training Video Transcript - "Getting Started"
-[^transcript-file-structure]: Source: Training Video Transcript - "File Structure"
+[^transcript-getting-started]: Source: [Training Video — "Getting Started"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQCEUKEug6xQT5MbOuegC5FTATe0eReTEDki0eO7FDWTDYg?e=G0GMA1)
+[^transcript-file-structure]: Source: [Training Video — "File Structure"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQBUn2u-blEnTr4mUoVDQp-0AR23c8QP3lYzOSlGNd5sk1k?e=9FGhWb)
+[^transcript-rhino8-kickoff-i]: Source: [Training Video — "Rhino 8 Kickoff Pt I"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQClvTAp_DlXSImI44GZjhPoAUjkAO2ROrfgSxu2Sy_oyQc?e=vWqkSZ)

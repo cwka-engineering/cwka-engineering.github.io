@@ -53,10 +53,10 @@ grand_parent: Workflows
 
 ## Footnotes
 
-[^transcript-getting-started]: Source: Training Video Transcript - "Getting Started"
-[^transcript-file-structure]: Source: Training Video Transcript - "File Structure"
-[^transcript-toolkit-setup]: Source: Training Video Transcript - "Toolkit Setup"
-[^transcript-drafting-toolkit]: Source: Training Video Transcript - "Drafting Toolkit"
-[^transcript-modeling-toolkit]: Source: Training Video Transcript - "Modeling Toolkit"
-[^transcript-adv-toolkit]: Source: Training Video Transcript - "Adv. Toolkit Functions"
-[^transcript-adv-toolkit-ii]: Source: Training Video Transcript - "Adv. Toolkit Functions II"
+[^transcript-getting-started]: Source: [Training Video — "Getting Started"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQCEUKEug6xQT5MbOuegC5FTATe0eReTEDki0eO7FDWTDYg?e=G0GMA1)
+[^transcript-file-structure]: Source: [Training Video — "File Structure"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQBUn2u-blEnTr4mUoVDQp-0AR23c8QP3lYzOSlGNd5sk1k?e=9FGhWb)
+[^transcript-toolkit-setup]: Source: [Training Video — "Toolkit Setup"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQB9FOHdcDGDR5e8KtWkPqyuAcs5HEWxjPZsR6x5keVKAhA?e=QtDWuB)
+[^transcript-drafting-toolkit]: Source: [Training Video — "Drafting Toolkit"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQC96ra9CnaEQYE9GuysMCP6AeLIbL5M4J8UXR8M5lT6sXY?e=pGaZWd)
+[^transcript-modeling-toolkit]: Source: [Training Video — "Modeling Toolkit"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQAfRPseXSLqTpdpXZWrN-KtAXlXRMID0jUqj5csZ27k9ds?e=eAgoTd)
+[^transcript-adv-toolkit]: Source: [Training Video — "Adv. Toolkit Functions"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQCALi3cuUMuSLsJ6G-5Rn4TAYr-NLZorJ-lfNYPkyrSaOA?e=AJEJ4d)
+[^transcript-adv-toolkit-ii]: Source: [Training Video — "Adv. Toolkit Functions II"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQB1ApOz1Dz_SoENHn-RPCSqAcMM0ikM3h9gyF5DxIqLwWc?e=Ec0Lq3)

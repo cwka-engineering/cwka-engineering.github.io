@@ -40,7 +40,7 @@ Use **hairline print width** and a **solid white hatch** for hardware and thin-g
 ## Standard Hatch Settings
 
 - **Pattern**: [^transcript-layouts] Select appropriate pattern (e.g., "plywood" for plywood materials).
-- **Pattern Color**: [^transcript-layouts] Typically gray (prints dark gray for lighter appearance).
+- **Pattern Color**: [^transcript-layouts][^transcript-lines-hatches] Typically gray (prints dark gray for lighter appearance).
 - **Background**: White
 - **Boundary Color**: Black
 - **Scale**: [^transcript-layouts] Adjust scale as needed (e.g., if pattern is too small, increase scale).
@@ -53,8 +53,8 @@ Use **hairline print width** and a **solid white hatch** for hardware and thin-g
 
 ## Section Line Styling
 
-- **Print width**: 0.05 mm
-- **Width scale**: 5 (makes section line pop while keeping other linework crisp)
+- **Print width**: 0.05 mm[^transcript-lines-hatches]
+- **Width scale**: 5 (makes section line pop while keeping other linework crisp)[^transcript-lines-hatches]
 
 ## Special Cases
 
@@ -67,4 +67,5 @@ Use **hairline print width** and a **solid white hatch** for hardware and thin-g
 - Review [Printing](/standards/rhino-drafting/printing.html)
 
 ## Footnotes
-[^transcript-layouts]: Source: Training Video Transcript - "Layouts, Details, and Annotations"
+[^transcript-layouts]: Source: [Training Video — "Layouts, Details, and Annotations"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQDCib7picOsRbne5WY5zqqKAYZVduR5IUrhgLRcL2a8y5o?e=GD3AVG)
+[^transcript-lines-hatches]: Source: [Training Video — "Lines, Hatches, Section Styles"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQAItk-AH1kYQp_LkhufyaF8AWuE7U9jPNeHQsafgO0ZYZI?e=jhChO2)

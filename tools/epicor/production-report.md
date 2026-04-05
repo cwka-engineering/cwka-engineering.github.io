@@ -43,5 +43,5 @@ Update submittal statuses and track manufacturing jobs. [^transcript-epicor-jobs
 **Note**: The Project Backlog has been retired. The Production Report is now the standard tool.
 
 ## Footnotes
-[^transcript-epicor-jobs]: Source: Training Video Transcript - "Epicor Jobs & Production Report"
-[^transcript-epicor-scheduling]: Source: Training Video Transcript - "Epicor Eng. Scheduling"
+[^transcript-epicor-jobs]: Source: [Training Video — "Epicor Jobs & Production Report"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQD_xqL4ks6oQ46EtS9TU66GAQ3DcQV93GaqUVAf3KvtHNc?e=EtZeL7)
+[^transcript-epicor-scheduling]: Source: [Training Video — "Epicor Eng. Scheduling"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQBFqFHaP_2RS7smowJrv3utAc1B524O73vQKAb27EQQDQc?e=yT7OQa)

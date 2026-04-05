@@ -15,7 +15,7 @@ has_children: true
 ## Drafting vs Modeling
 
 - **Drafting**: [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html) — Epicor-driven **schedules and BOM** on layouts, part lookup, template/layout restore, and **publish** workflows that keep drawings aligned with Epicor and the PM-maintained material schedule.
-- **Modeling**: [Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html) — Part naming, **L00/L001** style outputs, analysis, and **hardware** integration (including the shared library populated via McMaster-Carr requests).
+- **Modeling**: [Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html) — Part naming, **L00/L001** style outputs, analysis, and **hardware** integration (including the shared library populated via McMaster-Carr requests).[^transcript-rhino8-kickoff-ii]
 
 ## Launching Toolkit
 {: #how-to-launch-toolkit}
@@ -60,4 +60,5 @@ Drafting Toolkit → **Template tab** → **Restore Model Space**. Pulls in and 
 Drafting Toolkit → **Template tab** → **Restore Layout Space**. Select specific pages or restore all. Hover over page names for descriptions (e.g., "Master Parts List", "G00 General Schedule").
 
 ## Footnotes
-[^transcript-toolkit-setup]: Source: Training Video Transcript - "Toolkit Setup"
+[^transcript-toolkit-setup]: Source: [Training Video — "Toolkit Setup"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQB9FOHdcDGDR5e8KtWkPqyuAcs5HEWxjPZsR6x5keVKAhA?e=QtDWuB)
+[^transcript-rhino8-kickoff-ii]: Source: [Training Video — "Rhino 8 Kickoff Pt II"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQDPcGdpPFE7R4qYb8JE-0pEAWP7lZ3x3-mehH6F1qiQJVg?e=VaMdtA)

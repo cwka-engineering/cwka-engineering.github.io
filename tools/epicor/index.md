@@ -59,4 +59,4 @@ Epicor operates with multiple sites (CWK and Digifab Shop). [^transcript-epicor-
 - **New Parts**: [Part Management](/tools/epicor/part-management.html)
 
 ## Footnotes
-[^transcript-epicor-home]: Source: Training Video Transcript - "Epicor Home Screen"
+[^transcript-epicor-home]: Source: [Training Video — "Epicor Home Screen"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQBr1E3ao6ygR7h98ROBRYaJAe1gqE1Vd7xOBNkCdky3CuA?e=XxJE0S)

@@ -43,4 +43,4 @@ Rhino models use parent layers based on project phases: PRECON, DE, FE, PE. Each
 - **Material Codes**: [Codes & Tags](/standards/layer-organization/codes-and-tags.html)
 
 ## Footnotes
-[^transcript-rhino-modeling]: Source: Training Video Transcript - "Rhino Modeling"
+[^transcript-rhino-modeling]: Source: [Training Video — "Rhino Modeling"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQAEsOqJGD60QbPyIRL0GoP6AZwY7DLBxDgzmFS_XFgwl2o?e=hDHY8a)

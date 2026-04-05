@@ -1,0 +1,133 @@
+# Training Video URL Registry
+# ─────────────────────────────────────────────────────────────────────────────
+# Maps each footnote key to its SharePoint video URL.
+# Note: kramdown footnotes cannot use Liquid, so this file is not auto-rendered.
+# After filling in a URL here, also update the matching [^transcript-KEY]
+# definition in the relevant wiki page(s) — see the "files" field below.
+#
+# STATUS KEY:
+#   ✅ url populated, footnotes active in wiki
+#   ⬜ url needs to be filled in
+# ─────────────────────────────────────────────────────────────────────────────
+
+index: "https://digifabshop.sharepoint.com/sites/Engineering/Engineering%20Wiki/Training%20Videos.aspx"
+
+videos:
+
+  # ── ALL ACTIVE ✅ ────────────────────────────────────────────────────────────
+
+  getting-started:
+    title: "Getting Started"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQCEUKEug6xQT5MbOuegC5FTATe0eReTEDki0eO7FDWTDYg?e=G0GMA1"
+    files: "getting-started.md, troubleshooting.md, epicor/dashboards.md"
+
+  file-structure:
+    title: "File Structure"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQBUn2u-blEnTr4mUoVDQp-0AR23c8QP3lYzOSlGNd5sk1k?e=9FGhWb"
+    files: "getting-started.md, troubleshooting.md"
+
+  toolkit-setup:
+    title: "Toolkit Setup"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQB9FOHdcDGDR5e8KtWkPqyuAcs5HEWxjPZsR6x5keVKAhA?e=QtDWuB"
+    files: "toolkit/index.md, troubleshooting.md"
+
+  drafting-toolkit:
+    title: "Drafting Toolkit"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQC96ra9CnaEQYE9GuysMCP6AeLIbL5M4J8UXR8M5lT6sXY?e=pGaZWd"
+    files: "toolkit/drafting.md, troubleshooting.md"
+
+  drafting-toolkit-kickoff:
+    title: "Drafting Toolkit Kickoff"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQBHoAX9EWA3R4rSxF50B-OzAdiATRHpHDs1Qz01DmLPLw8?e=n0ea7X"
+    files: "toolkit/drafting.md"
+    note:  "Recording from 2024-06-14. Footnote includes caveat about Epicor UI names."
+
+  modeling-toolkit:
+    title: "Modeling Toolkit"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQAfRPseXSLqTpdpXZWrN-KtAXlXRMID0jUqj5csZ27k9ds?e=eAgoTd"
+    files: "part-naming.md, troubleshooting.md"
+
+  adv-toolkit:
+    title: "Adv. Toolkit Functions"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQCALi3cuUMuSLsJ6G-5Rn4TAYr-NLZorJ-lfNYPkyrSaOA?e=AJEJ4d"
+    files: "part-naming.md, shipping-components.md, takeoffs.md, troubleshooting.md, toolkit/modeling.md"
+
+  adv-toolkit-ii:
+    title: "Adv. Toolkit Functions II"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQB1ApOz1Dz_SoENHn-RPCSqAcMM0ikM3h9gyF5DxIqLwWc?e=Ec0Lq3"
+    files: "part-naming.md, toolkit/drafting.md, troubleshooting.md"
+
+  blocks:
+    title: "Blocks"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQB6m1C6NVjESosK0IY1J9KqASuqa3wKbrNgKD7bu8S-_HM?e=SYCulO"
+    files: "toolkit/modeling.md"
+
+  rhino-modeling:
+    title: "Rhino Modeling"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQAEsOqJGD60QbPyIRL0GoP6AZwY7DLBxDgzmFS_XFgwl2o?e=hDHY8a"
+    files: "layer-organization/index.md, layer-organization/standard-layers.md"
+
+  rhino8-kickoff-i:
+    title: "Rhino 8 Kickoff Pt I"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQClvTAp_DlXSImI44GZjhPoAUjkAO2ROrfgSxu2Sy_oyQc?e=vWqkSZ"
+    files: "onboarding-quick-start.md, rhino-drafting/layout-structure.md, getting-started.md"
+
+  rhino8-kickoff-ii:
+    title: "Rhino 8 Kickoff Pt II"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQDPcGdpPFE7R4qYb8JE-0pEAWP7lZ3x3-mehH6F1qiQJVg?e=VaMdtA"
+    files: "toolkit/modeling.md, toolkit/index.md"
+
+  layouts:
+    title: "Layouts, Details, and Annotations"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQDCib7picOsRbne5WY5zqqKAYZVduR5IUrhgLRcL2a8y5o?e=GD3AVG"
+    files: "layer-organization/standard-layers.md, rhino-drafting/layout-structure.md, annotations.md, details.md, display-modes.md, hatches.md, printing.md, sections-clipping.md"
+
+  lines-hatches-section-styles:
+    title: "Lines, Hatches, Section Styles"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQAItk-AH1kYQp_LkhufyaF8AWuE7U9jPNeHQsafgO0ZYZI?e=jhChO2"
+    files: "rhino-drafting/hatches.md"
+
+  printing:
+    title: "Printing"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQCQlzuMthZ2QIwTvDPNyfACAV7hehiDupbtFBVJBqIVEI0?e=tpO9MY"
+    files: "layer-organization/standard-layers.md, rhino-drafting/printing.md"
+
+  raster-vs-vector:
+    title: "Raster vs Vector"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQD3p9Ht9IfOQ78KGOpvW3ldAWQ8-ZdwWZvjX8IKhWmiHCQ?e=JsiSsr"
+    files: "rhino-drafting/printing.md, rhino-drafting/display-modes.md"
+
+  epicor-home:
+    title: "Epicor Home Screen"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQBr1E3ao6ygR7h98ROBRYaJAe1gqE1Vd7xOBNkCdky3CuA?e=XxJE0S"
+    files: "epicor/index.md"
+
+  epicor-scheduling:
+    title: "Epicor Eng. Scheduling"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQBFqFHaP_2RS7smowJrv3utAc1B524O73vQKAb27EQQDQc?e=yT7OQa"
+    files: "epicor/dashboards.md, epicor/production-report.md"
+
+  epicor-project-materials:
+    title: "Epicor Project Materials"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQD8u0w8HEjGTrDZIIG5-AJYAUwLBQo9xZU5LnYaEFRGNzc?e=MlosTg"
+    files: "epicor/dashboards.md"
+
+  epicor-time:
+    title: "Epicor Time Tracking"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQABIwF4w6H6Ta3UsXmQ5yi0Aec0QJHoPjqkFGCCs-FMvqE?e=9d6YW6"
+    files: "epicor/job-management.md, time-entry.md"
+
+  epicor-jobs:
+    title: "Epicor Jobs & Production Report"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQD_xqL4ks6oQ46EtS9TU66GAQ3DcQV93GaqUVAf3KvtHNc?e=EtZeL7"
+    files: "epicor/part-management.md, epicor/production-report.md"
+
+  epicor-parts:
+    title: "Epicor Parts"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQD5WCJWo0ntQa_XO6kYOc65AcQW6B-pm4E0dLMaTHwY2G0?e=8O7TN0"
+    files: "epicor/part-management.md"
+
+  toggl:
+    title: "Toggl Time Entry"
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQC2_Xi2AYXFSpXYjlYQpMeLAeI4FNIDtrRGsaMtWmLIMfc?e=hrO2o9"
+    files: "time-entry.md"

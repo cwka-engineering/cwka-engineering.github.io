@@ -15,7 +15,7 @@ The Drafting Toolkit is the in-Rhino interface for **read-only Epicor lookups** 
 
 ## Linked layout fields (do not edit by hand)
 
-- Schedule and BOM placeholders on layouts (e.g. **G00** general requirements, BOM pages) are driven by **fields/variables** tied to data the toolkit writes into the Rhino file—not ordinary static text. [^transcript-all-hands-epicor]
+- Schedule and BOM placeholders on layouts (e.g. **G00** general requirements, BOM pages) are driven by **fields/variables** tied to data the toolkit writes into the Rhino file—not ordinary static text. [^transcript-drafting-toolkit-kickoff]
 - **Do not** edit those values manually in the layout. Manual edits are **overwritten** the next time you run the toolkit and publish.
 - To change what appears, fix the source of truth (**Epicor** and/or the **material schedule / transmittal** process) and **refresh** via the toolkit (see below), then publish again.
 
@@ -26,7 +26,7 @@ The Drafting Toolkit is the in-Rhino interface for **read-only Epicor lookups** 
 
 ## Part lookup
 
-- **Reverse lookup**: Search when you do not yet know the part number—filter by class (e.g. sheet goods), then narrow with search terms to match description and attributes. [^transcript-all-hands-epicor]
+- **Reverse lookup**: Search when you do not yet know the part number—filter by class (e.g. sheet goods), then narrow with search terms to match description and attributes. [^transcript-drafting-toolkit-kickoff]
 - **Forward lookup**: Enter a known part number to pull **current** part attributes from Epicor.
 - Each successful pull shows a **cache timestamp** (when that read completed). Use it to know how fresh the data is.
 - Forward lookup can also **prepare layer structure** for the material so modeling stays aligned with downstream expectations.
@@ -35,14 +35,14 @@ The Drafting Toolkit is the in-Rhino interface for **read-only Epicor lookups** 
 ## Job BOM lookup
 
 - Query by **job** to pull the **live BOM** for that job from Epicor.
-- **Open jobs only**: Closed jobs are **ignored** to limit data volume—if a lookup returns nothing, confirm the job is open and bombed as expected. [^transcript-all-hands-epicor]
+- **Open jobs only**: Closed jobs are **ignored** to limit data volume—if a lookup returns nothing, confirm the job is open and bombed as expected. [^transcript-drafting-toolkit-kickoff]
 - The BOM view can show **quantities**, **UOM**, **descriptions**, and a **cross-reference to the material transmittal / approval** view the PM maintains (see [Project Materials Dashboard](/tools/epicor/dashboards.html#project-materials-dashboard)). Use it to see whether a line is approved before you model it.
 - **Header metadata** typically includes: time the BOM was **cached** in the tool, and the **most recent Epicor change-log activity** for that job—useful to spot stale BOMs.
-- **Publishing to a layout**: Choose the target layout page (e.g. a **200**-level BOM page), set **class filter** (**full BOM** vs **hardware-only** where available), then **publish** so tags/descriptions on the sheet update from the cached BOM. [^transcript-all-hands-epicor]
+- **Publishing to a layout**: Choose the target layout page (e.g. a **200**-level BOM page), set **class filter** (**full BOM** vs **hardware-only** where available), then **publish** so tags/descriptions on the sheet update from the cached BOM. [^transcript-drafting-toolkit-kickoff]
 
 ## General requirements / material schedule (transmittal)
 
-- Query by **project** to pull the **material schedule** the PM maintains (FSC, fire rating, moisture, emissions, etc., as applicable). [^transcript-all-hands-epicor]
+- Query by **project** to pull the **material schedule** the PM maintains (FSC, fire rating, moisture, emissions, etc., as applicable). [^transcript-drafting-toolkit-kickoff]
 - **Publish** to the appropriate layout (commonly **G00**) to refresh that page.
 - **Roles**:
   - **Project Manager**: Owns **accuracy and completeness** of material schedule / transmittal data in Epicor (and related dashboards).
@@ -50,7 +50,7 @@ The Drafting Toolkit is the in-Rhino interface for **read-only Epicor lookups** 
 
 ## Cache, refresh, and Epicor changes
 
-- Data shown in the toolkit is **as of the last lookup** for that job or project. If someone changes the BOM in Epicor, the Rhino UI **does not** auto-update until you **re-run** the same lookup and refresh the cache (then republish if needed). [^transcript-all-hands-epicor]
+- Data shown in the toolkit is **as of the last lookup** for that job or project. If someone changes the BOM in Epicor, the Rhino UI **does not** auto-update until you **re-run** the same lookup and refresh the cache (then republish if needed). [^transcript-drafting-toolkit-kickoff]
 - Use timestamps in the UI to confirm freshness before you rely on BOM or schedule content for release decisions.
 
 ---
@@ -112,6 +112,6 @@ Set submittal scope to `PROJ.GS.001` format, then specify the individual jobs co
 - Publish changes to update layout.
 
 ## Footnotes
-[^transcript-drafting-toolkit]: Source: Training Video Transcript - "Drafting Toolkit"
-[^transcript-adv-toolkit-ii]: Source: Training Video Transcript - "Adv. Toolkit Functions II"
-[^transcript-all-hands-epicor]: Source: Engineering Department All Hands meeting recording transcript, 2024-06-14 (`ingest/transcripts/`). Some Epicor UI names and roadmap items reflect that period; confirm current behavior in the live toolkit.
+[^transcript-drafting-toolkit]: Source: [Training Video — "Drafting Toolkit"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQC96ra9CnaEQYE9GuysMCP6AeLIbL5M4J8UXR8M5lT6sXY?e=pGaZWd)
+[^transcript-adv-toolkit-ii]: Source: [Training Video — "Adv. Toolkit Functions II"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQB1ApOz1Dz_SoENHn-RPCSqAcMM0ikM3h9gyF5DxIqLwWc?e=Ec0Lq3)
+[^transcript-drafting-toolkit-kickoff]: Source: [Training Video — "Drafting Toolkit Kickoff"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQBHoAX9EWA3R4rSxF50B-OzAdiATRHpHDs1Qz01DmLPLw8?e=n0ea7X) (recording from 2024-06-14). Some Epicor UI names and roadmap items reflect that period; confirm current behavior in the live toolkit.
