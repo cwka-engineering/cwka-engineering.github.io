@@ -1,8 +1,10 @@
 /**
  * CWK/DFW Engineering Wiki Chatbot — Cloudflare Worker
  *
- * Proxies chat requests to the Claude API with the full wiki corpus
- * injected as a system prompt.  Streams the response back via SSE.
+ * Routes:
+ *   POST /api/chat        — Wiki Q&A chatbot (public, CORS-gated)
+ *   POST /api/diagnostic  — GH Diagnostic Assistant (token-gated, SSE streaming)
+ *   POST /api/summarize   — rhino-qc GUI summary (token-gated, SSE streaming)
  */
 
 // ---------------------------------------------------------------------------
@@ -16,6 +18,7 @@ interface Env {
   ALLOWED_ORIGIN: string;
   CLAUDE_MODEL: string;
   MAX_REQUESTS_PER_MINUTE: string;
+  DIAGNOSTIC_AUTH_TOKEN: string;
 }
 
 interface ChatMessage {
@@ -27,11 +30,23 @@ interface ChatRequest {
   messages: ChatMessage[];
 }
 
+interface DiagnosticRequest {
+  triage: Record<string, Array<{ severity: string; message: string; ids?: string[] }>>;
+  epicor_context: Record<string, unknown>;
+  messages: ChatMessage[];
+}
+
+interface SummarizeRequest {
+  payload_text: string;
+}
+
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
 
 const CORPUS_KV_KEY = "wiki-corpus-prompt";
+
+// --- Wiki chatbot (existing) ---
 
 const SYSTEM_PROMPT_PREFIX = `You are the CWK/DFW Engineering Wiki assistant.
 
@@ -56,12 +71,80 @@ RULES — follow these strictly:
 const SYSTEM_PROMPT_SUFFIX = `
 </wiki-corpus>`;
 
+// --- Diagnostic Assistant (GH multi-turn) ---
+
+const DIAGNOSTIC_PREFIX = `You are the CWK/DFW FE-to-PE Diagnostic Assistant.
+
+You have three grounded sources:
+1. The engineering wiki (<wiki-corpus>) — procedures, standards, definitions, workflows.
+2. The current validation results (<diagnostic-results>) — specific rule failures on this 3dm file.
+3. The Epicor job milestone state (<epicor-context>) — calibrate urgency to where this job sits.
+
+RULES:
+1. When explaining HOW to fix an issue, cite the relevant wiki page as a markdown link.
+   Use the page URL and anchor if applicable,
+   e.g. [Brep UserText — Required Keys](.../brep-user-text.html#how-to-set-required-keys).
+2. When referencing failures, use exact rule names from <diagnostic-results>.
+3. Use <epicor-context> to calibrate priority: near-release jobs → focus on blocking errors
+   that gate the next milestone; early-stage jobs → also surface warnings and metadata gaps.
+4. Order advice from most-blocking to least: Document metadata → Layer structure →
+   Object metadata (Brep UserText) → Geometry/naming → ERP business rule checks.
+   When an upstream failure is causing downstream failures, name the affected checks and
+   tell the engineer to fix the root cause first — do not surface tier numbers or tier labels.
+5. Call out cascade effects explicitly — name which downstream failures are likely symptoms
+   of an upstream root cause and say so.
+6. If the wiki does not cover a topic, say so — do not fabricate procedures.
+7. Be concise and actionable. Use numbered steps or bullet lists for multi-step fixes.
+
+<wiki-corpus>
+`;
+
+// --- GUI Summary (one-shot action plan) ---
+
+const SUMMARIZE_PREFIX = `You are assisting with Rhino 3dm QC validation for FE-to-PE (Fabrication Engineering to Production Engineering) release. Given validation results from a diagnostic tool, produce a concise, prioritized action plan.
+
+Use the exact validation category names shown in the data (e.g. "Brep Naming", "Layout Views", "BOM Materials", "Clash Detection") — do not substitute technical or variable names.
+
+When recommending a fix, cite the relevant wiki page from <wiki-corpus> as a markdown link if applicable. Use page URL and anchor, e.g. [Part Naming — Generate Names](.../part-naming.html#how-to-generate-names).
+
+## Ordering rules (internal guidance — do NOT expose tier numbers in the output)
+Order steps from most-blocking to least. Upstream failures that cause other checks to fail
+must come first — fixing them resolves multiple downstream errors at once.
+
+Use this dependency order to sort steps (do not label steps with tier numbers):
+1. Document metadata (job/project UserText) — without it ERP cannot resolve job context.
+2. Layer structure — incorrect layers break BOM extraction.
+3. Object metadata (Brep UserText) — missing it blocks Congruent Parts, Polysurface Dimensions, Clash Detection.
+4. Geometry and naming — usually independent once metadata is present.
+5. ERP business rule checks — only meaningful when metadata allows ERP to evaluate.
+
+When fixing an upstream issue will also clear downstream failures, say so plainly in the step:
+  e.g. "Fix Brep UserText — this also restores the Congruent Parts and Clash Detection checks."
+
+## Required output structure (markdown)
+1. **## Action Steps** (required — primary section)
+   - Numbered list, most-blocking first.
+   - Each step: **[Category Name]** — one-sentence action.
+   - If a fix unblocks other failing checks, add a brief note inline: *(also clears Congruent Parts / Polysurface Dimensions)*
+   - Within the same priority level, order by severity (errors before warnings).
+   - Merge related issues into one step; split when different work is required.
+   - If no issues, state that clearly.
+2. **## Patterns** (optional — only if it adds insight not already covered in the steps)
+   - 2–4 bullet points on recurring themes or root-vs-symptom relationships.
+   - Use bullets, not a prose paragraph.
+3. **## Per-file notes** (only if multiple files were validated)
+   - Short bullets for file-specific differences.
+
+Be concise. The action steps should be scannable at a glance.
+
+<wiki-corpus>
+`;
+
 // ---------------------------------------------------------------------------
 // CORS helpers
 // ---------------------------------------------------------------------------
 
 function corsHeaders(origin: string, allowedOrigin: string): HeadersInit {
-  // In development, also allow localhost
   const isAllowed =
     origin === allowedOrigin ||
     origin.startsWith("http://localhost:") ||
@@ -85,6 +168,13 @@ function corsResponse(status: number, body: string, origin: string, allowedOrigi
   });
 }
 
+function jsonResponse(status: number, body: string): Response {
+  return new Response(body, {
+    status,
+    headers: { "Content-Type": "application/json" },
+  });
+}
+
 // ---------------------------------------------------------------------------
 // Rate limiting
 // ---------------------------------------------------------------------------
@@ -101,11 +191,10 @@ async function checkRateLimit(
   const raw = await kv.get(key);
   let timestamps: number[] = raw ? JSON.parse(raw) : [];
 
-  // Prune old entries
   timestamps = timestamps.filter((t) => t > windowStart);
 
   if (timestamps.length >= maxPerMinute) {
-    return false; // rate limited
+    return false;
   }
 
   timestamps.push(now);
@@ -114,7 +203,7 @@ async function checkRateLimit(
 }
 
 // ---------------------------------------------------------------------------
-// Claude API streaming
+// Claude API streaming — wiki chatbot (single system block, cached)
 // ---------------------------------------------------------------------------
 
 async function streamClaude(
@@ -153,9 +242,68 @@ async function streamClaude(
     throw new Error(`Claude API error ${response.status}: ${errorText}`);
   }
 
-  // Transform Anthropic's SSE stream into a simpler text-delta SSE stream
-  // that the client can consume without knowing the Anthropic wire format.
-  const reader = response.body.getReader();
+  return buildSseStream(response.body);
+}
+
+// ---------------------------------------------------------------------------
+// Claude API streaming — diagnostic/summarize (two system blocks)
+//
+// Block 1: cachedCorpus — wiki prefix + corpus text; marked cache_control: ephemeral
+//          so the 67K-token corpus is reused across requests within the 5-min cache window.
+// Block 2: dynamicContext — triage/epicor or validation payload; unique per request, not cached.
+// ---------------------------------------------------------------------------
+
+async function streamClaudeDiagnostic(
+  messages: ChatMessage[],
+  cachedCorpus: string,
+  dynamicContext: string,
+  apiKey: string,
+  model: string
+): Promise<ReadableStream> {
+  const response = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": apiKey,
+      "anthropic-version": "2023-06-01",
+    },
+    body: JSON.stringify({
+      model,
+      max_tokens: 2048,
+      stream: true,
+      system: [
+        {
+          type: "text",
+          text: cachedCorpus,
+          cache_control: { type: "ephemeral" },
+        },
+        {
+          type: "text",
+          text: dynamicContext,
+          // no cache_control — unique per request
+        },
+      ],
+      messages: messages.map((m) => ({
+        role: m.role,
+        content: m.content,
+      })),
+    }),
+  });
+
+  if (!response.ok || !response.body) {
+    const errorText = await response.text();
+    throw new Error(`Claude API error ${response.status}: ${errorText}`);
+  }
+
+  return buildSseStream(response.body);
+}
+
+// ---------------------------------------------------------------------------
+// SSE stream builder — shared transformation logic
+// ---------------------------------------------------------------------------
+
+function buildSseStream(body: ReadableStream<Uint8Array>): ReadableStream {
+  const reader = body.getReader();
   const decoder = new TextDecoder();
   let buffer = "";
 
@@ -208,6 +356,82 @@ async function streamClaude(
 }
 
 // ---------------------------------------------------------------------------
+// Diagnostic context formatter
+// ---------------------------------------------------------------------------
+
+function formatDiagnosticContext(
+  triage: DiagnosticRequest["triage"],
+  epicor: DiagnosticRequest["epicor_context"]
+): string {
+  const lines: string[] = [];
+
+  lines.push("<diagnostic-results>");
+  if (Object.keys(triage).length === 0) {
+    lines.push("No validation failures recorded.");
+  } else {
+    lines.push("Per-rule failures (rule name: severity breakdown, sample messages):");
+    for (const [rule, issues] of Object.entries(triage)) {
+      const errors = issues.filter((i) => i.severity === "error").length;
+      const warnings = issues.filter((i) => i.severity === "warning").length;
+      const infos = issues.filter((i) => i.severity === "info").length;
+      const parts: string[] = [];
+      if (errors) parts.push(`${errors} errors`);
+      if (warnings) parts.push(`${warnings} warnings`);
+      if (infos) parts.push(`${infos} infos`);
+      const total = issues.length;
+      lines.push(`  - ${rule}: ${total} total (${parts.join(", ")})`);
+      // Include up to 3 sample messages so the LLM can see the actual failure text
+      const samples = issues.slice(0, 3);
+      for (const s of samples) {
+        const idClause = s.ids && s.ids.length > 0 ? ` [object: ${s.ids[0]}${s.ids.length > 1 ? ` +${s.ids.length - 1} more` : ""}]` : "";
+        lines.push(`      • ${s.message}${idClause}`);
+      }
+      if (issues.length > 3) {
+        lines.push(`      • ... and ${issues.length - 3} more`);
+      }
+    }
+  }
+  lines.push("</diagnostic-results>");
+  lines.push("");
+
+  lines.push("<epicor-context>");
+  if (Object.keys(epicor).length === 0) {
+    lines.push("Epicor job context unavailable.");
+  } else {
+    for (const [k, v] of Object.entries(epicor)) {
+      lines.push(`${k}: ${v}`);
+    }
+  }
+  lines.push("</epicor-context>");
+
+  return lines.join("\n");
+}
+
+// ---------------------------------------------------------------------------
+// Token auth helper
+// ---------------------------------------------------------------------------
+
+function checkToken(request: Request, expected: string): boolean {
+  const auth = request.headers.get("Authorization") || "";
+  return auth === `Bearer ${expected}`;
+}
+
+// ---------------------------------------------------------------------------
+// SSE response helper
+// ---------------------------------------------------------------------------
+
+function sseResponse(stream: ReadableStream): Response {
+  return new Response(stream, {
+    status: 200,
+    headers: {
+      "Content-Type": "text/event-stream",
+      "Cache-Control": "no-cache",
+      Connection: "keep-alive",
+    },
+  });
+}
+
+// ---------------------------------------------------------------------------
 // Main handler
 // ---------------------------------------------------------------------------
 
@@ -215,88 +439,188 @@ export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const origin = request.headers.get("Origin") || "";
     const cors = corsHeaders(origin, env.ALLOWED_ORIGIN);
+    const url = new URL(request.url);
 
-    // Handle CORS preflight
+    // -----------------------------------------------------------------------
+    // CORS preflight (applies to /api/chat only — diagnostic routes are not
+    // called from browsers and don't need CORS headers)
+    // -----------------------------------------------------------------------
     if (request.method === "OPTIONS") {
       return new Response(null, { status: 204, headers: cors });
     }
 
-    // Only POST /api/chat
-    const url = new URL(request.url);
-    if (url.pathname !== "/api/chat" || request.method !== "POST") {
-      return corsResponse(404, JSON.stringify({ error: "Not found" }), origin, env.ALLOWED_ORIGIN);
+    // -----------------------------------------------------------------------
+    // POST /api/chat — wiki chatbot (public, CORS-gated, rate-limited)
+    // -----------------------------------------------------------------------
+    if (url.pathname === "/api/chat" && request.method === "POST") {
+      const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+      const maxRpm = parseInt(env.MAX_REQUESTS_PER_MINUTE, 10) || 20;
+      const allowed = await checkRateLimit(ip, env.RATE_LIMIT, maxRpm);
+      if (!allowed) {
+        return corsResponse(
+          429,
+          JSON.stringify({ error: "Rate limited. Please wait a moment." }),
+          origin,
+          env.ALLOWED_ORIGIN
+        );
+      }
+
+      let body: ChatRequest;
+      try {
+        body = await request.json();
+      } catch {
+        return corsResponse(400, JSON.stringify({ error: "Invalid JSON" }), origin, env.ALLOWED_ORIGIN);
+      }
+
+      if (!body.messages || !Array.isArray(body.messages) || body.messages.length === 0) {
+        return corsResponse(400, JSON.stringify({ error: "messages array required" }), origin, env.ALLOWED_ORIGIN);
+      }
+
+      if (body.messages.length > 20) {
+        body.messages = body.messages.slice(-20);
+      }
+
+      const corpus = await env.WIKI_CORPUS.get(CORPUS_KV_KEY);
+      if (!corpus) {
+        return corsResponse(
+          503,
+          JSON.stringify({ error: "Wiki corpus not loaded. Please try again later." }),
+          origin,
+          env.ALLOWED_ORIGIN
+        );
+      }
+
+      const systemPrompt = SYSTEM_PROMPT_PREFIX + corpus + SYSTEM_PROMPT_SUFFIX;
+
+      try {
+        const stream = await streamClaude(
+          body.messages,
+          systemPrompt,
+          env.ANTHROPIC_API_KEY,
+          env.CLAUDE_MODEL
+        );
+        return new Response(stream, {
+          status: 200,
+          headers: {
+            "Content-Type": "text/event-stream",
+            "Cache-Control": "no-cache",
+            Connection: "keep-alive",
+            ...cors,
+          },
+        });
+      } catch (err: unknown) {
+        const message = err instanceof Error ? err.message : "Unknown error";
+        console.error("Claude API error:", message);
+        return corsResponse(
+          502,
+          JSON.stringify({ error: "Failed to get response from AI. Please try again." }),
+          origin,
+          env.ALLOWED_ORIGIN
+        );
+      }
     }
 
-    // Rate limit
-    const ip = request.headers.get("CF-Connecting-IP") || "unknown";
-    const maxRpm = parseInt(env.MAX_REQUESTS_PER_MINUTE, 10) || 20;
-    const allowed = await checkRateLimit(ip, env.RATE_LIMIT, maxRpm);
-    if (!allowed) {
-      return corsResponse(
-        429,
-        JSON.stringify({ error: "Rate limited. Please wait a moment." }),
-        origin,
-        env.ALLOWED_ORIGIN
+    // -----------------------------------------------------------------------
+    // POST /api/diagnostic — GH Diagnostic Assistant (token-gated, streaming)
+    // -----------------------------------------------------------------------
+    if (url.pathname === "/api/diagnostic" && request.method === "POST") {
+      if (!checkToken(request, env.DIAGNOSTIC_AUTH_TOKEN)) {
+        return jsonResponse(401, JSON.stringify({ error: "Unauthorized" }));
+      }
+
+      let body: DiagnosticRequest;
+      try {
+        body = await request.json();
+      } catch {
+        return jsonResponse(400, JSON.stringify({ error: "Invalid JSON" }));
+      }
+
+      if (!body.messages || !Array.isArray(body.messages) || body.messages.length === 0) {
+        return jsonResponse(400, JSON.stringify({ error: "messages array required" }));
+      }
+
+      if (body.messages.length > 20) {
+        body.messages = body.messages.slice(-20);
+      }
+
+      const corpus = await env.WIKI_CORPUS.get(CORPUS_KV_KEY);
+      if (!corpus) {
+        return jsonResponse(503, JSON.stringify({ error: "Wiki corpus not loaded." }));
+      }
+
+      const cachedCorpus = DIAGNOSTIC_PREFIX + corpus + SYSTEM_PROMPT_SUFFIX;
+      const dynamicContext = formatDiagnosticContext(
+        body.triage || {},
+        body.epicor_context || {}
       );
+
+      try {
+        const stream = await streamClaudeDiagnostic(
+          body.messages,
+          cachedCorpus,
+          dynamicContext,
+          env.ANTHROPIC_API_KEY,
+          env.CLAUDE_MODEL
+        );
+        return sseResponse(stream);
+      } catch (err: unknown) {
+        const message = err instanceof Error ? err.message : "Unknown error";
+        console.error("Diagnostic API error:", message);
+        return jsonResponse(502, JSON.stringify({ error: "Failed to get AI response." }));
+      }
     }
 
-    // Parse request
-    let body: ChatRequest;
-    try {
-      body = await request.json();
-    } catch {
-      return corsResponse(400, JSON.stringify({ error: "Invalid JSON" }), origin, env.ALLOWED_ORIGIN);
+    // -----------------------------------------------------------------------
+    // POST /api/summarize — rhino-qc GUI summary (token-gated, streaming)
+    // -----------------------------------------------------------------------
+    if (url.pathname === "/api/summarize" && request.method === "POST") {
+      if (!checkToken(request, env.DIAGNOSTIC_AUTH_TOKEN)) {
+        return jsonResponse(401, JSON.stringify({ error: "Unauthorized" }));
+      }
+
+      let body: SummarizeRequest;
+      try {
+        body = await request.json();
+      } catch {
+        return jsonResponse(400, JSON.stringify({ error: "Invalid JSON" }));
+      }
+
+      if (!body.payload_text || typeof body.payload_text !== "string" || !body.payload_text.trim()) {
+        return jsonResponse(400, JSON.stringify({ error: "payload_text required" }));
+      }
+
+      const corpus = await env.WIKI_CORPUS.get(CORPUS_KV_KEY);
+      if (!corpus) {
+        return jsonResponse(503, JSON.stringify({ error: "Wiki corpus not loaded." }));
+      }
+
+      const cachedCorpus = SUMMARIZE_PREFIX + corpus + SYSTEM_PROMPT_SUFFIX;
+      const dynamicContext =
+        "<validation-data>\n" + body.payload_text.trim() + "\n</validation-data>";
+
+      const messages: ChatMessage[] = [
+        { role: "user", content: "Produce the prioritized action plan." },
+      ];
+
+      try {
+        const stream = await streamClaudeDiagnostic(
+          messages,
+          cachedCorpus,
+          dynamicContext,
+          env.ANTHROPIC_API_KEY,
+          env.CLAUDE_MODEL
+        );
+        return sseResponse(stream);
+      } catch (err: unknown) {
+        const message = err instanceof Error ? err.message : "Unknown error";
+        console.error("Summarize API error:", message);
+        return jsonResponse(502, JSON.stringify({ error: "Failed to get AI response." }));
+      }
     }
 
-    if (!body.messages || !Array.isArray(body.messages) || body.messages.length === 0) {
-      return corsResponse(400, JSON.stringify({ error: "messages array required" }), origin, env.ALLOWED_ORIGIN);
-    }
-
-    // Limit conversation length to prevent abuse
-    if (body.messages.length > 20) {
-      body.messages = body.messages.slice(-20);
-    }
-
-    // Load wiki corpus from KV
-    const corpus = await env.WIKI_CORPUS.get(CORPUS_KV_KEY);
-    if (!corpus) {
-      return corsResponse(
-        503,
-        JSON.stringify({ error: "Wiki corpus not loaded. Please try again later." }),
-        origin,
-        env.ALLOWED_ORIGIN
-      );
-    }
-
-    const systemPrompt = SYSTEM_PROMPT_PREFIX + corpus + SYSTEM_PROMPT_SUFFIX;
-
-    // Stream response
-    try {
-      const stream = await streamClaude(
-        body.messages,
-        systemPrompt,
-        env.ANTHROPIC_API_KEY,
-        env.CLAUDE_MODEL
-      );
-
-      return new Response(stream, {
-        status: 200,
-        headers: {
-          "Content-Type": "text/event-stream",
-          "Cache-Control": "no-cache",
-          Connection: "keep-alive",
-          ...cors,
-        },
-      });
-    } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : "Unknown error";
-      console.error("Claude API error:", message);
-      return corsResponse(
-        502,
-        JSON.stringify({ error: "Failed to get response from AI. Please try again." }),
-        origin,
-        env.ALLOWED_ORIGIN
-      );
-    }
+    // -----------------------------------------------------------------------
+    // 404 fallback
+    // -----------------------------------------------------------------------
+    return corsResponse(404, JSON.stringify({ error: "Not found" }), origin, env.ALLOWED_ORIGIN);
   },
 };
