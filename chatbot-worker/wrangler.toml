@@ -15,5 +15,5 @@ id = "457771cd577e47778a0e833100429156"
 
 [vars]
 ALLOWED_ORIGIN = "https://cwka-engineering.github.io"
-CLAUDE_MODEL = "claude-sonnet-4-20250514"
+CLAUDE_MODEL = "claude-haiku-4-5-20251001"
 MAX_REQUESTS_PER_MINUTE = "20"
