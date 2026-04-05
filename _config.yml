@@ -36,4 +36,6 @@ exclude:
   - GITHUB_ACTIONS_SETUP.md
   - JUST_THE_DOCS_MIGRATION.md
   - ingest/
+  - chatbot-worker/
+  - scripts/
 

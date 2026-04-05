@@ -12,3 +12,10 @@ ingest/transcripts/*.docx
 ingest/archive/**/*.txt
 ingest/archive/**/*.docx
 
+# Generated corpus files (rebuilt by CI)
+scripts/corpus.json
+scripts/corpus_prompt.txt
+
+# Cloudflare Worker dependencies
+chatbot-worker/node_modules/
+

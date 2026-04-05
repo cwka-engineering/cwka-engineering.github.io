@@ -1,0 +1,19 @@
+name = "cwka-wiki-chatbot"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+
+[[kv_namespaces]]
+binding = "WIKI_CORPUS"
+id = "7b65b0b3e73e4608b0b29a412682c585"
+
+[[kv_namespaces]]
+binding = "RATE_LIMIT"
+id = "457771cd577e47778a0e833100429156"
+
+# Secrets (set via: npx wrangler secret put ANTHROPIC_API_KEY)
+# - ANTHROPIC_API_KEY
+
+[vars]
+ALLOWED_ORIGIN = "https://cwka-engineering.github.io"
+CLAUDE_MODEL = "claude-sonnet-4-20250514"
+MAX_REQUESTS_PER_MINUTE = "20"

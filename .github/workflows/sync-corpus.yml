@@ -1,0 +1,37 @@
+name: Sync Wiki Corpus to Cloudflare KV
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "**.md"
+      - "scripts/build_corpus.py"
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build corpus JSON
+        run: python scripts/build_corpus.py --out corpus.json --prompt-text
+
+      - name: Install wrangler
+        run: npm install -g wrangler
+
+      - name: Upload corpus to Cloudflare KV
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+        run: |
+          wrangler kv:key put \
+            --namespace-id="${{ secrets.CF_KV_NAMESPACE_ID }}" \
+            "wiki-corpus-prompt" \
+            --path=corpus_prompt.txt
