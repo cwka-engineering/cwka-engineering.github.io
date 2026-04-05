@@ -23,6 +23,21 @@ blockquote {
   border-radius: 0 6px 6px 0;
 }
 
+/* Sidebar nav footer stats */
+.wiki-stats-footer {
+  padding: 0.65rem 1rem 0.85rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.7rem;
+  text-align: center;
+  color: var(--nav-child-link-color, var(--body-text-color));
+  opacity: 0.55;
+  letter-spacing: 0.03em;
+}
+
+.wiki-stats-sep {
+  margin: 0 0.35em;
+}
+
 /* Print styles */
 @media print {
   .site-nav,

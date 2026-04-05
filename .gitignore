@@ -19,3 +19,6 @@ scripts/corpus_prompt.txt
 # Cloudflare Worker dependencies
 chatbot-worker/node_modules/
 
+# Local reference documents (not for publication)
+chatbot-reference.docx
+

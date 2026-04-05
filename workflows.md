@@ -16,7 +16,6 @@ Step-by-step procedures for each engineering role.
 - **[Production Engineer (PE)](/workflows/production-engineer/)** - PE workflow for processing models and creating deliverables
 - **[Engineering Assistant (EA)](/workflows/engineering-assistant/)** - EA procedures for job creation and scheduling
 - **[FE to PE Release](/workflows/fe-to-pe-release.html)** - Standard Operating Procedure for releasing jobs from FE to PE
-- **[Computational Fabrication](/workflows/computational-fabrication.html)** - Advanced practice, logic library, and automation principles
 
 ## Quick Links by Task
 

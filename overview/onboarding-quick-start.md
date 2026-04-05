@@ -129,8 +129,7 @@ A structured path through the wiki for new engineers. Adapt timing to your pace 
 26. [Approvals Process](/tools/approvals-process.html) — PA approval workflow
 27. [FE to PE Release](/workflows/fe-to-pe-release.html) — Checklist and release procedure
 28. [Solid Wood Components](/workflows/fabrication-engineer/solid-wood-components.html) — WC workflow
-29. [Computational Fabrication](/workflows/computational-fabrication.html) — Advanced practice and automation
-30. [Engineer Progression Framework](/overview/engineer-progression-framework.html) — How advancement works
+29. [Engineer Progression Framework](/overview/engineer-progression-framework.html) — How advancement works
 
 ---
 
