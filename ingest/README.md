@@ -38,7 +38,7 @@ Training video transcripts that require **special attention and scrutiny** durin
 ## Notes
 
 - This folder (and all subfolders) are excluded from Jekyll processing (won't appear on the live site)
-- Documents here are tracked in git for version control
-- Keep this folder organized - use subfolders for different document types
+- **Git tracking**: `.md` files are tracked; `.docx` and `.txt` files under `transcripts/` and `archive/` are gitignored (they stay local only)
+- Keep this folder organized — use subfolders for different document types
 - After processing documents, remove them from this folder to keep it clean
 
