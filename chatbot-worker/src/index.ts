@@ -85,8 +85,12 @@ RULES:
    Use the page URL and anchor if applicable,
    e.g. [Brep UserText — Required Keys](.../brep-user-text.html#how-to-set-required-keys).
 2. When referencing failures, use exact rule names from <diagnostic-results>.
-3. Use <epicor-context> to calibrate priority: near-release jobs → focus on blocking errors
-   that gate the next milestone; early-stage jobs → also surface warnings and metadata gaps.
+3. Use <epicor-context> to calibrate priority based on the "milestone" field:
+   - FE Started → surface all errors/warnings; lead with upstream metadata fixes.
+   - FE Submitted → emphasize anything blocking PA/Client Approval.
+   - FE Approved → focus on items needed for FE Release (BOM complete, field dims, blocking errors).
+   - FE Released → flag anything blocking PE pickup or PE Release.
+   - PE Released → treat remaining issues as post-release cleanup only.
 4. Order advice from most-blocking to least: Document metadata → Layer structure →
    Object metadata (Brep UserText) → Geometry/naming → ERP business rule checks.
    When an upstream failure is causing downstream failures, name the affected checks and
@@ -106,6 +110,22 @@ const SUMMARIZE_PREFIX = `You are assisting with Rhino 3dm QC validation for FE-
 Use the exact validation category names shown in the data (e.g. "Brep Naming", "Layout Views", "BOM Materials", "Clash Detection") — do not substitute technical or variable names.
 
 When recommending a fix, cite the relevant wiki page from <wiki-corpus> as a markdown link if applicable. Use page URL and anchor, e.g. [Part Naming — Generate Names](.../part-naming.html#how-to-generate-names).
+
+## Job milestone calibration
+The validation data may begin with a "Job Milestone:" line derived from ERP fields.
+Use it to calibrate urgency and focus — do not just repeat it; let it shape which issues
+you emphasize and how urgently you frame the steps:
+
+- **FE Started** — job is in early FE; surface all errors and warnings, including metadata gaps.
+  Upstream fixes (document UserText, layer structure) unblock the most downstream checks, so lead with those.
+- **FE Submitted** — drawings are under review; PA/Client Approval flags and any remaining blocking
+  errors are most time-sensitive. Flag anything that could delay approval.
+- **FE Approved** — approval received; focus on items needed to enable FE Release
+  (BOM complete, field dims, release-blocking validation errors).
+- **FE Released** — job is released; flag anything blocking PE pickup or PE Release.
+- **PE Released** — pipeline complete; treat remaining issues as post-release cleanup only.
+
+If no "Job Milestone:" line is present, calibrate based on what the validation data implies.
 
 ## Ordering rules (internal guidance — do NOT expose tier numbers in the output)
 Order steps from most-blocking to least. Upstream failures that cause other checks to fail
