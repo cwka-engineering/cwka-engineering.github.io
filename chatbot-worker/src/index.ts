@@ -82,8 +82,8 @@ You have three grounded sources:
 
 RULES:
 1. When explaining HOW to fix an issue, cite the relevant wiki page as a markdown link.
-   Use the page URL and anchor if applicable,
-   e.g. [Brep UserText — Required Keys](.../brep-user-text.html#how-to-set-required-keys).
+   Always use absolute URLs with base https://cwka-engineering.github.io — never relative paths.
+   Example: [Brep UserText — Required Keys](https://cwka-engineering.github.io/standards/brep-user-text.html#how-to-set-required-keys)
 2. When referencing failures, use exact rule names from <diagnostic-results>.
 3. Use <epicor-context> to calibrate priority based on the "milestone" field:
    - FE Started → surface all errors/warnings; lead with upstream metadata fixes.
@@ -109,7 +109,9 @@ const SUMMARIZE_PREFIX = `You are assisting with Rhino 3dm QC validation for FE-
 
 Use the exact validation category names shown in the data (e.g. "Brep Naming", "Layout Views", "BOM Materials", "Clash Detection") — do not substitute technical or variable names.
 
-When recommending a fix, cite the relevant wiki page from <wiki-corpus> as a markdown link if applicable. Use page URL and anchor, e.g. [Part Naming — Generate Names](.../part-naming.html#how-to-generate-names).
+When recommending a fix, cite the relevant wiki page from <wiki-corpus> as a markdown link if applicable.
+Always use absolute URLs with base https://cwka-engineering.github.io — never relative paths.
+Example: [Part Naming — Generate Names](https://cwka-engineering.github.io/workflows/fabrication-engineer/part-naming.html#how-to-generate-names)
 
 ## Job milestone calibration
 The validation data may begin with a "Job Milestone:" line derived from ERP fields.
@@ -291,18 +293,26 @@ async function streamClaudeDiagnostic(
       model,
       max_tokens: 2048,
       stream: true,
-      system: [
-        {
-          type: "text",
-          text: cachedCorpus,
-          cache_control: { type: "ephemeral" },
-        },
-        {
-          type: "text",
-          text: dynamicContext,
-          // no cache_control — unique per request
-        },
-      ],
+      system: dynamicContext
+        ? [
+            {
+              type: "text",
+              text: cachedCorpus,
+              cache_control: { type: "ephemeral" },
+            },
+            {
+              type: "text",
+              text: dynamicContext,
+              // no cache_control — unique per request
+            },
+          ]
+        : [
+            {
+              type: "text",
+              text: cachedCorpus,
+              cache_control: { type: "ephemeral" },
+            },
+          ],
       messages: messages.map((m) => ({
         role: m.role,
         content: m.content,
@@ -389,7 +399,7 @@ function formatDiagnosticContext(
   if (Object.keys(triage).length === 0) {
     lines.push("No validation failures recorded.");
   } else {
-    lines.push("Per-rule failures (rule name: severity breakdown, sample messages):");
+    lines.push("Per-rule failures (rule name: severity breakdown, all messages):");
     for (const [rule, issues] of Object.entries(triage)) {
       const errors = issues.filter((i) => i.severity === "error").length;
       const warnings = issues.filter((i) => i.severity === "warning").length;
@@ -400,14 +410,12 @@ function formatDiagnosticContext(
       if (infos) parts.push(`${infos} infos`);
       const total = issues.length;
       lines.push(`  - ${rule}: ${total} total (${parts.join(", ")})`);
-      // Include up to 3 sample messages so the LLM can see the actual failure text
-      const samples = issues.slice(0, 3);
-      for (const s of samples) {
-        const idClause = s.ids && s.ids.length > 0 ? ` [object: ${s.ids[0]}${s.ids.length > 1 ? ` +${s.ids.length - 1} more` : ""}]` : "";
-        lines.push(`      • ${s.message}${idClause}`);
-      }
-      if (issues.length > 3) {
-        lines.push(`      • ... and ${issues.length - 3} more`);
+      // Include every issue so the LLM can reference specific failures
+      for (const s of issues) {
+        const ids = s.ids && s.ids.length > 0
+          ? ` [${s.ids.join(", ")}]`
+          : "";
+        lines.push(`      • (${s.severity}) ${s.message}${ids}`);
       }
     }
   }
@@ -568,17 +576,22 @@ export default {
         return jsonResponse(503, JSON.stringify({ error: "Wiki corpus not loaded." }));
       }
 
-      const cachedCorpus = DIAGNOSTIC_PREFIX + corpus + SYSTEM_PROMPT_SUFFIX;
-      const dynamicContext = formatDiagnosticContext(
+      // Triage + epicor context is static for the entire conversation, so
+      // include it in the cached block alongside the wiki corpus.  This way
+      // the full issue list is only billed on the first message (or after
+      // the 5-min cache window expires).
+      const diagnosticContext = formatDiagnosticContext(
         body.triage || {},
         body.epicor_context || {}
       );
+      const cachedCorpus =
+        DIAGNOSTIC_PREFIX + corpus + SYSTEM_PROMPT_SUFFIX + "\n\n" + diagnosticContext;
 
       try {
         const stream = await streamClaudeDiagnostic(
           body.messages,
           cachedCorpus,
-          dynamicContext,
+          "",  // no dynamic block needed — triage is now cached
           env.ANTHROPIC_API_KEY,
           env.CLAUDE_MODEL
         );
