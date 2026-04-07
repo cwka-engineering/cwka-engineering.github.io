@@ -38,7 +38,7 @@ Fabrication Engineers must also satisfy the full **[FE to PE Release checklist](
 
 ### Material & Hardware Ordering
 - Confirm items ordered/received before release.
-- Use "Purchase Direct" flag for PMs.
+- Use "Purchase Direct" flag for PMs — **except** for INV-class materials (SG, SS, SL, IM), where a BPM blocks Purchase Direct on manufacturing jobs. These materials are purchased via the project's [Inventory Job](/tools/epicor/inventory-jobs.html).
 - **Important**: Do not release jobs until materials are confirmed.
 
 ### Job Status Updates

@@ -83,6 +83,9 @@ Task-oriented index for workflow procedures. Each link goes directly to the rele
 | G68 | BOM a material to a job in Epicor | [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html#how-to-bom-material) |
 | G69 | Verify my BOM against the Rhino model | [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html#how-to-verify-bom) |
 | G70 | Handle post-release BOM changes | [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html#how-to-handle-post-release-changes) |
+| G71 | Add a part to the project inventory job | [Inventory Jobs (INV)](/tools/epicor/inventory-jobs.html#how-to-add-part-to-inv) |
+| G72 | Handle a quantity change on the inventory job | [Inventory Jobs (INV)](/tools/epicor/inventory-jobs.html#how-to-handle-inv-qty-change) |
+| G73 | Read the Takeoff Audit Report | [Inventory Jobs (INV)](/tools/epicor/inventory-jobs.html#how-to-read-takeoff-audit) |
 
 ## Solid Wood Components (WC)
 

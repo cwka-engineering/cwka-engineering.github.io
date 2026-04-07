@@ -27,6 +27,7 @@ parent: Overview
 - **WC Jobs**: Wood Component manufacturing jobs (format: Project.W.000)
 - **MT Jobs**: Metal Component or Kit of Parts manufacturing jobs (format: Project.M.000)
 - **SMP Jobs**: Sample jobs (format: XXX.SMP.XXXXX)
+- **Inventory Job (INV)**: One per project (format: `ProjectNumber.INV`, e.g., `1086.INV`). Controls purchasing of SG, SS, SL, and IM materials. See [Inventory Jobs](/tools/epicor/inventory-jobs.html).
 - **Group Submittal**: A package of multiple jobs submitted together to the client (1 submittal doc → multiple production jobs)
 - **Primary Job**: Subset of the project or group submittal
 
@@ -59,6 +60,7 @@ parent: Overview
 - **Material Transmittal Log**: Epicor dashboard (CW Material Transmittal Log — Kinetic) that tracks submittal status of all materials, finishes, and hardware on a project. Structured as a TRA job (format: `ProjectNumber.TRA`) with four subassemblies: Finish Tags, Veneer and Solid Wood Tags, General Material Tags, and Hardware Tags. The PM maintains this log. The Engineering Toolkit pulls from it to populate the G00 page. See [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html).
 - **Submittal Scope**: What appears on all pages as page titles. May differ from actual Epicor job number (e.g., catalog items).
 - **Engineering Bucket Jobs**: Project-wide tasks (format: PROJ.ENG). Operations include: Design, Engineering, Fabrication Engineering, Lead Coordination, Project Meetings, BIM Coordination.
+- **Takeoff Audit Report**: Custom Epicor query (CW Takeoff Audit Report) that shows takeoff BOM quantities, open POs, received quantities, live manufacturing demand, and supply balance for all parts on a project's INV job. See [Reading the Takeoff Audit Report](/tools/epicor/inventory-jobs.html#how-to-read-takeoff-audit).
 - **Time Phase Inquiry**: Shows which jobs a material code is currently BOM'd to (demand tracking). Access via Epicor search.
 - **Part Transaction History**: Shows inventory history (credits/debits) for any material code
 - **Cycle Count**: Shows current on-hand quantities for materials in current site

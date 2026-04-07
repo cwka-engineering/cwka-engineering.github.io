@@ -49,7 +49,8 @@ Epicor operates with multiple sites (CWK and Digifab Shop). [^transcript-epicor-
 4. **[Part Management](/tools/epicor/part-management.html)** - Creating and managing parts (GM, WC, Custom)
 5. **[Job Management](/tools/epicor/job-management.html)** - Job entry, release checklists, and responsibilities
 6. **[Multi-Site Operations](/tools/epicor/multi-site-operations.html)** - CWK/DFW site switching, site-specific behavior, time entry
-7. **[Troubleshooting](/tools/epicor/troubleshooting.html)** - Common issues and solutions
+7. **[Inventory Jobs (INV)](/tools/epicor/inventory-jobs.html)** - Project inventory job process, takeoff purchasing, and audit report
+8. **[Troubleshooting](/tools/epicor/troubleshooting.html)** - Common issues and solutions
 
 ## Quick Links
 
@@ -57,6 +58,7 @@ Epicor operates with multiple sites (CWK and Digifab Shop). [^transcript-epicor-
 - **Rhino / layouts**: [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html)
 - **Status Updates**: [Production Report](/tools/epicor/production-report.html)
 - **New Parts**: [Part Management](/tools/epicor/part-management.html)
+- **Takeoff Audit**: [Inventory Jobs](/tools/epicor/inventory-jobs.html)
 
 ## Footnotes
 [^transcript-epicor-home]: Source: [Training Video — "Epicor Home Screen"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQBr1E3ao6ygR7h98ROBRYaJAe1gqE1Vd7xOBNkCdky3CuA?e=XxJE0S)

@@ -44,3 +44,6 @@ Task-oriented index for tool and system procedures. Each link goes directly to t
 | M106 | Check on-hand inventory for a material | [Epicor Dashboards](/tools/epicor/dashboards.html#how-to-check-inventory) |
 | M107 | Personalize column displays in an Epicor dashboard | [Epicor Usage](/tools/epicor/index.html#how-to-personalize-columns) |
 | M108 | Batch-edit the Material Transmittal Log via Excel | [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html#how-to-batch-edit-tra) |
+| M109 | Add a part to the project inventory job | [Inventory Jobs (INV)](/tools/epicor/inventory-jobs.html#how-to-add-part-to-inv) |
+| M110 | Read the Takeoff Audit Report | [Inventory Jobs (INV)](/tools/epicor/inventory-jobs.html#how-to-read-takeoff-audit) |
+| M111 | Handle a quantity change on the inventory job | [Inventory Jobs (INV)](/tools/epicor/inventory-jobs.html#how-to-handle-inv-qty-change) |

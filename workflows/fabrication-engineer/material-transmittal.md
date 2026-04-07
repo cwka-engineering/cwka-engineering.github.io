@@ -11,7 +11,7 @@ nav_order: 11
 
 How the Material Transmittal Log works and how engineers interact with it.
 
-> **Related Documents**: [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html) | [Glossary — Epicor Terms](/overview/glossary.html#epicor-terms) | [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html)
+> **Related Documents**: [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html) | [Glossary — Epicor Terms](/overview/glossary.html#epicor-terms) | [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html) | [Inventory Jobs (INV)](/tools/epicor/inventory-jobs.html)
 
 ## What is the TRA?
 
@@ -42,8 +42,7 @@ Each material/finish/hardware item is entered as a material (quantity set to zer
 2. The PM receives an alert to add it to the TRA with its tag, ARCH tag, description, and approval properties.
 3. The PM updates MtlSubmittalStatus as the material goes through client review.
 4. When you publish G00 via the toolkit, the material schedule is pulled from the TRA.
-5. After approval + Engineering Complete, the PM signals "Ready to Purchase."
-6. Purchasing orders the material.
+5. After approval + Engineering Complete, the PM signals "Ready to Purchase." Purchasing orders the material. **Note:** For INV-class materials (SG, SS, SL, IM), purchasing is handled through the project's [Inventory Job](/tools/epicor/inventory-jobs.html), not via the manufacturing job.
 
 **If you BOM something that doesn't exist in the TRA yet, it won't appear on your G00 page.** Always inform the PM when BOM'ing a new material.
 
@@ -71,10 +70,14 @@ The PM can batch-edit the TRA via Excel export/import:
 5. Click **Update** to save.
 6. Save the export to Box at `02 PM/05_Material_Finish_Log/`.
 
-## Material Classes That Don't Purchase Direct
+## Material Classes Purchased via Inventory Job
 
-Certain material classes purchase to **warehouse inventory** even for specific projects, not directly to the job:
+Certain material classes do **not** purchase direct to the manufacturing job. Instead, they are purchased through the project's **[Inventory Job](/tools/epicor/inventory-jobs.html)** (`ProjectNumber.INV`):
 - **SG** (Sheet Goods)
 - **SS** (Solid Surface)
 - **SL** (Solid Lumber)
-- Min/Max stocked items
+- **IM** (Inventory Metal)
+
+A BPM in Epicor blocks Purchase Direct on manufacturing jobs for these classes. The INV job consolidates demand and purchasing for the project team — see [Inventory Jobs](/tools/epicor/inventory-jobs.html) for the full workflow.
+
+**Min/Max stocked items** use their own Epicor replenishment process and do not go through the INV job.

@@ -55,6 +55,8 @@ Post the request in the dedicated **Part Requests** Teams channel. The EA or des
 6. Append job-specific comments to the part description as needed.
 7. **Inform the PM** when BOM'ing new materials so they can update the TRA.
 
+> **INV-class materials (SG, SS, SL, IM):** Do **not** check Ready to Purchase or Purchase Direct on the manufacturing job for these classes. They are purchased through the project's [Inventory Job](/tools/epicor/inventory-jobs.html). A BPM will block Purchase Direct if you try.
+
 ## Scrap Percentages
 
 Apply standard scrap percentages during takeoff:

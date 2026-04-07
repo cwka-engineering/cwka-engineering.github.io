@@ -131,3 +131,9 @@ videos:
     title: "Toggl Time Entry"
     url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQC2_Xi2AYXFSpXYjlYQpMeLAeI4FNIDtrRGsaMtWmLIMfc?e=hrO2o9"
     files: "time-entry.md"
+
+  inventory-job-launch:
+    title: "Inventory Job Process Launch"
+    url:   ""   # ⬜ awaiting SharePoint upload
+    files: "epicor/inventory-jobs.md"
+    note:  "Recording from 2024-04-18. Covers INV process, takeoff audit, Q&A."

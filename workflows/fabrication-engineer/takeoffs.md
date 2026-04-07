@@ -79,6 +79,12 @@ Modeling Toolkit → **2D Nesting**. Select the sheet material (width/length pre
 - **Refinement**: [^transcript-adv-toolkit] Auto-BOM may estimate 4.75 sheets based on area, but 2D nesting shows actual waste and may reveal you need 7 sheets minimum. This refines the BOM quantities.
 - **Integration**: [^transcript-adv-toolkit] After refinement, Auto-BOM will indicate which rows have been refined. Publish changes to update BOM with refined quantities.
 
+## Takeoff Quantities and the Inventory Job
+
+For **SG, SS, SL, and IM** materials, takeoff quantities are entered on manufacturing jobs for demand visibility, but **purchasing happens through the project's [Inventory Job](/tools/epicor/inventory-jobs.html)** (`ProjectNumber.INV`). Do **not** check Ready to Purchase or Purchase Direct on the manufacturing job for these classes — a BPM will block it.
+
+After completing your takeoffs, the Lead Engineer or PM sums the manufacturing job demand, adds waste factor, and purchases from the INV job. See [Inventory Jobs](/tools/epicor/inventory-jobs.html) for the full workflow and the [Takeoff Audit Report](/tools/epicor/inventory-jobs.html#how-to-read-takeoff-audit) for monitoring supply vs. demand.
+
 ## Next Steps
 
 - Continue to [PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html) when ready to release

@@ -1,0 +1,45 @@
+Project Inventory Jobs
+What and Why
+Every project has one Inventory job.  The Inventory job naming convention is 1234.INV.  
+The purpose of the inventory job is to control the purchase of Sheet goods (SG), Solid surface (SS), Solid lumber (SL), and Inventory Metal (IM) by addressing common problems with these materials.  In special cases other material classed can be added to the inventory job process.  These materials with a few exceptions will all be purchased direct to the inventory job not to the manufacturing jobs.  
+Problems addressed-
+Inconsistent specifications: we have had problems with specifications (fire rating, FSC, veneer cut, etc.,) being inconsistent throughout projects. If used properly the inventory job should aid the project team in keeping specifications consistent.  Only the Lead engineer or PM should add material to the inventory job and the specifications of the part can be verified before adding the part. Other team members can 
+Redundant part numbers: many part numbers in the system are redundant and describe the same product. Often this results from engineers creating an additional part number for parts that already exist.  The inventory job should help alleviate the problem; before creating a part for a project the engineer should check the project job to see if the part already exists on the job.  If it does not the engineer requests that a part be added to the inventory job. 
+Lack of visibility to material ordered for a project via takeoff:  prior to the inventory job requisitions were used to buy materials early that had to be taken off on ordered before engineering was complete.  It was difficult to see an audit of what material was purchased and what its status was in Epicor.  Now all takeoff materials will be BOMed and purchased direct to the inventory job. From with a custom Epicor query the project team can see the order status of all materials on the inventory and the current demand and consumption of the manufacturing jobs.  
+Financial delay in recognizing cost of material ordered via takeoff: takeoff materials purchased to general inventory do not show up as a cost to projects and are therefore not billed to the client until issued to projects.  Replacing the requisition function with inventory job allows us to prepurchase materials direct to a project.  That material will now immediately be seen as project cost upon receipt and billed for in the next billing cycle.  
+Project Inventory Jobs
+How and Who by Project Phase
+Project Specification and Takeoff Phase
+Once the project is set up and launched, it is the responsibility of the project manager and lead engineer to populate the inventory job with all know specified material the project will need.  Not all materials needed can be known early in the project, the emphasis will be on material that need a takeoff and early purchase.  
+Takeoffs- takeoffs should be broken out by manufacturing job if the manufacturing job structure is done in time.  
+Enter takeoff quantities on the manufacturing job but do not check eng complete, ready to purchase, or purchase direct. 
+Add the sum of all manufacturing job demand for a part plus extra to the inventory job, check eng complete, ready to purchase, and purchase direct.
+The part will be purchased and received to the inventory job and the original demand from the takeoff will show up on the query.  
+Fabrication Engineering
+During fabrication engineering BOMs will be created and modified as needed
+Adding a part not on the inventory job-
+If an FE engineer needs to add a part to a job that is not already on the inventory job they must request that the lead engineer add the part to the inventory job.  Once added to the inventory job the part can be added to the manufacturing job.  Set Qty as needed but do not check the part ready to purchase or purchase direct.
+Lead engineer will notify the PM that a part has been added to the inventory job.  PM can see qty required, inquire as to if more will be added and purchase when needed.  
+Adding a part already on the inventory job-
+Changing the quantity of a part added during takeoff-
+If a part was included in a takeoff but needs to change due to design development change the qty of the part up or down as needed on the manufacturing job
+To add qty to a part on the inventory job a new material line must be added.  Do not increase the qty of a part on the inventory job once it has been purchased.  the purchasing staff will not see a suggestion to buy unless a new line is added.   
+Adding additional instances of the part not considered in the takeoff.
+FE adds line for part and notifies PM that additional qty has been added
+To add qty to a part on the inventory job a new material line must be added.  Do not increase the qty of a part on the inventory job once it has been purchased.  the purchasing staff will not see a suggestion to buy unless a new line is added 
+Projects that we do not BOM in the FE process
+In some cases, manufacturing jobs are not BOMed during the FE process.  These are typically projects many, sometimes hundreds of small jobs.  And situations where the jobs cannot be broken out in time for the takeoff process.  In these situations, a takeoff is done offline in Excel and a qty will be added to and purchased from the inventory job.  Manufacturing jobs are not BOMed until the completion of PE when the final nesting of material is completed.
+Exceptions to the inventory job process
+Minmax parts
+Parts marked as part of the min/max inventory will not be purchased on the inventory job.  The min/max setting in Epicor initiates its own purchasing suggestions and replenishment process.
+Specialty parts
+Custom parts that written in the 1234.SG.00005 syntax are BOMed and purchased only to the manufacturing job.  These parts are typically unique and singular or in low quantities so there is no need to manage an inventory demand.  
+Production Engineering
+Parts quantities may change after the final optimizations are complete in production engineering.  If so the production planner will follow the instructions outlined above for adding parts and changing part quantities
+Shop Release and Part Receiving
+Receiving parts purchased direct to an inventory project
+Parts are issued to the inventory job upon receipt as they purchased direct
+Material cost is incurred by the project immediately upon receipt
+Issuing parts to a manufacturing job when it is released
+When a manufacturing job is released parts required are returned to inventory from the inventory job then issued from inventory to the manufacturing job. Once issued the BOM on the inventory job is reduced by the amount issued.  This is to prevent a purchasing suggestion from being created to satisfy the demand. At the end of the project the amount on the shelf for a project should equal the qty on the BOM of the inventory job.  
+Reading the Take Off Audit Report
