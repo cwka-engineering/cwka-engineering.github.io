@@ -10,7 +10,7 @@ nav_exclude: true
 Welcome to the Engineering Department documentation and workflows wiki.
 
 <div style="margin: 1.5rem 0; padding: 1rem; background: #f6f8fa; border-left: 4px solid #2563eb; border-radius: 4px;">
-  <strong>💡 Tip:</strong> Use the search box in the top navigation bar to quickly find content across the wiki. The sidebar navigation shows the complete structure of all pages.
+  <strong>💡 Tip:</strong> Use the search box in the top navigation bar to quickly find content across the wiki. The sidebar navigation shows the complete structure of all pages. You can also open the <strong>Wiki Assistant</strong> (chat bubble in the bottom-right) to ask questions and get links to the relevant pages.
 </div>
 
 ## Getting Started
