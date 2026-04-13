@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Quick Reference
-permalink: /reference/standards-quick-reference.html
-parent: Reference
-nav_order: 5
+permalink: /standards/quick-reference.html
+parent: Standards
+nav_order: 3
 ---
 
 # Quick Reference: Standards

@@ -21,4 +21,4 @@ Documentation standards and conventions for engineering work.
 - **Layers**: [Layer Organization Overview](/standards/layer-organization/)
 - **File Management**: [Folder Structure](/reference/folder-structure.html)
 - **Reference Tables**: [Reference Tables](/reference/reference-tables/)
-- **"How do I…?"**: [Standards Quick Reference](/reference/standards-quick-reference.html)
+- **"How do I…?"**: [Standards Quick Reference](/standards/quick-reference.html)

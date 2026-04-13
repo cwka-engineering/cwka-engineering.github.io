@@ -121,12 +121,6 @@
       "degree": 5
     },
     {
-      "id": "/reference/standards-quick-reference.html",
-      "title": "Quick Reference",
-      "section": "Home",
-      "degree": 18
-    },
-    {
       "id": "/reference/training-videos.html",
       "title": "Training Videos",
       "section": "Home",
@@ -167,6 +161,12 @@
       "title": "Standard Layers",
       "section": "Standards",
       "degree": 5
+    },
+    {
+      "id": "/standards/quick-reference.html",
+      "title": "Quick Reference",
+      "section": "Standards",
+      "degree": 18
     },
     {
       "id": "/standards/rhino-drafting/annotation-styles-reference.html",
@@ -492,11 +492,11 @@
     },
     {
       "source": "/",
-      "target": "/reference/standards-quick-reference.html"
+      "target": "/standards/layer-organization/"
     },
     {
       "source": "/",
-      "target": "/standards/layer-organization/"
+      "target": "/standards/quick-reference.html"
     },
     {
       "source": "/",
@@ -840,11 +840,11 @@
     },
     {
       "source": "/reference/",
-      "target": "/reference/standards-quick-reference.html"
+      "target": "/reference/training-videos.html"
     },
     {
       "source": "/reference/",
-      "target": "/reference/training-videos.html"
+      "target": "/standards/quick-reference.html"
     },
     {
       "source": "/reference/",
@@ -988,7 +988,7 @@
     },
     {
       "source": "/reference/reference-tables/cnc-drill-sizes.html",
-      "target": "/reference/standards-quick-reference.html"
+      "target": "/standards/quick-reference.html"
     },
     {
       "source": "/reference/reference-tables/cnc-drill-sizes.html",
@@ -1000,7 +1000,7 @@
     },
     {
       "source": "/reference/reference-tables/file-naming-conventions.html",
-      "target": "/reference/standards-quick-reference.html"
+      "target": "/standards/quick-reference.html"
     },
     {
       "source": "/reference/reference-tables/file-naming-conventions.html",
@@ -1016,15 +1016,15 @@
     },
     {
       "source": "/reference/reference-tables/lay-up-formulas.html",
-      "target": "/reference/standards-quick-reference.html"
-    },
-    {
-      "source": "/reference/reference-tables/lay-up-formulas.html",
       "target": "/standards/layer-organization/codes-and-tags.html"
     },
     {
       "source": "/reference/reference-tables/lay-up-formulas.html",
       "target": "/standards/layer-organization/material-modeling.html"
+    },
+    {
+      "source": "/reference/reference-tables/lay-up-formulas.html",
+      "target": "/standards/quick-reference.html"
     },
     {
       "source": "/reference/reference-tables/lay-up-formulas.html",
@@ -1040,10 +1040,6 @@
     },
     {
       "source": "/reference/reference-tables/material-tag-vocabulary.html",
-      "target": "/reference/standards-quick-reference.html"
-    },
-    {
-      "source": "/reference/reference-tables/material-tag-vocabulary.html",
       "target": "/standards/layer-organization/codes-and-tags.html"
     },
     {
@@ -1052,15 +1048,19 @@
     },
     {
       "source": "/reference/reference-tables/material-tag-vocabulary.html",
+      "target": "/standards/quick-reference.html"
+    },
+    {
+      "source": "/reference/reference-tables/material-tag-vocabulary.html",
       "target": "/workflows/fabrication-engineer/bom-procedures.html"
     },
     {
       "source": "/reference/reference-tables/model-cleanup-commands.html",
-      "target": "/reference/standards-quick-reference.html"
+      "target": "/standards/layer-organization/material-modeling.html"
     },
     {
       "source": "/reference/reference-tables/model-cleanup-commands.html",
-      "target": "/standards/layer-organization/material-modeling.html"
+      "target": "/standards/quick-reference.html"
     },
     {
       "source": "/reference/reference-tables/model-cleanup-commands.html",
@@ -1072,11 +1072,11 @@
     },
     {
       "source": "/reference/reference-tables/sheet-sizes.html",
-      "target": "/reference/standards-quick-reference.html"
+      "target": "/standards/layer-organization/material-modeling.html"
     },
     {
       "source": "/reference/reference-tables/sheet-sizes.html",
-      "target": "/standards/layer-organization/material-modeling.html"
+      "target": "/standards/quick-reference.html"
     },
     {
       "source": "/reference/reference-tables/sheet-sizes.html",
@@ -1087,48 +1087,12 @@
       "target": "/workflows/quick-reference.html"
     },
     {
-      "source": "/reference/standards-quick-reference.html",
-      "target": "/standards/"
-    },
-    {
-      "source": "/reference/standards-quick-reference.html",
-      "target": "/standards/layer-organization/material-modeling.html"
-    },
-    {
-      "source": "/reference/standards-quick-reference.html",
-      "target": "/standards/layer-organization/modeling-techniques.html"
-    },
-    {
-      "source": "/reference/standards-quick-reference.html",
-      "target": "/standards/rhino-drafting/annotation-styles-reference.html"
-    },
-    {
-      "source": "/reference/standards-quick-reference.html",
-      "target": "/standards/rhino-drafting/annotations.html"
-    },
-    {
-      "source": "/reference/standards-quick-reference.html",
-      "target": "/standards/rhino-drafting/details.html"
-    },
-    {
-      "source": "/reference/standards-quick-reference.html",
-      "target": "/standards/rhino-drafting/display-modes.html"
-    },
-    {
-      "source": "/reference/standards-quick-reference.html",
-      "target": "/standards/rhino-drafting/hatches.html"
-    },
-    {
-      "source": "/reference/standards-quick-reference.html",
-      "target": "/standards/rhino-drafting/printing.html"
-    },
-    {
-      "source": "/reference/standards-quick-reference.html",
-      "target": "/standards/rhino-drafting/sections-clipping.html"
+      "source": "/standards/",
+      "target": "/standards/layer-organization/"
     },
     {
       "source": "/standards/",
-      "target": "/standards/layer-organization/"
+      "target": "/standards/quick-reference.html"
     },
     {
       "source": "/standards/",
@@ -1212,6 +1176,10 @@
     },
     {
       "source": "/standards/layer-organization/material-modeling.html",
+      "target": "/standards/quick-reference.html"
+    },
+    {
+      "source": "/standards/layer-organization/material-modeling.html",
       "target": "/workflows/fe-to-pe-release.html"
     },
     {
@@ -1221,6 +1189,10 @@
     {
       "source": "/standards/layer-organization/modeling-techniques.html",
       "target": "/standards/layer-organization/standard-layers.html"
+    },
+    {
+      "source": "/standards/layer-organization/modeling-techniques.html",
+      "target": "/standards/quick-reference.html"
     },
     {
       "source": "/standards/layer-organization/modeling-techniques.html",
@@ -1237,6 +1209,34 @@
     {
       "source": "/standards/layer-organization/standard-layers.html",
       "target": "/standards/rhino-drafting/annotations.html"
+    },
+    {
+      "source": "/standards/quick-reference.html",
+      "target": "/standards/rhino-drafting/annotation-styles-reference.html"
+    },
+    {
+      "source": "/standards/quick-reference.html",
+      "target": "/standards/rhino-drafting/annotations.html"
+    },
+    {
+      "source": "/standards/quick-reference.html",
+      "target": "/standards/rhino-drafting/details.html"
+    },
+    {
+      "source": "/standards/quick-reference.html",
+      "target": "/standards/rhino-drafting/display-modes.html"
+    },
+    {
+      "source": "/standards/quick-reference.html",
+      "target": "/standards/rhino-drafting/hatches.html"
+    },
+    {
+      "source": "/standards/quick-reference.html",
+      "target": "/standards/rhino-drafting/printing.html"
+    },
+    {
+      "source": "/standards/quick-reference.html",
+      "target": "/standards/rhino-drafting/sections-clipping.html"
     },
     {
       "source": "/standards/rhino-drafting/",

@@ -63,7 +63,7 @@ Find step-by-step answers organized by section:
 
 - **[Overview Quick Reference](/onboarding/quick-reference.html)** — Onboarding, setup, roles
 - **[Workflows Quick Reference](/workflows/quick-reference.html)** — FE/PE workflows, toolkit, release procedures
-- **[Standards Quick Reference](/reference/standards-quick-reference.html)** — Drafting, sections, hatches, display modes
+- **[Standards Quick Reference](/standards/quick-reference.html)** — Drafting, sections, hatches, display modes
 - **[Tools Quick Reference](/tools/quick-reference.html)** — Epicor, time entry, approvals
 
 ---

@@ -20,6 +20,6 @@ Quick lookups, glossaries, reference tables, and task-oriented indexes.
 ## Quick References — "How do I…?"
 
 - **[Onboarding Quick Reference](/onboarding/quick-reference.html)** — Onboarding, setup, roles
-- **[Standards Quick Reference](/reference/standards-quick-reference.html)** — Drafting, sections, hatches, display modes
+- **[Standards Quick Reference](/standards/quick-reference.html)** — Drafting, sections, hatches, display modes
 - **[Workflows Quick Reference](/workflows/quick-reference.html)** — FE/PE workflows, toolkit, release procedures
 - **[Tools Quick Reference](/tools/quick-reference.html)** — Epicor, time entry, approvals
