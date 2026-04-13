@@ -1,0 +1,116 @@
+/* Sitemap Graph — interactive D3 force-directed layout */
+
+#sitemap-graph {
+  width: 100%;
+  height: 70vh;
+  min-height: 420px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  background: var(--body-background-color, #fff);
+}
+
+#sitemap-graph svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Controls bar */
+.sitemap-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  z-index: 10;
+}
+
+.sitemap-controls button,
+.sitemap-controls label {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  background: var(--body-background-color, #fff);
+  color: var(--body-text-color, #333);
+  cursor: pointer;
+  user-select: none;
+}
+
+.sitemap-controls button:hover {
+  background: var(--sidebar-color, #f5f6fa);
+}
+
+.sitemap-controls label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: none;
+  padding: 0;
+}
+
+/* Legend */
+.sitemap-legend {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.7rem;
+  color: var(--body-text-color, #333);
+  opacity: 0.8;
+  z-index: 10;
+}
+
+.sitemap-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sitemap-legend-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Tooltip */
+.sitemap-tooltip {
+  position: absolute;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  background: var(--body-background-color, #fff);
+  color: var(--body-text-color, #333);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+  z-index: 20;
+}
+
+/* Node styling */
+.sitemap-node {
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.sitemap-link {
+  stroke: var(--border-color);
+  stroke-opacity: 0.5;
+  transition: stroke-opacity 0.2s;
+}
+
+.sitemap-label {
+  font-size: 9px;
+  fill: var(--body-text-color, #333);
+  pointer-events: none;
+  text-anchor: middle;
+}
