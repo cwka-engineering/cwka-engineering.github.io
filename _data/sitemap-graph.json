@@ -4,121 +4,109 @@
       "id": "/",
       "title": "Home",
       "section": "Home",
-      "degree": 20
+      "degree": 15
     },
     {
       "id": "/onboarding/engineer-progression-framework.html",
       "title": "Engineer Progression Framework",
       "section": "Home",
-      "degree": 6
+      "degree": 4
     },
     {
       "id": "/onboarding/engineering-roles.html",
       "title": "Engineering Roles & Core Competencies",
       "section": "Home",
-      "degree": 11
+      "degree": 9
     },
     {
       "id": "/onboarding/",
       "title": "Onboarding",
       "section": "Home",
-      "degree": 11
+      "degree": 10
     },
     {
       "id": "/onboarding/manifesto.html",
       "title": "Engineering Manifesto",
       "section": "Home",
-      "degree": 4
-    },
-    {
-      "id": "/onboarding/quick-start.html",
-      "title": "Onboarding Quick Start Links",
-      "section": "Home",
-      "degree": 34
+      "degree": 2
     },
     {
       "id": "/onboarding/project-delivery.html",
       "title": "Project Delivery Overview",
       "section": "Overview",
-      "degree": 12
+      "degree": 10
     },
     {
       "id": "/onboarding/purchasing-signal-chain.html",
       "title": "Purchasing Signal Chain",
       "section": "Home",
-      "degree": 7
-    },
-    {
-      "id": "/onboarding/quick-reference.html",
-      "title": "Quick Reference",
-      "section": "Home",
-      "degree": 10
+      "degree": 5
     },
     {
       "id": "/onboarding/scheduling-chain.html",
       "title": "Scheduling Chain",
       "section": "Home",
-      "degree": 7
+      "degree": 5
     },
     {
       "id": "/reference/folder-structure.html",
       "title": "Folder Structure & File Management",
       "section": "Home",
-      "degree": 16
+      "degree": 15
     },
     {
       "id": "/reference/glossary.html",
       "title": "Glossary",
       "section": "Home",
-      "degree": 19
+      "degree": 17
     },
     {
       "id": "/reference/",
       "title": "Reference",
       "section": "Home",
-      "degree": 8
+      "degree": 4
     },
     {
       "id": "/reference/reference-tables/cnc-drill-sizes.html",
       "title": "CNC Drill Sizes by Site",
       "section": "Home",
-      "degree": 4
+      "degree": 3
     },
     {
       "id": "/reference/reference-tables/file-naming-conventions.html",
       "title": "File Naming Conventions",
       "section": "Home",
-      "degree": 6
+      "degree": 5
     },
     {
       "id": "/reference/reference-tables/",
       "title": "Reference Tables",
       "section": "Home",
-      "degree": 12
+      "degree": 11
     },
     {
       "id": "/reference/reference-tables/lay-up-formulas.html",
       "title": "Lay-Up Formulas",
       "section": "Home",
-      "degree": 8
+      "degree": 7
     },
     {
       "id": "/reference/reference-tables/material-tag-vocabulary.html",
       "title": "Material Tag Vocabulary",
       "section": "Home",
-      "degree": 6
+      "degree": 5
     },
     {
       "id": "/reference/reference-tables/model-cleanup-commands.html",
       "title": "Model Cleanup Commands",
       "section": "Home",
-      "degree": 5
+      "degree": 3
     },
     {
       "id": "/reference/reference-tables/sheet-sizes.html",
       "title": "Actual Sheet Sizes",
       "section": "Home",
-      "degree": 5
+      "degree": 3
     },
     {
       "id": "/reference/training-videos.html",
@@ -136,7 +124,7 @@
       "id": "/standards/layer-organization/",
       "title": "Layer Organization",
       "section": "Standards",
-      "degree": 18
+      "degree": 17
     },
     {
       "id": "/standards/layer-organization/manufactured-parts.html",
@@ -148,13 +136,13 @@
       "id": "/standards/layer-organization/material-modeling.html",
       "title": "Material Modeling",
       "section": "Standards",
-      "degree": 11
+      "degree": 8
     },
     {
       "id": "/standards/layer-organization/modeling-techniques.html",
       "title": "Modeling Techniques",
       "section": "Standards",
-      "degree": 7
+      "degree": 4
     },
     {
       "id": "/standards/layer-organization/standard-layers.html",
@@ -163,22 +151,16 @@
       "degree": 5
     },
     {
-      "id": "/standards/quick-reference.html",
-      "title": "Quick Reference",
-      "section": "Standards",
-      "degree": 18
-    },
-    {
       "id": "/standards/rhino-drafting/annotation-styles-reference.html",
       "title": "Annotation Styles Reference",
       "section": "Standards",
-      "degree": 4
+      "degree": 3
     },
     {
       "id": "/standards/rhino-drafting/annotations.html",
       "title": "Annotations",
       "section": "Standards",
-      "degree": 6
+      "degree": 5
     },
     {
       "id": "/standards/rhino-drafting/cover-sheet-common-pages.html",
@@ -190,25 +172,25 @@
       "id": "/standards/rhino-drafting/details.html",
       "title": "Details",
       "section": "Standards",
-      "degree": 5
+      "degree": 4
     },
     {
       "id": "/standards/rhino-drafting/display-modes.html",
       "title": "Display Modes",
       "section": "Standards",
-      "degree": 5
+      "degree": 3
     },
     {
       "id": "/standards/rhino-drafting/hatches.html",
       "title": "Hatches",
       "section": "Standards",
-      "degree": 5
+      "degree": 4
     },
     {
       "id": "/standards/rhino-drafting/",
       "title": "Rhino Drafting",
       "section": "Standards",
-      "degree": 20
+      "degree": 19
     },
     {
       "id": "/standards/rhino-drafting/layout-structure.html",
@@ -220,43 +202,43 @@
       "id": "/standards/rhino-drafting/printing.html",
       "title": "Printing",
       "section": "Standards",
-      "degree": 8
+      "degree": 7
     },
     {
       "id": "/standards/rhino-drafting/sections-clipping.html",
       "title": "Sections & Clipping",
       "section": "Standards",
-      "degree": 6
+      "degree": 5
     },
     {
       "id": "/standards/",
       "title": "Standards",
       "section": "Standards",
-      "degree": 6
+      "degree": 5
     },
     {
       "id": "/tools/approvals-process.html",
       "title": "Approvals Process",
       "section": "Tools",
-      "degree": 11
+      "degree": 8
     },
     {
       "id": "/tools/epicor/dashboards.html",
       "title": "Dashboards",
       "section": "Tools",
-      "degree": 8
+      "degree": 7
     },
     {
       "id": "/tools/epicor/",
       "title": "Epicor Usage",
       "section": "Tools",
-      "degree": 21
+      "degree": 19
     },
     {
       "id": "/tools/epicor/inventory-jobs.html",
       "title": "Inventory Jobs (INV)",
       "section": "Tools",
-      "degree": 10
+      "degree": 8
     },
     {
       "id": "/tools/epicor/job-management.html",
@@ -268,7 +250,7 @@
       "id": "/tools/epicor/multi-site-operations.html",
       "title": "Multi-Site Operations",
       "section": "Tools",
-      "degree": 5
+      "degree": 3
     },
     {
       "id": "/tools/epicor/part-management.html",
@@ -289,16 +271,10 @@
       "degree": 3
     },
     {
-      "id": "/tools/quick-reference.html",
-      "title": "Quick Reference",
-      "section": "Tools",
-      "degree": 9
-    },
-    {
       "id": "/tools/time-entry.html",
       "title": "Time Entry",
       "section": "Tools",
-      "degree": 7
+      "degree": 5
     },
     {
       "id": "/tools/",
@@ -316,13 +292,13 @@
       "id": "/workflows/fabrication-engineer/bom-procedures.html",
       "title": "BOM Procedures & Validation",
       "section": "Workflows",
-      "degree": 11
+      "degree": 9
     },
     {
       "id": "/workflows/fabrication-engineer/design-engineering.html",
       "title": "Design Engineering (DE) Phase",
       "section": "Workflows",
-      "degree": 7
+      "degree": 6
     },
     {
       "id": "/workflows/fabrication-engineer/epicor-interaction.html",
@@ -334,25 +310,25 @@
       "id": "/workflows/fabrication-engineer/getting-started.html",
       "title": "Getting Started",
       "section": "Workflows",
-      "degree": 12
+      "degree": 10
     },
     {
       "id": "/workflows/fabrication-engineer/",
       "title": "Fabrication Engineer (FE)",
       "section": "Workflows",
-      "degree": 25
+      "degree": 24
     },
     {
       "id": "/workflows/fabrication-engineer/material-transmittal.html",
       "title": "Material Transmittal Log (TRA)",
       "section": "Workflows",
-      "degree": 8
+      "degree": 6
     },
     {
       "id": "/workflows/fabrication-engineer/part-naming.html",
       "title": "Part Naming",
       "section": "Workflows",
-      "degree": 11
+      "degree": 9
     },
     {
       "id": "/workflows/fabrication-engineer/pe-release-prep.html",
@@ -364,43 +340,43 @@
       "id": "/workflows/fabrication-engineer/shipping-components.html",
       "title": "Shipping Components",
       "section": "Workflows",
-      "degree": 9
+      "degree": 7
     },
     {
       "id": "/workflows/fabrication-engineer/solid-wood-components.html",
       "title": "Solid Wood Components (WC)",
       "section": "Workflows",
-      "degree": 7
+      "degree": 5
     },
     {
       "id": "/workflows/fabrication-engineer/submittal-review.html",
       "title": "Submittal Review Cycle",
       "section": "Workflows",
-      "degree": 6
+      "degree": 5
     },
     {
       "id": "/workflows/fabrication-engineer/takeoffs.html",
       "title": "Takeoffs",
       "section": "Workflows",
-      "degree": 14
+      "degree": 12
     },
     {
       "id": "/workflows/fabrication-engineer/toolkit/drafting.html",
       "title": "Drafting Toolkit",
       "section": "Home",
-      "degree": 10
+      "degree": 9
     },
     {
       "id": "/workflows/fabrication-engineer/toolkit/",
       "title": "Engineering Toolkit (Setup)",
       "section": "Workflows",
-      "degree": 12
+      "degree": 10
     },
     {
       "id": "/workflows/fabrication-engineer/toolkit/modeling.html",
       "title": "Modeling Toolkit",
       "section": "Home",
-      "degree": 7
+      "degree": 6
     },
     {
       "id": "/workflows/fabrication-engineer/troubleshooting.html",
@@ -412,13 +388,13 @@
       "id": "/workflows/fe-to-pe-release.html",
       "title": "FE to PE Release Procedure",
       "section": "Workflows",
-      "degree": 28
+      "degree": 26
     },
     {
       "id": "/workflows/production-engineer/deliverables.html",
       "title": "Deliverables",
       "section": "Workflows",
-      "degree": 5
+      "degree": 4
     },
     {
       "id": "/workflows/production-engineer/",
@@ -430,13 +406,13 @@
       "id": "/workflows/production-engineer/processing.html",
       "title": "Model Processing",
       "section": "Workflows",
-      "degree": 7
+      "degree": 6
     },
     {
       "id": "/workflows/production-engineer/setup.html",
       "title": "Setup & Organization",
       "section": "Workflows",
-      "degree": 6
+      "degree": 5
     },
     {
       "id": "/workflows/production-engineer/troubleshooting.html",
@@ -445,16 +421,10 @@
       "degree": 4
     },
     {
-      "id": "/workflows/quick-reference.html",
-      "title": "Quick Reference",
-      "section": "Workflows",
-      "degree": 23
-    },
-    {
       "id": "/workflows/",
       "title": "Workflows",
       "section": "Workflows",
-      "degree": 6
+      "degree": 5
     }
   ],
   "edges": [
@@ -476,14 +446,6 @@
     },
     {
       "source": "/",
-      "target": "/onboarding/quick-reference.html"
-    },
-    {
-      "source": "/",
-      "target": "/onboarding/quick-start.html"
-    },
-    {
-      "source": "/",
       "target": "/reference/folder-structure.html"
     },
     {
@@ -496,10 +458,6 @@
     },
     {
       "source": "/",
-      "target": "/standards/quick-reference.html"
-    },
-    {
-      "source": "/",
       "target": "/standards/rhino-drafting/"
     },
     {
@@ -509,10 +467,6 @@
     {
       "source": "/",
       "target": "/tools/epicor/"
-    },
-    {
-      "source": "/",
-      "target": "/tools/quick-reference.html"
     },
     {
       "source": "/",
@@ -533,10 +487,6 @@
     {
       "source": "/",
       "target": "/workflows/production-engineer/"
-    },
-    {
-      "source": "/",
-      "target": "/workflows/quick-reference.html"
     },
     {
       "source": "/onboarding/",
@@ -560,10 +510,6 @@
     },
     {
       "source": "/onboarding/",
-      "target": "/onboarding/quick-start.html"
-    },
-    {
-      "source": "/onboarding/",
       "target": "/onboarding/scheduling-chain.html"
     },
     {
@@ -588,27 +534,11 @@
     },
     {
       "source": "/onboarding/engineer-progression-framework.html",
-      "target": "/onboarding/quick-reference.html"
-    },
-    {
-      "source": "/onboarding/engineer-progression-framework.html",
-      "target": "/onboarding/quick-start.html"
-    },
-    {
-      "source": "/onboarding/engineer-progression-framework.html",
       "target": "/reference/glossary.html"
     },
     {
       "source": "/onboarding/engineering-roles.html",
       "target": "/onboarding/project-delivery.html"
-    },
-    {
-      "source": "/onboarding/engineering-roles.html",
-      "target": "/onboarding/quick-reference.html"
-    },
-    {
-      "source": "/onboarding/engineering-roles.html",
-      "target": "/onboarding/quick-start.html"
     },
     {
       "source": "/onboarding/engineering-roles.html",
@@ -629,22 +559,6 @@
     {
       "source": "/onboarding/engineering-roles.html",
       "target": "/workflows/production-engineer/"
-    },
-    {
-      "source": "/onboarding/manifesto.html",
-      "target": "/onboarding/quick-reference.html"
-    },
-    {
-      "source": "/onboarding/manifesto.html",
-      "target": "/onboarding/quick-start.html"
-    },
-    {
-      "source": "/onboarding/project-delivery.html",
-      "target": "/onboarding/quick-reference.html"
-    },
-    {
-      "source": "/onboarding/project-delivery.html",
-      "target": "/onboarding/quick-start.html"
     },
     {
       "source": "/onboarding/project-delivery.html",
@@ -673,14 +587,6 @@
     {
       "source": "/onboarding/project-delivery.html",
       "target": "/workflows/production-engineer/"
-    },
-    {
-      "source": "/onboarding/purchasing-signal-chain.html",
-      "target": "/onboarding/quick-reference.html"
-    },
-    {
-      "source": "/onboarding/purchasing-signal-chain.html",
-      "target": "/onboarding/quick-start.html"
     },
     {
       "source": "/onboarding/purchasing-signal-chain.html",
@@ -697,126 +603,6 @@
     {
       "source": "/onboarding/purchasing-signal-chain.html",
       "target": "/workflows/fabrication-engineer/material-transmittal.html"
-    },
-    {
-      "source": "/onboarding/quick-reference.html",
-      "target": "/onboarding/quick-start.html"
-    },
-    {
-      "source": "/onboarding/quick-reference.html",
-      "target": "/onboarding/scheduling-chain.html"
-    },
-    {
-      "source": "/onboarding/quick-reference.html",
-      "target": "/reference/"
-    },
-    {
-      "source": "/onboarding/quick-reference.html",
-      "target": "/reference/glossary.html"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/onboarding/scheduling-chain.html"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/reference/folder-structure.html"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/reference/glossary.html"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/reference/reference-tables/"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/standards/layer-organization/"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/standards/layer-organization/material-modeling.html"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/standards/layer-organization/modeling-techniques.html"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/standards/rhino-drafting/"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/standards/rhino-drafting/display-modes.html"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/tools/approvals-process.html"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/tools/epicor/"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/tools/epicor/multi-site-operations.html"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/tools/quick-reference.html"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/tools/time-entry.html"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/workflows/fabrication-engineer/"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/workflows/fabrication-engineer/bom-procedures.html"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/workflows/fabrication-engineer/design-engineering.html"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/workflows/fabrication-engineer/getting-started.html"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/workflows/fabrication-engineer/material-transmittal.html"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/workflows/fabrication-engineer/part-naming.html"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/workflows/fabrication-engineer/shipping-components.html"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/workflows/fabrication-engineer/solid-wood-components.html"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/workflows/fabrication-engineer/submittal-review.html"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/workflows/fabrication-engineer/takeoffs.html"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/workflows/fabrication-engineer/toolkit/"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/workflows/fe-to-pe-release.html"
     },
     {
       "source": "/onboarding/scheduling-chain.html",
@@ -841,18 +627,6 @@
     {
       "source": "/reference/",
       "target": "/reference/training-videos.html"
-    },
-    {
-      "source": "/reference/",
-      "target": "/standards/quick-reference.html"
-    },
-    {
-      "source": "/reference/",
-      "target": "/tools/quick-reference.html"
-    },
-    {
-      "source": "/reference/",
-      "target": "/workflows/quick-reference.html"
     },
     {
       "source": "/reference/folder-structure.html",
@@ -988,19 +762,11 @@
     },
     {
       "source": "/reference/reference-tables/cnc-drill-sizes.html",
-      "target": "/standards/quick-reference.html"
-    },
-    {
-      "source": "/reference/reference-tables/cnc-drill-sizes.html",
       "target": "/workflows/fe-to-pe-release.html"
     },
     {
       "source": "/reference/reference-tables/cnc-drill-sizes.html",
       "target": "/workflows/production-engineer/processing.html"
-    },
-    {
-      "source": "/reference/reference-tables/file-naming-conventions.html",
-      "target": "/standards/quick-reference.html"
     },
     {
       "source": "/reference/reference-tables/file-naming-conventions.html",
@@ -1024,10 +790,6 @@
     },
     {
       "source": "/reference/reference-tables/lay-up-formulas.html",
-      "target": "/standards/quick-reference.html"
-    },
-    {
-      "source": "/reference/reference-tables/lay-up-formulas.html",
       "target": "/standards/rhino-drafting/layout-structure.html"
     },
     {
@@ -1048,10 +810,6 @@
     },
     {
       "source": "/reference/reference-tables/material-tag-vocabulary.html",
-      "target": "/standards/quick-reference.html"
-    },
-    {
-      "source": "/reference/reference-tables/material-tag-vocabulary.html",
       "target": "/workflows/fabrication-engineer/bom-procedures.html"
     },
     {
@@ -1060,15 +818,7 @@
     },
     {
       "source": "/reference/reference-tables/model-cleanup-commands.html",
-      "target": "/standards/quick-reference.html"
-    },
-    {
-      "source": "/reference/reference-tables/model-cleanup-commands.html",
       "target": "/workflows/fe-to-pe-release.html"
-    },
-    {
-      "source": "/reference/reference-tables/model-cleanup-commands.html",
-      "target": "/workflows/quick-reference.html"
     },
     {
       "source": "/reference/reference-tables/sheet-sizes.html",
@@ -1076,23 +826,11 @@
     },
     {
       "source": "/reference/reference-tables/sheet-sizes.html",
-      "target": "/standards/quick-reference.html"
-    },
-    {
-      "source": "/reference/reference-tables/sheet-sizes.html",
       "target": "/workflows/fabrication-engineer/takeoffs.html"
-    },
-    {
-      "source": "/reference/reference-tables/sheet-sizes.html",
-      "target": "/workflows/quick-reference.html"
     },
     {
       "source": "/standards/",
       "target": "/standards/layer-organization/"
-    },
-    {
-      "source": "/standards/",
-      "target": "/standards/quick-reference.html"
     },
     {
       "source": "/standards/",
@@ -1176,15 +914,7 @@
     },
     {
       "source": "/standards/layer-organization/material-modeling.html",
-      "target": "/standards/quick-reference.html"
-    },
-    {
-      "source": "/standards/layer-organization/material-modeling.html",
       "target": "/workflows/fe-to-pe-release.html"
-    },
-    {
-      "source": "/standards/layer-organization/material-modeling.html",
-      "target": "/workflows/quick-reference.html"
     },
     {
       "source": "/standards/layer-organization/modeling-techniques.html",
@@ -1192,15 +922,7 @@
     },
     {
       "source": "/standards/layer-organization/modeling-techniques.html",
-      "target": "/standards/quick-reference.html"
-    },
-    {
-      "source": "/standards/layer-organization/modeling-techniques.html",
       "target": "/standards/rhino-drafting/layout-structure.html"
-    },
-    {
-      "source": "/standards/layer-organization/modeling-techniques.html",
-      "target": "/workflows/quick-reference.html"
     },
     {
       "source": "/standards/layer-organization/standard-layers.html",
@@ -1209,34 +931,6 @@
     {
       "source": "/standards/layer-organization/standard-layers.html",
       "target": "/standards/rhino-drafting/annotations.html"
-    },
-    {
-      "source": "/standards/quick-reference.html",
-      "target": "/standards/rhino-drafting/annotation-styles-reference.html"
-    },
-    {
-      "source": "/standards/quick-reference.html",
-      "target": "/standards/rhino-drafting/annotations.html"
-    },
-    {
-      "source": "/standards/quick-reference.html",
-      "target": "/standards/rhino-drafting/details.html"
-    },
-    {
-      "source": "/standards/quick-reference.html",
-      "target": "/standards/rhino-drafting/display-modes.html"
-    },
-    {
-      "source": "/standards/quick-reference.html",
-      "target": "/standards/rhino-drafting/hatches.html"
-    },
-    {
-      "source": "/standards/quick-reference.html",
-      "target": "/standards/rhino-drafting/printing.html"
-    },
-    {
-      "source": "/standards/quick-reference.html",
-      "target": "/standards/rhino-drafting/sections-clipping.html"
     },
     {
       "source": "/standards/rhino-drafting/",
@@ -1392,10 +1086,6 @@
     },
     {
       "source": "/tools/approvals-process.html",
-      "target": "/tools/quick-reference.html"
-    },
-    {
-      "source": "/tools/approvals-process.html",
       "target": "/workflows/fabrication-engineer/"
     },
     {
@@ -1405,10 +1095,6 @@
     {
       "source": "/tools/approvals-process.html",
       "target": "/workflows/fabrication-engineer/submittal-review.html"
-    },
-    {
-      "source": "/tools/approvals-process.html",
-      "target": "/workflows/quick-reference.html"
     },
     {
       "source": "/tools/epicor/",
@@ -1437,10 +1123,6 @@
     {
       "source": "/tools/epicor/",
       "target": "/tools/epicor/troubleshooting.html"
-    },
-    {
-      "source": "/tools/epicor/",
-      "target": "/tools/quick-reference.html"
     },
     {
       "source": "/tools/epicor/",
@@ -1492,10 +1174,6 @@
     },
     {
       "source": "/tools/epicor/dashboards.html",
-      "target": "/tools/quick-reference.html"
-    },
-    {
-      "source": "/tools/epicor/dashboards.html",
       "target": "/workflows/engineering-assistant.html"
     },
     {
@@ -1512,10 +1190,6 @@
     },
     {
       "source": "/tools/epicor/inventory-jobs.html",
-      "target": "/tools/quick-reference.html"
-    },
-    {
-      "source": "/tools/epicor/inventory-jobs.html",
       "target": "/workflows/fabrication-engineer/bom-procedures.html"
     },
     {
@@ -1525,10 +1199,6 @@
     {
       "source": "/tools/epicor/inventory-jobs.html",
       "target": "/workflows/fabrication-engineer/takeoffs.html"
-    },
-    {
-      "source": "/tools/epicor/inventory-jobs.html",
-      "target": "/workflows/quick-reference.html"
     },
     {
       "source": "/tools/epicor/job-management.html",
@@ -1571,10 +1241,6 @@
       "target": "/tools/time-entry.html"
     },
     {
-      "source": "/tools/epicor/multi-site-operations.html",
-      "target": "/workflows/quick-reference.html"
-    },
-    {
       "source": "/tools/epicor/part-management.html",
       "target": "/tools/epicor/troubleshooting.html"
     },
@@ -1589,14 +1255,6 @@
     {
       "source": "/tools/epicor/production-report.html",
       "target": "/workflows/fabrication-engineer/submittal-review.html"
-    },
-    {
-      "source": "/tools/quick-reference.html",
-      "target": "/tools/time-entry.html"
-    },
-    {
-      "source": "/tools/quick-reference.html",
-      "target": "/workflows/fabrication-engineer/material-transmittal.html"
     },
     {
       "source": "/workflows/",
@@ -1617,10 +1275,6 @@
     {
       "source": "/workflows/",
       "target": "/workflows/production-engineer/"
-    },
-    {
-      "source": "/workflows/",
-      "target": "/workflows/quick-reference.html"
     },
     {
       "source": "/workflows/engineering-assistant.html",
@@ -1695,10 +1349,6 @@
       "target": "/workflows/fabrication-engineer/takeoffs.html"
     },
     {
-      "source": "/workflows/fabrication-engineer/bom-procedures.html",
-      "target": "/workflows/quick-reference.html"
-    },
-    {
       "source": "/workflows/fabrication-engineer/design-engineering.html",
       "target": "/workflows/fabrication-engineer/epicor-interaction.html"
     },
@@ -1735,10 +1385,6 @@
       "target": "/workflows/fabrication-engineer/troubleshooting.html"
     },
     {
-      "source": "/workflows/fabrication-engineer/getting-started.html",
-      "target": "/workflows/quick-reference.html"
-    },
-    {
       "source": "/workflows/fabrication-engineer/material-transmittal.html",
       "target": "/workflows/fabrication-engineer/toolkit/drafting.html"
     },
@@ -1761,10 +1407,6 @@
     {
       "source": "/workflows/fabrication-engineer/part-naming.html",
       "target": "/workflows/fe-to-pe-release.html"
-    },
-    {
-      "source": "/workflows/fabrication-engineer/part-naming.html",
-      "target": "/workflows/quick-reference.html"
     },
     {
       "source": "/workflows/fabrication-engineer/pe-release-prep.html",
@@ -1795,14 +1437,6 @@
       "target": "/workflows/fe-to-pe-release.html"
     },
     {
-      "source": "/workflows/fabrication-engineer/shipping-components.html",
-      "target": "/workflows/quick-reference.html"
-    },
-    {
-      "source": "/workflows/fabrication-engineer/solid-wood-components.html",
-      "target": "/workflows/quick-reference.html"
-    },
-    {
       "source": "/workflows/fabrication-engineer/takeoffs.html",
       "target": "/workflows/fabrication-engineer/toolkit/"
     },
@@ -1817,10 +1451,6 @@
     {
       "source": "/workflows/fabrication-engineer/takeoffs.html",
       "target": "/workflows/fe-to-pe-release.html"
-    },
-    {
-      "source": "/workflows/fabrication-engineer/takeoffs.html",
-      "target": "/workflows/quick-reference.html"
     },
     {
       "source": "/workflows/fabrication-engineer/toolkit/",
@@ -1839,32 +1469,16 @@
       "target": "/workflows/fe-to-pe-release.html"
     },
     {
-      "source": "/workflows/fabrication-engineer/toolkit/",
-      "target": "/workflows/quick-reference.html"
-    },
-    {
       "source": "/workflows/fabrication-engineer/toolkit/drafting.html",
       "target": "/workflows/fabrication-engineer/toolkit/modeling.html"
-    },
-    {
-      "source": "/workflows/fabrication-engineer/toolkit/drafting.html",
-      "target": "/workflows/quick-reference.html"
     },
     {
       "source": "/workflows/fabrication-engineer/toolkit/modeling.html",
       "target": "/workflows/fe-to-pe-release.html"
     },
     {
-      "source": "/workflows/fabrication-engineer/toolkit/modeling.html",
-      "target": "/workflows/quick-reference.html"
-    },
-    {
       "source": "/workflows/fe-to-pe-release.html",
       "target": "/workflows/production-engineer/"
-    },
-    {
-      "source": "/workflows/fe-to-pe-release.html",
-      "target": "/workflows/quick-reference.html"
     },
     {
       "source": "/workflows/production-engineer/",
@@ -1891,10 +1505,6 @@
       "target": "/workflows/production-engineer/troubleshooting.html"
     },
     {
-      "source": "/workflows/production-engineer/deliverables.html",
-      "target": "/workflows/quick-reference.html"
-    },
-    {
       "source": "/workflows/production-engineer/processing.html",
       "target": "/workflows/production-engineer/setup.html"
     },
@@ -1903,16 +1513,8 @@
       "target": "/workflows/production-engineer/troubleshooting.html"
     },
     {
-      "source": "/workflows/production-engineer/processing.html",
-      "target": "/workflows/quick-reference.html"
-    },
-    {
       "source": "/workflows/production-engineer/setup.html",
       "target": "/workflows/production-engineer/troubleshooting.html"
-    },
-    {
-      "source": "/workflows/production-engineer/setup.html",
-      "target": "/workflows/quick-reference.html"
     }
   ]
 }

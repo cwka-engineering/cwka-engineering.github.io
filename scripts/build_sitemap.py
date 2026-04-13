@@ -102,7 +102,8 @@ def build_graph(wiki_root: Path) -> dict:
     """Two-pass algorithm: collect nodes, then edges."""
 
     # ── Pass 1: Nodes ────────────────────────────────────────────────────────
-    nodes = {}  # permalink → {id, title, section}
+    nodes = {}       # permalink → {id, title, section}
+    excluded = set() # permalinks of pages intentionally excluded from graph
 
     for md_path in sorted(wiki_root.rglob("*.md")):
         rel = md_path.relative_to(wiki_root)
@@ -121,6 +122,13 @@ def build_graph(wiki_root: Path) -> dict:
 
         # Include nav-excluded pages only if they're the homepage
         if fm.get("nav_exclude") is True and permalink != "/":
+            continue
+
+        # Skip Quick Start / Quick Reference index pages (noise in the graph)
+        title = fm.get("title", "")
+        if isinstance(title, str) and ("quick reference" in title.lower()
+                                       or "quick start" in title.lower()):
+            excluded.add(permalink)
             continue
 
         nodes[permalink] = {
@@ -144,6 +152,9 @@ def build_graph(wiki_root: Path) -> dict:
 
             if target == permalink:
                 continue  # skip self-links
+
+            if target in excluded:
+                continue  # linked page intentionally excluded from graph
 
             if target not in nodes:
                 broken.append((permalink, target_raw))
