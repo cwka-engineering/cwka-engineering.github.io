@@ -15,6 +15,7 @@ Quick lookups, glossaries, reference tables, and task-oriented indexes.
 - **[Glossary](/reference/glossary.html)** - Terms, acronyms, and definitions used in engineering
 - **[Folder Structure & File Management](/reference/folder-structure.html)** - Standard folder organization for projects and engineering files
 - **[Reference Tables](/reference/reference-tables/)** - File naming, cleanup commands, material tags, lay-up formulas, sheet sizes, drill sizes
+- **[Training Videos](/reference/training-videos.html)** - Complete index of engineering training recordings with wiki page links
 
 ## Quick References — "How do I…?"
 

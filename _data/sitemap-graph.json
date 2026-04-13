@@ -49,6 +49,12 @@
       "degree": 7
     },
     {
+      "id": "/onboarding/quick-reference.html",
+      "title": "Quick Reference",
+      "section": "Home",
+      "degree": 10
+    },
+    {
       "id": "/onboarding/scheduling-chain.html",
       "title": "Scheduling Chain",
       "section": "Home",
@@ -70,13 +76,7 @@
       "id": "/reference/",
       "title": "Reference",
       "section": "Home",
-      "degree": 7
-    },
-    {
-      "id": "/reference/overview-quick-reference.html",
-      "title": "Quick Reference",
-      "section": "Home",
-      "degree": 10
+      "degree": 8
     },
     {
       "id": "/reference/reference-tables/cnc-drill-sizes.html",
@@ -125,6 +125,12 @@
       "title": "Quick Reference",
       "section": "Home",
       "degree": 18
+    },
+    {
+      "id": "/reference/training-videos.html",
+      "title": "Training Videos",
+      "section": "Home",
+      "degree": 1
     },
     {
       "id": "/standards/layer-organization/codes-and-tags.html",
@@ -470,6 +476,10 @@
     },
     {
       "source": "/",
+      "target": "/onboarding/quick-reference.html"
+    },
+    {
+      "source": "/",
       "target": "/onboarding/quick-start.html"
     },
     {
@@ -479,10 +489,6 @@
     {
       "source": "/",
       "target": "/reference/glossary.html"
-    },
-    {
-      "source": "/",
-      "target": "/reference/overview-quick-reference.html"
     },
     {
       "source": "/",
@@ -582,15 +588,15 @@
     },
     {
       "source": "/onboarding/engineer-progression-framework.html",
+      "target": "/onboarding/quick-reference.html"
+    },
+    {
+      "source": "/onboarding/engineer-progression-framework.html",
       "target": "/onboarding/quick-start.html"
     },
     {
       "source": "/onboarding/engineer-progression-framework.html",
       "target": "/reference/glossary.html"
-    },
-    {
-      "source": "/onboarding/engineer-progression-framework.html",
-      "target": "/reference/overview-quick-reference.html"
     },
     {
       "source": "/onboarding/engineering-roles.html",
@@ -598,15 +604,15 @@
     },
     {
       "source": "/onboarding/engineering-roles.html",
+      "target": "/onboarding/quick-reference.html"
+    },
+    {
+      "source": "/onboarding/engineering-roles.html",
       "target": "/onboarding/quick-start.html"
     },
     {
       "source": "/onboarding/engineering-roles.html",
       "target": "/reference/glossary.html"
-    },
-    {
-      "source": "/onboarding/engineering-roles.html",
-      "target": "/reference/overview-quick-reference.html"
     },
     {
       "source": "/onboarding/engineering-roles.html",
@@ -626,11 +632,15 @@
     },
     {
       "source": "/onboarding/manifesto.html",
-      "target": "/onboarding/quick-start.html"
+      "target": "/onboarding/quick-reference.html"
     },
     {
       "source": "/onboarding/manifesto.html",
-      "target": "/reference/overview-quick-reference.html"
+      "target": "/onboarding/quick-start.html"
+    },
+    {
+      "source": "/onboarding/project-delivery.html",
+      "target": "/onboarding/quick-reference.html"
     },
     {
       "source": "/onboarding/project-delivery.html",
@@ -639,10 +649,6 @@
     {
       "source": "/onboarding/project-delivery.html",
       "target": "/onboarding/scheduling-chain.html"
-    },
-    {
-      "source": "/onboarding/project-delivery.html",
-      "target": "/reference/overview-quick-reference.html"
     },
     {
       "source": "/onboarding/project-delivery.html",
@@ -670,15 +676,15 @@
     },
     {
       "source": "/onboarding/purchasing-signal-chain.html",
+      "target": "/onboarding/quick-reference.html"
+    },
+    {
+      "source": "/onboarding/purchasing-signal-chain.html",
       "target": "/onboarding/quick-start.html"
     },
     {
       "source": "/onboarding/purchasing-signal-chain.html",
       "target": "/onboarding/scheduling-chain.html"
-    },
-    {
-      "source": "/onboarding/purchasing-signal-chain.html",
-      "target": "/reference/overview-quick-reference.html"
     },
     {
       "source": "/onboarding/purchasing-signal-chain.html",
@@ -693,6 +699,22 @@
       "target": "/workflows/fabrication-engineer/material-transmittal.html"
     },
     {
+      "source": "/onboarding/quick-reference.html",
+      "target": "/onboarding/quick-start.html"
+    },
+    {
+      "source": "/onboarding/quick-reference.html",
+      "target": "/onboarding/scheduling-chain.html"
+    },
+    {
+      "source": "/onboarding/quick-reference.html",
+      "target": "/reference/"
+    },
+    {
+      "source": "/onboarding/quick-reference.html",
+      "target": "/reference/glossary.html"
+    },
+    {
       "source": "/onboarding/quick-start.html",
       "target": "/onboarding/scheduling-chain.html"
     },
@@ -703,10 +725,6 @@
     {
       "source": "/onboarding/quick-start.html",
       "target": "/reference/glossary.html"
-    },
-    {
-      "source": "/onboarding/quick-start.html",
-      "target": "/reference/overview-quick-reference.html"
     },
     {
       "source": "/onboarding/quick-start.html",
@@ -806,10 +824,6 @@
     },
     {
       "source": "/onboarding/scheduling-chain.html",
-      "target": "/reference/overview-quick-reference.html"
-    },
-    {
-      "source": "/onboarding/scheduling-chain.html",
       "target": "/workflows/fe-to-pe-release.html"
     },
     {
@@ -822,15 +836,15 @@
     },
     {
       "source": "/reference/",
-      "target": "/reference/overview-quick-reference.html"
-    },
-    {
-      "source": "/reference/",
       "target": "/reference/reference-tables/"
     },
     {
       "source": "/reference/",
       "target": "/reference/standards-quick-reference.html"
+    },
+    {
+      "source": "/reference/",
+      "target": "/reference/training-videos.html"
     },
     {
       "source": "/reference/",
@@ -891,10 +905,6 @@
     {
       "source": "/reference/folder-structure.html",
       "target": "/workflows/production-engineer/setup.html"
-    },
-    {
-      "source": "/reference/glossary.html",
-      "target": "/reference/overview-quick-reference.html"
     },
     {
       "source": "/reference/glossary.html",
