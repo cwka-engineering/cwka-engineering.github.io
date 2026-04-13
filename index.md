@@ -17,12 +17,12 @@ Welcome to the Engineering Department documentation and workflows wiki.
 
 **New to the Engineering Department?** Start here:
 
-1. **[Engineering Manifesto](/overview/manifesto.html)** - Who we are and how we work
-2. **[Onboarding Quick Start Links](/overview/onboarding-quick-start.html)** - Essential links and resources for new team members
-3. **[Engineering Roles & Core Competencies](/overview/engineering-roles.html)** - Understand your role and responsibilities
-4. **[Glossary](/overview/glossary.html)** - Learn common terms and acronyms
-5. **[Project Delivery Overview](/overview/project-delivery.html)** - See the complete workflow from start to finish
-6. **[Engineer Progression Framework](/overview/engineer-progression-framework.html)** - How Engineer I → II advancement works
+1. **[Engineering Manifesto](/onboarding/manifesto.html)** - Who we are and how we work
+2. **[Onboarding Quick Start Links](/onboarding/quick-start.html)** - Essential links and resources for new team members
+3. **[Engineering Roles & Core Competencies](/onboarding/engineering-roles.html)** - Understand your role and responsibilities
+4. **[Glossary](/reference/glossary.html)** - Learn common terms and acronyms
+5. **[Project Delivery Overview](/onboarding/project-delivery.html)** - See the complete workflow from start to finish
+6. **[Engineer Progression Framework](/onboarding/engineer-progression-framework.html)** - How Engineer I → II advancement works
 
 ---
 
@@ -53,7 +53,7 @@ Essential documents for EA work:
 Common resources:
 
 - **[Time Entry](/tools/time-entry.html)** - How to log time in Epicor/Toggl
-- **[Project Delivery Overview](/overview/project-delivery.html)** - Complete project lifecycle
+- **[Project Delivery Overview](/onboarding/project-delivery.html)** - Complete project lifecycle
 
 ---
 
@@ -61,9 +61,9 @@ Common resources:
 
 Find step-by-step answers organized by section:
 
-- **[Overview Quick Reference](/overview/quick-reference.html)** — Onboarding, setup, roles
+- **[Overview Quick Reference](/onboarding/quick-reference.html)** — Onboarding, setup, roles
 - **[Workflows Quick Reference](/workflows/quick-reference.html)** — FE/PE workflows, toolkit, release procedures
-- **[Standards Quick Reference](/standards/quick-reference.html)** — Drafting, sections, hatches, display modes
+- **[Standards Quick Reference](/reference/standards-quick-reference.html)** — Drafting, sections, hatches, display modes
 - **[Tools Quick Reference](/tools/quick-reference.html)** — Epicor, time entry, approvals
 
 ---
@@ -77,7 +77,7 @@ Find step-by-step answers organized by section:
 - [Layer Organization](/standards/layer-organization/) - Layer structure and conventions
 
 **Find or organize files:**
-- [Folder Structure & File Management](/standards/folder-structure.html) - Where files go
+- [Folder Structure & File Management](/reference/folder-structure.html) - Where files go
 
 **Use Epicor:**
 - [Epicor Usage in Engineering](/tools/epicor/) - Epicor procedures
@@ -96,7 +96,7 @@ Find step-by-step answers organized by section:
 ### Standards & Conventions
 - [Rhino Drafting and Layouts](/standards/rhino-drafting/) - Drawing standards
 - [Layer Organization](/standards/layer-organization/) - Rhino layer structure
-- [Folder Structure & File Management](/standards/folder-structure.html) - File organization
+- [Folder Structure & File Management](/reference/folder-structure.html) - File organization
 
 ### Tools & Systems
 - [Epicor Usage in Engineering](/tools/epicor/) - Epicor procedures
@@ -110,7 +110,7 @@ Find step-by-step answers organized by section:
 - [Engineering Assistant (EA) Workflow](/workflows/engineering-assistant.html) - Job creation and management
 
 ### Documentation
-- [Engineering Roles & Core Competencies](/overview/engineering-roles.html) - Role descriptions
-- [Project Delivery Overview](/overview/project-delivery.html) - Complete workflow
-- [Glossary](/overview/glossary.html) - Terms and definitions
+- [Engineering Roles & Core Competencies](/onboarding/engineering-roles.html) - Role descriptions
+- [Project Delivery Overview](/onboarding/project-delivery.html) - Complete workflow
+- [Glossary](/reference/glossary.html) - Terms and definitions
 

@@ -11,7 +11,7 @@ has_children: true
 
 Complete workflow for Fabrication Engineers from project assignment through PE release.
 
-> **Related Documents**: [Project Delivery Overview](/overview/project-delivery.html) | [FE to PE Release](/workflows/fe-to-pe-release.html) (checklist and procedure)
+> **Related Documents**: [Project Delivery Overview](/onboarding/project-delivery.html) | [FE to PE Release](/workflows/fe-to-pe-release.html) (checklist and procedure)
 
 ## Workflow Overview
 
@@ -20,7 +20,7 @@ The FE workflow consists of these key phases:
 1. **[Getting Started](/workflows/fabrication-engineer/getting-started.html)** - Finding assignments, verifying scope, and setting up project files
 2. **[Design Engineering (DE) Phase](/workflows/fabrication-engineer/design-engineering.html)** - Converting approximate geometry to precise fabrication-ready models
 3. **[Epicor Interaction](/workflows/fabrication-engineer/epicor-interaction.html)** - Updating submittal status and managing job data
-4. **[Engineering Toolkit](/workflows/fabrication-engineer/toolkit-setup.html)** - Setting up and using the FE toolkit
+4. **[Engineering Toolkit](/workflows/fabrication-engineer/toolkit/)** - Setting up and using the FE toolkit
 5. **[Part Naming](/workflows/fabrication-engineer/part-naming.html)** - Naming conventions and procedures
 6. **[Shipping Components](/workflows/fabrication-engineer/shipping-components.html)** - Creating and managing SC lists
 7. **[Takeoffs](/workflows/fabrication-engineer/takeoffs.html)** - Auto-BOM, 1D/2D nesting, and material optimization

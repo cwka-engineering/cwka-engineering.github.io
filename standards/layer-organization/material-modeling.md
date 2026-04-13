@@ -9,7 +9,7 @@ grand_parent: Standards
 
 # Material Thickness & Modeling
 
-> **Related**: [Manufactured Parts](/standards/layer-organization/manufactured-parts.html) | [Codes & Tags](/standards/layer-organization/codes-and-tags.html) | [Actual Sheet Sizes](/standards/reference-tables/sheet-sizes.html) | [Lay-Up Formulas](/standards/reference-tables/lay-up-formulas.html)
+> **Related**: [Manufactured Parts](/standards/layer-organization/manufactured-parts.html) | [Codes & Tags](/standards/layer-organization/codes-and-tags.html) | [Actual Sheet Sizes](/reference/reference-tables/sheet-sizes.html) | [Lay-Up Formulas](/reference/reference-tables/lay-up-formulas.html)
 
 ## Solid Body Requirements
 
@@ -18,7 +18,7 @@ All parts must be **closed, manifold polysurfaces**. Before release, verify:
 - `SelOpenPolysrf` — should return nothing (close any found)
 - `SelExtrusion` — convert all with `ConvertExtrusion`
 
-See [Model Cleanup Commands](/standards/reference-tables/model-cleanup-commands.html) for the full pre-release sequence.
+See [Model Cleanup Commands](/reference/reference-tables/model-cleanup-commands.html) for the full pre-release sequence.
 
 ## Modeled Thickness
 
@@ -47,7 +47,7 @@ Painted MDF with exposed edges needing paint requires paintable edgebanding (`GM
 
 ## Material Size
 
-Parts must fit within **actual** sheet dimensions, not nominal catalog sizes. See [Actual Sheet Sizes](/standards/reference-tables/sheet-sizes.html) for the complete reference.
+Parts must fit within **actual** sheet dimensions, not nominal catalog sizes. See [Actual Sheet Sizes](/reference/reference-tables/sheet-sizes.html) for the complete reference.
 
 | Material | Maximum Part Size |
 |----------|-------------------|

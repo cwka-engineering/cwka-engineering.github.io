@@ -45,7 +45,7 @@ Use **Microsoft Print to PDF** (recommended — good balance of quality and file
 - **Photo Insertion**: [^transcript-printing] Project cover page (front page) has option to insert a photo. This was not common practice at CW previously, but may become standard moving forward.
 
 ## See Also
-- [Folder Structure](/standards/folder-structure.html) - File management
+- [Folder Structure](/reference/folder-structure.html) - File management
 
 ## Footnotes
 [^transcript-printing]: Source: [Training Video — "Printing"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQCQlzuMthZ2QIwTvDPNyfACAV7hehiDupbtFBVJBqIVEI0?e=tpO9MY)

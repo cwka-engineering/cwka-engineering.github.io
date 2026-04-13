@@ -1,15 +1,16 @@
 ---
 layout: default
 title: Onboarding Quick Start Links
-permalink: /overview/onboarding-quick-start.html
-parent: Overview
+permalink: /onboarding/quick-start.html
+parent: Onboarding
+nav_order: 2
 ---
 
 # Onboarding Quick Start Links
 
-> **Related Documents**: [Engineering Roles & Core Competencies](/overview/engineering-roles.html) | [Engineer Progression Framework](/overview/engineer-progression-framework.html) | [Project Delivery Overview](/overview/project-delivery.html) | [Glossary](/overview/glossary.html)
+> **Related Documents**: [Engineering Roles & Core Competencies](/onboarding/engineering-roles.html) | [Engineer Progression Framework](/onboarding/engineer-progression-framework.html) | [Project Delivery Overview](/onboarding/project-delivery.html) | [Glossary](/reference/glossary.html)
 
-Essential links and resources for new Engineering Department team members. Wondering how Engineer I → II works? Read the [Engineer Progression Framework](/overview/engineer-progression-framework.html).
+Essential links and resources for new Engineering Department team members. Wondering how Engineer I → II works? Read the [Engineer Progression Framework](/onboarding/engineer-progression-framework.html).
 
 ### Training Videos
 
@@ -21,8 +22,8 @@ Essential links and resources for new Engineering Department team members. Wonde
 ### Templates and Resources
 
 - **Rhino v8 (Tabloid layouts) template**: [Box.com Link](https://digifabshop.box.com/s/n93tqh5z3pi6v5rrtzhk0rihkmcml9nb)
-- **’Gotham’ font family**: [Box.com Link](https://digifabshop.box.com/s/u1plgcsisgwquoxyjscg7muwnfbk28hx)
-- **Rhino Grasshopper ‘CWK/DFW Engineering Toolkit’**: [Box.com Link](https://digifabshop.box.com/s/ytpeoi2h2ta1bumlhggqm8t8osb5fbre)
+- **'Gotham' font family**: [Box.com Link](https://digifabshop.box.com/s/u1plgcsisgwquoxyjscg7muwnfbk28hx)
+- **Rhino Grasshopper 'CWK/DFW Engineering Toolkit'**: [Box.com Link](https://digifabshop.box.com/s/ytpeoi2h2ta1bumlhggqm8t8osb5fbre)
 - **Required plugins**: [Box.com Link](https://digifabshop.box.com/s/9plgd3b0d50eiyz0611u3p7pkwzytlqi)
 - **Display modes (.ini files)**: Available in the Engineering Resources folder on Box
 - **BOM Template**: Available on Box (Engineering Resources)
@@ -37,14 +38,14 @@ Use **`OptionsExport`** in Rhino 7 and **`OptionsImport`** in Rhino 8 to migrate
 ### How do I install required Rhino plugins via Package Manager?
 {: #how-to-install-plugins}
 
-Run `PackageManager` in Rhino 8. Install all required plugins from the department’s requirements list (see Box link above). The toolkit will fail to launch if required plugins are missing. Keep automatic plugin updates enabled unless IT directs otherwise.[^transcript-rhino8-kickoff-i]
+Run `PackageManager` in Rhino 8. Install all required plugins from the department's requirements list (see Box link above). The toolkit will fail to launch if required plugins are missing. Keep automatic plugin updates enabled unless IT directs otherwise.[^transcript-rhino8-kickoff-i]
 
 ### How do I set up Synapse for the Engineering Toolkit?
 {: #how-to-setup-synapse}
 
 After installing **Synapse** via Package Manager, load **Synapse RCP** once: **Rhino Options** → **Plug-ins** → find **Synapse RCP** → right-click → **Load Plug-in**. The Synapse panel must be in the foreground before launching Grasshopper and opening the toolkit. See [Engineering Toolkit (Setup)](/workflows/fabrication-engineer/toolkit/) for full details.
 
-### How do I import the department’s custom display modes?
+### How do I import the department's custom display modes?
 {: #how-to-import-display-modes}
 
 **File → Properties → View → Display Modes → Import** → select `.ini` files from the Engineering Resources folder on Box. Standard display modes:
@@ -74,7 +75,7 @@ Download from Box (see link above). Install system-wide (right-click → Install
 ### How do I configure Rhino backup and autosave settings for Box?
 {: #how-to-configure-backups}
 
-- Turn **off** Rhino’s `.bak` sidecar backups if your workflow uses Box (avoids clutter).
+- Turn **off** Rhino's `.bak` sidecar backups if your workflow uses Box (avoids clutter).
 - Keep **autosave** on. Optionally relocate the autosave path.
 - Leave **file locking** enabled — it helps detect when another user has a file open.
 
@@ -89,17 +90,17 @@ A structured path through the wiki for new engineers. Adapt timing to your pace 
 
 ### Week 1: Orientation & Context
 
-1. [Engineering Manifesto](/overview/manifesto.html) — Department values and beliefs
-2. [Engineering Roles](/overview/engineering-roles.html) — Understand your role and responsibilities
-3. [Project Delivery Overview](/overview/project-delivery.html) — How a project flows through Engineering
-4. [Scheduling Chain](/overview/scheduling-chain.html) — How dates drive operations
-5. [Purchasing Signal Chain](/overview/purchasing-signal-chain.html) — What triggers material purchasing
-6. [Glossary](/overview/glossary.html) — Terms, codes, and acronyms (bookmark for reference)
+1. [Engineering Manifesto](/onboarding/manifesto.html) — Department values and beliefs
+2. [Engineering Roles](/onboarding/engineering-roles.html) — Understand your role and responsibilities
+3. [Project Delivery Overview](/onboarding/project-delivery.html) — How a project flows through Engineering
+4. [Scheduling Chain](/onboarding/scheduling-chain.html) — How dates drive operations
+5. [Purchasing Signal Chain](/onboarding/purchasing-signal-chain.html) — What triggers material purchasing
+6. [Glossary](/reference/glossary.html) — Terms, codes, and acronyms (bookmark for reference)
 
 ### Week 2: Tools & Environment
 
 7. This page (Onboarding Quick Start) — Complete all Rhino and Epicor setup
-8. [Folder Structure](/standards/folder-structure.html) — Where files live on Box
+8. [Folder Structure](/reference/folder-structure.html) — Where files live on Box
 9. [Epicor Usage](/tools/epicor/) — Epicor overview and dashboards
 10. [Multi-Site Operations](/tools/epicor/multi-site-operations.html) — CWK/DFW site switching
 11. [Time Entry](/tools/time-entry.html) — Toggl + Epicor time tracking
@@ -109,7 +110,7 @@ A structured path through the wiki for new engineers. Adapt timing to your pace 
 12. [Layer Organization](/standards/layer-organization/) — Layer structure and naming
 13. [Material Modeling](/standards/layer-organization/material-modeling.html) — Solid bodies, thickness, edgebanding
 14. [Modeling Techniques](/standards/layer-organization/modeling-techniques.html) — Scribes, Named Positions, referencing
-15. [Reference Tables](/standards/reference-tables/) — File naming, cleanup commands, sheet sizes, drill sizes
+15. [Reference Tables](/reference/reference-tables/) — File naming, cleanup commands, sheet sizes, drill sizes
 
 ### Week 4: FE Workflow
 
@@ -129,7 +130,7 @@ A structured path through the wiki for new engineers. Adapt timing to your pace 
 26. [Approvals Process](/tools/approvals-process.html) — PA approval workflow
 27. [FE to PE Release](/workflows/fe-to-pe-release.html) — Checklist and release procedure
 28. [Solid Wood Components](/workflows/fabrication-engineer/solid-wood-components.html) — WC workflow
-29. [Engineer Progression Framework](/overview/engineer-progression-framework.html) — How advancement works
+29. [Engineer Progression Framework](/onboarding/engineer-progression-framework.html) — How advancement works
 
 ---
 
@@ -197,7 +198,7 @@ In order for the whole team to share direct File Explorer links, we have adopted
 
 **Configuration**: This Box support article explains the process. Requires setting a Windows registry key: [Configuring the Default Box Drive Folder Location (Windows Only)](https://support.box.com/hc/en-us/articles/360043697454-Configuring-the-Default-Box-Drive-Folder-Location-Windows-Only)
 
-> **Related**: [Folder Structure & File Management](/standards/folder-structure.html)
+> **Related**: [Folder Structure & File Management](/reference/folder-structure.html)
 
 ## Footnotes
 [^transcript-rhino8-kickoff-i]: Source: [Training Video — "Rhino 8 Kickoff Pt I"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQClvTAp_DlXSImI44GZjhPoAUjkAO2ROrfgSxu2Sy_oyQc?e=vWqkSZ)

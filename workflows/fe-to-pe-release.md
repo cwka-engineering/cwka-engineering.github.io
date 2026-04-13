@@ -8,7 +8,7 @@ nav_order: 3
 
 # FE to PE Release
 
-> **Related Documents**: [Project Delivery — Phase 3](/overview/project-delivery.html#phase-3-fe-release-to-production-engineering-pe-handoff) | [PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html) | [Rhino Drafting](/standards/rhino-drafting/) | [Layer Organization](/standards/layer-organization/) | [Epicor Job Management](/tools/epicor/job-management.html) | [Glossary](/overview/glossary.html)
+> **Related Documents**: [Project Delivery — Phase 3](/onboarding/project-delivery.html#phase-3-fe-release-to-production-engineering-pe-handoff) | [PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html) | [Rhino Drafting](/standards/rhino-drafting/) | [Layer Organization](/standards/layer-organization/) | [Epicor Job Management](/tools/epicor/job-management.html) | [Glossary](/reference/glossary.html)
 
 ## How do I set up the PE release folder?
 {: #how-to-setup-release-folder}
@@ -43,7 +43,7 @@ Access the form via the Engineering Team SharePoint. Fill in: your name, project
 ## How do I handle a late release (after scheduled start date)?
 {: #how-to-handle-late-release}
 
-Coordinate with adjacent departments before submitting. State the coordination in the release form **Notes** field. The late release impacts the [Scheduling Chain](/overview/scheduling-chain.html) — downstream operations may need rescheduling.
+Coordinate with adjacent departments before submitting. State the coordination in the release form **Notes** field. The late release impacts the [Scheduling Chain](/onboarding/scheduling-chain.html) — downstream operations may need rescheduling.
 
 ## How do I request a handoff meeting with PE?
 {: #how-to-request-handoff-meeting}
@@ -73,7 +73,7 @@ For command-level detail, see [Rhino Drafting](/standards/rhino-drafting/) and [
 - **Cleanup**: Run **Purge** to remove unused blocks, layers, and styles; run **SelDup** to remove duplicate geometry. No layouts (and no layout-only layers/blocks) in the release file unless required by standards. No empty layers. No nested "assembly" blocks that violate release conventions.
 - **Object integrity**: No bad objects (**SelBadObjects**), no open polysurfaces (**SelOpenPolysrf**), no extrusions where polysurfaces are required (**SelExtrusion**); use **ConvertExtrusion** where needed.
 - **Part name uniqueness**: Unlike geometries must not share the same part name. Use **SelName** and step through names so each name refers only to identical parts (or a single part). If two unlike parts shared a name, split names using the next unused **P###** in the series for the shipping component.
-- **Naming conventions**: File name, polysurface, and block names match team standards and Epicor/database compatibility. Hardware blocks use bracketed hardware tags; manufactured linked blocks follow MFG part format. **UserText**: Standard document and object keys (thickness, volume, project ID, etc.) are populated via the [Engineering Toolkit](/workflows/fabrication-engineer/toolkit-setup.html).
+- **Naming conventions**: File name, polysurface, and block names match team standards and Epicor/database compatibility. Hardware blocks use bracketed hardware tags; manufactured linked blocks follow MFG part format. **UserText**: Standard document and object keys (thickness, volume, project ID, etc.) are populated via the [Engineering Toolkit](/workflows/fabrication-engineer/toolkit/).
 - **Material thickness**: Modeled thickness matches physical materials within company tolerances; confirm stock-on-hand thicknesses with Production Management when needed. Common sheet goods: follow nominal vs. shop-ply conventions in [Material Modeling](/standards/layer-organization/material-modeling.html) and team practice.
 - **Bent metal**: Correct inside bend radius and thickness; 2D flat patterns/unfolds include appropriate bend deductions.
 
@@ -137,7 +137,7 @@ See [Shipping Components](/workflows/fabrication-engineer/shipping-components.ht
 ### 1. Understand the job structure
 {: #sop-job-structure}
 
-For detailed definitions, see the [Glossary](/overview/glossary.html).
+For detailed definitions, see the [Glossary](/reference/glossary.html).
 
 - **Group Submittal**: A package of multiple jobs submitted together to the client.
 - **Primary Job**: Subset of the project or group submittal.
@@ -189,7 +189,7 @@ Refer to [Rhino Drafting](/standards/rhino-drafting/) for drafting standards and
 
 For more information on Epicor, see [Epicor Usage in Engineering](/tools/epicor/) and [Job Management](/tools/epicor/job-management.html).
 
-1. Navigate to **UD40**: Shipping Components — Kinetic workbench (use **UD37** for CMG — see [Glossary](/overview/glossary.html)).
+1. Navigate to **UD40**: Shipping Components — Kinetic workbench (use **UD37** for CMG — see [Glossary](/reference/glossary.html)).
 2. In the shipping components Excel sheet for the job, copy the ProjectID, JobNum, SC PartNum, Description, and Order Qty columns, excluding the headings.
 3. On the workbench page, right-click and **Paste New**.
 4. Repeat for all jobs being released (you can paste multiple jobs before refreshing).
@@ -210,7 +210,7 @@ For more information on Epicor, see [Epicor Usage in Engineering](/tools/epicor/
 
 Access the form via the FE to PE Release Form (typically through the Engineering Team SharePoint or internal forms system).
 
-**Note**: Complete [Phase 3](/overview/project-delivery.html#phase-3-fe-release-to-production-engineering-pe-handoff) prerequisites and the [pre-release checklist](#pre-release-checklist) before submitting.
+**Note**: Complete [Phase 3](/onboarding/project-delivery.html#phase-3-fe-release-to-production-engineering-pe-handoff) prerequisites and the [pre-release checklist](#pre-release-checklist) before submitting.
 
 #### Required information
 

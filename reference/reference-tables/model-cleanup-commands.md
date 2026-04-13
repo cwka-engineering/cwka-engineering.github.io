@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Model Cleanup Commands
-permalink: /standards/reference-tables/model-cleanup-commands.html
+permalink: /reference/reference-tables/model-cleanup-commands.html
 parent: Reference Tables
-grand_parent: Standards
+grand_parent: Reference
 nav_order: 2
 ---
 

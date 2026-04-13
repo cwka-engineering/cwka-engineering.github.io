@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Engineering Manifesto
-permalink: /overview/manifesto.html
-parent: Overview
+permalink: /onboarding/manifesto.html
+parent: Onboarding
 nav_order: 1
 ---
 

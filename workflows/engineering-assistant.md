@@ -3,11 +3,12 @@ layout: default
 title: Engineering Assistant (EA)
 permalink: /workflows/engineering-assistant.html
 parent: Workflows
+nav_order: 4
 ---
 
 # Engineering Assistant (EA) Workflow
 
-> **Related Documents**: [Engineering Roles](/overview/engineering-roles.html) | [Epicor Usage](/tools/epicor/) | [Project Delivery Overview](/overview/project-delivery.html) | [Information and artifact flow (DRAFT)](/overview/project-delivery.html#information-artifact-flow)
+> **Related Documents**: [Engineering Roles](/onboarding/engineering-roles.html) | [Epicor Usage](/tools/epicor/) | [Project Delivery Overview](/onboarding/project-delivery.html) | [Information and artifact flow (DRAFT)](/onboarding/project-delivery.html#information-artifact-flow)
 
 ## Position Overview
 The Engineering Assistant (EA) plays a central role in setting up and managing various job types within Epicor. This document covers the procedures for creating and managing different job types.
@@ -186,5 +187,5 @@ Job scheduling is handled via the Scheduling Dashboards in Epicor. See [Epicor U
 
 - For Epicor navigation and screens, see [Epicor Usage in Engineering](/tools/epicor/)
 - For job release procedures, see [FE to PE Release](/workflows/fe-to-pe-release.html)
-- For role overview, see [Engineering Roles](/overview/engineering-roles.html)
+- For role overview, see [Engineering Roles](/onboarding/engineering-roles.html)
 

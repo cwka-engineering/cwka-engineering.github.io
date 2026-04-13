@@ -2,14 +2,14 @@
 layout: default
 title: Troubleshooting
 permalink: /workflows/fabrication-engineer/troubleshooting.html
-nav_order: 8
+nav_order: 9
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
 ---
 
 # Troubleshooting
 
-> **Related**: [Engineering Toolkit](/workflows/fabrication-engineer/toolkit-setup.html) | [Takeoffs](/workflows/fabrication-engineer/takeoffs.html)
+> **Related**: [Engineering Toolkit](/workflows/fabrication-engineer/toolkit/) | [Takeoffs](/workflows/fabrication-engineer/takeoffs.html)
 
 ## Common Issues
 
@@ -47,7 +47,7 @@ grand_parent: Workflows
 
 ## See Also
 
-- [Engineering Toolkit](/workflows/fabrication-engineer/toolkit-setup.html) - Setup and configuration
+- [Engineering Toolkit](/workflows/fabrication-engineer/toolkit/) - Setup and configuration
 - [Epicor Usage](/tools/epicor/) - Epicor troubleshooting
 - [Getting Started](/workflows/fabrication-engineer/getting-started.html) - Basic procedures
 

@@ -9,7 +9,7 @@ grand_parent: Workflows
 
 # Setup & Organization
 
-> **Related**: [Folder Structure](/standards/folder-structure.html) | [Layer Organization](/standards/layer-organization/)
+> **Related**: [Folder Structure](/reference/folder-structure.html) | [Layer Organization](/standards/layer-organization/)
 
 ## How do I set up the PE folder structure for a new job?
 {: #how-to-setup-pe-folder}
@@ -33,7 +33,7 @@ Box\CWKA Team Folders\EngineeringTeam\Production Engineering\PE to Floor SOP\TEM
 Files produced by PE are stored on the Z: drive.
 
 1.  Copy the template folder into the respective project folder and rename it using the PROJ.JOB naming convention (e.g., 1086.018).
-2.  Follow the [Folder Structure](/standards/folder-structure.html#03_pe_releases) standards for organization.
+2.  Follow the [Folder Structure](/reference/folder-structure.html#03_pe_releases) standards for organization.
 3.  Inside each job folder, there are two subfolders:
     -   `Production_Files`
     -   `Production_Drawings`

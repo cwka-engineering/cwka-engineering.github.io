@@ -4,14 +4,14 @@ title: BOM Procedures & Validation
 permalink: /workflows/fabrication-engineer/bom-procedures.html
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
-nav_order: 12
+nav_order: 13
 ---
 
 # BOM Procedures & Validation
 
 Procedures for creating, validating, and managing Bills of Materials in Epicor.
 
-> **Related Documents**: [Takeoffs](/workflows/fabrication-engineer/takeoffs.html) | [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html) | [Job Management](/tools/epicor/job-management.html) | [Material Tag Vocabulary](/standards/reference-tables/material-tag-vocabulary.html)
+> **Related Documents**: [Takeoffs](/workflows/fabrication-engineer/takeoffs.html) | [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html) | [Job Management](/tools/epicor/job-management.html) | [Material Tag Vocabulary](/reference/reference-tables/material-tag-vocabulary.html)
 
 ## BOM Template
 
@@ -34,7 +34,7 @@ Separate sheets are provided for materials and finishes.
 For project-specific materials and manufactured parts:
 
 1. Open the **Part Entry** dashboard in Epicor.
-2. Set the part number, description, UOM, and class following naming conventions (see [File Naming Conventions](/standards/reference-tables/file-naming-conventions.html)).
+2. Set the part number, description, UOM, and class following naming conventions (see [File Naming Conventions](/reference/reference-tables/file-naming-conventions.html)).
 3. For WC/MT parts, use the project-specific format (`PROJ.WC.00000` or `PROJ.MT.00000`).
 
 Every BOM line must tie to a row in Epicor Parts — no part-on-the-fly entries. Allow **24 hours** for server sync.

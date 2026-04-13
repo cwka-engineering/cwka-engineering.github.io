@@ -1,14 +1,14 @@
 ---
 layout: default
 title: Engineer Progression Framework
-permalink: /overview/engineer-progression-framework.html
-parent: Overview
-nav_order: 6
+permalink: /onboarding/engineer-progression-framework.html
+parent: Onboarding
+nav_order: 7
 ---
 
 # Engineer Progression Framework (Engineer I → Engineer II)
 
-> **Related Documents**: [Engineering Roles](/overview/engineering-roles.html) | [Glossary](/overview/glossary.html)
+> **Related Documents**: [Engineering Roles](/onboarding/engineering-roles.html) | [Glossary](/reference/glossary.html)
 
 This framework describes how advancement from **Engineer I** to **Engineer II** works for Fabrication and Production Engineering roles. **Promotion is merit-based**, not automatic with tenure. The official job descriptions on file with HR remain the source for hiring and legal language; this page summarizes the policy for day-to-day use.
 
@@ -63,4 +63,4 @@ The examples under each area are **illustrative** (common pathways), not an exha
 
 ## Technical Steering Committee (TSC)
 
-Top-performing Engineer IIs may be invited to join the **TSC** to help lead department-wide R&D and standards work (scope varies by role). See role descriptions in [Engineering Roles](/overview/engineering-roles.html).
+Top-performing Engineer IIs may be invited to join the **TSC** to help lead department-wide R&D and standards work (scope varies by role). See role descriptions in [Engineering Roles](/onboarding/engineering-roles.html).

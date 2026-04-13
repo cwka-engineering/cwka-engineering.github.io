@@ -47,7 +47,7 @@ Example: `PRE_438_331_7_19`
 
 ### Tag Types
 
-For the complete tag vocabulary with examples for every material category, see [Material Tag Vocabulary](/standards/reference-tables/material-tag-vocabulary.html).
+For the complete tag vocabulary with examples for every material category, see [Material Tag Vocabulary](/reference/reference-tables/material-tag-vocabulary.html).
 
 Summary of common tag abbreviations:
 
@@ -65,4 +65,4 @@ The architect's tag designation for the same material. Cross-referenced on the G
 
 ## Next Steps
 - Review [Standard Layers](/standards/layer-organization/standard-layers.html)
-- See [Material Tag Vocabulary](/standards/reference-tables/material-tag-vocabulary.html) for the full reference
+- See [Material Tag Vocabulary](/reference/reference-tables/material-tag-vocabulary.html) for the full reference

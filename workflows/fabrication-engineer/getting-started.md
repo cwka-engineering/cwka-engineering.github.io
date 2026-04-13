@@ -9,14 +9,14 @@ grand_parent: Workflows
 
 # Getting Started
 
-> **Related**: [Epicor Interaction](/workflows/fabrication-engineer/epicor-interaction.html) | [Engineering Toolkit](/workflows/fabrication-engineer/toolkit-setup.html)
+> **Related**: [Epicor Interaction](/workflows/fabrication-engineer/epicor-interaction.html) | [Engineering Toolkit](/workflows/fabrication-engineer/toolkit/)
 
 ## Finding Assignments
 {: #how-to-find-assignments}
 
 - Access the Epicor Submittal Dashboard via The CW site. See [Epicor Usage](/tools/epicor/#1-submittal-dashboard) for details.
 - Filter by your name to view submittal/post-submittal tasks not yet released to PE.
-- Understand job types (see [Glossary](/overview/glossary.html#job-types)):
+- Understand job types (see [Glossary](/reference/glossary.html#job-types)):
   - **Engineering Jobs**: [^transcript-getting-started] Start with "E", match 1:1 with production jobs (e.g., E1094.009 corresponds with production job 1094.009). Exception: group submittals (1 submittal document feeds multiple production jobs) and engineering bucket jobs.
   - **Bucket Jobs**: [^transcript-getting-started] Project-wide tasks like design, coordination, meetings, BIM. Format: PROJ.ENG. When clocking into bucket job, select from operations: Design, Engineering, Fabrication Engineering, Lead Coordination, Project Meetings, BIM Coordination.
 
@@ -30,7 +30,7 @@ grand_parent: Workflows
 ## How do I set up a new project folder on Box?
 {: #how-to-set-up-project-folder}
 
-Navigate to `Box/Awarded/`. Copy the template project folder. Rename with 4-digit code + description. Populate department subfolders. See [Folder Structure](/standards/folder-structure.html) for the full hierarchy.
+Navigate to `Box/Awarded/`. Copy the template project folder. Rename with 4-digit code + description. Populate department subfolders. See [Folder Structure](/reference/folder-structure.html) for the full hierarchy.
 
 ## How do I set up a new FE job folder?
 {: #how-to-set-up-job-folder}
@@ -52,13 +52,13 @@ Navigate to `01_FE_Models/`. Copy the `_PROJ.JOB_ScopeDescription` template. Ren
 ## Next Steps
 
 - Continue to [Epicor Interaction](/workflows/fabrication-engineer/epicor-interaction.html) to learn about updating job status
-- Or jump to [Engineering Toolkit Setup](/workflows/fabrication-engineer/toolkit-setup.html) to begin modeling
+- Or jump to [Engineering Toolkit Setup](/workflows/fabrication-engineer/toolkit/) to begin modeling
 
 ## See Also
 
 - [Submittal Dashboard](/tools/epicor/#1-submittal-dashboard) - Finding your assignments
-- [Folder Structure](/standards/folder-structure.html) - File organization standards
-- [Glossary](/overview/glossary.html) - Term definitions
+- [Folder Structure](/reference/folder-structure.html) - File organization standards
+- [Glossary](/reference/glossary.html) - Term definitions
 
 ## Footnotes
 

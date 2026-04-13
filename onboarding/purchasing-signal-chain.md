@@ -1,16 +1,16 @@
 ---
 layout: default
 title: Purchasing Signal Chain
-permalink: /overview/purchasing-signal-chain.html
-parent: Overview
-nav_order: 9
+permalink: /onboarding/purchasing-signal-chain.html
+parent: Onboarding
+nav_order: 6
 ---
 
 # Purchasing Signal Chain
 
 The four gates that must be cleared before materials are ordered.
 
-> **Related Documents**: [Scheduling Chain](/overview/scheduling-chain.html) | [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html) | [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html) | [Inventory Jobs (INV)](/tools/epicor/inventory-jobs.html)
+> **Related Documents**: [Scheduling Chain](/onboarding/scheduling-chain.html) | [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html) | [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html) | [Inventory Jobs (INV)](/tools/epicor/inventory-jobs.html)
 
 ## The Four Gates
 

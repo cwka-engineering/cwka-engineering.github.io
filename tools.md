@@ -13,7 +13,7 @@ Guides for using engineering software and systems.
 ## Available Tools
 
 - **[Epicor](/tools/epicor/)** - Epicor ERP system usage for engineering workflows
-- **[Time Entry](/tools/time-entry/)** - Time tracking procedures using Toggl and Epicor
+- **[Time Entry](/tools/time-entry.html)** - Time tracking procedures using Toggl and Epicor
 - **[Approvals Process](/tools/approvals-process.html)** - Project Advisor approvals using Microsoft Teams
 
 ## Quick Links by Tool

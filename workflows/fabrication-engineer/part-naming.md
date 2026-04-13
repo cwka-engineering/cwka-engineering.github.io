@@ -2,14 +2,14 @@
 layout: default
 title: Part Naming
 permalink: /workflows/fabrication-engineer/part-naming.html
-nav_order: 4
+nav_order: 5
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
 ---
 
 # Part Naming
 
-> **Related**: [Engineering Toolkit](/workflows/fabrication-engineer/toolkit-setup.html) | [Shipping Components](/workflows/fabrication-engineer/shipping-components.html)
+> **Related**: [Engineering Toolkit](/workflows/fabrication-engineer/toolkit/) | [Shipping Components](/workflows/fabrication-engineer/shipping-components.html)
 
 ## How do I group parts before naming?
 {: #how-to-group-parts}
@@ -73,7 +73,7 @@ Use **SelName** and step through each name to verify unlike geometries don't sha
 ## See Also
 
 - [Layer Organization](/standards/layer-organization/) - Material layer standards
-- [Glossary](/overview/glossary.html) - Part naming conventions
+- [Glossary](/reference/glossary.html) - Part naming conventions
 
 ## Footnotes
 

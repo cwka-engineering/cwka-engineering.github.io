@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Folder Structure & File Management
-permalink: /standards/folder-structure.html
-parent: Standards
+permalink: /reference/folder-structure.html
+parent: Reference
+nav_order: 2
 ---
 
 # Folder Structure & File Management Outline
@@ -157,4 +158,3 @@ Each job has its own subfolder (`PROJ.JOB_ScopeDescription/`) containing:
 
 #### 02_Returned
 - Drawings returned by the architect with markups, to be reviewed and picked up by FE.
-

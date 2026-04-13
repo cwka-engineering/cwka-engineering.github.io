@@ -14,7 +14,7 @@ grand_parent: Standards
 ## How do I use Pen mode for clean vector output?
 {: #how-to-use-pen-mode}
 
-Set the detail view display to **Pen** mode (must be downloaded and installed — see [Onboarding Quick Start](/overview/onboarding-quick-start.html#how-to-import-display-modes)). Pen produces vector output with no hidden lines. Set **Output Color** to **Print Color** in the print window.[^transcript-raster-vs-vector]
+Set the detail view display to **Pen** mode (must be downloaded and installed — see [Onboarding Quick Start](/onboarding/quick-start.html#how-to-import-display-modes)). Pen produces vector output with no hidden lines. Set **Output Color** to **Print Color** in the print window.[^transcript-raster-vs-vector]
 
 ## How do I use Technical mode to show hidden lines?
 {: #how-to-use-technical-mode}

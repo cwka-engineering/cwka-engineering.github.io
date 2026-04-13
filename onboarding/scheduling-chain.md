@@ -1,16 +1,16 @@
 ---
 layout: default
 title: Scheduling Chain
-permalink: /overview/scheduling-chain.html
-parent: Overview
-nav_order: 8
+permalink: /onboarding/scheduling-chain.html
+parent: Onboarding
+nav_order: 5
 ---
 
 # Scheduling Chain
 
 How ship dates cascade into engineering deadlines.
 
-> **Related Documents**: [Project Delivery Overview](/overview/project-delivery.html) | [Purchasing Signal Chain](/overview/purchasing-signal-chain.html) | [FE to PE Release](/workflows/fe-to-pe-release.html)
+> **Related Documents**: [Project Delivery Overview](/onboarding/project-delivery.html) | [Purchasing Signal Chain](/onboarding/purchasing-signal-chain.html) | [FE to PE Release](/workflows/fe-to-pe-release.html)
 
 ## The Chain
 

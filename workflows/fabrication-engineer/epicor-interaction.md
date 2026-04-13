@@ -2,7 +2,7 @@
 layout: default
 title: Epicor Interaction
 permalink: /workflows/fabrication-engineer/epicor-interaction.html
-nav_order: 2
+nav_order: 3
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
 ---
@@ -27,7 +27,7 @@ grand_parent: Workflows
 
 ## Next Steps
 
-- Continue to [Engineering Toolkit Setup](/workflows/fabrication-engineer/toolkit-setup.html) to begin modeling
+- Continue to [Engineering Toolkit Setup](/workflows/fabrication-engineer/toolkit/) to begin modeling
 - Or jump to [PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html) when ready to release
 
 ## See Also

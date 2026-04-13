@@ -14,12 +14,11 @@ Documentation standards and conventions for engineering work.
 
 - **[Rhino Drafting](/standards/rhino-drafting/)** - Drafting standards and layout conventions for Rhino drawings
 - **[Layer Organization](/standards/layer-organization/)** - Layer structure and organization standards for Rhino models
-- **[Folder Structure](/standards/folder-structure.html)** - Standard folder organization for projects and engineering files
-- **[Reference Tables](/standards/reference-tables/)** - File naming, cleanup commands, material tags, lay-up formulas, sheet sizes, drill sizes
 
 ## Quick Links by Topic
 
 - **Layouts**: [Rhino Drafting - Layout Structure](/standards/rhino-drafting/layout-structure.html)
 - **Layers**: [Layer Organization Overview](/standards/layer-organization/)
-- **File Management**: [Folder Structure](/standards/folder-structure.html)
-- **"How do I…?"**: [Standards Quick Reference](/standards/quick-reference.html)
+- **File Management**: [Folder Structure](/reference/folder-structure.html)
+- **Reference Tables**: [Reference Tables](/reference/reference-tables/)
+- **"How do I…?"**: [Standards Quick Reference](/reference/standards-quick-reference.html)

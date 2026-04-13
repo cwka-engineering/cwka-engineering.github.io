@@ -44,7 +44,7 @@ Nest individual hardware blocks within a macro-level block (e.g., "AZ Clip Assem
 ## How do I model a pre-laminated (PRE) lay-up?
 {: #how-to-model-pre-layup}
 
-1. Calculate thickness using the lay-up formula (face + core + backer). See [Lay-Up Formulas](/standards/reference-tables/lay-up-formulas.html).
+1. Calculate thickness using the lay-up formula (face + core + backer). See [Lay-Up Formulas](/reference/reference-tables/lay-up-formulas.html).
 2. Create a layer named with the PRE code: `PRE_[face]_[core]_[backer]_[thickness mm]`.
 3. Model the part at the calculated thickness.
 

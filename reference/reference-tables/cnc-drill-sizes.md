@@ -1,9 +1,9 @@
 ---
 layout: default
 title: CNC Drill Sizes by Site
-permalink: /standards/reference-tables/cnc-drill-sizes.html
+permalink: /reference/reference-tables/cnc-drill-sizes.html
 parent: Reference Tables
-grand_parent: Standards
+grand_parent: Reference
 nav_order: 6
 ---
 

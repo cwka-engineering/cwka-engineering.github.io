@@ -11,7 +11,7 @@ nav_order: 6
 
 CWK and Digifab Shop (DFW) operate as two distinct sites in the Epicor ERP system. This has practical consequences you will encounter daily.
 
-> **Related Documents**: [Epicor Usage](/tools/epicor/index.html) | [Time Entry](/tools/time-entry.html) | [Part Management](/tools/epicor/part-management.html)
+> **Related Documents**: [Epicor Usage](/tools/epicor/) | [Time Entry](/tools/time-entry.html) | [Part Management](/tools/epicor/part-management.html)
 
 ## Switching Sites
 {: #how-to-switch-sites}

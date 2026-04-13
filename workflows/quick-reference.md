@@ -26,18 +26,18 @@ Task-oriented index for workflow procedures. Each link goes directly to the rele
 
 | # | Task | Page |
 |---|------|------|
-| C17 | Launch the Engineering Toolkit for the first time | [Toolkit Setup](/workflows/fabrication-engineer/toolkit-setup.html#how-to-launch-toolkit) |
-| C18 | Log into Epicor through the toolkit | [Toolkit Setup](/workflows/fabrication-engineer/toolkit-setup.html#how-to-login-epicor) |
-| C19 | Pull the toolkit payload | [Toolkit Setup](/workflows/fabrication-engineer/toolkit-setup.html#how-to-pull-payload) |
-| C20 | Restore model space from the template | [Toolkit Setup](/workflows/fabrication-engineer/toolkit-setup.html#how-to-restore-model-space) |
-| C21 | Restore layout pages from the template | [Toolkit Setup](/workflows/fabrication-engineer/toolkit-setup.html#how-to-restore-layout-space) |
+| C17 | Launch the Engineering Toolkit for the first time | [Toolkit Setup](/workflows/fabrication-engineer/toolkit/#how-to-launch-toolkit) |
+| C18 | Log into Epicor through the toolkit | [Toolkit Setup](/workflows/fabrication-engineer/toolkit/#how-to-login-epicor) |
+| C19 | Pull the toolkit payload | [Toolkit Setup](/workflows/fabrication-engineer/toolkit/#how-to-pull-payload) |
+| C20 | Restore model space from the template | [Toolkit Setup](/workflows/fabrication-engineer/toolkit/#how-to-restore-model-space) |
+| C21 | Restore layout pages from the template | [Toolkit Setup](/workflows/fabrication-engineer/toolkit/#how-to-restore-layout-space) |
 | C22 | Set drawing variables (submittal scope, project metadata) | [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-set-drawing-variables) |
 | C23 | Populate the T00 (Title/Project) page | [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-populate-t00) |
 | C24 | Populate the G00 (General Requirements/Schedules) page | [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-populate-g00) |
 | C25 | Publish BOM data to the pick list (L001) | [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-publish-bom-to-l001) |
 | C26 | Look up an Epicor part and create the correct material layer | [Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html#how-to-lookup-part) |
 | C27 | Cache the Epicor parts database for offline use | [Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html#how-to-cache-parts-database) |
-| C28 | Reset the toolkit after making model changes | [Toolkit Setup](/workflows/fabrication-engineer/toolkit-setup.html#how-to-reset-toolkit) |
+| C28 | Reset the toolkit after making model changes | [Toolkit Setup](/workflows/fabrication-engineer/toolkit/#how-to-reset-toolkit) |
 | C29 | Handle a group submittal in the toolkit | [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-handle-group-submittal) |
 
 ## Modeling Workflows
@@ -53,10 +53,10 @@ Task-oriented index for workflow procedures. Each link goes directly to the rele
 | D36 | Model a pre-laminated (PRE) lay-up | [Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html#how-to-model-pre-layup) |
 | D37 | Determine when to model edgebanding vs. when to omit it | [Material Modeling](/standards/layer-organization/material-modeling.html#how-to-determine-edgebanding) |
 | D38 | Handle painted MDF with exposed edges | [Material Modeling](/standards/layer-organization/material-modeling.html#how-to-handle-painted-mdf) |
-| D39 | Check that parts fit within actual sheet sizes | [Actual Sheet Sizes](/standards/reference-tables/sheet-sizes.html) |
+| D39 | Check that parts fit within actual sheet sizes | [Actual Sheet Sizes](/reference/reference-tables/sheet-sizes.html) |
 | D40 | Create and manage scribes | [Modeling Techniques](/standards/layer-organization/modeling-techniques.html#how-to-create-scribes) |
 | D41 | Set up Named Positions for exploded views | [Modeling Techniques](/standards/layer-organization/modeling-techniques.html#how-to-setup-named-positions) |
-| D42 | Clean up my model before release | [Model Cleanup Commands](/standards/reference-tables/model-cleanup-commands.html) |
+| D42 | Clean up my model before release | [Model Cleanup Commands](/reference/reference-tables/model-cleanup-commands.html) |
 
 ## Part Naming & Shipping Components
 

@@ -19,7 +19,7 @@ Use the Excel template from `PE to Floor SOP\TEMPLATES`. Populate from the Grass
 ## How do I create the Lay-Up Summary?
 {: #how-to-create-layup-summary}
 
-Create when pre-laminating material is required. Name using the format `PRE_EpicorPartNumbersWithoutZeros_MetricThicknessInMM` (e.g., `PRE_438_331_7_19`). Include: material code (Rhino layer name), description, materials being glued up, and quantities. Reference [Lay-Up Formulas](/standards/reference-tables/lay-up-formulas.html) for thickness calculations.
+Create when pre-laminating material is required. Name using the format `PRE_EpicorPartNumbersWithoutZeros_MetricThicknessInMM` (e.g., `PRE_438_331_7_19`). Include: material code (Rhino layer name), description, materials being glued up, and quantities. Reference [Lay-Up Formulas](/reference/reference-tables/lay-up-formulas.html) for thickness calculations.
 
 ## How do I mark a job as Programming Complete?
 {: #how-to-mark-programming-complete}

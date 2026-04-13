@@ -2,14 +2,14 @@
 layout: default
 title: Takeoffs
 permalink: /workflows/fabrication-engineer/takeoffs.html
-nav_order: 6
+nav_order: 7
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
 ---
 
 # Takeoffs
 
-> **Related**: [Part Naming](/workflows/fabrication-engineer/part-naming.html) | [Engineering Toolkit](/workflows/fabrication-engineer/toolkit-setup.html)
+> **Related**: [Part Naming](/workflows/fabrication-engineer/part-naming.html) | [Engineering Toolkit](/workflows/fabrication-engineer/toolkit/)
 
 ## How do I run Auto-BOM to generate a first-pass takeoff?
 {: #how-to-run-auto-bom}

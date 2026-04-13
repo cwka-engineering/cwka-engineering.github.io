@@ -4,7 +4,7 @@ title: Solid Wood Components (WC)
 permalink: /workflows/fabrication-engineer/solid-wood-components.html
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
-nav_order: 9
+nav_order: 10
 ---
 
 # Solid Wood Components (WC)
@@ -46,7 +46,7 @@ If uncertain, check with production. Knives take approximately **one week** to f
 ## Creating a WC Drawing
 {: #how-to-create-wc-drawing}
 
-1. Open the **WC Template** (available on Box — see [Onboarding Quick Start](/overview/onboarding-quick-start.html)).
+1. Open the **WC Template** (available on Box — see [Onboarding Quick Start](/onboarding/quick-start.html)).
 2. Create a **one-page drawing** showing a section/profile of the part centered at full scale. If the part is too large for full scale, consult your lead.
 3. Fill out the **WC PURCHASE INFORMATION** table in the bottom-right corner (editable through Properties → Layout User Text).
 

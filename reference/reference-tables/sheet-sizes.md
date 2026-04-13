@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Actual Sheet Sizes
-permalink: /standards/reference-tables/sheet-sizes.html
+permalink: /reference/reference-tables/sheet-sizes.html
 parent: Reference Tables
-grand_parent: Standards
+grand_parent: Reference
 nav_order: 5
 ---
 

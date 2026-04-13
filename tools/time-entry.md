@@ -3,6 +3,7 @@ layout: default
 title: Time Entry
 permalink: /tools/time-entry.html
 parent: Tools
+nav_order: 3
 ---
 
 # Time Entry

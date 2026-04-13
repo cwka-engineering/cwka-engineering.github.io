@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Material Tag Vocabulary
-permalink: /standards/reference-tables/material-tag-vocabulary.html
+permalink: /reference/reference-tables/material-tag-vocabulary.html
 parent: Reference Tables
-grand_parent: Standards
+grand_parent: Reference
 nav_order: 3
 ---
 

@@ -4,14 +4,14 @@ title: Submittal Review Cycle
 permalink: /workflows/fabrication-engineer/submittal-review.html
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
-nav_order: 10
+nav_order: 11
 ---
 
 # Submittal Review Cycle
 
 The three-folder workflow for submitting, reviewing, and revising shop drawings.
 
-> **Related Documents**: [Approvals Process](/tools/approvals-process.html) | [PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html) | [Folder Structure](/standards/folder-structure.html)
+> **Related Documents**: [Approvals Process](/tools/approvals-process.html) | [PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html) | [Folder Structure](/reference/folder-structure.html)
 
 ## Overview
 

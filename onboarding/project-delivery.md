@@ -1,20 +1,21 @@
 ---
 layout: default
 title: Project Delivery Overview
-permalink: /overview/project-delivery.html
-parent: Overview
+permalink: /onboarding/project-delivery.html
+parent: Onboarding
+nav_order: 4
 mermaid: true
 ---
 # Project Delivery Overview – Engineering Workflow
 
-> **Related Documents**: [Engineering Roles](/overview/engineering-roles.html) | [Engineering Assistant Workflow](/workflows/engineering-assistant.html) | [FE Workflow](/workflows/fabrication-engineer/) | [PE Workflow](/workflows/production-engineer/) | [FE to PE Release](/workflows/fe-to-pe-release.html)
+> **Related Documents**: [Engineering Roles](/onboarding/engineering-roles.html) | [Engineering Assistant Workflow](/workflows/engineering-assistant.html) | [FE Workflow](/workflows/fabrication-engineer/) | [PE Workflow](/workflows/production-engineer/) | [FE to PE Release](/workflows/fe-to-pe-release.html)
 
 This document provides a high-level overview of the complete engineering workflow from project assignment through closeout.
 
 ## Information and artifact flow (DRAFT)
 {: #information-artifact-flow}
 
-> This diagram is adapted from the internal **Engineering Information Flow (DRAFT)**. It highlights **artifacts** (files, lists, Epicor records) and **roles**; dotted-line “form” steps in the original map correspond to submissions such as the [FE to PE Release](/workflows/fe-to-pe-release.html) form. For procedural detail, use the phase sections below and the linked workflows—not this figure alone.
+> This diagram is adapted from the internal **Engineering Information Flow (DRAFT)**. It highlights **artifacts** (files, lists, Epicor records) and **roles**; dotted-line "form" steps in the original map correspond to submissions such as the [FE to PE Release](/workflows/fe-to-pe-release.html) form. For procedural detail, use the phase sections below and the linked workflows—not this figure alone.
 
 ```mermaid
 flowchart TB

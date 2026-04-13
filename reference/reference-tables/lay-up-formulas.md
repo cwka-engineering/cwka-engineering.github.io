@@ -1,9 +1,9 @@
 ---
 layout: default
 title: Lay-Up Formulas
-permalink: /standards/reference-tables/lay-up-formulas.html
+permalink: /reference/reference-tables/lay-up-formulas.html
 parent: Reference Tables
-grand_parent: Standards
+grand_parent: Reference
 nav_order: 4
 ---
 

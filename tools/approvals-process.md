@@ -3,11 +3,12 @@ layout: default
 title: Approvals Process
 permalink: /tools/approvals-process.html
 parent: Tools
+nav_order: 2
 ---
 
 # PA (Project Advisor) Approvals Process
 
-> **Related Documents**: [FE Workflow](/workflows/fabrication-engineer/) | [Project Delivery Overview](/overview/project-delivery.html)
+> **Related Documents**: [FE Workflow](/workflows/fabrication-engineer/) | [Project Delivery Overview](/onboarding/project-delivery.html)
 
 All project jobs must undergo the PA approval process before FE release to ensure build strategies are reviewed and signed off, and to identify escalation points for fabrication and assembly.
 

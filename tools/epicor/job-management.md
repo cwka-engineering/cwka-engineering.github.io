@@ -50,7 +50,7 @@ Fabrication Engineers must also satisfy the full **[FE to PE Release checklist](
 ## Shipping components upload
 
 - **UD40**: Shipping Components — Kinetic workbench for most jobs.
-- **UD37**: Use for **CMG** jobs instead of UD40 (see [Glossary](/overview/glossary.html)).
+- **UD37**: Use for **CMG** jobs instead of UD40 (see [Glossary](/reference/glossary.html)).
 
 ## Time Entry
 

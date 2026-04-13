@@ -11,7 +11,7 @@ has_children: true
 
 Standards for Rhino drafting, layouts, and print settings.
 
-> **Related Documents**: [Layer Organization](/standards/layer-organization/) | [Folder Structure](/standards/folder-structure.html) | [FE to PE Release](/workflows/fe-to-pe-release.html)
+> **Related Documents**: [Layer Organization](/standards/layer-organization/) | [Folder Structure](/reference/folder-structure.html) | [FE to PE Release](/workflows/fe-to-pe-release.html)
 
 ## Drafting Standards Overview
 

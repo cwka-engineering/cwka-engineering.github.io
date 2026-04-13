@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Quick Reference
-permalink: /standards/quick-reference.html
-parent: Standards
+permalink: /reference/standards-quick-reference.html
+parent: Reference
 nav_order: 5
 ---
 
@@ -33,18 +33,18 @@ Task-oriented index for standards and reference procedures. Each link goes direc
 |---|------|------|
 | D37 | Determine when to model edgebanding vs. when to omit it | [Material Modeling](/standards/layer-organization/material-modeling.html#how-to-determine-edgebanding) |
 | D38 | Handle painted MDF with exposed edges | [Material Modeling](/standards/layer-organization/material-modeling.html#how-to-handle-painted-mdf) |
-| D39 | Check that parts fit within actual sheet sizes | [Actual Sheet Sizes](/standards/reference-tables/sheet-sizes.html) |
+| D39 | Check that parts fit within actual sheet sizes | [Actual Sheet Sizes](/reference/reference-tables/sheet-sizes.html) |
 | D40 | Create and manage scribes | [Modeling Techniques](/standards/layer-organization/modeling-techniques.html#how-to-create-scribes) |
 | D41 | Set up Named Positions for exploded views | [Modeling Techniques](/standards/layer-organization/modeling-techniques.html#how-to-setup-named-positions) |
-| D42 | Clean up my model before release | [Model Cleanup Commands](/standards/reference-tables/model-cleanup-commands.html) |
+| D42 | Clean up my model before release | [Model Cleanup Commands](/reference/reference-tables/model-cleanup-commands.html) |
 
 ## Reference Tables
 
 | Task | Page |
 |------|------|
-| Look up file naming conventions | [File Naming Conventions](/standards/reference-tables/file-naming-conventions.html) |
-| Look up material tag format | [Material Tag Vocabulary](/standards/reference-tables/material-tag-vocabulary.html) |
-| Look up lay-up PRE code and thickness | [Lay-Up Formulas](/standards/reference-tables/lay-up-formulas.html) |
-| Check maximum part size for a material | [Actual Sheet Sizes](/standards/reference-tables/sheet-sizes.html) |
-| Check available drill diameters for a site | [CNC Drill Sizes](/standards/reference-tables/cnc-drill-sizes.html) |
+| Look up file naming conventions | [File Naming Conventions](/reference/reference-tables/file-naming-conventions.html) |
+| Look up material tag format | [Material Tag Vocabulary](/reference/reference-tables/material-tag-vocabulary.html) |
+| Look up lay-up PRE code and thickness | [Lay-Up Formulas](/reference/reference-tables/lay-up-formulas.html) |
+| Check maximum part size for a material | [Actual Sheet Sizes](/reference/reference-tables/sheet-sizes.html) |
+| Check available drill diameters for a site | [CNC Drill Sizes](/reference/reference-tables/cnc-drill-sizes.html) |
 | Look up annotation style for drawing type | [Annotation Styles Reference](/standards/rhino-drafting/annotation-styles-reference.html) |

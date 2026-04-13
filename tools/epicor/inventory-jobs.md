@@ -11,7 +11,7 @@ grand_parent: Tools
 
 How the project inventory job controls purchasing for sheet goods, solid surface, solid lumber, and inventory metal.
 
-> **Related Documents**: [Purchasing Signal Chain](/overview/purchasing-signal-chain.html) | [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html) | [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html) | [Job Management](/tools/epicor/job-management.html) | [Takeoffs](/workflows/fabrication-engineer/takeoffs.html)
+> **Related Documents**: [Purchasing Signal Chain](/onboarding/purchasing-signal-chain.html) | [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html) | [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html) | [Job Management](/tools/epicor/job-management.html) | [Takeoffs](/workflows/fabrication-engineer/takeoffs.html)
 
 ## Purpose
 
@@ -172,7 +172,7 @@ The BPM blocks Ready to Purchase and Purchase Direct on manufacturing jobs for I
 
 ## See Also
 
-- [Purchasing Signal Chain](/overview/purchasing-signal-chain.html) — The four gates for non-INV purchasing
+- [Purchasing Signal Chain](/onboarding/purchasing-signal-chain.html) — The four gates for non-INV purchasing
 - [Takeoffs](/workflows/fabrication-engineer/takeoffs.html) — Auto-BOM, 1D/2D nesting
 - [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html) — Creating and validating BOMs
 - [Part Management](/tools/epicor/part-management.html) — Creating and finding part numbers

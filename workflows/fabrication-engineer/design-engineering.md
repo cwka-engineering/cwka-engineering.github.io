@@ -11,7 +11,7 @@ nav_order: 2
 
 The DE phase converts approximate geometries into precise geometries and develops build strategies and assembly details before fabrication engineering begins.
 
-> **Related Documents**: [Getting Started](/workflows/fabrication-engineer/getting-started.html) | [Layer Organization](/standards/layer-organization/) | [Project Delivery Overview](/overview/project-delivery.html)
+> **Related Documents**: [Getting Started](/workflows/fabrication-engineer/getting-started.html) | [Layer Organization](/standards/layer-organization/) | [Project Delivery Overview](/onboarding/project-delivery.html)
 
 ## Purpose
 
@@ -37,7 +37,7 @@ Placeholder layers are acceptable during DE — they will be replaced with prope
 4. **Develop precise geometry** — Model materials at nominal dimensions on DE::PUR with placeholder material names.
 5. **Create SKs** — Produce sketches for quick feedback from relevant parties (structural, client meetings, pre-submittal).
 6. **Develop build strategy** — Determine how assemblies will be fabricated, shipped, and installed. Document decisions.
-7. **Transition to FE** — Once the design is confirmed, move to the [FE Modeling](/workflows/fabrication-engineer/toolkit-setup.html) phase, working on the 03_CWKA-FE layers with proper Epicor part numbers.
+7. **Transition to FE** — Once the design is confirmed, move to the [FE Modeling](/workflows/fabrication-engineer/toolkit/) phase, working on the 03_CWKA-FE layers with proper Epicor part numbers.
 
 ## Key Principles
 
@@ -47,5 +47,5 @@ Placeholder layers are acceptable during DE — they will be replaced with prope
 - **Document build strategies early** — Decisions made during DE affect everything downstream. Surface questions and alternatives before committing to fabrication-level modeling.
 
 ## Next Steps
-- [Engineering Toolkit Setup](/workflows/fabrication-engineer/toolkit-setup.html)
+- [Engineering Toolkit Setup](/workflows/fabrication-engineer/toolkit/)
 - [Epicor Interaction](/workflows/fabrication-engineer/epicor-interaction.html)

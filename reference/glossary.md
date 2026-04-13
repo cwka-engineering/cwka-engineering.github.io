@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Glossary
-permalink: /overview/glossary.html
-parent: Overview
+permalink: /reference/glossary.html
+parent: Reference
+nav_order: 1
 ---
 
 # Engineering Glossary
@@ -12,7 +13,7 @@ parent: Overview
 - **DE (Design Engineering)**: Phase that converts approximate geometries to precise geometries, develops build strategies and assembly details
 - **FE (Fabrication Engineer)**: Engineer responsible for developing design engineering geometries into fabrication-ready geometries and creating shop drawings
 - **PE (Production Engineer)**: Engineer responsible for toolpaths, reference geometries, and production programming
-- **Engineer I / Engineer II**: Level distinctions for FE and PE roles; advancement follows the [Engineer Progression Framework](/overview/engineer-progression-framework.html) (merit-based, not tenure-only)
+- **Engineer I / Engineer II**: Level distinctions for FE and PE roles; advancement follows the [Engineer Progression Framework](/onboarding/engineer-progression-framework.html) (merit-based, not tenure-only)
 - **EA (Engineering Assistant)**: Support role managing Epicor materials database and job creation
 - **PM (Project Manager)**: Manages project coordination and client communication
 - **PA (Project Advisor)**: Reviews and approves build strategies before FE release
@@ -53,7 +54,7 @@ parent: Overview
 - **Rel Opr. (Related Operation)**: Epicor field tying each BOM material to the correct operation; see [FE to PE Release](/workflows/fe-to-pe-release.html) checklist.
 - **Added Mtl**: Checkbox used when materials are added to the BOM after initial release; flag changes per Epicor practice.
 - **SelName audit**: Release review stepping through **SelName** so each part name maps only to matching geometry (see [FE to PE Release](/workflows/fe-to-pe-release.html)).
-- **Specialist spike**: Progression concept: demonstrated senior-level strength in at least two of four pillars (see [Engineer Progression Framework](/overview/engineer-progression-framework.html)).
+- **Specialist spike**: Progression concept: demonstrated senior-level strength in at least two of four pillars (see [Engineer Progression Framework](/onboarding/engineer-progression-framework.html)).
 - **TSC (Technical Steering Committee)**: Invited senior contributors may support department R&D and standards initiatives; referenced in role expectations.
 - **Project Materials Dashboard**: View all materials for all jobs on a project in one place. Enter 4-digit project number, group by ClassID or material code for cross-job BOM review.
 - **PM Materials Dashboard**: Epicor dashboard where PMs manage shop drawing submittal status, tag materials to the TRA, and signal purchasing readiness. Information flows from the Material Transmittal Log into this dashboard (one-way).
@@ -64,7 +65,7 @@ parent: Overview
 - **Time Phase Inquiry**: Shows which jobs a material code is currently BOM'd to (demand tracking). Access via Epicor search.
 - **Part Transaction History**: Shows inventory history (credits/debits) for any material code
 - **Cycle Count**: Shows current on-hand quantities for materials in current site
-- **Truck Entry**: Epicor screen where PMs create and manage ship dates. Truck IDs follow format `#### – Truck ##` (e.g., `1091 – Truck 01`). "Need By" is the on-site date; "Ship By" is the departure date. These dates cascade into Sales Order releases, which set job Required By dates. See [Scheduling Chain](/overview/scheduling-chain.html).
+- **Truck Entry**: Epicor screen where PMs create and manage ship dates. Truck IDs follow format `#### – Truck ##` (e.g., `1091 – Truck 01`). "Need By" is the on-site date; "Ship By" is the departure date. These dates cascade into Sales Order releases, which set job Required By dates. See [Scheduling Chain](/onboarding/scheduling-chain.html).
 - **Office MES**: Digital time clock in Epicor. Options: Start Production (manufacturing jobs), Start Indirect (bucket/indirect jobs), Start Rework.
 
 ## Drawing & Layout Terms
@@ -85,7 +86,7 @@ parent: Overview
 
 ## Epicor Material Class Codes
 
-Every material and part number in Epicor is assigned a material class. These are distinct from drawing material tags (see [Material Tag Vocabulary](/standards/reference-tables/material-tag-vocabulary.html)).
+Every material and part number in Epicor is assigned a material class. These are distinct from drawing material tags (see [Material Tag Vocabulary](/reference/reference-tables/material-tag-vocabulary.html)).
 
 | Code | Definition |
 |------|-----------|
@@ -107,18 +108,18 @@ Every material and part number in Epicor is assigned a material class. These are
 
 ## Material Terms
 
-- **Lay-up (PRE)**: Pre-laminated material assembly. Uses a specific code system: `PRE_[face]_[core]_[backer]_[thickness in mm]`. Numbers are Epicor GM.SG.XXXXX codes with leading zeros dropped. See [Lay-Up Formulas](/standards/reference-tables/lay-up-formulas.html).
+- **Lay-up (PRE)**: Pre-laminated material assembly. Uses a specific code system: `PRE_[face]_[core]_[backer]_[thickness in mm]`. Numbers are Epicor GM.SG.XXXXX codes with leading zeros dropped. See [Lay-Up Formulas](/reference/reference-tables/lay-up-formulas.html).
 - **Edgebanding (EB)**: Material applied to exposed edges. Do not model for straight, square edges (edgebander handles these). Model for: post-lam, solid wood EB, curved edges, notches, cutouts, and edges that can't go through the edgebander.
 - **Scribe**: Oversized dimension for field fitting. Created by copying finished geometry, extending the face to oversized dimension, and moving to `04_CWKA-PE::REF`.
 - **VIF (Verify in Field)**: Dimensions to be verified on-site. Uses the `CWKA_2024-VIF` annotation style.
-- **Material Tag**: Project-specific identifier for a material or finish, used on drawings and in the Material Transmittal Log. Format: abbreviation + double-digit number with no spaces/hyphens/underscores (e.g., PLY01, MDF02, FN03). See [Material Tag Vocabulary](/standards/reference-tables/material-tag-vocabulary.html).
+- **Material Tag**: Project-specific identifier for a material or finish, used on drawings and in the Material Transmittal Log. Format: abbreviation + double-digit number with no spaces/hyphens/underscores (e.g., PLY01, MDF02, FN03). See [Material Tag Vocabulary](/reference/reference-tables/material-tag-vocabulary.html).
 - **ARCH Tag**: Architect's tag designation for the same material. Cross-referenced on the G00 page alongside the CWK material tag.
 - **Transmittal Number**: Tracking number for material submittals, format T###.## (e.g., T5.01)
 
 ## Tools & Systems
 
 - **Engineering Toolkit**: Grasshopper-based toolkit for Rhino integration with Epicor
-  - **Drafting Tab**: Read-only Epicor lookups (parts, job BOMs, material schedules) and publishing to drawing layouts—the same workflow demonstrated historically as the in-Rhino “Epicor toolkit” before it was folded into the shared toolkit. See [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html).
+  - **Drafting Tab**: Read-only Epicor lookups (parts, job BOMs, material schedules) and publishing to drawing layouts—the same workflow demonstrated historically as the in-Rhino "Epicor toolkit" before it was folded into the shared toolkit. See [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html).
   - **Modeling Tab**: Modeling, part naming, and related workflows (including shared hardware library behavior from McMaster-Carr requests). See [Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html).
   - **FE Toolkit**: Currently available, PE toolkit in development
   - **Synapse**: Plugin required for toolkit - enables custom UI within Rhino
@@ -131,4 +132,3 @@ Every material and part number in Epicor is assigned a material class. These are
 - **Rhino**: 3D modeling software
 - **Grasshopper**: Visual programming environment for Rhino
 - **Office MES**: Digital time clock in Epicor for time entry
-

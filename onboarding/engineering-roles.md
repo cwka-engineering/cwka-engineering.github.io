@@ -1,19 +1,20 @@
 ---
 layout: default
 title: Engineering Roles & Core Competencies
-permalink: /overview/engineering-roles.html
-parent: Overview
+permalink: /onboarding/engineering-roles.html
+parent: Onboarding
+nav_order: 3
 ---
 
 # Overview of Engineering Roles & Core Competencies
 
-> **Related Documents**: [Project Delivery Overview](/overview/project-delivery.html) | [Engineer Progression Framework](/overview/engineer-progression-framework.html) | [FE Workflow](/workflows/fabrication-engineer/) | [PE Workflow](/workflows/production-engineer/) | [Glossary](/overview/glossary.html)
+> **Related Documents**: [Project Delivery Overview](/onboarding/project-delivery.html) | [Engineer Progression Framework](/onboarding/engineer-progression-framework.html) | [FE Workflow](/workflows/fabrication-engineer/) | [PE Workflow](/workflows/production-engineer/) | [Glossary](/reference/glossary.html)
 
 The Engineering department is responsible for transforming concepts into products by clearly communicating complex information. Engineers analyze data from various sources (drawings, models, specifications) and synthesize it into actionable information.
 
-For definitions of acronyms and terms used in this document, see the [Glossary](/overview/glossary.html).
+For definitions of acronyms and terms used in this document, see the [Glossary](/reference/glossary.html).
 
-**Career levels**: Fabrication and Production Engineers are hired and developed as **Engineer I** or **Engineer II** aligned to role needs. Advancement from I to II follows the [Engineer Progression Framework](/overview/engineer-progression-framework.html) (merit-based; not automatic with tenure).
+**Career levels**: Fabrication and Production Engineers are hired and developed as **Engineer I** or **Engineer II** aligned to role needs. Advancement from I to II follows the [Engineer Progression Framework](/onboarding/engineer-progression-framework.html) (merit-based; not automatic with tenure).
 
 ## Fabrication Engineer (FE)
 
@@ -84,4 +85,3 @@ The Engineering Assistant plays a central role in setting up and managing variou
 - Monitor data health, troubleshoot part entries, and gain familiarity with all of Epicor's function and utility
 
 **For detailed procedures**, see the [Engineering Assistant (EA) Workflow](/workflows/engineering-assistant.html).
-

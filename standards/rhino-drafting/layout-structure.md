@@ -78,7 +78,7 @@ For install team. Includes: [^transcript-layouts]
 
 ### XXXX.XXX.4XX: Fabrication Supplements
 For shop team (internal use). Includes: [^transcript-layouts]
-- Layups (see [Lay-Up Formulas](/standards/reference-tables/lay-up-formulas.html))
+- Layups (see [Lay-Up Formulas](/reference/reference-tables/lay-up-formulas.html))
 - Veneer Sequence
 - Glue-up Jig
 - Bucks (jigs/fixtures)

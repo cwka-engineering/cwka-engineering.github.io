@@ -1,15 +1,15 @@
 ---
 layout: default
 title: File Naming Conventions
-permalink: /standards/reference-tables/file-naming-conventions.html
+permalink: /reference/reference-tables/file-naming-conventions.html
 parent: Reference Tables
-grand_parent: Standards
+grand_parent: Reference
 nav_order: 1
 ---
 
 # File Naming Conventions
 
-> **Related Documents**: [Folder Structure](/standards/folder-structure.html) | [Part Naming](/workflows/fabrication-engineer/part-naming.html) | [Shipping Components](/workflows/fabrication-engineer/shipping-components.html)
+> **Related Documents**: [Folder Structure](/reference/folder-structure.html) | [Part Naming](/workflows/fabrication-engineer/part-naming.html) | [Shipping Components](/workflows/fabrication-engineer/shipping-components.html)
 
 ## Rhino Files
 

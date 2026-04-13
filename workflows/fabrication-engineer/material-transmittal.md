@@ -4,14 +4,14 @@ title: Material Transmittal Log (TRA)
 permalink: /workflows/fabrication-engineer/material-transmittal.html
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
-nav_order: 11
+nav_order: 12
 ---
 
 # Material Transmittal Log (TRA)
 
 How the Material Transmittal Log works and how engineers interact with it.
 
-> **Related Documents**: [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html) | [Glossary — Epicor Terms](/overview/glossary.html#epicor-terms) | [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html) | [Inventory Jobs (INV)](/tools/epicor/inventory-jobs.html)
+> **Related Documents**: [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html) | [Glossary — Epicor Terms](/reference/glossary.html#epicor-terms) | [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html) | [Inventory Jobs (INV)](/tools/epicor/inventory-jobs.html)
 
 ## What is the TRA?
 

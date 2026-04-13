@@ -11,7 +11,7 @@ grand_parent: Fabrication Engineer (FE)
 
 > **Related**: [Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html) | [Rhino Drafting Standards](/standards/rhino-drafting/) | [Epicor Dashboards — Project Materials](/tools/epicor/dashboards.html#project-materials-dashboard)
 
-The Drafting Toolkit is the in-Rhino interface for **read-only Epicor lookups** and for **publishing** Epicor-driven data onto drawing layouts. The same workflow was demonstrated to the department in 2024 as the **“Epicor toolkit”** (Grasshopper definition + [Synapse](/overview/glossary.html) panel); it now lives under the **Drafting** tab of the shared Engineering Toolkit. See [Engineering Toolkit (Setup)](/workflows/fabrication-engineer/toolkit/) for installation, Synapse, and first-run login.
+The Drafting Toolkit is the in-Rhino interface for **read-only Epicor lookups** and for **publishing** Epicor-driven data onto drawing layouts. The same workflow was demonstrated to the department in 2024 as the **“Epicor toolkit”** (Grasshopper definition + [Synapse](/reference/glossary.html) panel); it now lives under the **Drafting** tab of the shared Engineering Toolkit. See [Engineering Toolkit (Setup)](/workflows/fabrication-engineer/toolkit/) for installation, Synapse, and first-run login.
 
 ## Linked layout fields (do not edit by hand)
 
