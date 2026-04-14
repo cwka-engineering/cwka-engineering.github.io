@@ -179,5 +179,5 @@ The BPM blocks Ready to Purchase and Purchase Direct on manufacturing jobs for I
 
 ## Footnotes
 
-[^transcript-inventory-job-launch]: Source: Training Video — "Inventory Job Process Launch" (recording from 2024-04-18)
+[^transcript-inventory-job-launch]: Source: [Training Video — "Inventory Job Process Launch"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQBRpmDhSzVyRIUti0AJxcyoAQGoOfe1y2qcAAK17O5dbpU?e=NbDAEH) (recording from 2024-04-18)
 [^sop-inventory-jobs]: Source: Project Inventory Jobs SOP (PM training document)

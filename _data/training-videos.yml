@@ -134,6 +134,6 @@ videos:
 
   inventory-job-launch:
     title: "Inventory Job Process Launch"
-    url:   ""   # ⬜ awaiting SharePoint upload
+    url:   "https://digifabshop.sharepoint.com/:v:/s/Engineering/IQBRpmDhSzVyRIUti0AJxcyoAQGoOfe1y2qcAAK17O5dbpU?e=NbDAEH"
     files: "epicor/inventory-jobs.md"
     note:  "Recording from 2024-04-18. Covers INV process, takeoff audit, Q&A."
