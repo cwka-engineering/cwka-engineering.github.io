@@ -2,9 +2,10 @@
  * CWK/DFW Engineering Wiki Chatbot — Cloudflare Worker
  *
  * Routes:
- *   POST /api/chat        — Wiki Q&A chatbot (public, CORS-gated)
- *   POST /api/diagnostic  — GH Diagnostic Assistant (token-gated, SSE streaming)
- *   POST /api/summarize   — rhino-qc GUI summary (token-gated, SSE streaming)
+ *   POST /api/chat         — Wiki Q&A chatbot (public, CORS-gated)
+ *   POST /api/diagnostic   — GH Diagnostic Assistant (token-gated, SSE streaming)
+ *   POST /api/summarize    — rhino-qc GUI summary (token-gated, SSE streaming)
+ *   POST /api/parts-match  — Epicor parts matching for Power Automate (token-gated, JSON)
  */
 
 // ---------------------------------------------------------------------------
@@ -19,6 +20,9 @@ interface Env {
   CLAUDE_MODEL: string;
   MAX_REQUESTS_PER_MINUTE: string;
   DIAGNOSTIC_AUTH_TOKEN: string;
+  PA_AUTH_TOKEN: string;
+  PA_ANTHROPIC_API_KEY: string;
+  PA_CLAUDE_MODEL: string;
 }
 
 interface ChatMessage {
@@ -38,6 +42,11 @@ interface DiagnosticRequest {
 
 interface SummarizeRequest {
   payload_text: string;
+}
+
+interface PartsMatchRequest {
+  user_input: string;
+  parts_list: string;
 }
 
 // ---------------------------------------------------------------------------
@@ -161,6 +170,120 @@ Be concise. The action steps should be scannable at a glance.
 
 <wiki-corpus>
 `;
+
+// --- Parts matching for Power Automate ---
+
+const PARTS_MATCH_SYSTEM_PROMPT = `You are a parts master assistant for a precision architectural fabrication company using Epicor ERP. You match user-described materials against an existing parts catalog, or generate a correctly-formatted new part description when no match exists.
+
+## Catalog Structure
+
+Parts are organized into nine categories, each with a distinct part number prefix and description conventions:
+
+**Hardware (GM.HW.xxxxx)**
+Format: [Form Factor],[Subtype/Feature(s)],[Size Spec],[Brand],[Model Number]
+SearchWords: ANCHOR, BOLT, BRACKET, CABLE, CASTER, CATCH, DOORHW, GASKET, GROMMET, HINGE, LATCH, LOCK, NUT, PULL, RIVET, SCREW, SLIDE, SPACER, WASHER
+Examples:
+  Drawer Slide,Blumotion Tandem Plus,18" L,Blum,563H4570B
+  Screw,Machine,Pan,Phillips,#8-32,1"L,Zinc
+  Pull,Edge,Doug Mockett,DP3A 10B,English Antique,3" L
+
+**Inventory Metal (GM.MT.xxxxx)**
+Format: [Form Factor],[Material Type],[Alloy/Grade],[Finish],[Thickness T],[Width W],[Height H]
+SearchWords: ANGLE, CHANNEL, DECMET, DISC, EXTRUSN, FLATBAR, PIPE, PLATE, RECTTUBE, RNDBAR, RNDTUBE, SHEET, SQBAR, SQTUBE, STUD, TEE, ZBAR
+Examples:
+  Square Tube,Hot Rolled Steel,A500,Raw,3/8" T,6" W,6" H
+  Angle,Aluminum,6061,Raw,1/2" T,1" W,1" H
+
+**Sheet Goods (GM.SG.xxxxx)**
+Format: [Form Factor],[Grade/Type],[Brand],[Manufacturer],[Species/Color],[Cut/Pattern],[Certifications],[Thickness],[Width"xLength"]
+SearchWords: ACRYLIC, BACKER, BENDPLY, BENDSUB, CEMBOARD, DRYWALL, EDGEBAND, FELT, FOAM, FRP, HDF, HONYCOMB, INSUL, LAMINATE, MASONITE, MDF, OSB, PB, PEGBOARD, PLAM, PLY, SCREWCOV, TAMBOUR, VENEER, VENPANEL
+Examples:
+  Veneer,Standard Grade,10mil Backer,White Oak,Rift Sawn,48"x96"
+  MDF,Roseburg,Armorite,Raw,FSC,MR50,3/4",48"x96"
+
+**Solid Surface (GM.SS.xxxxx)**
+Format: [Form Factor],[Brand],[Manufacturer],[Color Code],[Color Name],[Finish],[Thickness],[Width" x Length"]
+SearchWords: ADHESIVE, MIXTIP, SHEET
+Examples:
+  Sheet,Corian,Dupont,Deep Caviar,Matte,1/2",30" x 144"
+
+**Solid Lumber (GM.SL.xxxxx)**
+Format: [Species],[Thickness],[Grade],[Cut],[Surfacing],[Certifications]
+- Thickness in quarter notation (4/4, 6/4, 8/4) or dimensional (1-1/2" x 3-1/2" x 156")
+- Grade: Premium, Select & Better, FAS, Select, Unselected
+- Cut: Flat Sawn, Rift Sawn, Quartered, Plain Sawn
+- Surfacing (optional): S3S, S4S, RGH
+- Certifications (optional): FSC
+SearchWords: ASH, BIRCH, CEDAR, CHERRY, CYPRESS, DOUGFIR, HICKORY, IPE, MAHOGANY, MAPLE, OAK, PINE, POPLAR, PTLUMBE, SAPELE, WALNUT
+Examples:
+  Ash (White),4/4,Premium,Flat Sawn
+  Maple (Hard),5/4,Select,Flat Sawn,RGH,FSC
+  FSC Western Red Cedar,1-1/2" x 3-1/2" x 156",S4S,STK(Select Tight Knot)
+
+**Fabric/Upholstery (GM.FA.xxxxx)**
+Format varies by form factor:
+  Fabric: [Fabric],[Brand],[Collection],[Color Code],[Color Name],[Width]
+  Foam: [Foam],[Type],[Brand],[Product Code],[Thickness],[Dimensions]
+  Vinyl: [Vinyl],[Brand],[Collection],[Color Code],[Width]
+  Leather: [Leather],[Type],[Brand],[Collection],[Color],[Weight],[Texture]
+  Drapery: [Drapery],[Type],[Brand],[Product Code],[Color],[Width]
+  Upholstery Supply: [Upholstery Supply],[Product Name],[Brand],[Product Code],[Size]
+SearchWords: DRAPERY, FABRIC, FOAM, GASKET, LEATHER, TEXTILE, TRIM, UPHOLSTE, VINYL
+Examples:
+  Fabric,Maharam,Merit,019 Gator,54"W
+  Foam,Classic Hi Density,Western Upholstery,60220,2" thick,24"x81"
+  Vinyl,UltraFabrics,Ultraleather Pro,0554-4534 Sherwood,54"W
+  Leather,Hide,Cortina Leathers,Brandenburg,Slate 61-11,Heavy Weight,Full Natural Pebble Grain
+  Drapery,Blackout,VESCOM,8070.02,Light Grey,110" width
+
+**Glass/Plastics (GM.GL.xxxxx)**
+No existing catalog data. Always generate a new description.
+Format: [Form Factor],[Material Type],[Color/Finish],[Thickness],[Width" x Length"]
+
+**Lighting/Electrical (GM.LT.xxxxx)**
+No existing catalog data. Always generate a new description.
+Format: [Form Factor],[Type],[Brand],[Model Number],[Spec]
+
+**Stone (GM.ST.xxxxx)**
+No existing catalog data. Always generate a new description.
+Format: [Form Factor],[Material],[Origin/Brand],[Finish],[Thickness],[Width" x Length"]
+
+## Matching Rules
+- Consider a match "strong" when form factor + material + finish + dimensions all align
+- Consider a match "possible" when form factor + material align but some data is missing or ambiguous
+- Return at most 3 candidates. If no credible match, set match_type to "none".
+- For Glass/Plastics, Lighting/Electrical, and Stone: always set match_type to "none" since no catalog exists.
+
+## New Description Rules (only when match_type is "none")
+- Comma-delimited, form factor first
+- Fractional inch notation (1/2", 3/4")
+- Dimension suffixes: T, W, H, L, dia, ID
+- Sheet Goods: [W"xL"]; Solid Surface: [W" x L"]
+- Solid Lumber: thickness in quarter notation unless dimensional lumber
+- SearchWord must be ≤8 characters
+
+## Output Format
+Respond with valid JSON only. No prose, no markdown fences.
+{
+  "inferred_category": "Hardware" | "Inventory Metal" | "Sheet Goods" | "Solid Surface" | "Solid Lumber" | "Fabric/Upholstery" | "Glass/Plastics" | "Lighting/Electrical" | "Stone" | "Unknown",
+  "match_type": "strong" | "possible" | "none",
+  "candidates": [
+    {
+      "part_num": "<PartNum>",
+      "description": "<PartDescription>",
+      "confidence": "high" | "medium" | "low",
+      "reason": "<one sentence>"
+    }
+  ],
+  "new_description": "<comma-delimited description string or null>",
+  "new_search_word": "<SearchWord ≤8 chars or null>",
+  "notes": "<optional clarifying note, or null>"
+}
+Rules:
+- "candidates" is [] when match_type is "none"
+- "new_description" and "new_search_word" are null when match_type is "strong" or "possible"
+- When match_type is "none", both new_description and new_search_word must be populated
+- Always include part_num in candidates`;
 
 // ---------------------------------------------------------------------------
 // CORS helpers
@@ -460,6 +583,43 @@ function sseResponse(stream: ReadableStream): Response {
 }
 
 // ---------------------------------------------------------------------------
+// Claude API — non-streaming, returns full response text
+// ---------------------------------------------------------------------------
+
+async function callClaude(
+  userMessage: string,
+  systemPrompt: string,
+  apiKey: string,
+  model: string,
+  maxTokens = 1024
+): Promise<string> {
+  const response = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": apiKey,
+      "anthropic-version": "2023-06-01",
+    },
+    body: JSON.stringify({
+      model,
+      max_tokens: maxTokens,
+      system: systemPrompt,
+      messages: [{ role: "user", content: userMessage }],
+    }),
+  });
+
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`Claude API error ${response.status}: ${errorText}`);
+  }
+
+  const data = await response.json() as { content: Array<{ type: string; text: string }> };
+  const block = data.content.find((b) => b.type === "text");
+  if (!block) throw new Error("No text block in Claude response");
+  return block.text;
+}
+
+// ---------------------------------------------------------------------------
 // Main handler
 // ---------------------------------------------------------------------------
 
@@ -649,6 +809,61 @@ export default {
         console.error("Summarize API error:", message);
         return jsonResponse(502, JSON.stringify({ error: "Failed to get AI response." }));
       }
+    }
+
+    // -----------------------------------------------------------------------
+    // POST /api/parts-match — Epicor parts lookup for Power Automate (token-gated, JSON)
+    // -----------------------------------------------------------------------
+    if (url.pathname === "/api/parts-match" && request.method === "POST") {
+      if (!checkToken(request, env.PA_AUTH_TOKEN)) {
+        return jsonResponse(401, JSON.stringify({ error: "Unauthorized" }));
+      }
+
+      let body: PartsMatchRequest;
+      try {
+        body = await request.json();
+      } catch {
+        return jsonResponse(400, JSON.stringify({ error: "Invalid JSON" }));
+      }
+
+      if (!body.user_input || typeof body.user_input !== "string" || !body.user_input.trim()) {
+        return jsonResponse(400, JSON.stringify({ error: "user_input required" }));
+      }
+      if (!body.parts_list || typeof body.parts_list !== "string" || !body.parts_list.trim()) {
+        return jsonResponse(400, JSON.stringify({ error: "parts_list required" }));
+      }
+
+      const userMessage =
+        `User input: ${body.user_input.trim()}\n\nExisting ERP parts (PartNum | Description):\n${body.parts_list.trim()}`;
+
+      let rawText: string;
+      try {
+        rawText = await callClaude(
+          userMessage,
+          PARTS_MATCH_SYSTEM_PROMPT,
+          env.PA_ANTHROPIC_API_KEY,
+          env.PA_CLAUDE_MODEL,
+          1024
+        );
+      } catch (err: unknown) {
+        const message = err instanceof Error ? err.message : "Unknown error";
+        console.error("Parts match Claude error:", message);
+        return jsonResponse(502, JSON.stringify({ error: "Failed to get AI response." }));
+      }
+
+      // Strip markdown code fences if Claude wrapped the output despite instructions
+      const cleanedText = rawText.replace(/^```(?:json)?\s*/i, "").replace(/\s*```\s*$/, "").trim();
+
+      // Validate that Claude returned parseable JSON before forwarding
+      let parsed: unknown;
+      try {
+        parsed = JSON.parse(cleanedText);
+      } catch {
+        console.error("Claude returned non-JSON:", rawText);
+        return jsonResponse(502, JSON.stringify({ error: "AI response was not valid JSON.", raw: rawText }));
+      }
+
+      return jsonResponse(200, JSON.stringify(parsed));
     }
 
     // -----------------------------------------------------------------------

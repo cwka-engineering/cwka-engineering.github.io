@@ -10,10 +10,14 @@ id = "7b65b0b3e73e4608b0b29a412682c585"
 binding = "RATE_LIMIT"
 id = "457771cd577e47778a0e833100429156"
 
-# Secrets (set via: npx wrangler secret put ANTHROPIC_API_KEY)
+# Secrets (set via: npx wrangler secret put <NAME>)
 # - ANTHROPIC_API_KEY
+# - DIAGNOSTIC_AUTH_TOKEN
+# - PA_AUTH_TOKEN
+# - PA_ANTHROPIC_API_KEY
 
 [vars]
 ALLOWED_ORIGIN = "https://cwka-engineering.github.io"
 CLAUDE_MODEL = "claude-haiku-4-5-20251001"
 MAX_REQUESTS_PER_MINUTE = "20"
+PA_CLAUDE_MODEL = "claude-haiku-4-5-20251001"
