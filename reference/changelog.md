@@ -4,6 +4,7 @@ title: Wiki Changelog
 permalink: /reference/changelog.html
 parent: Reference
 nav_order: 5
+corpus_exclude: true
 ---
 
 # Wiki Changelog

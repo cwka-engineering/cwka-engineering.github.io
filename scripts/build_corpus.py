@@ -115,6 +115,10 @@ def build_corpus(wiki_root: Path) -> list[dict]:
         if fm.get("nav_exclude") is True and permalink != "/":
             continue
 
+        # Skip pages explicitly excluded from the corpus
+        if fm.get("corpus_exclude") is True:
+            continue
+
         content = strip_front_matter(text).strip()
         anchors = extract_anchors(text)
 
