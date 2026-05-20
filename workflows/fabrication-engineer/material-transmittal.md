@@ -39,16 +39,28 @@ Each material/finish/hardware item is entered as a material (quantity set to zer
 ### When You BOM a Material
 
 1. You add the material to the Epicor BOM via Job Entry.
-2. The PM receives an alert to add it to the TRA with its tag, ARCH tag, description, and approval properties.
+2. **Notify the PM.** The PM — not the engineer — adds the material to the TRA with its tag, ARCH tag, description, and approval properties. Engineers do not create TRA entries directly. If a material you're BOM'ing doesn't have a TRA entry yet, it won't appear on your G00 page. Contact the PM so they can add it; do not proceed assuming the tag will appear on its own.
 3. The PM updates MtlSubmittalStatus as the material goes through client review.
 4. When you publish G00 via the toolkit, the material schedule is pulled from the TRA.
-5. After approval + Engineering Complete, the PM signals "Ready to Purchase." Purchasing orders the material. **Note:** For INV-class materials (SG, SS, SL, IM), purchasing is handled through the project's [Inventory Job](/tools/epicor/inventory-jobs.html), not via the manufacturing job.
+5. Once your BOM quantities are finalized, check **Engineering Complete** on the BOM line. This signals to the PM that your quantities are final and the line is ready for purchasing. **Do not check Engineering Complete if the quantity is still a placeholder** — checking it prematurely tells the PM the BOM is done when it isn't.
+6. The PM marks "Ready to Purchase" once Engineering Complete is set and the material is approved. Purchasing then orders the material.
 
-**If you BOM something that doesn't exist in the TRA yet, it won't appear on your G00 page.** Always inform the PM when BOM'ing a new material.
+**Note:** For INV-class materials (SG, SS, SL, IM), purchasing is handled through the project's [Inventory Job](/tools/epicor/inventory-jobs.html), not via the manufacturing job.
+
+### Before Running the G00 Script
+{: #tra-sync-before-g00}
+
+Before running the cover sheet script in the Drafting Toolkit, **confirm with the PM that the TRA is current.** The PM actively manages the TRA and may be a step behind during active submittal prep — approval statuses change and new entries may be pending.
+
+If you run the G00 script against a stale TRA, the material schedule on your drawings will not reflect current approvals. You will need to re-run the script and republish after the PM catches up. A one-minute check beforehand saves the extra cycle.
+
+See [How to populate G00](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-populate-g00) for the full script procedure.
 
 ### Hardware Tags
 
-Hardware tags on shop drawings are maintained **directly by engineers** (not pulled from the TRA) and should match the final BOM'd product.
+Hardware is tracked in the TRA (Hardware subassembly) for PM use — to manage submittal status and coordinate approvals with the architect. However, **hardware TRA tags do not appear on shop drawings.** What appears on drawings is the GMHW BOM page — the list of `GMHW` part numbers as BOM'd to the job. The BOM page is the hardware schedule for the drawing reviewer; TRA hardware tags are internal PM tracking only.
+
+Your responsibility as an engineer is to ensure your hardware BOMs are accurate and complete. You do not reference TRA hardware tags on the drawing itself.
 
 ## G00 Connection
 
