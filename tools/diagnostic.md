@@ -75,7 +75,7 @@ The Engineering Toolkit includes a button that runs the diagnostic on the **curr
 
 **How to use:**
 1. Open your PE release file in Rhino
-2. In the Engineering Toolkit, click the **Diagnostic** button (next to Reset)
+2. In the Engineering Toolkit, click the **Assistant** button (next to Reset)
 3. The tool runs headlessly in the background
 4. The wiki assistant opens with full context of your file and findings
 5. Ask it questions directly — e.g., *"which shipping components are flagged?"* or *"what should I fix first?"*

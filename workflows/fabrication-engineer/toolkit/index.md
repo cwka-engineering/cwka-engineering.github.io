@@ -19,7 +19,7 @@ has_children: true
 
 ## FE Release Diagnostic (In-Rhino)
 
-The toolkit includes a **Diagnostic** button (next to Reset) that runs the [FE Release Diagnostic Tool](/tools/diagnostic.html) on the currently open file and launches the wiki assistant pre-loaded with the findings. Use it when preparing a PE release handoff file — see [FE Release Diagnostic Tool](/tools/diagnostic.html) for full documentation.
+The toolkit includes an **Assistant** button (next to Reset) that runs the [FE Release Diagnostic Tool](/tools/diagnostic.html) on the currently open file and launches the wiki assistant pre-loaded with the findings. Use it when preparing a PE release handoff file — see [FE Release Diagnostic Tool](/tools/diagnostic.html) for full documentation.
 
 ## Launching Toolkit
 {: #how-to-launch-toolkit}
