@@ -4,6 +4,7 @@ title: Training Videos
 permalink: /reference/training-videos.html
 parent: Reference
 nav_order: 6
+corpus_exclude: true
 ---
 
 # Training Videos
