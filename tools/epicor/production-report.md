@@ -23,7 +23,7 @@ Update submittal statuses and track manufacturing jobs. [^transcript-epicor-jobs
 
 - **Project ID & Job Number**
 - **Project Advisor (PA)**
-- **Submittal Status**: (PM managed dropdown: Approved, Submitted, Resubmit, etc.)
+- **Submittal Status**: Tracks the status of the **shop drawing package** submittal as a whole — not material/finish approval status, which is tracked separately in the [Material Transmittal Log (TRA)](/workflows/fabrication-engineer/material-transmittal.html). Status values: Internal Review → Submitted → Revise and Resubmit → Approved. The same field is visible on the [Submittal Dashboard](/tools/epicor/dashboards.html#submittal-dashboard).
 - **FE Assignment**
 - **Checkboxes**:
   - Field Dimensions Received
@@ -35,7 +35,7 @@ Update submittal statuses and track manufacturing jobs. [^transcript-epicor-jobs
 
 ## Usage
 - Engineers filter by name and job.
-- **Status options**: Submitted, Revise and Resubmit, Approved.
+- **Drawing package status options**: Internal Review, Submitted, Revise and Resubmit, Approved.
 - **Final status**: Production Complete.
 
 **Best Practice for PE**: [^transcript-epicor-scheduling] Start each day by checking the Global Production Report or site-specific report.

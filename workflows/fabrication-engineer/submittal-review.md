@@ -84,10 +84,14 @@ Either method is acceptable. What is not acceptable is working through a redline
 
 ## Submittal Status Tracking
 
-Track submittal progress in the Epicor [Production Report](/tools/epicor/production-report.html). Update the "Submittal" status field as the submittal progresses:
+Track the **drawing package** submittal progress in the Epicor [Production Report](/tools/epicor/production-report.html). Update the "Submittal" status field as the package moves through the cycle:
 - Internal Review
 - Submitted
 - Approved / Resubmitted
+
+The same field is visible on the [Submittal Dashboard](/tools/epicor/dashboards.html#submittal-dashboard).
+
+> **Note:** This tracks the drawing package as a whole — not individual material/finish approval status. Material and finish submittals are tracked separately in the [Material Transmittal Log (TRA)](/workflows/fabrication-engineer/material-transmittal.html).
 
 ## Key Principles
 

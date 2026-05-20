@@ -34,9 +34,11 @@ Each material/finish/hardware item is entered as a material (quantity set to zer
 
 **First entry rule:** The first entry must always be a Finish Tag — even if there is no finish to submit, use `FN00 "Raw"` or `FN00 "Not Used"`.
 
-## Submittal Status & Transmittal Numbers
+## Material Submittal Status & Transmittal Numbers
 
-### Status Values
+> **Two separate tracking systems.** The TRA tracks the approval status of individual **materials and finishes** submitted to the architect. Drawing **package** submittal status (the shop drawing set as a whole) is tracked separately in the [Production Report](/tools/epicor/production-report.html) and visible on the [Submittal Dashboard](/tools/epicor/dashboards.html#submittal-dashboard). These are distinct fields with overlapping vocabulary — do not conflate them.
+
+### Material Status Values
 {: #status-vocabulary}
 
 Each TRA entry carries a **MtlSubmittalStatus** field maintained by the PM. The recognized values are:
@@ -51,10 +53,10 @@ Each TRA entry carries a **MtlSubmittalStatus** field maintained by the PM. The 
 
 > **Use "Internal," not "Not Submitted."** Both mean the material wasn't submitted, but "Not Submitted" looks like an open item when you audit the log later. "Internal" communicates a deliberate decision. Entries left as "Not Submitted" create confusion: were these forgotten, or intentional?
 
-### Transmittal Number Format
+### Material Transmittal Number Format
 {: #transmittal-number-format}
 
-When a material is submitted, the PM records the transmittal number in the format:
+When a material is submitted, the PM records the transmittal number in the TRA in the format:
 
 ```
 T [###].[##]
