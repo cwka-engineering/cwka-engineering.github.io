@@ -15,7 +15,8 @@
 interface Env {
   WIKI_CORPUS: KVNamespace;
   RATE_LIMIT: KVNamespace;
-  ANTHROPIC_API_KEY: string;
+  CHAT_ANTHROPIC_API_KEY: string;
+  DIAGNOSTIC_ANTHROPIC_API_KEY: string;
   ALLOWED_ORIGIN: string;
   CLAUDE_MODEL: string;
   MAX_REQUESTS_PER_MINUTE: string;
@@ -684,7 +685,7 @@ export default {
         const stream = await streamClaude(
           body.messages,
           systemPrompt,
-          env.ANTHROPIC_API_KEY,
+          env.CHAT_ANTHROPIC_API_KEY,
           env.CLAUDE_MODEL
         );
         return new Response(stream, {
@@ -752,7 +753,7 @@ export default {
           body.messages,
           cachedCorpus,
           "",  // no dynamic block needed — triage is now cached
-          env.ANTHROPIC_API_KEY,
+          env.DIAGNOSTIC_ANTHROPIC_API_KEY,
           env.CLAUDE_MODEL
         );
         return sseResponse(stream);
@@ -800,7 +801,7 @@ export default {
           messages,
           cachedCorpus,
           dynamicContext,
-          env.ANTHROPIC_API_KEY,
+          env.DIAGNOSTIC_ANTHROPIC_API_KEY,
           env.CLAUDE_MODEL
         );
         return sseResponse(stream);

@@ -11,10 +11,11 @@ binding = "RATE_LIMIT"
 id = "457771cd577e47778a0e833100429156"
 
 # Secrets (set via: npx wrangler secret put <NAME>)
-# - ANTHROPIC_API_KEY
+# - CHAT_ANTHROPIC_API_KEY        (/api/chat)
+# - DIAGNOSTIC_ANTHROPIC_API_KEY  (/api/diagnostic, /api/summarize)
 # - DIAGNOSTIC_AUTH_TOKEN
 # - PA_AUTH_TOKEN
-# - PA_ANTHROPIC_API_KEY
+# - PA_ANTHROPIC_API_KEY          (/api/parts-match)
 
 [vars]
 ALLOWED_ORIGIN = "https://cwka-engineering.github.io"
