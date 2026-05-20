@@ -51,7 +51,7 @@ Used for time not billable to a specific project.
 
 ## Production Entries (Bucket Jobs)
 
-For direct labor that applies project-wide, not job-specific.
+For direct labor that applies project-wide, not job-specific. See the [Operation Selection Guide](#operation-selection-guide) for full definitions and boundary rules.
 
 **Example Job Name**: `1234.ENG`
 
@@ -65,7 +65,7 @@ For direct labor that applies project-wide, not job-specific.
 
 ## Production Entries (Job Specified)
 
-For direct labor on specific jobs.
+For direct labor on specific jobs. See the [Operation Selection Guide](#operation-selection-guide) for full definitions and boundary rules.
 
 ### FE Example Job Name: `E1234.123`
 - Submittal (drawing/modeling prior to client approval)
@@ -73,10 +73,6 @@ For direct labor on specific jobs.
 
 ### PE Example Job Name: `1234.123`
 - Prod Engineering (reviewing, programming, reworking jobs)
-
-### Rework
-- For rework on jobs, clock into the job as regular.
-- In Time and Expense Entry, check Rework box and select Machine Error, providing a quick description.
 
 ---
 
@@ -176,12 +172,8 @@ Engineering work performed for projects not yet under contract. Use when assigne
 | BOM work unrelated to BIM coordination | BIM Coordination | Fab Engineering |
 | Time entry administration | (unlabeled General Indirect) | General Indirect, note: "time entry", max 45 min/week |
 
-## How do I set up Toggl for CWK time tracking?
-{: #how-to-setup-toggl}
-
-Organization schema: **Client** = Project Number, **Project** = Job Number, **Tag** = Operation. Use bracket formatting: `[DIR]` for direct, `[I&D]` for indirect codes. Install the desktop app (not just browser). See full setup below.
-
 ## Time Entry - Toggl
+{: #how-to-setup-toggl}
 
 Time entry is simplified using Toggl as a secondary timekeeping app, with data exported to Epicor. [^transcript-toggl]
 
@@ -262,10 +254,6 @@ From the Toggl desktop app → **Export/Import** dialogue → select date range 
 
 ## How do I bulk-upload time entries to Epicor?
 {: #how-to-bulk-upload}
-
-In the spreadsheet, move data to the **WORKING - Kinetic** tab (auto-maps Toggl structure to Epicor format). Process one site at a time — adjust the site tab, include Blanks for indirect entries from your home site. In Epicor **Time & Expense Entry**, right-click in Time Details → **Paste New** (ensure Edit Mode is active). Ignore "Parameter OpCode is not found" if "All records have been processed successfully" appears. Switch sites and repeat for the other site's entries.
-
-### Time Upload Procedure
 
 1. **Export from Toggl**: [^transcript-toggl]
    - From the Toggl desktop app, use the Export/Import dialogue
