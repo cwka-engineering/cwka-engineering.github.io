@@ -21,6 +21,13 @@ Modeling Toolkit → after naming, the toolkit identifies shipping components. P
 
 Modeling Toolkit → after publishing SC descriptions, use the **Export** function to generate the shipping components Excel file. The exported file is formatted for paste-insert into Epicor UD40. Place the exported file in the PE release folder under `Production_Files`.
 
+## Company Number Column — Required for UD40 Upload
+{: #company-number-column}
+
+The SC upload template includes a **company number column** that must be populated with the correct company code for the shop where the job exists before uploading to UD40. Omitting or using the wrong code generates bad rows in the Epicor database that cannot be cleared internally — they require a support ticket filed directly with Epicor.
+
+Always pull the current template from the project template folder rather than reusing a copy from an older project, as older copies may predate this column. If working from an existing project folder, verify the company code column is present before uploading.
+
 ## SC List
 
 - Use Excel template from:

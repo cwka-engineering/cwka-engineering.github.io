@@ -62,6 +62,15 @@ Overage for INV-class materials (SG, SS, SL, IM) is applied by the PM on the pro
 
 > **Note:** Scrap percentages used in the Auto-BOM toolkit are a first-pass approximation of process waste — material lost to cuts, kerfs, and nesting — and are appropriate to apply. This is distinct from overage. See [Takeoffs](/workflows/fabrication-engineer/takeoffs.html).
 
+### Overage for Manufactured Parts
+{: #overage-manufactured-parts}
+
+The rule above — PM handles overage at the project level — applies to **purchased raw materials**. Manufactured parts (WC, MT, and other MFG job outputs) follow a different rule:
+
+**No one can retroactively adjust the quantity of a manufactured part after its job is complete.** Once a WC or M job closes, the PM cannot increase the output quantity the way they can add a row to an INV job. If additional quantity turns out to be needed, a new `.1` job must be requested — see [Increasing Quantity on a Completed Manufactured Part Job](/workflows/fabrication-engineer/bom-procedures.html#how-to-increase-mfg-part-quantity).
+
+The practical consequence: **coordinate with production and PE on overage quantity before the original job is released.** If field installation typically requires a spare, or if material consistency risk suggests running extra, that number needs to be in the original BOM. The engineer is the only person positioned to make this call at the right time, in consultation with the relevant parties.
+
 ---
 
 ## Extras: Capture as Demand, Not a Drawing Override

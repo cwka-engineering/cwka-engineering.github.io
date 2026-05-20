@@ -94,3 +94,17 @@ Use the Modeling Toolkit → Takeoffs → **Export**. This generates an Excel fi
 When materials are added to the BOM after initial release:
 - Flag changes with the **"Added Mtl"** checkbox per Epicor practice
 - This distinguishes original BOM lines from additions for tracking purposes
+
+### Increasing Quantity on a Completed Manufactured Part Job
+{: #how-to-increase-mfg-part-quantity}
+
+When a manufactured part job (WC, M, or other MFG job type) has already been **completed and closed**, you cannot simply change the quantity on the existing BOM line — the job is done and no one downstream will see the update.
+
+If additional quantity of the same manufactured part is needed after the original job closes:
+
+1. **Add a new BOM line** to the parent job for the additional quantity required
+2. **Request a new job** with the `.1` suffix — e.g., if the original job was `1094.W.001`, the new job is `1094.W.001.1`
+3. **Use the same part number** — do not create a new part
+4. **Update the drawing PDF** to show the new total quantity associated with the `.1` job
+
+> **Prevent this by planning ahead.** Coordinate with production and PE on overage quantities before the original job is released — see [Overage for Manufactured Parts](/workflows/fabrication-engineer/overage-and-extras.html#overage-manufactured-parts). Getting the quantity right the first time avoids the administrative overhead of a `.1` job.

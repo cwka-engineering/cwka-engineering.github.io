@@ -61,5 +61,16 @@ Used for coordination while keeping files lean.
 - Use **Block Manager** to update/delete.
 - Individual objects disconnect from source.
 
+## Corner Clearance for CNC Machining
+{: #corner-clearance}
+
+When modeling pockets, notches, or slot geometry intended for CNC routing — waffle structures, half laps, parts fit into a notch — use the following clearance standard. **Do not model radii** at interior corners.
+
+| Geometry | Width | Depth |
+|---|---|---|
+| Slot / pocket / notch | 0.51" | 0.26" |
+
+Square-cornered clearance ensures the geometry machines correctly across both shops for router bits 0.5" diameter and smaller, regardless of tooling or programming approach. Modeled radii create shop-specific geometry that may collide with toolpath constraints at one site.
+
 ## Next Steps
 - Learn about [Manufactured Parts](/standards/layer-organization/manufactured-parts.html)
