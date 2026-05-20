@@ -10,19 +10,25 @@
       "id": "/onboarding/engineer-progression-framework.html",
       "title": "Engineer Progression Framework",
       "section": "Home",
-      "degree": 4
+      "degree": 5
     },
     {
       "id": "/onboarding/engineering-roles.html",
       "title": "Engineering Roles & Core Competencies",
       "section": "Home",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "/onboarding/",
       "title": "Onboarding",
       "section": "Home",
       "degree": 10
+    },
+    {
+      "id": "/onboarding/lead-engineer.html",
+      "title": "Lead Engineer Responsibilities",
+      "section": "Home",
+      "degree": 7
     },
     {
       "id": "/onboarding/manifesto.html",
@@ -34,13 +40,13 @@
       "id": "/onboarding/project-delivery.html",
       "title": "Project Delivery Overview",
       "section": "Overview",
-      "degree": 10
+      "degree": 11
     },
     {
       "id": "/onboarding/purchasing-signal-chain.html",
       "title": "Purchasing Signal Chain",
       "section": "Home",
-      "degree": 5
+      "degree": 6
     },
     {
       "id": "/onboarding/scheduling-chain.html",
@@ -58,7 +64,7 @@
       "id": "/reference/glossary.html",
       "title": "Glossary",
       "section": "Home",
-      "degree": 17
+      "degree": 19
     },
     {
       "id": "/reference/",
@@ -160,13 +166,13 @@
       "id": "/standards/rhino-drafting/annotations.html",
       "title": "Annotations",
       "section": "Standards",
-      "degree": 5
+      "degree": 6
     },
     {
       "id": "/standards/rhino-drafting/cover-sheet-common-pages.html",
       "title": "Cover Sheet & Common Pages",
       "section": "Standards",
-      "degree": 5
+      "degree": 7
     },
     {
       "id": "/standards/rhino-drafting/details.html",
@@ -205,6 +211,12 @@
       "degree": 7
     },
     {
+      "id": "/standards/rhino-drafting/revision-history.html",
+      "title": "Revision History",
+      "section": "Standards",
+      "degree": 3
+    },
+    {
       "id": "/standards/rhino-drafting/sections-clipping.html",
       "title": "Sections & Clipping",
       "section": "Standards",
@@ -220,7 +232,7 @@
       "id": "/tools/approvals-process.html",
       "title": "Approvals Process",
       "section": "Tools",
-      "degree": 8
+      "degree": 9
     },
     {
       "id": "/tools/epicor/dashboards.html",
@@ -238,13 +250,19 @@
       "id": "/tools/epicor/inventory-jobs.html",
       "title": "Inventory Jobs (INV)",
       "section": "Tools",
-      "degree": 8
+      "degree": 9
     },
     {
       "id": "/tools/epicor/job-management.html",
       "title": "Job Management",
       "section": "Tools",
-      "degree": 12
+      "degree": 14
+    },
+    {
+      "id": "/tools/epicor/manufactured-parts-jobs.html",
+      "title": "Manufactured Metal Parts & M Jobs",
+      "section": "Tools",
+      "degree": 6
     },
     {
       "id": "/tools/epicor/multi-site-operations.html",
@@ -256,7 +274,13 @@
       "id": "/tools/epicor/part-management.html",
       "title": "Part Management",
       "section": "Tools",
-      "degree": 8
+      "degree": 9
+    },
+    {
+      "id": "/tools/epicor/production-quantity.html",
+      "title": "Production Quantity & Fixed Qty",
+      "section": "Tools",
+      "degree": 4
     },
     {
       "id": "/tools/epicor/production-report.html",
@@ -269,6 +293,12 @@
       "title": "Troubleshooting",
       "section": "Tools",
       "degree": 3
+    },
+    {
+      "id": "/tools/remote-desktop.html",
+      "title": "Remote Desktop (Splashtop)",
+      "section": "Tools",
+      "degree": 0
     },
     {
       "id": "/tools/time-entry.html",
@@ -292,7 +322,7 @@
       "id": "/workflows/fabrication-engineer/bom-procedures.html",
       "title": "BOM Procedures & Validation",
       "section": "Workflows",
-      "degree": 9
+      "degree": 12
     },
     {
       "id": "/workflows/fabrication-engineer/design-engineering.html",
@@ -310,7 +340,7 @@
       "id": "/workflows/fabrication-engineer/getting-started.html",
       "title": "Getting Started",
       "section": "Workflows",
-      "degree": 10
+      "degree": 11
     },
     {
       "id": "/workflows/fabrication-engineer/",
@@ -323,6 +353,12 @@
       "title": "Material Transmittal Log (TRA)",
       "section": "Workflows",
       "degree": 6
+    },
+    {
+      "id": "/workflows/fabrication-engineer/overage-and-extras.html",
+      "title": "Overage, Extras & Process Waste",
+      "section": "Workflows",
+      "degree": 5
     },
     {
       "id": "/workflows/fabrication-engineer/part-naming.html",
@@ -352,13 +388,13 @@
       "id": "/workflows/fabrication-engineer/submittal-review.html",
       "title": "Submittal Review Cycle",
       "section": "Workflows",
-      "degree": 5
+      "degree": 6
     },
     {
       "id": "/workflows/fabrication-engineer/takeoffs.html",
       "title": "Takeoffs",
       "section": "Workflows",
-      "degree": 12
+      "degree": 13
     },
     {
       "id": "/workflows/fabrication-engineer/toolkit/drafting.html",
@@ -388,7 +424,7 @@
       "id": "/workflows/fe-to-pe-release.html",
       "title": "FE to PE Release Procedure",
       "section": "Workflows",
-      "degree": 26
+      "degree": 27
     },
     {
       "id": "/workflows/production-engineer/deliverables.html",
@@ -534,7 +570,15 @@
     },
     {
       "source": "/onboarding/engineer-progression-framework.html",
+      "target": "/onboarding/lead-engineer.html"
+    },
+    {
+      "source": "/onboarding/engineer-progression-framework.html",
       "target": "/reference/glossary.html"
+    },
+    {
+      "source": "/onboarding/engineering-roles.html",
+      "target": "/onboarding/lead-engineer.html"
     },
     {
       "source": "/onboarding/engineering-roles.html",
@@ -559,6 +603,26 @@
     {
       "source": "/onboarding/engineering-roles.html",
       "target": "/workflows/production-engineer/"
+    },
+    {
+      "source": "/onboarding/lead-engineer.html",
+      "target": "/onboarding/project-delivery.html"
+    },
+    {
+      "source": "/onboarding/lead-engineer.html",
+      "target": "/reference/glossary.html"
+    },
+    {
+      "source": "/onboarding/lead-engineer.html",
+      "target": "/standards/rhino-drafting/cover-sheet-common-pages.html"
+    },
+    {
+      "source": "/onboarding/lead-engineer.html",
+      "target": "/tools/approvals-process.html"
+    },
+    {
+      "source": "/onboarding/lead-engineer.html",
+      "target": "/workflows/fabrication-engineer/getting-started.html"
     },
     {
       "source": "/onboarding/project-delivery.html",
@@ -595,6 +659,10 @@
     {
       "source": "/onboarding/purchasing-signal-chain.html",
       "target": "/tools/epicor/inventory-jobs.html"
+    },
+    {
+      "source": "/onboarding/purchasing-signal-chain.html",
+      "target": "/tools/epicor/manufactured-parts-jobs.html"
     },
     {
       "source": "/onboarding/purchasing-signal-chain.html",
@@ -699,6 +767,10 @@
     {
       "source": "/reference/glossary.html",
       "target": "/tools/epicor/job-management.html"
+    },
+    {
+      "source": "/reference/glossary.html",
+      "target": "/tools/epicor/production-quantity.html"
     },
     {
       "source": "/reference/glossary.html",
@@ -1001,8 +1073,16 @@
       "target": "/standards/rhino-drafting/printing.html"
     },
     {
+      "source": "/standards/rhino-drafting/annotations.html",
+      "target": "/standards/rhino-drafting/revision-history.html"
+    },
+    {
       "source": "/standards/rhino-drafting/cover-sheet-common-pages.html",
       "target": "/standards/rhino-drafting/layout-structure.html"
+    },
+    {
+      "source": "/standards/rhino-drafting/cover-sheet-common-pages.html",
+      "target": "/standards/rhino-drafting/revision-history.html"
     },
     {
       "source": "/standards/rhino-drafting/cover-sheet-common-pages.html",
@@ -1055,6 +1135,10 @@
     {
       "source": "/standards/rhino-drafting/printing.html",
       "target": "/standards/rhino-drafting/sections-clipping.html"
+    },
+    {
+      "source": "/standards/rhino-drafting/revision-history.html",
+      "target": "/workflows/fabrication-engineer/submittal-review.html"
     },
     {
       "source": "/tools/",
@@ -1198,11 +1282,23 @@
     },
     {
       "source": "/tools/epicor/inventory-jobs.html",
+      "target": "/workflows/fabrication-engineer/overage-and-extras.html"
+    },
+    {
+      "source": "/tools/epicor/inventory-jobs.html",
       "target": "/workflows/fabrication-engineer/takeoffs.html"
     },
     {
       "source": "/tools/epicor/job-management.html",
+      "target": "/tools/epicor/manufactured-parts-jobs.html"
+    },
+    {
+      "source": "/tools/epicor/job-management.html",
       "target": "/tools/epicor/part-management.html"
+    },
+    {
+      "source": "/tools/epicor/job-management.html",
+      "target": "/tools/epicor/production-quantity.html"
     },
     {
       "source": "/tools/epicor/job-management.html",
@@ -1233,6 +1329,22 @@
       "target": "/workflows/fe-to-pe-release.html"
     },
     {
+      "source": "/tools/epicor/manufactured-parts-jobs.html",
+      "target": "/tools/epicor/part-management.html"
+    },
+    {
+      "source": "/tools/epicor/manufactured-parts-jobs.html",
+      "target": "/tools/epicor/production-quantity.html"
+    },
+    {
+      "source": "/tools/epicor/manufactured-parts-jobs.html",
+      "target": "/workflows/fabrication-engineer/bom-procedures.html"
+    },
+    {
+      "source": "/tools/epicor/manufactured-parts-jobs.html",
+      "target": "/workflows/fabrication-engineer/overage-and-extras.html"
+    },
+    {
       "source": "/tools/epicor/multi-site-operations.html",
       "target": "/tools/epicor/part-management.html"
     },
@@ -1251,6 +1363,10 @@
     {
       "source": "/tools/epicor/part-management.html",
       "target": "/workflows/fe-to-pe-release.html"
+    },
+    {
+      "source": "/tools/epicor/production-quantity.html",
+      "target": "/workflows/fabrication-engineer/bom-procedures.html"
     },
     {
       "source": "/tools/epicor/production-report.html",
@@ -1342,6 +1458,10 @@
     },
     {
       "source": "/workflows/fabrication-engineer/bom-procedures.html",
+      "target": "/workflows/fabrication-engineer/overage-and-extras.html"
+    },
+    {
+      "source": "/workflows/fabrication-engineer/bom-procedures.html",
       "target": "/workflows/fabrication-engineer/solid-wood-components.html"
     },
     {
@@ -1387,6 +1507,14 @@
     {
       "source": "/workflows/fabrication-engineer/material-transmittal.html",
       "target": "/workflows/fabrication-engineer/toolkit/drafting.html"
+    },
+    {
+      "source": "/workflows/fabrication-engineer/overage-and-extras.html",
+      "target": "/workflows/fabrication-engineer/takeoffs.html"
+    },
+    {
+      "source": "/workflows/fabrication-engineer/overage-and-extras.html",
+      "target": "/workflows/fe-to-pe-release.html"
     },
     {
       "source": "/workflows/fabrication-engineer/part-naming.html",
