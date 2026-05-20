@@ -51,19 +51,26 @@ Post the request in the dedicated **Part Requests** Teams channel. The EA or des
 2. Add the material from Parts master.
 3. Set the **quantity** from your takeoff.
 4. Assign the correct **Rel Opr.** (Related Operation).
-5. Verify **Fixed QTY** is checked (except CMG jobs).
+5. Verify **Fixed QTY** is checked (except CMG jobs). See [Production Quantity & Fixed Qty](/tools/epicor/production-quantity.html).
 6. Append job-specific comments to the part description as needed.
 7. **Inform the PM** when BOM'ing new materials so they can update the TRA.
 
 > **INV-class materials (SG, SS, SL, IM):** Do **not** check Ready to Purchase or Purchase Direct on the manufacturing job for these classes. They are purchased through the project's [Inventory Job](/tools/epicor/inventory-jobs.html). A BPM will block Purchase Direct if you try.
 
-## Scrap Percentages
+## BOM Quantities, Process Waste & Overage
 
-Apply standard scrap percentages during takeoff:
+BOM the **minimum amount of material actually required** to execute the build strategy — not the net finished-part volume, and not an inflated quantity that includes a buffer for quality risk or attic stock. See [Overage, Extras & Process Waste](/workflows/fabrication-engineer/overage-and-extras.html) for full guidance and examples.
+
+Do not add bulk overage to BOM quantities. Overage is a PM/Purchasing decision applied at the project level on the INV job.
+
+### Scrap Percentages
+
+Scrap percentages applied during Auto-BOM are an approximation of **process waste** — material lost to cuts, kerfs, and nesting — and are appropriate to include. These are distinct from overage.
+
 - **Linear materials** (edgebanding, trim): ~15%
 - **Area materials** (sheet goods): ~20%
 
-These are first-pass approximations — adjust based on project specifics and nesting results.
+Adjust based on project specifics and nesting results.
 
 ## Verifying Your BOM
 {: #how-to-verify-bom}

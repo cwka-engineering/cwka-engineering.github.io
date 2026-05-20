@@ -25,6 +25,7 @@ Fabrication Engineers must also satisfy the full **[FE to PE Release checklist](
 **Special Jobs**:
 - Engineering Bucket Jobs
 - Solid Wood Component (WC) Jobs
+- [Manufactured Metal Parts & M Jobs](/tools/epicor/manufactured-parts-jobs.html)
 
 ## Responsibilities
 

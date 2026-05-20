@@ -95,7 +95,7 @@ See [Epicor Job Management](/tools/epicor/job-management.html), [Takeoffs](/work
 - **Related operation**: Each material is assigned to the correct **Rel Opr.** (Related Operation). Post-release BOM changes must be flagged with **Added Mtl** per Epicor practice.
 - **Takeoffs**: BOM gross quantities and board footage follow company standards; solid lumber (SL) minimum dimensions belong in the material description where required.
 - **Fixed quantity**: **Fixed QTY** is verified for each material **except** where CMG rules differ—so parent job quantity does not incorrectly multiply materials.
-- Do not add bulk overage percentage beyond the agreed takeoff amount to BOM quantities.
+- BOM quantities reflect minimum material required for the build strategy — no bulk overage added. Overage is a PM/Purchasing decision applied at the project INV job level. See [Overage, Extras & Process Waste](/workflows/fabrication-engineer/overage-and-extras.html).
 
 ### 4. Production readiness and tooling
 {: #checklist-production-tooling}
@@ -117,7 +117,8 @@ See [Shipping Components](/workflows/fabrication-engineer/shipping-components.ht
   - **Catalog item**: two-character account + two-character category + three digits — e.g. `CM.BE.001_PE.3dm`  
   - **Catalog manufactured part**: account + MT or WC + five digits — e.g. `CM.MT.00005_PE.3dm`  
   - **Isodate** after `_PE` when using date form: `PROJ.JOB_PE_20250124.3dm`
-- **File organization**: Move the purged PE Rhino file to `03_PE_Releases/PROJ.JOB/Production_Files`. Copy the full PDF fabrication set (including finish/material schedules) to `Production_Drawings`.
+- **File organization**: Move the purged PE Rhino file to `03_PE_Releases/PROJ.JOB/Production_Files`. Copy the full PDF fabrication set (including finish/material schedules) to `Production_Drawings`. Also copy any ancillary documents PE needs to successfully process the job — see below.
+- **Ancillary documents**: Any document outside the standard submittal set that PE requires to process the job must be copied into `Production_Drawings` alongside the drawing set. Examples include veneer takeoff drawings, hardware cut sheets for non-standard components, or specialty fabrication references. These documents may also exist in their canonical location elsewhere in the project folder (e.g. `04 Purchasing/02_Approved Part Drawings`) — copy them; do not rely on PE to locate them independently.
 - **Geometry state**: Model reflects geometry as it comes **off the machine** (e.g. sharp corners where round-overs are bench-applied).
 - **PDFs**: Prefer **vector** PDFs where possible; each shipping component called out clearly on drawings.
 - **Epicor (job level)**: **Engineering Complete** checked per material after quantity/part verification; **BOM Complete** and **Field Dimensions Received** complete; **Fabrication Engineer** (may appear as **Production Team** on Job Entry) set to your name.
@@ -172,6 +173,7 @@ Include files in their respective folders:
   - Shipping components (SC) list — when releasing a primary job, not strictly required for manufacturing jobs.
 - **Production_Drawings**
   - Drawing set PDF
+  - Any ancillary documents PE needs to process the job (veneer takeoff drawings, hardware cut sheets, specialty fabrication references, etc.) — copied here even if they also exist elsewhere in the project folder
 
 #### File naming conventions
 

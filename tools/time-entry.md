@@ -12,6 +12,16 @@ nav_order: 3
 
 This document covers time entry procedures using both Epicor and Toggl for Engineering staff.
 
+## Deadlines
+
+All time for the week must be fully entered in Epicor by **EOD Friday (6pm EST)**. A department reminder is sent at 6pm EST each Friday.
+
+- **Best practice**: Enter time at EOD every day — don't let it accumulate.
+- **PTO / sick days**: Enter your time before you leave. Do not assume you'll catch up Monday.
+- **Weekend work**: Any time worked over the weekend must be entered before the start of work **Monday (9am EST)**.
+
+> The previous Monday 12pm EST deadline has been retired. Friday EOD is the new standard.
+
 ## How do I clock into a job using Office MES?
 {: #how-to-clock-in-mes}
 

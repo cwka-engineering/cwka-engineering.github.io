@@ -16,7 +16,8 @@ nav_order: 1
 - **Engineer I / Engineer II**: Level distinctions for FE and PE roles; advancement follows the [Engineer Progression Framework](/onboarding/engineer-progression-framework.html) (merit-based, not tenure-only)
 - **EA (Engineering Assistant)**: Support role managing Epicor materials database and job creation
 - **PM (Project Manager)**: Manages project coordination and client communication
-- **PA (Project Advisor)**: Reviews and approves build strategies before FE release
+- **PA (Project Advisor)**: Senior designated role with final authority on build strategy. PAs drive detail development and material selection (where not client-dictated), often beginning engagement during preconstruction/bid phase. On active projects, PA is the second approver in the formal internal review chain (after PM). PA duties are non-billable and logged to indirect code **017 ENG Administration**. PA and Lead Engineer are always separate people on a project. See [Lead Engineer Responsibilities](/onboarding/lead-engineer.html) for the division of responsibility.
+- **Lead Engineer**: Ad hoc project-level designation assigned to the engineer with the most relevant expertise for a given scope. Functions as the technical and administrative anchor for that project — not a permanent title. Time is logged to the **Lead Coordination** operation on the project bucket job. See [Lead Engineer Responsibilities](/onboarding/lead-engineer.html).
 
 ## Job Types
 
@@ -53,6 +54,8 @@ nav_order: 1
 - **UD37**: Shipping Components dashboard used for **CMG** jobs (use **UD40** for standard jobs). See [FE to PE Release](/workflows/fe-to-pe-release.html) checklist.
 - **Rel Opr. (Related Operation)**: Epicor field tying each BOM material to the correct operation; see [FE to PE Release](/workflows/fe-to-pe-release.html) checklist.
 - **Added Mtl**: Checkbox used when materials are added to the BOM after initial release; flag changes per Epicor practice.
+- **Production Quantity (Prod Qty)**: Job header field capturing how many exact duplicate parts a job produces. Acts as a multiplier on BOM and BOO quantities. Prints on the Job Traveler and appears on 200-series submittal pages via the Toolkit. See [Production Quantity & Fixed Qty](/tools/epicor/production-quantity.html).
+- **Fixed Qty**: Per-line BOM checkbox that overrides the Production Quantity multiplier for that line. When TRUE, the entered quantity is used as-is. Should be TRUE on all lines for standard jobs; must be unchecked for CMG/Make-to-Stock jobs. See [Production Quantity & Fixed Qty](/tools/epicor/production-quantity.html).
 - **SelName audit**: Release review stepping through **SelName** so each part name maps only to matching geometry (see [FE to PE Release](/workflows/fe-to-pe-release.html)).
 - **Specialist spike**: Progression concept: demonstrated senior-level strength in at least two of four pillars (see [Engineer Progression Framework](/onboarding/engineer-progression-framework.html)).
 - **TSC (Technical Steering Committee)**: Invited senior contributors may support department R&D and standards initiatives; referenced in role expectations.

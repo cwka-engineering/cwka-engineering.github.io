@@ -27,6 +27,19 @@ grand_parent: Workflows
 - **Verify Job Number**: [^transcript-file-structure] Open the working set in Bluebeam. Use the annotations panel (blue box with three lines) to search by job number. Jump to the relevant page and confirm what's included in the scope.
 - **Confirm Assignment**: After confirming scope in drawings, verify in Epicor that the submittal is assigned to you.
 
+## PA Working Session — Required Before Work Begins
+{: #how-to-schedule-pa-session}
+
+Before doing any substantive modeling or drafting, every engineer must:
+
+1. **Review the scope** — Study the contract drawings, specifications, and any preconstruction build strategy notes
+2. **Formulate questions** — Write down questions and observations about the elements in scope
+3. **Schedule a PA working session** — Request a kickoff session with the assigned Project Advisor
+
+> **Do not begin modeling ahead of PA input.** The PA has often been engaged with the scope since the bid phase. That context must be transferred before work begins. Skipping or deferring this session is a common source of rework and misaligned details downstream.
+
+See [Lead Engineer Responsibilities](/onboarding/lead-engineer.html#pa-working-session--mandatory-kickoff) for how this fits into the broader project structure.
+
 ## How do I set up a new project folder on Box?
 {: #how-to-set-up-project-folder}
 
@@ -48,6 +61,15 @@ Navigate to `01_FE_Models/`. Copy the `_PROJ.JOB_ScopeDescription` template. Ren
 {: #how-to-import-working-set}
 
 **Insert → Linked → Layer Style: Active → Block Instance**. Disable rotation/scale/insertion point prompts to maintain coordinate system alignment. The working set lives on the `01_CWKA-PRECON::IN-2D` layer.
+
+## How do I link the shared project base floorplan?
+{: #how-to-link-base-floorplan}
+
+On any multi-engineer project, the Lead Engineer will have placed a shared Rhino base floorplan in `03 Engineering/02_WORKING_Drawings_Models/02_CoverSheet_CommonPages/`. Every engineer on the project must link this file into their working model — do not create an independent floor plan from scratch.
+
+Link it the same way as the working set: **Insert → Linked → Layer Style: Active → Block Instance**, maintaining coordinate alignment. This ensures all scope models can be combined in a Rhino worksession for clash detection at any time without additional setup.
+
+If you cannot locate the shared base file, contact the Lead Engineer before proceeding.
 
 ## Next Steps
 

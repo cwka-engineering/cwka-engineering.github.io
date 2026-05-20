@@ -16,6 +16,8 @@ For definitions of acronyms and terms used in this document, see the [Glossary](
 
 **Career levels**: Fabrication and Production Engineers are hired and developed as **Engineer I** or **Engineer II** aligned to role needs. Advancement from I to II follows the [Engineer Progression Framework](/onboarding/engineer-progression-framework.html) (merit-based; not automatic with tenure).
 
+**Lead Engineer designation**: In addition to role levels, any engineer may be designated Lead on a given project based on their relevant expertise for that scope. This is an ad hoc project-level assignment, not a permanent title. See [Lead Engineer Responsibilities](/onboarding/lead-engineer.html).
+
 ## Fabrication Engineer (FE)
 
 Focuses on developing design engineering (DE) geometries into fabrication-ready geometries. The end goal is models that are manageable in programming and can be assembled after fabrication.
