@@ -22,7 +22,7 @@ interface Env {
   MAX_REQUESTS_PER_MINUTE: string;
   DIAGNOSTIC_AUTH_TOKEN: string;
   PA_AUTH_TOKEN: string;
-  PA_ANTHROPIC_API_KEY: string;
+  PARTS_MATCH_ANTHROPIC_API_KEY: string;
   PA_CLAUDE_MODEL: string;
 }
 
@@ -842,7 +842,7 @@ export default {
         rawText = await callClaude(
           userMessage,
           PARTS_MATCH_SYSTEM_PROMPT,
-          env.PA_ANTHROPIC_API_KEY,
+          env.PARTS_MATCH_ANTHROPIC_API_KEY,
           env.PA_CLAUDE_MODEL,
           1024
         );
