@@ -307,10 +307,16 @@
       "degree": 0
     },
     {
+      "id": "/tools/time-entry/toggl.html",
+      "title": "Toggl Setup & Upload",
+      "section": "Tools",
+      "degree": 1
+    },
+    {
       "id": "/tools/time-entry.html",
       "title": "Time Entry",
       "section": "Tools",
-      "degree": 5
+      "degree": 6
     },
     {
       "id": "/tools/",
@@ -1405,6 +1411,10 @@
     {
       "source": "/tools/epicor/production-report.html",
       "target": "/workflows/fabrication-engineer/submittal-review.html"
+    },
+    {
+      "source": "/tools/time-entry.html",
+      "target": "/tools/time-entry/toggl.html"
     },
     {
       "source": "/workflows/",
