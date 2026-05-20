@@ -17,6 +17,10 @@ has_children: true
 - **Drafting**: [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html) — Epicor-driven **schedules and BOM** on layouts, part lookup, template/layout restore, and **publish** workflows that keep drawings aligned with Epicor and the PM-maintained material schedule.
 - **Modeling**: [Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html) — Part naming, **L00/L001** style outputs, analysis, and **hardware** integration (including the shared library populated via McMaster-Carr requests).[^transcript-rhino8-kickoff-ii]
 
+## FE Release Diagnostic (In-Rhino)
+
+The toolkit includes a **Diagnostic** button (next to Reset) that runs the [FE Release Diagnostic Tool](/tools/diagnostic.html) on the currently open file and launches the wiki assistant pre-loaded with the findings. Use it when preparing a PE release handoff file — see [FE Release Diagnostic Tool](/tools/diagnostic.html) for full documentation.
+
 ## Launching Toolkit
 {: #how-to-launch-toolkit}
 

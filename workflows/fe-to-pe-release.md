@@ -57,6 +57,8 @@ This page has two parts: a **pre-release checklist** (what must be true before y
 ## Pre-release checklist
 {: #pre-release-checklist}
 
+> **Run the [FE Release Diagnostic Tool](/tools/diagnostic.html) before certifying this checklist.** The tool automatically validates approximately 70% of the items below and must be run on every PE release handoff file. Address all failures before proceeding. The diagnostic can also be launched directly from the Engineering Toolkit against your currently open file.
+
 By marking **Released** in Epicor and completing the **FE to PE Release** form in the dedicated channel, you certify that your deliverables meet the requirements below (aligned with department standards).
 
 ### Approval prerequisites
