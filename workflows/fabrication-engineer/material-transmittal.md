@@ -34,6 +34,53 @@ Each material/finish/hardware item is entered as a material (quantity set to zer
 
 **First entry rule:** The first entry must always be a Finish Tag — even if there is no finish to submit, use `FN00 "Raw"` or `FN00 "Not Used"`.
 
+## Submittal Status & Transmittal Numbers
+
+### Status Values
+{: #status-vocabulary}
+
+Each TRA entry carries a **MtlSubmittalStatus** field maintained by the PM. The recognized values are:
+
+| Status | Meaning |
+|--------|---------|
+| **Submitted** | Package has been sent to the architect/GC for review |
+| **Approved** | Architect has approved the material |
+| **Rejected** | Architect rejected the submittal; resubmission required |
+| **Internal** | Material has a TRA tag but was not submitted — not required by this project's spec, used at PM's discretion |
+| **Not Submitted** | Avoid — use **Internal** instead (see below) |
+
+> **Use "Internal," not "Not Submitted."** Both mean the material wasn't submitted, but "Not Submitted" looks like an open item when you audit the log later. "Internal" communicates a deliberate decision. Entries left as "Not Submitted" create confusion: were these forgotten, or intentional?
+
+### Transmittal Number Format
+{: #transmittal-number-format}
+
+When a material is submitted, the PM records the transmittal number in the format:
+
+```
+T [###].[##]
+```
+
+- **`T [###]`** — Sequential transmittal package number for the project, zero-padded to three digits (e.g., `T 005`, `T 017`). The PM increments this each time a new package is submitted to the architect.
+- **`.[##]`** — Revision number for that material line within the package, zero-padded to two digits. Starts at `.01`.
+
+**Example:** `T 011.02` = 11th transmittal package sent on this project; second revision of this material (the first submission was rejected and has been resubmitted under the same package number as `.02`).
+
+A rejected material is resubmitted under the **same package number** with an incremented revision, so the audit trail stays together: `T 005.01` (original) → `T 005.02` (resubmit after rejection).
+
+### What Flows to the Cover Sheet
+
+MtlSubmittalStatus and transmittal numbers are **internal PM tracking only** — they do not appear on the G00 cover sheet page. What the G00 script pulls from the TRA is:
+
+- Material/finish tag
+- ARCH tag
+- Description
+- Sheen (where applicable)
+- FSC, fire rating, moisture resistance (PM-managed fields)
+
+The approval status visible on the cover sheet is only what the engineer sees after the PM has updated those fields and the G00 script is re-run.
+
+---
+
 ## Engineer's Role
 
 ### When You BOM a Material
