@@ -238,7 +238,7 @@
       "id": "/tools/epicor/dashboards.html",
       "title": "Dashboards",
       "section": "Tools",
-      "degree": 7
+      "degree": 9
     },
     {
       "id": "/tools/epicor/",
@@ -286,7 +286,7 @@
       "id": "/tools/epicor/production-report.html",
       "title": "Production Report",
       "section": "Tools",
-      "degree": 6
+      "degree": 7
     },
     {
       "id": "/tools/epicor/troubleshooting.html",
@@ -352,7 +352,7 @@
       "id": "/workflows/fabrication-engineer/material-transmittal.html",
       "title": "Material Transmittal Log (TRA)",
       "section": "Workflows",
-      "degree": 6
+      "degree": 9
     },
     {
       "id": "/workflows/fabrication-engineer/overage-and-extras.html",
@@ -388,7 +388,7 @@
       "id": "/workflows/fabrication-engineer/submittal-review.html",
       "title": "Submittal Review Cycle",
       "section": "Workflows",
-      "degree": 6
+      "degree": 8
     },
     {
       "id": "/workflows/fabrication-engineer/takeoffs.html",
@@ -1262,6 +1262,14 @@
     },
     {
       "source": "/tools/epicor/dashboards.html",
+      "target": "/workflows/fabrication-engineer/material-transmittal.html"
+    },
+    {
+      "source": "/tools/epicor/dashboards.html",
+      "target": "/workflows/fabrication-engineer/submittal-review.html"
+    },
+    {
+      "source": "/tools/epicor/dashboards.html",
       "target": "/workflows/fabrication-engineer/toolkit/drafting.html"
     },
     {
@@ -1367,6 +1375,10 @@
     {
       "source": "/tools/epicor/production-quantity.html",
       "target": "/workflows/fabrication-engineer/bom-procedures.html"
+    },
+    {
+      "source": "/tools/epicor/production-report.html",
+      "target": "/workflows/fabrication-engineer/material-transmittal.html"
     },
     {
       "source": "/tools/epicor/production-report.html",
@@ -1503,6 +1515,10 @@
     {
       "source": "/workflows/fabrication-engineer/getting-started.html",
       "target": "/workflows/fabrication-engineer/troubleshooting.html"
+    },
+    {
+      "source": "/workflows/fabrication-engineer/material-transmittal.html",
+      "target": "/workflows/fabrication-engineer/submittal-review.html"
     },
     {
       "source": "/workflows/fabrication-engineer/material-transmittal.html",
