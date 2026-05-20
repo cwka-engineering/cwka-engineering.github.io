@@ -89,6 +89,8 @@ Drafting Toolkit → **Project tab** → **Publish Changes**. Manually fill fiel
 ## How do I populate the G00 (General Requirements/Schedules) page?
 {: #how-to-populate-g00}
 
+> **Before running this script, confirm with the PM that the TRA is current.** If you publish against a stale TRA, material approval statuses on your drawings will be wrong and you will need to re-run. See [Before Running the G00 Script](/workflows/fabrication-engineer/material-transmittal.html#tra-sync-before-g00).
+
 Drafting Toolkit → **Schedules tab**. Enter the project number, select the G00 layout, and publish. Data is pulled from the Material Transmittal Log. If a material doesn't appear, the PM may not have added it to the TRA yet — communicate with your PM. See [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html).
 
 ## How do I publish BOM data to the pick list (L001)?
