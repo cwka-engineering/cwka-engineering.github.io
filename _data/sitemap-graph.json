@@ -235,6 +235,12 @@
       "degree": 9
     },
     {
+      "id": "/tools/diagnostic.html",
+      "title": "FE Release Diagnostic Tool",
+      "section": "Tools",
+      "degree": 4
+    },
+    {
       "id": "/tools/epicor/dashboards.html",
       "title": "Dashboards",
       "section": "Tools",
@@ -310,7 +316,7 @@
       "id": "/tools/",
       "title": "Tools",
       "section": "Tools",
-      "degree": 5
+      "degree": 6
     },
     {
       "id": "/workflows/engineering-assistant.html",
@@ -322,7 +328,7 @@
       "id": "/workflows/fabrication-engineer/bom-procedures.html",
       "title": "BOM Procedures & Validation",
       "section": "Workflows",
-      "degree": 12
+      "degree": 13
     },
     {
       "id": "/workflows/fabrication-engineer/design-engineering.html",
@@ -406,7 +412,7 @@
       "id": "/workflows/fabrication-engineer/toolkit/",
       "title": "Engineering Toolkit (Setup)",
       "section": "Workflows",
-      "degree": 10
+      "degree": 11
     },
     {
       "id": "/workflows/fabrication-engineer/toolkit/modeling.html",
@@ -424,7 +430,7 @@
       "id": "/workflows/fe-to-pe-release.html",
       "title": "FE to PE Release Procedure",
       "section": "Workflows",
-      "degree": 27
+      "degree": 28
     },
     {
       "id": "/workflows/production-engineer/deliverables.html",
@@ -1146,6 +1152,10 @@
     },
     {
       "source": "/tools/",
+      "target": "/tools/diagnostic.html"
+    },
+    {
+      "source": "/tools/",
       "target": "/tools/epicor/"
     },
     {
@@ -1179,6 +1189,18 @@
     {
       "source": "/tools/approvals-process.html",
       "target": "/workflows/fabrication-engineer/submittal-review.html"
+    },
+    {
+      "source": "/tools/diagnostic.html",
+      "target": "/workflows/fabrication-engineer/bom-procedures.html"
+    },
+    {
+      "source": "/tools/diagnostic.html",
+      "target": "/workflows/fabrication-engineer/toolkit/"
+    },
+    {
+      "source": "/tools/diagnostic.html",
+      "target": "/workflows/fe-to-pe-release.html"
     },
     {
       "source": "/tools/epicor/",
