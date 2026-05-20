@@ -55,3 +55,19 @@ When a revision is required on any page of the drawing set:
    - `REV_0_INITIALS` → your initials
 
 Apply revision markings to every page that was changed. Pages with no changes carry forward without new clouds or symbols.
+
+## Creating Revision Clouds in Rhino
+{: #how-to-create-revision-cloud}
+
+The built-in `RevCloud` command takes a curve as input and converts it to a cloud shape. Set up the following alias to run it in one step:
+
+**Alias macro:**
+```
+!_RevCloud _Curve _Divide _Length 0.125 _Enter _Enter
+```
+
+**Workflow:**
+1. Draw a polyline around the area you wish to cloud — any rough closed shape will do
+2. Select the polyline and run the alias
+
+The macro converts the selected curve to a revision cloud using a 0.125-unit arc segment length. Adjust the `0.125` value if your drawing scale requires larger or smaller arcs.
