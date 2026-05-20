@@ -55,6 +55,12 @@
       "degree": 5
     },
     {
+      "id": "/reference/changelog.html",
+      "title": "Wiki Changelog",
+      "section": "Home",
+      "degree": 17
+    },
+    {
       "id": "/reference/folder-structure.html",
       "title": "Folder Structure & File Management",
       "section": "Home",
@@ -70,7 +76,7 @@
       "id": "/reference/",
       "title": "Reference",
       "section": "Home",
-      "degree": 4
+      "degree": 5
     },
     {
       "id": "/reference/reference-tables/cnc-drill-sizes.html",
@@ -118,7 +124,7 @@
       "id": "/reference/training-videos.html",
       "title": "Training Videos",
       "section": "Home",
-      "degree": 1
+      "degree": 2
     },
     {
       "id": "/standards/layer-organization/codes-and-tags.html",
@@ -148,7 +154,7 @@
       "id": "/standards/layer-organization/modeling-techniques.html",
       "title": "Modeling Techniques",
       "section": "Standards",
-      "degree": 4
+      "degree": 5
     },
     {
       "id": "/standards/layer-organization/standard-layers.html",
@@ -214,7 +220,7 @@
       "id": "/standards/rhino-drafting/revision-history.html",
       "title": "Revision History",
       "section": "Standards",
-      "degree": 3
+      "degree": 4
     },
     {
       "id": "/standards/rhino-drafting/sections-clipping.html",
@@ -238,7 +244,7 @@
       "id": "/tools/diagnostic.html",
       "title": "FE Release Diagnostic Tool",
       "section": "Tools",
-      "degree": 4
+      "degree": 5
     },
     {
       "id": "/tools/epicor/dashboards.html",
@@ -256,7 +262,7 @@
       "id": "/tools/epicor/inventory-jobs.html",
       "title": "Inventory Jobs (INV)",
       "section": "Tools",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "/tools/epicor/job-management.html",
@@ -268,7 +274,7 @@
       "id": "/tools/epicor/manufactured-parts-jobs.html",
       "title": "Manufactured Metal Parts & M Jobs",
       "section": "Tools",
-      "degree": 6
+      "degree": 7
     },
     {
       "id": "/tools/epicor/multi-site-operations.html",
@@ -286,13 +292,13 @@
       "id": "/tools/epicor/production-quantity.html",
       "title": "Production Quantity & Fixed Qty",
       "section": "Tools",
-      "degree": 4
+      "degree": 5
     },
     {
       "id": "/tools/epicor/production-report.html",
       "title": "Production Report",
       "section": "Tools",
-      "degree": 7
+      "degree": 8
     },
     {
       "id": "/tools/epicor/troubleshooting.html",
@@ -304,19 +310,19 @@
       "id": "/tools/remote-desktop.html",
       "title": "Remote Desktop (Splashtop)",
       "section": "Tools",
-      "degree": 0
+      "degree": 1
     },
     {
       "id": "/tools/time-entry/toggl.html",
       "title": "Toggl Setup & Upload",
       "section": "Tools",
-      "degree": 1
+      "degree": 2
     },
     {
       "id": "/tools/time-entry.html",
       "title": "Time Entry",
       "section": "Tools",
-      "degree": 6
+      "degree": 7
     },
     {
       "id": "/tools/",
@@ -334,7 +340,7 @@
       "id": "/workflows/fabrication-engineer/bom-procedures.html",
       "title": "BOM Procedures & Validation",
       "section": "Workflows",
-      "degree": 13
+      "degree": 14
     },
     {
       "id": "/workflows/fabrication-engineer/design-engineering.html",
@@ -364,13 +370,13 @@
       "id": "/workflows/fabrication-engineer/material-transmittal.html",
       "title": "Material Transmittal Log (TRA)",
       "section": "Workflows",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "/workflows/fabrication-engineer/overage-and-extras.html",
       "title": "Overage, Extras & Process Waste",
       "section": "Workflows",
-      "degree": 5
+      "degree": 6
     },
     {
       "id": "/workflows/fabrication-engineer/part-naming.html",
@@ -388,7 +394,7 @@
       "id": "/workflows/fabrication-engineer/shipping-components.html",
       "title": "Shipping Components",
       "section": "Workflows",
-      "degree": 7
+      "degree": 8
     },
     {
       "id": "/workflows/fabrication-engineer/solid-wood-components.html",
@@ -400,7 +406,7 @@
       "id": "/workflows/fabrication-engineer/submittal-review.html",
       "title": "Submittal Review Cycle",
       "section": "Workflows",
-      "degree": 8
+      "degree": 9
     },
     {
       "id": "/workflows/fabrication-engineer/takeoffs.html",
@@ -694,6 +700,10 @@
     },
     {
       "source": "/reference/",
+      "target": "/reference/changelog.html"
+    },
+    {
+      "source": "/reference/",
       "target": "/reference/folder-structure.html"
     },
     {
@@ -707,6 +717,70 @@
     {
       "source": "/reference/",
       "target": "/reference/training-videos.html"
+    },
+    {
+      "source": "/reference/changelog.html",
+      "target": "/reference/training-videos.html"
+    },
+    {
+      "source": "/reference/changelog.html",
+      "target": "/standards/layer-organization/modeling-techniques.html"
+    },
+    {
+      "source": "/reference/changelog.html",
+      "target": "/standards/rhino-drafting/revision-history.html"
+    },
+    {
+      "source": "/reference/changelog.html",
+      "target": "/tools/diagnostic.html"
+    },
+    {
+      "source": "/reference/changelog.html",
+      "target": "/tools/epicor/inventory-jobs.html"
+    },
+    {
+      "source": "/reference/changelog.html",
+      "target": "/tools/epicor/manufactured-parts-jobs.html"
+    },
+    {
+      "source": "/reference/changelog.html",
+      "target": "/tools/epicor/production-quantity.html"
+    },
+    {
+      "source": "/reference/changelog.html",
+      "target": "/tools/epicor/production-report.html"
+    },
+    {
+      "source": "/reference/changelog.html",
+      "target": "/tools/remote-desktop.html"
+    },
+    {
+      "source": "/reference/changelog.html",
+      "target": "/tools/time-entry.html"
+    },
+    {
+      "source": "/reference/changelog.html",
+      "target": "/tools/time-entry/toggl.html"
+    },
+    {
+      "source": "/reference/changelog.html",
+      "target": "/workflows/fabrication-engineer/bom-procedures.html"
+    },
+    {
+      "source": "/reference/changelog.html",
+      "target": "/workflows/fabrication-engineer/material-transmittal.html"
+    },
+    {
+      "source": "/reference/changelog.html",
+      "target": "/workflows/fabrication-engineer/overage-and-extras.html"
+    },
+    {
+      "source": "/reference/changelog.html",
+      "target": "/workflows/fabrication-engineer/shipping-components.html"
+    },
+    {
+      "source": "/reference/changelog.html",
+      "target": "/workflows/fabrication-engineer/submittal-review.html"
     },
     {
       "source": "/reference/folder-structure.html",
