@@ -15,7 +15,7 @@ id = "457771cd577e47778a0e833100429156"
 # - DIAGNOSTIC_ANTHROPIC_API_KEY  (/api/diagnostic, /api/summarize)
 # - DIAGNOSTIC_AUTH_TOKEN
 # - PA_AUTH_TOKEN
-# - PA_ANTHROPIC_API_KEY          (/api/parts-match)
+# - PARTS_MATCH_ANTHROPIC_API_KEY  (/api/parts-match)
 
 [vars]
 ALLOWED_ORIGIN = "https://cwka-engineering.github.io"
