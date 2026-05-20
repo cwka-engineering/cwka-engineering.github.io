@@ -249,10 +249,33 @@ No existing catalog data. Always generate a new description.
 Format: [Form Factor],[Material],[Origin/Brand],[Finish],[Thickness],[Width" x Length"]
 
 ## Matching Rules
-- Consider a match "strong" when form factor + material + finish + dimensions all align
-- Consider a match "possible" when form factor + material align but some data is missing or ambiguous
-- Return at most 3 candidates. If no credible match, set match_type to "none".
+- Return at most 5 candidates. If no credible match, set match_type to "none".
 - For Glass/Plastics, Lighting/Electrical, and Stone: always set match_type to "none" since no catalog exists.
+
+### Strong match
+Form factor + material + finish + all dimensions align exactly.
+
+### Possible match — strict rules
+A "possible" match means the catalog part could physically be cut or trimmed to meet the request. Material can be made SMALLER (shorter, narrower) but NEVER BIGGER.
+
+**Solid Surface, Sheet Goods, Inventory Metal:**
+- A catalog part may be a possible match if it is longer or wider than requested AND all other critical specs (material, alloy/grade, finish, form factor) are identical.
+- Substituting a THINNER material is never practical — thickness must match exactly.
+
+**Solid Lumber:**
+- A catalog part may be a possible match if it is longer, wider, or thicker than requested AND species, grade, cut, and surfacing match.
+
+**Hardware:**
+- Hardware is essentially non-modifiable. All dimensional specs are fixed.
+- A possible match is only considered when the user omitted non-dimensional attributes (grade, finish, brand) and the catalog part matches every dimension exactly.
+- Recognize both imperial and metric fastener sizing as fixed dimensions (e.g., "#8" or "#8-32" denotes a specific diameter and thread; "M4" or "M4x0.7" denotes a specific metric diameter and pitch). These are never interchangeable.
+
+**Fabric/Upholstery:**
+- Width, weight, and composition are fixed. A possible match requires the same brand/collection with a different colorway or the user omitted color.
+
+**All categories:**
+- Diameters (dia, ID, OD) are non-modifiable — never suggest a different diameter as a possible match.
+- If the user specified a dimension, do not match against a catalog part with a smaller value in that dimension (the part cannot be made bigger).
 
 ## New Description Rules (only when match_type is "none")
 - Comma-delimited, form factor first
