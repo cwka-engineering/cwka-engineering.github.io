@@ -118,7 +118,11 @@ Houses working drawings and models:
 - `00_GS_Master_Models/`: Grouped submittals master models.
 
 #### 02_CoverSheet_CommonPages
-Project-level documents that attach to any full project submittal or record set:
+Contains two categories of project-level assets:
+
+**Shared Rhino Base Floorplan**: The working Rhino model file that all engineers on the project team link into their individual scope files. Set up and maintained by the Lead Engineer. Required for worksession-based clash detection and cross-scope coordination. If the project has a BIM deliverable, this file must be positioned relative to the architect's shared datum.
+
+**Common Drawing Documents** — attached to any full project submittal or record set:
 - **Cover Sheet**: Full project job index
 - **General Requirements**: Finish/material tags generated via the Engineering Toolkit from the TRA log
 - **Master Floorplan / Keyplan**: Per level, showing all awarded scope
@@ -126,7 +130,7 @@ Project-level documents that attach to any full project submittal or record set:
 - **Pre-Submittal Sets**: Scope/design intent clarification
 - **Typical Details**: Interaction between adjacent scopes
 
-This set is also included with drawing packages given to the install team.
+This drawing set is also included with drawing packages given to the install team.
 
 ### 03_PE_Releases
 
@@ -135,7 +139,7 @@ Dedicated to completed work ready for production. Release contents and naming mu
 - Subfolders copied from `_PROJ.JOB_ScopeDescription` template and renamed per job.
 - Inside each release folder:
   - **Production_Files/**: PE Rhino file, SC list, Master Parts List, Lay-Up Summary, optional SHOP model
-  - **Production_Drawings/**: Completed shop drawings by FE and SKs by PE
+  - **Production_Drawings/**: Completed shop drawings by FE and SKs by PE. Also contains any ancillary documents PE needs to process the job — veneer takeoff drawings, hardware cut sheets, specialty fabrication references, etc. These are copied here from wherever they live in the project folder; PE should not need to search outside this directory to execute the release.
 
 #### 00_MT_WC_IP_MfgParts
 Manufacturing part folders for WC, MT, and IP jobs.

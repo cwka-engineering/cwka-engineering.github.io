@@ -13,6 +13,16 @@ The `02_CoverSheet_CommonPages` folder contains project-level documents that att
 
 > **Related Documents**: [Layout Structure](/standards/rhino-drafting/layout-structure.html) | [Folder Structure](/reference/folder-structure.html) | [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html)
 
+## Shared Base Floorplan (Rhino)
+
+In addition to the 2D drawing documents below, `02_CoverSheet_CommonPages` is the canonical location for the **shared Rhino base floorplan** — the project-wide working model file that all engineers link into their individual scope files.
+
+- **Set up by the Lead Engineer** at the start of the project
+- All engineers must reference this file (linked block or worksession) so that any scope model can be combined with others for clash detection and coordination without additional setup
+- If the project contract includes a BIM deliverable, the base plan must be positioned in model space relative to the datum used by the architect and adjacent subcontractors
+
+See [Lead Engineer Responsibilities](/onboarding/lead-engineer.html) for setup obligations.
+
 ## Standard Common Pages
 
 ### Cover Sheet

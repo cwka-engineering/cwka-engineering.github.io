@@ -36,7 +36,7 @@ Completed shop drawings follow a three-folder workflow under `03_OUTGOING_Submit
 ### 2. Revise if Denied
 
 If denied at either stage:
-1. Pick up **all** Bluebeam comments from both PM and PA.
+1. Pick up **all** Bluebeam comments from both PM and PA — see [Tracking Markup Pickup](#tracking-markup-pickup) below.
 2. Revise the drawings.
 3. Submit a **new** approval request (do not reuse the denied request).
 
@@ -52,6 +52,35 @@ When the architect returns marked-up drawings:
 - The PM places them in `02_Returned/`.
 - The FE reviews all redlines and incorporates changes.
 - If changes are required, the cycle repeats (revised drawings go back to `00_Internal_Review/`).
+- Each client return cycle that results in a reissue constitutes one **revision** — apply revision clouds, symbols, notes, and update the titleblock revision log accordingly. See [Revision History](/standards/rhino-drafting/revision-history.html).
+
+## Tracking Markup Pickup
+{: #tracking-markup-pickup}
+
+When working through internal or external redlines, every comment must receive a visible disposition — do not simply close the file once changes are made. This applies to PM/PA internal review comments and returned architect markups alike.
+
+Each comment should be resolved in one of three ways:
+- **Picked up** — change incorporated into the drawings
+- **RFI** — insufficient information to act; flagged for clarification
+- **Escalated to PM** — comment may warrant rejection or negotiation with the client
+
+### Method 1: Highlighter
+
+The simplest approach. Use the Bluebeam highlighter tool to mark each comment on the page as it is addressed. Fast and visually obvious when scanning the document.
+
+### Method 2: Markup Status (Markups List)
+
+The Markups List pane in Bluebeam Revu includes a **Status** field for each annotation. Assigning a status creates a logged record of how each comment was handled. Default statuses and their hotkeys:
+
+| Status | Hotkey | Use |
+|---|---|---|
+| Accepted | `Shift+1` | Comment picked up and incorporated |
+| Rejected | `Shift+2` | Comment rejected — escalate to PM |
+| Cancelled | `Shift+3` | Comment no longer applicable |
+| Completed | `Shift+4` | Action taken (broader than accepted) |
+| None | `Shift+5` | Clear / reset status |
+
+Either method is acceptable. What is not acceptable is working through a redlined set with no tracking at all — both for your own reference and so that the lead engineer or PM can verify completeness at a glance.
 
 ## Submittal Status Tracking
 
