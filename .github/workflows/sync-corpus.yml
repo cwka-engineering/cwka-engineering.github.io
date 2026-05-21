@@ -22,19 +22,25 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Build corpus
-        run: python scripts/build_corpus.py --out corpus.json --prompt-text
+      - name: Build corpora
+        # Outputs corpus_general_prompt.txt, corpus_fe_release_prompt.txt,
+        # corpus_fe_submittal_prompt.txt in the repo root.
+        run: python scripts/build_corpus.py
 
       - name: Install wrangler
         run: npm install -g wrangler@4
 
-      - name: Upload corpus to Cloudflare KV
+      - name: Upload corpora to Cloudflare KV
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
         run: |
-          wrangler kv key put \
-            --namespace-id="${{ secrets.CF_KV_NAMESPACE_ID }}" \
-            --remote \
-            "wiki-corpus-prompt" \
-            --path=corpus_prompt.txt
+          for tag in general fe-release fe-submittal; do
+            safe="${tag//-/_}"
+            wrangler kv key put \
+              --namespace-id="${{ secrets.CF_KV_NAMESPACE_ID }}" \
+              --remote \
+              "wiki-corpus-${tag}" \
+              --path="corpus_${safe}_prompt.txt"
+            echo "Uploaded wiki-corpus-${tag}"
+          done

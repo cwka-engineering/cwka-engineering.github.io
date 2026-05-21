@@ -54,7 +54,15 @@ interface PartsMatchRequest {
 // Constants
 // ---------------------------------------------------------------------------
 
-const CORPUS_KV_KEY = "wiki-corpus-prompt";
+// Corpus KV keys — one per tag, matching sync-corpus.yml and build_corpus.py.
+// general     → wiki Q&A chatbot (all pages)
+// fe-release  → FE diagnostic assistant + QC summarizer (release-workflow pages)
+// fe-submittal → future submittal-scoped routes
+const CORPUS_KV_KEYS = {
+  general:     "wiki-corpus-general",
+  feRelease:   "wiki-corpus-fe-release",
+  feSubmittal: "wiki-corpus-fe-submittal",
+} as const;
 
 // --- Wiki chatbot (existing) ---
 
@@ -692,7 +700,7 @@ export default {
         body.messages = body.messages.slice(-20);
       }
 
-      const corpus = await env.WIKI_CORPUS.get(CORPUS_KV_KEY);
+      const corpus = await env.WIKI_CORPUS.get(CORPUS_KV_KEYS.general);
       if (!corpus) {
         return corsResponse(
           503,
@@ -755,7 +763,7 @@ export default {
         body.messages = body.messages.slice(-20);
       }
 
-      const corpus = await env.WIKI_CORPUS.get(CORPUS_KV_KEY);
+      const corpus = await env.WIKI_CORPUS.get(CORPUS_KV_KEYS.feRelease);
       if (!corpus) {
         return jsonResponse(503, JSON.stringify({ error: "Wiki corpus not loaded." }));
       }
@@ -806,7 +814,7 @@ export default {
         return jsonResponse(400, JSON.stringify({ error: "payload_text required" }));
       }
 
-      const corpus = await env.WIKI_CORPUS.get(CORPUS_KV_KEY);
+      const corpus = await env.WIKI_CORPUS.get(CORPUS_KV_KEYS.feRelease);
       if (!corpus) {
         return jsonResponse(503, JSON.stringify({ error: "Wiki corpus not loaded." }));
       }

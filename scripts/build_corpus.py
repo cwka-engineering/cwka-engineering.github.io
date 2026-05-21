@@ -1,21 +1,31 @@
 #!/usr/bin/env python3
 """
-Build a structured JSON corpus from the wiki's Markdown files.
+Build structured JSON corpora from the wiki's Markdown files.
 
-Output is designed to be uploaded to Cloudflare KV and injected into the
-chatbot's system prompt so Claude can answer questions grounded in wiki content.
+Supports multi-corpus output: each corpus is filtered to pages that carry the
+matching corpus_tags value in their front matter. Pages without corpus_tags
+default to the "general" corpus only.
+
+Output is uploaded to Cloudflare KV and injected into the chatbot's system
+prompt so Claude can answer questions grounded in wiki content.
 
 Usage:
-    python scripts/build_corpus.py              # writes to scripts/corpus.json
-    python scripts/build_corpus.py --out /tmp/corpus.json
+    python scripts/build_corpus.py              # builds all corpora under repo root
+    python scripts/build_corpus.py --out-dir /tmp
+    python scripts/build_corpus.py --tag fe-release  # build a single tag
+
+Legacy single-output mode (backward compat):
+    python scripts/build_corpus.py --out corpus.json --prompt-text
 """
 
 import argparse
 import json
-import os
 import re
-import sys
 from pathlib import Path
+
+# Corpora to build.  Tag name must match the corpus_tags values used in front
+# matter and the KV key suffix used in the Cloudflare worker (wiki-corpus-<tag>).
+DEFINED_TAGS = ["general", "fe-release", "fe-submittal"]
 
 # Directories excluded from the wiki build (mirrors _config.yml exclude list)
 EXCLUDE_DIRS = {
@@ -45,27 +55,52 @@ HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)(?:\s*\{:.*\})?\s*$", re.MULTILINE)
 
 
 def parse_front_matter(text: str) -> dict:
-    """Extract YAML front matter as a simple key-value dict (no PyYAML dependency)."""
+    """Extract YAML front matter as a simple key-value dict (no PyYAML dependency).
+
+    Supports:
+      - Scalar strings, booleans
+      - Inline YAML lists: corpus_tags: [general, fe-release]
+    """
     m = FRONT_MATTER_RE.match(text)
     if not m:
         return {}
-    fm = {}
+    fm: dict = {}
     for line in m.group(1).splitlines():
         line = line.strip()
-        if ":" in line and not line.startswith("#"):
-            key, _, val = line.partition(":")
-            val = val.strip().strip("\"'")
-            if val.lower() == "true":
-                val = True
-            elif val.lower() == "false":
-                val = False
-            fm[key.strip()] = val
+        if ":" not in line or line.startswith("#"):
+            continue
+        key, _, val = line.partition(":")
+        val = val.strip().strip("\"'")
+        if val.lower() == "true":
+            val = True
+        elif val.lower() == "false":
+            val = False
+        elif val.startswith("[") and val.endswith("]"):
+            # Inline YAML list: [item1, item2]
+            val = [
+                item.strip().strip("\"'")
+                for item in val[1:-1].split(",")
+                if item.strip()
+            ]
+        fm[key.strip()] = val
     return fm
+
+
+def get_page_tags(fm: dict) -> list[str]:
+    """Return the corpus tags for a page. Defaults to ['general'] if unset."""
+    tags = fm.get("corpus_tags")
+    if tags is None:
+        return ["general"]
+    if isinstance(tags, list):
+        return [str(t) for t in tags if t]
+    # Scalar fallback (e.g. corpus_tags: general without brackets)
+    s = str(tags).strip()
+    return [s] if s else ["general"]
 
 
 def extract_anchors(text: str) -> list[str]:
     """Return all explicit kramdown anchors and heading-derived anchors."""
-    anchors = []
+    anchors: list[str] = []
 
     # Explicit kramdown anchors: {: #some-id}
     for m in KRAMDOWN_ANCHOR_RE.finditer(text):
@@ -74,7 +109,6 @@ def extract_anchors(text: str) -> list[str]:
     # Heading-derived anchors (Just the Docs auto-generates these)
     for m in HEADING_RE.finditer(text):
         heading_text = m.group(2).strip()
-        # Remove inline markup for slug generation
         slug = re.sub(r"[^a-z0-9\s-]", "", heading_text.lower())
         slug = re.sub(r"\s+", "-", slug.strip())
         if slug and slug not in anchors:
@@ -88,8 +122,13 @@ def strip_front_matter(text: str) -> str:
     return FRONT_MATTER_RE.sub("", text, count=1)
 
 
-def build_corpus(wiki_root: Path) -> list[dict]:
-    """Walk the wiki and build the corpus entries."""
+def build_corpus(wiki_root: Path, tag: str | None = None) -> list[dict]:
+    """Walk the wiki and build corpus entries.
+
+    tag=None   — all non-excluded pages (legacy full corpus)
+    tag='foo'  — only pages whose corpus_tags include 'foo'
+                 (untagged pages default to ['general'])
+    """
     pages = []
 
     for md_path in sorted(wiki_root.rglob("*.md")):
@@ -119,6 +158,11 @@ def build_corpus(wiki_root: Path) -> list[dict]:
         if fm.get("corpus_exclude") is True:
             continue
 
+        # Filter by tag if requested
+        if tag is not None:
+            if tag not in get_page_tags(fm):
+                continue
+
         content = strip_front_matter(text).strip()
         anchors = extract_anchors(text)
 
@@ -146,7 +190,7 @@ def corpus_to_prompt_text(pages: list[dict]) -> str:
     return "\n\n---\n\n".join(sections)
 
 
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser(description="Build wiki corpus JSON for chatbot")
     parser.add_argument(
         "--root",
@@ -155,40 +199,78 @@ def main():
         help="Wiki root directory (default: repo root)",
     )
     parser.add_argument(
+        "--out-dir",
+        type=Path,
+        default=None,
+        help="Output directory for corpus files (default: repo root)",
+    )
+    parser.add_argument(
+        "--tag",
+        type=str,
+        default=None,
+        help=f"Build a single corpus tag. Available: {', '.join(DEFINED_TAGS)}",
+    )
+    # Legacy single-output flags — kept for backward compatibility
+    parser.add_argument(
         "--out",
         type=Path,
         default=None,
-        help="Output JSON path (default: scripts/corpus.json)",
+        help="(Legacy) Single output JSON path; builds all pages with no tag filter.",
     )
     parser.add_argument(
         "--prompt-text",
         action="store_true",
-        help="Also output the formatted prompt text to corpus_prompt.txt",
+        help="(Legacy) Also write corpus_prompt.txt alongside --out.",
     )
     args = parser.parse_args()
 
-    out_path = args.out or (args.root / "scripts" / "corpus.json")
+    # ------------------------------------------------------------------
+    # Legacy single-output mode (--out supplied)
+    # ------------------------------------------------------------------
+    if args.out:
+        out_path = args.out
+        pages = build_corpus(args.root)
+        with open(out_path, "w", encoding="utf-8") as f:
+            json.dump(pages, f, indent=2, ensure_ascii=False)
+        total_chars = sum(len(p["content"]) for p in pages)
+        print(
+            f"[all] {len(pages)} pages, {total_chars:,} chars "
+            f"(~{total_chars // 4:,} tokens) → {out_path}"
+        )
+        if args.prompt_text:
+            prompt_path = out_path.with_name("corpus_prompt.txt")
+            with open(prompt_path, "w", encoding="utf-8") as f:
+                f.write(corpus_to_prompt_text(pages))
+            print(f"Prompt text → {prompt_path}")
+        return
 
-    pages = build_corpus(args.root)
+    # ------------------------------------------------------------------
+    # Multi-corpus mode
+    # ------------------------------------------------------------------
+    out_dir = args.out_dir or args.root
+    tags_to_build = [args.tag] if args.tag else DEFINED_TAGS
 
-    # Write structured JSON
-    with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(pages, f, indent=2, ensure_ascii=False)
+    for tag in tags_to_build:
+        pages = build_corpus(args.root, tag=tag)
+        safe_tag = tag.replace("-", "_")  # filesystem-safe variant
 
-    # Stats
-    total_chars = sum(len(p["content"]) for p in pages)
-    total_anchors = sum(len(p["anchors"]) for p in pages)
-    print(f"Corpus built: {len(pages)} pages, {total_chars:,} chars, {total_anchors} anchors")
-    print(f"Estimated tokens: ~{total_chars // 4:,}")
-    print(f"Written to: {out_path}")
+        json_path = out_dir / f"corpus_{safe_tag}.json"
+        prompt_path = out_dir / f"corpus_{safe_tag}_prompt.txt"
 
-    # Optionally write prompt-formatted text
-    if args.prompt_text:
-        prompt_path = out_path.with_name("corpus_prompt.txt")
+        with open(json_path, "w", encoding="utf-8") as f:
+            json.dump(pages, f, indent=2, ensure_ascii=False)
+
         prompt_text = corpus_to_prompt_text(pages)
         with open(prompt_path, "w", encoding="utf-8") as f:
             f.write(prompt_text)
-        print(f"Prompt text written to: {prompt_path}")
+
+        total_chars = sum(len(p["content"]) for p in pages)
+        total_anchors = sum(len(p["anchors"]) for p in pages)
+        print(
+            f"[{tag}] {len(pages)} pages, {total_chars:,} chars "
+            f"(~{total_chars // 4:,} tokens), {total_anchors} anchors "
+            f"→ {prompt_path}"
+        )
 
 
 if __name__ == "__main__":
