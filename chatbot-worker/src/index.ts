@@ -443,7 +443,8 @@ async function streamClaudeDiagnostic(
   cachedCorpus: string,
   dynamicContext: string,
   apiKey: string,
-  model: string
+  model: string,
+  temperature?: number
 ): Promise<ReadableStream> {
   const response = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
@@ -456,6 +457,7 @@ async function streamClaudeDiagnostic(
       model,
       max_tokens: 2048,
       stream: true,
+      ...(temperature !== undefined && { temperature }),
       system: dynamicContext
         ? [
             {
@@ -852,7 +854,8 @@ export default {
           cachedCorpus,
           dynamicContext,
           env.DIAGNOSTIC_ANTHROPIC_API_KEY,
-          env.CLAUDE_MODEL
+          env.CLAUDE_MODEL,
+          0  // deterministic output for structured action plan
         );
         return sseResponse(stream);
       } catch (err: unknown) {
