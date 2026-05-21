@@ -29,7 +29,10 @@ Prod Qty is highly visible:
 
 ### Parent Production Jobs
 
-Production Quantity should always be **1**. BOM and BOO quantities are entered as absolute amounts. Fixed Qty should be TRUE on all lines.
+Production Quantity is typically **1**, but may be greater than 1 when the job produces multiple identical assemblies — for example, a run of 8 identical benches. Even so:
+
+- Fixed Qty must still be **TRUE** on all BOM lines
+- BOM quantities should reflect the **total material required** to produce the full run, not the per-unit amount
 
 ### Metal Kit (M Job)
 

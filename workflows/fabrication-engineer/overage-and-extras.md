@@ -31,7 +31,7 @@ The rule for BOM quantities on any job — parent or MFG — is:
 
 > **BOM the minimum amount of material actually necessary to make the part using the build strategy being employed.**
 
-This is not the net volume of the finished part. It is the minimum raw material required given the physical constraints of the build — blank dimensions, nesting limits, fixturing geometry, or stock sizes.
+This is not the net volume of the finished part. It is the minimum raw material required given the physical constraints of the build — blank dimensions, nesting limits, fixturing geometry, or stock sizes. Think of it as the material that inevitably ends up in the dust collector, as saw kerfs, or as unusable offcuts in the scrap bin — waste that is a direct, unavoidable consequence of how the part is made.
 
 ### Examples
 
