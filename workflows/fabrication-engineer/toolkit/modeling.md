@@ -5,6 +5,7 @@ permalink: /workflows/fabrication-engineer/toolkit/modeling.html
 nav_order: 2
 parent: Engineering Toolkit (Setup)
 grand_parent: Fabrication Engineer (FE)
+corpus_tags: [fe-release, fe-submittal]
 ---
 
 # Modeling Toolkit

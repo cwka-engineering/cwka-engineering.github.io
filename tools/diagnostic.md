@@ -4,6 +4,7 @@ title: FE Release Diagnostic Tool
 permalink: /tools/diagnostic.html
 parent: Tools
 nav_order: 6
+corpus_tags: [fe-release]
 ---
 
 # FE Release Diagnostic Tool

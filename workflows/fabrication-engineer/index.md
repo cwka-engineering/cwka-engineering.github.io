@@ -5,6 +5,7 @@ permalink: /workflows/fabrication-engineer/
 nav_order: 1
 parent: Workflows
 has_children: true
+corpus_tags: [fe-release, fe-submittal]
 ---
 
 # Fabrication Engineer (FE) Workflow

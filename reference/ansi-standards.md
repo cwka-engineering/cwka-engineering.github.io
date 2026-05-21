@@ -4,6 +4,7 @@ title: ANSI/HPVA HP-1 Reference
 permalink: /reference/ansi-standards.html
 parent: Reference
 nav_order: 7
+corpus_tags: [fe-submittal]
 ---
 
 # ANSI/HPVA HP-1 Reference

@@ -5,6 +5,7 @@ permalink: /standards/rhino-drafting/
 nav_order: 1
 parent: Standards
 has_children: true
+corpus_tags: [fe-release, fe-submittal]
 ---
 
 # Rhino Drafting Standards

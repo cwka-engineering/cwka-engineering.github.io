@@ -5,6 +5,7 @@ permalink: /standards/rhino-drafting/cover-sheet-common-pages.html
 parent: Rhino Drafting
 grand_parent: Standards
 nav_order: 9
+corpus_tags: [fe-submittal]
 ---
 
 # Cover Sheet & Common Pages

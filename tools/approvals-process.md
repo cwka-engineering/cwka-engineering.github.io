@@ -4,6 +4,7 @@ title: Approvals Process
 permalink: /tools/approvals-process.html
 parent: Tools
 nav_order: 2
+corpus_tags: [fe-submittal]
 ---
 
 # PA (Project Advisor) Approvals Process

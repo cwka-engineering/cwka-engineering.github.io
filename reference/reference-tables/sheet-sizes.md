@@ -5,6 +5,7 @@ permalink: /reference/reference-tables/sheet-sizes.html
 parent: Reference Tables
 grand_parent: Reference
 nav_order: 5
+corpus_tags: [fe-submittal]
 ---
 
 # Actual Sheet Sizes & Nesting Clear Zones

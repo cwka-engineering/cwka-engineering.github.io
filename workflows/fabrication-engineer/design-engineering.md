@@ -5,6 +5,7 @@ permalink: /workflows/fabrication-engineer/design-engineering.html
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
 nav_order: 2
+corpus_tags: [fe-submittal]
 ---
 
 # Design Engineering (DE) Phase

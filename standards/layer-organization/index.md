@@ -5,6 +5,7 @@ permalink: /standards/layer-organization/
 nav_order: 2
 parent: Standards
 has_children: true
+corpus_tags: [fe-release, fe-submittal]
 ---
 
 # Layer Organization

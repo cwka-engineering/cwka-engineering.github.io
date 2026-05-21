@@ -5,6 +5,7 @@ permalink: /standards/rhino-drafting/details.html
 nav_order: 2
 parent: Rhino Drafting
 grand_parent: Standards
+corpus_tags: [fe-submittal]
 ---
 
 # Creating Details

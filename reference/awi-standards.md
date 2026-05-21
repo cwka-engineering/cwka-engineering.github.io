@@ -4,6 +4,7 @@ title: AWI Standards Reference
 permalink: /reference/awi-standards.html
 parent: Reference
 nav_order: 6
+corpus_tags: [fe-submittal]
 ---
 
 # AWI Standards Reference

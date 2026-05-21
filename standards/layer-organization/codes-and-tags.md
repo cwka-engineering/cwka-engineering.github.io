@@ -5,6 +5,7 @@ permalink: /standards/layer-organization/codes-and-tags.html
 nav_order: 5
 parent: Layer Organization
 grand_parent: Standards
+corpus_tags: [fe-release, fe-submittal]
 ---
 
 # Codes & Tags

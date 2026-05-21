@@ -5,6 +5,7 @@ permalink: /workflows/fabrication-engineer/takeoffs.html
 nav_order: 7
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
+corpus_tags: [fe-release, fe-submittal]
 ---
 
 # Takeoffs

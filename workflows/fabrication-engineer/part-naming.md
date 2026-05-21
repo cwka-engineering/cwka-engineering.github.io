@@ -5,6 +5,7 @@ permalink: /workflows/fabrication-engineer/part-naming.html
 nav_order: 5
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
+corpus_tags: [fe-release, fe-submittal]
 ---
 
 # Part Naming

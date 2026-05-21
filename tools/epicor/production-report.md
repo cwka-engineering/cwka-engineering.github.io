@@ -5,6 +5,7 @@ permalink: /tools/epicor/production-report.html
 nav_order: 2
 parent: Epicor Usage
 grand_parent: Tools
+corpus_tags: [fe-submittal]
 ---
 
 # Production Report

@@ -5,6 +5,7 @@ permalink: /workflows/fabrication-engineer/overage-and-extras.html
 nav_order: 14
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
+corpus_tags: [fe-release]
 ---
 
 # Overage, Extras & Process Waste

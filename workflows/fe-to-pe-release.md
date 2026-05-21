@@ -4,6 +4,7 @@ title: FE to PE Release Procedure
 permalink: /workflows/fe-to-pe-release.html
 parent: Workflows
 nav_order: 3
+corpus_tags: [fe-release]
 ---
 
 # FE to PE Release

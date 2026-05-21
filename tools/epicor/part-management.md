@@ -5,6 +5,7 @@ permalink: /tools/epicor/part-management.html
 nav_order: 3
 parent: Epicor Usage
 grand_parent: Tools
+corpus_tags: [fe-release, fe-submittal]
 ---
 
 # Part Management

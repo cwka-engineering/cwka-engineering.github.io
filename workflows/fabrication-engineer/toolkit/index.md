@@ -6,6 +6,7 @@ nav_order: 3
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
 has_children: true
+corpus_tags: [fe-release, fe-submittal]
 ---
 
 # Engineering Toolkit

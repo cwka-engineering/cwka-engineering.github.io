@@ -5,6 +5,7 @@ permalink: /reference/reference-tables/model-cleanup-commands.html
 parent: Reference Tables
 grand_parent: Reference
 nav_order: 2
+corpus_tags: [fe-release]
 ---
 
 # Model Cleanup Commands

@@ -5,6 +5,7 @@ permalink: /tools/epicor/production-quantity.html
 nav_order: 6
 parent: Epicor Usage
 grand_parent: Tools
+corpus_tags: [fe-release]
 ---
 
 # Production Quantity & Fixed Qty

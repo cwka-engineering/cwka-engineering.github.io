@@ -5,6 +5,7 @@ permalink: /tools/epicor/dashboards.html
 nav_order: 1
 parent: Epicor Usage
 grand_parent: Tools
+corpus_tags: [fe-submittal]
 ---
 
 # Key Dashboards

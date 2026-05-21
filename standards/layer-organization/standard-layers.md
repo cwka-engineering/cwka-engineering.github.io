@@ -5,6 +5,7 @@ permalink: /standards/layer-organization/standard-layers.html
 nav_order: 1
 parent: Layer Organization
 grand_parent: Standards
+corpus_tags: [fe-release, fe-submittal]
 ---
 
 # Standard Layers
