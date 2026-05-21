@@ -55,6 +55,18 @@
       "degree": 5
     },
     {
+      "id": "/reference/ansi-standards.html",
+      "title": "ANSI/HPVA HP-1 Reference",
+      "section": "Home",
+      "degree": 2
+    },
+    {
+      "id": "/reference/awi-standards.html",
+      "title": "AWI Standards Reference",
+      "section": "Standards",
+      "degree": 2
+    },
+    {
       "id": "/reference/changelog.html",
       "title": "Wiki Changelog",
       "section": "Home",
@@ -76,7 +88,7 @@
       "id": "/reference/",
       "title": "Reference",
       "section": "Home",
-      "degree": 5
+      "degree": 7
     },
     {
       "id": "/reference/reference-tables/cnc-drill-sizes.html",
@@ -700,6 +712,14 @@
     },
     {
       "source": "/reference/",
+      "target": "/reference/ansi-standards.html"
+    },
+    {
+      "source": "/reference/",
+      "target": "/reference/awi-standards.html"
+    },
+    {
+      "source": "/reference/",
       "target": "/reference/changelog.html"
     },
     {
@@ -717,6 +737,10 @@
     {
       "source": "/reference/",
       "target": "/reference/training-videos.html"
+    },
+    {
+      "source": "/reference/ansi-standards.html",
+      "target": "/reference/awi-standards.html"
     },
     {
       "source": "/reference/changelog.html",
