@@ -5,6 +5,7 @@ permalink: /standards/rhino-drafting/display-modes.html
 nav_order: 6
 parent: Rhino Drafting
 grand_parent: Standards
+corpus_tags: [fe-submittal]
 ---
 
 # Display Modes for Drafting

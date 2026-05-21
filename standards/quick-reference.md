@@ -4,6 +4,7 @@ title: Quick Reference
 permalink: /standards/quick-reference.html
 parent: Standards
 nav_order: 3
+corpus_tags: [fe-release, fe-submittal]
 ---
 
 # Quick Reference: Standards

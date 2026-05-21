@@ -5,6 +5,7 @@ permalink: /reference/reference-tables/file-naming-conventions.html
 parent: Reference Tables
 grand_parent: Reference
 nav_order: 1
+corpus_tags: [fe-release]
 ---
 
 # File Naming Conventions

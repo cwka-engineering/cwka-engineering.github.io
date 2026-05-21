@@ -4,6 +4,7 @@ title: Quick Reference
 permalink: /workflows/quick-reference.html
 parent: Workflows
 nav_order: 5
+corpus_tags: [fe-release, fe-submittal]
 ---
 
 # Quick Reference: Workflows

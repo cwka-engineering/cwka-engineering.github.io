@@ -5,6 +5,7 @@ permalink: /standards/layer-organization/material-modeling.html
 nav_order: 4
 parent: Layer Organization
 grand_parent: Standards
+corpus_tags: [fe-release, fe-submittal]
 ---
 
 # Material Thickness & Modeling

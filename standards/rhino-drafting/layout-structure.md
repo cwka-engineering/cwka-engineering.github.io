@@ -5,6 +5,7 @@ permalink: /standards/rhino-drafting/layout-structure.html
 nav_order: 1
 parent: Rhino Drafting
 grand_parent: Standards
+corpus_tags: [fe-submittal]
 ---
 
 # Layout Structure & Page Content

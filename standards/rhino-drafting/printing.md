@@ -5,6 +5,7 @@ permalink: /standards/rhino-drafting/printing.html
 nav_order: 7
 parent: Rhino Drafting
 grand_parent: Standards
+corpus_tags: [fe-submittal]
 ---
 
 # Printing Considerations

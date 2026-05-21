@@ -5,6 +5,7 @@ permalink: /standards/rhino-drafting/annotations.html
 nav_order: 5
 parent: Rhino Drafting
 grand_parent: Standards
+corpus_tags: [fe-submittal]
 ---
 
 # Dimensions & Annotations

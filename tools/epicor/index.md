@@ -5,6 +5,7 @@ permalink: /tools/epicor/
 nav_order: 1
 parent: Tools
 has_children: true
+corpus_tags: [fe-release, fe-submittal]
 ---
 
 # Epicor Usage in Engineering

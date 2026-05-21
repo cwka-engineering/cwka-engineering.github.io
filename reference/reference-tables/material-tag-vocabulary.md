@@ -5,6 +5,7 @@ permalink: /reference/reference-tables/material-tag-vocabulary.html
 parent: Reference Tables
 grand_parent: Reference
 nav_order: 3
+corpus_tags: [fe-release, fe-submittal]
 ---
 
 # Material Tag Vocabulary

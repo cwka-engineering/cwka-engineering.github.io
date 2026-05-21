@@ -5,6 +5,7 @@ permalink: /standards/rhino-drafting/annotation-styles-reference.html
 parent: Rhino Drafting
 grand_parent: Standards
 nav_order: 8
+corpus_tags: [fe-submittal]
 ---
 
 # Annotation Styles Reference

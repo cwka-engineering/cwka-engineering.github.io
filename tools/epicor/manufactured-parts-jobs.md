@@ -5,6 +5,7 @@ permalink: /tools/epicor/manufactured-parts-jobs.html
 nav_order: 5
 parent: Epicor Usage
 grand_parent: Tools
+corpus_tags: [fe-release]
 ---
 
 # Manufactured Metal Parts & M Jobs

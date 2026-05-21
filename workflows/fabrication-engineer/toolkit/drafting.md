@@ -5,6 +5,7 @@ permalink: /workflows/fabrication-engineer/toolkit/drafting.html
 nav_order: 1
 parent: Engineering Toolkit (Setup)
 grand_parent: Fabrication Engineer (FE)
+corpus_tags: [fe-submittal]
 ---
 
 # Drafting Toolkit

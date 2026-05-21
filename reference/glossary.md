@@ -4,6 +4,7 @@ title: Glossary
 permalink: /reference/glossary.html
 parent: Reference
 nav_order: 1
+corpus_tags: [fe-release, fe-submittal]
 ---
 
 # Engineering Glossary

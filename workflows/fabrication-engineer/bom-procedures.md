@@ -5,6 +5,7 @@ permalink: /workflows/fabrication-engineer/bom-procedures.html
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
 nav_order: 13
+corpus_tags: [fe-release]
 ---
 
 # BOM Procedures & Validation

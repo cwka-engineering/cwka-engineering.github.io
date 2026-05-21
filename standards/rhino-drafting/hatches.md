@@ -5,6 +5,7 @@ permalink: /standards/rhino-drafting/hatches.html
 nav_order: 4
 parent: Rhino Drafting
 grand_parent: Standards
+corpus_tags: [fe-submittal]
 ---
 
 # Hatches & Section Styles

@@ -5,6 +5,7 @@ permalink: /workflows/fabrication-engineer/solid-wood-components.html
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
 nav_order: 10
+corpus_tags: [fe-submittal]
 ---
 
 # Solid Wood Components (WC)

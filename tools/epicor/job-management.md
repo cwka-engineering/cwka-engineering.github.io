@@ -5,6 +5,7 @@ permalink: /tools/epicor/job-management.html
 nav_order: 4
 parent: Epicor Usage
 grand_parent: Tools
+corpus_tags: [fe-release, fe-submittal]
 ---
 
 # Job Management

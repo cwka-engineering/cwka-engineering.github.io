@@ -5,6 +5,7 @@ permalink: /standards/rhino-drafting/sections-clipping.html
 nav_order: 3
 parent: Rhino Drafting
 grand_parent: Standards
+corpus_tags: [fe-submittal]
 ---
 
 # Sections & Clipping Planes

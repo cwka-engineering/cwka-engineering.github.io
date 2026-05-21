@@ -5,6 +5,7 @@ permalink: /workflows/fabrication-engineer/material-transmittal.html
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
 nav_order: 12
+corpus_tags: [fe-submittal]
 ---
 
 # Material Transmittal Log (TRA)

@@ -5,6 +5,7 @@ permalink: /reference/reference-tables/lay-up-formulas.html
 parent: Reference Tables
 grand_parent: Reference
 nav_order: 4
+corpus_tags: [fe-submittal]
 ---
 
 # Lay-Up Formulas

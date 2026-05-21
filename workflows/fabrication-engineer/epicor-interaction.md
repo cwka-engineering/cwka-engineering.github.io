@@ -5,6 +5,7 @@ permalink: /workflows/fabrication-engineer/epicor-interaction.html
 nav_order: 3
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
+corpus_tags: [fe-release, fe-submittal]
 ---
 
 # Epicor Interaction

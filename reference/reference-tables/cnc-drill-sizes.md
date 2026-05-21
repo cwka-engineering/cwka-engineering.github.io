@@ -5,6 +5,7 @@ permalink: /reference/reference-tables/cnc-drill-sizes.html
 parent: Reference Tables
 grand_parent: Reference
 nav_order: 6
+corpus_tags: [fe-release]
 ---
 
 # CNC Drill Sizes by Site

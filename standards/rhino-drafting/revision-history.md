@@ -5,6 +5,7 @@ permalink: /standards/rhino-drafting/revision-history.html
 nav_order: 10
 parent: Rhino Drafting Standards
 grand_parent: Standards
+corpus_tags: [fe-release, fe-submittal]
 ---
 
 # Revision History

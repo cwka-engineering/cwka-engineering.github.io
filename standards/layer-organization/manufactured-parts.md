@@ -5,6 +5,7 @@ permalink: /standards/layer-organization/manufactured-parts.html
 nav_order: 3
 parent: Layer Organization
 grand_parent: Standards
+corpus_tags: [fe-release, fe-submittal]
 ---
 
 # Manufactured Parts (MFG)
