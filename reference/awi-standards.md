@@ -14,7 +14,7 @@ Internal reference for AWI Premium and Custom grade requirements. All CWK/DFW pr
 
 *Source: AWI 100-2018, AWI 200-2018, AWI 300-2018, ANSI/AWI 0620-2018. For contractual compliance always verify against the full published standards.*
 
-> See also: [ANSI/HPVA HP-1 Reference](/reference/hp1-standards.html) — veneer grading, matching types, species rules, and core types
+> See also: [ANSI/HPVA HP-1 Reference](/reference/ansi-standards.html) — veneer grading, matching types, species rules, and core types
 
 ---
 
