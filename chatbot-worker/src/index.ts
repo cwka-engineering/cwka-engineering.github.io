@@ -38,6 +38,7 @@ interface ChatRequest {
 interface DiagnosticRequest {
   triage: Record<string, Array<{ severity: string; message: string; ids?: string[] }>>;
   epicor_context: Record<string, unknown>;
+  rhino_context?: Record<string, unknown>;
   messages: ChatMessage[];
 }
 
@@ -93,10 +94,14 @@ const SYSTEM_PROMPT_SUFFIX = `
 
 const DIAGNOSTIC_PREFIX = `You are the CWK/DFW FE-to-PE Diagnostic Assistant.
 
-You have three grounded sources:
+You have four grounded sources:
 1. The engineering wiki (<wiki-corpus>) — procedures, standards, definitions, workflows.
 2. The current validation results (<diagnostic-results>) — specific rule failures on this 3dm file.
 3. The Epicor job milestone state (<epicor-context>) — calibrate urgency to where this job sits.
+4. Live Rhino model state (<rhino-context>) — layer hierarchy, per-layer object counts, bounding
+   box, units/tolerance, and geometry analysis for flagged objects. Present only when rhinomcp was
+   active at assistant startup; absent if rhinomcp was not running. Data reflects model state at
+   the time the assistant was opened — changes made after opening are not reflected.
 
 RULES:
 1. When explaining HOW to fix an issue, cite the relevant wiki page as a markdown link.
@@ -117,6 +122,9 @@ RULES:
    of an upstream root cause and say so.
 6. If the wiki does not cover a topic, say so — do not fabricate procedures.
 7. Be concise and actionable. Use numbered steps or bullet lists for multi-step fixes.
+8. When the engineer asks about current model state (object counts per layer, dimensions of
+   flagged parts, layer hierarchy), answer from <rhino-context> when it is present. Remind the
+   engineer that this data was captured at startup and may not reflect mid-session edits.
 
 <wiki-corpus>
 `;
@@ -546,7 +554,8 @@ function buildSseStream(body: ReadableStream<Uint8Array>): ReadableStream {
 
 function formatDiagnosticContext(
   triage: DiagnosticRequest["triage"],
-  epicor: DiagnosticRequest["epicor_context"]
+  epicor: DiagnosticRequest["epicor_context"],
+  rhinoContext?: DiagnosticRequest["rhino_context"]
 ): string {
   const lines: string[] = [];
 
@@ -586,6 +595,15 @@ function formatDiagnosticContext(
     }
   }
   lines.push("</epicor-context>");
+
+  // Optional: live Rhino model state from rhinomcp (present only when rhinomcp
+  // was running at assistant startup; omitted entirely when unavailable).
+  if (rhinoContext && Object.keys(rhinoContext).length > 0) {
+    lines.push("");
+    lines.push("<rhino-context>");
+    lines.push(JSON.stringify(rhinoContext, null, 2));
+    lines.push("</rhino-context>");
+  }
 
   return lines.join("\n");
 }
@@ -774,7 +792,8 @@ export default {
       // the 5-min cache window expires).
       const diagnosticContext = formatDiagnosticContext(
         body.triage || {},
-        body.epicor_context || {}
+        body.epicor_context || {},
+        body.rhino_context
       );
       const cachedCorpus =
         DIAGNOSTIC_PREFIX + corpus + SYSTEM_PROMPT_SUFFIX + "\n\n" + diagnosticContext;
