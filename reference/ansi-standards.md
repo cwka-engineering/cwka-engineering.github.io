@@ -1,7 +1,7 @@
 ---
 layout: default
 title: ANSI/HPVA HP-1 Reference
-permalink: /reference/hp1-standards.html
+permalink: /reference/ansi-standards.html
 parent: Reference
 nav_order: 7
 ---
@@ -11,6 +11,7 @@ nav_order: 7
 Internal reference for hardwood plywood veneer grading under ANSI/HPVA HP-1-2024. AWI's Architectural Woodwork Standards reference HP-1 directly for veneer grading — understanding HP-1 is required for correct submittal preparation, veneer procurement, and receiving inspection.
 
 > See also: [AWI Standards Reference](/reference/awi-standards.html)
+
 
 *Source: ANSI/HPVA HP-1-2024 (supersedes HP-1-2020), approved August 20, 2024. For disputed grading calls or formal submittals, reference the full standard directly.*
 
