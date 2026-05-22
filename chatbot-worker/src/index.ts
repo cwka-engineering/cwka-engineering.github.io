@@ -55,6 +55,8 @@ interface PartsMatchRequest {
 // Constants
 // ---------------------------------------------------------------------------
 
+const sleep = (ms: number): Promise<void> => new Promise(resolve => setTimeout(resolve, ms));
+
 // Corpus KV keys — one per tag, matching sync-corpus.yml and build_corpus.py.
 // general     → wiki Q&A chatbot (all pages)
 // fe-release  → FE diagnostic assistant + QC summarizer (release-workflow pages)
@@ -412,39 +414,55 @@ async function streamClaude(
   messages: ChatMessage[],
   systemPrompt: string,
   apiKey: string,
-  model: string
+  model: string,
+  maxRetries = 2
 ): Promise<ReadableStream> {
-  const response = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-api-key": apiKey,
-      "anthropic-version": "2023-06-01",
-    },
-    body: JSON.stringify({
-      model,
-      max_tokens: 1024,
-      stream: true,
-      system: [
-        {
-          type: "text",
-          text: systemPrompt,
-          cache_control: { type: "ephemeral" },
-        },
-      ],
-      messages: messages.map((m) => ({
-        role: m.role,
-        content: m.content,
-      })),
-    }),
+  const requestBody = JSON.stringify({
+    model,
+    max_tokens: 1024,
+    stream: true,
+    system: [
+      {
+        type: "text",
+        text: systemPrompt,
+        cache_control: { type: "ephemeral" },
+      },
+    ],
+    messages: messages.map((m) => ({ role: m.role, content: m.content })),
   });
 
-  if (!response.ok || !response.body) {
-    const errorText = await response.text();
-    throw new Error(`Claude API error ${response.status}: ${errorText}`);
+  let lastError: Error = new Error("Unknown error");
+
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    if (attempt > 0) {
+      await sleep(1000 * Math.pow(2, attempt - 1)); // 1s, 2s
+    }
+
+    const response = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": apiKey,
+        "anthropic-version": "2023-06-01",
+      },
+      body: requestBody,
+    });
+
+    if (response.status === 529) {
+      const errorText = await response.text();
+      lastError = new Error(`Claude API error 529: ${errorText}`);
+      continue;
+    }
+
+    if (!response.ok || !response.body) {
+      const errorText = await response.text();
+      throw new Error(`Claude API error ${response.status}: ${errorText}`);
+    }
+
+    return buildSseStream(response.body);
   }
 
-  return buildSseStream(response.body);
+  throw lastError;
 }
 
 // ---------------------------------------------------------------------------
@@ -461,53 +479,69 @@ async function streamClaudeDiagnostic(
   dynamicContext: string,
   apiKey: string,
   model: string,
-  temperature?: number
+  temperature?: number,
+  maxRetries = 2
 ): Promise<ReadableStream> {
-  const response = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-api-key": apiKey,
-      "anthropic-version": "2023-06-01",
-    },
-    body: JSON.stringify({
-      model,
-      max_tokens: 2048,
-      stream: true,
-      ...(temperature !== undefined && { temperature }),
-      system: dynamicContext
-        ? [
-            {
-              type: "text",
-              text: cachedCorpus,
-              cache_control: { type: "ephemeral" },
-            },
-            {
-              type: "text",
-              text: dynamicContext,
-              // no cache_control — unique per request
-            },
-          ]
-        : [
-            {
-              type: "text",
-              text: cachedCorpus,
-              cache_control: { type: "ephemeral" },
-            },
-          ],
-      messages: messages.map((m) => ({
-        role: m.role,
-        content: m.content,
-      })),
-    }),
+  const requestBody = JSON.stringify({
+    model,
+    max_tokens: 2048,
+    stream: true,
+    ...(temperature !== undefined && { temperature }),
+    system: dynamicContext
+      ? [
+          {
+            type: "text",
+            text: cachedCorpus,
+            cache_control: { type: "ephemeral" },
+          },
+          {
+            type: "text",
+            text: dynamicContext,
+            // no cache_control — unique per request
+          },
+        ]
+      : [
+          {
+            type: "text",
+            text: cachedCorpus,
+            cache_control: { type: "ephemeral" },
+          },
+        ],
+    messages: messages.map((m) => ({ role: m.role, content: m.content })),
   });
 
-  if (!response.ok || !response.body) {
-    const errorText = await response.text();
-    throw new Error(`Claude API error ${response.status}: ${errorText}`);
+  let lastError: Error = new Error("Unknown error");
+
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    if (attempt > 0) {
+      await sleep(1000 * Math.pow(2, attempt - 1)); // 1s, 2s
+    }
+
+    const response = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": apiKey,
+        "anthropic-version": "2023-06-01",
+      },
+      body: requestBody,
+    });
+
+    if (response.status === 529) {
+      const errorText = await response.text();
+      lastError = new Error(`Claude API error 529: ${errorText}`);
+      continue;
+    }
+
+    if (!response.ok || !response.body) {
+      const errorText = await response.text();
+      throw new Error(`Claude API error ${response.status}: ${errorText}`);
+    }
+
+    return buildSseStream(response.body);
   }
 
-  return buildSseStream(response.body);
+  throw lastError;
 }
 
 // ---------------------------------------------------------------------------
@@ -677,7 +711,7 @@ async function callClaude(
 
   for (let attempt = 0; attempt <= retries; attempt++) {
     if (attempt > 0) {
-      await new Promise((resolve) => setTimeout(resolve, attempt * 1000));
+      await sleep(1000 * Math.pow(2, attempt - 1)); // 1s, 2s
     }
 
     const response = await fetch("https://api.anthropic.com/v1/messages", {
