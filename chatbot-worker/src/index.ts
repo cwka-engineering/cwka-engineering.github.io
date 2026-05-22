@@ -919,7 +919,7 @@ export default {
       } catch (err: unknown) {
         const message = err instanceof Error ? err.message : "Unknown error";
         console.error("Parts match Claude error:", message);
-        return jsonResponse(502, JSON.stringify({ error: "Failed to get AI response." }));
+        return jsonResponse(502, JSON.stringify({ error: "Failed to get AI response.", detail: message }));
       }
 
       // Strip markdown code fences if Claude wrapped the output despite instructions
