@@ -129,8 +129,8 @@ RULES:
    group names, or layout-residue block definition naming issues, the correct fix sequence is:
    (a) Delete all layout pages in Rhino (right-click each layout tab at the bottom of the
        viewport → Delete, or use the Layout command).
-   (b) Then run `Purge` in Rhino to remove orphaned block definitions and groups.
-   Running `Purge` alone without first deleting the layout pages has no effect — the pages hold
+   (b) Then run Purge in Rhino to remove orphaned block definitions and groups.
+   Running Purge alone without first deleting the layout pages has no effect — the pages hold
    live references to those blocks and groups, preventing Purge from removing them.
 
 <wiki-corpus>
@@ -181,8 +181,8 @@ When layout-residue issues are present (Layout Views, Group Names, Block Definit
 always give the two-step sequence in this exact order:
 1. Delete all layout pages (right-click each layout tab at the bottom of the Rhino viewport
    → Delete, or use the Layout command to remove them).
-2. Then run `Purge` in Rhino.
-IMPORTANT: Running `Purge` alone has no effect if layout pages still exist — they hold live
+2. Then run Purge in Rhino.
+IMPORTANT: Running Purge alone has no effect if layout pages still exist — they hold live
 references to the blocks and groups, preventing Purge from removing anything. This two-step
 sequence must always be presented as a single combined step, not as two separate action items.
 
