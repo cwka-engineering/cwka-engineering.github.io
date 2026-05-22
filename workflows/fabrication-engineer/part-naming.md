@@ -42,7 +42,7 @@ Use **SelName** and step through each name to verify unlike geometries don't sha
 - **Grouping First**: [^transcript-adv-toolkit-ii] Parts must be grouped into logical groups based on how they need to be sent to shop or field before naming.
 - **Group Names**: [^transcript-adv-toolkit-ii] Use Set Group Name for SC numbers (e.g., SC005). For MT parts, you can use MT prefix (e.g., "MT7") - the integer is important, but prefix can vary. Using SC or MT is most sensible since that's what it will be at the end.
 - **Blocks Don't Show**: [^transcript-adv-toolkit-ii] If parts are imported as blocks, they won't show up in "Select Name" list because it queries geometry actually in the document, not block definitions. You must explode blocks or work with geometry directly.
-- **MT Parts in Parent Jobs**: [^transcript-adv-toolkit-ii] When incorporating MT parts into a parent job, **do not rename them**. MT parts keep their original names (e.g., "9194.SC005.P678910") for clarity when carried into parent jobs.
+- **MT Parts in Parent Jobs**: [^transcript-adv-toolkit-ii] When incorporating MT parts into a parent job, **do not rename them**. MT parts keep their original names (e.g., `9194.MT.00004.P001`, or `9194.MT.00004.SA001.P001` if the part belongs to a subassembly) for clarity when carried into parent jobs.
 - Manufactured parts use MT prefixes.
 - **NOTE**: WC parts should be named just like all other parts (PROJ.JOB.SCXXX.PXXX) so they can correspond to the appropriate Shipping Component (SC). Material layer should be the WC (XXXX.WC.XXXXX). The PE team will want to \_SelName to make sure all parts belong to the corresponding SC.
 

@@ -16,8 +16,24 @@ Custom products from feeder jobs.
 
 ## Naming Convention
 
-- **Project-wide**: `MFG code` + `5-digit part number` (e.g., `1001.WC.00001`)
-- **Job-specific**: `Project` + `MFG` + `Job` + `5-digit` (e.g., `1001.MT.020.00001`)
+Part names always end with a `.P###` part number:
+
+| Format | Example | Notes |
+|--------|---------|-------|
+| `PROJ.MT.#####.P###` | `1001.MT.00001.P001` | Project MT part |
+| `PROJ.MT.#####.SA###.P###` | `1001.MT.00001.SA001.P001` | MT part within a subassembly |
+| `PROJ.WC.#####.P###` | `1001.WC.00001.P001` | Project WC part |
+| `AC.MT.#####.P###` | `CM.MT.00005.P001` | Catalog MT part |
+| `AC.WC.#####.P###` | `TT.WC.00100.P001` | Catalog WC part |
+
+The `SA###` subassembly segment is **optional, MT parts only** — not used on WC or catalog parts. When present, the SA number matches the top-level group name in the file.
+
+## Group Names
+
+Top-level group names differ by file type:
+
+- **Standard project files** (`PROJ.JOB_PE`): groups use **SC###**
+- **Manufactured part files** (`PROJ.MT.#####_PE`, `PROJ.WC.#####_PE`): groups use **SA###**
 
 ## Referencing MFG Parts
 
