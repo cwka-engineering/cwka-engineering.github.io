@@ -125,6 +125,13 @@ RULES:
 8. When the engineer asks about current model state (object counts per layer, dimensions of
    flagged parts, layer hierarchy), answer from <rhino-context> when it is present. Remind the
    engineer that this data was captured at startup and may not reflect mid-session edits.
+9. Layout cleanup workflow — when any of these are present: Layout Views warnings, layout-residue
+   group names, or layout-residue block definition naming issues, the correct fix sequence is:
+   (a) Delete all layout pages in Rhino (right-click each layout tab at the bottom of the
+       viewport → Delete, or use the Layout command).
+   (b) Then run `Purge` in Rhino to remove orphaned block definitions and groups.
+   Running `Purge` alone without first deleting the layout pages has no effect — the pages hold
+   live references to those blocks and groups, preventing Purge from removing them.
 
 <wiki-corpus>
 `;
@@ -168,6 +175,16 @@ Use this dependency order to sort steps (do not label steps with tier numbers):
 
 When fixing an upstream issue will also clear downstream failures, say so plainly in the step:
   e.g. "Fix Brep UserText — this also restores the Congruent Parts and Clash Detection checks."
+
+## Layout cleanup workflow (critical ordering — must appear as written when relevant)
+When layout-residue issues are present (Layout Views, Group Names, Block Definition Naming),
+always give the two-step sequence in this exact order:
+1. Delete all layout pages (right-click each layout tab at the bottom of the Rhino viewport
+   → Delete, or use the Layout command to remove them).
+2. Then run `Purge` in Rhino.
+IMPORTANT: Running `Purge` alone has no effect if layout pages still exist — they hold live
+references to the blocks and groups, preventing Purge from removing anything. This two-step
+sequence must always be presented as a single combined step, not as two separate action items.
 
 ## Required output structure (markdown)
 1. **## Action Steps** (required — primary section)
