@@ -660,32 +660,48 @@ async function callClaude(
   systemPrompt: string,
   apiKey: string,
   model: string,
-  maxTokens = 1024
+  maxTokens = 1024,
+  retries = 2
 ): Promise<string> {
-  const response = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-api-key": apiKey,
-      "anthropic-version": "2023-06-01",
-    },
-    body: JSON.stringify({
-      model,
-      max_tokens: maxTokens,
-      system: systemPrompt,
-      messages: [{ role: "user", content: userMessage }],
-    }),
+  const reqBody = JSON.stringify({
+    model,
+    max_tokens: maxTokens,
+    system: systemPrompt,
+    messages: [{ role: "user", content: userMessage }],
   });
+  const reqHeaders = {
+    "Content-Type": "application/json",
+    "x-api-key": apiKey,
+    "anthropic-version": "2023-06-01",
+  };
 
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`Claude API error ${response.status}: ${errorText}`);
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    if (attempt > 0) {
+      await new Promise((resolve) => setTimeout(resolve, attempt * 1000));
+    }
+
+    const response = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: reqHeaders,
+      body: reqBody,
+    });
+
+    if (response.status === 529 && attempt < retries) {
+      continue;
+    }
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Claude API error ${response.status}: ${errorText}`);
+    }
+
+    const data = await response.json() as { content: Array<{ type: string; text: string }> };
+    const block = data.content.find((b) => b.type === "text");
+    if (!block) throw new Error("No text block in Claude response");
+    return block.text;
   }
 
-  const data = await response.json() as { content: Array<{ type: string; text: string }> };
-  const block = data.content.find((b) => b.type === "text");
-  if (!block) throw new Error("No text block in Claude response");
-  return block.text;
+  throw new Error("Claude API overloaded after retries");
 }
 
 // ---------------------------------------------------------------------------
