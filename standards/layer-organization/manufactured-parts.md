@@ -26,7 +26,7 @@ Part names always end with a `.P###` part number:
 | `AC.MT.#####.P###` | `CM.MT.00005.P001` | Catalog MT part |
 | `AC.WC.#####.P###` | `TT.WC.00100.P001` | Catalog WC part |
 
-The `SA###` subassembly segment is **optional, MT parts only** — not used on WC or catalog parts. When present, the SA number matches the top-level group name in the file.
+The `SA###` subassembly segment is **optional, MT parts only** — not used on WC or catalog parts. It is omitted when the MT file contains only one subassembly (no disambiguation needed); when multiple subassemblies are present, SA### is required and matches the top-level group name in the file.
 
 ## Group Names
 
