@@ -5,6 +5,7 @@ permalink: /tools/time-entry.html
 parent: Tools
 nav_order: 3
 has_children: true
+mermaid: true
 ---
 
 # Time Entry
@@ -81,6 +82,22 @@ For direct labor on specific jobs. See the [Operation Selection Guide](#operatio
 {: #operation-selection-guide}
 
 Choosing the correct operation matters — project labor reports and change order back-calculations depend on entries being classified accurately. Use this guide when you are unsure where time belongs.
+
+```mermaid
+flowchart TD
+  Q1{Is this time<br/>project-specific?}
+  Q1 -->|No| IND["Indirect Operations<br/>IND General · 003 Training · 004 Company Meetings<br/>009 Eng Assistant · 012 Dept Improvement<br/>015 Machine Maintenance · 017 ENG Admin · 001 Sales Eng"]
+  Q1 -->|Yes| Q2{Specific E-job or<br/>ENG bucket?}
+  Q2 -->|"Specific E-job (E####.###)"| Q3{Client approval<br/>received?}
+  Q3 -->|"No — or Revise &amp; Resubmit"| SUB["Submittal"]
+  Q3 -->|"Yes — any approval status"| POST["Post-Submittal"]
+  Q2 -->|"ENG bucket (####.ENG)"| Q4{Type of work?}
+  Q4 -->|"Early-phase design or<br/>project-wide GH scripting"| DE["Design Engineering"]
+  Q4 -->|"Multi-job FE work or<br/>cross-scope BOMing"| FEB["Fabrication Engineering"]
+  Q4 -->|"Client, GC, or design<br/>team meeting"| PMT["Project Meeting"]
+  Q4 -->|"BIM model or<br/>consultant coordination"| BIM["BIM Coordination"]
+  Q4 -->|"Senior scope review,<br/>mentoring, or coordination"| LC["Lead Coordination"]
+```
 
 ### Labor note requirements
 {: #labor-note-requirements}

@@ -6,6 +6,7 @@ parent: Fabrication Engineer (FE)
 grand_parent: Workflows
 nav_order: 11
 corpus_tags: [fe-submittal]
+mermaid: true
 ---
 
 # Submittal Review Cycle
@@ -24,6 +25,24 @@ Completed shop drawings follow a three-folder workflow under `03_OUTGOING_Submit
     00_Internal_Review/    ← Engineer places drawings here for QA
     01_Outgoing/           ← Clean PDFs sent to client
     02_Returned/           ← Architect markups returned for FE review
+```
+
+```mermaid
+flowchart TD
+  A["Engineer places drawings in<br/>00_Internal_Review/"]
+  A --> B["Submit PA Approval Request<br/>via Teams Approvals app"]
+  B --> C{PM + PA review<br/>Bluebeam markup}
+  C -->|Denied| D["Revise drawings<br/>Submit new approval request"]
+  D --> A
+  C -->|Approved| E["PM exports clean PDF to<br/>01_Outgoing/"]
+  E --> F["PM submits to client/architect"]
+  F --> G{Client response}
+  G -->|"Approved — no changes"| H["Proceed to PE Release Prep"]
+  G -->|"Markups returned"| I["PM places markups in<br/>02_Returned/"]
+  I --> J["FE reviews &amp; picks up<br/>all redlines"]
+  J --> K{Changes<br/>required?}
+  K -->|"Yes — apply revision cloud"| A
+  K -->|No| H
 ```
 
 ## Step-by-Step
