@@ -1,9 +1,9 @@
 ---
 layout: default
-title: How We Work
+title: How We Work ◈
 permalink: /onboarding/how-we-work.html
 parent: Onboarding
-nav_order: 8
+nav_order: 4
 ---
 
 # How We Work

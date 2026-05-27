@@ -3,7 +3,8 @@ layout: default
 title: Project Delivery Overview
 permalink: /onboarding/project-delivery.html
 parent: Onboarding
-nav_order: 4
+nav_order: 5
+has_children: true
 mermaid: true
 ---
 # Project Delivery Overview – Engineering Workflow

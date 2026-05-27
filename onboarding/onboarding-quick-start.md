@@ -92,10 +92,11 @@ A structured path through the wiki for new engineers. Adapt timing to your pace 
 
 1. [Engineering Manifesto](/onboarding/manifesto.html) — Department values and beliefs
 2. [Engineering Roles](/onboarding/engineering-roles.html) — Understand your role and responsibilities
-3. [Project Delivery Overview](/onboarding/project-delivery.html) — How a project flows through Engineering
-4. [Scheduling Chain](/onboarding/scheduling-chain.html) — How dates drive operations
-5. [Purchasing Signal Chain](/onboarding/purchasing-signal-chain.html) — What triggers material purchasing
-6. [Glossary](/reference/glossary.html) — Terms, codes, and acronyms (bookmark for reference)
+3. [How We Work ◈](/onboarding/how-we-work.html) — Interactive map of all ten departments, responsibilities, and collaboration patterns
+4. [Project Delivery Overview](/onboarding/project-delivery.html) — How a project flows through Engineering
+5. [Scheduling Chain](/onboarding/scheduling-chain.html) — How dates drive operations *(sub-page of Project Delivery)*
+6. [Purchasing Signal Chain](/onboarding/purchasing-signal-chain.html) — What triggers material purchasing *(sub-page of Project Delivery)*
+7. [Glossary](/reference/glossary.html) — Terms, codes, and acronyms (bookmark for reference)
 
 ### Week 2: Tools & Environment
 

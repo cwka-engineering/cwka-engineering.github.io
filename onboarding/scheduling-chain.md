@@ -2,8 +2,9 @@
 layout: default
 title: Scheduling Chain
 permalink: /onboarding/scheduling-chain.html
-parent: Onboarding
-nav_order: 5
+parent: Project Delivery Overview
+grand_parent: Onboarding
+nav_order: 1
 ---
 
 # Scheduling Chain

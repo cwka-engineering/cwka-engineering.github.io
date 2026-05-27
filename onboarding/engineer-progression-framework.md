@@ -3,7 +3,7 @@ layout: default
 title: Engineer Progression Framework
 permalink: /onboarding/engineer-progression-framework.html
 parent: Onboarding
-nav_order: 7
+nav_order: 6
 ---
 
 # Engineer Progression Framework (Engineer I → Engineer II)

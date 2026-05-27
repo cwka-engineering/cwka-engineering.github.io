@@ -2,8 +2,9 @@
 layout: default
 title: Purchasing Signal Chain
 permalink: /onboarding/purchasing-signal-chain.html
-parent: Onboarding
-nav_order: 6
+parent: Project Delivery Overview
+grand_parent: Onboarding
+nav_order: 2
 ---
 
 # Purchasing Signal Chain

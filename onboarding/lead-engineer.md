@@ -3,7 +3,7 @@ layout: default
 title: Lead Engineer Responsibilities
 permalink: /onboarding/lead-engineer.html
 parent: Onboarding
-nav_order: 9
+nav_order: 7
 ---
 
 # Lead Engineer Responsibilities
