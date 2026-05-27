@@ -12,10 +12,10 @@ mermaid: true
 
 This document provides a high-level overview of the complete engineering workflow from project assignment through closeout.
 
-## Information and artifact flow (DRAFT)
+## Information and artifact flow
 {: #information-artifact-flow}
 
-> This diagram is adapted from the internal **Engineering Information Flow (DRAFT)**. It highlights **artifacts** (files, lists, Epicor records) and **roles**; dotted-line "form" steps in the original map correspond to submissions such as the [FE to PE Release](/workflows/fe-to-pe-release.html) form. For procedural detail, use the phase sections below and the linked workflows—not this figure alone.
+> This diagram highlights **artifacts** (files, lists, Epicor records) and **roles**. For procedural detail, use the phase sections below and the linked workflows—not this figure alone.
 
 ```mermaid
 flowchart TB
@@ -45,13 +45,14 @@ flowchart TB
   FEM --> SC
   FEM --> TO
   subgraph clientLoop [Client and approvals]
-    RFI[RFI submittal status]
-    AR[Approvals and redlines]
+    SUB[Submittal package]
+    AR[Client redlines]
   end
-  FED --> RFI
-  RFI --> CLIENT[Client]
+  FED --> SUB
+  SUB --> CLIENT[Client]
+  CLIENT --> AR
   AR --> FEM
-  FEPE[FE to PE release form]
+  FEPE[FE to PE release]
   BOM --> FEPE
   SC --> FEPE
   FEM --> FEPE
@@ -60,7 +61,7 @@ flowchart TB
     MPL[Master parts list]
     JT[Job traveler]
     CF[Machine cutfiles]
-    SHOP[Shop model drawings stickers]
+    SHOP[Shop drawings / stickers]
   end
   PEM --> MPL
   PEM --> CF
@@ -81,7 +82,9 @@ P3 --> P4[Phase 4<br/>Prod Eng]
 P4 --> P5[Phase 5<br/>Closeout]
 style P1 fill:#f9f,stroke:#333,stroke-width:2px
 style P2 fill:#bbf,stroke:#333,stroke-width:2px
+style P3 fill:#ffd,stroke:#333,stroke-width:2px
 style P4 fill:#bfb,stroke:#333,stroke-width:2px
+style P5 fill:#fdb,stroke:#333,stroke-width:2px
 ```
 
 ## Phase 1: Project Assignment & Initial Setup (Pre-Contract & Design Engineering Initiation)
@@ -136,16 +139,17 @@ style P4 fill:#bfb,stroke:#333,stroke-width:2px
 ```mermaid
 graph LR
 subgraph Setup
-A[Start] --> B[Template]
-B --> C[Toolkit]
+A[Template setup] --> B[Toolkit launch]
+B --> C[Epicor login & payload]
 end
 subgraph Modeling
-C --> D[Drafting]
-D --> E[Naming]
+C --> D[Geometry & drafting]
+D --> E[Part naming]
+E --> F[Material tagging]
 end
 subgraph Output
-E --> F[BOM]
-F --> G[Drawings]
+F --> G[BOM & takeoffs]
+G --> H[Shop drawings & submittal]
 end
 ```
 
@@ -363,13 +367,13 @@ Place:
 
 ```mermaid
 graph LR
-A[Release] --> B[Setup]
-B --> C[Processing]
-C --> D{QC}
-D -- Undo --> C
+A[FE release] --> B[Folder setup]
+B --> C[Programming]
+C --> D{QC check}
+D -- Rework --> C
 D -- Pass --> E[Output]
-E --> F[Parts List]
-E --> G[CNC]
+E --> F[Parts list]
+E --> G[CNC files]
 ```
 
 *   Access job folder → Copy & rename template folders
