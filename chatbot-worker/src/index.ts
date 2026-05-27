@@ -313,13 +313,14 @@ A "possible" match means the catalog part could physically be cut or trimmed to 
 - Diameters (dia, ID, OD) are non-modifiable — never suggest a different diameter as a possible match.
 - If the user specified a dimension, do not match against a catalog part with a smaller value in that dimension (the part cannot be made bigger).
 
-## New Description Rules (only when match_type is "none")
+## New Description Rules (always populated)
 - Comma-delimited, form factor first
 - Fractional inch notation (1/2", 3/4")
 - Dimension suffixes: T, W, H, L, dia, ID
 - Sheet Goods: [W"xL"]; Solid Surface: [W" x L"]
 - Solid Lumber: thickness in quarter notation unless dimensional lumber
 - SearchWord must be ≤8 characters
+- Always generate new_description and new_search_word based on the user's input, even when candidates are found. When candidates exist, the suggested description serves as a fallback if the requester declines them.
 
 ## Output Format
 Respond with valid JSON only. No prose, no markdown fences.
@@ -340,8 +341,8 @@ Respond with valid JSON only. No prose, no markdown fences.
 }
 Rules:
 - "candidates" is [] when match_type is "none"
-- "new_description" and "new_search_word" are null when match_type is "strong" or "possible"
-- When match_type is "none", both new_description and new_search_word must be populated
+- "new_description" and "new_search_word" must always be populated — never null, regardless of match_type
+- When match_type is "strong" or "possible", new_description and new_search_word are the ERP-formatted description and search word the requester should use if they decline the candidates
 - Always include part_num in candidates`;
 
 // ---------------------------------------------------------------------------
