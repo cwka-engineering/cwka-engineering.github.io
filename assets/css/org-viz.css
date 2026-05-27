@@ -1,0 +1,330 @@
+/* assets/css/org-viz.css
+ * Scoped to #org-viz-root — no conflicts with Just the Docs theme
+ */
+
+#org-viz-root {
+  background: #0e0e0e;
+  border-radius: 12px;
+  padding: 20px 24px 24px;
+  margin: 24px 0 32px;
+  color: #eee;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+.oviz-meta {
+  font-size: 11px;
+  font-family: monospace;
+  color: #555;
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+}
+
+.oviz-netlabel {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #555;
+  font-family: monospace;
+  margin-bottom: 10px;
+}
+
+/* ── Body: network + panel ───────────────────────────────────────────────── */
+.oviz-body {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.oviz-body.oviz-has-sel {
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 700px) {
+  .oviz-body.oviz-has-sel {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Network ─────────────────────────────────────────────────────────────── */
+.oviz-net-wrap {
+  background: #111;
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid #1e1e1e;
+}
+
+/* ── Panel ───────────────────────────────────────────────────────────────── */
+.oviz-panel {
+  background: #111;
+  border-radius: 10px;
+  border: 1px solid #1e1e1e;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: 560px;
+}
+
+.oviz-panel-header {
+  flex-shrink: 0;
+}
+
+.oviz-panel-title {
+  padding: 2px 16px 10px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.oviz-panel-code {
+  font-size: 22px;
+  font-weight: 800;
+  font-family: monospace;
+}
+
+.oviz-panel-name {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.oviz-renamed {
+  padding: 0 16px 6px;
+  font-size: 10px;
+  font-family: monospace;
+  color: #888;
+  letter-spacing: 0.04em;
+}
+
+.oviz-panel-counts {
+  padding: 0 16px 12px;
+  font-size: 11px;
+  font-family: monospace;
+}
+
+.oviz-panel-body {
+  overflow-y: auto;
+  flex: 1;
+  padding: 10px 0 8px;
+}
+
+/* ── Close button ────────────────────────────────────────────────────────── */
+.oviz-close-btn {
+  background: none;
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: #888;
+  font-size: 11px;
+  font-family: monospace;
+  padding: 3px 10px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.oviz-close-btn:hover {
+  border-color: #666;
+  color: #ccc;
+}
+
+/* ── Section labels ──────────────────────────────────────────────────────── */
+.oviz-section-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #555;
+  font-family: monospace;
+  padding: 8px 16px 5px;
+}
+
+.oviz-sup-label {
+  padding-top: 14px;
+}
+
+/* ── Collaborator chips ──────────────────────────────────────────────────── */
+.oviz-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0 16px 10px;
+}
+
+.oviz-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-family: monospace;
+  font-weight: 600;
+}
+
+.oviz-chip-weight {
+  opacity: 0.6;
+  font-size: 10px;
+}
+
+/* ── Transient roles ─────────────────────────────────────────────────────── */
+.oviz-roles {
+  padding: 4px 16px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.oviz-role-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.oviz-role-badge {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-family: monospace;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-top: 1px;
+}
+
+.oviz-role-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: #ddd;
+  margin-bottom: 2px;
+}
+
+.oviz-role-note {
+  font-size: 11px;
+  color: #888;
+  line-height: 1.4;
+}
+
+/* ── Task list ───────────────────────────────────────────────────────────── */
+.oviz-tasks {
+  padding: 0;
+}
+
+.oviz-task-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 7px 16px;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.oviz-task-support {
+  opacity: 0.6;
+}
+
+.oviz-dot {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+.oviz-dot-sup {
+  background: transparent !important;
+  border: 1px solid;
+}
+
+.oviz-task-text {
+  flex: 1;
+  font-size: 12px;
+  color: #ccc;
+}
+
+.oviz-task-support .oviz-task-text {
+  color: #999;
+}
+
+.oviz-task-collab {
+  font-size: 10px;
+  color: #666;
+  font-family: monospace;
+  margin-top: 2px;
+}
+
+/* ── Legend ──────────────────────────────────────────────────────────────── */
+.oviz-legend {}
+
+.oviz-pairs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 7px;
+  padding: 0 0 4px;
+}
+
+.oviz-pair {
+  background: #111;
+  border: 1px solid #1a1a1a;
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.oviz-pair-chip {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: monospace;
+  font-weight: 700;
+}
+
+.oviz-pair-sep {
+  color: #444;
+  font-size: 12px;
+}
+
+.oviz-pair-w {
+  margin-left: auto;
+  color: #666;
+  font-size: 12px;
+  font-family: monospace;
+  font-weight: 600;
+}
+
+.oviz-dept-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+  margin-top: 4px;
+}
+
+@media (max-width: 600px) {
+  .oviz-dept-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.oviz-dept-chip {
+  border-radius: 8px;
+  padding: 10px 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.12s, opacity 0.12s;
+}
+
+.oviz-dept-chip:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.oviz-dept-code {
+  font-size: 13px;
+  font-weight: 700;
+  font-family: monospace;
+}
+
+.oviz-dept-count {
+  font-size: 9px;
+  font-family: monospace;
+  margin-top: 2px;
+}

@@ -14,6 +14,19 @@ Procedures for creating, validating, and managing Bills of Materials in Epicor.
 
 > **Related Documents**: [Takeoffs](/workflows/fabrication-engineer/takeoffs.html) | [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html) | [Job Management](/tools/epicor/job-management.html) | [Material Tag Vocabulary](/reference/reference-tables/material-tag-vocabulary.html)
 
+## Long-Lead Material Identification
+{: #long-lead-materials}
+
+Some materials require significantly longer procurement lead times than standard sheet goods — specialty veneers, custom metals, glass, stone, solid surface, and certain hardware items. Delays in identifying these items are a frequent cause of production disruption.
+
+**Do not wait until BOM-complete to surface long-lead concerns.** The process:
+
+1. **Identify at scope review** — During initial project review (before modeling begins), flag any materials likely to require extended lead times. When uncertain, consult the PA or PM.
+2. **Notify the PM immediately** — Alert the PM as soon as a long-lead item is identified so procurement timelines can be factored into the milestone schedule.
+3. **BOM and mark RTP early** — For confirmed long-lead materials, BOM them to the job and check **Ready to Purchase (RTP)** as soon as the material selection is finalized — even if other BOM items are still in progress. Do not hold RTP on long-lead items until BOM-complete.
+
+> Early identification of long-lead materials is one of the most impactful contributions an engineer can make. A missed procurement window can delay fabrication across an entire scope. See also [Long-Lead Flagging](/workflows/fabrication-engineer/getting-started.html#long-lead-flagging) in Getting Started.
+
 ## BOM Template
 
 A BOM Template is available on Box (Engineering Resources) with the standard column structure:

@@ -47,6 +47,18 @@ Placeholder layers are acceptable during DE — they will be replaced with prope
 - **SKs are not submittal documents** — They are informal feedback tools. Do not include them in the submission set.
 - **Document build strategies early** — Decisions made during DE affect everything downstream. Surface questions and alternatives before committing to fabrication-level modeling.
 
+## "Hold to" Dimensions
+{: #hold-to-dimensions}
+
+A **"Hold to"** dimension is a working dimension used when field verification has not yet been completed. It represents the best-available value — typically taken from architectural drawings or a preliminary site measurement — that engineering will proceed with until field dimensions are confirmed.
+
+When a dimension is designated "hold to":
+- Label it explicitly on drawings (e.g., `3'-4" HOLD TO VIF`) so that reviewers and downstream engineers understand it is subject to revision.
+- Flag the corresponding items in your model for update once field verification is complete.
+- Coordinate with the PM on when field dimensions will be available, so that design decisions dependent on the hold dimension are not locked in prematurely.
+
+"Hold to" dimensions are common in early-phase work on complex site conditions or renovation scopes where the as-built structure may differ from the architect's drawings. They are distinct from [VIF dimensions](/reference/glossary.html#material-terms), which appear on finalized submittal drawings indicating that a dimension must be verified before fabrication — "Hold to" is an internal engineering notation used during the modeling and drafting process.
+
 ## Next Steps
 - [Engineering Toolkit Setup](/workflows/fabrication-engineer/toolkit/)
 - [Epicor Interaction](/workflows/fabrication-engineer/epicor-interaction.html)

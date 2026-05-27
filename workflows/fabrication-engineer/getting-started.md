@@ -27,6 +27,47 @@ grand_parent: Workflows
 - **Verify Job Number**: [^transcript-file-structure] Open the working set in Bluebeam. Use the annotations panel (blue box with three lines) to search by job number. Jump to the relevant page and confirm what's included in the scope.
 - **Confirm Assignment**: After confirming scope in drawings, verify in Epicor that the submittal is assigned to you.
 
+## Understanding the Project Schedule
+{: #understanding-project-schedule}
+
+Before diving into engineering work, orient yourself to the project's time constraints.
+
+### PM Milestone Schedule
+
+The PM maintains a **Milestone Schedule** for each project — a living document tracking key dates including:
+- Submittal submission and approval deadlines
+- Material long-lead procurement cutoffs
+- Production start and fabrication completion targets
+- Truck/ship dates
+
+The PM owns and updates this schedule. Engineering submittals and deliverables should be planned to support these milestones — particularly submittal deadlines, which must be met to allow sufficient time for client review cycles before production is scheduled to begin.
+
+Request a copy of the milestone schedule from the PM at project kickoff. If one doesn't exist yet, ask when it will be ready and factor it into your planning with the Lead Engineer.
+
+### Epicor Dual Job Structure & Backscheduling
+
+Every production job has a corresponding **engineering job** (prefixed with `E`). Epicor backschedules production jobs from the truck ship date — operations are scheduled in reverse from when the job must ship. Engineering jobs are scheduled to feed this production start.
+
+This means:
+- **Your engineering job has a ship date** — it's the date PE needs to start, not the date the product ships to the customer.
+- **Submittal approval must happen early enough** to allow time for long-lead procurement and production scheduling to proceed.
+- The Master Scheduler coordinates production job scheduling. The Director of Engineering and Director of Project Management are responsible for load balancing engineering across the department.
+
+Check with your PM or Lead Engineer to confirm when your engineering deliverables (BOM-complete, PE release) are needed relative to the production schedule.
+
+### Long-Lead Materials — Early Flagging
+{: #long-lead-flagging}
+
+Some materials require significantly more procurement lead time than standard sheet goods or hardware — specialty veneers, custom metal fabrications, glass, stone, specialty solid surface, etc. Delays in identifying and ordering these items are a common source of production disruption.
+
+**Responsibilities at project outset:**
+
+1. **Identify potential long-lead items** during your initial scope review — even before modeling begins. Consult with the PA if you're uncertain about lead times.
+2. **Flag to PM immediately** — Do not wait until BOM-complete to surface long-lead concerns. The PM needs this information early to initiate procurement and adjust the milestone schedule if needed.
+3. **BOM as early as possible** — For confirmed long-lead materials, BOM them to the job and mark **Ready to Purchase (RTP)** as soon as the material selection is confirmed, even if other BOM items are still in progress.
+
+> Early flagging of long-lead materials is one of the highest-value contributions an engineer can make on a complex project. A missed procurement window can delay an entire production run.
+
 ## PA Working Session — Required Before Work Begins
 {: #how-to-schedule-pa-session}
 

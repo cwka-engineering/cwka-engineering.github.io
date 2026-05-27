@@ -31,6 +31,7 @@ The FE workflow consists of these key phases:
 11. **[Solid Wood Components](/workflows/fabrication-engineer/solid-wood-components.html)** - WC workflow from identification to release
 12. **[PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html)** - Final steps before releasing to PE (then complete [FE to PE Release](/workflows/fe-to-pe-release.html))
 13. **[Troubleshooting](/workflows/fabrication-engineer/troubleshooting.html)** - Common issues and solutions
+14. **[BIM Coordination](/workflows/fabrication-engineer/bim-coordination.html)** - When BIM applies, model preparation, upload, and clash detection
 
 ## Quick Links
 

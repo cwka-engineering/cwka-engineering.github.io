@@ -77,17 +77,19 @@ The lead provides an informal pre-review of project deliverables before they ent
 The lead is the primary engineering liaison between the engineering team and all other departments for the duration of the project.
 
 - **Inter-departmental liaison**: Primary engineering contact for PMs and Project Coordinators; ensures engineering goals align with the production schedule
-- **Shop floor engagement**: Maintain active engagement with Job Captains and production management staff while the project is in fabrication, regardless of whether the lead is co-located with the manufacturing facility. Projects may span multiple sites; remote engagement is expected when physical walkthroughs are not possible. Resolve engineering issues surfaced during assembly promptly.
+- **Shop floor engagement**: Maintain active engagement with Job Captains and production management staff while the project is in fabrication, regardless of whether the lead is co-located with the manufacturing facility. Projects may span multiple sites; remote engagement is expected when physical walkthroughs are not possible. Resolve engineering issues surfaced during assembly promptly. Surface recurring fabrication issues or opportunities for improvement back to the engineering team so that downstream projects benefit.
 - **Client meetings**: Leads are expected to be present alongside the PM at client meetings
 - **Scope escalation**: Monitor scope and identify when technical changes or challenges affect the budget or schedule; escalate to leadership as needed
 - **Stakeholder communication**: Translate complex technical information into accessible formats — sketches (SKs), 3D models, spreadsheets — for clients, architects, and installers
 - **Material tag coordination**: Collaborate with the PM at project kickoff to review the working set drawings, establish material tags, and confirm TRA log entries before drawings are submitted
+- **CD addendum intake**: When the architect issues contract document (CD) addenda after contract award, the PM receives and reviews them first. The lead engineer should also review addenda in a timely manner to identify scope impacts, dimensional conflicts, or drawing coordination issues. Addendum review may not always happen promptly — the lead is responsible for flagging to the PM when addendum review has not occurred and engineering decisions may be affected.
 
 ### Project Planning & Budget
 
 - **Task management**: Develop and maintain project-specific engineering task lists and milestones based on the awarded scope
 - **Budget oversight**: Proactively track engineering hours and progress against the project labor budget; flag overruns or risks before they become critical
 - **Team reporting**: Provide regular updates to department leadership on project team performance and identify options for improvement
+- **Schedule communication to PM**: Communicate projected engineering completion dates — submittal readiness, BOM-complete, PE release — to the PM so the milestone schedule can be updated and production can be planned accordingly. Engineering schedule projections are aspirational rather than fixed in most cases, but the PM needs a current best estimate to coordinate the full project timeline. The lead is responsible for keeping the PM's view of engineering status accurate and current.
 
 ### Mentorship
 
