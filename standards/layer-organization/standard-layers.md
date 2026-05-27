@@ -6,45 +6,39 @@ nav_order: 1
 parent: Layer Organization
 grand_parent: Standards
 corpus_tags: [fe-release, fe-submittal]
-mermaid: true
 ---
 
 # Standard Layers
 
 > **Related**: [Rhino Drafting](/standards/rhino-drafting/) | [Layer Organization Overview](/standards/layer-organization/)
 
-```mermaid
-graph LR
-  ROOT["Standard Layer Groups"]
-
-  ROOT --> DWG["00_CWKA-DWG<br/>Drawing &amp; layout<br/><em>all phases</em>"]
-  ROOT --> PRECON["01_CWKA-PRECON<br/>Intake &amp; estimation"]
-  ROOT --> DE["02_CWKA-DE<br/>Design Engineering"]
-  ROOT --> FE["03_CWKA-FE<br/>Fabrication Engineering"]
-  ROOT --> PE["04_CWKA-PE<br/>Production Engineering"]
-
-  DE --> DE_CON["CON<br/>Guide geometry<br/><em>(not for printing)</em>"]
-  DE --> DE_PUR["PUR<br/>Purchased materials"]
-
-  FE --> FE_CON["CON<br/>Construction geometry"]
-  FE_CON --> CLIP["CON::CLIP<br/>Clipping planes"]
-  FE --> FE_PUR["PUR<br/>Purchased materials"]
-  FE_PUR --> SG["SG · Sheet Goods"]
-  FE_PUR --> SL["SL · Solid Lumber"]
-  FE_PUR --> SS["SS · Solid Surface"]
-  FE_PUR --> IM["IM · Inventory Metal"]
-  FE_PUR --> HW["HW · Hardware"]
-  FE_PUR --> FU["FU · Fabric / Upholstery"]
-  FE_PUR --> GL["GL · Glass / Plastics"]
-  FE_PUR --> LE["LE · Lighting / Electrical"]
-  FE_PUR --> ST["ST · Stone"]
-  FE --> FE_MFG["MFG<br/>Manufactured parts"]
-  FE_MFG --> MT["MT · Metal fabrication"]
-  FE_MFG --> WC["WC · Wood components"]
-  FE_MFG --> PRE["PRE · Pre-laminations"]
-
-  PE --> PE_REF["REF<br/>Reference geometry from FE"]
-  PE --> PE_MACH["MACHINING<br/>CNC toolpaths"]
+```
+Standard Layer Groups
+├── 00_CWKA-DWG        Drawing & layout (all phases)
+├── 01_CWKA-PRECON     Intake & estimation
+├── 02_CWKA-DE         Design Engineering
+│   ├── CON            Guide geometry (not for printing)
+│   └── PUR            Purchased materials
+├── 03_CWKA-FE         Fabrication Engineering
+│   ├── CON            Construction geometry
+│   │   └── CON::CLIP  Clipping planes
+│   ├── PUR            Purchased materials
+│   │   ├── SG         Sheet Goods
+│   │   ├── SL         Solid Lumber
+│   │   ├── SS         Solid Surface
+│   │   ├── IM         Inventory Metal
+│   │   ├── HW         Hardware
+│   │   ├── FU         Fabric / Upholstery
+│   │   ├── GL         Glass / Plastics
+│   │   ├── LE         Lighting / Electrical
+│   │   └── ST         Stone
+│   └── MFG            Manufactured parts
+│       ├── MT         Metal fabrication
+│       ├── WC         Wood components
+│       └── PRE        Pre-laminations
+└── 04_CWKA-PE         Production Engineering
+    ├── REF            Reference geometry from FE
+    └── MACHINING      CNC toolpaths
 ```
 
 ## 00_CWKA-DWG (Drawing)
