@@ -20,7 +20,7 @@
     },
     {
       "id": "/onboarding/how-we-work.html",
-      "title": "How We Work",
+      "title": "How We Work ◈",
       "section": "Home",
       "degree": 0
     },
@@ -51,13 +51,13 @@
     {
       "id": "/onboarding/purchasing-signal-chain.html",
       "title": "Purchasing Signal Chain",
-      "section": "Home",
+      "section": "Overview",
       "degree": 6
     },
     {
       "id": "/onboarding/scheduling-chain.html",
       "title": "Scheduling Chain",
-      "section": "Home",
+      "section": "Overview",
       "degree": 5
     },
     {
