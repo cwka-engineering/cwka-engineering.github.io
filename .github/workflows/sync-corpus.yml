@@ -6,6 +6,7 @@ on:
     paths:
       - "**.md"
       - "scripts/build_corpus.py"
+      - "_data/departments.yml"
   workflow_dispatch: # Allow manual trigger
 
 jobs:
@@ -21,6 +22,9 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
+      - name: Install Python dependencies
+        run: pip install pyyaml
 
       - name: Build corpora
         # Outputs corpus_general_prompt.txt, corpus_fe_release_prompt.txt,

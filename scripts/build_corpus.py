@@ -23,6 +23,14 @@ import json
 import re
 from pathlib import Path
 
+try:
+    import yaml as _yaml
+    def _load_yaml(path: Path) -> dict:
+        with open(path, encoding="utf-8") as f:
+            return _yaml.safe_load(f)
+except ImportError:
+    _load_yaml = None  # type: ignore[assignment]
+
 # Corpora to build.  Tag name must match the corpus_tags values used in front
 # matter and the KV key suffix used in the Cloudflare worker (wiki-corpus-<tag>).
 DEFINED_TAGS = ["general", "fe-release", "fe-submittal"]
@@ -122,6 +130,123 @@ def strip_front_matter(text: str) -> str:
     return FRONT_MATTER_RE.sub("", text, count=1)
 
 
+HOW_WE_WORK_URL = "/onboarding/how-we-work.html"
+
+
+def format_dept_corpus(dept_data: dict) -> str:
+    """Format _data/departments.yml into corpus-friendly prose for the chatbot.
+
+    Each department gets a headed section with transient roles (if any), primary
+    responsibilities, supporting responsibilities, and top collaboration partners.
+    Department codes are used as headings so the chatbot can surface deep links
+    like /onboarding/how-we-work.html#E.
+    """
+    lines: list[str] = [
+        "## Department Responsibilities and Collaboration Map",
+        "",
+        "The following describes each CWK/DFW department's responsibilities and key "
+        "collaboration partners. Navigate directly to any department using a URL anchor, "
+        "e.g. /onboarding/how-we-work.html#E opens the Engineering panel.",
+        "",
+    ]
+
+    depts = dept_data.get("departments", {})
+    edges = dept_data.get("edges", [])
+
+    for code, dept in depts.items():
+        name = dept.get("name", code)
+        lines.append(f"### {name} ({code})")
+        lines.append("")
+
+        # Transient roles (Engineering only in current data)
+        roles = dept.get("roles") or []
+        if roles:
+            lines.append("**Transient designations:**")
+            for role in roles:
+                lines.append(
+                    f"- **{role['code']} — {role['name']}:** {role['note']}"
+                )
+            lines.append("")
+
+        tasks = dept.get("tasks", [])
+        primary = [t for t in tasks if t.get("level") == 1]
+        supporting = [t for t in tasks if t.get("level") == 2]
+
+        if primary:
+            lines.append("**Primary responsibilities:**")
+            for t in primary:
+                entry = f"- {t['task']}"
+                if t.get("collab"):
+                    entry += f" (collaborates with: {t['collab']})"
+                lines.append(entry)
+            lines.append("")
+
+        if supporting:
+            lines.append("**Supporting responsibilities:**")
+            for t in supporting:
+                entry = f"- {t['task']}"
+                if t.get("collab"):
+                    entry += f" (with: {t['collab']})"
+                lines.append(entry)
+            lines.append("")
+
+        # Derive top collaborators from edges
+        collabs: list[tuple[str, int]] = []
+        for e in edges:
+            if e["source"] == code:
+                collabs.append((e["target"], e["weight"]))
+            elif e["target"] == code:
+                collabs.append((e["source"], e["weight"]))
+        collabs.sort(key=lambda x: -x[1])
+        if collabs:
+            top = ", ".join(f"{c} ×{w}" for c, w in collabs[:5])
+            lines.append(f"**Top collaborators:** {top}")
+            lines.append("")
+
+    return "\n".join(lines)
+
+
+def augment_org_viz(pages: list[dict], wiki_root: Path) -> None:
+    """Append department corpus text to the How We Work page entry, if present.
+
+    Reads _data/departments.yml and folds the full department data into the
+    how-we-work corpus entry so the wiki chatbot (/api/chat) can answer questions
+    about department responsibilities and surface deep links.
+
+    Only touches the 'general' corpus (how-we-work carries no corpus_tags, so it
+    defaults to general). Other tagged corpora (fe-release, fe-submittal) are
+    unaffected.
+    """
+    if _load_yaml is None:
+        print(
+            "[warn] PyYAML not installed — skipping org-viz department corpus augmentation. "
+            "Run: pip install pyyaml"
+        )
+        return
+
+    dept_yml = wiki_root / "_data" / "departments.yml"
+    if not dept_yml.exists():
+        return
+
+    try:
+        dept_data = _load_yaml(dept_yml)
+    except Exception as exc:
+        print(f"[warn] Could not parse {dept_yml}: {exc}")
+        return
+
+    dept_codes = list(dept_data.get("departments", {}).keys())
+    dept_text = format_dept_corpus(dept_data)
+
+    for page in pages:
+        if page["url"] == HOW_WE_WORK_URL:
+            page["content"] = page["content"] + "\n\n" + dept_text
+            # Add department codes as navigable anchors (e.g. #E, #PM, #PUR)
+            for code in dept_codes:
+                if code not in page["anchors"]:
+                    page["anchors"].append(code)
+            break
+
+
 def build_corpus(wiki_root: Path, tag: str | None = None) -> list[dict]:
     """Walk the wiki and build corpus entries.
 
@@ -176,6 +301,7 @@ def build_corpus(wiki_root: Path, tag: str | None = None) -> list[dict]:
             }
         )
 
+    augment_org_viz(pages, wiki_root)
     return pages
 
 
