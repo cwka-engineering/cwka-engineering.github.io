@@ -427,6 +427,20 @@
     ]
   };
 
+  /* ─── SHORT NAMES (shown inside nodes) ─────────────────────────────────── */
+  var SHORTS = {
+    S:    'Sales',
+    PC:   'Precon',
+    PM:   'Proj Mgmt',
+    E:    'Engineering',
+    PUR:  'Purchasing',
+    PROD: 'Production',
+    SR:   'Shipping',
+    FIN:  'Finance',
+    HR:   'HR',
+    EX:   'Executive'
+  };
+
   /* ─── COLORS ────────────────────────────────────────────────────────────── */
   var C = {
     S:    {bg:'#1B4332', fg:'#D8F3DC', ac:'#95D5B2'},
@@ -444,7 +458,7 @@
   /* ─── POSITIONS (circular layout) ──────────────────────────────────────── */
   var POS = (function () {
     var codes = ['S','PC','PM','E','PUR','PROD','SR','FIN','HR','EX'];
-    var cx = 300, cy = 260, r = 205, p = {};
+    var cx = 300, cy = 262, r = 190, p = {};
     codes.forEach(function (c, i) {
       var a = (2 * Math.PI * i / codes.length) - Math.PI / 2;
       p[c] = {x: Math.round(cx + r * Math.cos(a)), y: Math.round(cy + r * Math.sin(a))};
@@ -493,7 +507,7 @@
       var isHl = sel && hl[e.source] && hl[e.target];
       var op = sel ? (isHl ? 0.85 : 0.05) : Math.max(0.07, e.weight / mw * 0.5);
       var w  = Math.max(1, e.weight / mw * 8);
-      var stroke = isHl ? C[sel].ac : '#555';
+      var stroke = isHl ? C[sel].ac : '#bbb';
       html += '<line x1="' + p1.x + '" y1="' + p1.y + '" x2="' + p2.x + '" y2="' + p2.y +
               '" stroke="' + stroke + '" stroke-width="' + (isHl ? w + 1 : w) +
               '" opacity="' + op.toFixed(2) + '" stroke-linecap="round"/>';
@@ -519,32 +533,36 @@
       var isSel = sel === code;
       var isHl  = !sel || hl[code];
       var c    = C[code];
-      var nr   = isSel ? 38 : 32;
+      var nr   = isSel ? 50 : 44;
       var op   = (!sel || isHl) ? 1 : 0.2;
       var pri  = dept.tasks.filter(function (t) { return t.level === 1; }).length;
+      var shortName = SHORTS[code] || '';
 
       var glow = isSel
         ? '<circle cx="' + p.x + '" cy="' + p.y + '" r="' + (nr + 5) +
           '" fill="none" stroke="' + c.ac + '" stroke-width="2" opacity="0.45"/>'
         : '';
       var ring = '<circle cx="' + p.x + '" cy="' + p.y + '" r="' + nr +
-                 '" fill="' + c.bg + '" stroke="' + (isSel ? c.ac : 'rgba(255,255,255,0.12)') +
+                 '" fill="' + c.bg + '" stroke="' + (isSel ? c.ac : 'rgba(0,0,0,0.08)') +
                  '" stroke-width="' + (isSel ? 2.5 : 1) + '"/>';
-      var lbl  = '<text x="' + p.x + '" y="' + (p.y - 4) +
+      var lbl  = '<text x="' + p.x + '" y="' + (p.y - 9) +
                  '" text-anchor="middle" fill="' + c.fg +
                  '" font-size="13" font-weight="700" font-family="monospace">' + code + '</text>';
-      var cnt  = '<text x="' + p.x + '" y="' + (p.y + 12) +
+      var sub  = '<text x="' + p.x + '" y="' + (p.y + 5) +
+                 '" text-anchor="middle" fill="' + c.fg +
+                 '" font-size="8" font-family="monospace" opacity="0.75">' + shortName + '</text>';
+      var cnt  = '<text x="' + p.x + '" y="' + (p.y + 17) +
                  '" text-anchor="middle" fill="' + c.ac +
-                 '" font-size="9" font-family="monospace">' + pri + '</text>';
+                 '" font-size="8" font-family="monospace">' + pri + '</text>';
       /* role indicator dot for E */
       var dot  = dept.roles
-        ? '<circle cx="' + (p.x + nr - 6) + '" cy="' + (p.y - nr + 6) +
+        ? '<circle cx="' + (p.x + nr - 7) + '" cy="' + (p.y - nr + 7) +
           '" r="5" fill="' + c.ac + '" opacity="0.9"/>'
         : '';
 
       html += '<g class="oviz-node" data-code="' + code +
               '" style="cursor:pointer;opacity:' + op + ';transition:opacity 0.2s">' +
-              glow + ring + lbl + cnt + dot + '</g>';
+              glow + ring + lbl + sub + cnt + dot + '</g>';
     });
 
     return html;

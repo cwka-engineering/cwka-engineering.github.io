@@ -1,13 +1,15 @@
 /* assets/css/org-viz.css
  * Scoped to #org-viz-root — no conflicts with Just the Docs theme
+ * Light theme: adapts to the wiki's white/light-gray palette
  */
 
 #org-viz-root {
-  background: #0e0e0e;
-  border-radius: 12px;
+  background: #f6f8fb;
+  border: 1px solid #e2e5ea;
+  border-radius: 10px;
   padding: 20px 24px 24px;
   margin: 24px 0 32px;
-  color: #eee;
+  color: #333;
   font-family: system-ui, -apple-system, sans-serif;
   font-size: 14px;
   line-height: 1.4;
@@ -17,7 +19,7 @@
 .oviz-meta {
   font-size: 11px;
   font-family: monospace;
-  color: #555;
+  color: #999;
   letter-spacing: 0.03em;
   margin-bottom: 6px;
 }
@@ -26,7 +28,7 @@
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #555;
+  color: #aaa;
   font-family: monospace;
   margin-bottom: 10px;
 }
@@ -35,7 +37,7 @@
 .oviz-body {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 16px;
   align-items: start;
 }
 
@@ -43,7 +45,7 @@
   grid-template-columns: 1fr 1fr;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 720px) {
   .oviz-body.oviz-has-sel {
     grid-template-columns: 1fr;
   }
@@ -51,21 +53,21 @@
 
 /* ── Network ─────────────────────────────────────────────────────────────── */
 .oviz-net-wrap {
-  background: #111;
-  border-radius: 10px;
+  background: #fff;
+  border-radius: 8px;
   padding: 12px;
-  border: 1px solid #1e1e1e;
+  border: 1px solid #e2e5ea;
 }
 
 /* ── Panel ───────────────────────────────────────────────────────────────── */
 .oviz-panel {
-  background: #111;
-  border-radius: 10px;
-  border: 1px solid #1e1e1e;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #e2e5ea;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  max-height: 560px;
+  max-height: 580px;
 }
 
 .oviz-panel-header {
@@ -73,7 +75,7 @@
 }
 
 .oviz-panel-title {
-  padding: 2px 16px 10px;
+  padding: 2px 16px 8px;
   display: flex;
   align-items: baseline;
   gap: 10px;
@@ -94,7 +96,7 @@
   padding: 0 16px 6px;
   font-size: 10px;
   font-family: monospace;
-  color: #888;
+  color: rgba(255,255,255,0.5);
   letter-spacing: 0.04em;
 }
 
@@ -107,15 +109,16 @@
 .oviz-panel-body {
   overflow-y: auto;
   flex: 1;
-  padding: 10px 0 8px;
+  padding: 6px 0 8px;
+  background: #fff;
 }
 
 /* ── Close button ────────────────────────────────────────────────────────── */
 .oviz-close-btn {
   background: none;
-  border: 1px solid #333;
-  border-radius: 6px;
-  color: #888;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 5px;
+  color: rgba(255,255,255,0.7);
   font-size: 11px;
   font-family: monospace;
   padding: 3px 10px;
@@ -124,8 +127,8 @@
 }
 
 .oviz-close-btn:hover {
-  border-color: #666;
-  color: #ccc;
+  border-color: rgba(255,255,255,0.6);
+  color: #fff;
 }
 
 /* ── Section labels ──────────────────────────────────────────────────────── */
@@ -133,7 +136,7 @@
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #555;
+  color: #aaa;
   font-family: monospace;
   padding: 8px 16px 5px;
 }
@@ -193,31 +196,27 @@
 .oviz-role-name {
   font-size: 12px;
   font-weight: 600;
-  color: #ddd;
+  color: #333;
   margin-bottom: 2px;
 }
 
 .oviz-role-note {
   font-size: 11px;
-  color: #888;
-  line-height: 1.4;
+  color: #777;
+  line-height: 1.45;
 }
 
 /* ── Task list ───────────────────────────────────────────────────────────── */
-.oviz-tasks {
-  padding: 0;
-}
-
 .oviz-task-item {
   display: flex;
   align-items: flex-start;
   gap: 10px;
   padding: 7px 16px;
-  border-bottom: 1px solid #1a1a1a;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .oviz-task-support {
-  opacity: 0.6;
+  opacity: 0.65;
 }
 
 .oviz-dot {
@@ -236,33 +235,31 @@
 .oviz-task-text {
   flex: 1;
   font-size: 12px;
-  color: #ccc;
+  color: #444;
 }
 
 .oviz-task-support .oviz-task-text {
-  color: #999;
+  color: #777;
 }
 
 .oviz-task-collab {
   font-size: 10px;
-  color: #666;
+  color: #aaa;
   font-family: monospace;
   margin-top: 2px;
 }
 
 /* ── Legend ──────────────────────────────────────────────────────────────── */
-.oviz-legend {}
-
 .oviz-pairs-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 7px;
+  gap: 6px;
   padding: 0 0 4px;
 }
 
 .oviz-pair {
-  background: #111;
-  border: 1px solid #1a1a1a;
+  background: #fff;
+  border: 1px solid #e2e5ea;
   border-radius: 8px;
   padding: 8px 12px;
   display: flex;
@@ -279,13 +276,13 @@
 }
 
 .oviz-pair-sep {
-  color: #444;
+  color: #ccc;
   font-size: 12px;
 }
 
 .oviz-pair-w {
   margin-left: auto;
-  color: #666;
+  color: #aaa;
   font-size: 12px;
   font-family: monospace;
   font-weight: 600;
@@ -314,7 +311,6 @@
 
 .oviz-dept-chip:hover {
   transform: scale(1.05);
-  opacity: 0.9;
 }
 
 .oviz-dept-code {
