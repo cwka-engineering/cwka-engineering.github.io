@@ -15,104 +15,49 @@ This document provides a high-level overview of the complete engineering workflo
 ## Information and artifact flow
 {: #information-artifact-flow}
 
-> This diagram highlights **artifacts** (files, lists, Epicor records) and **roles**. For procedural detail, use the phase sections below and the linked workflows—not this figure alone.
+> This diagram shows the communication and handoff sequence between roles, from contract award through PE release. For procedural detail, use the phase sections below and the linked workflows—not this figure alone.
 
 ```mermaid
-flowchart TB
-  subgraph award [Award and setup]
-    CA[Contract awarded]
-    SO[Sales order]
-    KO[Kickoff meeting<br/>Precon → Eng + PM]
-    WS[Working set / PM markup]
-  end
-  CA --> SO --> KO --> WS
+sequenceDiagram
+    participant Pre as Precon
+    participant PM as Project Mgmt
+    participant EA as Eng Assistant
+    participant FE as Fabrication Eng
+    participant CL as Client / Arch
+    participant PE as Prod Eng
 
-  subgraph epicorSys [Epicor]
-    EJ[Jobs / operations / materials]
-  end
-  WS --> EJ
-  EA[Engineering Assistant]
-  EA --> EJ
+    Pre->>PM: Contract awarded + working set
+    Pre->>FE: Kickoff handoff
+    EA->>FE: Epicor — jobs / ops / materials
 
-  subgraph fe [Fabrication Engineering]
-    FEM[FE model 3dm]
-    FED[Shop drawings PDF]
-    BOM[BOM]
-    SC[SC list CSV]
-    TO[Takeoffs]
-  end
-  EJ --> FEM
-  FEM --> FED
-  FEM --> BOM
-  FEM --> SC
-  FEM --> TO
+    Note over FE: Review contract documents
 
-  CLIENT[Client / Architect]
+    FE->>CL: RFI
+    CL->>FE: RFI response
 
-  subgraph rfiCycle [RFI cycle]
-    RFI[RFI]
-    RFIR[RFI response]
-  end
-  FEM -->|info gap| RFI
-  RFI --> CLIENT
-  CLIENT --> RFIR
-  RFIR --> FEM
+    opt Out-of-scope response
+        PM->>CL: Change Request
+        CL->>PM: Change Order
+        PM->>FE: CO scope
+    end
 
-  subgraph coCycle [Change Order cycle]
-    CR[Change Request]
-    CO[Change Order]
-  end
-  RFIR -->|out of scope| CR
-  CR --> CLIENT
-  CLIENT --> CO
-  CO --> FEM
+    Note over FE: Model · drawings · BOM · SC list · takeoffs
 
-  subgraph submittalCycle [Submittal cycle]
-    INT[Internal review<br/>PA + PM]
-    TRN[Transmittal to client]
-    ARL[Client redlines]
-  end
-  FED --> INT
-  INT --> TRN
-  TRN --> CLIENT
-  CLIENT -->|markups| ARL
-  ARL --> FEM
+    loop Submittal cycle
+        FE->>PM: Shop drawings
+        Note over PM,FE: PA + PM internal review
+        PM->>CL: Transmittal
+        CL->>FE: Markups
+    end
 
-  FEPE[FE to PE release]
-  BOM --> FEPE
-  SC --> FEPE
-  FEM --> FEPE
-  FEPE --> PEM[PE model 3dm]
+    Note over CL,PM: Submittal approved
 
-  subgraph pe [Production Engineering]
-    MPL[Master parts list]
-    JT[Job traveler]
-    CF[Machine cutfiles]
-    SHOP[Shop drawings / stickers]
-  end
-  PEM --> MPL
-  PEM --> CF
-  PEM --> SHOP
-  EJ --> JT
+    FE->>PE: FE to PE release
+    Note over PE: Programming · CNC
 ```
 
 - **EA** work (job creation, part creation, scheduling) feeds the same Epicor project context FE and PE use—see [Engineering Assistant Workflow](/workflows/engineering-assistant.html).
 - **FE → PE** is the controlled handoff from fabrication-ready data to production programming; see [FE to PE Release](/workflows/fe-to-pe-release.html).
-
-## Workflow Visualization
-
-```mermaid
-graph LR
-P1[Phase 1<br/>Assignment] --> P2[Phase 2<br/>Fab Eng]
-P2 --> P3[Phase 3<br/>Handoff]
-P3 --> P4[Phase 4<br/>Prod Eng]
-P4 --> P5[Phase 5<br/>Closeout]
-style P1 fill:#f9f,stroke:#333,stroke-width:2px
-style P2 fill:#bbf,stroke:#333,stroke-width:2px
-style P3 fill:#ffd,stroke:#333,stroke-width:2px
-style P4 fill:#bfb,stroke:#333,stroke-width:2px
-style P5 fill:#fdb,stroke:#333,stroke-width:2px
-```
 
 ## Phase 1: Project Assignment & Initial Setup (Pre-Contract & Design Engineering Initiation)
 
@@ -162,23 +107,6 @@ style P5 fill:#fdb,stroke:#333,stroke-width:2px
     
 
 ## Phase 2: Fabrication Engineering (FE) – Core Work
-
-```mermaid
-graph LR
-subgraph Setup
-A[Template setup] --> B[Toolkit launch]
-B --> C[Epicor login & payload]
-end
-subgraph Modeling
-C --> D[Geometry & drafting]
-D --> E[Part naming]
-E --> F[Material tagging]
-end
-subgraph Output
-F --> G[BOM & takeoffs]
-G --> H[Shop drawings & submittal]
-end
-```
 
 ### Toolkit & Setup
 
@@ -391,17 +319,6 @@ Place:
     
 
 ## Phase 4: Production Engineering (PE) Phase
-
-```mermaid
-graph LR
-A[FE release] --> B[Folder setup]
-B --> C[Programming]
-C --> D{QC check}
-D -- Rework --> C
-D -- Pass --> E[Output]
-E --> F[Parts list]
-E --> G[CNC files]
-```
 
 *   Access job folder → Copy & rename template folders
     
