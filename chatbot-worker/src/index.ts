@@ -322,6 +322,30 @@ A "possible" match means the catalog part could physically be cut or trimmed to 
 - SearchWord must be ≤8 characters
 - Always generate new_description and new_search_word based on the user's input, even when candidates are found. When candidates exist, the suggested description serves as a fallback if the requester declines them.
 
+## Structured Fields (suggested_fields — always returned)
+
+When constructing new_description, also extract dimensional and physical properties as structured key-value pairs in suggested_fields. Always return this object — use {} if nothing is determinable from the input.
+
+**Dimension conversion:**
+- Fractions to decimals: 1/8" → 0.125, 3/4" → 0.75, 1-1/2" → 1.5, 1/2-13 thread → DiameterOutside 0.5
+- Lumber quarter notation to inches: 4/4 → 1.0, 5/4 → 1.25, 6/4 → 1.5, 8/4 → 2.0, 10/4 → 2.5, 12/4 → 3.0
+- Feet to inches: 4 ft → 48, 10 ft → 120
+- Abbreviation map: T = Thickness, W = PartWidth, H = PartHeight, L = PartLength, OD = DiameterOutside, ID = DiameterInside
+- Only populate fields determinable from the user's input — do not guess missing dimensions
+
+**UOM inference (IUM/PUM/SalesUM always match; UOMClassID derived from IUM):**
+- Hardware (bolts, screws, hinges, clips, fasteners, catches, pulls, slides) → EA / Count
+- Sheet goods (plywood, MDF, laminate, veneer, panels, sheet metal, plate) → SH / Count
+- Solid lumber → BF / Volume
+- Linear metal (angle, flat bar, tube, channel, extrusion, rod, pipe) → LF / Length
+- Fabric/upholstery by the yard → YD / Length
+- Fabric/upholstery by the piece, foam → EA / Count
+
+**Brand rules:**
+- CommercialBrand: only if the user explicitly names a manufacturer or vendor
+- CommercialSubBrand: only if the user explicitly provides a SKU, model number, or product line
+- Do not infer brand from material type alone
+
 ## Output Format
 Respond with valid JSON only. No prose, no markdown fences.
 {
@@ -337,12 +361,28 @@ Respond with valid JSON only. No prose, no markdown fences.
   ],
   "new_description": "<comma-delimited description string or null>",
   "new_search_word": "<SearchWord ≤8 chars or null>",
-  "notes": "<optional clarifying note, or null>"
+  "notes": "<optional clarifying note, or null>",
+  "suggested_fields": {
+    "PartLength": "<decimal inches or null>",
+    "PartWidth": "<decimal inches or null>",
+    "PartHeight": "<decimal inches or null>",
+    "DiameterInside": "<decimal inches or null>",
+    "DiameterOutside": "<decimal inches or null>",
+    "Thickness": "<decimal inches or null>",
+    "ThicknessMax": "<decimal inches or null — only if a range is given>",
+    "CommercialBrand": "<string or null>",
+    "CommercialSubBrand": "<string or null>",
+    "IUM": "<EA|LF|SH|BF|YD|SF or null>",
+    "PUM": "<matches IUM or null>",
+    "SalesUM": "<matches IUM or null>",
+    "UOMClassID": "<Count|Length|Volume|Area or null>"
+  }
 }
 Rules:
 - "candidates" is [] when match_type is "none"
 - "new_description" and "new_search_word" must always be populated — never null, regardless of match_type
 - When match_type is "strong" or "possible", new_description and new_search_word are the ERP-formatted description and search word the requester should use if they decline the candidates
+- "suggested_fields" is always present — use {} if nothing is determinable; never omit the key
 - Always include part_num in candidates`;
 
 // ---------------------------------------------------------------------------
