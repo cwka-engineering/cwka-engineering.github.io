@@ -1,0 +1,1047 @@
+# _data/departments.yml
+# Single source of truth for the How We Work interactive and wiki chatbot corpus.
+#
+# Consumed by:
+#   - onboarding/how-we-work.md  (Liquid jsonify → window.ORG_DATA → org-viz.js)
+#   - scripts/build_corpus.py    (augments the how-we-work corpus entry for the chatbot)
+#
+# Rendering-only data (colors, SVG positions) remains in assets/js/org-viz.js.
+
+shorts:
+  S:    "Sales"
+  PC:   "Precon"
+  PM:   "Proj Mgmt"
+  E:    "Engineering"
+  PUR:  "Purchasing"
+  PROD: "Production"
+  SR:   "Shipping"
+  FIN:  "Finance"
+  HR:   "HR"
+  EX:   "Executive"
+
+departments:
+
+  S:
+    name: "Sales"
+    tasks:
+      - task: "Keep opportunities active and nurtured till won or lost"
+        level: 1
+        collab: "PC/EX"
+      - task: "Public relations — get CWKA published, recognized, associated with our work"
+        level: 1
+        collab: ""
+      - task: "Run consistent marketing campaign across multiple platforms"
+        level: 1
+        collab: ""
+      - task: "Perform market research to target sales efforts and report quarterly"
+        level: 1
+        collab: ""
+      - task: "Solicit bid opportunities from GCs"
+        level: 1
+        collab: ""
+      - task: "Solicit bid opportunities from architects"
+        level: 1
+        collab: ""
+      - task: "Develop relationships with client estimators"
+        level: 1
+        collab: ""
+      - task: "Nurture relationships with key design firms to ensure ongoing opportunities"
+        level: 1
+        collab: ""
+      - task: "Filter all incoming bid opportunities"
+        level: 1
+        collab: ""
+      - task: "Schedule and run opportunity review meetings"
+        level: 1
+        collab: "PC"
+      - task: "Review appropriate opportunities and present to Precon"
+        level: 1
+        collab: "PC"
+      - task: "Intake all project bid collateral and create bid folders for approved opportunities"
+        level: 1
+        collab: "PC"
+      - task: "Set up opportunities in Airtable and manage metrics"
+        level: 1
+        collab: "PC"
+      - task: "Complete all required prequalification paperwork and maintain with GCs"
+        level: 1
+        collab: "FIN"
+      - task: "Submit bid RFIs to clarify scope and responsibility"
+        level: 2
+        collab: "PC"
+      - task: "Prepare material and subcontract RFQs to support Precon"
+        level: 2
+        collab: "PC"
+      - task: "Prepare install subcontract RFQs to support Precon"
+        level: 2
+        collab: "PC"
+      - task: "Prepare consultant subcontract RFQs to support Precon"
+        level: 2
+        collab: "PC"
+      - task: "Rhino model analysis to support Precon"
+        level: 1
+        collab: "E"
+      - task: "Participate in scope reviews to support Precon"
+        level: 2
+        collab: "PC/EX"
+      - task: "Participate in review of bid metrics"
+        level: 2
+        collab: "PC/EX"
+      - task: "Submit proposals to clients with Precon and keep opportunity active"
+        level: 2
+        collab: "PC"
+      - task: "Write design assist proposals"
+        level: 1
+        collab: "PC"
+      - task: "Participate in closing deals — manage communication, schedule interviews"
+        level: 2
+        collab: "PC/EX"
+      - task: "Help manage bid submittal schedules/extensions"
+        level: 1
+        collab: "PC"
+      - task: "Manage status of active bids and opportunities"
+        level: 2
+        collab: "PC"
+      - task: "Manage active and potential client database"
+        level: 1
+        collab: ""
+      - task: "Manage and report pipeline/GoGet monthly with Finance for forecast"
+        level: 1
+        collab: "FIN"
+      - task: "Support hand-off of projects to PM"
+        level: 2
+        collab: "PC"
+      - task: "Design company collateral — logos, gear, gifts, packaging"
+        level: 1
+        collab: "EX"
+      - task: "Work with PC on development of 'Feature Project' proposals"
+        level: 1
+        collab: "PC/EX"
+      - task: "Know bid scope well enough to have high-level discussions with client"
+        level: 1
+        collab: "PC"
+      - task: "Track opportunity volume to ensure appropriate volume for PC"
+        level: 1
+        collab: "PC"
+      - task: "Maintain website and other social media platforms"
+        level: 1
+        collab: ""
+
+  PC:
+    name: "Preconstruction"
+    tasks:
+      - task: "Review bid opportunities presented by Sales and determine if bidding"
+        level: 1
+        collab: "S"
+      - task: "Develop and manage bid templates to connect with Production and Finance"
+        level: 1
+        collab: "PROD/FIN"
+      - task: "Review bid docs to determine vendor support needed"
+        level: 1
+        collab: ""
+      - task: "Create scope take-off and review with client"
+        level: 1
+        collab: ""
+      - task: "Submit bid RFIs to clarify scope and responsibilities"
+        level: 1
+        collab: "S"
+      - task: "Drawing markup/scope identification (Bluebeam)"
+        level: 1
+        collab: ""
+      - task: "Develop build strategies and collateral during bid phase"
+        level: 1
+        collab: "PROD/EX"
+      - task: "Prepare vendor/material RFQs for support pricing"
+        level: 1
+        collab: "PUR"
+      - task: "Prepare install RFQs for support pricing"
+        level: 1
+        collab: "PUR"
+      - task: "Prepare consultant RFQs for support pricing"
+        level: 1
+        collab: "PUR"
+      - task: "Estimate engineering and fabrication labor"
+        level: 1
+        collab: "E/EX"
+      - task: "Prepare proposal for submittal to client"
+        level: 1
+        collab: "S"
+      - task: "Schedule internal bid review meetings"
+        level: 1
+        collab: "EX/S"
+      - task: "Scope review with client and scope leveling sheets"
+        level: 1
+        collab: "S"
+      - task: "Prepare and present bid metrics for 'Best and Final'"
+        level: 1
+        collab: "EX/S"
+      - task: "Prepare and present opportunity metrics to support capacity planning"
+        level: 1
+        collab: "S/PROD"
+      - task: "Close the deal/negotiations directly with client, supported by Sales/EX"
+        level: 1
+        collab: "EX/S"
+      - task: "Precon owns getting a signed contract including internal reviews"
+        level: 1
+        collab: "FIN"
+      - task: "Review contract schedule and prepare PC Milestone Schedule for PM"
+        level: 1
+        collab: "PM"
+      - task: "Prepare all hand-off documents for Engineering/PM"
+        level: 1
+        collab: "S"
+      - task: "Enter all applicable project information for newly contracted projects in Epicor"
+        level: 1
+        collab: "FIN"
+      - task: "Manage status of active bids in Airtable with Sales"
+        level: 2
+        collab: "S"
+      - task: "Build estimating tools, precedent bid collateral, labor standards"
+        level: 1
+        collab: "E/FIN"
+      - task: "Research materials, vendors and suppliers to broaden network"
+        level: 2
+        collab: "PUR"
+      - task: "If install self-priced, solicit install bids post-award for PM"
+        level: 2
+        collab: "PM"
+      - task: "Support PM in preparation of new or large scope change requests"
+        level: 2
+        collab: "PM/FIN"
+      - task: "Support push to keep bids active until won or lost"
+        level: 2
+        collab: "S"
+      - task: "Track estimating load and volume metrics"
+        level: 1
+        collab: "S"
+      - task: "Work with Purchasing to expand vendor/consultant/resource pool"
+        level: 2
+        collab: "PUR"
+
+  PM:
+    name: "Project Management"
+    tasks:
+      - task: "Know the project and lead it"
+        level: 1
+        collab: "PC/EX"
+      - task: "Receive and distribute applicable CDs/specs/bid info to Engineering"
+        level: 1
+        collab: "PC/E"
+      - task: "Identify long-lead materials and drive these to release on time"
+        level: 1
+        collab: "PC/E/PUR"
+      - task: "Write the SOV/billing schedule and get approved by client"
+        level: 1
+        collab: "FIN"
+      - task: "Write the PM Milestone Schedule then manage its evolution"
+        level: 1
+        collab: "E/PROD"
+      - task: "Review install bids and select installer — PC to supply initial bids"
+        level: 1
+        collab: "PC/PUR"
+      - task: "Define install scope for award and negotiate install contract"
+        level: 1
+        collab: "PC"
+      - task: "Execute install subcontract supplied by Purchasing"
+        level: 1
+        collab: "PUR"
+      - task: "Execute structural engineering subcontract supplied by Purchasing"
+        level: 1
+        collab: "PUR"
+      - task: "Execute major vendor subcontracts/POs supplied by Purchasing"
+        level: 1
+        collab: "PUR"
+      - task: "Drive material BOM'ing priorities and schedule"
+        level: 1
+        collab: "PUR"
+      - task: "Release all 'Ready to buy' quickly, efficiently, intelligently"
+        level: 1
+        collab: "PUR"
+      - task: "Establish truck schedule and manage throughout project"
+        level: 1
+        collab: "PROD/SR"
+      - task: "Write, submit and track RFIs"
+        level: 1
+        collab: "E"
+      - task: "Schedule and run consultant project meetings"
+        level: 1
+        collab: "E"
+      - task: "Schedule and run client meetings"
+        level: 1
+        collab: "E"
+      - task: "Schedule and run internal project meetings"
+        level: 1
+        collab: "PROD/E/PUR"
+      - task: "Meeting notes for all project internal and external meetings"
+        level: 1
+        collab: ""
+      - task: "Manage submittal schedule and deadlines"
+        level: 1
+        collab: "E"
+      - task: "Send submittal drawings to client and track against milestone schedule"
+        level: 1
+        collab: "E"
+      - task: "Receive redlines and provide clear direction to Engineering on how to respond"
+        level: 1
+        collab: "E"
+      - task: "Provide Engineering/Production with PCO direction related to client changes"
+        level: 1
+        collab: "E"
+      - task: "Get shop drawings fully approved on time"
+        level: 1
+        collab: "E"
+      - task: "Complete all field surveys/laser scans on time or establish Hold to's"
+        level: 1
+        collab: "E"
+      - task: "PM owns installation coordination — Install Manager supports"
+        level: 1
+        collab: "PROD"
+      - task: "Attend site meetings/write field reports and distribute"
+        level: 1
+        collab: ""
+      - task: "Schedule and manage internal install resources"
+        level: 1
+        collab: "PROD"
+      - task: "Communicate shipping logistics/needs"
+        level: 1
+        collab: "SR"
+      - task: "Communicate with site on trucking info/updates/issues received from SR"
+        level: 1
+        collab: "SR"
+      - task: "Write and submit scope change CRs; work with PC on new/large CRs"
+        level: 1
+        collab: "PC"
+      - task: "Get COs from client quickly so that we can invoice"
+        level: 1
+        collab: "FIN"
+      - task: "Monthly project health and billing projections"
+        level: 1
+        collab: "FIN"
+      - task: "Action orders — samples/mockups/rework (initiate, kickoff, handoff)"
+        level: 1
+        collab: "PROD"
+      - task: "Punch list project prior to client — PM (team) owns field review"
+        level: 1
+        collab: ""
+      - task: "Collections — contract issues"
+        level: 2
+        collab: "FIN"
+      - task: "Provide control samples to SR for QA/QC receiving"
+        level: 1
+        collab: "SR"
+
+  E:
+    name: "Engineering"
+    roles:
+      - code: "PA"
+        name: "Project Advisor"
+        note: "Senior designation — final authority on build strategy. Non-billable (indirect 017 ENG Admin). Drawn from senior Engineering, Production, or Executive staff. Always a separate person from the Lead Engineer on any given project."
+      - code: "LE"
+        name: "Lead Engineer"
+        note: "Ad hoc project-level designation — technical and administrative anchor for the scope. Billable to the Lead Coordination operation on the project's PROJ.ENG bucket job."
+      - code: "EA"
+        name: "Eng. Assistant"
+        note: "Epicor job creation, scheduling, and BOM setup. In practice today, Production Engineers perform EA duties for their own assignments."
+    tasks:
+      - task: "Receive CDs, learn the project — ask PM/PC questions"
+        level: 1
+        collab: "PC/PM"
+      - task: "Communicate engineering schedule projections to PM; production scheduling managed by Master Scheduler via Epicor backscheduling"
+        level: 1
+        collab: "PM"
+      - task: "Determine scope requiring build strategy vs. fabrication standards — resolved in PA working session"
+        level: 1
+        collab: "PA"
+      - task: "Identify long-lead materials and flag to PM early"
+        level: 2
+        collab: "PM"
+      - task: "Develop and manage design engineering deliverables and hours"
+        level: 1
+        collab: "PM"
+      - task: "PA working session — review scope, develop build strategy, get green light for FE"
+        level: 1
+        collab: "PA"
+      - task: "Develop fabrication engineering drawings and models for production engineering"
+        level: 1
+        collab: "EX/PM"
+      - task: "Develop additional collateral needed for client approval"
+        level: 1
+        collab: ""
+      - task: "BOM entry of all needed material throughout the FE phase"
+        level: 1
+        collab: "PUR"
+      - task: "Flag long-lead materials to PM; confirm lead times via Purchasing/Epicor"
+        level: 1
+        collab: "PM/PUR"
+      - task: "Participate in PM-run consultant meetings"
+        level: 2
+        collab: "PM"
+      - task: "Participate in PM-run client meetings"
+        level: 2
+        collab: "PM"
+      - task: "Submit RFIs to PM for submittal to client"
+        level: 1
+        collab: "PM"
+      - task: "Understand the production schedule and manage submittals to support it"
+        level: 1
+        collab: "PROD"
+      - task: "Optimize material take-offs to update BOMs for final orders"
+        level: 1
+        collab: "PUR"
+      - task: "Optimize, nest and program for CNC machining"
+        level: 1
+        collab: ""
+      - task: "Design fixtures for custom machining"
+        level: 1
+        collab: "PROD"
+      - task: "Submit drawings and models to PM for submittal to client"
+        level: 1
+        collab: "PM"
+      - task: "Intake all updated CD collateral post-handoff and report changes to PM"
+        level: 1
+        collab: "PM"
+      - task: "Manage engineering submittal log"
+        level: 1
+        collab: ""
+      - task: "Manage internal drawing review and approval process (PA review)"
+        level: 1
+        collab: ""
+      - task: "Upload models and clash detect per contract BIM requirements"
+        level: 1
+        collab: ""
+      - task: "Attend BIM coordination meetings when applicable"
+        level: 1
+        collab: ""
+      - task: "Assemble and deliver work order travelers to Production (PE responsibility)"
+        level: 1
+        collab: "PROD"
+      - task: "Support install when needed"
+        level: 2
+        collab: "PM"
+      - task: "Support Production during fabrication"
+        level: 2
+        collab: "PROD"
+      - task: "Support Precon engineering when needed"
+        level: 2
+        collab: "S/PC"
+      - task: "Participate in hand-off meetings to Production when needed"
+        level: 2
+        collab: "PROD"
+      - task: "Manage all engineering software licenses"
+        level: 1
+        collab: "FIN"
+      - task: "Manage all engineering software upgrades"
+        level: 1
+        collab: "EX"
+      - task: "Maintain engineering standards and communicate to team"
+        level: 1
+        collab: "EX"
+      - task: "Provide SR drawings to review incoming materials for QA/QC"
+        level: 1
+        collab: "SR"
+
+  PUR:
+    name: "Purchasing"
+    tasks:
+      - task: "Start each project by establishing material purchasing channels"
+        level: 1
+        collab: "PM/PC"
+      - task: "Work with Production/PC to establish specialty sources"
+        level: 1
+        collab: "PROD/EX"
+      - task: "Compile specialty purchase collateral and review with specialty sources"
+        level: 1
+        collab: "E/PM"
+      - task: "Support long-lead material review per project with PC/PM/Production"
+        level: 1
+        collab: "PM"
+      - task: "Review and prioritize incoming purchase requests based on milestone schedules"
+        level: 1
+        collab: "E/PM"
+      - task: "Reference inventory updates from SR for allocation"
+        level: 1
+        collab: "SR"
+      - task: "Receive BOMs from Engineering and prepare POs"
+        level: 1
+        collab: "E"
+      - task: "Write installation contracts for PM submittal"
+        level: 2
+        collab: "PC/PM"
+      - task: "Write structural engineering contract and submit (PM supports)"
+        level: 1
+        collab: "E/PM"
+      - task: "Write vendor custom supply contracts and submit (PM supports)"
+        level: 1
+        collab: "E/PM"
+      - task: "Manage and expand vendor/subcontractor network"
+        level: 1
+        collab: "PC"
+      - task: "Write POs for all facility/company/department requisitions"
+        level: 1
+        collab: "PROD"
+      - task: "Negotiate SOV with key vendors/suppliers to support project cashflow"
+        level: 1
+        collab: "PM"
+      - task: "Negotiate payment terms with suppliers and vendors"
+        level: 1
+        collab: "FIN"
+      - task: "Complete FSC paperwork with Finance for PMs to submit on projects"
+        level: 1
+        collab: "FIN/PM"
+      - task: "Maintain company vehicle registrations"
+        level: 1
+        collab: "FIN"
+      - task: "Communicate vendor problems and provide options to PM/Production/SR"
+        level: 1
+        collab: "PM/PROD"
+      - task: "Follow up on POs to confirm status"
+        level: 1
+        collab: "SR"
+      - task: "Provide lead times for materials to Precon"
+        level: 1
+        collab: "PC"
+      - task: "Provide lead times for materials to Engineering"
+        level: 1
+        collab: "E"
+      - task: "Provide lead times for materials to Project Management"
+        level: 1
+        collab: "PM"
+      - task: "Purchase all min/max stock supported by SR"
+        level: 1
+        collab: "SR"
+      - task: "Maintain vendor managed inventory"
+        level: 1
+        collab: "SR"
+      - task: "Communicate insurance requirements to vendors/installers"
+        level: 1
+        collab: "PM"
+      - task: "Provide vendor insurance paperwork to PMs for submittal"
+        level: 1
+        collab: "PM"
+      - task: "Coordinate MWBE/labor paperwork requirements for vendors/install"
+        level: 1
+        collab: "PM"
+      - task: "Establish universal subcontract with new vendors"
+        level: 1
+        collab: "PM"
+      - task: "Establish project-based specific contract tied to universal"
+        level: 1
+        collab: "PM"
+      - task: "Coordinate and obtain EMR rating paperwork from subcontractors"
+        level: 1
+        collab: "PM"
+      - task: "Credit applications — supplied to Finance to be executed"
+        level: 1
+        collab: "FIN"
+      - task: "Provide SDS sheets to Production for all products"
+        level: 1
+        collab: "PROD"
+      - task: "Forward invoices to Finance (mail, scanned, emailed)"
+        level: 1
+        collab: "FIN"
+      - task: "Reconcile project material invoices to PO"
+        level: 2
+        collab: "FIN"
+
+  PROD:
+    name: "Production"
+    tasks:
+      - task: "Manage facility production/shop operations"
+        level: 1
+        collab: "EX"
+      - task: "CNC/machine product and subassemblies in the Mill department"
+        level: 1
+        collab: ""
+      - task: "Assemble/craft product and subassemblies in the Bench department"
+        level: 1
+        collab: ""
+      - task: "Finish/prepare product and subassemblies in the Finish department"
+        level: 1
+        collab: ""
+      - task: "Expand fabrication capabilities (upholstery, metal, composites)"
+        level: 1
+        collab: ""
+      - task: "Complete finish samples/mockups to support project material and detail approvals"
+        level: 1
+        collab: "PM"
+      - task: "Define where work will be produced (NH/CO)"
+        level: 2
+        collab: "EX"
+      - task: "Define detail level of job transfer — identify opportunities to build in-house vs. outsource"
+        level: 2
+        collab: "EX"
+      - task: "Participate in build strategy review (PA working session)"
+        level: 2
+        collab: "E/EX"
+      - task: "Support Precon with feedback on labor hours for complex bids"
+        level: 2
+        collab: "PC"
+      - task: "Manage company capacity schedule and present bi-weekly"
+        level: 1
+        collab: ""
+      - task: "Master scheduling and project scope entry into Epicor"
+        level: 1
+        collab: ""
+      - task: "QA/QC of outgoing finished goods prior to shipping/receiving"
+        level: 1
+        collab: "SR"
+      - task: "Research materials and products to support means and methods of fabrication"
+        level: 1
+        collab: "PUR"
+      - task: "QA/QC of incoming materials"
+        level: 2
+        collab: "PUR"
+      - task: "Maintain all equipment"
+        level: 1
+        collab: ""
+      - task: "Maintain facility and infrastructure"
+        level: 1
+        collab: "FIN/EX"
+      - task: "Maintain company vehicles"
+        level: 1
+        collab: "FIN"
+      - task: "Requisition facility materials, supplies and small tools"
+        level: 1
+        collab: "PUR"
+      - task: "Take-off/requisition project finishes"
+        level: 1
+        collab: "PUR"
+      - task: "Take-off/requisition project tooling — Mill"
+        level: 1
+        collab: "PUR"
+      - task: "Install — scheduling CWKA employees as install resource"
+        level: 1
+        collab: "PM"
+      - task: "Installers who are in the field report to Project Management during install"
+        level: 2
+        collab: "PM"
+      - task: "Install — provide all necessary tools and equipment support"
+        level: 1
+        collab: "PM"
+      - task: "Keep Production employees efficient, productive and safe"
+        level: 1
+        collab: "HR"
+      - task: "Perform all performance reviews with individual Production employees"
+        level: 1
+        collab: "EX/HR"
+      - task: "QA/QC issues reported by SR are resolved by Production and communicated to PM"
+        level: 1
+        collab: "SR/PM"
+      - task: "Make build method judgment calls for quality, details, standards"
+        level: 1
+        collab: "EX"
+      - task: "Manage and support a safe working environment"
+        level: 1
+        collab: "HR"
+      - task: "Run safety meetings and enforce safety regulations"
+        level: 1
+        collab: "HR"
+      - task: "Support emissions reporting"
+        level: 2
+        collab: "HR/PUR"
+      - task: "Manage workflow of assemblies during fabrication — move FGI to SR when complete"
+        level: 1
+        collab: "SR"
+      - task: "Wrap and pack FGI to support SR"
+        level: 2
+        collab: "SR"
+      - task: "Load trucks to support SR"
+        level: 2
+        collab: "SR"
+
+  SR:
+    name: "Shipping / Receiving"
+    tasks:
+      - task: "Receive and report incoming materials via Epicor"
+        level: 1
+        collab: ""
+      - task: "QA/QC of incoming materials — use reporting structure/sequence"
+        level: 1
+        collab: "PUR/PROD"
+      - task: "Notify Purchasing about material intake issues"
+        level: 1
+        collab: "PUR"
+      - task: "Order and coordinate trucks for delivery to project sites or vendors"
+        level: 1
+        collab: "PM"
+      - task: "QA/QC of outgoing finished goods — Production owns initial review"
+        level: 1
+        collab: "PROD"
+      - task: "Packing/wrapping FGI"
+        level: 1
+        collab: "PROD"
+      - task: "Loading trucks"
+        level: 1
+        collab: "PROD"
+      - task: "Track inventory and report back to Epicor/update BOM"
+        level: 1
+        collab: "PUR"
+      - task: "Requisition shipping/packing supplies — min/max"
+        level: 1
+        collab: "PUR"
+      - task: "Create packing list using orders-by-truck"
+        level: 1
+        collab: "PM"
+      - task: "FSC paperwork/signage"
+        level: 1
+        collab: "PROD/FIN"
+      - task: "Send FedEx — present cost to PM for approval"
+        level: 1
+        collab: "PM"
+      - task: "Mail intake and distribution"
+        level: 1
+        collab: ""
+      - task: "Send shipping ticket/packing slip of incoming product to Finance"
+        level: 1
+        collab: "PM"
+      - task: "Issue materials to jobs — only if on the BOM"
+        level: 1
+        collab: "PROD"
+      - task: "Receive jobs to FGI and complete job"
+        level: 1
+        collab: "PROD"
+      - task: "Reconcile unissued materials"
+        level: 1
+        collab: "PROD"
+      - task: "Raw material handling/distribution in coordination with Production"
+        level: 1
+        collab: "PROD"
+      - task: "Kit material and issue to floor"
+        level: 1
+        collab: "PROD"
+      - task: "Scan FGI as loaded onto trucks"
+        level: 1
+        collab: "PROD"
+      - task: "Reallocate FGI to alternate truck when necessary"
+        level: 1
+        collab: ""
+      - task: "Manage internal driver for deliveries — schedule with Production"
+        level: 1
+        collab: "PROD"
+      - task: "Communicate with PM on truck status — PM communicates with site"
+        level: 1
+        collab: "PM"
+      - task: "Communicate vendor problems and provide suggestions to PM/Production"
+        level: 1
+        collab: "PROD"
+      - task: "Shipping notification — provide report to PM for distribution"
+        level: 1
+        collab: "PM"
+      - task: "Work with Purchasing to understand incoming materials and volumes for storage"
+        level: 1
+        collab: "PUR/PROD"
+      - task: "Manage shipping of product into facility using FedEx account"
+        level: 1
+        collab: "PUR"
+
+  FIN:
+    name: "Finance"
+    tasks:
+      - task: "Project accounting and reporting to PMs for project health meetings"
+        level: 1
+        collab: "PM"
+      - task: "Provide PM with AP reporting for large payments/subcontracts to approve"
+        level: 1
+        collab: "PM"
+      - task: "Company AP reporting"
+        level: 1
+        collab: "EX"
+      - task: "Provide PM with project AR status so they can support collections"
+        level: 1
+        collab: "PM"
+      - task: "Collection reporting and tracking"
+        level: 1
+        collab: "PM/EX"
+      - task: "Collections calls with clients"
+        level: 1
+        collab: "PM/EX"
+      - task: "Monthly financial statements"
+        level: 1
+        collab: "EX"
+      - task: "Annual financial statements"
+        level: 1
+        collab: "EX"
+      - task: "Bank reporting, communication, borrowing basis paperwork"
+        level: 1
+        collab: "EX"
+      - task: "Annual budget preparation and director meetings"
+        level: 1
+        collab: "EX"
+      - task: "Develop departmental budgets and review quarterly with directors"
+        level: 1
+        collab: "EX"
+      - task: "Monthly and annual financial reviews"
+        level: 1
+        collab: "EX"
+      - task: "Prepare warranty letters — EX signs, Finance provides to PM for submittal"
+        level: 1
+        collab: "EX/PM"
+      - task: "Certificate of insurance provided to clients, maintain for projects"
+        level: 1
+        collab: "PM"
+      - task: "FSC paperwork — support financial reporting, Purchasing manages with PM"
+        level: 1
+        collab: "PUR/PM"
+      - task: "State licensing and reporting for taxes"
+        level: 2
+        collab: "EX"
+      - task: "W9 paperwork (vendor/CWKA to client)"
+        level: 1
+        collab: "HR"
+      - task: "Gather project-specific bonding forms and secure bonds"
+        level: 1
+        collab: "EX/PC"
+      - task: "IT/ERP administration"
+        level: 1
+        collab: "PROD/EX"
+      - task: "Reconcile invoices"
+        level: 1
+        collab: "PUR"
+      - task: "Enter invoices into system for non-project purchases"
+        level: 1
+        collab: ""
+      - task: "Set up new projects and communicate job number assignments"
+        level: 1
+        collab: "PC"
+      - task: "Credit card payments, management, controls"
+        level: 1
+        collab: "PUR"
+      - task: "AP clerk reviews invoices/flags discrepancies to Purchasing"
+        level: 1
+        collab: "PUR"
+      - task: "Payroll management — financial"
+        level: 1
+        collab: "HR"
+      - task: "Cash forecasting and cash management"
+        level: 1
+        collab: ""
+      - task: "Risk management — financial/data"
+        level: 1
+        collab: "HR"
+      - task: "Financial controls — reporting and enforcement"
+        level: 1
+        collab: "EX"
+      - task: "Manage facility accounts"
+        level: 1
+        collab: "PUR/PROD"
+      - task: "Support preparation of prequalification paperwork for GCs"
+        level: 2
+        collab: "S"
+      - task: "Schedule Post Mortem meeting with PC/PM/Engineering/Production"
+        level: 1
+        collab: "ALL"
+      - task: "Maintain company vehicle registrations"
+        level: 1
+        collab: "PROD"
+
+  HR:
+    name: "Human Resources"
+    tasks:
+      - task: "Manage company-wide recruiting efforts"
+        level: 1
+        collab: "EX"
+      - task: "Write and publish open job opportunities"
+        level: 1
+        collab: "EX"
+      - task: "Screen candidates and schedule interviews"
+        level: 1
+        collab: "EX"
+      - task: "Negotiate employment terms, job offers, details with prospective employees"
+        level: 1
+        collab: ""
+      - task: "Write job descriptions with department heads"
+        level: 2
+        collab: "EX"
+      - task: "Manage on-boarding with department heads"
+        level: 2
+        collab: "EX"
+      - task: "Develop and track department head review schedules"
+        level: 1
+        collab: "EX"
+      - task: "Establish review standards; educate and support department heads"
+        level: 1
+        collab: "EX"
+      - task: "Work with employees one-on-one"
+        level: 1
+        collab: ""
+      - task: "Oversee and manage all benefits accounts"
+        level: 1
+        collab: "EX"
+      - task: "Lead safety committees — delegated to Production for implementation"
+        level: 1
+        collab: "PROD"
+      - task: "Culture development and maintenance"
+        level: 1
+        collab: "EX"
+      - task: "Liability and risk management — insurance"
+        level: 1
+        collab: "FIN/EX"
+      - task: "Payroll management — employee support"
+        level: 1
+        collab: "FIN/EX"
+      - task: "HR crisis management"
+        level: 1
+        collab: "EX"
+      - task: "Personnel training and development — initiatives and support"
+        level: 2
+        collab: "EX"
+      - task: "Support department directors during terminations"
+        level: 2
+        collab: "EX"
+      - task: "Company communications"
+        level: 1
+        collab: "EX"
+      - task: "Company event planning"
+        level: 1
+        collab: "EX"
+      - task: "Legal — HR/corporate"
+        level: 1
+        collab: "EX"
+      - task: "Complete termination process, exit interview, COBRA"
+        level: 1
+        collab: "EX"
+      - task: "Meet with department heads to understand staffing needs"
+        level: 2
+        collab: ""
+      - task: "Manage list of all job titles and maintain/update job descriptions"
+        level: 1
+        collab: "EX"
+      - task: "Establish and maintain structure and tools for onboarding"
+        level: 1
+        collab: ""
+      - task: "Pre-employment tasks required for hiring and onboarding"
+        level: 1
+        collab: ""
+      - task: "Establish, maintain and communicate safety policies to company"
+        level: 1
+        collab: "PROD"
+      - task: "Support Sales with the prequalification process — safety"
+        level: 2
+        collab: "S"
+      - task: "Create and maintain all personnel, medical, and workers comp records"
+        level: 1
+        collab: ""
+      - task: "Manage records to align with record retention laws"
+        level: 1
+        collab: ""
+      - task: "Update air emissions report and schedule haz-mat pickup/delivery"
+        level: 1
+        collab: "PROD"
+      - task: "Submit required quarterly disposal report"
+        level: 1
+        collab: "PROD"
+      - task: "Set up new employees with equipment and software"
+        level: 1
+        collab: "FIN"
+      - task: "Record employee equipment for tracking company property"
+        level: 1
+        collab: "FIN"
+      - task: "Update and maintain company employment handbook and compliance posters"
+        level: 1
+        collab: ""
+
+  EX:
+    name: "Executive"
+    tasks:
+      - task: "Banking/capital management"
+        level: 2
+        collab: "FIN"
+      - task: "Culture development and maintenance"
+        level: 1
+        collab: "HR"
+      - task: "Legal — all"
+        level: 1
+        collab: "FIN/HR"
+      - task: "Business structure management"
+        level: 1
+        collab: ""
+      - task: "Company vision and communication"
+        level: 1
+        collab: ""
+      - task: "Liability/risk management"
+        level: 1
+        collab: "FIN/HR"
+      - task: "Leadership development and mentoring"
+        level: 1
+        collab: "HR"
+      - task: "Participate in bid metrics review"
+        level: 2
+        collab: "PC"
+      - task: "Collections calls with clients"
+        level: 2
+        collab: "FIN"
+      - task: "Reviews of directors"
+        level: 1
+        collab: ""
+      - task: "Support Precon in closing deals"
+        level: 2
+        collab: "PC/S"
+      - task: "HR employee and crisis management"
+        level: 1
+        collab: "HR"
+      - task: "Manage company-wide growth projections to support recruiting"
+        level: 1
+        collab: "HR"
+      - task: "Support bonding requirements"
+        level: 1
+        collab: "FIN"
+      - task: "Material procurement strategy"
+        level: 2
+        collab: "PROD/PUR"
+      - task: "Systems development/implementation"
+        level: 1
+        collab: ""
+      - task: "Infrastructure strategy"
+        level: 1
+        collab: ""
+      - task: "Growth strategy"
+        level: 1
+        collab: ""
+      - task: "Capabilities strategy"
+        level: 1
+        collab: ""
+      - task: "Lead/support project development"
+        level: 2
+        collab: "PM"
+      - task: "Client relationship development"
+        level: 2
+        collab: "PM"
+      - task: "Define where work will be produced (NH/CO)"
+        level: 1
+        collab: "PROD"
+
+edges:
+  - {source: "PC",   target: "S",    weight: 32}
+  - {source: "EX",   target: "S",    weight: 7}
+  - {source: "FIN",  target: "S",    weight: 3}
+  - {source: "E",    target: "S",    weight: 2}
+  - {source: "PROD", target: "PC",   weight: 4}
+  - {source: "FIN",  target: "PC",   weight: 7}
+  - {source: "EX",   target: "PC",   weight: 7}
+  - {source: "PC",   target: "PUR",  weight: 9}
+  - {source: "E",    target: "PC",   weight: 4}
+  - {source: "PC",   target: "PM",   weight: 10}
+  - {source: "EX",   target: "PM",   weight: 3}
+  - {source: "E",    target: "PM",   weight: 25}
+  - {source: "PM",   target: "PUR",  weight: 26}
+  - {source: "FIN",  target: "PM",   weight: 12}
+  - {source: "PROD", target: "PM",   weight: 11}
+  - {source: "PM",   target: "SR",   weight: 11}
+  - {source: "E",    target: "PROD", weight: 4}
+  - {source: "E",    target: "EX",   weight: 5}
+  - {source: "E",    target: "PUR",  weight: 3}
+  - {source: "E",    target: "FIN",  weight: 1}
+  - {source: "E",    target: "SR",   weight: 1}
+  - {source: "PROD", target: "PUR",  weight: 11}
+  - {source: "EX",   target: "PUR",  weight: 2}
+  - {source: "PUR",  target: "SR",   weight: 11}
+  - {source: "FIN",  target: "PUR",  weight: 12}
+  - {source: "EX",   target: "PROD", weight: 9}
+  - {source: "PROD", target: "SR",   weight: 20}
+  - {source: "FIN",  target: "PROD", weight: 5}
+  - {source: "HR",   target: "PROD", weight: 9}
+  - {source: "FIN",  target: "SR",   weight: 1}
+  - {source: "EX",   target: "FIN",  weight: 21}
+  - {source: "FIN",  target: "HR",   weight: 7}
+  - {source: "EX",   target: "HR",   weight: 26}
+  - {source: "HR",   target: "S",    weight: 1}

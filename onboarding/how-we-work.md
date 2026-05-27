@@ -16,6 +16,8 @@ Click any node to see that department's full responsibility list and top collabo
 
 <link rel="stylesheet" href="{{ '/assets/css/org-viz.css' | relative_url }}">
 
+<script>window.ORG_DATA = {{ site.data.departments | jsonify }};</script>
+
 <div id="org-viz-root"></div>
 
 <script src="{{ '/assets/js/org-viz.js' | relative_url }}" defer></script>
