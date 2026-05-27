@@ -2,8 +2,9 @@
 layout: default
 title: Lead Engineer Responsibilities
 permalink: /onboarding/lead-engineer.html
-parent: Onboarding
-nav_order: 7
+parent: Engineering Roles & Core Competencies
+grand_parent: Onboarding
+nav_order: 1
 ---
 
 # Lead Engineer Responsibilities

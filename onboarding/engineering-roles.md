@@ -4,6 +4,7 @@ title: Engineering Roles & Core Competencies
 permalink: /onboarding/engineering-roles.html
 parent: Onboarding
 nav_order: 3
+has_children: true
 ---
 
 # Overview of Engineering Roles & Core Competencies
