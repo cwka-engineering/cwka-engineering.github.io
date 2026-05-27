@@ -6,6 +6,7 @@ nav_order: 1
 parent: Workflows
 has_children: true
 corpus_tags: [fe-release, fe-submittal]
+mermaid: true
 ---
 
 # Fabrication Engineer (FE) Workflow
@@ -13,6 +14,27 @@ corpus_tags: [fe-release, fe-submittal]
 Complete workflow for Fabrication Engineers from project assignment through PE release.
 
 > **Related Documents**: [Project Delivery Overview](/onboarding/project-delivery.html) | [FE to PE Release](/workflows/fe-to-pe-release.html) (checklist and procedure)
+
+```mermaid
+flowchart TD
+  S1["1 · Getting Started<br/>Assignments, scope, project files"]
+  S2["2 · DE Phase<br/>Approximate → precise geometry"]
+  S3["3 · Epicor Interaction<br/>Submittal status, job data"]
+  S4["4 · Engineering Toolkit<br/>Setup and usage"]
+  S5["5 · Part Naming<br/>Naming conventions"]
+  S6["6 · Shipping Components<br/>SC lists"]
+  S7["7 · Takeoffs / Auto-BOM<br/>Nesting and material optimization"]
+  S8["8 · Submittal Review<br/>Three-folder cycle"]
+  S9["9 · Material Transmittal<br/>TRA log"]
+  S10["10 · BOM Procedures<br/>Creation, validation, upload"]
+  S11["11 · Solid Wood Components<br/>WC workflow"]
+  S12["12 · PE Release Prep<br/>Final steps before handoff"]
+  S13["FE → PE Release<br/>Checklist and handoff"]
+
+  S1 --> S2 --> S3 --> S4 --> S5 --> S6 --> S7 --> S8
+  S8 -->|"Revise &amp; Resubmit"| S7
+  S8 --> S9 --> S10 --> S11 --> S12 --> S13
+```
 
 ## Workflow Overview
 

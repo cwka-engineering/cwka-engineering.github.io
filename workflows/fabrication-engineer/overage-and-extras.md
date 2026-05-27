@@ -6,6 +6,7 @@ nav_order: 14
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
 corpus_tags: [fe-release]
+mermaid: true
 ---
 
 # Overage, Extras & Process Waste
@@ -23,6 +24,16 @@ Three concepts are often conflated but must be kept separate:
 | **Process waste** | Raw material consumed as a direct result of the build strategy — not the finished part volume, but the minimum material actually needed to execute the build | FE | Job BOM (parent or MFG) |
 | **Overage** | Additional raw material ordered beyond minimum need — to offset quality risk, provide attic stock, or account for anticipated loss or damage | PM / Purchasing | INV job, at project level |
 | **Extras** | Additional finished manufactured parts beyond what the design demands | FE (via parent job BOM) | Parent job BOM |
+
+```mermaid
+flowchart TD
+  Q1{What is the nature<br/>of this material?}
+  Q1 -->|"Inevitable cutting loss —<br/>kerfs, nesting, fixturing waste"| PW["Process Waste<br/>BOM the minimum actually needed<br/>FE applies scrap % via Auto-BOM<br/>Lives on job BOM"]
+  Q1 -->|"Buffer beyond minimum —<br/>quality risk, attic stock,<br/>anticipated damage"| Q2{Type of material?}
+  Q2 -->|"Raw / purchased<br/>(SG, SS, SL, IM)"| OV["Overage<br/>PM decision — not FE's call<br/>Applied on project Inventory Job<br/>Never added to job BOM"]
+  Q2 -->|"Manufactured part<br/>(WC, MT)"| MO["Manufactured Part Overage<br/>Coordinate with production &amp; PE<br/>before original job closes<br/>No retroactive adjustment possible"]
+  Q1 -->|"Additional finished parts<br/>beyond design requirements"| EX["Extras<br/>Add to parent job BOM as demand<br/>Do not override Prod Qty manually"]
+```
 
 ---
 
