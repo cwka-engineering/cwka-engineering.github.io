@@ -8,10 +8,15 @@ nav_order: 4
 
 # Engineering Assistant (EA) Workflow
 
-> **Related Documents**: [Engineering Roles](/onboarding/engineering-roles.html) | [Epicor Usage](/tools/epicor/) | [Project Delivery Overview](/onboarding/project-delivery.html) | [Information and artifact flow (DRAFT)](/onboarding/project-delivery.html#information-artifact-flow)
+> **Related Documents**: [Engineering Roles](/onboarding/engineering-roles.html) | [Epicor Usage](/tools/epicor/) | [Project Delivery Overview](/onboarding/project-delivery.html) | [Information and artifact flow](/onboarding/project-delivery.html#information-artifact-flow)
 
 ## Position Overview
+
 The Engineering Assistant (EA) plays a central role in setting up and managing various job types within Epicor. This document covers the procedures for creating and managing different job types.
+
+> **In practice today**, Production Engineers (PEs) perform EA duties for their own project assignments rather than relying on a dedicated EA. The EA role as described here represents the full set of Epicor setup and scheduling responsibilities — regardless of who performs them on a given project.
+
+The primary physical output of the EA/PE handoff to the shop floor is the **Traveler** — a printed binder of fabrication documents (shop drawings, CNC SKs, parts lists) organized by shipping component. The PE assembles and prints the traveler as part of the production handoff. See [FE to PE Release](/workflows/fe-to-pe-release.html) for the full handoff procedure.
 
 ## Table of Contents
 

@@ -32,8 +32,10 @@ sequenceDiagram
 
     Note over FE: Review contract documents
 
-    FE->>CL: RFI
-    CL->>FE: RFI response
+    FE->>PM: RFI (info gap identified)
+    PM->>CL: RFI
+    CL->>PM: RFI response
+    PM->>FE: RFI response
 
     opt Out-of-scope response
         PM->>CL: Change Request
@@ -47,7 +49,8 @@ sequenceDiagram
         FE->>PM: Shop drawings
         Note over PM,FE: PA + PM internal review
         PM->>CL: Transmittal
-        CL->>FE: Markups
+        CL->>PM: Markups
+        PM->>FE: Redline direction
     end
 
     Note over CL,PM: Submittal approved

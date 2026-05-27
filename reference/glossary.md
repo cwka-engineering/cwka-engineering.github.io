@@ -43,6 +43,7 @@ corpus_tags: [fe-release, fe-submittal]
 - **WC**: Wood Component
 - **MT**: Metal Component
 - **IP**: Kit of Parts
+- **Traveler**: Printed production binder assembled by engineering (in practice, by the Production Engineer) as part of the PE handoff to the shop floor. Contains shop drawings, CNC SKs, and other fabrication documents organized by shipping component. The traveler is the physical handoff artifact that accompanies work through production.
 
 ## Epicor Terms
 
@@ -71,6 +72,7 @@ corpus_tags: [fe-release, fe-submittal]
 - **Cycle Count**: Shows current on-hand quantities for materials in current site
 - **Truck Entry**: Epicor screen where PMs create and manage ship dates. Truck IDs follow format `#### – Truck ##` (e.g., `1091 – Truck 01`). "Need By" is the on-site date; "Ship By" is the departure date. These dates cascade into Sales Order releases, which set job Required By dates. See [Scheduling Chain](/onboarding/scheduling-chain.html).
 - **Office MES**: Digital time clock in Epicor. Options: Start Production (manufacturing jobs), Start Indirect (bucket/indirect jobs), Start Rework.
+- **PM Milestone Schedule**: A living project schedule maintained by the PM tracking key dates: submittal submission/approval deadlines, long-lead material procurement cutoffs, production start targets, and truck/ship dates. Engineering deliverables should be planned to support these milestones. The lead engineer communicates projected engineering completion dates to the PM so the schedule can be kept current.
 
 ## Drawing & Layout Terms
 
@@ -115,6 +117,7 @@ Every material and part number in Epicor is assigned a material class. These are
 - **Lay-up (PRE)**: Pre-laminated material assembly. Uses a specific code system: `PRE_[face]_[core]_[backer]_[thickness in mm]`. Numbers are Epicor GM.SG.XXXXX codes with leading zeros dropped. See [Lay-Up Formulas](/reference/reference-tables/lay-up-formulas.html).
 - **Edgebanding (EB)**: Material applied to exposed edges. Do not model for straight, square edges (edgebander handles these). Model for: post-lam, solid wood EB, curved edges, notches, cutouts, and edges that can't go through the edgebander.
 - **Scribe**: Oversized dimension for field fitting. Created by copying finished geometry, extending the face to oversized dimension, and moving to `04_CWKA-PE::REF`.
+- **Hold to**: A working dimension used during engineering when field verification has not yet occurred. Represents the best-available value from architectural drawings or preliminary site measurement, used to proceed with modeling while field dimensions are pending. Labeled on drawings as `[dim] HOLD TO VIF` to signal that the value is subject to revision. Distinct from a VIF annotation on finalized submittals — "Hold to" is an internal engineering notation. See [Design Engineering — "Hold to" Dimensions](/workflows/fabrication-engineer/design-engineering.html#hold-to-dimensions).
 - **VIF (Verify in Field)**: Dimensions to be verified on-site. Uses the `CWKA_2024-VIF` annotation style.
 - **Material Tag**: Project-specific identifier for a material or finish, used on drawings and in the Material Transmittal Log. Format: abbreviation + double-digit number with no spaces/hyphens/underscores (e.g., PLY01, MDF02, FN03). See [Material Tag Vocabulary](/reference/reference-tables/material-tag-vocabulary.html).
 - **ARCH Tag**: Architect's tag designation for the same material. Cross-referenced on the G00 page alongside the CWK material tag.

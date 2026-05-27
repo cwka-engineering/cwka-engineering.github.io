@@ -113,9 +113,35 @@ The same field is visible on the [Submittal Dashboard](/tools/epicor/dashboards.
 
 > **Note:** This tracks the drawing package as a whole — not individual material/finish approval status. Material and finish submittals are tracked separately in the [Material Transmittal Log (TRA)](/workflows/fabrication-engineer/material-transmittal.html).
 
+## RFIs — Requesting Information from the Architect
+{: #rfis}
+
+During the engineering process, information gaps arise that cannot be resolved from contract documents alone. These are resolved through the **RFI (Request for Information)** process:
+
+1. **FE identifies the gap** — Document the specific question, including the drawing reference and what information is needed.
+2. **Submit to PM** — Route the RFI to the PM, not directly to the architect. PM writes, formats, and submits formal RFIs to the client/architect.
+3. **PM tracks and returns** — PM monitors RFI status and communicates the architect's response back to the engineer.
+
+> **Do not contact the architect directly.** All formal communication with the client or architect is managed through the PM. Informal technical conversations may occur in certain project contexts, but formal information requests always route through PM.
+
+RFI status may be tracked in the Bluebeam markup log as described in [Tracking Markup Pickup](#tracking-markup-pickup).
+
+## Scope Changes — PCO and Change Order Direction
+{: #scope-changes}
+
+When an architect's markup or project development reveals work that is outside the originally contracted scope, the engineering team does not independently respond to or absorb that scope.
+
+1. **Flag to PM** — Immediately notify the PM when returned markups or other communications suggest a scope expansion or change.
+2. **PM evaluates and initiates PCO** — The PM determines whether the item warrants a Potential Change Order (PCO) and initiates the process with the client.
+3. **PM directs Engineering** — Engineering proceeds with the changed scope only after the PM provides explicit direction — either by issuing CO scope or confirming the work is within original contract.
+
+> Do not perform significant rework or scope expansion based on returned markups alone — confirm with PM whether the change is contracted first.
+
 ## Key Principles
 
 - **Never skip internal review.** All drawings go through PA approval before client submission.
 - **Keep folders clean.** Only the current version of a drawing should be in each folder.
 - **Pick up all comments.** Both PM and PA comments must be addressed — not just the PA's.
 - **Track status in Epicor.** The Production Report is the system of record for submittal progress.
+- **Route RFIs through PM.** Information requests go to PM, not directly to the architect.
+- **Confirm scope before acting.** Markups suggesting scope changes require PM direction before work proceeds.
