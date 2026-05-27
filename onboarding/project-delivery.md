@@ -22,41 +22,68 @@ flowchart TB
   subgraph award [Award and setup]
     CA[Contract awarded]
     SO[Sales order]
+    KO[Kickoff meeting<br/>Precon → Eng + PM]
     WS[Working set / PM markup]
   end
-  CA --> SO
-  SO --> WS
+  CA --> SO --> KO --> WS
+
   subgraph epicorSys [Epicor]
-    EJ[Jobs operations materials]
+    EJ[Jobs / operations / materials]
   end
   WS --> EJ
   EA[Engineering Assistant]
   EA --> EJ
+
   subgraph fe [Fabrication Engineering]
     FEM[FE model 3dm]
-    FED[FE drawings PDF]
+    FED[Shop drawings PDF]
     BOM[BOM]
     SC[SC list CSV]
     TO[Takeoffs]
   end
   EJ --> FEM
-  FEM --> BOM
   FEM --> FED
+  FEM --> BOM
   FEM --> SC
   FEM --> TO
-  subgraph clientLoop [Client and approvals]
-    SUB[Submittal package]
-    AR[Client redlines]
+
+  CLIENT[Client / Architect]
+
+  subgraph rfiCycle [RFI cycle]
+    RFI[RFI]
+    RFIR[RFI response]
   end
-  FED --> SUB
-  SUB --> CLIENT[Client]
-  CLIENT --> AR
-  AR --> FEM
+  FEM -->|info gap| RFI
+  RFI --> CLIENT
+  CLIENT --> RFIR
+  RFIR --> FEM
+
+  subgraph coCycle [Change Order cycle]
+    CR[Change Request]
+    CO[Change Order]
+  end
+  RFIR -->|out of scope| CR
+  CR --> CLIENT
+  CLIENT --> CO
+  CO --> FEM
+
+  subgraph submittalCycle [Submittal cycle]
+    INT[Internal review<br/>PA + PM]
+    TRN[Transmittal to client]
+    ARL[Client redlines]
+  end
+  FED --> INT
+  INT --> TRN
+  TRN --> CLIENT
+  CLIENT -->|markups| ARL
+  ARL --> FEM
+
   FEPE[FE to PE release]
   BOM --> FEPE
   SC --> FEPE
   FEM --> FEPE
   FEPE --> PEM[PE model 3dm]
+
   subgraph pe [Production Engineering]
     MPL[Master parts list]
     JT[Job traveler]
