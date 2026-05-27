@@ -19,6 +19,12 @@
       "degree": 10
     },
     {
+      "id": "/onboarding/how-we-work.html",
+      "title": "How We Work",
+      "section": "Home",
+      "degree": 0
+    },
+    {
       "id": "/onboarding/",
       "title": "Onboarding",
       "section": "Home",
@@ -28,7 +34,7 @@
       "id": "/onboarding/lead-engineer.html",
       "title": "Lead Engineer Responsibilities",
       "section": "Home",
-      "degree": 7
+      "degree": 8
     },
     {
       "id": "/onboarding/manifesto.html",
@@ -76,7 +82,7 @@
       "id": "/reference/glossary.html",
       "title": "Glossary",
       "section": "Home",
-      "degree": 19
+      "degree": 20
     },
     {
       "id": "/reference/",
@@ -343,16 +349,22 @@
       "degree": 8
     },
     {
+      "id": "/workflows/fabrication-engineer/bim-coordination.html",
+      "title": "BIM Coordination",
+      "section": "Workflows",
+      "degree": 4
+    },
+    {
       "id": "/workflows/fabrication-engineer/bom-procedures.html",
       "title": "BOM Procedures & Validation",
       "section": "Workflows",
-      "degree": 13
+      "degree": 14
     },
     {
       "id": "/workflows/fabrication-engineer/design-engineering.html",
       "title": "Design Engineering (DE) Phase",
       "section": "Workflows",
-      "degree": 6
+      "degree": 8
     },
     {
       "id": "/workflows/fabrication-engineer/epicor-interaction.html",
@@ -364,13 +376,13 @@
       "id": "/workflows/fabrication-engineer/getting-started.html",
       "title": "Getting Started",
       "section": "Workflows",
-      "degree": 11
+      "degree": 13
     },
     {
       "id": "/workflows/fabrication-engineer/",
       "title": "Fabrication Engineer (FE)",
       "section": "Workflows",
-      "degree": 24
+      "degree": 25
     },
     {
       "id": "/workflows/fabrication-engineer/material-transmittal.html",
@@ -646,6 +658,10 @@
     },
     {
       "source": "/onboarding/lead-engineer.html",
+      "target": "/workflows/fabrication-engineer/bim-coordination.html"
+    },
+    {
+      "source": "/onboarding/lead-engineer.html",
       "target": "/workflows/fabrication-engineer/getting-started.html"
     },
     {
@@ -807,6 +823,10 @@
     {
       "source": "/reference/glossary.html",
       "target": "/tools/epicor/production-quantity.html"
+    },
+    {
+      "source": "/reference/glossary.html",
+      "target": "/workflows/fabrication-engineer/design-engineering.html"
     },
     {
       "source": "/reference/glossary.html",
@@ -1466,6 +1486,10 @@
     },
     {
       "source": "/workflows/fabrication-engineer/",
+      "target": "/workflows/fabrication-engineer/bim-coordination.html"
+    },
+    {
+      "source": "/workflows/fabrication-engineer/",
       "target": "/workflows/fabrication-engineer/bom-procedures.html"
     },
     {
@@ -1519,6 +1543,18 @@
     {
       "source": "/workflows/fabrication-engineer/",
       "target": "/workflows/fe-to-pe-release.html"
+    },
+    {
+      "source": "/workflows/fabrication-engineer/bim-coordination.html",
+      "target": "/workflows/fabrication-engineer/design-engineering.html"
+    },
+    {
+      "source": "/workflows/fabrication-engineer/bim-coordination.html",
+      "target": "/workflows/fabrication-engineer/getting-started.html"
+    },
+    {
+      "source": "/workflows/fabrication-engineer/bom-procedures.html",
+      "target": "/workflows/fabrication-engineer/getting-started.html"
     },
     {
       "source": "/workflows/fabrication-engineer/bom-procedures.html",
