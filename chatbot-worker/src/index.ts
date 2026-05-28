@@ -375,6 +375,13 @@ Always extract dimensional and physical properties as structured key-value pairs
 - CommercialSubBrand: only if the user explicitly provides a SKU, model number, or product line
 - Do not infer brand from material type alone
 
+**McMaster-Carr SKU detection:**
+Scan user_input for strings matching the McMaster SKU pattern: one or more digit groups alternating with letter groups, 7–10 characters total (e.g. 91251A540, 4936K451). Exclusions — do NOT treat as a McM SKU: strings containing dots or dashes (ERP part numbers like GM.HW.00544, thread specs like 1/2-13), pure numeric strings, or strings where the pattern is clearly part of another vendor's model number.
+- If user_input contains an explicit McMaster reference (the word "McMaster", "mcmaster.com", or "McM") alongside a matching pattern: set CommercialBrand to "McMaster-Carr" and CommercialSubBrand to the detected SKU (exact case as provided)
+- If user_input contains a matching pattern without explicit McM reference but the pattern appears in isolation next to a hardware description: set CommercialBrand to "McMaster-Carr" and CommercialSubBrand to the detected SKU, and note the inference in the notes field
+- McMaster-Carr is the only vendor detected this way — do not attempt SKU detection for other vendors
+- When no McM SKU is detected, CommercialBrand and CommercialSubBrand follow the general brand rules above
+
 ## Output Format
 Respond with valid JSON only. No prose, no markdown fences.
 {
