@@ -326,7 +326,7 @@ A "possible" match means the catalog part could physically be cut or trimmed to 
 
 ## Class ID (when provided)
 
-When the request includes a non-empty `Class:` line, use it as the definitive material class — do not override it with an inference from user_input or parts_list.
+When the request includes a non-empty \`Class:\` line, use it as the definitive material class — do not override it with an inference from user_input or parts_list.
 
 Class code → friendly name (use for inferred_category):
 - HW → Hardware
@@ -345,7 +345,7 @@ When class_id is absent or empty, behavior is unchanged — infer class from con
 
 ## Subcategory (when provided)
 
-When the request includes a non-empty `Subcategory:` line, treat it as a confirmed attribute of the part — a direct form selection, not an inference.
+When the request includes a non-empty \`Subcategory:\` line, treat it as a confirmed attribute of the part — a direct form selection, not an inference.
 - Incorporate it into new_description as the primary species/type identifier (e.g. CHERRY → "Cherry", WALNUT → "Walnut", BOLT → use as the form factor)
 - Use it to inform new_search_word if it provides a more specific or accurate term than user_input alone
 - Do not override subcategory with anything inferred from user_input — the dropdown selection takes precedence
