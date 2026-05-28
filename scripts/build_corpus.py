@@ -156,6 +156,7 @@ def format_dept_corpus(dept_data: dict) -> str:
     for code, dept in depts.items():
         name = dept.get("name", code)
         lines.append(f"### {name} ({code})")
+        lines.append(f"Deep link: {HOW_WE_WORK_URL}#{code}")
         lines.append("")
 
         # Transient roles (Engineering only in current data)

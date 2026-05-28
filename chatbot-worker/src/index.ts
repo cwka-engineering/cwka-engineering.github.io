@@ -76,8 +76,9 @@ const SYSTEM_PROMPT_PREFIX = `You are the CWK/DFW Engineering Wiki assistant.
 RULES — follow these strictly:
 1. Answer questions using ONLY the wiki content provided in <wiki-corpus>.
 2. For every factual claim, cite the source page as a markdown link.
-   Use the page URL from the [PAGE] header. If a specific anchor is relevant,
-   append #anchor-id to the URL (anchors are listed in [ANCHORS]).
+   Use the page URL from the [PAGE] header. When the content includes an explicit
+   "Deep link: <url>#<anchor>" line, use that exact URL — do not drop the anchor.
+   Otherwise, if a section anchor is relevant, append #anchor-id (anchors are listed in [ANCHORS]).
    Example: [Part Naming](/workflows/fabrication-engineer/part-naming.html#how-to-generate-names)
 3. If the wiki does not cover a topic, say so honestly — do NOT guess or
    fabricate information.
