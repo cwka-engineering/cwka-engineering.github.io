@@ -34,7 +34,7 @@
       "id": "/onboarding/lead-engineer.html",
       "title": "Lead Engineer Responsibilities",
       "section": "Home",
-      "degree": 8
+      "degree": 9
     },
     {
       "id": "/onboarding/manifesto.html",
@@ -226,7 +226,7 @@
       "id": "/standards/rhino-drafting/layout-structure.html",
       "title": "Layout Structure",
       "section": "Standards",
-      "degree": 12
+      "degree": 13
     },
     {
       "id": "/standards/rhino-drafting/printing.html",
@@ -370,7 +370,13 @@
       "id": "/workflows/fabrication-engineer/design-engineering.html",
       "title": "Design Engineering (DE) Phase",
       "section": "Workflows",
-      "degree": 8
+      "degree": 9
+    },
+    {
+      "id": "/workflows/fabrication-engineer/drawing-scope.html",
+      "title": "Drawing Scope & Cartooning",
+      "section": "Workflows",
+      "degree": 3
     },
     {
       "id": "/workflows/fabrication-engineer/epicor-interaction.html",
@@ -665,6 +671,10 @@
     {
       "source": "/onboarding/lead-engineer.html",
       "target": "/workflows/fabrication-engineer/bim-coordination.html"
+    },
+    {
+      "source": "/onboarding/lead-engineer.html",
+      "target": "/workflows/fabrication-engineer/drawing-scope.html"
     },
     {
       "source": "/onboarding/lead-engineer.html",
@@ -1180,6 +1190,10 @@
     },
     {
       "source": "/standards/rhino-drafting/layout-structure.html",
+      "target": "/workflows/fabrication-engineer/drawing-scope.html"
+    },
+    {
+      "source": "/standards/rhino-drafting/layout-structure.html",
       "target": "/workflows/fabrication-engineer/getting-started.html"
     },
     {
@@ -1573,6 +1587,10 @@
     {
       "source": "/workflows/fabrication-engineer/bom-procedures.html",
       "target": "/workflows/fabrication-engineer/takeoffs.html"
+    },
+    {
+      "source": "/workflows/fabrication-engineer/design-engineering.html",
+      "target": "/workflows/fabrication-engineer/drawing-scope.html"
     },
     {
       "source": "/workflows/fabrication-engineer/design-engineering.html",
