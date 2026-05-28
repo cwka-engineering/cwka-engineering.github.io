@@ -12,6 +12,18 @@ A record of significant additions and updates to the Engineering Wiki.
 
 ---
 
+## 2026-05-28
+
+- **[Onboarding](/onboarding/)** — Navigation restructured: Scheduling Chain and Purchasing Signal Chain are now child pages under [Project Delivery Overview](/onboarding/project-delivery.html); [Lead Engineer Responsibilities](/onboarding/lead-engineer.html) moved as a child page under [Engineering Roles & Core Competencies](/onboarding/engineering-roles.html).
+- **[How We Work](/onboarding/how-we-work.html)** — Interactive department map is now driven from a single YAML data file. The Wiki Assistant can answer questions about department responsibilities and collaboration and will surface direct deep links to individual department panels (e.g. `/onboarding/how-we-work.html#E` for Engineering).
+- **Wiki Assistant — Parts-Match** — Several improvements to the parts-match endpoint used by the PA intake form:
+  - `new_description` and `new_search_word` are now always returned regardless of match outcome, providing a ready ERP description even when no catalog match is found.
+  - New `suggested_fields` object returns structured dimensional properties (thickness, width, length, species/grade, hardware dimensions, UOM, brand, etc.) for direct use in the Planner task ERP entry worksheet.
+  - New optional `subcategory` and `class_id` request fields allow confirmed dropdown selections from the intake form to override Claude's inference.
+  - McMaster-Carr SKU detection: when a McM SKU pattern (e.g. `91251A540`) is present in the description, `CommercialBrand` and `CommercialSubBrand` are automatically populated in `suggested_fields`.
+
+---
+
 ## 2026-05-20
 
 - **[Time Entry — Operation Selection Guide](/tools/time-entry.html#operation-selection-guide)** — New section defining correct classification for all engineering labor operations: Submittal/Post-Submittal trigger rules, Design Engineering vs. Fabrication Engineering scope distinction (including parametric scripting), indirect operation definitions, labor note requirements, and a common misclassification table.
