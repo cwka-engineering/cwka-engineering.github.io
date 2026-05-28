@@ -411,7 +411,8 @@ Rules:
 - "candidates" is [] when match_type is "none"
 - "new_description" and "new_search_word" must always be populated (never null) — they serve as the fallback ERP description if the requester declines candidates
 - "suggested_fields" is always present — use {} if nothing is determinable; never omit the key
-- Always include part_num in candidates`;
+- Always include part_num in candidates
+- All double-quote characters within string values — including inch marks in descriptions (e.g. 1\\"  48\\"x96\\") — must be escaped as \\" to produce valid JSON. Never use a bare " character inside a JSON string value`;
 
 // ---------------------------------------------------------------------------
 // CORS helpers
