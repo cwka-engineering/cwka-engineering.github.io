@@ -11,6 +11,8 @@ sitemap_graph: true
 
 Interactive connectivity graph of the wiki. Node size reflects how many pages link to/from each page. Hover a node to highlight its connections; click to navigate.
 
+[Changelog](/reference/changelog.html)
+
 <div id="sitemap-graph"></div>
 
 <script>
