@@ -49,6 +49,7 @@ interface SummarizeRequest {
 interface PartsMatchRequest {
   user_input: string;
   parts_list: string;
+  subcategory?: string;
 }
 
 // ---------------------------------------------------------------------------
@@ -321,6 +322,14 @@ A "possible" match means the catalog part could physically be cut or trimmed to 
 - Solid Lumber: thickness in quarter notation unless dimensional lumber
 - SearchWord must be ≤8 characters
 - Always generate new_description and new_search_word based on the user's input, even when candidates are found. When candidates exist, the suggested description serves as a fallback if the requester declines them.
+
+## Subcategory (when provided)
+
+When the request includes a non-empty `Subcategory:` line, treat it as a confirmed attribute of the part — a direct form selection, not an inference.
+- Incorporate it into new_description as the primary species/type identifier (e.g. CHERRY → "Cherry", WALNUT → "Walnut", BOLT → use as the form factor)
+- Use it to inform new_search_word if it provides a more specific or accurate term than user_input alone
+- Do not override subcategory with anything inferred from user_input — the dropdown selection takes precedence
+- When subcategory is absent or empty, behavior is unchanged — infer entirely from user_input
 
 ## Structured Fields (suggested_fields — always returned)
 
@@ -995,8 +1004,11 @@ export default {
         return jsonResponse(400, JSON.stringify({ error: "parts_list required" }));
       }
 
+      const subcategory = (body.subcategory || "").trim();
       const userMessage =
-        `User input: ${body.user_input.trim()}\n\nExisting ERP parts (PartNum | Description):\n${body.parts_list.trim()}`;
+        `User input: ${body.user_input.trim()}` +
+        (subcategory ? `\nSubcategory: ${subcategory}` : "") +
+        `\n\nExisting ERP parts (PartNum | Description):\n${body.parts_list.trim()}`;
 
       let rawText: string;
       try {
