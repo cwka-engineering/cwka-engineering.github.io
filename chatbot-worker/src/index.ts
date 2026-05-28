@@ -322,7 +322,7 @@ A "possible" match means the catalog part could physically be cut or trimmed to 
 - Sheet Goods: [W"xL"]; Solid Surface: [W" x L"]
 - Solid Lumber: thickness in quarter notation unless dimensional lumber
 - SearchWord must be ≤8 characters
-- Always generate new_description and new_search_word based on the user's input, even when candidates are found. When candidates exist, the suggested description serves as a fallback if the requester declines them.
+- Always generate new_description and new_search_word from the user's input regardless of match_type.
 
 ## Class ID (when provided)
 
@@ -339,9 +339,7 @@ Class code → friendly name (use for inferred_category):
 - LT → Lighting/Electrical
 - ST → Stone
 
-Use the confirmed class to anchor:
-- suggested_fields dimensional fields (e.g. MT angle/flat bar → PartWidth, PartHeight, Thickness; HW threaded fasteners → DiameterOutside, PartLength)
-- IUM/UOM inference: SL → BF/Volume; HW → EA/Count; SG → SH/Count; SS → SH/Count; MT linear forms (angle, tube, bar, channel) → LF/Length; MT sheet/plate → SH/Count; FA by yard → YD/Length; FA by piece/foam → EA/Count
+Use the confirmed class to anchor suggested_fields — dimensional fields and IUM/UOM inference per the Structured Fields rules below.
 
 When class_id is absent or empty, behavior is unchanged — infer class from context as before.
 
@@ -355,7 +353,7 @@ When the request includes a non-empty `Subcategory:` line, treat it as a confirm
 
 ## Structured Fields (suggested_fields — always returned)
 
-When constructing new_description, also extract dimensional and physical properties as structured key-value pairs in suggested_fields. Always return this object — use {} if nothing is determinable from the input.
+Always extract dimensional and physical properties as structured key-value pairs in suggested_fields. Always return this object — use {} if nothing is determinable from the input.
 
 **Dimension conversion:**
 - Fractions to decimals: 1/8" → 0.125, 3/4" → 0.75, 1-1/2" → 1.5, 1/2-13 thread → DiameterOutside 0.5
@@ -411,8 +409,7 @@ Respond with valid JSON only. No prose, no markdown fences.
 }
 Rules:
 - "candidates" is [] when match_type is "none"
-- "new_description" and "new_search_word" must always be populated — never null, regardless of match_type
-- When match_type is "strong" or "possible", new_description and new_search_word are the ERP-formatted description and search word the requester should use if they decline the candidates
+- "new_description" and "new_search_word" must always be populated (never null) — they serve as the fallback ERP description if the requester declines candidates
 - "suggested_fields" is always present — use {} if nothing is determinable; never omit the key
 - Always include part_num in candidates`;
 
