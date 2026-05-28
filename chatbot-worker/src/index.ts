@@ -324,6 +324,7 @@ A "possible" match means the catalog part could physically be cut or trimmed to 
 - Solid Lumber: thickness in quarter notation unless dimensional lumber
 - SearchWord must be ≤8 characters
 - Always generate new_description and new_search_word from the user's input regardless of match_type.
+- new_description must contain only functional part specifications: type, subtype, material, dimensions, and finish/treatment. Never include brand names, vendor names, or SKU/model numbers in new_description — those belong exclusively in suggested_fields.CommercialBrand and suggested_fields.CommercialSubBrand.
 
 ## Class ID (when provided)
 
@@ -348,9 +349,20 @@ When class_id is absent or empty, behavior is unchanged — infer class from con
 
 When the request includes a non-empty \`Subcategory:\` line, treat it as a confirmed attribute of the part — a direct form selection, not an inference.
 - Incorporate it into new_description as the primary species/type identifier (e.g. CHERRY → "Cherry", WALNUT → "Walnut", BOLT → use as the form factor)
-- Use it to inform new_search_word if it provides a more specific or accurate term than user_input alone
+- new_search_word must equal the subcategory value exactly — do not substitute a different term even if you consider it more precise
 - Do not override subcategory with anything inferred from user_input — the dropdown selection takes precedence
-- When subcategory is absent or empty, behavior is unchanged — infer entirely from user_input
+
+**When subcategory is empty**, select new_search_word from the established vocabulary for the given class_id. Do not introduce terms outside this list. For GL, LT, and ST (no established catalog vocabulary), infer the most applicable single-noun product type, 8 characters maximum.
+
+Established search word vocabulary by class:
+- HW: ANCHOR, BOLT, BRACKET, CABLE, CASTER, CATCH, DOORHW, GASKET, GROMMET, HINGE, LATCH, LOCK, NUT, PULL, RIVET, SCREW, SLIDE, SPACER, WASHER
+- MT: ANGLE, CHANNEL, DECMET, DISC, EXTRUSN, FLATBAR, PIPE, PLATE, RECTTUBE, RNDBAR, RNDTUBE, SHEET, SQBAR, SQTUBE, STUD, TEE, ZBAR
+- SG: ACRYLIC, BACKER, BENDPLY, BENDSUB, CEMBOARD, DRYWALL, EDGEBAND, FELT, FOAM, FRP, HDF, HONYCOMB, INSUL, LAMINATE, MASONITE, MDF, OSB, PB, PEGBOARD, PLAM, PLY, SCREWCOV, TAMBOUR, VENEER, VENPANEL
+- SS: ADHESIVE, MIXTIP, SHEET
+- SL: ASH, BIRCH, CEDAR, CHERRY, CYPRESS, DOUGFIR, HICKORY, IPE, MAHOGANY, MAPLE, OAK, PINE, POPLAR, PTLUMBE, SAPELE, WALNUT
+- FA: DRAPERY, FABRIC, FOAM, GASKET, LEATHER, TEXTILE, TRIM, UPHOLSTE, VINYL
+
+Cross-class duplicates: FOAM (SG=rigid/sheet, FA=soft/upholstery), GASKET (HW=mechanical seal, FA=upholstery trim), SHEET (MT=metal sheet, SS=solid surface) — infer from material context.
 
 ## Structured Fields (suggested_fields — always returned)
 
@@ -382,6 +394,7 @@ Scan user_input for strings matching the McMaster SKU pattern: one or more digit
 - If user_input contains a matching pattern without explicit McM reference but the pattern appears in isolation next to a hardware description: set CommercialBrand to "McMaster-Carr" and CommercialSubBrand to the detected SKU, and note the inference in the notes field
 - McMaster-Carr is the only vendor detected this way — do not attempt SKU detection for other vendors
 - When no McM SKU is detected, CommercialBrand and CommercialSubBrand follow the general brand rules above
+- When a McM SKU is detected, do not infer dimensions, thread specs, or other technical attributes from your training knowledge of that SKU. Only populate new_description and suggested_fields dimension fields from what the requester explicitly stated — set all unstated dimension fields to null. Always include a note instructing the scheduler to verify specs at the McM product page before creating the part (e.g. "McMaster-Carr SKU 91251A540 detected — verify specs at mcmaster.com/91251A540 before creating the part.")
 
 ## Output Format
 Respond with valid JSON only. No prose, no markdown fences.
