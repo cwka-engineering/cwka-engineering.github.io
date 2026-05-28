@@ -50,6 +50,7 @@ interface PartsMatchRequest {
   user_input: string;
   parts_list: string;
   subcategory?: string;
+  class_id?: string;
 }
 
 // ---------------------------------------------------------------------------
@@ -322,6 +323,27 @@ A "possible" match means the catalog part could physically be cut or trimmed to 
 - Solid Lumber: thickness in quarter notation unless dimensional lumber
 - SearchWord must be ≤8 characters
 - Always generate new_description and new_search_word based on the user's input, even when candidates are found. When candidates exist, the suggested description serves as a fallback if the requester declines them.
+
+## Class ID (when provided)
+
+When the request includes a non-empty `Class:` line, use it as the definitive material class — do not override it with an inference from user_input or parts_list.
+
+Class code → friendly name (use for inferred_category):
+- HW → Hardware
+- SG → Sheet Goods
+- SL → Solid Lumber
+- SS → Solid Surface
+- MT → Inventory Metal
+- FA → Fabric/Upholstery
+- GL → Glass/Plastics
+- LT → Lighting/Electrical
+- ST → Stone
+
+Use the confirmed class to anchor:
+- suggested_fields dimensional fields (e.g. MT angle/flat bar → PartWidth, PartHeight, Thickness; HW threaded fasteners → DiameterOutside, PartLength)
+- IUM/UOM inference: SL → BF/Volume; HW → EA/Count; SG → SH/Count; SS → SH/Count; MT linear forms (angle, tube, bar, channel) → LF/Length; MT sheet/plate → SH/Count; FA by yard → YD/Length; FA by piece/foam → EA/Count
+
+When class_id is absent or empty, behavior is unchanged — infer class from context as before.
 
 ## Subcategory (when provided)
 
@@ -1005,9 +1027,11 @@ export default {
       }
 
       const subcategory = (body.subcategory || "").trim();
+      const classId    = (body.class_id    || "").trim();
       const userMessage =
         `User input: ${body.user_input.trim()}` +
         (subcategory ? `\nSubcategory: ${subcategory}` : "") +
+        (classId     ? `\nClass: ${classId}`           : "") +
         `\n\nExisting ERP parts (PartNum | Description):\n${body.parts_list.trim()}`;
 
       let rawText: string;
