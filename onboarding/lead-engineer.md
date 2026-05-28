@@ -46,6 +46,8 @@ Upon starting a new project assignment, every engineer — lead or otherwise —
 2. **Formulate questions** — Develop a list of questions and observations about the elements represented before any modeling begins
 3. **Schedule a PA working session** — Request and hold a kickoff session with the PA before proceeding with substantive work
 
+Steps 1–3 should take no more than **3–4 hours** from the moment you are assigned. The PA session must happen before any substantive modeling begins — not after you've spent a day or two developing an approach.
+
 > **Do not work ahead of PA input.** Neglecting to request the PA working session is a frequent cause of downstream problems — rework, misaligned details, and build strategy decisions that have to be unwound late in the process. The PA has often been engaged with the scope since the bid phase; that context must be transferred before work begins.
 
 The lead engineer is responsible for ensuring this session happens not just for themselves, but for every engineer joining the project.

@@ -53,6 +53,16 @@ CMG jobs are cloned from catalog template jobs and operate on a **Make-to-Stock*
 - Fixed Qty must be **unchecked** on these jobs so that the Prod Qty multiplier correctly scales material and labor takeoffs when the job is cloned at production quantities
 - This is the only job type where Fixed Qty should not be TRUE
 
+## When Quantities Change
+
+Two separate manual updates are required when a production quantity or BOM quantity changes after an M job already exists.
+
+**If the parent BOM quantity changes** (e.g. additional instances of a repeatable part are added to a parent job), the demand link on the M job is **not automatically updated**. The demand link is set at the time the M job is created and does not re-read the parent BOM when it changes. The Master Scheduler must manually relink the demand to reflect the updated quantity before the job is released.
+
+**If the production quantity on a Fixed Qty BOM job changes**, the BOM quantities must also be updated manually. Because Fixed Qty bypasses the Prod Qty multiplier, the BOM holds the exact quantities you entered — it will not scale up or down to match the new production quantity.
+
+In both cases: verify that the production quantity visible on the Job Traveler and in the Production Report matches the actual demand before release. If it does not, flag to the Master Scheduler for relinking before the job moves forward.
+
 ## Common Mistake: Rhino Object Count vs. Production Quantity
 
 Epicor does not track the number of individual pieces within a kit — only the Production Quantity of the job itself. These are not the same thing.

@@ -72,3 +72,21 @@ The built-in `RevCloud` command takes a curve as input and converts it to a clou
 2. Select the polyline and run the alias
 
 The macro converts the selected curve to a revision cloud using a 0.125-unit arc segment length. Adjust the `0.125` value if your drawing scale requires larger or smaller arcs.
+
+## Processing Returned Markups in Bluebeam
+
+When a submittal set is returned with architect or client markups, Bluebeam is used to track which comments have been addressed before the revision set is reissued.
+
+**Workflow:**
+
+1. **Open the returned set** in Bluebeam. If the markups are live objects (not flattened), you can interact with them directly in the Markup List.
+2. **Work through each comment** — update the Rhino model and layout space to address it. Do not mark a comment complete until the change is reflected in the drawings, not just the model.
+3. **Mark each item** using one of two methods:
+   - **Markup status**: Double-click the markup object and set its status to Accepted, Completed, or Rejected. Status and author are recorded in the Markup List history.
+   - **Color highlight**: Paint the markup a contrasting color (opposite of the original comment color) to indicate pickup visually.
+   - **Custom stamp**: A personal check-mark stamp with your initials is a fast alternative to the status workflow.
+4. **Use the Markup List as your checklist** — the list shows all markups, their status, author, and date created. Work through it top to bottom and do not consider the revision complete until every comment has a recorded disposition.
+
+**Unresolved comments:** If a markup cannot be addressed as written — unclear instruction, scope conflict, or requires more information — flag it to the PM rather than marking it complete or silently skipping it. The PM manages the dialogue back to the architect.
+
+**Chain of custody:** The Markup List history (author, date, status) serves as a record of who reviewed and addressed each comment. This is especially important when drawing sets change hands between engineers during a revision cycle.

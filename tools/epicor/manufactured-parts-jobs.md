@@ -71,8 +71,6 @@ Occasionally a parent job turns out to contain **only** metal operations once th
 - The parent job retains its **Make-to-Order** demand link (unlike a standard M job, which is Make-to-Job).
 - The FE manually overrides the job's output part number to MT format (e.g., `1234.MT.00001`) so the part appears correctly on the Production Report.
 
-> **Open question:** In this exception case, should the MT part be created as a formal Part Master entry before the override, or does the job remain "parts on the fly" with the naming changed to MT format? Resolution affects whether downstream part lookups resolve correctly.
-
 ## Anti-Patterns
 
 | Pattern | Problem |

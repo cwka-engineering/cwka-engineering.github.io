@@ -17,6 +17,15 @@ corpus_tags: [fe-submittal]
 
 Use the **Leader** command on the **Notes** layer. Press **Shift** to enable ortho for straight leaders. Then **Insert Block** and choose the appropriate tag block: material tag, material tag + finish tag, or specialty hardware tag. Enter the material code (e.g., "PI01") and place. Add grain direction, grain match, and aligned symbols as needed.
 
+## When is the grain match symbol required?
+{: #grain-match-symbol}
+
+The grain match symbol (a triangle block available in the Rhino template) must be called out on any elevation or detail where grain matching is specified. It should never be assumed — if it is not on the drawing, production and PE will not know a match is required.
+
+Apply the symbol at the seam or joint between surfaces that must be matched. For sequence-matched panels across an elevation, place the symbol at the joint between adjacent panels. For grain-matched doors and drawer fronts, place it at the shared seam.
+
+The specific orientation convention and rules for book match vs. sequence match notation are still being standardized. When in doubt, annotate with a note in addition to the symbol to make the intent unambiguous.
+
 ## How do I set the annotation style for a detail view?
 {: #how-to-set-annotation-style}
 
