@@ -16,8 +16,7 @@ Quick lookups, glossaries, reference tables, and task-oriented indexes.
 - **[Folder Structure & File Management](/reference/folder-structure.html)** - Standard folder organization for projects and engineering files
 - **[Reference Tables](/reference/reference-tables/)** - File naming, cleanup commands, material tags, lay-up formulas, sheet sizes, drill sizes
 - **[Training Videos](/reference/training-videos.html)** - Complete index of engineering training recordings with wiki page links
-- **[AWI Standards Reference](/reference/awi-standards.html)** - Submittal requirements, material specifications, and installation tolerances for AWI Custom and Premium grade
-- **[ANSI/HPVA HP-1 Reference](/reference/ansi-standards.html)** - Hardwood plywood veneer grading, matching, species rules, core types, and dimensional tolerances
+- **[Industry References](/reference/industry-references.html)** — AWI and ANSI/HPVA standards for submittals and material specifications
 
 ## Quick References — "How do I…?"
 

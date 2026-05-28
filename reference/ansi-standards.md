@@ -2,8 +2,9 @@
 layout: default
 title: ANSI/HPVA HP-1 Reference
 permalink: /reference/ansi-standards.html
-parent: Reference
-nav_order: 7
+parent: Industry References
+grand_parent: Reference
+nav_order: 2
 corpus_tags: [fe-submittal]
 ---
 

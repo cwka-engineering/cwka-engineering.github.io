@@ -2,8 +2,9 @@
 layout: default
 title: AWI Standards Reference
 permalink: /reference/awi-standards.html
-parent: Reference
-nav_order: 6
+parent: Industry References
+grand_parent: Reference
+nav_order: 1
 corpus_tags: [fe-submittal]
 ---
 
