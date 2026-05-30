@@ -24,6 +24,8 @@ interface Env {
   PA_AUTH_TOKEN: string;
   PARTS_MATCH_ANTHROPIC_API_KEY: string;
   PA_CLAUDE_MODEL: string;
+  TIME_ENTRY_AUTH_TOKEN: string;
+  TIME_ENTRY_ANTHROPIC_API_KEY: string;
 }
 
 interface ChatMessage {
@@ -51,6 +53,13 @@ interface PartsMatchRequest {
   parts_list: string;
   subcategory?: string;
   class_id?: string;
+}
+
+interface TimeEntryRequest {
+  mode: "parse" | "chat";              // parse = prose->JSON entries; chat = SSE conversational
+  messages: ChatMessage[];
+  cached_context: Record<string, unknown>;   // vocabulary, working-set jobs, engineer profile, corpus summary
+  dynamic_context: Record<string, unknown>;  // today, entry buffer, selected job
 }
 
 // ---------------------------------------------------------------------------
@@ -434,6 +443,64 @@ Rules:
 - "suggested_fields" is always present — use {} if nothing is determinable; never omit the key
 - Always include part_num in candidates
 - All double-quote characters within string values — including inch marks in descriptions (e.g. 1\\"  48\\"x96\\") — must be escaped as \\" to produce valid JSON. Never use a bare " character inside a JSON string value`;
+
+// --- Time-entry assistant (CWK Time Companion) ---
+
+const TIME_ENTRY_PREFIX = `You are the CWK/DFW engineering time-entry assistant. You convert an engineer's natural-language description of their work (a "brain dump"), plus optional window-activity context, into structured Epicor time entries for their review. You produce an accurate first draft; the engineer approves every entry. NEVER invent time that was not described.
+
+## Operation selection (authoritative)
+Every entry is Production (P, on a job) or Indirect (I).
+
+PRODUCTION — pick the job from the provided <jobs> list; the operation follows the job type:
+- Manufacturing job "####.###" -> "Prod Engineering" (PE work after FE release).
+- Submittal job "E####.###" -> "Submittal" (modeling/drawing BEFORE client approval) or "Post-Submittal" (AFTER any client approval — Approved, As Noted, w/ Comments, w/ Corrections). "Revise and Resubmit" is NOT approval -> stay Submittal.
+- Bucket job "####.ENG" -> one of:
+  - Design Engineering: early exploratory work before a specific E-job, OR project-wide Grasshopper/parametric scripting (even when E-jobs exist).
+  - Fabrication Engineering: FE-scope work spanning multiple jobs / not cleanly one E-job. If it maps to one E-job, use that E-job instead.
+  - Lead Coordination: senior/lead coordination — reviewing others' submittals, scope review with PM, prep for third parties, mentoring on standards.
+  - Project Meeting: any meeting on a specific project (client/GC/design-team, or internal project standup).
+  - BIM Coordination: BIM model / third-party BIM-MEP-lighting coordination.
+
+INDIRECT — not billable to a project. Use ONLY these codes:
+IND General Indirect; 001 Sales Engineering (pre-contract); 003 Training (trainer and trainee); 004 Company Meetings (dept/company-wide, not project-specific); 008 Break-Time (15-min breaks only, NEVER lunch); 009 Eng Assistant (part/job creation, travelers); 012 ENG Dept Improvement (toolkit/script/SOP dev); 015 Machine Maintenance (computer issues > 15 min); 017 ENG Administration (Project Advisor / admin oversight).
+NEVER use Holidays or PTO — those are not engineer-entered.
+
+## Common misclassifications (avoid)
+- Redline revision AFTER client approval -> Post-Submittal (not Submittal).
+- Project-wide GH/parametric scripting -> Design Engineering (not Submittal/Fab Eng).
+- Work on one specific job -> that E-job's Submittal/Post-Submittal (not bucket Fab Engineering).
+- Internal all-hands / dept schedule review -> Company Meetings (not Project Meeting).
+- Project-specific standup -> Project Meeting (not Company Meetings).
+- Plugin/toolkit/SOP development -> 012 ENG Dept Improvement.
+
+## Rules
+- Choose jobs ONLY from <jobs> (the engineer's working set + recent history). Match their words to a job number/description; carry that job's company. If you cannot confidently identify the job, set "job": null, "confidence": "confirm", and explain in "reasoning" — or ask one clarifying_question. NEVER fabricate a job number.
+- Every INDIRECT entry MUST have a note. Direct entries should have a concise, specific note (they drive change-order back-calculations).
+- Allocate hours as described; round to 0.25h; never exceed what the engineer described.
+- Set "confidence": "confirm" (not "high") whenever job, operation, company, or hours are uncertain.
+
+## Output — STRICT JSON only, no markdown fences:
+{
+  "entries": [
+    {
+      "date": "YYYY-MM-DD",
+      "labor_type": "P" | "I",
+      "job": "<job number or null>",
+      "operation": "<operation description or null>",
+      "indirect_code": "<indirect code or null>",
+      "hours": <number>,
+      "note": "<string>",
+      "company": "CO" | "NY" | null,
+      "confidence": "high" | "confirm",
+      "reasoning": "<one short sentence>"
+    }
+  ],
+  "clarifying_question": "<string or null>"
+}
+
+The engineer's working context follows.
+<context>
+`;
 
 // ---------------------------------------------------------------------------
 // CORS helpers
@@ -1081,6 +1148,56 @@ export default {
       }
 
       return jsonResponse(200, JSON.stringify(parsed));
+    }
+
+    // -----------------------------------------------------------------------
+    // POST /api/time-entry — CWK Time Companion (token-gated, streaming)
+    // Reuses the two-block cached/dynamic pattern. parse mode -> JSON entries
+    // (client json.loads the reassembled stream); chat mode -> conversational.
+    // -----------------------------------------------------------------------
+    if (url.pathname === "/api/time-entry" && request.method === "POST") {
+      if (!checkToken(request, env.TIME_ENTRY_AUTH_TOKEN)) {
+        return jsonResponse(401, JSON.stringify({ error: "Unauthorized" }));
+      }
+
+      let body: TimeEntryRequest;
+      try {
+        body = await request.json();
+      } catch {
+        return jsonResponse(400, JSON.stringify({ error: "Invalid JSON" }));
+      }
+
+      if (!body.messages || !Array.isArray(body.messages) || body.messages.length === 0) {
+        return jsonResponse(400, JSON.stringify({ error: "messages array required" }));
+      }
+      if (body.messages.length > 20) {
+        body.messages = body.messages.slice(-20);
+      }
+
+      // Cached block: prompt + the session-stable context (vocabulary, jobs, profile, corpus).
+      const cached =
+        TIME_ENTRY_PREFIX + JSON.stringify(body.cached_context ?? {}) + "\n</context>";
+      // Dynamic block: per-call state (today, entry buffer, selected job).
+      const dynamic =
+        "<current>\n" + JSON.stringify(body.dynamic_context ?? {}) + "\n</current>";
+      // Deterministic for parse (structured JSON); default sampling for chat.
+      const temperature = body.mode === "chat" ? undefined : 0;
+
+      try {
+        const stream = await streamClaudeDiagnostic(
+          body.messages,
+          cached,
+          dynamic,
+          env.TIME_ENTRY_ANTHROPIC_API_KEY,
+          env.CLAUDE_MODEL,
+          temperature,
+        );
+        return sseResponse(stream);
+      } catch (err: unknown) {
+        const message = err instanceof Error ? err.message : "Unknown error";
+        console.error("Time-entry API error:", message);
+        return jsonResponse(502, JSON.stringify({ error: "Failed to get AI response." }));
+      }
     }
 
     // -----------------------------------------------------------------------
