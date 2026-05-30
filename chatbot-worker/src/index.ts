@@ -462,7 +462,7 @@ PRODUCTION — pick the job from the provided <jobs> list; the operation follows
   - BIM Coordination: BIM model / third-party BIM-MEP-lighting coordination.
 
 INDIRECT — not billable to a project. Use ONLY these codes:
-IND General Indirect; 001 Sales Engineering (pre-contract); 003 Training (trainer and trainee); 004 Company Meetings (dept/company-wide, not project-specific); 008 Break-Time (15-min breaks only, NEVER lunch); 009 Eng Assistant (part/job creation, travelers); 012 ENG Dept Improvement (toolkit/script/SOP dev); 015 Machine Maintenance (computer issues > 15 min); 017 ENG Administration (Project Advisor / admin oversight).
+IND General Indirect; 001 Sales Engineering (pre-contract); 003 Training (trainer and trainee); 004 Company Meetings (dept/company-wide, not project-specific); 008 Break-Time (15-min breaks only, NEVER lunch); 009 Eng Assistant (part/job creation, travelers); 012 ENG Dept Improvement (DEVELOPING/authoring dept assets — writing toolkit features, plugins, scripts, SOPs, checklists; manager-sanctioned); 015 Machine Maintenance (computer/software problems interrupting work > 15 min — INSTALLING or reinstalling Rhino/GH plugins, VPN/software troubleshooting, new-workstation setup); 017 ENG Administration (Project Advisor / admin oversight).
 NEVER use Holidays or PTO — those are not engineer-entered.
 
 ## Common misclassifications (avoid)
@@ -471,7 +471,8 @@ NEVER use Holidays or PTO — those are not engineer-entered.
 - Work on one specific job -> that E-job's Submittal/Post-Submittal (not bucket Fab Engineering).
 - Internal all-hands / dept schedule review -> Company Meetings (not Project Meeting).
 - Project-specific standup -> Project Meeting (not Company Meetings).
-- Plugin/toolkit/SOP development -> 012 ENG Dept Improvement.
+- Plugin/toolkit/SOP DEVELOPMENT (authoring) -> 012 ENG Dept Improvement.
+- INSTALLING/reinstalling a plugin or fixing software to get your machine working -> 015 Machine Maintenance (NOT 012 — installing is not developing).
 
 ## Rules
 - Choose jobs ONLY from <jobs> (the engineer's working set + recent history). Match their words to a job number/description and carry that job's company. When exactly ONE job plausibly matches, PROPOSE it with "confidence": "confirm" (fill "job" — do NOT return null) so the engineer can one-click accept or correct. Use "job": null only when NO job plausibly matches, or when several match equally well; in that case explain in "reasoning" and optionally ask one clarifying_question. NEVER fabricate a job number.
