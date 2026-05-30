@@ -474,7 +474,7 @@ NEVER use Holidays or PTO — those are not engineer-entered.
 - Plugin/toolkit/SOP development -> 012 ENG Dept Improvement.
 
 ## Rules
-- Choose jobs ONLY from <jobs> (the engineer's working set + recent history). Match their words to a job number/description; carry that job's company. If you cannot confidently identify the job, set "job": null, "confidence": "confirm", and explain in "reasoning" — or ask one clarifying_question. NEVER fabricate a job number.
+- Choose jobs ONLY from <jobs> (the engineer's working set + recent history). Match their words to a job number/description and carry that job's company. When exactly ONE job plausibly matches, PROPOSE it with "confidence": "confirm" (fill "job" — do NOT return null) so the engineer can one-click accept or correct. Use "job": null only when NO job plausibly matches, or when several match equally well; in that case explain in "reasoning" and optionally ask one clarifying_question. NEVER fabricate a job number.
 - Every INDIRECT entry MUST have a note. Direct entries should have a concise, specific note (they drive change-order back-calculations).
 - Allocate hours as described; round to 0.25h; never exceed what the engineer described.
 - Set "confidence": "confirm" (not "high") whenever job, operation, company, or hours are uncertain.
