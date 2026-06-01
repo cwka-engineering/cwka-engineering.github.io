@@ -56,10 +56,12 @@ interface PartsMatchRequest {
 }
 
 interface TimeEntryRequest {
-  mode: "parse" | "chat";              // parse = prose->JSON entries; chat = SSE conversational
+  // parse = prose->JSON entries; chat = SSE conversational;
+  // narrate = day blocks -> {narrative, block_updates} (per-day review)
+  mode: "parse" | "chat" | "narrate";
   messages: ChatMessage[];
   cached_context: Record<string, unknown>;   // vocabulary, working-set jobs, engineer profile, corpus summary
-  dynamic_context: Record<string, unknown>;  // today, entry buffer, selected job
+  dynamic_context: Record<string, unknown>;  // parse/chat: today, entry buffer; narrate: day + indexed blocks
 }
 
 // ---------------------------------------------------------------------------
@@ -446,9 +448,9 @@ Rules:
 
 // --- Time-entry assistant (CWK Time Companion) ---
 
-const TIME_ENTRY_PREFIX = `You are the CWK/DFW engineering time-entry assistant. You convert an engineer's natural-language description of their work (a "brain dump"), plus optional window-activity context, into structured Epicor time entries for their review. You produce an accurate first draft; the engineer approves every entry. NEVER invent time that was not described.
-
-## Operation selection (authoritative)
+// Shared, authoritative operation/indirect taxonomy — single-sourced so the parse
+// and narrate prompts cannot drift. (Canonical Claude source per the time-entry wiki.)
+const OPERATION_RULES = `## Operation selection (authoritative)
 Every entry is Production (P, on a job) or Indirect (I).
 
 PRODUCTION — pick the job from the provided <jobs> list; the operation follows the job type:
@@ -472,7 +474,11 @@ NEVER use Holidays or PTO — those are not engineer-entered.
 - Internal all-hands / dept schedule review -> Company Meetings (not Project Meeting).
 - Project-specific standup -> Project Meeting (not Company Meetings).
 - Plugin/toolkit/SOP DEVELOPMENT (authoring) -> 012 ENG Dept Improvement.
-- INSTALLING/reinstalling a plugin or fixing software to get your machine working -> 015 Machine Maintenance (NOT 012 — installing is not developing).
+- INSTALLING/reinstalling a plugin or fixing software to get your machine working -> 015 Machine Maintenance (NOT 012 — installing is not developing).`;
+
+const TIME_ENTRY_PREFIX = `You are the CWK/DFW engineering time-entry assistant. You convert an engineer's natural-language description of their work (a "brain dump"), plus optional window-activity context, into structured Epicor time entries for their review. You produce an accurate first draft; the engineer approves every entry. NEVER invent time that was not described.
+
+${OPERATION_RULES}
 
 ## Rules
 - Choose jobs ONLY from <jobs> (the engineer's working set + recent history). Match their words to a job number/description and carry that job's company. When exactly ONE job plausibly matches, PROPOSE it with "confidence": "confirm" (fill "job" — do NOT return null) so the engineer can one-click accept or correct. Use "job": null only when NO job plausibly matches, or when several match equally well; in that case explain in "reasoning" and optionally ask one clarifying_question. NEVER fabricate a job number.
@@ -494,6 +500,45 @@ NEVER use Holidays or PTO — those are not engineer-entered.
       "company": "CO" | "NY" | null,
       "confidence": "high" | "confirm",
       "reasoning": "<one short sentence>"
+    }
+  ],
+  "clarifying_question": "<string or null>"
+}
+
+The engineer's working context follows.
+<context>
+`;
+
+// --- Time-entry per-day narrative (CWK Time Companion, mode="narrate") ---
+
+const TIME_ENTRY_NARRATE_PREFIX = `You are the CWK/DFW engineering time-entry assistant in DAY-REVIEW mode. You are given ONE day of the engineer's captured activity as an indexed list of blocks in <current> (each block: index, clock window, duration in hours, app, window title, and any current classification), plus the engineer's job context in <context>. You have two jobs:
+
+1) NARRATIVE — write a brief, plain-language story of the day (2–5 sentences) grounded ONLY in the blocks: what they appear to have worked on, in what order, and the big time sinks. Skimmable and natural; NEVER invent activity that isn't in the blocks. This is the engineer's cue to confirm or correct.
+
+2) BLOCK UPDATES — for blocks you can confidently classify (and for ANY blocks the engineer's latest message resolves), propose a classification, referencing each block by its exact "index". Comms tools (Teams/Outlook/browser) are the ENVIRONMENT for real project work — do NOT default them to Company Meetings; classify by the project/people/title, and OMIT a block entirely when you genuinely cannot tell (never guess). When the engineer says e.g. "those Avalon calls were the E1140 submittal," set exactly those blocks.
+
+${OPERATION_RULES}
+
+## Rules
+- Choose jobs ONLY from <jobs>; match the engineer's words/titles to a job number + description and carry that job's company. NEVER fabricate a job number.
+- Reference each updated block by its exact "index" from <current>; omit blocks you cannot classify.
+- Every INDIRECT update MUST have a note; Direct updates should have a concise, specific note.
+- Set "confidence":"confirm" whenever job, operation, or company is uncertain; "high" only when clear.
+- Keep prose ONLY in "narrative" — "block_updates" is pure data.
+
+## Output — STRICT JSON only, no markdown fences:
+{
+  "narrative": "<2-5 sentence prose summary of the day>",
+  "block_updates": [
+    {
+      "index": <number>,
+      "labor_type": "P" | "I",
+      "job": "<job number or null>",
+      "operation": "<operation description or null>",
+      "indirect_code": "<indirect code or null>",
+      "company": "CO" | "NY" | null,
+      "confidence": "high" | "confirm",
+      "note": "<string>"
     }
   ],
   "clarifying_question": "<string or null>"
@@ -1175,13 +1220,14 @@ export default {
         body.messages = body.messages.slice(-20);
       }
 
+      // Prompt prefix by mode: narrate has its own (day-review) prompt; parse/chat share TIME_ENTRY_PREFIX.
+      const prefix = body.mode === "narrate" ? TIME_ENTRY_NARRATE_PREFIX : TIME_ENTRY_PREFIX;
       // Cached block: prompt + the session-stable context (vocabulary, jobs, profile, corpus).
-      const cached =
-        TIME_ENTRY_PREFIX + JSON.stringify(body.cached_context ?? {}) + "\n</context>";
-      // Dynamic block: per-call state (today, entry buffer, selected job).
+      const cached = prefix + JSON.stringify(body.cached_context ?? {}) + "\n</context>";
+      // Dynamic block: per-call state (parse/chat: today, buffer; narrate: day + indexed blocks).
       const dynamic =
         "<current>\n" + JSON.stringify(body.dynamic_context ?? {}) + "\n</current>";
-      // Deterministic for parse (structured JSON); default sampling for chat.
+      // Deterministic for structured output (parse, narrate); default sampling for chat.
       const temperature = body.mode === "chat" ? undefined : 0;
 
       try {
