@@ -24,6 +24,26 @@ All time for the week must be fully entered in Epicor by **EOD Friday (6pm EST)*
 
 > The previous Monday 12pm EST deadline has been retired. Friday EOD is the new standard.
 
+## Corrections & Retroactive Entries
+{: #corrections}
+
+**Prior-week corrections:** Monday is the window to correct the previous week's entries before payroll is processed. After that, the prior week is locked — do not add or alter time entries for a week once payroll has been run.
+
+**No retroactive additions:** Time may not be added to a prior week after payroll has been processed. If you missed an entry, flag it to your manager — do not back-fill it unilaterally.
+
+### Working ahead of job creation
+{: #working-ahead-of-job-creation}
+
+Engineers sometimes begin work before the operations team has built out the scope-specific E-jobs in Epicor. In this case:
+
+1. **Clock to the project bucket job** (`####.ENG`) in the interim
+2. **Include a detailed labor note** describing the specific scope you were working on — this is critical for reallocation
+3. Once the E-job is created, coordinate with operations to reallocate the labor to the correct job
+
+Reallocation can reach back into prior weeks as needed, but **must not alter total labor hours** — it is a reassignment of existing time, not a correction of quantities.
+
+**If the prior month closes before reallocation occurs**, the labor remains on the bucket job and cannot be properly attributed to the scope. This distorts project-level metrics for that job. Operations and engineering both have an interest in minimizing how often this happens — if you know an E-job is missing, flag it early rather than letting entries accumulate on the bucket.
+
 ## How do I clock into a job using Office MES?
 {: #how-to-clock-in-mes}
 
