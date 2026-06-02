@@ -52,6 +52,10 @@ Steps 1–3 should take no more than **3–4 hours** from the moment you are ass
 
 The lead engineer is responsible for ensuring this session happens not just for themselves, but for every engineer joining the project.
 
+**Time entry for PA sessions:**
+- **Engineer (advisee):** Log to **Scope Review Meeting (SCOPEMTG)** on the E-job the session concerns — for projects kicked off June 1, 2026 or later. For earlier projects, log to Project Meeting on the ENG bucket job.
+- **Project Advisor:** Log to indirect code **020 Project Advisor**, regardless of project start date.
+
 ---
 
 ## Responsibilities

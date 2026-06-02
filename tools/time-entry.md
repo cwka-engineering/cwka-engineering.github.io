@@ -49,7 +49,8 @@ Used for time not billable to a specific project.
 - **009** ENG Assistant, (for support role duties - printing travelers, entering part names, etc)
 - **012** ENG Dept Improvement (for assigned development of departmental assets)
 - **015** Machine Maintenance (fixing computer problems >15 min)
-- **017** ENG Administration (for roles overseeing operations/administrative duties like Project Advisor)
+- **017** ENG Administration (for true departmental administrative work — post-mortems, operational oversight, departmental coordination)
+- **020** Project Advisor (for the PA while performing review or advisory duties with engineering staff)
 
 ## Production Entries (Bucket Jobs)
 
@@ -72,6 +73,7 @@ For direct labor on specific jobs. See the [Operation Selection Guide](#operatio
 ### FE Example Job Name: `E1234.123`
 - Submittal (drawing/modeling prior to client approval)
 - Post-Submittal (modeling/drawing after client approval, prior to PE Release)
+- Scope Review Meeting / SCOPEMTG (scope-specific internal meetings — PA reviews, PE handoffs, Eng/Prod troubleshooting) *(available on projects kicked off June 1, 2026 or later)*
 
 ### PE Example Job Name: `1234.123`
 - Prod Engineering (reviewing, programming, reworking jobs)
@@ -86,9 +88,11 @@ Choosing the correct operation matters — project labor reports and change orde
 ```mermaid
 flowchart LR
   Q1{Project-specific?}
-  Q1 -->|No| IND["Indirect — 003 · 004 · 009 · 012 · 015 · 017 · 001"]
+  Q1 -->|No| IND["Indirect — 003 · 004 · 009 · 012 · 015 · 017 · 020 · 001"]
   Q1 -->|Yes| Q2{Specific E-job?}
-  Q2 -->|"E####.###"| Q3{Client approval?}
+  Q2 -->|"E####.###"| Q5{Meeting or\nproduction work?}
+  Q5 -->|"PA / PE / Prod\nmeeting †"| SCOPE["Scope Review Meeting\n(SCOPEMTG)"]
+  Q5 -->|"Production work"| Q3{Client approval?}
   Q3 -->|"No — or R&amp;R"| SUB[Submittal]
   Q3 -->|"Yes — any status"| POST[Post-Submittal]
   Q2 -->|"####.ENG bucket"| Q4{Work type?}
@@ -98,6 +102,8 @@ flowchart LR
   Q4 --> BIM[BIM Coordination]
   Q4 --> LC[Lead Coordination]
 ```
+
+*† SCOPEMTG is available on projects kicked off June 1, 2026 or later. For earlier projects, use Project Meeting on the ENG bucket.*
 
 ### Labor note requirements
 {: #labor-note-requirements}
@@ -116,6 +122,13 @@ All FE modeling and drawing work prior to client approval. Covers model building
 All FE modeling and drawing work after the client issues an approval — Approved, Approved as Noted, Approved with Comments, or Approved with Corrections. Covers redline incorporation, PE release prep, install drawings, and the final release file. The switchover is triggered by the client's approval response, not by your internal decision to start PE prep.
 
 > "Revise and Resubmit" is not an approval — remain on Submittal. Any approval status (even conditional) triggers the switch to Post-Submittal.
+
+**Scope Review Meeting (SCOPEMTG)**
+Scope-specific internal meetings on a particular E-job — time spent in a PA review call, an FE-to-PE handoff meeting, or an Engineering/Production troubleshooting conversation. Clocked to the E-job the meeting concerns (`E####.###`), not the ENG bucket.
+
+The boundary with Project Meeting: use the ENG bucket + Project Meeting for PM- or client-facing meetings; use the E-job + SCOPEMTG for PA-, PE-, or Production-facing meetings.
+
+> **Availability:** SCOPEMTG is only present on projects kicked off on or after June 1, 2026. For earlier projects, log scope-specific internal meetings to Project Meeting on the ENG bucket job.
 
 ### Direct operations — PE jobs (`####.###`)
 {: #direct-pe-jobs}
@@ -168,7 +181,10 @@ Assigned development of department assets: Engineering Toolkit work, plugin and 
 Computer and software issues that interrupt work, threshold > 15 minutes: software installation for a new workstation, VPN troubleshooting, Rhino/GH plugin installs, and virus protection issues. Routine updates and brief restarts under 15 minutes do not qualify.
 
 **ENG Administration (017)**
-Project Advisor (PA) role duties: PA consults, PA job reviews, post-mortem coordination, and managing engineering operations. Reserved for staff performing PA or administrative oversight functions.
+True departmental administrative work: post-mortem coordination, managing engineering operations, and departmental oversight duties. Does not include PA review meetings or advisory calls with engineers — those belong to **020 Project Advisor**.
+
+**Project Advisor (020)**
+For use by the PA while performing review or advisory duties: PA scope review calls, PA job reviews with the assigned engineer, and advisory participation in handoff or troubleshooting meetings. Reserved for staff acting in the PA role. The engineer on the receiving end of a PA call logs to SCOPEMTG on the E-job (June 1, 2026+ projects) — not to 020.
 
 **Eng Assistant (009)**
 Support role duties: Epicor part creation, job creation, job scheduling, traveler printing, and part name entry.
@@ -189,6 +205,11 @@ Engineering work performed for projects not yet under contract. Use when assigne
 | GH plugin development or toolkit work | Company Meetings | ENG Dept Improvement |
 | BOM work unrelated to BIM coordination | BIM Coordination | Fab Engineering |
 | Time entry administration | (unlabeled General Indirect) | General Indirect, note: "time entry", max 45 min/week |
+| PA review call (advisee, June 1+ project) | Project Meeting on ENG bucket | SCOPEMTG on the E-job |
+| PA review call (advisee, pre-June 1 project) | SCOPEMTG (not available) | Project Meeting on ENG bucket |
+| PA review call (advisor/PA side) | Project Meeting or 017 | 020 Project Advisor |
+| FE-to-PE handoff meeting (advisee) | Project Meeting on ENG bucket | SCOPEMTG on the E-job |
+| Eng/Production troubleshooting call (advisee) | Project Meeting on ENG bucket | SCOPEMTG on the E-job |
 
 ## Toggl Time Entry
 
