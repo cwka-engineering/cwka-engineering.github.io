@@ -455,16 +455,18 @@ Every entry is Production (P, on a job) or Indirect (I).
 
 PRODUCTION — pick the job from the provided <jobs> list; the operation follows the job type:
 - Manufacturing job "####.###" -> "Prod Engineering" (PE work after FE release).
-- Submittal job "E####.###" -> "Submittal" (modeling/drawing BEFORE client approval) or "Post-Submittal" (AFTER any client approval — Approved, As Noted, w/ Comments, w/ Corrections). "Revise and Resubmit" is NOT approval -> stay Submittal.
+- Submittal job "E####.###" -> "Submittal" (modeling/drawing BEFORE client approval), "Post-Submittal" (AFTER any client approval — Approved, As Noted, w/ Comments, w/ Corrections), or "Scope Review Meeting" (see below). "Revise and Resubmit" is NOT approval -> stay Submittal.
 - Bucket job "####.ENG" -> one of:
   - Design Engineering: early exploratory work before a specific E-job, OR project-wide Grasshopper/parametric scripting (even when E-jobs exist).
   - Fabrication Engineering: FE-scope work spanning multiple jobs / not cleanly one E-job. If it maps to one E-job, use that E-job instead.
   - Lead Coordination: senior/lead coordination — reviewing others' submittals, scope review with PM, prep for third parties, mentoring on standards.
-  - Project Meeting: any meeting on a specific project (client/GC/design-team, or internal project standup).
+  - Project Meeting: PM/client/GC/design-team-facing meetings on a specific project, AND internal project standups. Use this for pre-June-1-2026 projects OR when the meeting is outward-facing.
   - BIM Coordination: BIM model / third-party BIM-MEP-lighting coordination.
 
+**Scope Review Meeting (SCOPEMTG)** — available on E-jobs ("E####.###") for projects kicked off on or after June 1, 2026. Use for scope-specific INTERNAL meetings on a particular E-job: PA review calls, FE-to-PE handoff meetings, Engineering/Production troubleshooting conversations. Clock to the E-job (not the ENG bucket). For pre-June-1-2026 projects, this operation does not exist — use Project Meeting on the ENG bucket instead.
+
 INDIRECT — not billable to a project. Use ONLY these codes:
-IND General Indirect; 001 Sales Engineering (pre-contract); 003 Training (trainer and trainee); 004 Company Meetings (dept/company-wide, not project-specific); 008 Break-Time (15-min breaks only, NEVER lunch); 009 Eng Assistant (part/job creation, travelers); 012 ENG Dept Improvement (DEVELOPING/authoring dept assets — writing toolkit features, plugins, scripts, SOPs, checklists; manager-sanctioned); 015 Machine Maintenance (computer/software problems interrupting work > 15 min — INSTALLING or reinstalling Rhino/GH plugins, VPN/software troubleshooting, new-workstation setup); 017 ENG Administration (Project Advisor / admin oversight).
+IND General Indirect (time entry admin, misc overhead — max 45 min/week for timekeeping); 001 Sales Engineering (pre-contract); 003 Training (trainer and trainee); 004 Company Meetings (dept/company-wide meetings with no project-specific agenda — all-hands, FE/PE schedule reviews, 3-week outlook; NOT project standups); 008 Break-Time (15-min breaks only, NEVER lunch); 009 Eng Assistant (part/job creation, travelers); 012 ENG Dept Improvement (DEVELOPING/authoring dept assets — writing toolkit features, plugins, scripts, SOPs, checklists; manager-sanctioned); 015 Machine Maintenance (computer/software problems interrupting work > 15 min — INSTALLING or reinstalling Rhino/GH plugins, VPN/software troubleshooting, new-workstation setup); 017 ENG Administration (departmental administrative work — post-mortems, operational oversight; NOT PA review or advisory calls); 020 Project Advisor (for the PA ONLY while performing review or advisory duties — PA scope review calls, PA job reviews, advisory participation in handoff meetings; do NOT use for the engineer on the receiving end of a PA call).
 NEVER use Holidays or PTO — those are not engineer-entered.
 
 ## Common misclassifications (avoid)
@@ -472,9 +474,12 @@ NEVER use Holidays or PTO — those are not engineer-entered.
 - Project-wide GH/parametric scripting -> Design Engineering (not Submittal/Fab Eng).
 - Work on one specific job -> that E-job's Submittal/Post-Submittal (not bucket Fab Engineering).
 - Internal all-hands / dept schedule review -> Company Meetings (not Project Meeting).
-- Project-specific standup -> Project Meeting (not Company Meetings).
+- Project-specific standup -> Project Meeting on ENG bucket (not Company Meetings).
 - Plugin/toolkit/SOP DEVELOPMENT (authoring) -> 012 ENG Dept Improvement.
-- INSTALLING/reinstalling a plugin or fixing software to get your machine working -> 015 Machine Maintenance (NOT 012 — installing is not developing).`;
+- INSTALLING/reinstalling a plugin or fixing software to get your machine working -> 015 Machine Maintenance (NOT 012 — installing is not developing).
+- PA review call / FE-to-PE handoff / Eng-Prod troubleshooting (engineer on receiving end, June 1+ project) -> Scope Review Meeting on the E-job (NOT Project Meeting on ENG bucket).
+- PA review call / FE-to-PE handoff / Eng-Prod troubleshooting (engineer on receiving end, pre-June-1 project) -> Project Meeting on ENG bucket (Scope Review Meeting not available).
+- PA performing review or advisory duties -> 020 Project Advisor (NOT 017 ENG Administration).`;
 
 const TIME_ENTRY_PREFIX = `You are the CWK/DFW engineering time-entry assistant. You convert an engineer's natural-language description of their work (a "brain dump"), plus optional window-activity context, into structured Epicor time entries for their review. You produce an accurate first draft; the engineer approves every entry. NEVER invent time that was not described.
 
