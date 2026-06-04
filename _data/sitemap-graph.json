@@ -220,7 +220,7 @@
       "id": "/standards/rhino-drafting/",
       "title": "Rhino Drafting",
       "section": "Standards",
-      "degree": 19
+      "degree": 18
     },
     {
       "id": "/standards/rhino-drafting/layout-structure.html",
@@ -286,7 +286,7 @@
       "id": "/tools/epicor/job-management.html",
       "title": "Job Management",
       "section": "Tools",
-      "degree": 15
+      "degree": 14
     },
     {
       "id": "/tools/epicor/manufactured-parts-jobs.html",
@@ -412,13 +412,13 @@
       "id": "/workflows/fabrication-engineer/drawing-scope.html",
       "title": "Drawing Scope & Cartooning",
       "section": "Workflows",
-      "degree": 3
+      "degree": 4
     },
     {
       "id": "/workflows/fabrication-engineer/epicor-interaction.html",
       "title": "Epicor Interaction",
       "section": "Workflows",
-      "degree": 7
+      "degree": 6
     },
     {
       "id": "/workflows/fabrication-engineer/getting-started.html",
@@ -430,7 +430,7 @@
       "id": "/workflows/fabrication-engineer/",
       "title": "Fabrication Engineer (FE)",
       "section": "Workflows",
-      "degree": 25
+      "degree": 26
     },
     {
       "id": "/workflows/fabrication-engineer/material-transmittal.html",
@@ -442,7 +442,7 @@
       "id": "/workflows/fabrication-engineer/overage-and-extras.html",
       "title": "Overage, Extras & Process Waste",
       "section": "Workflows",
-      "degree": 5
+      "degree": 6
     },
     {
       "id": "/workflows/fabrication-engineer/part-naming.html",
@@ -451,16 +451,10 @@
       "degree": 9
     },
     {
-      "id": "/workflows/fabrication-engineer/pe-release-prep.html",
-      "title": "PE Release Preparation",
-      "section": "Workflows",
-      "degree": 10
-    },
-    {
       "id": "/workflows/fabrication-engineer/shipping-components.html",
       "title": "Shipping Components",
       "section": "Workflows",
-      "degree": 7
+      "degree": 6
     },
     {
       "id": "/workflows/fabrication-engineer/solid-wood-components.html",
@@ -478,7 +472,7 @@
       "id": "/workflows/fabrication-engineer/takeoffs.html",
       "title": "Takeoffs",
       "section": "Workflows",
-      "degree": 13
+      "degree": 12
     },
     {
       "id": "/workflows/fabrication-engineer/toolkit/drafting.html",
@@ -502,13 +496,13 @@
       "id": "/workflows/fabrication-engineer/troubleshooting.html",
       "title": "Troubleshooting",
       "section": "Workflows",
-      "degree": 6
+      "degree": 5
     },
     {
       "id": "/workflows/fe-to-pe-release.html",
       "title": "FE to PE Release Procedure",
       "section": "Workflows",
-      "degree": 31
+      "degree": 32
     },
     {
       "id": "/workflows/production-engineer/deliverables.html",
@@ -1150,10 +1144,6 @@
     },
     {
       "source": "/standards/rhino-drafting/",
-      "target": "/workflows/fabrication-engineer/pe-release-prep.html"
-    },
-    {
-      "source": "/standards/rhino-drafting/",
       "target": "/workflows/fabrication-engineer/toolkit/drafting.html"
     },
     {
@@ -1290,11 +1280,11 @@
     },
     {
       "source": "/tools/approvals-process.html",
-      "target": "/workflows/fabrication-engineer/pe-release-prep.html"
+      "target": "/workflows/fabrication-engineer/submittal-review.html"
     },
     {
       "source": "/tools/approvals-process.html",
-      "target": "/workflows/fabrication-engineer/submittal-review.html"
+      "target": "/workflows/fe-to-pe-release.html"
     },
     {
       "source": "/tools/diagnostic.html",
@@ -1455,10 +1445,6 @@
     {
       "source": "/tools/epicor/job-management.html",
       "target": "/workflows/fabrication-engineer/bom-procedures.html"
-    },
-    {
-      "source": "/tools/epicor/job-management.html",
-      "target": "/workflows/fabrication-engineer/pe-release-prep.html"
     },
     {
       "source": "/tools/epicor/job-management.html",
@@ -1630,6 +1616,10 @@
     },
     {
       "source": "/workflows/fabrication-engineer/",
+      "target": "/workflows/fabrication-engineer/drawing-scope.html"
+    },
+    {
+      "source": "/workflows/fabrication-engineer/",
       "target": "/workflows/fabrication-engineer/epicor-interaction.html"
     },
     {
@@ -1642,11 +1632,11 @@
     },
     {
       "source": "/workflows/fabrication-engineer/",
-      "target": "/workflows/fabrication-engineer/part-naming.html"
+      "target": "/workflows/fabrication-engineer/overage-and-extras.html"
     },
     {
       "source": "/workflows/fabrication-engineer/",
-      "target": "/workflows/fabrication-engineer/pe-release-prep.html"
+      "target": "/workflows/fabrication-engineer/part-naming.html"
     },
     {
       "source": "/workflows/fabrication-engineer/",
@@ -1726,10 +1716,6 @@
     },
     {
       "source": "/workflows/fabrication-engineer/epicor-interaction.html",
-      "target": "/workflows/fabrication-engineer/pe-release-prep.html"
-    },
-    {
-      "source": "/workflows/fabrication-engineer/epicor-interaction.html",
       "target": "/workflows/fabrication-engineer/toolkit/"
     },
     {
@@ -1781,31 +1767,15 @@
       "target": "/workflows/fe-to-pe-release.html"
     },
     {
-      "source": "/workflows/fabrication-engineer/pe-release-prep.html",
-      "target": "/workflows/fabrication-engineer/shipping-components.html"
-    },
-    {
-      "source": "/workflows/fabrication-engineer/pe-release-prep.html",
-      "target": "/workflows/fabrication-engineer/submittal-review.html"
-    },
-    {
-      "source": "/workflows/fabrication-engineer/pe-release-prep.html",
+      "source": "/workflows/fabrication-engineer/shipping-components.html",
       "target": "/workflows/fabrication-engineer/takeoffs.html"
     },
     {
-      "source": "/workflows/fabrication-engineer/pe-release-prep.html",
-      "target": "/workflows/fabrication-engineer/troubleshooting.html"
-    },
-    {
-      "source": "/workflows/fabrication-engineer/pe-release-prep.html",
+      "source": "/workflows/fabrication-engineer/shipping-components.html",
       "target": "/workflows/fe-to-pe-release.html"
     },
     {
-      "source": "/workflows/fabrication-engineer/shipping-components.html",
-      "target": "/workflows/fabrication-engineer/takeoffs.html"
-    },
-    {
-      "source": "/workflows/fabrication-engineer/shipping-components.html",
+      "source": "/workflows/fabrication-engineer/submittal-review.html",
       "target": "/workflows/fe-to-pe-release.html"
     },
     {
