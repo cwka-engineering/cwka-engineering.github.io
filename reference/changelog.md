@@ -12,6 +12,15 @@ A record of significant additions and updates to the Engineering Wiki.
 
 ---
 
+## 2026-06-04
+
+- **[Releases & Requests](/tools/releases-and-requests/)** *(new section)* — Documentation for the structured Teams channels: the new AI-assisted [Part Requests](/tools/releases-and-requests/part-requests.html) workflow ([engineer](/tools/releases-and-requests/part-requests/engineer-guide.html) and [scheduler](/tools/releases-and-requests/part-requests/scheduler-guide.html) guides), [Job Requests](/tools/releases-and-requests/job-requests.html), and the [FE to PE Releases](/tools/releases-and-requests/fe-to-pe-releases.html) channel flow.
+- **[Time Entry](/tools/time-entry.html)** — Two new operation codes documented: **020 Project Advisor** (indirect, for PA review duties) and **Scope Review Meeting (SCOPEMTG)** for scope-specific internal meetings on June 1, 2026+ projects. Added a [Corrections & Retroactive Entries](/tools/time-entry.html#corrections) section covering the prior-week correction window and the working-ahead-of-job-creation procedure.
+- **[Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html#how-to-reverse-lookup)** — Reverse Lookup documentation updated for the new AI-powered class → category → natural language search.
+- **Structural cleanup** — Resolved navigation ordering conflicts across the FE Workflow and Epicor sections; grouped AWI and ANSI references under a new [Industry References](/reference/industry-references.html) parent; consolidated the redundant PE Release Preparation page into [FE to PE Release](/workflows/fe-to-pe-release.html); standardized cross-reference formatting site-wide.
+
+---
+
 ## 2026-05-28
 
 - **[Onboarding](/onboarding/)** — Navigation restructured: Scheduling Chain and Purchasing Signal Chain are now child pages under [Project Delivery Overview](/onboarding/project-delivery.html); [Lead Engineer Responsibilities](/onboarding/lead-engineer.html) moved as a child page under [Engineering Roles & Core Competencies](/onboarding/engineering-roles.html).
