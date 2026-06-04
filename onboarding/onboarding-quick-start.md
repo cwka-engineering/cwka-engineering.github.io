@@ -163,7 +163,8 @@ When you need help with specific systems or tools:
 
 ### Engineering Channels
 
-- **Engineering General**: [Engineering General | Engineering | Microsoft Teams](https://teams.microsoft.com/l/channel/19%3A5e5d7627034f431ab0e0fadd79d1cada%40thread.tacv2/Engineering%20General?groupId=f16aaf66-25cc-45e5-bbc2-a509084d3fef&tenantId=b628c2c4-2783-44e3-be45-7175c147108d&ngc=true) — General engineering communication and announcements
+- **[Engineering General](https://teams.microsoft.com/l/channel/19%3A5e5d7627034f431ab0e0fadd79d1cada%40thread.tacv2/Engineering%20General?groupId=f16aaf66-25cc-45e5-bbc2-a509084d3fef&tenantId=b628c2c4-2783-44e3-be45-7175c147108d&ngc=true)** — General engineering communication
+- **[Engineering Announcements](https://teams.microsoft.com/l/channel/19%3Ap1RQINfRQ5FPrbogDmDixvgCHwMT93lxCM91pm53cro1%40thread.tacv2/Engineering%20Announcements?groupId=f16aaf66-25cc-45e5-bbc2-a509084d3fef&tenantId=b628c2c4-2783-44e3-be45-7175c147108d&ngc=true)** — Department-wide announcements from engineering leadership
 
 ### Releases & Requests
 
@@ -172,11 +173,11 @@ The **Releases & Requests** Teams team houses the structured channels for submit
 - **[Part Requests](https://teams.microsoft.com/l/channel/19%3Acb7a4d5df99e473d87f8555bd25a03f8%40thread.tacv2/Part%20Requests?groupId=f7b33eed-e1f9-489d-82c9-072a70bfb5c1&tenantId=b628c2c4-2783-44e3-be45-7175c147108d)** — Submit when you need a global material part looked up or created. See [Engineer Guide](/tools/releases-and-requests/part-requests/engineer-guide.html).
 - **[Job Requests](https://teams.microsoft.com/l/channel/19%3A3beb722a6dd343ec8deec4c5e9dc1e12%40thread.tacv2/Job%20Requests?groupId=f7b33eed-e1f9-489d-82c9-072a70bfb5c1&tenantId=b628c2c4-2783-44e3-be45-7175c147108d)** — Request new ERP jobs (manufactured parts, PM jobs, truck jobs). See [Job Requests](/tools/releases-and-requests/job-requests.html).
 - **[FE to PE Releases](https://teams.microsoft.com/l/channel/19%3Af18e835cfa85453488440493f348b2cc%40thread.tacv2/FE%20to%20PE%20Releases?groupId=f7b33eed-e1f9-489d-82c9-072a70bfb5c1&tenantId=b628c2c4-2783-44e3-be45-7175c147108d)** — Notify PE when a scope is ready for pickup. See [FE to PE Release — Channel Flow](/tools/releases-and-requests/fe-to-pe-release-flow.html).
-- **PE to Shop Releases** — Currently in the Production team; will migrate to Releases & Requests.
+- **[PE to Shop Releases](https://teams.microsoft.com/l/channel/19%3A529a28ca1bfa4a65a06ddc54a9a7d3e6%40thread.tacv2/PE%20to%20Shop%20Releases?groupId=ab06ae12-f467-48d9-b9f8-e04ddc4d917a&tenantId=b628c2c4-2783-44e3-be45-7175c147108d&ngc=true)** — Currently in the Production team; will migrate to Releases & Requests.
 
-### Epicor Channel
+### Epicor (Kinetic Implementation)
 
-- **Engineering | Epicor (Kinetic Implementation)**: [Engineering | Epicor (Kinetic Implementation) | Microsoft Teams](https://teams.microsoft.com/l/channel/19%3A7f519182095a41529623c7ae044979ac%40thread.tacv2/Engineering?groupId=4ce1955e-bf7b-4333-b81f-316330816b47&tenantId=b628c2c4-2783-44e3-be45-7175c147108d&ngc=true) — Epicor implementation coordination
+- **[Engineering](https://teams.microsoft.com/l/channel/19%3A7f519182095a41529623c7ae044979ac%40thread.tacv2/Engineering?groupId=4ce1955e-bf7b-4333-b81f-316330816b47&tenantId=b628c2c4-2783-44e3-be45-7175c147108d&ngc=true)** — Engineering channel within the Epicor (Kinetic Implementation) team; Epicor implementation coordination
 
 ## Microsoft Teams Apps
 
