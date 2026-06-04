@@ -6,6 +6,7 @@ parent: Releases & Requests
 grand_parent: Tools
 nav_order: 1
 has_children: true
+mermaid: true
 corpus_tags: [fe-release]
 ---
 
