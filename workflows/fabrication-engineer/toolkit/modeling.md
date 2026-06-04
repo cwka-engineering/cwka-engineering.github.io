@@ -49,10 +49,23 @@ Nest individual hardware blocks within a macro-level block (e.g., "AZ Clip Assem
 2. Create a layer named with the PRE code: `PRE_[face]_[core]_[backer]_[thickness mm]`.
 3. Model the part at the calculated thickness.
 
+## How do I search for a part by description or specification?
+{: #how-to-reverse-lookup}
+
+Modeling Toolkit → **Reverse Lookup** tab. The search works in three steps:
+
+1. **Select a Class** — choose the material class (Sheet Goods, Solid Lumber, Hardware, etc.)
+2. **Select a Category** — choose a head category within that class (e.g. MDF within Sheet Goods)
+3. **Enter a natural language search** — describe what you're looking for in plain terms. The search understands unit conversions and semantic context: searching "4 feet by 10 feet" will correctly interpret the units and return matching sheet sizes. Hit Enter to search.
+
+The search returns a ranked list of matches with descriptions and part numbers. This uses the same AI backend as the [Part Requests workflow](/tools/releases-and-requests/part-requests.html) — it understands material vocabulary and can reason about specifications rather than just matching keywords.
+
+**Internet connection required.** The initial results list is retrieved from Box (or Epicor directly as a fallback), and the AI search requires a live connection.
+
 ## How do I cache the Epicor parts database for offline use?
 {: #how-to-cache-parts-database}
 
-Modeling Toolkit → **Reverse Lookup**. Select each of the six material classes at least once to cache them locally for offline use.
+Modeling Toolkit → **Reverse Lookup**. Select each material class at least once to cache them locally. The cached list allows the class/category picker to populate without a connection, though the AI-assisted search itself still requires internet.
 
 ## Shared hardware library (McMaster-Carr)
 

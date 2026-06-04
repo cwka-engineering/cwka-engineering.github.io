@@ -94,7 +94,7 @@ See [Layer Organization](/standards/layer-organization/) and [Codes & Tags](/sta
 See [Epicor Job Management](/tools/epicor/job-management.html), [Takeoffs](/workflows/fabrication-engineer/takeoffs.html), and [Part Management](/tools/epicor/part-management.html).
 
 - **BOM sync**: Every material tag used in the Rhino model appears on the Epicor BOM; cross-check tags in the model against the BOM.
-- **Parts master**: Every BOM line ties to a row in Epicor **Parts** (no improvised "part-on-the-fly" lines). Request global materials via the Part Requests channel; project-specific and manufactured parts via Part Entry as per process. Allow for **24-hour** sync where applicable.
+- **Parts master**: Every BOM line ties to a row in Epicor **Parts** (no improvised "part-on-the-fly" lines). Request global materials via the [Part Requests workflow](/tools/releases-and-requests/part-requests/engineer-guide.html); project-specific and manufactured parts via Part Entry as per process. Allow for **24-hour** sync where applicable.
 - **Related operation**: Each material is assigned to the correct **Rel Opr.** (Related Operation). Post-release BOM changes must be flagged with **Added Mtl** per Epicor practice.
 - **Takeoffs**: BOM gross quantities and board footage follow company standards; solid lumber (SL) minimum dimensions belong in the material description where required.
 - **Fixed quantity**: **Fixed QTY** is verified for each material **except** where CMG rules differ—so parent job quantity does not incorrectly multiply materials.
