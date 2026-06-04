@@ -256,7 +256,7 @@
       "id": "/tools/approvals-process.html",
       "title": "Approvals Process",
       "section": "Tools",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "/tools/diagnostic.html",
@@ -286,13 +286,13 @@
       "id": "/tools/epicor/job-management.html",
       "title": "Job Management",
       "section": "Tools",
-      "degree": 14
+      "degree": 15
     },
     {
       "id": "/tools/epicor/manufactured-parts-jobs.html",
       "title": "Manufactured Metal Parts & M Jobs",
       "section": "Tools",
-      "degree": 6
+      "degree": 7
     },
     {
       "id": "/tools/epicor/multi-site-operations.html",
@@ -304,7 +304,7 @@
       "id": "/tools/epicor/part-management.html",
       "title": "Part Management",
       "section": "Tools",
-      "degree": 9
+      "degree": 13
     },
     {
       "id": "/tools/epicor/production-quantity.html",
@@ -323,6 +323,42 @@
       "title": "Troubleshooting",
       "section": "Tools",
       "degree": 3
+    },
+    {
+      "id": "/tools/releases-and-requests/fe-to-pe-release-flow.html",
+      "title": "FE to PE Release — Channel Flow",
+      "section": "Tools",
+      "degree": 2
+    },
+    {
+      "id": "/tools/releases-and-requests/job-requests.html",
+      "title": "Job Requests",
+      "section": "Tools",
+      "degree": 3
+    },
+    {
+      "id": "/tools/releases-and-requests/part-requests/engineer-guide.html",
+      "title": "Engineer / PM Guide",
+      "section": "Home",
+      "degree": 6
+    },
+    {
+      "id": "/tools/releases-and-requests/part-requests/scheduler-guide.html",
+      "title": "Scheduler Guide",
+      "section": "Home",
+      "degree": 4
+    },
+    {
+      "id": "/tools/releases-and-requests/part-requests.html",
+      "title": "Part Requests",
+      "section": "Tools",
+      "degree": 5
+    },
+    {
+      "id": "/tools/releases-and-requests/",
+      "title": "Releases & Requests",
+      "section": "Tools",
+      "degree": 8
     },
     {
       "id": "/tools/remote-desktop.html",
@@ -364,7 +400,7 @@
       "id": "/workflows/fabrication-engineer/bom-procedures.html",
       "title": "BOM Procedures & Validation",
       "section": "Workflows",
-      "degree": 14
+      "degree": 15
     },
     {
       "id": "/workflows/fabrication-engineer/design-engineering.html",
@@ -460,7 +496,7 @@
       "id": "/workflows/fabrication-engineer/toolkit/modeling.html",
       "title": "Modeling Toolkit",
       "section": "Home",
-      "degree": 6
+      "degree": 7
     },
     {
       "id": "/workflows/fabrication-engineer/troubleshooting.html",
@@ -472,7 +508,7 @@
       "id": "/workflows/fe-to-pe-release.html",
       "title": "FE to PE Release Procedure",
       "section": "Workflows",
-      "degree": 28
+      "degree": 31
     },
     {
       "id": "/workflows/production-engineer/deliverables.html",
@@ -1246,6 +1282,10 @@
     },
     {
       "source": "/tools/approvals-process.html",
+      "target": "/tools/releases-and-requests/"
+    },
+    {
+      "source": "/tools/approvals-process.html",
       "target": "/workflows/fabrication-engineer/"
     },
     {
@@ -1406,6 +1446,10 @@
     },
     {
       "source": "/tools/epicor/job-management.html",
+      "target": "/tools/releases-and-requests/job-requests.html"
+    },
+    {
+      "source": "/tools/epicor/job-management.html",
       "target": "/tools/time-entry.html"
     },
     {
@@ -1434,6 +1478,10 @@
     },
     {
       "source": "/tools/epicor/manufactured-parts-jobs.html",
+      "target": "/tools/releases-and-requests/job-requests.html"
+    },
+    {
+      "source": "/tools/epicor/manufactured-parts-jobs.html",
       "target": "/workflows/fabrication-engineer/bom-procedures.html"
     },
     {
@@ -1454,6 +1502,22 @@
     },
     {
       "source": "/tools/epicor/part-management.html",
+      "target": "/tools/releases-and-requests/"
+    },
+    {
+      "source": "/tools/epicor/part-management.html",
+      "target": "/tools/releases-and-requests/part-requests.html"
+    },
+    {
+      "source": "/tools/epicor/part-management.html",
+      "target": "/tools/releases-and-requests/part-requests/engineer-guide.html"
+    },
+    {
+      "source": "/tools/epicor/part-management.html",
+      "target": "/tools/releases-and-requests/part-requests/scheduler-guide.html"
+    },
+    {
+      "source": "/tools/epicor/part-management.html",
       "target": "/workflows/fabrication-engineer/solid-wood-components.html"
     },
     {
@@ -1471,6 +1535,58 @@
     {
       "source": "/tools/epicor/production-report.html",
       "target": "/workflows/fabrication-engineer/submittal-review.html"
+    },
+    {
+      "source": "/tools/releases-and-requests/",
+      "target": "/tools/releases-and-requests/fe-to-pe-release-flow.html"
+    },
+    {
+      "source": "/tools/releases-and-requests/",
+      "target": "/tools/releases-and-requests/job-requests.html"
+    },
+    {
+      "source": "/tools/releases-and-requests/",
+      "target": "/tools/releases-and-requests/part-requests.html"
+    },
+    {
+      "source": "/tools/releases-and-requests/",
+      "target": "/tools/releases-and-requests/part-requests/engineer-guide.html"
+    },
+    {
+      "source": "/tools/releases-and-requests/",
+      "target": "/tools/releases-and-requests/part-requests/scheduler-guide.html"
+    },
+    {
+      "source": "/tools/releases-and-requests/",
+      "target": "/workflows/fe-to-pe-release.html"
+    },
+    {
+      "source": "/tools/releases-and-requests/fe-to-pe-release-flow.html",
+      "target": "/workflows/fe-to-pe-release.html"
+    },
+    {
+      "source": "/tools/releases-and-requests/part-requests.html",
+      "target": "/tools/releases-and-requests/part-requests/engineer-guide.html"
+    },
+    {
+      "source": "/tools/releases-and-requests/part-requests.html",
+      "target": "/tools/releases-and-requests/part-requests/scheduler-guide.html"
+    },
+    {
+      "source": "/tools/releases-and-requests/part-requests.html",
+      "target": "/workflows/fabrication-engineer/toolkit/modeling.html"
+    },
+    {
+      "source": "/tools/releases-and-requests/part-requests/engineer-guide.html",
+      "target": "/tools/releases-and-requests/part-requests/scheduler-guide.html"
+    },
+    {
+      "source": "/tools/releases-and-requests/part-requests/engineer-guide.html",
+      "target": "/workflows/fabrication-engineer/bom-procedures.html"
+    },
+    {
+      "source": "/tools/releases-and-requests/part-requests/engineer-guide.html",
+      "target": "/workflows/fe-to-pe-release.html"
     },
     {
       "source": "/tools/time-entry.html",
