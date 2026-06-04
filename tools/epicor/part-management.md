@@ -10,7 +10,7 @@ corpus_tags: [fe-release, fe-submittal]
 
 # Part Management
 
-> **Related**: [Job Management](/tools/epicor/job-management.html) | [Dashboards](/tools/epicor/dashboards.html)
+> **Related**: [Job Management](/tools/epicor/job-management.html) | [Dashboards](/tools/epicor/dashboards.html) | [Part Requests — Engineer Guide](/tools/releases-and-requests/part-requests/engineer-guide.html)
 
 ## Part Creation
 
@@ -41,7 +41,7 @@ Use the **Part** dashboard. [^transcript-epicor-parts]
 
 [^transcript-epicor-jobs]
 
-- **GM Materials**: Request through designated person (Jack).
+- **GM Materials**: Request via the [Part Requests workflow](/tools/releases-and-requests/part-requests/engineer-guide.html) — submit the form, review the catalog result in Teams, and reply ACCEPT or DECLINE. The scheduler creates the part if no match is found. Allow 24 hours for sync after creation.
 - **Job/Project-Specific**: Engineers create directly.
 - **WC and MT Parts**: Engineers create and BOM directly.
 - **Custom Parts**: Request operations assignment after creation.
