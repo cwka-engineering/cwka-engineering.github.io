@@ -325,7 +325,7 @@
       "degree": 3
     },
     {
-      "id": "/tools/releases-and-requests/fe-to-pe-release-flow.html",
+      "id": "/tools/releases-and-requests/fe-to-pe-releases.html",
       "title": "FE to PE Releases",
       "section": "Tools",
       "degree": 2
@@ -1538,7 +1538,7 @@
     },
     {
       "source": "/tools/releases-and-requests/",
-      "target": "/tools/releases-and-requests/fe-to-pe-release-flow.html"
+      "target": "/tools/releases-and-requests/fe-to-pe-releases.html"
     },
     {
       "source": "/tools/releases-and-requests/",
@@ -1561,7 +1561,7 @@
       "target": "/workflows/fe-to-pe-release.html"
     },
     {
-      "source": "/tools/releases-and-requests/fe-to-pe-release-flow.html",
+      "source": "/tools/releases-and-requests/fe-to-pe-releases.html",
       "target": "/workflows/fe-to-pe-release.html"
     },
     {
