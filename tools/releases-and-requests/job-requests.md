@@ -5,7 +5,6 @@ permalink: /tools/releases-and-requests/job-requests.html
 parent: Releases & Requests
 grand_parent: Tools
 nav_order: 2
-corpus_tags: [fe-release]
 ---
 
 # Job Requests

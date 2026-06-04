@@ -5,7 +5,6 @@ permalink: /tools/releases-and-requests/
 parent: Tools
 nav_order: 7
 has_children: true
-corpus_tags: [fe-release]
 ---
 
 # Releases & Requests

@@ -5,7 +5,6 @@ permalink: /tools/releases-and-requests/fe-to-pe-releases.html
 parent: Releases & Requests
 grand_parent: Tools
 nav_order: 3
-corpus_tags: [fe-release]
 ---
 
 # FE to PE Releases
