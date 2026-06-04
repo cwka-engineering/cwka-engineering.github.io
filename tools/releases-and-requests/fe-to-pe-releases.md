@@ -1,7 +1,7 @@
 ---
 layout: default
 title: FE to PE Releases
-permalink: /tools/releases-and-requests/fe-to-pe-release-flow.html
+permalink: /tools/releases-and-requests/fe-to-pe-releases.html
 parent: Releases & Requests
 grand_parent: Tools
 nav_order: 3
