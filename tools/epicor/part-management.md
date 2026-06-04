@@ -14,14 +14,16 @@ corpus_tags: [fe-release, fe-submittal]
 
 ## Part Creation
 
-Use the **Part** dashboard. [^transcript-epicor-parts]
+Who creates a part depends on its type — see [Permissions](#permissions) below. **GM (General Material) parts are not created directly by engineers**; they are requested through the [Part Requests workflow](/tools/releases-and-requests/part-requests/engineer-guide.html) and created by the scheduler. Engineers create project-specific, WC, and MT parts directly in the **Part** dashboard. [^transcript-epicor-parts]
 
-1. Search for next available part number.
+When creating a part directly:
+
+1. Search for the next available part number.
 2. Use naming conventions:
-   - **GM**: General Material (standard catalog items)
    - **Custom**: Custom project-specific parts
    - **WC**: Wood Component parts
-3. Consult with EA if unsure.
+   - **MT**: Manufactured (metal) parts
+3. Consult with the EA if unsure.
 
 **Required Fields**: Part Number, Description, UOM, Group, Class, Search.
 

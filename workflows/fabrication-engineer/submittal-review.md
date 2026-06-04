@@ -13,7 +13,7 @@ mermaid: true
 
 The three-folder workflow for submitting, reviewing, and revising shop drawings.
 
-> **Related Documents**: [Approvals Process](/tools/approvals-process.html) | [PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html) | [Folder Structure](/reference/folder-structure.html)
+> **Related**: [Approvals Process](/tools/approvals-process.html) | [FE to PE Release](/workflows/fe-to-pe-release.html) | [Folder Structure](/reference/folder-structure.html)
 
 ## Overview
 

@@ -9,7 +9,7 @@ corpus_tags: [fe-release]
 
 # FE to PE Release
 
-> **Related Documents**: [Project Delivery — Phase 3](/onboarding/project-delivery.html#phase-3-fe-release-to-production-engineering-pe-handoff) | [PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html) | [Rhino Drafting](/standards/rhino-drafting/) | [Layer Organization](/standards/layer-organization/) | [Epicor Job Management](/tools/epicor/job-management.html) | [Glossary](/reference/glossary.html)
+> **Related**: [Project Delivery — Phase 3](/onboarding/project-delivery.html#phase-3-fe-release-to-production-engineering-pe-handoff) | [Rhino Drafting](/standards/rhino-drafting/) | [Layer Organization](/standards/layer-organization/) | [Epicor Job Management](/tools/epicor/job-management.html) | [Glossary](/reference/glossary.html)
 
 ## How do I set up the PE release folder?
 {: #how-to-setup-release-folder}

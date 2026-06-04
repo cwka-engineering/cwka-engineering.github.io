@@ -10,7 +10,7 @@ corpus_tags: [fe-release, fe-submittal]
 
 # Epicor Interaction
 
-> **Related**: [Getting Started](/workflows/fabrication-engineer/getting-started.html) | [PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html)
+> **Related**: [Getting Started](/workflows/fabrication-engineer/getting-started.html) | [FE to PE Release](/workflows/fe-to-pe-release.html)
 
 ## Updating Submittal Status
 
@@ -29,7 +29,7 @@ corpus_tags: [fe-release, fe-submittal]
 ## Next Steps
 
 - Continue to [Engineering Toolkit Setup](/workflows/fabrication-engineer/toolkit/) to begin modeling
-- Or jump to [PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html) when ready to release
+- Or jump to [FE to PE Release](/workflows/fe-to-pe-release.html) when ready to release
 
 ## See Also
 

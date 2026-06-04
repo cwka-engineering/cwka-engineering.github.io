@@ -13,7 +13,7 @@ corpus_tags: [fe-submittal]
 
 All project jobs must undergo the PA approval process before FE release to ensure build strategies are reviewed and signed off, and to identify escalation points for fabrication and assembly.
 
-**When to Use**: Submit for approval after finalizing shop drawings but before releasing to Production Engineering. See [FE Workflow - PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html) for context.
+**When to Use**: Submit for approval after finalizing shop drawings but before releasing to Production Engineering. See [FE to PE Release](/workflows/fe-to-pe-release.html) for context.
 
 ## Installing the Approvals App
 {: #how-to-install-approvals-app}

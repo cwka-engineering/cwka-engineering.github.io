@@ -10,7 +10,7 @@ corpus_tags: [fe-release]
 
 # Shipping Components (SCs)
 
-> **Related**: [Part Naming](/workflows/fabrication-engineer/part-naming.html) | [PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html)
+> **Related**: [Part Naming](/workflows/fabrication-engineer/part-naming.html) | [FE to PE Release](/workflows/fe-to-pe-release.html)
 
 ## How do I add SC descriptions after part naming?
 {: #how-to-add-sc-descriptions}
@@ -44,7 +44,7 @@ Always pull the current template from the project template folder rather than re
 ## Next Steps
 
 - Continue to [Takeoffs](/workflows/fabrication-engineer/takeoffs.html) for BOM generation
-- Or jump to [PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html) when ready to release
+- Or jump to [FE to PE Release](/workflows/fe-to-pe-release.html) when ready to release
 
 ## See Also
 

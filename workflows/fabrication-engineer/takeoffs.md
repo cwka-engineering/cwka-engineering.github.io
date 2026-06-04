@@ -88,7 +88,7 @@ After completing your takeoffs, the Lead Engineer or PM sums the manufacturing j
 
 ## Next Steps
 
-- Continue to [PE Release Preparation](/workflows/fabrication-engineer/pe-release-prep.html) when ready to release
+- Continue to [FE to PE Release](/workflows/fe-to-pe-release.html) when ready to release
 - Or return to [Part Naming](/workflows/fabrication-engineer/part-naming.html) if you need to adjust names
 
 ## See Also
