@@ -163,8 +163,8 @@ When you need help with specific systems or tools:
 
 ### Engineering Channels
 
-- **[Engineering General](https://teams.microsoft.com/l/channel/19%3A5e5d7627034f431ab0e0fadd79d1cada%40thread.tacv2/Engineering%20General?groupId=f16aaf66-25cc-45e5-bbc2-a509084d3fef&tenantId=b628c2c4-2783-44e3-be45-7175c147108d&ngc=true)** — General engineering communication
-- **[Engineering Announcements](https://teams.microsoft.com/l/channel/19%3Ap1RQINfRQ5FPrbogDmDixvgCHwMT93lxCM91pm53cro1%40thread.tacv2/Engineering%20Announcements?groupId=f16aaf66-25cc-45e5-bbc2-a509084d3fef&tenantId=b628c2c4-2783-44e3-be45-7175c147108d&ngc=true)** — Department-wide announcements from engineering leadership
+- **[Engineering General](https://teams.microsoft.com/l/channel/19%3A5e5d7627034f431ab0e0fadd79d1cada%40thread.tacv2/Engineering%20General?groupId=f16aaf66-25cc-45e5-bbc2-a509084d3fef&tenantId=b628c2c4-2783-44e3-be45-7175c147108d&ngc=true)** — Discussion, tips, troubleshooting, open questions, and surveys
+- **[Engineering Announcements](https://teams.microsoft.com/l/channel/19%3Ap1RQINfRQ5FPrbogDmDixvgCHwMT93lxCM91pm53cro1%40thread.tacv2/Engineering%20Announcements?groupId=f16aaf66-25cc-45e5-bbc2-a509084d3fef&tenantId=b628c2c4-2783-44e3-be45-7175c147108d&ngc=true)** — Department-wide notices from leadership. Reactions and replies are welcome; do not post independently unless asked.
 
 ### Releases & Requests
 
