@@ -12,7 +12,7 @@ corpus_tags: [fe-submittal]
 
 Building Information Modeling (BIM) coordination is an active part of many projects — particularly commercial and institutional scopes where the architect or general contractor requires subcontractors to participate in a shared model environment. This page describes when BIM applies, what Engineering is responsible for, and how the process works.
 
-> **Related Documents**: [Getting Started](/workflows/fabrication-engineer/getting-started.html) | [Design Engineering](/workflows/fabrication-engineer/design-engineering.html) | [Lead Engineer Responsibilities](/onboarding/lead-engineer.html)
+> **Related**: [Getting Started](/workflows/fabrication-engineer/getting-started.html) | [Design Engineering](/workflows/fabrication-engineer/design-engineering.html) | [Lead Engineer Responsibilities](/onboarding/lead-engineer.html)
 
 ## When Does BIM Apply?
 

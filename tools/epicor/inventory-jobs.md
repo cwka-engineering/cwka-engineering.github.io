@@ -11,7 +11,7 @@ grand_parent: Tools
 
 How the project inventory job controls purchasing for sheet goods, solid surface, solid lumber, and inventory metal.
 
-> **Related Documents**: [Purchasing Signal Chain](/onboarding/purchasing-signal-chain.html) | [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html) | [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html) | [Job Management](/tools/epicor/job-management.html) | [Takeoffs](/workflows/fabrication-engineer/takeoffs.html)
+> **Related**: [Purchasing Signal Chain](/onboarding/purchasing-signal-chain.html) | [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html) | [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html) | [Job Management](/tools/epicor/job-management.html) | [Takeoffs](/workflows/fabrication-engineer/takeoffs.html)
 
 ## Purpose
 

@@ -11,7 +11,7 @@ nav_order: 1
 
 How ship dates cascade into engineering deadlines.
 
-> **Related Documents**: [Project Delivery Overview](/onboarding/project-delivery.html) | [Purchasing Signal Chain](/onboarding/purchasing-signal-chain.html) | [FE to PE Release](/workflows/fe-to-pe-release.html)
+> **Related**: [Project Delivery Overview](/onboarding/project-delivery.html) | [Purchasing Signal Chain](/onboarding/purchasing-signal-chain.html) | [FE to PE Release](/workflows/fe-to-pe-release.html)
 
 ## The Chain
 

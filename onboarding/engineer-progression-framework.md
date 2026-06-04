@@ -8,7 +8,7 @@ nav_order: 6
 
 # Engineer Progression Framework (Engineer I → Engineer II)
 
-> **Related Documents**: [Engineering Roles](/onboarding/engineering-roles.html) | [Glossary](/reference/glossary.html)
+> **Related**: [Engineering Roles](/onboarding/engineering-roles.html) | [Glossary](/reference/glossary.html)
 
 This framework describes how advancement from **Engineer I** to **Engineer II** works for Fabrication and Production Engineering roles. **Promotion is merit-based**, not automatic with tenure. The official job descriptions on file with HR remain the source for hiring and legal language; this page summarizes the policy for day-to-day use.
 

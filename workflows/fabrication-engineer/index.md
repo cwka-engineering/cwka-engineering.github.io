@@ -12,7 +12,7 @@ corpus_tags: [fe-release, fe-submittal]
 
 Complete workflow for Fabrication Engineers from project assignment through PE release.
 
-> **Related Documents**: [Project Delivery Overview](/onboarding/project-delivery.html) | [FE to PE Release](/workflows/fe-to-pe-release.html) (checklist and procedure)
+> **Related**: [Project Delivery Overview](/onboarding/project-delivery.html) | [FE to PE Release](/workflows/fe-to-pe-release.html) (checklist and procedure)
 
 ## Workflow Overview
 

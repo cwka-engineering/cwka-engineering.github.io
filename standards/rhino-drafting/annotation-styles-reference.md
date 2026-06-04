@@ -12,7 +12,7 @@ corpus_tags: [fe-submittal]
 
 The department template includes four annotation styles. Use `SetCurrentAnnotationStyle` to switch between them based on drawing type.
 
-> **Related Documents**: [Annotations](/standards/rhino-drafting/annotations.html) | [Layout Structure](/standards/rhino-drafting/layout-structure.html)
+> **Related**: [Annotations](/standards/rhino-drafting/annotations.html) | [Layout Structure](/standards/rhino-drafting/layout-structure.html)
 
 ## Styles
 

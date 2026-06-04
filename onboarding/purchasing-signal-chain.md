@@ -11,7 +11,7 @@ nav_order: 2
 
 The four gates that must be cleared before materials are ordered.
 
-> **Related Documents**: [Scheduling Chain](/onboarding/scheduling-chain.html) | [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html) | [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html) | [Inventory Jobs (INV)](/tools/epicor/inventory-jobs.html)
+> **Related**: [Scheduling Chain](/onboarding/scheduling-chain.html) | [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html) | [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html) | [Inventory Jobs (INV)](/tools/epicor/inventory-jobs.html)
 
 ## The Four Gates
 

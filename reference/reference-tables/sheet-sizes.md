@@ -12,7 +12,7 @@ corpus_tags: [fe-submittal]
 
 Parts must fit within **actual** sheet dimensions, not nominal catalog sizes. Use this reference when checking part sizes against available stock.
 
-> **Related Documents**: [Material Modeling](/standards/layer-organization/material-modeling.html) | [Takeoffs](/workflows/fabrication-engineer/takeoffs.html)
+> **Related**: [Material Modeling](/standards/layer-organization/material-modeling.html) | [Takeoffs](/workflows/fabrication-engineer/takeoffs.html)
 
 ## Sheet Size Maximums
 

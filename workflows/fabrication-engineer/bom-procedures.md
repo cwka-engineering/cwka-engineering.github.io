@@ -12,7 +12,7 @@ corpus_tags: [fe-release]
 
 Procedures for creating, validating, and managing Bills of Materials in Epicor.
 
-> **Related Documents**: [Takeoffs](/workflows/fabrication-engineer/takeoffs.html) | [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html) | [Job Management](/tools/epicor/job-management.html) | [Material Tag Vocabulary](/reference/reference-tables/material-tag-vocabulary.html)
+> **Related**: [Takeoffs](/workflows/fabrication-engineer/takeoffs.html) | [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html) | [Job Management](/tools/epicor/job-management.html) | [Material Tag Vocabulary](/reference/reference-tables/material-tag-vocabulary.html)
 
 ## Long-Lead Material Identification
 {: #long-lead-materials}

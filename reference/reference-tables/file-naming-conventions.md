@@ -10,7 +10,7 @@ corpus_tags: [fe-release]
 
 # File Naming Conventions
 
-> **Related Documents**: [Folder Structure](/reference/folder-structure.html) | [Part Naming](/workflows/fabrication-engineer/part-naming.html) | [Shipping Components](/workflows/fabrication-engineer/shipping-components.html)
+> **Related**: [Folder Structure](/reference/folder-structure.html) | [Part Naming](/workflows/fabrication-engineer/part-naming.html) | [Shipping Components](/workflows/fabrication-engineer/shipping-components.html)
 
 ## Rhino Files
 

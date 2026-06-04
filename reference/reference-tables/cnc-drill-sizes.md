@@ -12,7 +12,7 @@ corpus_tags: [fe-release]
 
 Drill holes in the model must use diameters available at the fabrication site. Using an unavailable diameter means the part cannot be machined as designed. **Confirm the fabrication site before finalizing drill geometry.**
 
-> **Related Documents**: [FE to PE Release](/workflows/fe-to-pe-release.html) | [PE Processing](/workflows/production-engineer/processing.html)
+> **Related**: [FE to PE Release](/workflows/fe-to-pe-release.html) | [PE Processing](/workflows/production-engineer/processing.html)
 
 ## Colorado Site
 

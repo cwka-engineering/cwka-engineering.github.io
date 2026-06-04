@@ -12,7 +12,7 @@ corpus_tags: [fe-release]
 
 Run these commands before every PE release to ensure model hygiene. See the [FE to PE Release](/workflows/fe-to-pe-release.html) for the complete pre-release checklist.
 
-> **Related Documents**: [FE to PE Release](/workflows/fe-to-pe-release.html) | [Material Modeling](/standards/layer-organization/material-modeling.html)
+> **Related**: [FE to PE Release](/workflows/fe-to-pe-release.html) | [Material Modeling](/standards/layer-organization/material-modeling.html)
 
 ## Required Cleanup Commands
 

@@ -8,7 +8,7 @@ nav_order: 2
 
 # Folder Structure & File Management Outline
 
-> **Related Documents**: [FE Workflow](/workflows/fabrication-engineer/) | [PE Workflow](/workflows/production-engineer/) | [FE to PE Release](/workflows/fe-to-pe-release.html)
+> **Related**: [FE Workflow](/workflows/fabrication-engineer/) | [PE Workflow](/workflows/production-engineer/) | [FE to PE Release](/workflows/fe-to-pe-release.html)
 
 ## Project Organization Overview
 

@@ -9,7 +9,7 @@ corpus_tags: [fe-submittal]
 
 # PA (Project Advisor) Approvals Process
 
-> **Related Documents**: [FE Workflow](/workflows/fabrication-engineer/) | [Project Delivery Overview](/onboarding/project-delivery.html)
+> **Related**: [FE Workflow](/workflows/fabrication-engineer/) | [Project Delivery Overview](/onboarding/project-delivery.html)
 
 All project jobs must undergo the PA approval process before FE release to ensure build strategies are reviewed and signed off, and to identify escalation points for fabrication and assembly.
 

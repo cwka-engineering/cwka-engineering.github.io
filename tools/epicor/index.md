@@ -12,7 +12,7 @@ corpus_tags: [fe-release, fe-submittal]
 
 Central system for managing project data, workflows, and production readiness.
 
-> **Related Documents**: [Time Entry](/tools/time-entry.html) | [FE Workflow](/workflows/fabrication-engineer/) | [Approvals Process](/tools/approvals-process.html)
+> **Related**: [Time Entry](/tools/time-entry.html) | [FE Workflow](/workflows/fabrication-engineer/) | [Approvals Process](/tools/approvals-process.html)
 
 ## How do I import and set up my Epicor layout?
 {: #how-to-import-layout}

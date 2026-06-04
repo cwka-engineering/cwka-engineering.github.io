@@ -12,7 +12,7 @@ corpus_tags: [fe-submittal]
 
 The `02_CoverSheet_CommonPages` folder contains project-level documents that attach to any full project submittal or record set.
 
-> **Related Documents**: [Layout Structure](/standards/rhino-drafting/layout-structure.html) | [Folder Structure](/reference/folder-structure.html) | [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html)
+> **Related**: [Layout Structure](/standards/rhino-drafting/layout-structure.html) | [Folder Structure](/reference/folder-structure.html) | [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html)
 
 ## Shared Base Floorplan (Rhino)
 

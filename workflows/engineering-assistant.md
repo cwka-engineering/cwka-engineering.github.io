@@ -8,7 +8,7 @@ nav_order: 4
 
 # Engineering Assistant (EA) Workflow
 
-> **Related Documents**: [Engineering Roles](/onboarding/engineering-roles.html) | [Epicor Usage](/tools/epicor/) | [Project Delivery Overview](/onboarding/project-delivery.html) | [Information and artifact flow](/onboarding/project-delivery.html#information-artifact-flow)
+> **Related**: [Engineering Roles](/onboarding/engineering-roles.html) | [Epicor Usage](/tools/epicor/) | [Project Delivery Overview](/onboarding/project-delivery.html) | [Information and artifact flow](/onboarding/project-delivery.html#information-artifact-flow)
 
 ## Position Overview
 

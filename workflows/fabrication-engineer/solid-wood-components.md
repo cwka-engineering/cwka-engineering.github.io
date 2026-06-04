@@ -12,7 +12,7 @@ corpus_tags: [fe-submittal]
 
 Complete workflow for creating, BOM'ing, and releasing solid wood component (WC) parts.
 
-> **Related Documents**: [Part Naming](/workflows/fabrication-engineer/part-naming.html) | [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html) | [Part Management](/tools/epicor/part-management.html) | [Job Management](/tools/epicor/job-management.html)
+> **Related**: [Part Naming](/workflows/fabrication-engineer/part-naming.html) | [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html) | [Part Management](/tools/epicor/part-management.html) | [Job Management](/tools/epicor/job-management.html)
 
 ## What Qualifies as a WC?
 {: #how-to-determine-wc}

@@ -8,7 +8,7 @@ nav_order: 2
 
 # Onboarding Quick Start Links
 
-> **Related Documents**: [Engineering Roles & Core Competencies](/onboarding/engineering-roles.html) | [Engineer Progression Framework](/onboarding/engineer-progression-framework.html) | [Project Delivery Overview](/onboarding/project-delivery.html) | [Glossary](/reference/glossary.html)
+> **Related**: [Engineering Roles & Core Competencies](/onboarding/engineering-roles.html) | [Engineer Progression Framework](/onboarding/engineer-progression-framework.html) | [Project Delivery Overview](/onboarding/project-delivery.html) | [Glossary](/reference/glossary.html)
 
 Essential links and resources for new Engineering Department team members. Wondering how Engineer I → II works? Read the [Engineer Progression Framework](/onboarding/engineer-progression-framework.html).
 

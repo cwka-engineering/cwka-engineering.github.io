@@ -12,7 +12,7 @@ corpus_tags: [fe-release, fe-submittal]
 
 Complete reference for material tags used on drawings, in the Material Transmittal Log, and as Rhino layer identifiers.
 
-> **Related Documents**: [Codes & Tags](/standards/layer-organization/codes-and-tags.html) | [Material Modeling](/standards/layer-organization/material-modeling.html) | [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html)
+> **Related**: [Codes & Tags](/standards/layer-organization/codes-and-tags.html) | [Material Modeling](/standards/layer-organization/material-modeling.html) | [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html)
 
 ## Tag Format Rules
 

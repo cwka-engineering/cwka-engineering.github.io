@@ -12,7 +12,7 @@ corpus_tags: [fe-release, fe-submittal]
 
 Standard layer structure and organization for Rhino models.
 
-> **Related Documents**: [Rhino Drafting](/standards/rhino-drafting/) | [Folder Structure](/reference/folder-structure.html) | [FE to PE Release](/workflows/fe-to-pe-release.html)
+> **Related**: [Rhino Drafting](/standards/rhino-drafting/) | [Folder Structure](/reference/folder-structure.html) | [FE to PE Release](/workflows/fe-to-pe-release.html)
 
 ## Overview
 

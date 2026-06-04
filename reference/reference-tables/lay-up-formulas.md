@@ -12,7 +12,7 @@ corpus_tags: [fe-submittal]
 
 Reference for pre-laminated (PRE) material codes, thickness calculations, and the lay-up code system.
 
-> **Related Documents**: [Codes & Tags](/standards/layer-organization/codes-and-tags.html) | [Material Modeling](/standards/layer-organization/material-modeling.html)
+> **Related**: [Codes & Tags](/standards/layer-organization/codes-and-tags.html) | [Material Modeling](/standards/layer-organization/material-modeling.html)
 
 ## PRE Code Format
 

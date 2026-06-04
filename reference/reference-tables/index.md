@@ -11,7 +11,7 @@ has_children: true
 
 Quick-reference tables for daily engineering use. These consolidate the key lookup data engineers need during modeling, drafting, BOM creation, and production.
 
-> **Related Documents**: [Layer Organization](/standards/layer-organization/) | [Rhino Drafting](/standards/rhino-drafting/) | [Folder Structure](/reference/folder-structure.html)
+> **Related**: [Layer Organization](/standards/layer-organization/) | [Rhino Drafting](/standards/rhino-drafting/) | [Folder Structure](/reference/folder-structure.html)
 
 ## Available References
 

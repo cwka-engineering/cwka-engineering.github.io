@@ -12,7 +12,7 @@ corpus_tags: [fe-submittal]
 
 How the Material Transmittal Log works and how engineers interact with it.
 
-> **Related Documents**: [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html) | [Glossary — Epicor Terms](/reference/glossary.html#epicor-terms) | [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html) | [Inventory Jobs (INV)](/tools/epicor/inventory-jobs.html)
+> **Related**: [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html) | [Glossary — Epicor Terms](/reference/glossary.html#epicor-terms) | [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html) | [Inventory Jobs (INV)](/tools/epicor/inventory-jobs.html)
 
 ## What is the TRA?
 
