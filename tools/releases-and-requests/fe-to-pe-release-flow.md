@@ -1,6 +1,6 @@
 ---
 layout: default
-title: FE to PE Release — Channel Flow
+title: FE to PE Releases
 permalink: /tools/releases-and-requests/fe-to-pe-release-flow.html
 parent: Releases & Requests
 grand_parent: Tools
@@ -8,7 +8,7 @@ nav_order: 3
 corpus_tags: [fe-release]
 ---
 
-# FE to PE Release — Channel Flow
+# FE to PE Releases
 
 > This page documents the Teams channel submission step of the FE-to-PE handoff. The full release process — diagnostic tool, release checklist, production drawings folder — is covered in [FE to PE Release](/workflows/fe-to-pe-release.html).
 

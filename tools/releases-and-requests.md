@@ -23,7 +23,7 @@ Submit when you need a global material part that isn't in your BOM or can't be f
 Request new Epicor jobs — manufactured parts requiring engineering attention, or PM-initiated jobs such as warranty or truck jobs. The form routes a Planner task and a Teams notification to the appropriate operations team by site.
 
 ### [FE to PE Releases](/tools/releases-and-requests/fe-to-pe-release-flow.html)
-Submit a release notification when a scope is ready for Production Engineering pickup. The form routes a formatted notification to the appropriate PE contacts based on project. See the [FE to PE Release — Channel Flow](/tools/releases-and-requests/fe-to-pe-release-flow.html) guide.
+Submit a release notification when a scope is ready for Production Engineering pickup. The form routes a formatted notification to the appropriate PE contacts based on project. See the [FE to PE Releases](/tools/releases-and-requests/fe-to-pe-release-flow.html) guide.
 
 > The broader FE-to-PE handoff process — diagnostic tool, release checklist, production drawings folder — is documented in [FE to PE Release](/workflows/fe-to-pe-release.html) in the Workflows section. The Teams channel submission is the final step of that process.
 
