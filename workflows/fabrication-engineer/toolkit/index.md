@@ -2,7 +2,7 @@
 layout: default
 title: Engineering Toolkit (Setup)
 permalink: /workflows/fabrication-engineer/toolkit/
-nav_order: 3
+nav_order: 4
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
 has_children: true

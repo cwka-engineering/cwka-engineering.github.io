@@ -4,7 +4,7 @@ title: Submittal Review Cycle
 permalink: /workflows/fabrication-engineer/submittal-review.html
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
-nav_order: 11
+nav_order: 12
 corpus_tags: [fe-submittal]
 mermaid: true
 ---

@@ -2,7 +2,7 @@
 layout: default
 title: Drawing Scope & Cartooning
 permalink: /workflows/fabrication-engineer/drawing-scope.html
-nav_order: 4
+nav_order: 5
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
 corpus_exclude: true

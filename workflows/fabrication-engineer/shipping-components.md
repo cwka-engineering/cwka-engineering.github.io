@@ -2,7 +2,7 @@
 layout: default
 title: Shipping Components
 permalink: /workflows/fabrication-engineer/shipping-components.html
-nav_order: 6
+nav_order: 7
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
 corpus_tags: [fe-release]

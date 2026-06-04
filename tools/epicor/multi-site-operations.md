@@ -4,7 +4,7 @@ title: Multi-Site Operations
 permalink: /tools/epicor/multi-site-operations.html
 parent: Epicor Usage
 grand_parent: Tools
-nav_order: 6
+nav_order: 7
 ---
 
 # Multi-Site Operations

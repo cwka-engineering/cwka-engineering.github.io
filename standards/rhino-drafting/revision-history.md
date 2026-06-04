@@ -3,7 +3,7 @@ layout: default
 title: Revision History
 permalink: /standards/rhino-drafting/revision-history.html
 nav_order: 10
-parent: Rhino Drafting Standards
+parent: Rhino Drafting
 grand_parent: Standards
 corpus_tags: [fe-release, fe-submittal]
 ---

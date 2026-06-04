@@ -4,7 +4,7 @@ title: BIM Coordination
 permalink: /workflows/fabrication-engineer/bim-coordination.html
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
-nav_order: 14
+nav_order: 15
 corpus_tags: [fe-submittal]
 ---
 

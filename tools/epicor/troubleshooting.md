@@ -2,7 +2,7 @@
 layout: default
 title: Troubleshooting
 permalink: /tools/epicor/troubleshooting.html
-nav_order: 5
+nav_order: 9
 parent: Epicor Usage
 grand_parent: Tools
 ---

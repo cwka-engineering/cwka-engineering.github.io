@@ -2,7 +2,7 @@
 layout: default
 title: PE Release Preparation
 permalink: /workflows/fabrication-engineer/pe-release-prep.html
-nav_order: 8
+nav_order: 9
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
 corpus_tags: [fe-release]
