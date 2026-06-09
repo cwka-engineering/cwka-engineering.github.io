@@ -50,7 +50,7 @@ interface SummarizeRequest {
 
 interface PartsMatchRequest {
   user_input: string;
-  parts_list: string;
+  parts_list?: string;
   subcategory?: string;
   class_id?: string;
 }
@@ -1168,17 +1168,16 @@ export default {
       if (!body.user_input || typeof body.user_input !== "string" || !body.user_input.trim()) {
         return jsonResponse(400, JSON.stringify({ error: "user_input required" }));
       }
-      if (!body.parts_list || typeof body.parts_list !== "string" || !body.parts_list.trim()) {
-        return jsonResponse(400, JSON.stringify({ error: "parts_list required" }));
-      }
-
       const subcategory = (body.subcategory || "").trim();
       const classId    = (body.class_id    || "").trim();
+      const partsList  = (body.parts_list  || "").trim();
       const userMessage =
         `User input: ${body.user_input.trim()}` +
         (subcategory ? `\nSubcategory: ${subcategory}` : "") +
         (classId     ? `\nClass: ${classId}`           : "") +
-        `\n\nExisting ERP parts (PartNum | Description):\n${body.parts_list.trim()}`;
+        (partsList
+          ? `\n\nExisting ERP parts (PartNum | Description):\n${partsList}`
+          : `\n\nNo ERP catalog data available for this request.`);
 
       let rawText: string;
       try {
