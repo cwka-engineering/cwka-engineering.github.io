@@ -53,6 +53,7 @@ interface PartsMatchRequest {
   parts_list?: string;
   subcategory?: string;
   class_id?: string;
+  no_catalog_data?: boolean;
 }
 
 interface TimeEntryRequest {
@@ -1168,16 +1169,17 @@ export default {
       if (!body.user_input || typeof body.user_input !== "string" || !body.user_input.trim()) {
         return jsonResponse(400, JSON.stringify({ error: "user_input required" }));
       }
-      const subcategory = (body.subcategory || "").trim();
-      const classId    = (body.class_id    || "").trim();
-      const partsList  = (body.parts_list  || "").trim();
+      const subcategory   = (body.subcategory || "").trim();
+      const classId       = (body.class_id    || "").trim();
+      const partsList     = (body.parts_list  || "").trim();
+      const noCatalog     = body.no_catalog_data === true || !partsList;
       const userMessage =
         `User input: ${body.user_input.trim()}` +
         (subcategory ? `\nSubcategory: ${subcategory}` : "") +
         (classId     ? `\nClass: ${classId}`           : "") +
-        (partsList
-          ? `\n\nExisting ERP parts (PartNum | Description):\n${partsList}`
-          : `\n\nNo ERP catalog data available for this request.`);
+        (noCatalog
+          ? `\n\nNo ERP catalog data available for this request.`
+          : `\n\nExisting ERP parts (PartNum | Description):\n${partsList}`);
 
       let rawText: string;
       try {
