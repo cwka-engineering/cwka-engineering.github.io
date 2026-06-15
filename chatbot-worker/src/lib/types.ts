@@ -12,8 +12,6 @@ export interface Env {
   PA_CLAUDE_MODEL: string;
   TIME_ENTRY_AUTH_TOKEN: string;
   TIME_ENTRY_ANTHROPIC_API_KEY: string;
-  CLOCKED_TIME_QC_AUTH_TOKEN: string;
-  CLOCKED_TIME_QC_ANTHROPIC_API_KEY: string;
 }
 
 export interface ChatMessage {
