@@ -13,6 +13,7 @@ interface NormalizedRow {
   clock_in_time: number | null; // LaborDtl_ClockinTime  (decimal hours, e.g. 8.75 = 8:45am)
   clock_out_time: number | null;// LaborDtl_ClockOutTime (decimal hours)
   pay_period: string | null;    // Calculated_PayPeriod  first 10 chars = YYYY-MM-DD
+  company: string;              // Calculated_Company    "CWK Associates" | "Digifabshop"
 }
 
 function normalizeRow(r: Record<string, unknown>): NormalizedRow {
@@ -33,6 +34,7 @@ function normalizeRow(r: Record<string, unknown>): NormalizedRow {
     pay_period: r["Calculated_PayPeriod"]
       ? String(r["Calculated_PayPeriod"]).slice(0, 10)
       : null,
+    company: String(r["Calculated_Company"] ?? "").trim(),
   };
 }
 
@@ -64,9 +66,38 @@ function addDays(dateStr: string, n: number): string {
   return d.toISOString().slice(0, 10);
 }
 
-// Clock time is already decimal hours (e.g. 8.75 = 8:45am) from LaborDtl_ClockinTime.
-function clockToDecimalHours(n: number | null): number | null {
-  return n;
+// Logical day boundary for midnight-crossing detection (4am).
+// Entries that start at or after this hour may span midnight; entries before it are
+// genuine early-morning starts and should not be wrapped.
+const LOGICAL_DAY_START_HOUR = 4.0;
+
+// CWK Associates (Mountain Time) is always 2h behind Digifabshop (Eastern Time).
+// Mountain and Eastern observe DST together, so the offset is constant year-round.
+// Applied only to MES days (detected via IDLE TIME rows) to normalize all clock
+// windows to Eastern before overlap comparison.
+const CWK_TO_EASTERN_OFFSET = 2.0;
+
+// Returns a timezone-normalized, midnight-crossing-safe {cin, cout} window for a row,
+// or null if the row has no usable clock times.
+// isMesDay: true when the day contains IDLE TIME rows (MES entry method detected).
+function overlapWindow(
+  r: NormalizedRow,
+  isMesDay: boolean
+): { cin: number; cout: number } | null {
+  if (r.clock_in_time === null || r.clock_out_time === null) return null;
+  let cin = r.clock_in_time;
+  let cout = r.clock_out_time;
+  // MES-only: normalize CWK (Mountain) → Eastern so cross-company windows are comparable.
+  if (isMesDay && r.company === "CWK Associates") {
+    cin += CWK_TO_EASTERN_OFFSET;
+    cout += CWK_TO_EASTERN_OFFSET;
+  }
+  // Midnight crossing: entry started in the workday and clock_out wrapped past midnight.
+  if (cin >= LOGICAL_DAY_START_HOUR && cout <= cin) {
+    cout += 24;
+  }
+  if (cout <= cin) return null;
+  return { cin, cout };
 }
 
 // ---------------------------------------------------------------------------
@@ -106,7 +137,7 @@ const THRESHOLDS = {
   daily_high_engineer: 12.0,
   weekly_ot_threshold: 40.0,
   break_day_min: 6.0,
-  overlap_min_hours: 0.25,
+  overlap_min_hours: 1 / 60,
   idle_threshold_hours: 1.0,
   missing_note_min_hours_payroll: 1.0,
 };
@@ -253,17 +284,17 @@ export function analyzeClockData(
     }
   }
 
-  // Overlap flag — clock windows that overlap >= 15 min
+  // Overlap flag — clock windows that overlap >= 1 min.
+  // MES days (detected via IDLE TIME rows) have CWK entries normalized +2h to Eastern
+  // before comparison so cross-company windows are in the same timezone reference.
   for (const [date, dayRows] of byDate) {
     const ws = weekStart(date, week_starts_sunday);
+    const isMesDay = dayRows.some(
+      r => r.labor_type === "I" && r.labor_note.toUpperCase() === "IDLE TIME"
+    );
     const windows = dayRows
-      .map(r => ({
-        cin: r.clock_in_time,
-        cout: r.clock_out_time,
-      }))
-      .filter((w): w is { cin: number; cout: number } =>
-        w.cin !== null && w.cout !== null
-      )
+      .map(r => overlapWindow(r, isMesDay))
+      .filter((w): w is { cin: number; cout: number } => w !== null)
       .sort((a, b) => a.cin - b.cin);
 
     for (let i = 0; i < windows.length - 1; i++) {
@@ -303,14 +334,12 @@ export function analyzeClockData(
     for (const [date, dayRows] of byDate) {
       const tot = dayRows.reduce((a, r) => a + r.labor_hours, 0);
       if (tot < 4) continue;
+      const isMesDay = dayRows.some(
+        r => r.labor_type === "I" && r.labor_note.toUpperCase() === "IDLE TIME"
+      );
       const windows = dayRows
-        .map(r => ({
-          cin: r.clock_in_time,
-          cout: r.clock_out_time,
-        }))
-        .filter((w): w is { cin: number; cout: number } =>
-          w.cin !== null && w.cout !== null
-        )
+        .map(r => overlapWindow(r, isMesDay))
+        .filter((w): w is { cin: number; cout: number } => w !== null)
         .sort((a, b) => a.cin - b.cin);
       if (windows.length < 2) continue;
       const hasLunchGap = windows.some((w, i) =>
