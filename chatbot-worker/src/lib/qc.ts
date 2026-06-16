@@ -5,25 +5,31 @@ import type { QCIssue, ClockQCResponse } from "../routes/clocked-time-qc";
 // ---------------------------------------------------------------------------
 
 interface NormalizedRow {
-  clock_in_date: string;         // LaborDtl_ClockInDate   "YYYY-MM-DD"
-  labor_type: string;            // LaborHed_LaborType     "P" | "I"
-  labor_hours: number;           // LaborDtl_LaborQty
-  labor_operation: string;       // LaborHed_OpCode
-  labor_note: string;            // LaborDtl_LaborNote
-  clock_in_time: string | null;  // Calculated_Std_Clock_In  (NY-local, pre-normalized by ERP)
-  clock_out_time: string | null; // Calculated_Std_Clock_Out
-  pay_period: string | null;     // Calculated_PayPeriod   first 10 chars = YYYY-MM-DD
+  clock_in_date: string;        // LaborDtl_ClockInDate   "YYYY-MM-DD" (API returns ISO datetime)
+  labor_type: string;           // LaborDtl_LaborType     "P" | "I"
+  labor_hours: number;          // LaborDtl_LaborHrs
+  labor_operation: string;      // LaborDtl_OpCode (direct) | Indirect_IndirectCode (indirect)
+  labor_note: string;           // LaborDtl_LaborNote
+  clock_in_time: number | null; // LaborDtl_ClockinTime  (decimal hours, e.g. 8.75 = 8:45am)
+  clock_out_time: number | null;// LaborDtl_ClockOutTime (decimal hours)
+  pay_period: string | null;    // Calculated_PayPeriod  first 10 chars = YYYY-MM-DD
 }
 
 function normalizeRow(r: Record<string, unknown>): NormalizedRow {
+  const directOp = String(r["LaborDtl_OpCode"] ?? "").trim();
+  const indirectOp = String(r["Indirect_IndirectCode"] ?? "").trim();
   return {
     clock_in_date: String(r["LaborDtl_ClockInDate"] ?? "").slice(0, 10),
-    labor_type: String(r["LaborHed_LaborType"] ?? "").trim().toUpperCase(),
-    labor_hours: parseFloat(String(r["LaborDtl_LaborQty"] ?? "0")) || 0,
-    labor_operation: String(r["LaborHed_OpCode"] ?? "").trim(),
+    labor_type: String(r["LaborDtl_LaborType"] ?? "").trim().toUpperCase(),
+    labor_hours: parseFloat(String(r["LaborDtl_LaborHrs"] ?? "0")) || 0,
+    labor_operation: directOp || indirectOp,
     labor_note: String(r["LaborDtl_LaborNote"] ?? "").trim(),
-    clock_in_time: (r["Calculated_Std_Clock_In"] as string | null) ?? null,
-    clock_out_time: (r["Calculated_Std_Clock_Out"] as string | null) ?? null,
+    clock_in_time: r["LaborDtl_ClockinTime"] != null
+      ? parseFloat(String(r["LaborDtl_ClockinTime"])) || null
+      : null,
+    clock_out_time: r["LaborDtl_ClockOutTime"] != null
+      ? parseFloat(String(r["LaborDtl_ClockOutTime"])) || null
+      : null,
     pay_period: r["Calculated_PayPeriod"]
       ? String(r["Calculated_PayPeriod"]).slice(0, 10)
       : null,
@@ -58,14 +64,9 @@ function addDays(dateStr: string, n: number): string {
   return d.toISOString().slice(0, 10);
 }
 
-// Clock time string → decimal hours since midnight.
-// ERP Calculated_Std_Clock_In/Out are already in NY local time — strip any TZ suffix.
-function clockToDecimalHours(s: string | null): number | null {
-  if (!s) return null;
-  const cleaned = s.replace(/[Zz]$/, "").replace(/[+-]\d{2}:\d{2}$/, "");
-  const match = cleaned.match(/T(\d{2}):(\d{2})/);
-  if (!match) return null;
-  return parseInt(match[1]) + parseInt(match[2]) / 60;
+// Clock time is already decimal hours (e.g. 8.75 = 8:45am) from LaborDtl_ClockinTime.
+function clockToDecimalHours(n: number | null): number | null {
+  return n;
 }
 
 // ---------------------------------------------------------------------------
@@ -257,8 +258,8 @@ export function analyzeClockData(
     const ws = weekStart(date, week_starts_sunday);
     const windows = dayRows
       .map(r => ({
-        cin: clockToDecimalHours(r.clock_in_time),
-        cout: clockToDecimalHours(r.clock_out_time),
+        cin: r.clock_in_time,
+        cout: r.clock_out_time,
       }))
       .filter((w): w is { cin: number; cout: number } =>
         w.cin !== null && w.cout !== null
@@ -304,8 +305,8 @@ export function analyzeClockData(
       if (tot < 4) continue;
       const windows = dayRows
         .map(r => ({
-          cin: clockToDecimalHours(r.clock_in_time),
-          cout: clockToDecimalHours(r.clock_out_time),
+          cin: r.clock_in_time,
+          cout: r.clock_out_time,
         }))
         .filter((w): w is { cin: number; cout: number } =>
           w.cin !== null && w.cout !== null
