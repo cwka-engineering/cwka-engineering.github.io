@@ -3,16 +3,26 @@ import { callClaude } from "../lib/claude";
 import { checkToken, jsonResponse } from "../lib/helpers";
 import type { Env } from "../lib/types";
 
+export interface DigestFinding {
+  name: string;
+  issue_count: number;
+  issue_types: string[];           // e.g. ["Miss", "Notes!"]
+}
+
 export interface ClockQCRequest {
   employee_id: string;
   employee_name: string;
   dept_role: string;
   pay_period_start: string;        // YYYY-MM-DD
   pay_period_end: string;          // YYYY-MM-DD
-  context: "payroll" | "engineer";
+  context: "payroll" | "engineer" | "digest";
   labor_rows: Record<string, unknown>[];
   week_starts_sunday?: boolean;
   pto_holiday_dates?: string[];    // TODO: wire from Paylocity API once available
+  // digest context only — labor_rows ignored when context === "digest"
+  findings?: DigestFinding[];
+  total_engineers?: number;
+  flagged_count?: number;
 }
 
 export interface QCIssue {
@@ -76,6 +86,13 @@ export async function handleClockedTimeQC(request: Request, env: Env): Promise<R
     return jsonResponse(400, JSON.stringify({ error: "Invalid JSON" }));
   }
 
+  if (body.context === "digest") {
+    if (!body.findings || !Array.isArray(body.findings)) {
+      return jsonResponse(400, JSON.stringify({ error: "findings array required for digest context" }));
+    }
+    return handleDigest(body, env);
+  }
+
   if (!body.employee_id || !body.labor_rows || !Array.isArray(body.labor_rows)) {
     return jsonResponse(400, JSON.stringify({ error: "employee_id and labor_rows required" }));
   }
@@ -130,4 +147,58 @@ export async function handleClockedTimeQC(request: Request, env: Env): Promise<R
     summary_stats,
     message_text,
   } satisfies ClockQCResponse));
+}
+
+// ---------------------------------------------------------------------------
+// Digest handler — weekly manager summary across all engineers
+// ---------------------------------------------------------------------------
+
+const DIGEST_SYSTEM_PROMPT = `You write short, direct Monday morning Teams DMs to engineering managers at a custom architectural fabrication company summarizing the weekly clocked-time QC findings across the team. Tone is factual and concise — this is a brief heads-up, not a detailed report. Use plain Markdown (bold, bullets). No preamble, no sign-off.
+
+Structure:
+- One-sentence team summary (X of Y engineers flagged, or all clear)
+- If any flagged: bullet list of named engineers with their issue types
+- One closing line noting engineers have been notified directly and corrections are due Wednesday EOD`;
+
+async function handleDigest(body: ClockQCRequest, env: Env): Promise<Response> {
+  const {
+    pay_period_start,
+    pay_period_end,
+    findings = [],
+    total_engineers = 0,
+    flagged_count = 0,
+  } = body;
+
+  const flaggedLines = findings
+    .map(f => `- ${f.name}: ${f.issue_count} issue${f.issue_count !== 1 ? "s" : ""} (${f.issue_types.join(", ")})`)
+    .join("\n");
+
+  const userPrompt = flagged_count > 0
+    ? `Pay period: ${pay_period_start} – ${pay_period_end}\n` +
+      `Team: ${flagged_count} of ${total_engineers} engineers flagged\n\n` +
+      `Flagged engineers:\n${flaggedLines}\n\nWrite the manager digest DM.`
+    : `Pay period: ${pay_period_start} – ${pay_period_end}\n` +
+      `Team: all ${total_engineers} engineers clear — no issues found.\n\n` +
+      `Write the all-clear manager digest DM.`;
+
+  let message_text: string | null = null;
+  try {
+    message_text = await callClaude(
+      userPrompt,
+      DIGEST_SYSTEM_PROMPT,
+      env.TIME_ENTRY_ANTHROPIC_API_KEY,
+      env.PA_CLAUDE_MODEL,
+      512,
+    );
+  } catch (err) {
+    console.error("clocked-time-qc digest Claude error:", err);
+  }
+
+  return jsonResponse(200, JSON.stringify({
+    has_issues: flagged_count > 0,
+    issue_count: flagged_count,
+    issues: [],
+    summary_stats: null,
+    message_text,
+  }));
 }
