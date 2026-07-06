@@ -68,7 +68,6 @@ Resolution instructions by issue type:
 - Overlap!: Open both overlapping rows in CrossTimeReview and adjust clock times so they don't overlap.
 - Idle: Idle Time entries over 1h need manager review. Confirm with your manager or correct the entry.
 - Lunch?: Days without a midday gap may be missing a Break-Time row — verify your clock-in/out are accurate.
-- PTO_WASTED: PTO was recorded on a week where you already reached 40h — those PTO hours won't carry over. Confirm intent with your manager.
 - NO_LABOR_ROWS: No labor rows were found for this pay period. If you worked, submit your time immediately.`;
 
 export async function handleClockedTimeQC(request: Request, env: Env): Promise<Response | null> {
@@ -157,8 +156,27 @@ const DIGEST_SYSTEM_PROMPT = `You write short, direct Monday morning Teams DMs t
 
 Structure:
 - One-sentence team summary (X of Y engineers flagged, or all clear)
-- If any flagged: bullet list of named engineers with their issue types
+- If any flagged: bullet list of named engineers, each with a short plain-language gist of their issues on the same line — not raw issue codes. Translate codes to natural phrases, e.g. "Miss" → "missing hours", "Notes!" → "notes needed on indirect time", "Overlap!" → "overlapping clock entries", "OT" → "overtime", "Break!" → "missing break entries", "Idle" → "idle time flagged", "Lunch?" → "no lunch gap detected", "NO_LABOR_ROWS" → "no time logged". Keep each engineer's line to about 8-10 words after the name.
 - One closing line noting engineers have been notified directly and corrections are due Wednesday EOD`;
+
+// Extracts distinct issue_type codes from a findings entry's issue_types field.
+// Handles both shapes defensively: a flat array of code strings, or the full
+// array of issue objects (each with an issue_type property) as PA may send via
+// a Compose action. Passing full objects straight into a template string
+// produces "[object Object]" and leaves Claude with nothing usable to build a
+// gist from.
+function extractIssueTypeCodes(issueTypesRaw: unknown): string[] {
+  if (!Array.isArray(issueTypesRaw)) return [];
+  const codes = issueTypesRaw.map((item) => {
+    if (typeof item === "string") return item;
+    if (item && typeof item === "object" && "issue_type" in item) {
+      return String((item as { issue_type: unknown }).issue_type);
+    }
+    return null;
+  }).filter((c): c is string => !!c);
+  const seen = new Set<string>();
+  return codes.filter(c => (seen.has(c) ? false : (seen.add(c), true)));
+}
 
 async function handleDigest(body: ClockQCRequest, env: Env): Promise<Response> {
   const {
@@ -170,13 +188,19 @@ async function handleDigest(body: ClockQCRequest, env: Env): Promise<Response> {
   } = body;
 
   const flaggedLines = findings
-    .map(f => `- ${f.name}: ${f.issue_count} issue${f.issue_count !== 1 ? "s" : ""} (${f.issue_types.join(", ")})`)
+    .map(f => {
+      const codes = extractIssueTypeCodes(f.issue_types);
+      const codeList = codes.length > 0 ? codes.join(", ") : "unspecified";
+      return `- ${f.name}: ${f.issue_count} issue${f.issue_count !== 1 ? "s" : ""} — codes: ${codeList}`;
+    })
     .join("\n");
 
   const userPrompt = flagged_count > 0
     ? `Pay period: ${pay_period_start} – ${pay_period_end}\n` +
       `Team: ${flagged_count} of ${total_engineers} engineers flagged\n\n` +
-      `Flagged engineers:\n${flaggedLines}\n\nWrite the manager digest DM.`
+      `Flagged engineers (name: issue count — raw codes; translate codes to a short\n` +
+      `plain-language gist for each engineer's bullet, don't reuse the raw codes):\n` +
+      `${flaggedLines}\n\nWrite the manager digest DM.`
     : `Pay period: ${pay_period_start} – ${pay_period_end}\n` +
       `Team: all ${total_engineers} engineers clear — no issues found.\n\n` +
       `Write the all-clear manager digest DM.`;
@@ -188,7 +212,7 @@ async function handleDigest(body: ClockQCRequest, env: Env): Promise<Response> {
       DIGEST_SYSTEM_PROMPT,
       env.TIME_ENTRY_ANTHROPIC_API_KEY,
       env.PA_CLAUDE_MODEL,
-      512,
+      768,
     );
   } catch (err) {
     console.error("clocked-time-qc digest Claude error:", err);

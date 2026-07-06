@@ -188,7 +188,31 @@ export function analyzeClockData(
 
   const normalized = rows
     .map(normalizeRow)
-    .filter(r => r.clock_in_date && r.labor_hours > 0);
+    .filter(r => r.clock_in_date && r.labor_hours > 0)
+    // CRITICAL: constrain to the target pay period. The $top=200 fetch in the PA
+    // flow intentionally pulls history spanning many weeks (Calculated_PayPeriod
+    // isn't OData-filterable), so without this filter every week present in the
+    // fetched rows gets evaluated for flags — not just the target week. Notes!
+    // and Overlap! are per-occurrence (not deduplicated per week), so this bug
+    // silently inflates issue counts by accumulating flags across an engineer's
+    // entire fetched history instead of the one pay period being reviewed.
+    .filter(r => r.clock_in_date >= opts.pay_period_start && r.clock_in_date <= opts.pay_period_end);
+
+  // Second NO_LABOR_ROWS check: the raw fetch may have returned 200 historical
+  // rows with none falling inside the target pay period (e.g. an engineer whose
+  // most recent activity predates this week). The earlier rows.length===0 check
+  // only catches a fully empty fetch, not this case.
+  if (normalized.length === 0) {
+    if (isPayroll && !exempt) {
+      issues.push({
+        issue_type: "NO_LABOR_ROWS",
+        severity: "info",
+        week_start: null, week_end: null,
+        details: `no clocked labor rows for ${opts.pay_period_start}..${opts.pay_period_end}`,
+      });
+    }
+    return { issues, summary_stats: emptySummary() };
+  }
 
   // --- Summary stats ---
   const total_hours = sumHours(normalized, () => true);
@@ -359,24 +383,10 @@ export function analyzeClockData(
     }
   }
 
-  // PTO wasted (payroll only)
-  if (isPayroll) {
-    for (const [ws, weekRows] of byWeek) {
-      const pto = sumHours(weekRows,
-        r => r.labor_type === "I" && r.labor_operation === "PTO"
-      );
-      const nonPto = weekRows.reduce((a, r) => a + r.labor_hours, 0) - pto;
-      const wasted = Math.max(0, nonPto + pto - 40) - Math.max(0, nonPto - 40);
-      if (wasted > 0) {
-        issues.push({
-          issue_type: "PTO_WASTED",
-          severity: "warn",
-          week_start: ws, week_end: addDays(ws, 6),
-          details: `pto_wasted_hours=${wasted.toFixed(2)}`,
-        });
-      }
-    }
-  }
+  // PTO wasted — disabled. CrossTimeReviewAPI never returns PTO rows (PTO lives
+  // exclusively in Paylocity), so this flag can never fire against ERP labor data
+  // alone. Re-enable once Paylocity API access lands and PA passes PTO records
+  // via pto_holiday_dates on ClockQCRequest.
 
   // Deduplicate by issue_type + week_start; Notes! and Overlap! are per-occurrence
   const seen = new Set<string>();
