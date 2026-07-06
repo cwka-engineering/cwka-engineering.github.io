@@ -78,7 +78,7 @@ Resolution instructions by issue type:
 - D10+: Check for accidental duplicate entries on that day.
 - Break!: Add missing Break-Time (008) entries in CrossTimeReview for the flagged days.
 - Notes!: Open the flagged indirect rows in CrossTimeReview and add a brief note in the Labor Note field.
-- Miscode: Double-check the flagged General Indirect (IND) row against its note — it may fit a more specific code better (e.g. Break-Time) or may actually belong under Direct labor for a job. This is a suggestion based on the note text, not a confirmed error — use your judgment and reclassify in CrossTimeReview if it's actually miscoded.
+- Miscode: The flagged entry may be coded incorrectly — check the detail message for the specific reason (a code marked "do not use," a Break-Time entry that may include lunch, General Indirect "time entry" logging over the 45-min/week guideline, or a note suggesting a more specific code fits better). Most of these are suggestions based on note text or duration, not confirmed errors — use your judgment and reclassify in CrossTimeReview if needed. The "do not use" code flags (Holidays/PTO) are a firmer signal and should be corrected.
 - Overlap!: Open both overlapping rows in CrossTimeReview and adjust clock times so they don't overlap.
 - Idle: Idle Time entries over 1h need manager review. Confirm with your manager or correct the entry.
 - Lunch?: Days without a midday gap may be missing a Break-Time row — verify your clock-in/out are accurate.

@@ -358,6 +358,92 @@ export function analyzeClockData(
     }
   }
 
+  // Additional Miscode heuristics sourced from the Time Entry wiki page
+  // (tools/time-entry.md), which documents explicit code rules beyond
+  // free-text pattern matching:
+
+  // 1. Codes 005 (Holidays) and 006 (PTO) are documented "DO NOT USE" — real
+  // PTO/holiday tracking lives in Paylocity, not as an Epicor labor entry.
+  // Unlike the free-text checks above, this isn't a guess: any row bearing
+  // these codes is presumptively wrong, so it warrants a stronger severity
+  // than the rest of the Miscode family.
+  for (const row of normalized) {
+    if (row.labor_type === "I" && (row.labor_operation === "005" || row.labor_operation === "006")) {
+      const codeName = row.labor_operation === "005" ? "Holidays (005)" : "PTO (006)";
+      const ws = weekStart(row.clock_in_date, week_starts_sunday);
+      issues.push({
+        issue_type: "Miscode",
+        severity: "warn",
+        week_start: ws, week_end: addDays(ws, 6),
+        details: `${codeName} row on ${dayName(row.clock_in_date)} ${row.clock_in_date} (${row.labor_hours}h) — this code is documented "DO NOT USE"; PTO/holiday should not be logged as an Epicor labor entry`,
+      });
+    }
+  }
+
+  // 2. Break-Time (008) is documented as 15-minute breaks only, lunch
+  // excluded. A single entry running past 30 min suggests lunch got folded
+  // into the break entry.
+  for (const row of normalized) {
+    if (row.labor_type === "I" && row.labor_operation === "008" && row.labor_hours > 0.5) {
+      const ws = weekStart(row.clock_in_date, week_starts_sunday);
+      issues.push({
+        issue_type: "Miscode",
+        severity: "info",
+        week_start: ws, week_end: addDays(ws, 6),
+        details: `Break-Time (008) row on ${dayName(row.clock_in_date)} ${row.clock_in_date} is ${row.labor_hours}h — documented as 15-minute breaks only (lunch excluded); this entry may have lunch folded in`,
+      });
+    }
+  }
+
+  // 3. IND "time entry" administration is documented as capped at 45 min/week
+  // total, with an explicit warning against multi-hour entries (a signal that
+  // time is being deferred and entered in bulk rather than daily).
+  const TIME_ENTRY_NOTE_PATTERN = /time entry/i;
+  for (const row of normalized) {
+    if (
+      row.labor_type === "I" && row.labor_operation === "IND" &&
+      TIME_ENTRY_NOTE_PATTERN.test(row.labor_note) && row.labor_hours > 1.0
+    ) {
+      const ws = weekStart(row.clock_in_date, week_starts_sunday);
+      issues.push({
+        issue_type: "Miscode",
+        severity: "info",
+        week_start: ws, week_end: addDays(ws, 6),
+        details: `IND "time entry" row on ${dayName(row.clock_in_date)} ${row.clock_in_date} is ${row.labor_hours}h — time entry administration should be brief, standalone entries; a multi-hour entry signals deferred/bulk entry`,
+      });
+    }
+  }
+  for (const [ws, weekRows] of byWeek) {
+    const timeEntryHours = sumHours(weekRows,
+      r => r.labor_type === "I" && r.labor_operation === "IND" && TIME_ENTRY_NOTE_PATTERN.test(r.labor_note)
+    );
+    if (timeEntryHours > 0.75) {
+      issues.push({
+        issue_type: "Miscode",
+        severity: "info",
+        week_start: ws, week_end: addDays(ws, 6),
+        details: `time_entry_admin_hours_week=${timeEntryHours.toFixed(2)} — General Indirect "time entry" logging is documented as capped at 45 min/week total`,
+      });
+    }
+  }
+
+  // 4. Company Meetings (004) whose note suggests departmental-asset work
+  // (plugin/toolkit/scripting) — the wiki's common-misclassifications table
+  // flags this exact pattern as belonging under ENG Dept Improvement (012).
+  const DEPT_ASSET_KEYWORD_PATTERN = /\b(plugin|toolkit|scripting|script)\b/i;
+  for (const row of normalized) {
+    if (row.labor_type === "I" && row.labor_operation === "004" && DEPT_ASSET_KEYWORD_PATTERN.test(row.labor_note)) {
+      const note = row.labor_note.trim();
+      const ws = weekStart(row.clock_in_date, week_starts_sunday);
+      issues.push({
+        issue_type: "Miscode",
+        severity: "info",
+        week_start: ws, week_end: addDays(ws, 6),
+        details: `Company Meetings (004) row on ${dayName(row.clock_in_date)} ${row.clock_in_date} (${row.labor_hours}h) has note "${note}" that looks like dept-asset work — may belong under ENG Dept Improvement (012) instead`,
+      });
+    }
+  }
+
   // Overlap flag — clock windows that overlap >= 1 min.
   // MES days (detected via IDLE TIME rows) have CWK entries normalized +2h to Eastern
   // before comparison so cross-company windows are in the same timezone reference.
