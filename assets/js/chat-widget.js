@@ -23,7 +23,17 @@
   })();
 
   const SESSION_KEY = "cwk-chat-messages";
+  const EXPAND_KEY = "cwk-chat-expanded";
   const MAX_HISTORY = 20; // max messages sent to API
+
+  const EXPAND_ICON =
+    '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">' +
+    '<path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
+    "</svg>";
+  const COLLAPSE_ICON =
+    '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">' +
+    '<path d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>' +
+    "</svg>";
 
   // ---------------------------------------------------------------------------
   // Lightweight Markdown → HTML (handles bold, links, inline code, lists)
@@ -149,7 +159,10 @@
     panel.innerHTML =
       '<div class="cwk-chat-header">' +
       '  <span class="cwk-chat-header-title">Wiki Assistant</span>' +
-      '  <button class="cwk-chat-close" aria-label="Close chat">&times;</button>' +
+      '  <div class="cwk-chat-header-actions">' +
+      '    <button class="cwk-chat-expand" aria-label="Expand chat" aria-pressed="false">' + EXPAND_ICON + "</button>" +
+      '    <button class="cwk-chat-close" aria-label="Close chat">&times;</button>' +
+      "  </div>" +
       "</div>" +
       '<div class="cwk-chat-messages" role="log" aria-live="polite"></div>' +
       '<div class="cwk-chat-input-area">' +
@@ -165,6 +178,7 @@
     const inputEl = panel.querySelector(".cwk-chat-input");
     const sendBtn = panel.querySelector(".cwk-chat-send");
     const closeBtn = panel.querySelector(".cwk-chat-close");
+    const expandBtn = panel.querySelector(".cwk-chat-expand");
 
     // ------- Event handlers -------
 
@@ -180,8 +194,33 @@
       toggle.setAttribute("aria-expanded", "false");
     }
 
+    function setExpanded(expanded) {
+      panel.classList.toggle("cwk-chat-maximized", expanded);
+      expandBtn.setAttribute("aria-pressed", expanded ? "true" : "false");
+      expandBtn.setAttribute("aria-label", expanded ? "Collapse chat" : "Expand chat");
+      expandBtn.innerHTML = expanded ? COLLAPSE_ICON : EXPAND_ICON;
+      try {
+        sessionStorage.setItem(EXPAND_KEY, expanded ? "1" : "0");
+      } catch {
+        // ignore quota errors
+      }
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
     toggle.addEventListener("click", openPanel);
     closeBtn.addEventListener("click", closePanel);
+    expandBtn.addEventListener("click", function () {
+      setExpanded(!panel.classList.contains("cwk-chat-maximized"));
+    });
+
+    // Restore expand preference from a previous session
+    let restoredExpanded = false;
+    try {
+      restoredExpanded = sessionStorage.getItem(EXPAND_KEY) === "1";
+    } catch {
+      // ignore
+    }
+    if (restoredExpanded) setExpanded(true);
 
     // Escape key closes
     document.addEventListener("keydown", function (e) {

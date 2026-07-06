@@ -64,6 +64,11 @@
   display: flex;
 }
 
+.cwk-chat-panel.cwk-chat-maximized {
+  width: min(900px, calc(100vw - 48px));
+  height: calc(100vh - 48px);
+}
+
 /* ---------- Header ---------- */
 
 .cwk-chat-header {
@@ -82,19 +87,36 @@
   margin: 0;
 }
 
-.cwk-chat-close {
+.cwk-chat-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cwk-chat-close,
+.cwk-chat-expand {
   background: none;
   border: none;
   color: #fff;
   cursor: pointer;
   padding: 4px;
   line-height: 1;
-  font-size: 20px;
   opacity: 0.8;
   transition: opacity 0.15s;
 }
 
-.cwk-chat-close:hover {
+.cwk-chat-close {
+  font-size: 20px;
+}
+
+.cwk-chat-expand svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.cwk-chat-close:hover,
+.cwk-chat-expand:hover {
   opacity: 1;
 }
 
@@ -256,7 +278,8 @@
 /* ---------- Mobile ---------- */
 
 @media (max-width: 768px) {
-  .cwk-chat-panel {
+  .cwk-chat-panel,
+  .cwk-chat-panel.cwk-chat-maximized {
     width: calc(100vw - 16px);
     height: calc(100vh - 16px);
     bottom: 8px;
@@ -267,6 +290,11 @@
   .cwk-chat-toggle {
     bottom: 16px;
     right: 16px;
+  }
+
+  /* Already full-screen on mobile — maximize toggle has nothing to add */
+  .cwk-chat-expand {
+    display: none;
   }
 }
 
