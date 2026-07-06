@@ -167,17 +167,17 @@ const DIGEST_SYSTEM_PROMPT = `You write short, direct Monday morning Teams DMs t
 
 Structure:
 - One-sentence team summary (X of Y engineers flagged, or all clear)
-- If any flagged: bullet list of named engineers, each with a short plain-language gist of their issues INCLUDING THE ACTUAL NUMBERS PROVIDED — not raw issue codes, and not vague phrases without magnitudes. Translate codes to natural phrases and attach the real figures given for that engineer:
-  - "Miss" → use missing_hours, e.g. "missing 8.5 hrs"
-  - "OT" → use overtime_hours, e.g. "2.0 hrs overtime"
-  - "Notes!" → use its count, e.g. "2 indirect rows need notes"
-  - "Overlap!" → use its count, e.g. "1 overlapping clock entry"
-  - "Break!" → use its count, e.g. "missing breaks on 2 days"
-  - "Idle" → use its count, e.g. "idle time flagged 1x"
-  - "Lunch?" → use its count, e.g. "no lunch gap on 3 days"
-  - "D10+" → use its count, e.g. "1 day over 10 hrs"
-  - "NO_LABOR_ROWS" → "no time logged"
-  Never write a gist with a code but no number when a number was provided for it. Keep each engineer's line concise — magnitudes first, roughly 10-14 words after the name.
+- If any flagged: bullet list of named engineers, each with a short plain-language gist of their issues. Each engineer's line lists codes in this exact format: \`CodeName(field=value)\` for Miss/OT, or \`CodeName:N\` for everything else — every code shown already has its number attached, so read the number directly from the code string itself rather than looking elsewhere in the line. Translate:
+  - \`Miss(missing_hours=X)\` → "missing X hrs" (use the exact value shown)
+  - \`OT(overtime_hours=X)\` → "X hrs overtime"
+  - \`Notes!:N\` → "N indirect row(s) need notes"
+  - \`Overlap!:N\` → "N overlapping clock entry/entries"
+  - \`Break!:N\` → "missing breaks on N day(s)"
+  - \`Idle:N\` → "idle time flagged Nx"
+  - \`Lunch?:N\` → "no lunch gap on N day(s)"
+  - \`D10+:N\` → "N day(s) over 10 hrs"
+  - \`NO_LABOR_ROWS:N\` → "no time logged"
+  If a code shows \`missing_hours=unknown\` or \`overtime_hours=unknown\`, omit the number for that one code only rather than guessing — but this should be rare. Never write "missing hours" or "overtime" with no number when the code string provided one. Keep each engineer's line concise — magnitudes first, roughly 10-14 words after the name.
 - If the team has multiple engineers flagged with "Miss" (missing hours), add one brief caveat line before the bullet list (not per-engineer): note that missing-hours figures may include approved PTO or holiday time not yet reflected in Epicor, since this check currently can't verify PTO usage — so the real delinquency count may be lower than shown. Skip this caveat entirely if no one has a "Miss" flag.
 - One closing line noting engineers have been notified directly and corrections are due end of day today (Monday) — the same day this check runs.`;
 
@@ -208,6 +208,27 @@ function countIssueTypes(issueTypesRaw: unknown): Record<string, number> {
   return counts;
 }
 
+// Builds one self-contained string per issue code, with its magnitude embedded
+// directly (not left in a separate stats block). A prior version put
+// missing_hours/overtime_hours in a separate "stats" segment while counts lived
+// in a separate "issue counts" segment, requiring Claude to cross-reference the
+// two to attach the right number to "Miss"/"OT". Across a full-team digest that
+// cross-referencing was dropped inconsistently. Embedding the number inline per
+// code removes the need for any lookup.
+function buildCodeMagnitudeStrings(f: DigestFinding): string[] {
+  const counts = countIssueTypes(f.issue_types);
+  const stats = f.summary_stats;
+  return Object.entries(counts).map(([code, n]) => {
+    if (code === "Miss") {
+      return `Miss(missing_hours=${stats?.missing_hours ?? "unknown"})`;
+    }
+    if (code === "OT") {
+      return `OT(overtime_hours=${stats?.overtime_hours ?? "unknown"})`;
+    }
+    return `${code}:${n}`;
+  });
+}
+
 async function handleDigest(body: ClockQCRequest, env: Env): Promise<Response> {
   const {
     pay_period_start,
@@ -219,25 +240,19 @@ async function handleDigest(body: ClockQCRequest, env: Env): Promise<Response> {
 
   const flaggedLines = findings
     .map(f => {
-      const counts = countIssueTypes(f.issue_types);
-      const stats = f.summary_stats;
-      const statsLine = stats
-        ? `missing_hours=${stats.missing_hours}, overtime_hours=${stats.overtime_hours}`
-        : "summary_stats unavailable";
-      const countsLine = Object.keys(counts).length > 0
-        ? Object.entries(counts).map(([code, n]) => `${code}:${n}`).join(", ")
-        : "none";
-      return `- ${f.name}: ${f.issue_count} issue${f.issue_count !== 1 ? "s" : ""} — ` +
-             `stats: ${statsLine} — issue counts: ${countsLine}`;
+      const codeStrings = buildCodeMagnitudeStrings(f);
+      const codesLine = codeStrings.length > 0 ? codeStrings.join(", ") : "none";
+      return `- ${f.name}: ${f.issue_count} issue${f.issue_count !== 1 ? "s" : ""} — ${codesLine}`;
     })
     .join("\n");
 
   const userPrompt = flagged_count > 0
     ? `Pay period: ${pay_period_start} – ${pay_period_end}\n` +
       `Team: ${flagged_count} of ${total_engineers} engineers flagged\n\n` +
-      `Flagged engineers (name: issue count — stats — issue type counts).\n` +
-      `Use the stats and counts to write real magnitudes into each engineer's\n` +
-      `gist per the system prompt's translation table — do not just restate codes:\n` +
+      `Flagged engineers (name: issue count — codes, each with its number already\n` +
+      `attached in parentheses or as a count). Translate each code+number pair into\n` +
+      `a natural phrase per the system prompt's table — every code listed here has\n` +
+      `a number attached; never drop it:\n` +
       `${flaggedLines}\n\nWrite the manager digest DM.`
     : `Pay period: ${pay_period_start} – ${pay_period_end}\n` +
       `Team: all ${total_engineers} engineers clear — no issues found.\n\n` +
