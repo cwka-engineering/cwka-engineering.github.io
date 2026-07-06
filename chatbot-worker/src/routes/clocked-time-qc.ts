@@ -6,7 +6,18 @@ import type { Env } from "../lib/types";
 export interface DigestFinding {
   name: string;
   issue_count: number;
-  issue_types: string[];           // e.g. ["Miss", "Notes!"]
+  issue_types: string[];           // e.g. ["Miss", "Notes!"] (full issue objects — see extraction note below)
+  summary_stats?: {                // pass-through of the per-engineer QC call's summary_stats
+    total_hours: number;
+    direct_hours: number;
+    indirect_hours: number;
+    indirect_percent: number;
+    missing_hours: number;
+    overtime_hours: number;
+    break_time_hours: number;
+    expected_break_time_hours: number;
+    work_days: number;
+  };
 }
 
 export interface ClockQCRequest {
@@ -54,7 +65,7 @@ export interface ClockQCResponse {
 const CLOCKED_TIME_QC_SYSTEM_PROMPT = `You write short, direct Teams DMs to individual contributors at a custom architectural fabrication company about their prior pay-period clocked time. Tone is matter-of-fact and collegial — not scolding, not effusive. Use plain Markdown (bold, bullets). No preamble, no sign-off.
 
 For weeks WITH issues:
-Start with a one-sentence summary. Bullet each issue with a specific resolution instruction. End with a note that corrections are due by Wednesday EOD.
+Start with a one-sentence summary. Bullet each issue with a specific resolution instruction. End with a note that corrections are due by end of day today (Monday).
 
 For all-clear weeks:
 Write 2–3 lines max: confirm the week looks clean, show the top-line hours (total, direct, indirect), and note that this check runs every Monday. No bullet points.
@@ -156,26 +167,45 @@ const DIGEST_SYSTEM_PROMPT = `You write short, direct Monday morning Teams DMs t
 
 Structure:
 - One-sentence team summary (X of Y engineers flagged, or all clear)
-- If any flagged: bullet list of named engineers, each with a short plain-language gist of their issues on the same line — not raw issue codes. Translate codes to natural phrases, e.g. "Miss" → "missing hours", "Notes!" → "notes needed on indirect time", "Overlap!" → "overlapping clock entries", "OT" → "overtime", "Break!" → "missing break entries", "Idle" → "idle time flagged", "Lunch?" → "no lunch gap detected", "NO_LABOR_ROWS" → "no time logged". Keep each engineer's line to about 8-10 words after the name.
-- One closing line noting engineers have been notified directly and corrections are due Wednesday EOD`;
+- If any flagged: bullet list of named engineers, each with a short plain-language gist of their issues INCLUDING THE ACTUAL NUMBERS PROVIDED — not raw issue codes, and not vague phrases without magnitudes. Translate codes to natural phrases and attach the real figures given for that engineer:
+  - "Miss" → use missing_hours, e.g. "missing 8.5 hrs"
+  - "OT" → use overtime_hours, e.g. "2.0 hrs overtime"
+  - "Notes!" → use its count, e.g. "2 indirect rows need notes"
+  - "Overlap!" → use its count, e.g. "1 overlapping clock entry"
+  - "Break!" → use its count, e.g. "missing breaks on 2 days"
+  - "Idle" → use its count, e.g. "idle time flagged 1x"
+  - "Lunch?" → use its count, e.g. "no lunch gap on 3 days"
+  - "D10+" → use its count, e.g. "1 day over 10 hrs"
+  - "NO_LABOR_ROWS" → "no time logged"
+  Never write a gist with a code but no number when a number was provided for it. Keep each engineer's line concise — magnitudes first, roughly 10-14 words after the name.
+- If the team has multiple engineers flagged with "Miss" (missing hours), add one brief caveat line before the bullet list (not per-engineer): note that missing-hours figures may include approved PTO or holiday time not yet reflected in Epicor, since this check currently can't verify PTO usage — so the real delinquency count may be lower than shown. Skip this caveat entirely if no one has a "Miss" flag.
+- One closing line noting engineers have been notified directly and corrections are due end of day today (Monday) — the same day this check runs.`;
 
-// Extracts distinct issue_type codes from a findings entry's issue_types field.
-// Handles both shapes defensively: a flat array of code strings, or the full
-// array of issue objects (each with an issue_type property) as PA may send via
-// a Compose action. Passing full objects straight into a template string
-// produces "[object Object]" and leaves Claude with nothing usable to build a
-// gist from.
-function extractIssueTypeCodes(issueTypesRaw: unknown): string[] {
+// Extracts issue_type codes (not deduped) from a findings entry's issue_types
+// field. Handles both shapes defensively: a flat array of code strings, or (as
+// PA sends via Compose_Finding) the full array of issue objects, each with an
+// issue_type property. Without this, passing full objects straight into a
+// template string produces "[object Object]" and Claude has nothing usable to
+// build a gist from.
+function extractRawIssueTypeCodes(issueTypesRaw: unknown): string[] {
   if (!Array.isArray(issueTypesRaw)) return [];
-  const codes = issueTypesRaw.map((item) => {
+  return issueTypesRaw.map((item) => {
     if (typeof item === "string") return item;
     if (item && typeof item === "object" && "issue_type" in item) {
       return String((item as { issue_type: unknown }).issue_type);
     }
     return null;
   }).filter((c): c is string => !!c);
-  const seen = new Set<string>();
-  return codes.filter(c => (seen.has(c) ? false : (seen.add(c), true)));
+}
+
+// Builds a code -> occurrence count map, e.g. { "Notes!": 2, "Overlap!": 1 }.
+// Counting (not deduping) is what lets the digest say "2 indirect rows need
+// notes" instead of just "notes needed".
+function countIssueTypes(issueTypesRaw: unknown): Record<string, number> {
+  const codes = extractRawIssueTypeCodes(issueTypesRaw);
+  const counts: Record<string, number> = {};
+  for (const c of codes) counts[c] = (counts[c] ?? 0) + 1;
+  return counts;
 }
 
 async function handleDigest(body: ClockQCRequest, env: Env): Promise<Response> {
@@ -189,17 +219,25 @@ async function handleDigest(body: ClockQCRequest, env: Env): Promise<Response> {
 
   const flaggedLines = findings
     .map(f => {
-      const codes = extractIssueTypeCodes(f.issue_types);
-      const codeList = codes.length > 0 ? codes.join(", ") : "unspecified";
-      return `- ${f.name}: ${f.issue_count} issue${f.issue_count !== 1 ? "s" : ""} — codes: ${codeList}`;
+      const counts = countIssueTypes(f.issue_types);
+      const stats = f.summary_stats;
+      const statsLine = stats
+        ? `missing_hours=${stats.missing_hours}, overtime_hours=${stats.overtime_hours}`
+        : "summary_stats unavailable";
+      const countsLine = Object.keys(counts).length > 0
+        ? Object.entries(counts).map(([code, n]) => `${code}:${n}`).join(", ")
+        : "none";
+      return `- ${f.name}: ${f.issue_count} issue${f.issue_count !== 1 ? "s" : ""} — ` +
+             `stats: ${statsLine} — issue counts: ${countsLine}`;
     })
     .join("\n");
 
   const userPrompt = flagged_count > 0
     ? `Pay period: ${pay_period_start} – ${pay_period_end}\n` +
       `Team: ${flagged_count} of ${total_engineers} engineers flagged\n\n` +
-      `Flagged engineers (name: issue count — raw codes; translate codes to a short\n` +
-      `plain-language gist for each engineer's bullet, don't reuse the raw codes):\n` +
+      `Flagged engineers (name: issue count — stats — issue type counts).\n` +
+      `Use the stats and counts to write real magnitudes into each engineer's\n` +
+      `gist per the system prompt's translation table — do not just restate codes:\n` +
       `${flaggedLines}\n\nWrite the manager digest DM.`
     : `Pay period: ${pay_period_start} – ${pay_period_end}\n` +
       `Team: all ${total_engineers} engineers clear — no issues found.\n\n` +
