@@ -66,6 +66,19 @@ function addDays(dateStr: string, n: number): string {
   return d.toISOString().slice(0, 10);
 }
 
+// Returns the correct weekday name for a "YYYY-MM-DD" date string, computed
+// deterministically — never leave this to Claude. Bare dates embedded in issue
+// details previously let the Claude-generated message infer its own weekday
+// label, which was unreliable (confirmed in testing: labels were wrong in ways
+// that ruled out a simple timezone shift, pointing to the model guessing rather
+// than computing). Using UTC explicitly avoids ambiguity from the Worker
+// runtime's local timezone.
+const WEEKDAY_NAMES = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+function dayName(dateStr: string): string {
+  const d = new Date(dateStr + "T00:00:00Z");
+  return WEEKDAY_NAMES[d.getUTCDay()];
+}
+
 // Logical day boundary for midnight-crossing detection (4am).
 // Entries that start at or after this hour may span midnight; entries before it are
 // genuine early-morning starts and should not be wrapped.
@@ -237,7 +250,7 @@ export function analyzeClockData(
         issue_type: "D10+",
         severity: "warn",
         week_start: ws, week_end: addDays(ws, 6),
-        details: `daily_total=${tot.toFixed(2)}h on ${date} (threshold ${daily_threshold}h)`,
+        details: `daily_total=${tot.toFixed(2)}h on ${dayName(date)} ${date} (threshold ${daily_threshold}h)`,
       });
     }
   }
@@ -289,7 +302,7 @@ export function analyzeClockData(
           issue_type: "Break!",
           severity: "warn",
           week_start: ws, week_end: addDays(ws, 6),
-          details: `date=${date}; total=${tot.toFixed(2)}h; no Break-Time (008) logged`,
+          details: `date=${dayName(date)} ${date}; total=${tot.toFixed(2)}h; no Break-Time (008) logged`,
         });
       }
     }
@@ -304,6 +317,43 @@ export function analyzeClockData(
         severity: "error",
         week_start: ws, week_end: addDays(ws, 6),
         details: `indirect row on ${row.clock_in_date} (op=${row.labor_operation}, ${row.labor_hours}h) has no note`,
+      });
+    }
+  }
+
+  // Miscoded General Indirect flag — HEURISTIC, not authoritative.
+  // "IND" (General Indirect) is the catch-all bucket, so it's the code most
+  // likely to get used when a more specific code (or Direct labor against a
+  // job) would actually be correct. This checks the free-text labor note for
+  // patterns that suggest a mismatch:
+  //   - note mentions "break" but the row wasn't coded 008 (Break-Time)
+  //   - note looks like a job/submittal reference (e.g. "1105.004",
+  //     "CM.TS.005") but the row was logged as Indirect at all, when it
+  //     should be Direct labor against that job
+  // Pattern matching on free text will have false positives (e.g. an IND row
+  // whose note happens to mention "break" in an unrelated sense) — treat this
+  // as "worth a second look," not an assertive correction. Only fires for
+  // rows coded exactly "IND"; other indirect codes (Training, PM, etc.) are
+  // already specific and not covered by this check.
+  const JOB_CODE_PATTERN = /^([A-Z]{2}\.[A-Z]{2}\.\d{2,5}|\d{3,4}(\.[A-Za-z0-9]{1,4}){1,3})$/i;
+  const BREAK_KEYWORD_PATTERN = /\bbreak/i;
+  for (const row of normalized) {
+    if (row.labor_type !== "I" || row.labor_operation !== "IND" || !row.labor_note) continue;
+    const note = row.labor_note.trim();
+    const ws = weekStart(row.clock_in_date, week_starts_sunday);
+    if (BREAK_KEYWORD_PATTERN.test(note)) {
+      issues.push({
+        issue_type: "Miscode",
+        severity: "info",
+        week_start: ws, week_end: addDays(ws, 6),
+        details: `IND row on ${dayName(row.clock_in_date)} ${row.clock_in_date} (${row.labor_hours}h) has note "${note}" — may belong under Break-Time (008) instead of General Indirect`,
+      });
+    } else if (JOB_CODE_PATTERN.test(note)) {
+      issues.push({
+        issue_type: "Miscode",
+        severity: "info",
+        week_start: ws, week_end: addDays(ws, 6),
+        details: `IND row on ${dayName(row.clock_in_date)} ${row.clock_in_date} (${row.labor_hours}h) has note "${note}" that looks like a job reference — may belong under Direct labor for that job instead of General Indirect`,
       });
     }
   }
@@ -330,7 +380,7 @@ export function analyzeClockData(
           issue_type: "Overlap!",
           severity: "error",
           week_start: ws, week_end: addDays(ws, 6),
-          details: `date=${date}; overlap=${Math.round(overlapHours * 60)}min`,
+          details: `date=${dayName(date)} ${date}; overlap=${Math.round(overlapHours * 60)}min`,
         });
       }
     }
@@ -377,7 +427,7 @@ export function analyzeClockData(
           issue_type: "Lunch?",
           severity: "info",
           week_start: ws, week_end: addDays(ws, 6),
-          details: `date=${date}; no ~30-60 min midday gap detected`,
+          details: `date=${dayName(date)} ${date}; no ~30-60 min midday gap detected`,
         });
       }
     }
@@ -391,7 +441,7 @@ export function analyzeClockData(
   // Deduplicate by issue_type + week_start; Notes! and Overlap! are per-occurrence
   const seen = new Set<string>();
   const deduped = issues.filter(i => {
-    if (i.issue_type === "Notes!" || i.issue_type === "Overlap!") return true;
+    if (i.issue_type === "Notes!" || i.issue_type === "Overlap!" || i.issue_type === "Miscode") return true;
     const k = `${i.issue_type}|${i.week_start}`;
     if (seen.has(k)) return false;
     seen.add(k);
