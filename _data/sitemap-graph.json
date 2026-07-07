@@ -136,13 +136,13 @@
       "id": "/reference/folder-structure.html",
       "title": "Folder Structure & File Management",
       "section": "Home",
-      "degree": 15
+      "degree": 17
     },
     {
       "id": "/reference/glossary.html",
       "title": "Glossary",
       "section": "Home",
-      "degree": 20
+      "degree": 22
     },
     {
       "id": "/reference/",
@@ -166,7 +166,7 @@
       "id": "/reference/reference-tables/file-naming-conventions.html",
       "title": "File Naming Conventions",
       "section": "Home",
-      "degree": 5
+      "degree": 6
     },
     {
       "id": "/reference/reference-tables/",
@@ -436,7 +436,7 @@
       "id": "/tools/time-entry.html",
       "title": "Time Entry",
       "section": "Tools",
-      "degree": 6
+      "degree": 10
     },
     {
       "id": "/tools/",
@@ -538,7 +538,7 @@
       "id": "/workflows/fabrication-engineer/toolkit/drafting.html",
       "title": "Drafting Toolkit",
       "section": "Home",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "/workflows/fabrication-engineer/toolkit/",
@@ -972,6 +972,10 @@
     },
     {
       "source": "/reference/folder-structure.html",
+      "target": "/reference/glossary.html"
+    },
+    {
+      "source": "/reference/folder-structure.html",
       "target": "/reference/reference-tables/"
     },
     {
@@ -997,6 +1001,10 @@
     {
       "source": "/reference/folder-structure.html",
       "target": "/standards/rhino-drafting/printing.html"
+    },
+    {
+      "source": "/reference/folder-structure.html",
+      "target": "/tools/time-entry.html"
     },
     {
       "source": "/reference/folder-structure.html",
@@ -1045,6 +1053,10 @@
     {
       "source": "/reference/glossary.html",
       "target": "/tools/epicor/production-quantity.html"
+    },
+    {
+      "source": "/reference/glossary.html",
+      "target": "/tools/time-entry.html"
     },
     {
       "source": "/reference/glossary.html",
@@ -1117,6 +1129,10 @@
     {
       "source": "/reference/reference-tables/cnc-drill-sizes.html",
       "target": "/workflows/production-engineer/processing.html"
+    },
+    {
+      "source": "/reference/reference-tables/file-naming-conventions.html",
+      "target": "/tools/time-entry.html"
     },
     {
       "source": "/reference/reference-tables/file-naming-conventions.html",
@@ -1757,6 +1773,10 @@
     {
       "source": "/tools/time-entry.html",
       "target": "/tools/time-entry/toggl.html"
+    },
+    {
+      "source": "/tools/time-entry.html",
+      "target": "/workflows/fabrication-engineer/toolkit/drafting.html"
     },
     {
       "source": "/workflows/",
