@@ -28,8 +28,6 @@ Standard base cabinets follow the universal [Carcase Assembly & 32mm System](/re
 
 Base cabinets carry **two stretchers, both located near the top of the carcase** (one front, one back) — there is no stretcher resting on the bottom panel.
 
-> **Confirmed:** Cross-checked directly against the BC2D cross section drawing, which shows a stretcher/dowel callout at both the front-top and back-top corners, with no corresponding callout at the bottom.
-
 1. **Front stretcher** — 5" wide × 3/4" thick, doweled between sides at the top front of the carcase
 2. **Back stretcher** — 5" wide × 3/4" thick, doweled between sides at the top, inside the back (pairs with the front stretcher to form the top frame)
 3. **Nailer** — 4" wide × 0.75" thick, glued and pocket screwed, immediately below the stretchers
@@ -96,11 +94,7 @@ The stretcher under a drawer is positioned so that it is **centered on the revea
 
 **BCO (Open Cabinet)**: Full top panel (unlike standard base cabinets, which are open at top). No stretchers — uses nailers only (4" wide). No doors or drawer fronts. Otherwise identical carcase construction.
 
-> **Confirmed:** Cross-checked against the BCO cross-section drawing, which shows a full-depth solid top panel rather than the narrow front/back stretcher strips seen on door-front base cabinets.
-
 **BS2D (Sink Cabinet)**: Open interior for plumbing. Back stretcher is 4" wide (not 5"). Interior has no shelf obstructions between the sides below the stretchers. **The front stretcher is vertical**, same construction principle as BS2D_ADA below.
-
-> **Field-verified:** The vertical front stretcher isn't called out in the general notes on the standard BS2D drawing sheet itself — only on the ADA sheet — so this is a field addition, not something independently visible on the BS2D drawing. It doesn't contradict the drawing, just isn't derivable from it alone.
 
 **BS2D_ADA (ADA Sink Cabinet)**:
 - Front stretcher is **vertical** (not horizontal), positioned with bottom at 27" AFF minimum
@@ -109,11 +103,9 @@ The stretcher under a drawer is positioned so that it is **centered on the revea
 - Overall height: 32-1/2" (adjustable for countertop thickness)
 - Knee clearance: 27" minimum height, 23-1/4" depth
 
-> **Confirmed:** The 32-1/2" overall height is cross-checked directly against the front elevation dimension string on the BS2D_ADA drawing, which reads "32-1/2" ADJUST FOR COUNTERTOP THICKNESS."
-
 **BCT1D / BCT_PO (Trash Cabinets)**: Standard carcase with drawer opening for trash pullout. Same stretcher and nailer rules as drawer cabinets.
 
-> **Field-verified:** The issued drawing set's title blocks and table of contents label these cabinets **BCTRASH1D** and **BCTRASHPO**. The current standard is **BCT1D** / **BCT_PO** — this is an intentional part-numbering update that has not yet been propagated back to the drawing title blocks. Use `BCT1D` / `BCT_PO` in Epicor and shop documentation; the drawing set is the party still due for an update, not this naming.
+> **Note:** The drawing set's title blocks still label these cabinets `BCTRASH1D` / `BCTRASHPO`. Use `BCT1D` / `BCT_PO` in Epicor and shop documentation — the drawings haven't been updated to the current naming yet.
 
 ---
 

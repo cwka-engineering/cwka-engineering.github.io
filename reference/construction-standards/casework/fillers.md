@@ -18,7 +18,7 @@ Fillers close gaps between cabinet runs and adjacent walls or corners. **All sta
 
 L-cleat construction, 3" wide × 3.75" deep (standard). Height matches the adjacent base or tall cabinet.
 
-> **Field-verified:** Confirmed as an L-cleat construction rather than a flat panel. The attachment method beyond the L-cleat itself is not fully specified — confirm the fastening detail with engineering before treating this as a fabrication-ready spec if it matters for your job.
+> **Note:** The attachment method beyond the L-cleat itself isn't fully specified — confirm the fastening detail with engineering if it matters for your job.
 
 ## Base Corner Filler (BCF)
 
@@ -46,8 +46,6 @@ L-shaped, L-cleat construction filling the front-and-bottom gap (not a simple fl
 | Depth | Matches upper cabinet body depth |
 | Handing | Left and right handed |
 | Parts | 4 |
-
-> **Field-verified:** Depth matches the upper cabinet body depth directly, with **no additional offset**. An earlier draft of this spec included a "+2-1/8" to align with door face" addition to the depth formula; that offset has been intentionally removed — the L-cleat geometry handles door-face alignment inherently, so depth tracks the cabinet body depth with no adjustment needed.
 
 ## Upper Corner Filler (UFC)
 

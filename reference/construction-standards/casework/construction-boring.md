@@ -40,4 +40,4 @@ CNC boring patterns for all dowel joints and predrill positions. All machining i
 
 See [Carcase Assembly — Predrills](/reference/construction-standards/casework/carcase-and-line-bore.html#predrills) for which faces require predrilling by default.
 
-> **Note:** A written walkthrough of the CNC pattern-layout drawing (joint-by-joint visual detail) is not included here — the source material for that section was flagged as unreliable and has been intentionally omitted rather than published. The tabular specs above (hole diameter, depth, and spacing) are independently confirmed and safe to use; if you need a joint-by-joint visual walkthrough beyond what's tabulated here, request one from engineering rather than assuming an older written version is accurate.
+> **Note:** A joint-by-joint visual walkthrough of the CNC pattern layout isn't included here — request one from engineering if you need it.

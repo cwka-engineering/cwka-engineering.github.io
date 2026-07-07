@@ -45,7 +45,7 @@ Full naming reference for standard cabinet, filler, soffit, die wall, and panel 
 | Pencil Drawer 2 Drawer | `PD2D` |
 | Ladder Base | `LB` |
 
-> **Field-verified:** [Base Cabinets — Type-Specific Notes](/reference/construction-standards/casework/base-cabinets.html#type-specific-notes) documents the 1-drawer trash and pullout trash cabinets as `BCT1D` / `BCT_PO` (with an underscore before PO) per an intentional part-numbering update not yet reflected in the issued drawing title blocks. This naming list uses `BCTPO` (no underscore) for the pullout variant. **Confirm which exact string — `BCT_PO` or `BCTPO` — is authoritative in Epicor before using either in shop documentation**; the two source references disagree on this one character.
+> **Note:** [Base Cabinets](/reference/construction-standards/casework/base-cabinets.html#type-specific-notes) refers to the pullout trash cabinet as `BCT_PO` (with an underscore); this list uses `BCTPO`. Confirm which exact string is authoritative in Epicor before using either in shop documentation.
 
 Construction detail for base cabinet types is documented in [Base Cabinets](/reference/construction-standards/casework/base-cabinets.html); drawer-specific rules (including pencil drawers) are in [Drawer Construction](/reference/construction-standards/casework/drawer-construction.html).
 
@@ -59,7 +59,7 @@ Construction detail for base cabinet types is documented in [Base Cabinets](/ref
 | Upper Cabinet 2 Door, No Divider | `UC2D_ND` |
 | Upper Cabinet Open | `UCO` |
 
-> **Field-verified:** The originally issued drawing title block and table of contents label the no-divider variant `UC2D_WD` — "UPPER CABINET 2 DOOR W/ DIVIDER." The current, correct standard is **`UC2D_ND`, which has no divider** — this is an intentional naming correction (not just a rename: it reverses which condition the code describes) that has not yet been propagated back to the drawing title block. Use `UC2D_ND` and treat it as a no-divider cabinet; do not rely on the drawing's own `UC2D_WD` label or its "with divider" description.
+> **Note:** The drawing set still labels this cabinet `UC2D_WD` ("with divider"). The current, correct code is `UC2D_ND` — **no divider**. Don't rely on the drawing's own label or description for this one.
 
 Construction detail for upper cabinets is documented in [Upper Cabinets](/reference/construction-standards/casework/upper-cabinets.html).
 

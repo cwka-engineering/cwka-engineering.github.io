@@ -23,8 +23,6 @@ Upper cabinets follow the universal [Carcase Assembly & 32mm System](/reference/
 | Door pull position | 1-1/2" down from TOP | 1-1/2" up from BOTTOM |
 | Door alignment (vertical) | 1/4" reveal at top | **FLUSH** with top and bottom (sides remain inset 1/16") |
 
-> **Field-verified:** The flush top/bottom door alignment isn't stated in the upper cabinet drawings' general notes (which only mention inset from the exterior sides) — this is a field correction, not something independently visible on the drawing. Only the side inset (1/16") is drawing-derived; the flush top/bottom condition is trusted on field verification.
-
 ## Standard Dimensions
 
 | Parameter | Value |
