@@ -98,7 +98,7 @@ For direct labor on specific jobs. See the [Operation Selection Guide](#operatio
 ### PE Example Job Name: `1234.123`
 - Prod Engineering (reviewing, programming, reworking jobs)
 
-### GS (Grouped Submittal) Example Job Name: `E1234.GS.12345`
+### GS (Grouped Submittal) Example Job Name: `E1234.GS.123`
 - Submittal only — a GS job never carries Post-Submittal or any other operation. See [Grouped Submittal (GS) jobs](#direct-gs-jobs) below.
 
 ---
@@ -118,7 +118,7 @@ flowchart LR
   Q5 -->|"Production work"| Q3{Client approval?}
   Q3 -->|"No — or R&amp;R"| SUB[Submittal]
   Q3 -->|"Yes — any status"| POST[Post-Submittal]
-  Q2 -->|"E####.GS.#####"| GSSUB["Submittal only\n(no other op)"]
+  Q2 -->|"E####.GS.###"| GSSUB["Submittal only\n(no other op)"]
   Q2 -->|"####.ENG bucket"| Q4{Work type?}
   Q4 --> DE[Design Engineering]
   Q4 --> FEB[Fabrication Engineering]
@@ -154,7 +154,7 @@ The boundary with Project Meeting: use the ENG bucket + Project Meeting for PM- 
 
 > **Availability:** SCOPEMTG is only present on projects kicked off on or after June 1, 2026. For earlier projects, log scope-specific internal meetings to Project Meeting on the ENG bucket job.
 
-### Direct operations — Grouped Submittal (GS) jobs (`E####.GS.#####`)
+### Direct operations — Grouped Submittal (GS) jobs (`E####.GS.###`)
 {: #direct-gs-jobs}
 
 A Grouped Submittal covers a set of interrelated scopes that are drawn and submitted together — either because they share construction details, or because a single large element (e.g. a facade or ceiling) has been sharded across multiple production jobs for manufacturing or shipping efficiency.
@@ -166,7 +166,7 @@ The only operation a GS job carries. All FE modeling and drawing work for the gr
 
 GS jobs aren't pre-created by the master scheduler. Request one from your PA and PM when a grouped submittal makes more sense than separate per-job submittals.
 
-> **Numbering note:** The Epicor job number (`E####.GS.#####`, 5-digit sequence, e.g. `E1105.GS.12345`) is distinct from the submittal-scope label used in Rhino file names and drawing page titles (`####.GS.###`, 3-digit sequence, e.g. `1105.GS.001`) — see [group submittal handling in the toolkit](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-handle-group-submittal). The drawing title block still lists the actual constituent job numbers.
+> **Numbering note:** The Epicor job number is `E####.GS.###` (e.g. `E1105.GS.123`). The toolkit's submittal-scope field may show the same number without the `E` prefix (`####.GS.###`, e.g. `1105.GS.123`) — see [group submittal handling in the toolkit](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-handle-group-submittal). The drawing title block still lists the actual constituent job numbers.
 
 ### Direct operations — PE jobs (`####.###`)
 {: #direct-pe-jobs}

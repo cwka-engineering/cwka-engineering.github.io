@@ -58,6 +58,6 @@ corpus_tags: [fe-release]
 | Engineering job | `EPROJ.JOB` | `E1095.015` |
 | Manufacturing job | `PROJ.JOB` | `1095.015` |
 | Bucket job | `PROJ.ENG` | `1095.ENG` |
-| Grouped Submittal (GS) job | `EPROJ.GS.#####` | `E1105.GS.12345` |
+| Grouped Submittal (GS) job | `EPROJ.GS.###` | `E1105.GS.001` |
 
-**GS naming distinction:** The Epicor GS job number above (5-digit sequence) is different from the submittal-scope label used in Rhino file names and drawing page titles, which follows a 3-digit sequence (`PROJ.GS.###`, e.g. `1105.GS.001`). See [Grouped Submittal (GS) jobs](/tools/time-entry.html#direct-gs-jobs).
+**GS naming note:** The submittal-scope label used in Rhino file names and drawing page titles may show the same number without the `E` prefix. See [Grouped Submittal (GS) jobs](/tools/time-entry.html#direct-gs-jobs).
