@@ -106,7 +106,7 @@ A Grouped Submittal (GS) combines interrelated scopes into one submittal package
 
 In the toolkit, set submittal scope to `PROJ.GS.001` format, then specify the individual jobs covered (e.g., 1091.008, 1091.009, 1091.010). BOM pulls will cover all specified jobs.
 
-> **Submittal scope vs. job number**: The `PROJ.GS.001`-style submittal scope drives page numbering and appears throughout the drawing set — but it's a drawing-side label, not necessarily the Epicor job number. The actual Epicor GS job is `E####.GS.###` (e.g. `E1105.GS.001`), with the same numeric sequence but the `E` prefix. The title block still displays the actual constituent job numbers regardless of which scope label is used for page numbering.
+> **Submittal scope vs. job number**: The `PROJ.GS.001`-style submittal scope drives page numbering and appears throughout the drawing set — but it's a drawing-side label, not the Epicor job number, and never carries the `E` prefix. The actual Epicor GS job is `E####.GS.###` (e.g. `E1105.GS.001`) — same numeric sequence, with the `E` prefix. The title block still displays the actual constituent job numbers regardless of which scope label is used for page numbering.
 
 ## Tags Tables & BOM
 

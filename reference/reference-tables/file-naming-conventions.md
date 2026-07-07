@@ -60,4 +60,4 @@ corpus_tags: [fe-release]
 | Bucket job | `PROJ.ENG` | `1095.ENG` |
 | Grouped Submittal (GS) job | `EPROJ.GS.###` | `E1105.GS.001` |
 
-**GS naming note:** The submittal-scope label used in Rhino file names and drawing page titles may show the same number without the `E` prefix. See [Grouped Submittal (GS) jobs](/tools/time-entry.html#direct-gs-jobs).
+**GS naming note:** Filenames never carry the `E` prefix — the submittal-scope label used in Rhino file names and drawing page titles shows the same number as `PROJ.GS.###`. See [Grouped Submittal (GS) jobs](/tools/time-entry.html#direct-gs-jobs).

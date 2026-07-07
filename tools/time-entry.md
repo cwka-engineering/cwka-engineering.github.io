@@ -166,7 +166,7 @@ The only operation a GS job carries. All FE modeling and drawing work for the gr
 
 GS jobs aren't pre-created by the master scheduler. Request one from your PA and PM when a grouped submittal makes more sense than separate per-job submittals.
 
-> **Numbering note:** The Epicor job number is `E####.GS.###` (e.g. `E1105.GS.123`). The toolkit's submittal-scope field may show the same number without the `E` prefix (`####.GS.###`, e.g. `1105.GS.123`) — see [group submittal handling in the toolkit](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-handle-group-submittal). The drawing title block still lists the actual constituent job numbers.
+> **Numbering note:** The Epicor job number is `E####.GS.###` (e.g. `E1105.GS.123`). Filenames and the toolkit's submittal-scope field never carry the `E` prefix — the same job appears as `####.GS.###` (e.g. `1105.GS.123`) there — see [group submittal handling in the toolkit](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-handle-group-submittal). The drawing title block still lists the actual constituent job numbers.
 
 ### Direct operations — PE jobs (`####.###`)
 {: #direct-pe-jobs}
