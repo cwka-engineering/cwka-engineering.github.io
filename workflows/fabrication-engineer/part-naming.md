@@ -10,7 +10,7 @@ corpus_tags: [fe-release, fe-submittal]
 
 # Part Naming
 
-> **Related**: [Engineering Toolkit](/workflows/fabrication-engineer/toolkit/) | [Shipping Components](/workflows/fabrication-engineer/shipping-components.html)
+> **Related**: [Engineering Toolkit](/workflows/fabrication-engineer/toolkit/) | [Shipping Components](/workflows/fabrication-engineer/shipping-components.html) | [Casework Type Codes & Names](/reference/construction-standards/casework/type-codes.html)
 
 ## How do I group parts before naming?
 {: #how-to-group-parts}

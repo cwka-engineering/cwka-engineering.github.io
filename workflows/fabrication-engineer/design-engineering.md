@@ -12,7 +12,7 @@ corpus_tags: [fe-submittal]
 
 The DE phase converts approximate geometries into precise geometries and develops build strategies and assembly details before fabrication engineering begins.
 
-> **Related**: [Getting Started](/workflows/fabrication-engineer/getting-started.html) | [Layer Organization](/standards/layer-organization/) | [Project Delivery Overview](/onboarding/project-delivery.html)
+> **Related**: [Getting Started](/workflows/fabrication-engineer/getting-started.html) | [Layer Organization](/standards/layer-organization/) | [Project Delivery Overview](/onboarding/project-delivery.html) | [Casework Construction Standards](/reference/construction-standards/casework/)
 
 ## Purpose
 

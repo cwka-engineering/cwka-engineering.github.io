@@ -17,6 +17,7 @@ Quick lookups, glossaries, reference tables, and task-oriented indexes.
 - **[Reference Tables](/reference/reference-tables/)** - File naming, cleanup commands, material tags, lay-up formulas, sheet sizes, drill sizes
 - **[Training Videos](/reference/training-videos.html)** - Complete index of engineering training recordings with wiki page links
 - **[Industry References](/reference/industry-references.html)** — AWI and ANSI/HPVA standards for submittals and material specifications
+- **[Construction Standards](/reference/construction-standards/)** — Fabrication-level construction specs, starting with [Casework](/reference/construction-standards/casework/): carcase assembly, the 32mm system, cabinet dimensions, drawers, fillers, CNC boring, and type codes
 
 ## Quick References — "How do I…?"
 

@@ -46,6 +46,8 @@ Sheet size: minimum 11×17, maximum 24×36. Sequential numbering and dating requ
 
 ### Casework Drawings Must Include
 
+> See also: [Casework Construction Standards](/reference/construction-standards/casework/) for the CWK/DFW-specific joinery, dimension, and hardware rules that satisfy the requirements below.
+
 - Trim/scribe at full-size profile; plan, elevation, and section views
 - Dimensions for cabinet construction and face frame attachment
 - Drawer member type and thickness (heights and depths), door type and thickness, section of each cabinet type

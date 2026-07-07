@@ -2,6 +2,32 @@
 
 Historical record of content processed from `ingest/` into the published wiki.
 
+## 2026-07 — Casework construction standards (`ingest/docs` batch)
+
+**Source archive**: [`ingest/archive/2026-07-casework-standards/`](archive/2026-07-casework-standards/).
+
+New nav section: **Reference > [Construction Standards](../reference/construction-standards/) > [Casework](../reference/construction-standards/casework/)**.
+
+| Source | Integrated into |
+| ------ | ----------------- |
+| `CASEWORK_CONSTRUCTION_MANUAL_v2.md` (§1–2, universal carcase/32mm rules) | [carcase-and-line-bore.md](../reference/construction-standards/casework/carcase-and-line-bore.html) |
+| `CASEWORK_CONSTRUCTION_MANUAL_v2.md` (§3, base cabinets; §10, ladder base) | [base-cabinets.md](../reference/construction-standards/casework/base-cabinets.html) |
+| `CASEWORK_CONSTRUCTION_MANUAL_v2.md` (§4, drawers; §9, pencil drawers) | [drawer-construction.md](../reference/construction-standards/casework/drawer-construction.html) |
+| `CASEWORK_CONSTRUCTION_MANUAL_v2.md` (§5, upper cabinets) | [upper-cabinets.md](../reference/construction-standards/casework/upper-cabinets.html) |
+| `CASEWORK_CONSTRUCTION_MANUAL_v2.md` (§6, tall cabinets) | [tall-cabinets.md](../reference/construction-standards/casework/tall-cabinets.html) |
+| `CASEWORK_CONSTRUCTION_MANUAL_v2.md` (§7, fillers) | [fillers.md](../reference/construction-standards/casework/fillers.html) |
+| `CASEWORK_CONSTRUCTION_MANUAL_v2.md` (§8.1–8.3, boring specs) | [construction-boring.md](../reference/construction-standards/casework/construction-boring.html) |
+| `CASEWORK_CONSTRUCTION_MANUAL_v2.md` (§11–12, critical dims + material thickness) | [quick-reference.md](../reference/construction-standards/casework/quick-reference.html) |
+| `Standard Casework Names and descriptions.txt` | [type-codes.md](../reference/construction-standards/casework/type-codes.html) |
+
+Cross-linked from [awi-standards.md](../reference/awi-standards.html), [reference/index.md](../reference/index.html), [part-naming.md](../workflows/fabrication-engineer/part-naming.html), and [design-engineering.md](../workflows/fabrication-engineer/design-engineering.html).
+
+**Deliberately not migrated**: §8.4 ("Pattern Layout" narrative) — the source manual itself flags this subsection as unreliable ("THIS SECTION NEEDS TO BE REWRITTEN OR DELETED") and instructs against trusting it; omitted rather than publishing known-bad content.
+
+**Confidence tiers preserved as callouts** rather than flattened to uniform prose — pages distinguish **Confirmed** (cross-checked against a drawing), **Field-verified** (trusted on lead-engineer authority, not independently drawing-verifiable), and plain **Note** (exceptions/clarifications). The v2 source manual's three open items (BCTRASH1D/BCTRASHPO → BCT1D/BCT_PO rename, UC2D_WD → UC2D_ND divider-convention reversal, upper filler depth offset removal) were confirmed intentional by the requester during integration and are documented as **Field-verified**, each noting the drawing/naming source has not yet been updated to match.
+
+**Corpus scope**: tagged `corpus_tags: [general, fe-submittal]` — answerable by both the public Wiki Assistant (`/api/chat`) and the internal FE diagnostic/summarize tools. This is a deliberate departure from sibling standards pages (AWI, ANSI, Rhino Drafting, Layer Organization are all `fe-submittal`-only, excluded from the general corpus) per explicit request that this section be "rich for the wiki assistant."
+
 ## 2026-03 — Wiki enrichment (`ingest/docs` batch)
 
 **Source archive**: [`ingest/archive/2026-03-wiki-integration/`](archive/2026-03-wiki-integration/) (original DOCX/PDF files).
