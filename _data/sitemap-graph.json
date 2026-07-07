@@ -70,7 +70,67 @@
       "id": "/reference/awi-standards.html",
       "title": "AWI Standards Reference",
       "section": "Standards",
+      "degree": 3
+    },
+    {
+      "id": "/reference/construction-standards/casework/base-cabinets.html",
+      "title": "Base Cabinets",
+      "section": "Standards",
+      "degree": 6
+    },
+    {
+      "id": "/reference/construction-standards/casework/carcase-and-line-bore.html",
+      "title": "Carcase Assembly & 32mm System",
+      "section": "Standards",
+      "degree": 6
+    },
+    {
+      "id": "/reference/construction-standards/casework/construction-boring.html",
+      "title": "Construction Boring",
+      "section": "Standards",
       "degree": 2
+    },
+    {
+      "id": "/reference/construction-standards/casework/drawer-construction.html",
+      "title": "Drawer Construction",
+      "section": "Standards",
+      "degree": 3
+    },
+    {
+      "id": "/reference/construction-standards/casework/fillers.html",
+      "title": "Fillers",
+      "section": "Standards",
+      "degree": 3
+    },
+    {
+      "id": "/reference/construction-standards/casework/",
+      "title": "Casework",
+      "section": "Standards",
+      "degree": 12
+    },
+    {
+      "id": "/reference/construction-standards/casework/tall-cabinets.html",
+      "title": "Tall Cabinets",
+      "section": "Standards",
+      "degree": 3
+    },
+    {
+      "id": "/reference/construction-standards/casework/type-codes.html",
+      "title": "Casework Type Codes & Names",
+      "section": "Standards",
+      "degree": 8
+    },
+    {
+      "id": "/reference/construction-standards/casework/upper-cabinets.html",
+      "title": "Upper Cabinets",
+      "section": "Standards",
+      "degree": 4
+    },
+    {
+      "id": "/reference/construction-standards/",
+      "title": "Construction Standards",
+      "section": "Standards",
+      "degree": 3
     },
     {
       "id": "/reference/folder-structure.html",
@@ -88,13 +148,13 @@
       "id": "/reference/",
       "title": "Reference",
       "section": "Home",
-      "degree": 5
+      "degree": 7
     },
     {
       "id": "/reference/industry-references.html",
       "title": "Industry References",
       "section": "Home",
-      "degree": 3
+      "degree": 4
     },
     {
       "id": "/reference/reference-tables/cnc-drill-sizes.html",
@@ -406,7 +466,7 @@
       "id": "/workflows/fabrication-engineer/design-engineering.html",
       "title": "Design Engineering (DE) Phase",
       "section": "Workflows",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "/workflows/fabrication-engineer/drawing-scope.html",
@@ -448,7 +508,7 @@
       "id": "/workflows/fabrication-engineer/part-naming.html",
       "title": "Part Naming",
       "section": "Workflows",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "/workflows/fabrication-engineer/shipping-components.html",
@@ -768,6 +828,14 @@
     },
     {
       "source": "/reference/",
+      "target": "/reference/construction-standards/"
+    },
+    {
+      "source": "/reference/",
+      "target": "/reference/construction-standards/casework/"
+    },
+    {
+      "source": "/reference/",
       "target": "/reference/folder-structure.html"
     },
     {
@@ -796,7 +864,111 @@
     },
     {
       "source": "/reference/awi-standards.html",
+      "target": "/reference/construction-standards/casework/"
+    },
+    {
+      "source": "/reference/awi-standards.html",
       "target": "/reference/industry-references.html"
+    },
+    {
+      "source": "/reference/construction-standards/",
+      "target": "/reference/construction-standards/casework/"
+    },
+    {
+      "source": "/reference/construction-standards/",
+      "target": "/reference/industry-references.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/",
+      "target": "/reference/construction-standards/casework/base-cabinets.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/",
+      "target": "/reference/construction-standards/casework/carcase-and-line-bore.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/",
+      "target": "/reference/construction-standards/casework/construction-boring.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/",
+      "target": "/reference/construction-standards/casework/drawer-construction.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/",
+      "target": "/reference/construction-standards/casework/fillers.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/",
+      "target": "/reference/construction-standards/casework/tall-cabinets.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/",
+      "target": "/reference/construction-standards/casework/type-codes.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/",
+      "target": "/reference/construction-standards/casework/upper-cabinets.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/",
+      "target": "/workflows/fabrication-engineer/design-engineering.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/base-cabinets.html",
+      "target": "/reference/construction-standards/casework/carcase-and-line-bore.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/base-cabinets.html",
+      "target": "/reference/construction-standards/casework/drawer-construction.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/base-cabinets.html",
+      "target": "/reference/construction-standards/casework/fillers.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/base-cabinets.html",
+      "target": "/reference/construction-standards/casework/type-codes.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/base-cabinets.html",
+      "target": "/reference/construction-standards/casework/upper-cabinets.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/carcase-and-line-bore.html",
+      "target": "/reference/construction-standards/casework/construction-boring.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/carcase-and-line-bore.html",
+      "target": "/reference/construction-standards/casework/tall-cabinets.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/carcase-and-line-bore.html",
+      "target": "/reference/construction-standards/casework/type-codes.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/carcase-and-line-bore.html",
+      "target": "/reference/construction-standards/casework/upper-cabinets.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/drawer-construction.html",
+      "target": "/reference/construction-standards/casework/type-codes.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/fillers.html",
+      "target": "/reference/construction-standards/casework/type-codes.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/tall-cabinets.html",
+      "target": "/reference/construction-standards/casework/type-codes.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/type-codes.html",
+      "target": "/reference/construction-standards/casework/upper-cabinets.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/type-codes.html",
+      "target": "/workflows/fabrication-engineer/part-naming.html"
     },
     {
       "source": "/reference/folder-structure.html",
