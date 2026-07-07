@@ -102,7 +102,11 @@ Drafting Toolkit → **Schedules tab** → BOM section. Enter the job number, ca
 ## How do I handle a group submittal in the toolkit?
 {: #how-to-handle-group-submittal}
 
-Set submittal scope to `PROJ.GS.001` format, then specify the individual jobs covered (e.g., 1091.008, 1091.009, 1091.010). BOM pulls will cover all specified jobs.
+A Grouped Submittal (GS) combines interrelated scopes into one submittal package — either because they share construction details, or because a single large element has been sharded across multiple production jobs for manufacturing or shipping efficiency. GS jobs aren't pre-created by the master scheduler; request one from your PA and PM when a grouped submittal makes more sense than separate per-job submittals. See [Grouped Submittal (GS) jobs](/tools/time-entry.html#direct-gs-jobs) for the time-entry rules — a GS job only ever carries the Submittal operation.
+
+In the toolkit, set submittal scope to `PROJ.GS.001` format, then specify the individual jobs covered (e.g., 1091.008, 1091.009, 1091.010). BOM pulls will cover all specified jobs.
+
+> **Two different numbers, same GS**: The `PROJ.GS.001`-style submittal scope (3-digit sequence) drives page numbering and appears throughout the drawing set — but it's a drawing-side label, not the Epicor job number. The actual Epicor GS job uses a 5-digit sequence (`E####.GS.#####`, e.g. `E1105.GS.12345`). The title block still displays the actual constituent job numbers regardless of which scope label is used for page numbering.
 
 ## Tags Tables & BOM
 

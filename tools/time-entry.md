@@ -98,6 +98,9 @@ For direct labor on specific jobs. See the [Operation Selection Guide](#operatio
 ### PE Example Job Name: `1234.123`
 - Prod Engineering (reviewing, programming, reworking jobs)
 
+### GS (Grouped Submittal) Example Job Name: `E1234.GS.12345`
+- Submittal only — a GS job never carries Post-Submittal or any other operation. See [Grouped Submittal (GS) jobs](#direct-gs-jobs) below.
+
 ---
 
 ## Operation Selection Guide
@@ -115,6 +118,7 @@ flowchart LR
   Q5 -->|"Production work"| Q3{Client approval?}
   Q3 -->|"No — or R&amp;R"| SUB[Submittal]
   Q3 -->|"Yes — any status"| POST[Post-Submittal]
+  Q2 -->|"E####.GS.#####"| GSSUB["Submittal only\n(no other op)"]
   Q2 -->|"####.ENG bucket"| Q4{Work type?}
   Q4 --> DE[Design Engineering]
   Q4 --> FEB[Fabrication Engineering]
@@ -150,6 +154,20 @@ The boundary with Project Meeting: use the ENG bucket + Project Meeting for PM- 
 
 > **Availability:** SCOPEMTG is only present on projects kicked off on or after June 1, 2026. For earlier projects, log scope-specific internal meetings to Project Meeting on the ENG bucket job.
 
+### Direct operations — Grouped Submittal (GS) jobs (`E####.GS.#####`)
+{: #direct-gs-jobs}
+
+A Grouped Submittal covers a set of interrelated scopes that are drawn and submitted together — either because they share construction details, or because a single large element (e.g. a facade or ceiling) has been sharded across multiple production jobs for manufacturing or shipping efficiency.
+
+**Submittal**
+The only operation a GS job carries. All FE modeling and drawing work for the grouped scope is clocked here, following the same Submittal/Post-Submittal boundary as a standard E-job (above).
+
+**Once client approval is issued, post-submittal work does not stay on the GS job.** Split it out to each constituent production job and clock post-submittal work there instead — a GS job never carries Post-Submittal or any other operation.
+
+GS jobs aren't pre-created by the master scheduler. Request one from your PA and PM when a grouped submittal makes more sense than separate per-job submittals.
+
+> **Numbering note:** The Epicor job number (`E####.GS.#####`, 5-digit sequence, e.g. `E1105.GS.12345`) is distinct from the submittal-scope label used in Rhino file names and drawing page titles (`####.GS.###`, 3-digit sequence, e.g. `1105.GS.001`) — see [group submittal handling in the toolkit](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-handle-group-submittal). The drawing title block still lists the actual constituent job numbers.
+
 ### Direct operations — PE jobs (`####.###`)
 {: #direct-pe-jobs}
 
@@ -168,7 +186,7 @@ Two categories of work belong here:
 > Once you are building a submittal model on a specific E-job, that model work moves to Submittal on that job. Scripting that spans the whole project scope remains on Design Engineering.
 
 **Fabrication Engineering**
-FE-scope work on the bucket job that spans multiple jobs or cannot be cleanly assigned to a single E-job: group submittal takeoffs, BOMing across multiple scopes, redline review when coordinating across jobs, and shop drawings for subcontractors. If the work applies cleanly to one E-job, clock into that E-job instead.
+FE-scope work on the bucket job that spans multiple jobs or cannot be cleanly assigned to a single E-job: quantity/material takeoff prep spanning multiple jobs, BOMing across multiple scopes, redline review when coordinating across jobs, and shop drawings for subcontractors. If the work applies cleanly to one E-job, clock into that E-job instead. The actual modeling/drafting for a grouped submittal is Submittal on the GS job, not Fabrication Engineering — see [Grouped Submittal (GS) jobs](#direct-gs-jobs).
 
 **Lead Coordination**
 Senior/lead-level coordination work that is neither a meeting nor direct production output: reviewing another engineer's submittal, scope review with the PM, preparing CAD or coordination files for third parties, laser scan processing, WC/PLAM/veneer part creation in a coordination capacity, and mentoring on standards or procedures.
@@ -230,6 +248,8 @@ Engineering work performed for projects not yet under contract. Use when assigne
 | PA review call (advisor/PA side) | Project Meeting or 017 | 020 Project Advisor |
 | FE-to-PE handoff meeting (advisee) | Project Meeting on ENG bucket | SCOPEMTG on the E-job |
 | Eng/Production troubleshooting call (advisee) | Project Meeting on ENG bucket | SCOPEMTG on the E-job |
+| Grouped submittal modeling/drafting | Fabrication Engineering on ENG bucket | Submittal on the GS job |
+| Post-submittal work on a grouped-submittal scope | Post-Submittal on the GS job | Post-Submittal on the individual constituent job |
 
 ## Toggl Time Entry
 

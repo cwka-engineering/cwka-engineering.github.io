@@ -31,7 +31,7 @@ corpus_tags: [fe-release, fe-submittal]
 - **MT Jobs**: Metal Component or Kit of Parts manufacturing jobs (format: Project.M.000)
 - **SMP Jobs**: Sample jobs (format: XXX.SMP.XXXXX)
 - **Inventory Job (INV)**: One per project (format: `ProjectNumber.INV`, e.g., `1086.INV`). Controls purchasing of SG, SS, SL, and IM materials. See [Inventory Jobs](/tools/epicor/inventory-jobs.html).
-- **Group Submittal**: A package of multiple jobs submitted together to the client (1 submittal doc → multiple production jobs)
+- **Grouped Submittal (GS)**: A real Epicor engineering job (format `E####.GS.#####`, e.g. `E1105.GS.12345`) covering a set of interrelated scopes drawn and submitted together as one package — either because they share construction details, or because a single large element (e.g. a facade or ceiling) has been sharded across multiple production jobs for manufacturing or shipping efficiency. A GS job only ever carries the **Submittal** operation; once client approval is issued, post-submittal work moves to each constituent production job, not the GS job itself. Not pre-created by the master scheduler — request one from your PA and PM. The drawing-side submittal-scope label (`####.GS.###`, 3-digit sequence) used in Rhino file names is distinct from the Epicor job number's 5-digit sequence. See [Grouped Submittal (GS) jobs](/tools/time-entry.html#direct-gs-jobs) and [group submittal handling in the toolkit](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-handle-group-submittal).
 - **Primary Job**: Subset of the project or group submittal
 
 ## File & Naming Conventions
