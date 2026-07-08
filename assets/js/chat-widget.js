@@ -36,8 +36,26 @@
     "</svg>";
 
   // ---------------------------------------------------------------------------
-  // Lightweight Markdown → HTML (handles bold, links, inline code, lists)
+  // Lightweight Markdown → HTML (handles bold, links, inline code, lists, tables)
   // ---------------------------------------------------------------------------
+
+  // Matches a GFM table separator row: |---|:---:|---|, dashes/colons only per cell.
+  function isTableSeparatorRow(line) {
+    const trimmed = line.trim();
+    if (!trimmed.includes("-") || !trimmed.includes("|")) return false;
+    return /^\|?\s*:?-+:?\s*(\|\s*:?-+:?\s*)*\|?$/.test(trimmed);
+  }
+
+  // Splits a "| a | b |" row into trimmed cell strings, dropping the
+  // leading/trailing empty cells produced by the outer pipes.
+  function parseTableRow(line) {
+    let trimmed = line.trim();
+    if (trimmed.startsWith("|")) trimmed = trimmed.slice(1);
+    if (trimmed.endsWith("|")) trimmed = trimmed.slice(0, -1);
+    return trimmed.split("|").map(function (cell) {
+      return cell.trim();
+    });
+  }
 
   function md(text) {
     // Escape HTML entities first
@@ -75,6 +93,37 @@
 
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i];
+
+      // GFM-style pipe tables: a row containing "|" immediately followed by
+      // a separator row (|---|---|, optionally with alignment colons).
+      if (
+        line.includes("|") &&
+        i + 1 < lines.length &&
+        isTableSeparatorRow(lines[i + 1])
+      ) {
+        if (inList) {
+          result += "</" + listType + ">";
+          inList = false;
+        }
+        result += '<div class="cwk-table-wrap"><table><thead><tr>';
+        parseTableRow(line).forEach(function (cell) {
+          result += "<th>" + cell + "</th>";
+        });
+        result += "</tr></thead><tbody>";
+        i += 2; // skip header row + separator row
+        while (i < lines.length && lines[i].trim() !== "" && lines[i].includes("|")) {
+          result += "<tr>";
+          parseTableRow(lines[i]).forEach(function (cell) {
+            result += "<td>" + cell + "</td>";
+          });
+          result += "</tr>";
+          i++;
+        }
+        result += "</tbody></table></div>";
+        i--; // compensate for the loop's own i++
+        continue;
+      }
+
       const ulMatch = line.match(/^[-*]\s+(.*)/);
       const olMatch = line.match(/^\d+\.\s+(.*)/);
 
