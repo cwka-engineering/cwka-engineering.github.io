@@ -94,6 +94,18 @@
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i];
 
+      // ATX headings: # through ######, with optional trailing closing hashes.
+      const headingMatch = line.match(/^(#{1,6})\s+(.+?)\s*#*\s*$/);
+      if (headingMatch) {
+        if (inList) {
+          result += "</" + listType + ">";
+          inList = false;
+        }
+        const level = headingMatch[1].length;
+        result += "<h" + level + ">" + headingMatch[2] + "</h" + level + ">";
+        continue;
+      }
+
       // GFM-style pipe tables: a row containing "|" immediately followed by
       // a separator row (|---|---|, optionally with alignment colons).
       if (

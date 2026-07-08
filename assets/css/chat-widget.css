@@ -160,6 +160,33 @@
 }
 
 /* Markdown rendered in assistant messages */
+.cwk-chat-message-assistant h1,
+.cwk-chat-message-assistant h2,
+.cwk-chat-message-assistant h3,
+.cwk-chat-message-assistant h4,
+.cwk-chat-message-assistant h5,
+.cwk-chat-message-assistant h6 {
+  margin: 10px 0 6px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.cwk-chat-message-assistant h1:first-child,
+.cwk-chat-message-assistant h2:first-child,
+.cwk-chat-message-assistant h3:first-child,
+.cwk-chat-message-assistant h4:first-child,
+.cwk-chat-message-assistant h5:first-child,
+.cwk-chat-message-assistant h6:first-child {
+  margin-top: 0;
+}
+
+.cwk-chat-message-assistant h1 { font-size: 16px; }
+.cwk-chat-message-assistant h2 { font-size: 14.5px; }
+.cwk-chat-message-assistant h3,
+.cwk-chat-message-assistant h4,
+.cwk-chat-message-assistant h5,
+.cwk-chat-message-assistant h6 { font-size: 13.5px; }
+
 .cwk-chat-message-assistant p {
   margin: 0 0 8px;
 }
