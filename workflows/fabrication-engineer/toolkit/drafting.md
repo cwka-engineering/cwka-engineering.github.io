@@ -39,7 +39,7 @@ The Drafting Toolkit is the in-Rhino interface for **read-only Epicor lookups** 
 - **Open jobs only**: Closed jobs are **ignored** to limit data volume—if a lookup returns nothing, confirm the job is open and bombed as expected. [^transcript-drafting-toolkit-kickoff]
 - The BOM view can show **quantities**, **UOM**, **descriptions**, and a **cross-reference to the material transmittal / approval** view the PM maintains (see [Project Materials Dashboard](/tools/epicor/dashboards.html#project-materials-dashboard)). Use it to see whether a line is approved before you model it.
 - **Header metadata** typically includes: time the BOM was **cached** in the tool, and the **most recent Epicor change-log activity** for that job—useful to spot stale BOMs.
-- **Publishing to a layout**: Choose the target layout page (e.g. a **200**-level BOM page), set **class filter** (**full BOM** vs **hardware-only** where available), then **publish** so tags/descriptions on the sheet update from the cached BOM. [^transcript-drafting-toolkit-kickoff]
+- **Publishing to a layout**: Choose the target layout page (the **G00** page — BOM prints there, not on the 2XX shop drawings), set **class filter** (**full BOM** vs **hardware-only** where available), then **publish** so tags/descriptions on the sheet update from the cached BOM. [^transcript-drafting-toolkit-kickoff]
 
 ## General requirements / material schedule (transmittal)
 

@@ -56,7 +56,6 @@ Includes: [^transcript-layouts]
 ### XXXX.XXX.2XX: Shop Drawings
 For client submission. Typically includes: [^transcript-layouts]
 - Isometric views (often first page for freestanding items, or elevation for large interior wall paneling)
-- BOM (Bill of Materials) — can be published via [Drafting Toolkit BOM workflow](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-publish-bom-to-l001)
 - Plans
 - Elevations
 - Sections (using [Clipping Planes](/standards/rhino-drafting/sections-clipping.html))

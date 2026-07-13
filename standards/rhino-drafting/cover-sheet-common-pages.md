@@ -62,9 +62,9 @@ This set is included with:
 | Code | Page Type | Content |
 |------|-----------|---------|
 | T00 | Title Sheet | Project cover page with job index |
-| G00 | General Requirements | Material/finish tag schedules from TRA |
+| G00 | General Requirements | Material/finish tag schedules from TRA, BOM summary |
 | 1XX | Reference Plans | Floor plans, enlarged plans, RCPs, VIF plans |
-| 2XX | Shop Drawings | Iso/BOM → Plans → Elevations → Sections → Details |
+| 2XX | Shop Drawings | Iso → Plans → Elevations → Sections → Details |
 | 3XX | Install & Shipping | SC list, installation supplements for site conditions |
 | 4XX | Fabrication Supplements | Layups, veneer sequences, glue-up jigs (internal use) |
 | SKXX | Sketches | Quick feedback; not in submission set |
