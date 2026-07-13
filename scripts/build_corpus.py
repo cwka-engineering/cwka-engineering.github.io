@@ -2,9 +2,13 @@
 """
 Build structured JSON corpora from the wiki's Markdown files.
 
-Supports multi-corpus output: each corpus is filtered to pages that carry the
-matching corpus_tags value in their front matter. Pages without corpus_tags
-default to the "general" corpus only.
+Supports multi-corpus output. "general" is the superset corpus -- every
+published page, with no corpus_tags filtering -- since FE is the primary
+audience for the public/FE-facing Wiki Assistant and that assistant should be
+able to answer from the whole wiki. "fe-release" and "fe-submittal" are
+narrower opt-in subsets (via corpus_tags in front matter) that feed the
+internal FE diagnostic/summarize tools, where a smaller, more targeted corpus
+is worth the tradeoff.
 
 Output is uploaded to Cloudflare KV and injected into the chatbot's system
 prompt so Claude can answer questions grounded in wiki content.
@@ -251,7 +255,8 @@ def augment_org_viz(pages: list[dict], wiki_root: Path) -> None:
 def build_corpus(wiki_root: Path, tag: str | None = None) -> list[dict]:
     """Walk the wiki and build corpus entries.
 
-    tag=None   — all non-excluded pages (legacy full corpus)
+    tag=None   — all non-excluded pages, no filtering. Used to build the
+                 "general" superset corpus (see module docstring).
     tag='foo'  — only pages whose corpus_tags include 'foo'
                  (untagged pages default to ['general'])
     """
@@ -378,7 +383,12 @@ def main() -> None:
     tags_to_build = [args.tag] if args.tag else DEFINED_TAGS
 
     for tag in tags_to_build:
-        pages = build_corpus(args.root, tag=tag)
+        # "general" is the superset corpus (every published page, no filter) --
+        # it's what the public/FE-facing Wiki Assistant reads from, and FE is
+        # the primary audience for that assistant, so it should see everything.
+        # fe-release/fe-submittal stay as narrower opt-in subsets feeding the
+        # internal FE diagnostic/summarize tools.
+        pages = build_corpus(args.root, tag=None if tag == "general" else tag)
         safe_tag = tag.replace("-", "_")  # filesystem-safe variant
 
         json_path = out_dir / f"corpus_{safe_tag}.json"
