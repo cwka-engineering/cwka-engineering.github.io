@@ -35,7 +35,7 @@ Task-oriented index for workflow procedures. Each link goes directly to the rele
 | C22 | Set drawing variables (submittal scope, project metadata) | [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-set-drawing-variables) |
 | C23 | Populate the T00 (Title/Project) page | [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-populate-t00) |
 | C24 | Populate the G00 (General Requirements/Schedules) page | [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-populate-g00) |
-| C25 | Publish BOM data to the pick list (L001) | [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-publish-bom-to-l001) |
+| C25 | Publish BOM data to the pick list (L001) — **deprecated**, legacy files only | [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-publish-bom-to-l001) |
 | C26 | Look up an Epicor part and create the correct material layer | [Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html#how-to-lookup-part) |
 | C27 | Cache the Epicor parts database for offline use | [Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html#how-to-cache-parts-database) |
 | C28 | Reset the toolkit after making model changes | [Toolkit Setup](/workflows/fabrication-engineer/toolkit/#how-to-reset-toolkit) |

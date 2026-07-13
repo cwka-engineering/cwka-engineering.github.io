@@ -68,5 +68,5 @@ This set is included with:
 | 3XX | Install & Shipping | SC list, installation supplements for site conditions |
 | 4XX | Fabrication Supplements | Layups, veneer sequences, glue-up jigs (internal use) |
 | SKXX | Sketches | Quick feedback; not in submission set |
-| L00 | Master Parts List | Standardized parts schedule |
-| L001 | Pick List | Backend BOM page (not typically printed) |
+| L000 | Master Parts List | Standardized parts schedule (still present, underused) |
+| L001 | Pick List | **Deprecated** — removed from the general Rhino tabloid template |

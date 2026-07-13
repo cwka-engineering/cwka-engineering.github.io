@@ -15,7 +15,7 @@ corpus_tags: [fe-release, fe-submittal]
 ## How do I run Auto-BOM to generate a first-pass takeoff?
 {: #how-to-run-auto-bom}
 
-Modeling Toolkit → **Auto-BOM** tab. All parts must be toolkit-named, all six material classes cached (via Reverse Lookup), and all materials must have fully qualified Epicor dimension fields. Click **Run** to generate the BOM approximation. Apply scrap percentages, review the preview table, then publish to L001 or export to Excel.
+Modeling Toolkit → **Auto-BOM** tab. All parts must be toolkit-named, all six material classes cached (via Reverse Lookup), and all materials must have fully qualified Epicor dimension fields. Click **Run** to generate the BOM approximation. Apply scrap percentages, review the preview table, then export to Excel (L001 publishing is deprecated — see [Parts List Tab](/workflows/fabrication-engineer/toolkit/modeling.html#parts-list-tab)).
 
 ## How do I use 1D nesting to refine linear material takeoffs?
 {: #how-to-1d-nesting}
@@ -31,7 +31,7 @@ Modeling Toolkit → **2D Nesting**. Select the sheet material (width/length pre
 
 - **Purpose**: [^transcript-adv-toolkit] Provides first-pass BOM approximation based on model geometry. **Not guaranteed to be correct** - it's a starting point for refinement.
 - **How It Works**: [^transcript-adv-toolkit] Contacts Epicor to find dimension-specific fields, then does first-order rough takeoff based on lengths and widths recorded in each part during naming.
-- **Output Location**: [^transcript-adv-toolkit] Published changes go to L001 page (pick list) user text. Can export to Excel file (formatted for paste-insert directly into Epicor BOM).
+- **Output Location**: Export to Excel file (formatted for paste-insert directly into Epicor BOM). [^transcript-adv-toolkit] Older files may still show published changes on the L001 page (pick list) user text, but L001 has been removed from the general Rhino tabloid template — don't rely on it for new work.
 
 ## Conditions for Takeoffs
 

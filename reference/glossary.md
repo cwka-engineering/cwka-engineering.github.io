@@ -87,8 +87,8 @@ corpus_tags: [fe-release, fe-submittal]
 - **Clipping Plane**: Creates section cuts through geometry. Lives on `03_CWKA-FE::CON::CLIP` layer. Can set custom depth to control visibility range.
 - **Section Style**: Hatch pattern assigned to a layer. Configured in Layer Manager > Section Style column.
 - **Named Positions**: Time-stamped locations of parts in Rhino space. Used to toggle between assembled and exploded views. Best set at the end of the modeling process when geometry is fabrication-ready, because altering a geometry's volume gives it a new GUID and breaks the association. Use the "Append" function to re-register geometry if this happens.
-- **Master Parts List (L00)**: Standardized parts schedule format for drawing sets.
-- **Pick List (L001)**: Backend model space page for BOM information during design (not typically printed externally).
+- **Master Parts List (L000)**: Standardized parts schedule format for drawing sets. Still present in the template, though underused.
+- **Pick List (L001)**: Backend model space page for BOM information during design (not typically printed externally). **Deprecated** — removed from the general Rhino tabloid template.
 
 ## Epicor Material Class Codes
 

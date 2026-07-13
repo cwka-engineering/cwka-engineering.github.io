@@ -74,11 +74,12 @@ Modeling Toolkit → **Reverse Lookup**. Select each material class at least onc
 
 ## Parts List Tab
 
-### L00 - Master Parts List
-- **Purpose**: [^transcript-adv-toolkit] Standardized format for parts schedules within drawing sets. This is a targeted parts list (e.g., for metal shop) - not the comprehensive master parts list Excel that PE creates. Use when you need a parts schedule in the drawing set in addition to Excel.
+### L000 - Master Parts List
+- **Purpose**: [^transcript-adv-toolkit] Standardized format for parts schedules within drawing sets. This is a targeted parts list (e.g., for metal shop) - not the comprehensive master parts list Excel that PE creates. Use when you need a parts schedule in the drawing set in addition to Excel. Still present in the template, though underused.
 
-### L001 - Pick List
-- **Purpose**: [^transcript-adv-toolkit] Backend model space page for BOM information while working on scope. Not typically printed for external audience - primarily for FE engineer's use during design. Facilitates takeoffs and BOM tracking.
+### L001 - Pick List (Deprecated)
+- **Deprecated**: Removed from the general Rhino tabloid template.
+- **Purpose** (historical): [^transcript-adv-toolkit] Backend model space page for BOM information while working on scope. Not typically printed for external audience - primarily for FE engineer's use during design. Facilitated takeoffs and BOM tracking.
 
 ### Analysis Functionality
 - **Display**: [^transcript-adv-toolkit] Parts list tab reads out all attributes calculated during naming step and displays them on the page.

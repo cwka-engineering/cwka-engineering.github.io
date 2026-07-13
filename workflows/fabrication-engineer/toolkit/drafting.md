@@ -97,6 +97,8 @@ Drafting Toolkit → **Schedules tab**. Enter the project number, select the G00
 ## How do I publish BOM data to the pick list (L001)?
 {: #how-to-publish-bom-to-l001}
 
+> **Deprecated**: L001 has been removed from the general Rhino tabloid template. This applies only to legacy files that still carry the L001 page.
+
 Drafting Toolkit → **Schedules tab** → BOM section. Enter the job number, cache the data, review the data table, then publish. Can filter to hardware-only or show the full BOM.
 
 ## How do I handle a group submittal in the toolkit?

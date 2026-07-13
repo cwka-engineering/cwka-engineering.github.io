@@ -16,7 +16,7 @@ corpus_tags: [fe-release, fe-submittal]
 ## Drafting vs Modeling
 
 - **Drafting**: [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html) — Epicor-driven **schedules and BOM** on layouts, part lookup, template/layout restore, and **publish** workflows that keep drawings aligned with Epicor and the PM-maintained material schedule.
-- **Modeling**: [Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html) — Part naming, **L00/L001** style outputs, analysis, and **hardware** integration (including the shared library populated via McMaster-Carr requests).[^transcript-rhino8-kickoff-ii]
+- **Modeling**: [Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html) — Part naming, **L000** style outputs (**L001 deprecated** — removed from the general template), analysis, and **hardware** integration (including the shared library populated via McMaster-Carr requests).[^transcript-rhino8-kickoff-ii]
 
 ## FE Release Diagnostic (In-Rhino)
 
