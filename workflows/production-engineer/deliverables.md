@@ -19,7 +19,7 @@ Use the Excel template from `PE to Floor SOP\TEMPLATES`. Populate from the Grass
 ## How do I create the Lay-Up Summary?
 {: #how-to-create-layup-summary}
 
-Create when pre-laminating material is required. Name using the format `PRE_EpicorPartNumbersWithoutZeros_MetricThicknessInMM` (e.g., `PRE_438_331_7_19`). Include: material code (Rhino layer name), description, materials being glued up, and quantities. Reference [Lay-Up Formulas](/reference/reference-tables/lay-up-formulas.html) for thickness calculations.
+Create when pre-laminating material is required. Name using the format `PRE_[face]_[core]_[backer]_[total thickness in mm]` — one segment per material being glued (Epicor `GM.SG.XXXXX` code with leading zeros dropped), followed by a single total thickness after gluing. For example, `PRE_438_331_7_19` glues three materials — `GM.SG.00438` (face), `GM.SG.00331` (core), and `GM.SG.00007` (backer) — to a 19mm total thickness; it does not encode an individual-ply thickness. Include: material code (Rhino layer name), description, materials being glued up, and quantities. Reference [Lay-Up Formulas](/reference/reference-tables/lay-up-formulas.html) for thickness calculations.
 
 ## How do I mark a job as Programming Complete?
 {: #how-to-mark-programming-complete}
@@ -61,9 +61,9 @@ Created when **pre-laminating** material is required before cutting.
 
 **Naming Convention**:
 ```
-PRE_EpicorPartNumbersWithoutZeros_MetricThicknessInMM
+PRE_[face]_[core]_[backer]_[total thickness in mm]
 ```
-Example: `PRE_438_331_7_19`
+Example: `PRE_438_331_7_19` — face `GM.SG.00438` + core `GM.SG.00331` + backer `GM.SG.00007`, glued to 19mm total. Each material segment is an Epicor `GM.SG.XXXXX` code with leading zeros dropped; the final number is the total thickness after gluing, not an individual ply thickness. See [Lay-Up Formulas](/reference/reference-tables/lay-up-formulas.html) for the full format and multi-core examples.
 
 **Content**:
 -   Material code (Rhino layer name)
