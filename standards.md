@@ -4,6 +4,7 @@ title: Standards
 permalink: /standards/
 nav_order: 3
 has_children: true
+corpus_exclude: true
 ---
 
 # Standards

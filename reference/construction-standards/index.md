@@ -5,6 +5,7 @@ permalink: /reference/construction-standards/
 parent: Reference
 nav_order: 4
 has_children: true
+corpus_exclude: true
 ---
 
 # Construction Standards

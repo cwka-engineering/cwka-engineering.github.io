@@ -6,6 +6,7 @@ nav_order: 1
 parent: Workflows
 has_children: true
 corpus_tags: [fe-release, fe-submittal]
+corpus_exclude: true
 ---
 
 # Fabrication Engineer (FE) Workflow

@@ -5,6 +5,7 @@ permalink: /reference/reference-tables/
 nav_order: 3
 parent: Reference
 has_children: true
+corpus_exclude: true
 ---
 
 # Reference Tables

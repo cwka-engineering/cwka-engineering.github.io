@@ -4,6 +4,7 @@ title: Onboarding
 permalink: /onboarding/
 nav_order: 1
 has_children: true
+corpus_exclude: true
 ---
 
 # Getting Started

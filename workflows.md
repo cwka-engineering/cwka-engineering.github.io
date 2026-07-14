@@ -4,6 +4,7 @@ title: Workflows
 permalink: /workflows/
 nav_order: 2
 has_children: true
+corpus_exclude: true
 ---
 
 # Workflows

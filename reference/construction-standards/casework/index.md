@@ -7,6 +7,7 @@ grand_parent: Reference
 nav_order: 1
 has_children: true
 corpus_tags: [general, fe-submittal]
+corpus_exclude: true
 ---
 
 # Casework Construction Standards

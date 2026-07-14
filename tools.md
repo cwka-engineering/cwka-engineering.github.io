@@ -4,6 +4,7 @@ title: Tools
 permalink: /tools/
 nav_order: 4
 has_children: true
+corpus_exclude: true
 ---
 
 # Tools

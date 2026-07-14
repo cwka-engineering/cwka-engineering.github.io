@@ -5,6 +5,7 @@ permalink: /reference/industry-references.html
 parent: Reference
 nav_order: 7
 has_children: true
+corpus_exclude: true
 ---
 
 # Industry References
