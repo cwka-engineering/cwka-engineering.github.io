@@ -5,6 +5,7 @@ permalink: /workflows/fabrication-engineer/troubleshooting.html
 nav_order: 10
 parent: Fabrication Engineer (FE)
 grand_parent: Workflows
+corpus_tags: [fe-release]
 ---
 
 # Troubleshooting

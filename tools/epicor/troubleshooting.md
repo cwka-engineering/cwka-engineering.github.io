@@ -5,6 +5,7 @@ permalink: /tools/epicor/troubleshooting.html
 nav_order: 9
 parent: Epicor Usage
 grand_parent: Tools
+corpus_tags: [fe-release]
 ---
 
 # Troubleshooting

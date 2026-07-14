@@ -4,6 +4,7 @@ title: Folder Structure & File Management
 permalink: /reference/folder-structure.html
 parent: Reference
 nav_order: 2
+corpus_tags: [fe-release]
 ---
 
 # Folder Structure & File Management Outline
