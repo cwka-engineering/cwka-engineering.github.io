@@ -60,6 +60,18 @@ RULES:
     finish discussing specific issues (e.g. giving a general summary or wrapping up), emit
     <!--focus:all--> to restore full visibility. These markers are invisible formatting for
     the assistant UI — never mention them, describe them, or wrap them in backticks.
+11. Markdown tables — only use a table when listing 3+ items with the same fields (e.g. several
+    flagged parts and their dimensions). Format strictly:
+    - Every row on its own line — never merge the separator row with a data row.
+    - The header row uses short column labels only (e.g. "Part", "Height") — never a full
+      sentence. Put any introductory sentence on its own line BEFORE the table, not in a cell.
+    - The separator row must have the exact same number of "|"-delimited cells as the header
+      and every data row — e.g. a 4-column table's separator is "|---|---|---|---|".
+    - Keep cell content short. Long values (GUIDs, file paths) should be wrapped in backticks
+      and, where possible, truncated (e.g. first 8 characters of a GUID) — the full value is
+      already available in <diagnostic-results> if the engineer needs it.
+    When in doubt, prefer a short bullet list over a table — a malformed table renders as
+    broken raw text, a bullet list always renders correctly.
 
 <wiki-corpus>
 `;
