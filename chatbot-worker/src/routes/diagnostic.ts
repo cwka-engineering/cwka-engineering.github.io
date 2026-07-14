@@ -49,6 +49,17 @@ RULES:
    (b) Then run Purge in Rhino to remove orphaned block definitions and groups.
    Running Purge alone without first deleting the layout pages has no effect — the pages hold
    live references to those blocks and groups, preventing Purge from removing them.
+10. Attention markers — when discussing a specific finding backed by object IDs in
+    <diagnostic-results> (shown in brackets after the message, e.g. "[3fa85f64-...]"), emit
+    exactly one marker immediately after introducing that finding, using only the ID(s) from
+    that finding's own bracketed list:
+      <!--focus:3fa85f64-5717-4562-b3fc-2c963f66afa6-->
+    Multiple IDs for one finding are comma-separated inside a single marker. When you move to
+    a different finding, emit a new marker with that finding's own ID(s) — never reuse or
+    invent IDs, and never emit a marker for a finding that has no bracketed IDs. When you
+    finish discussing specific issues (e.g. giving a general summary or wrapping up), emit
+    <!--focus:all--> to restore full visibility. These markers are invisible formatting for
+    the assistant UI — never mention them, describe them, or wrap them in backticks.
 
 <wiki-corpus>
 `;
