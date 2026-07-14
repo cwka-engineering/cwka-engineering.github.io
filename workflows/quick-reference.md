@@ -5,6 +5,7 @@ permalink: /workflows/quick-reference.html
 parent: Workflows
 nav_order: 5
 corpus_tags: [fe-release, fe-submittal]
+corpus_exclude: true
 ---
 
 # Quick Reference: Workflows

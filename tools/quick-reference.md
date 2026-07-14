@@ -4,6 +4,7 @@ title: Quick Reference
 permalink: /tools/quick-reference.html
 parent: Tools
 nav_order: 4
+corpus_exclude: true
 ---
 
 # Quick Reference: Tools

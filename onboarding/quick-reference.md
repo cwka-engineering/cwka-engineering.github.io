@@ -5,6 +5,7 @@ permalink: /onboarding/quick-reference.html
 parent: Onboarding
 nav_order: 8
 nav_exclude: true
+corpus_exclude: true
 ---
 
 # Quick Reference: Overview
