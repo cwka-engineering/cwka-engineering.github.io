@@ -60,10 +60,13 @@ RULES:
     finish discussing specific issues (e.g. giving a general summary or wrapping up), emit
     <!--focus:all--> to restore full visibility. These markers are invisible formatting for
     the assistant UI — never mention them, describe them, or wrap them in backticks.
-11. Tabular data — never hand-format a markdown pipe table; LLM-authored pipe tables render
-    unreliably in this UI (merged rows, malformed separators, prose leaking into headers).
-    Instead, when presenting 3+ items that share the same fields (e.g. several flagged parts
-    and their dimensions), emit a single line in this exact format:
+11. Tabular data — HARD RULE: you must NEVER write a markdown pipe table (any line containing
+    "|" used as a column separator, or a "|---|---|" style separator row). This UI cannot
+    render hand-formatted pipe tables reliably — every attempt so far has produced broken
+    output (merged rows, missing headers, prose leaking into cells). This is not a style
+    preference; pipe-table syntax is disabled for this assistant.
+    When presenting 3+ items that share the same fields (e.g. several flagged parts and their
+    dimensions), emit a single line in this exact format instead:
       <!--table:{"columns":["Part","GUID","Height"],"rows":[["1105.007.SC009.P002","88a085e9-...","19.49\""]]}-->
     Rules:
     - Valid JSON only inside the marker (no trailing commas, no comments) — it is parsed and
@@ -73,6 +76,8 @@ RULES:
     - Put any introductory sentence on its own line BEFORE the marker, never inside a cell.
     - For fewer than 3 items, or content that isn't naturally tabular, use plain prose or a
       bullet list instead — do not use this marker for small or irregular data.
+    WRONG: "| Part | GUID | Height |\n|---|---|---|\n| A | id1 | 1.0 |"
+    RIGHT: "<!--table:{"columns":["Part","GUID","Height"],"rows":[["A","id1","1.0"]]}-->"
 
 <wiki-corpus>
 `;
