@@ -25,3 +25,7 @@ chatbot-worker/.wrangler/
 # Local reference documents (not for publication)
 chatbot-reference.docx
 
+
+# Python cache
+__pycache__/
+*.pyc
