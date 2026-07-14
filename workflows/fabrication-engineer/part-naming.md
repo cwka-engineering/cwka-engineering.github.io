@@ -57,6 +57,12 @@ Use **SelName** and step through each name to verify unlike geometries don't sha
   - Generate names for active groups
   - Preview attributes: thickness, dimensions, area, volume
   - Use Shade Unique to visually verify part types
+  - **Negative thickness/length values are a sentinel, not a metadata error**: a value of
+    -1 (or any negative value) means the toolkit's dimension-sampling routine could not find
+    a valid measurement — its sample points landed on a void or gap in the geometry rather
+    than solid material. This is a geometry issue at the sampled location, not a sign
+    inversion or corrupted UserText. Fix the void/gap in the geometry, then re-run Generate
+    Names to re-sample.
 - **Material Caching**: [^transcript-modeling-toolkit] When you select a material, toolkit caches data from Epicor including description and dimension-specific fields that provide precise measurements.
 
 ## Publishing & Editing
