@@ -76,7 +76,13 @@
       "id": "/reference/construction-standards/casework/base-cabinets.html",
       "title": "Base Cabinets",
       "section": "Standards",
-      "degree": 7
+      "degree": 8
+    },
+    {
+      "id": "/reference/construction-standards/casework/baseboard.html",
+      "title": "Baseboard & Base Run Modeling",
+      "section": "Standards",
+      "degree": 3
     },
     {
       "id": "/reference/construction-standards/casework/carcase-and-line-bore.html",
@@ -88,7 +94,7 @@
       "id": "/reference/construction-standards/casework/construction-boring.html",
       "title": "Construction Boring",
       "section": "Standards",
-      "degree": 2
+      "degree": 3
     },
     {
       "id": "/reference/construction-standards/casework/drawer-construction.html",
@@ -100,19 +106,19 @@
       "id": "/reference/construction-standards/casework/fillers.html",
       "title": "Fillers",
       "section": "Standards",
-      "degree": 3
+      "degree": 4
     },
     {
       "id": "/reference/construction-standards/casework/hinge-hardware.html",
       "title": "Hinge Hardware & Cup Boring",
       "section": "Standards",
-      "degree": 5
+      "degree": 6
     },
     {
       "id": "/reference/construction-standards/casework/",
       "title": "Casework",
       "section": "Standards",
-      "degree": 13
+      "degree": 14
     },
     {
       "id": "/reference/construction-standards/casework/tall-cabinets.html",
@@ -163,6 +169,12 @@
       "degree": 4
     },
     {
+      "id": "/reference/reference-tables/actual-material-thicknesses.html",
+      "title": "Actual Material Thicknesses",
+      "section": "Home",
+      "degree": 4
+    },
+    {
       "id": "/reference/reference-tables/cnc-drill-sizes.html",
       "title": "CNC Drill Sizes by Site",
       "section": "Home",
@@ -178,7 +190,7 @@
       "id": "/reference/reference-tables/",
       "title": "Reference Tables",
       "section": "Home",
-      "degree": 11
+      "degree": 12
     },
     {
       "id": "/reference/reference-tables/lay-up-formulas.html",
@@ -202,7 +214,7 @@
       "id": "/reference/reference-tables/sheet-sizes.html",
       "title": "Actual Sheet Sizes",
       "section": "Home",
-      "degree": 3
+      "degree": 4
     },
     {
       "id": "/reference/training-videos.html",
@@ -232,13 +244,13 @@
       "id": "/standards/layer-organization/material-modeling.html",
       "title": "Material Modeling",
       "section": "Standards",
-      "degree": 8
+      "degree": 9
     },
     {
       "id": "/standards/layer-organization/modeling-techniques.html",
       "title": "Modeling Techniques",
       "section": "Standards",
-      "degree": 4
+      "degree": 6
     },
     {
       "id": "/standards/layer-organization/standard-layers.html",
@@ -514,7 +526,7 @@
       "id": "/workflows/fabrication-engineer/part-naming.html",
       "title": "Part Naming",
       "section": "Workflows",
-      "degree": 10
+      "degree": 11
     },
     {
       "id": "/workflows/fabrication-engineer/shipping-components.html",
@@ -556,7 +568,7 @@
       "id": "/workflows/fabrication-engineer/toolkit/modeling.html",
       "title": "Modeling Toolkit",
       "section": "Home",
-      "degree": 7
+      "degree": 8
     },
     {
       "id": "/workflows/fabrication-engineer/troubleshooting.html",
@@ -568,7 +580,7 @@
       "id": "/workflows/fe-to-pe-release.html",
       "title": "FE to PE Release Procedure",
       "section": "Workflows",
-      "degree": 32
+      "degree": 33
     },
     {
       "id": "/workflows/production-engineer/deliverables.html",
@@ -890,6 +902,10 @@
     },
     {
       "source": "/reference/construction-standards/casework/",
+      "target": "/reference/construction-standards/casework/baseboard.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/",
       "target": "/reference/construction-standards/casework/carcase-and-line-bore.html"
     },
     {
@@ -926,6 +942,10 @@
     },
     {
       "source": "/reference/construction-standards/casework/base-cabinets.html",
+      "target": "/reference/construction-standards/casework/baseboard.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/base-cabinets.html",
       "target": "/reference/construction-standards/casework/carcase-and-line-bore.html"
     },
     {
@@ -949,6 +969,10 @@
       "target": "/reference/construction-standards/casework/upper-cabinets.html"
     },
     {
+      "source": "/reference/construction-standards/casework/baseboard.html",
+      "target": "/standards/layer-organization/modeling-techniques.html"
+    },
+    {
       "source": "/reference/construction-standards/casework/carcase-and-line-bore.html",
       "target": "/reference/construction-standards/casework/construction-boring.html"
     },
@@ -969,12 +993,20 @@
       "target": "/reference/construction-standards/casework/upper-cabinets.html"
     },
     {
+      "source": "/reference/construction-standards/casework/construction-boring.html",
+      "target": "/reference/construction-standards/casework/hinge-hardware.html"
+    },
+    {
       "source": "/reference/construction-standards/casework/drawer-construction.html",
       "target": "/reference/construction-standards/casework/type-codes.html"
     },
     {
       "source": "/reference/construction-standards/casework/fillers.html",
       "target": "/reference/construction-standards/casework/type-codes.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/fillers.html",
+      "target": "/standards/layer-organization/modeling-techniques.html"
     },
     {
       "source": "/reference/construction-standards/casework/hinge-hardware.html",
@@ -1114,6 +1146,10 @@
     },
     {
       "source": "/reference/reference-tables/",
+      "target": "/reference/reference-tables/actual-material-thicknesses.html"
+    },
+    {
+      "source": "/reference/reference-tables/",
       "target": "/reference/reference-tables/cnc-drill-sizes.html"
     },
     {
@@ -1147,6 +1183,18 @@
     {
       "source": "/reference/reference-tables/",
       "target": "/standards/rhino-drafting/"
+    },
+    {
+      "source": "/reference/reference-tables/actual-material-thicknesses.html",
+      "target": "/reference/reference-tables/sheet-sizes.html"
+    },
+    {
+      "source": "/reference/reference-tables/actual-material-thicknesses.html",
+      "target": "/standards/layer-organization/material-modeling.html"
+    },
+    {
+      "source": "/reference/reference-tables/actual-material-thicknesses.html",
+      "target": "/workflows/fe-to-pe-release.html"
     },
     {
       "source": "/reference/reference-tables/cnc-drill-sizes.html",
@@ -1987,6 +2035,10 @@
     {
       "source": "/workflows/fabrication-engineer/part-naming.html",
       "target": "/workflows/fabrication-engineer/toolkit/"
+    },
+    {
+      "source": "/workflows/fabrication-engineer/part-naming.html",
+      "target": "/workflows/fabrication-engineer/toolkit/modeling.html"
     },
     {
       "source": "/workflows/fabrication-engineer/part-naming.html",
