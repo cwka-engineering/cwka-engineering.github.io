@@ -14,14 +14,28 @@ Complete workflow for creating, BOM'ing, and releasing solid wood component (WC)
 
 > **Related**: [Part Naming](/workflows/fabrication-engineer/part-naming.html) | [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html) | [Part Management](/tools/epicor/part-management.html) | [Job Management](/tools/epicor/job-management.html)
 
+## What Is a WC, Conceptually?
+{: #what-is-a-wc}
+
+Think of a WC like ordering a finished-size solid-lumber profile from a mill — except the mill is in-house. The output is a quantity of a finished profile (e.g., white oak rift-cut S4S 2.5"×6.5", or a specific crown moulding profile) that you then use as **raw material** to make parts in your design. In Rhino it becomes a material layer (`CWKA_FE::MFG::WC::…`) that you cut a variety of parts from, which production manufactures out of the S4S stock or moulding.
+
+The simple, dominant case: order linear feet of a specified solid-wood profile from the in-house mill, then use it as raw material for the parts you're actually designing.
+
 ## What Qualifies as a WC?
 {: #how-to-determine-wc}
 
-A WC part is any solid wood piece that is **NOT** poplar blocking under 100 linear feet.
+Quick fallback test: a WC part is any solid wood piece that is **NOT** poplar blocking under 100 linear feet.
 
 **If you have less than 100 LF of poplar blocking**, it can be released with the primary job and PE will produce a hardwood cut list.
 
 **Standard blocking:** Two standard sizes for poplar blocking (**7/8" x 7/8"** and **1.5" x 1.5"**) are kept on the shelf as shop supply. They are pulled as needed by the shop and do **NOT** need to be BOM'd. Whenever possible, use a standard blocking size. Minimize different sizes — each new WC part requires its own drawing.
+
+## Recognized Exceptions
+{: #recognized-exceptions}
+
+WC nomenclature is sometimes deliberately repurposed to solve other material- or part-tracking problems — for example, tying WC naming into the laser-engraving process on a project that needed to track engraved parts. This is a legitimate, recognized use, not a tribal workaround, but it's an exception to the mental model above, not the norm.
+
+**Standing exception — buyouts:** Buyout drawer boxes and buyout cabinet doors are handled as WCs, regardless of whether they fit the "in-house mill" mental model. This is a longstanding rule, not obvious from the threshold test alone.
 
 ## Creating the Part in Epicor
 {: #how-to-create-wc-part}

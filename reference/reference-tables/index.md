@@ -22,3 +22,4 @@ Quick-reference tables for daily engineering use. These consolidate the key look
 - **[Lay-Up Formulas](/reference/reference-tables/lay-up-formulas.html)** — PRE code format and thickness calculations
 - **[Actual Sheet Sizes](/reference/reference-tables/sheet-sizes.html)** — Sheet dimensions, maximum part sizes, and nesting clear zones
 - **[CNC Drill Sizes by Site](/reference/reference-tables/cnc-drill-sizes.html)** — Available drill diameters at Colorado and New York
+- **[Actual Material Thicknesses](/reference/reference-tables/actual-material-thicknesses.html)** — Known nominal-vs-actual thickness discrepancies (shop ply, bending ply, etc.)

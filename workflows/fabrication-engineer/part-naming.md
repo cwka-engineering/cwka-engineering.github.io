@@ -37,6 +37,17 @@ Modeling Toolkit → **Replace Name Segments** tab. Change specific segments (e.
 
 Use **SelName** and step through each name to verify unlike geometries don't share the same part name. If two unlike parts share a name, split using the next unused **P###** in the series. All parts must be named via the toolkit (not manually) for downstream BOM workflows to work.
 
+As a floor-level pass, run **Select by Name** with a blank name and confirm it returns nothing — any hit is an unnamed part. This is a quick check but not a complete one: it catches missing names, not duplicate names or same-name-different-geometry, which still require the SelName walkthrough above.
+
+## Why didn't my parts get named?
+
+{: #why-parts-not-named}
+
+Two common causes when Generate Names silently skips parts:
+
+- **Parent-child layer nesting**: nesting a layer inside another layer (rather than keeping material layers flat/parallel) can break the auto-namer's ability to read attributes from the layer. Keep material layers unnested.
+- **A material word embedded in a PRE code**: a PRE lay-up code (`PRE_[face]_[core]_[backer]_[thickness mm]`, see [Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html#how-to-model-pre-layup)) is a compound code the namer parses positionally — a material word placed there instead of the correct segment reads as malformed rather than as material data, and the part won't get named.
+
 ## Grouping & Naming
 
 - **Grouping First**: [^transcript-adv-toolkit-ii] Parts must be grouped into logical groups based on how they need to be sent to shop or field before naming.

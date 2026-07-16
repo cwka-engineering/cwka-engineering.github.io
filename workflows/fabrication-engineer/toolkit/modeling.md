@@ -37,6 +37,8 @@ Use descriptive placeholder names (e.g., SG1, MDF2) under DE or FE layers. Updat
 
 Modeling Toolkit → Hardware section. Search by Epicor part number. The embedded block is auto-placed on the correct layer with correct naming.[^transcript-blocks]
 
+**First use of a new hardware item**: verify the block's center-to-center and other critical dimensions against the physical part before machining at scale. Don't trust the cut sheet or block geometry blind — a bad dimension caught on one part is cheap; the same error propagated across a full production run is not.
+
 ## How do I create a higher-order hardware assembly block?
 {: #how-to-create-assembly-block}
 

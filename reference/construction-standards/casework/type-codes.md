@@ -4,7 +4,7 @@ title: Casework Type Codes & Names
 permalink: /reference/construction-standards/casework/type-codes.html
 parent: Casework
 grand_parent: Construction Standards
-nav_order: 9
+nav_order: 10
 corpus_tags: [general, fe-submittal]
 ---
 

@@ -80,6 +80,12 @@ The stretcher under a drawer is positioned so that it is **centered on the revea
 | Down from top of door (to center) | 1-1/2" |
 | Side | Hinge-opposite side, unless otherwise noted |
 
+### Custom / Face Pulls
+
+A custom or face pull (routed into the door/drawer front itself, rather than an applied pull) is modeled by setting the pull profile **in flush with the face and booleaning it out** — not by modeling an applied part sitting on top of the face.
+
+The **reveal dimension** (the gap the routed profile leaves at the panel edge) varies by job — 1-1/2" and 2" are both legitimate values in use. Whichever value applies, it must be **one consistent, explicitly called-out value for the whole scope**; don't let it drift between parts within the same job.
+
 ## Dividers
 
 | Condition | Rule |

@@ -4,7 +4,7 @@ title: Hinge Hardware & Cup Boring
 permalink: /reference/construction-standards/casework/hinge-hardware.html
 parent: Casework
 grand_parent: Construction Standards
-nav_order: 8
+nav_order: 9
 corpus_tags: [general, fe-submittal]
 ---
 

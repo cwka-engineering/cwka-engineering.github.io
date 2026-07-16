@@ -4,7 +4,7 @@ title: Critical Dimensions Quick Reference
 permalink: /reference/construction-standards/casework/quick-reference.html
 parent: Casework
 grand_parent: Construction Standards
-nav_order: 10
+nav_order: 11
 corpus_tags: [general, fe-submittal]
 ---
 
