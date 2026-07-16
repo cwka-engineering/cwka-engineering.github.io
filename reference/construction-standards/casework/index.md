@@ -23,5 +23,6 @@ Standard construction rules for CWK/DFW casework: carcase assembly, the 32mm she
 - **[Tall Cabinets](/reference/construction-standards/casework/tall-cabinets.html)** — Fixed-shelf requirement and dual line-bore zones
 - **[Fillers](/reference/construction-standards/casework/fillers.html)** — L-cleat filler construction, corner fillers, ADA filler
 - **[Construction Boring](/reference/construction-standards/casework/construction-boring.html)** — CNC dowel and predrill hole patterns
+- **[Hinge Hardware & Cup Boring](/reference/construction-standards/casework/hinge-hardware.html)** — Cup diameter, boring distance, mounting-plate height, and overlay — the hardware system itself, independent of cabinet family
 - **[Casework Type Codes & Names](/reference/construction-standards/casework/type-codes.html)** — Full naming reference (e.g. `BC1D_R`, `UC2D`, `TF`) for every standard cabinet, filler, soffit, die wall, and panel type
 - **[Critical Dimensions Quick Reference](/reference/construction-standards/casework/quick-reference.html)** — Fast lookup: reveals, pull/hinge positions by cabinet type, thresholds, and material thicknesses

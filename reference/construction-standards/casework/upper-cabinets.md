@@ -47,6 +47,8 @@ Upper cabinets follow the universal [Carcase Assembly & 32mm System](/reference/
 
 Same as base cabinets: 3" from top and bottom of door. Third hinge if door > 36" high.
 
+> This covers vertical hinge position only. For cup boring, mounting-plate selection, and overlay, see [Hinge Hardware & Cup Boring](/reference/construction-standards/casework/hinge-hardware.html).
+
 ## Pull Placement
 
 **Upper cabinet pulls are positioned at the BOTTOM of the door, not the top** — the opposite of base cabinet convention.

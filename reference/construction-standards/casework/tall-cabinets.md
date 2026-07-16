@@ -35,6 +35,8 @@ Tall cabinets follow the universal [Carcase Assembly & 32mm System](/reference/c
 | Sixth hinge | Add if door > 90" high |
 | Hinge vs. fixed shelf | Adjust hinge location to maintain clearance from fixed shelf if needed |
 
+> This covers vertical hinge position only. For cup boring, mounting-plate selection, and overlay, see [Hinge Hardware & Cup Boring](/reference/construction-standards/casework/hinge-hardware.html).
+
 ## Door Alignment
 
 | Parameter | Value |

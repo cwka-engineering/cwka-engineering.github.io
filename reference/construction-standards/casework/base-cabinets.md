@@ -70,6 +70,8 @@ The stretcher under a drawer is positioned so that it is **centered on the revea
 
 **Exception — Sink cabinet (BS2D):** Top hinge is 6" from top of door (not 3"). Bottom hinge remains 3" from bottom.
 
+> This covers vertical hinge position only. For cup boring, mounting-plate selection, and overlay, see [Hinge Hardware & Cup Boring](/reference/construction-standards/casework/hinge-hardware.html).
+
 ## Pull Placement
 
 | Parameter | Value |
