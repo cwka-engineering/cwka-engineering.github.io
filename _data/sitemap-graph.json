@@ -76,13 +76,13 @@
       "id": "/reference/construction-standards/casework/base-cabinets.html",
       "title": "Base Cabinets",
       "section": "Standards",
-      "degree": 6
+      "degree": 7
     },
     {
       "id": "/reference/construction-standards/casework/carcase-and-line-bore.html",
       "title": "Carcase Assembly & 32mm System",
       "section": "Standards",
-      "degree": 6
+      "degree": 7
     },
     {
       "id": "/reference/construction-standards/casework/construction-boring.html",
@@ -103,16 +103,22 @@
       "degree": 3
     },
     {
+      "id": "/reference/construction-standards/casework/hinge-hardware.html",
+      "title": "Hinge Hardware & Cup Boring",
+      "section": "Standards",
+      "degree": 5
+    },
+    {
       "id": "/reference/construction-standards/casework/",
       "title": "Casework",
       "section": "Standards",
-      "degree": 12
+      "degree": 13
     },
     {
       "id": "/reference/construction-standards/casework/tall-cabinets.html",
       "title": "Tall Cabinets",
       "section": "Standards",
-      "degree": 3
+      "degree": 4
     },
     {
       "id": "/reference/construction-standards/casework/type-codes.html",
@@ -124,7 +130,7 @@
       "id": "/reference/construction-standards/casework/upper-cabinets.html",
       "title": "Upper Cabinets",
       "section": "Standards",
-      "degree": 4
+      "degree": 5
     },
     {
       "id": "/reference/construction-standards/",
@@ -900,6 +906,10 @@
     },
     {
       "source": "/reference/construction-standards/casework/",
+      "target": "/reference/construction-standards/casework/hinge-hardware.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/",
       "target": "/reference/construction-standards/casework/tall-cabinets.html"
     },
     {
@@ -928,6 +938,10 @@
     },
     {
       "source": "/reference/construction-standards/casework/base-cabinets.html",
+      "target": "/reference/construction-standards/casework/hinge-hardware.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/base-cabinets.html",
       "target": "/reference/construction-standards/casework/type-codes.html"
     },
     {
@@ -937,6 +951,10 @@
     {
       "source": "/reference/construction-standards/casework/carcase-and-line-bore.html",
       "target": "/reference/construction-standards/casework/construction-boring.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/carcase-and-line-bore.html",
+      "target": "/reference/construction-standards/casework/hinge-hardware.html"
     },
     {
       "source": "/reference/construction-standards/casework/carcase-and-line-bore.html",
@@ -957,6 +975,14 @@
     {
       "source": "/reference/construction-standards/casework/fillers.html",
       "target": "/reference/construction-standards/casework/type-codes.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/hinge-hardware.html",
+      "target": "/reference/construction-standards/casework/tall-cabinets.html"
+    },
+    {
+      "source": "/reference/construction-standards/casework/hinge-hardware.html",
+      "target": "/reference/construction-standards/casework/upper-cabinets.html"
     },
     {
       "source": "/reference/construction-standards/casework/tall-cabinets.html",
