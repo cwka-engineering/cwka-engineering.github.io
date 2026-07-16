@@ -63,10 +63,4 @@ Two separate manual updates are required when a production quantity or BOM quant
 
 In both cases: verify that the production quantity visible on the Job Traveler and in the Production Report matches the actual demand before release. If it does not, flag to the Master Scheduler for relinking before the job moves forward.
 
-## Common Mistake: Rhino Object Count vs. Production Quantity
-
-Epicor does not track the number of individual pieces within a kit — only the Production Quantity of the job itself. These are not the same thing.
-
-**Example:** A Metal Kit job with Prod Qty = 1 may contain four identical pieces of metal angle. The quantity "4" describes objects within the kit, not how many kits are being produced. Writing "Production Quantity: 4" on the drawing page that dimensions that angle is **incorrect** — it will be misread as an Epicor job field and create confusion on the shop floor.
-
-When annotating components within a Metal Kit drawing, use language like **"Qty: 4"** or **"4× REQ'D"** to make clear the reference is to piece count, not to the job's Production Quantity.
+See [Common Mistakes — Drawing quantity mistaken for Production Quantity](/reference/common-mistakes.html#drawing-quantity-mistaken-for-production-quantity) for a recurring mix-up between Rhino object count and Epicor's Production Quantity field.

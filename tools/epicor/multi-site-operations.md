@@ -46,7 +46,4 @@ Time entry must be performed **per site**. You cannot enter hours for both Color
 
 ## Common Gotchas
 
-- Forgetting to refresh after site switch → stale data on homepage cards
-- Trying to update a Production Report from the wrong site → changes won't save
-- Submitting time for both sites in one batch → entries will fail for the wrong site
-- Looking for a newly created GM part at NY before 24-hour sync → part not found
+See [Common Mistakes — Multi-site slip-ups](/reference/common-mistakes.html#multi-site-slip-ups).

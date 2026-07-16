@@ -12,7 +12,7 @@ corpus_tags: [general, fe-submittal]
 
 Fillers close gaps between cabinet runs and adjacent walls or corners. **All standard fillers (base and upper) are L-cleat constructions, not flat panels** — this is true even where "filler" might suggest a simple board.
 
-Fillers require a scribe allowance — see [Scribes](/standards/layer-organization/modeling-techniques.html#how-to-create-scribes) for the general technique. A flat filler with no scribe allowance at all is a likely-error condition, not just a style variant.
+Fillers require a scribe allowance — see [Scribes](/standards/layer-organization/modeling-techniques.html#how-to-create-scribes) for the general technique. See [Common Mistakes — Flat filler with no scribe allowance](/reference/common-mistakes.html#flat-filler-with-no-scribe-allowance) for the failure mode to watch for.
 
 > **Note:** Soffits, die walls, and wall/ceiling panels are named types in [Casework Type Codes & Names](/reference/construction-standards/casework/type-codes.html#soffits-die-walls-and-panels) but do not yet have documented construction rules in this manual — only fillers are covered on this page. If you need soffit/die wall/panel construction detail, confirm with engineering rather than assuming filler rules apply.
 

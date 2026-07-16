@@ -45,7 +45,7 @@ See [Model Cleanup Commands](/reference/reference-tables/model-cleanup-commands.
 
 Pre-lam (see [Lay-Up Formulas](/reference/reference-tables/lay-up-formulas.html)) glues the face material to the substrate before the part is cut and edgebanded as a unit. Post-lam applies the face material after the structure is built, which is why post-lam conditions get edgebanding modeled (above) and pre-lam ones generally don't.
 
-**Red flag**: a part modeled with veneer laid over plastic laminate across the **whole face** is almost always a misread. The correct intent in that situation is almost always to post-laminate only the **edge** (double edge), not the full face — full-face veneer-over-plastic doesn't make physical sense as a buildup. If you see this combination, stop and confirm the actual intended detail before modeling it as drawn.
+See [Common Mistakes — Full-face veneer over plastic laminate](/reference/common-mistakes.html#full-face-veneer-over-plastic-laminate) for a red-flag buildup to catch here.
 
 ## Painted MDF
 {: #how-to-handle-painted-mdf}

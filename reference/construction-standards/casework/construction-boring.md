@@ -20,7 +20,7 @@ Files arriving **partially or incorrectly dowelled are worse than files with no 
 
 **Exception**: shelf pins (32mm line-bore holes) are always present regardless — see [Carcase Assembly & 32mm System](/reference/construction-standards/casework/carcase-and-line-bore.html#32mm-system).
 
-Separately, **FE is responsible for hardware machining** — hinge cups (see [Hinge Hardware & Cup Boring](/reference/construction-standards/casework/hinge-hardware.html)), drawer slides, and other applied hardware. Drawer slides in particular should be checked for both presence and correct orientation — slides have been found physically mirrored or rotated 180° from correct, on top of missing machining entirely.
+Separately, **FE is responsible for hardware machining** — hinge cups (see [Hinge Hardware & Cup Boring](/reference/construction-standards/casework/hinge-hardware.html)), drawer slides, and other applied hardware. Drawer slides in particular should be checked for both presence and correct orientation — see [Common Mistakes — Drawer slides mirrored or rotated](/reference/common-mistakes.html#drawer-slides-mirrored-or-rotated-180).
 
 ## Dowel Holes
 
