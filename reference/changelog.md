@@ -12,6 +12,42 @@ A record of significant additions and updates to the Engineering Wiki.
 
 ---
 
+## 2026-07-16
+
+- **[Construction Standards > Casework](/reference/construction-standards/casework/)** — Large content batch from the "1138 Recurring Issues" training review: [Hinge Hardware & Cup Boring](/reference/construction-standards/casework/hinge-hardware.html) *(new page)*, [Baseboard & Base Run Modeling](/reference/construction-standards/casework/baseboard.html) *(new page)*, an FE/PE dowel-vs-hardware responsibility split and drawer-slide orientation warning on [Construction Boring](/reference/construction-standards/casework/construction-boring.html), a scribe-allowance rule on [Fillers](/reference/construction-standards/casework/fillers.html), and custom/face-pull modeling on [Base Cabinets](/reference/construction-standards/casework/base-cabinets.html).
+- **[Material Modeling](/standards/layer-organization/material-modeling.html)** — Grain-direction rule, backer-vs-two-sided material selection, and pre-lam vs. post-lam buildup logic added. New [Actual Material Thicknesses](/reference/reference-tables/actual-material-thicknesses.html) reference table for nominal-vs-actual discrepancies (shop ply, bending ply).
+- **[Solid Wood Components (WC)](/workflows/fabrication-engineer/solid-wood-components.html)** — Added a conceptual "in-house mill" mental model and documented recognized exceptions (laser-engraving repurposing, buyout drawer boxes/doors).
+- **[Part Naming](/workflows/fabrication-engineer/part-naming.html)** — Documented two silent naming-failure causes (layer nesting, malformed PRE codes) and a blank-name QC pass.
+- **[FE to PE Release](/workflows/fe-to-pe-release.html)** — Checklist now explicitly prohibits releasing an exploded (non-assembled) model.
+- **[Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html)** — New-hardware physical verification note: check center-to-center against the physical part before machining at scale.
+- **[Common Mistakes](/reference/common-mistakes.html)** *(new page)* — Consolidated scattered anecdotal "gotcha"/"red flag"/"common mistake" content (casework, material modeling, part naming, Epicor) that previously lived inline on topic pages into a single reference hub, distinct from the existing tool-troubleshooting pages.
+
+---
+
+## 2026-07-14
+
+- **Diagnostic Assistant prompt** — Table-rendering instructions iterated to a hard requirement: markdown pipe-table syntax is disabled for the diagnostic assistant in favor of a JSON table marker the client renders deterministically (three prior formatting-rule attempts didn't hold up in live testing).
+- **[Part Naming](/workflows/fabrication-engineer/part-naming.html)** — Documented that a negative thickness/length sample is a void-sample sentinel value, not a metadata error — and that it may indicate a legitimately hollow/cutout part rather than a geometry defect.
+- **[Folder Structure](/reference/folder-structure.html), [FE Troubleshooting](/workflows/fabrication-engineer/troubleshooting.html), [Epicor Troubleshooting](/tools/epicor/troubleshooting.html)** — Tagged into the fe-release corpus so the diagnostic assistant can cite them for release-gate checks.
+
+---
+
+## 2026-07-13
+
+- **Corpus build** — Fixed the "general" corpus to be a true superset (every page, unfiltered) rather than an opt-in tag — it had been silently scoping out FE-technical content the public Wiki Assistant needs. Excluded pure-navigation index pages and quick-reference task-link tables from the corpus (still live in site nav) to cut redundant token cost.
+- **[Rhino Drafting — Cover Sheet & Layout Structure](/standards/rhino-drafting/cover-sheet-common-pages.html)** — Fixed BOM location: prints on the G00 page, not the 2XX shop-drawing series.
+- **[Glossary](/reference/glossary.html) / [Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html)** — Fixed the Master Parts List code (L000, not L00) and clarified L001 (Pick List) is deprecated.
+- **[Production Engineer Deliverables](/workflows/production-engineer/deliverables.html)** — Corrected the PRE lay-up code format: three material segments (face/core/backer) plus one total post-glue thickness, not two materials plus separate ply/final thicknesses.
+- **Diagnostic Assistant prompt** — Added an attention-marker instruction (Phase 1 of viewport-focus feature) so the assistant can drive Rhino viewport isolation per finding.
+
+---
+
+## 2026-07-07
+
+- **Chat widget** — Added GFM pipe-table and markdown heading (H1–H6) rendering; the widget's homemade renderer previously printed both as literal raw text.
+
+---
+
 ## 2026-07-06
 
 - **[Construction Standards > Casework](/reference/construction-standards/casework/)** *(new section)* — Fabrication-level casework construction standards: [carcase assembly & the 32mm system](/reference/construction-standards/casework/carcase-and-line-bore.html), [base](/reference/construction-standards/casework/base-cabinets.html)/[upper](/reference/construction-standards/casework/upper-cabinets.html)/[tall](/reference/construction-standards/casework/tall-cabinets.html) cabinets, [drawer construction](/reference/construction-standards/casework/drawer-construction.html), [fillers](/reference/construction-standards/casework/fillers.html), [CNC boring specs](/reference/construction-standards/casework/construction-boring.html), a full [type code reference](/reference/construction-standards/casework/type-codes.html), and a [critical dimensions quick reference](/reference/construction-standards/casework/quick-reference.html). Sourced from the CWKA Standard Casework Construction Manual v2.
