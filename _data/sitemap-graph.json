@@ -73,6 +73,12 @@
       "degree": 3
     },
     {
+      "id": "/reference/common-mistakes.html",
+      "title": "Common Mistakes",
+      "section": "Home",
+      "degree": 11
+    },
+    {
       "id": "/reference/construction-standards/casework/base-cabinets.html",
       "title": "Base Cabinets",
       "section": "Standards",
@@ -94,7 +100,7 @@
       "id": "/reference/construction-standards/casework/construction-boring.html",
       "title": "Construction Boring",
       "section": "Standards",
-      "degree": 3
+      "degree": 4
     },
     {
       "id": "/reference/construction-standards/casework/drawer-construction.html",
@@ -106,7 +112,7 @@
       "id": "/reference/construction-standards/casework/fillers.html",
       "title": "Fillers",
       "section": "Standards",
-      "degree": 4
+      "degree": 5
     },
     {
       "id": "/reference/construction-standards/casework/hinge-hardware.html",
@@ -160,7 +166,7 @@
       "id": "/reference/",
       "title": "Reference",
       "section": "Home",
-      "degree": 7
+      "degree": 8
     },
     {
       "id": "/reference/industry-references.html",
@@ -244,7 +250,7 @@
       "id": "/standards/layer-organization/material-modeling.html",
       "title": "Material Modeling",
       "section": "Standards",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "/standards/layer-organization/modeling-techniques.html",
@@ -376,7 +382,7 @@
       "id": "/tools/epicor/multi-site-operations.html",
       "title": "Multi-Site Operations",
       "section": "Tools",
-      "degree": 3
+      "degree": 4
     },
     {
       "id": "/tools/epicor/part-management.html",
@@ -388,7 +394,7 @@
       "id": "/tools/epicor/production-quantity.html",
       "title": "Production Quantity & Fixed Qty",
       "section": "Tools",
-      "degree": 4
+      "degree": 5
     },
     {
       "id": "/tools/epicor/production-report.html",
@@ -400,7 +406,7 @@
       "id": "/tools/epicor/troubleshooting.html",
       "title": "Troubleshooting",
       "section": "Tools",
-      "degree": 3
+      "degree": 4
     },
     {
       "id": "/tools/releases-and-requests/fe-to-pe-releases.html",
@@ -574,7 +580,7 @@
       "id": "/workflows/fabrication-engineer/troubleshooting.html",
       "title": "Troubleshooting",
       "section": "Workflows",
-      "degree": 5
+      "degree": 6
     },
     {
       "id": "/workflows/fe-to-pe-release.html",
@@ -610,7 +616,7 @@
       "id": "/workflows/production-engineer/troubleshooting.html",
       "title": "Troubleshooting",
       "section": "Workflows",
-      "degree": 4
+      "degree": 5
     },
     {
       "id": "/workflows/",
@@ -846,6 +852,10 @@
     },
     {
       "source": "/reference/",
+      "target": "/reference/common-mistakes.html"
+    },
+    {
+      "source": "/reference/",
       "target": "/reference/construction-standards/"
     },
     {
@@ -887,6 +897,46 @@
     {
       "source": "/reference/awi-standards.html",
       "target": "/reference/industry-references.html"
+    },
+    {
+      "source": "/reference/common-mistakes.html",
+      "target": "/reference/construction-standards/casework/construction-boring.html"
+    },
+    {
+      "source": "/reference/common-mistakes.html",
+      "target": "/reference/construction-standards/casework/fillers.html"
+    },
+    {
+      "source": "/reference/common-mistakes.html",
+      "target": "/standards/layer-organization/material-modeling.html"
+    },
+    {
+      "source": "/reference/common-mistakes.html",
+      "target": "/tools/epicor/multi-site-operations.html"
+    },
+    {
+      "source": "/reference/common-mistakes.html",
+      "target": "/tools/epicor/production-quantity.html"
+    },
+    {
+      "source": "/reference/common-mistakes.html",
+      "target": "/tools/epicor/troubleshooting.html"
+    },
+    {
+      "source": "/reference/common-mistakes.html",
+      "target": "/workflows/fabrication-engineer/part-naming.html"
+    },
+    {
+      "source": "/reference/common-mistakes.html",
+      "target": "/workflows/fabrication-engineer/toolkit/modeling.html"
+    },
+    {
+      "source": "/reference/common-mistakes.html",
+      "target": "/workflows/fabrication-engineer/troubleshooting.html"
+    },
+    {
+      "source": "/reference/common-mistakes.html",
+      "target": "/workflows/production-engineer/troubleshooting.html"
     },
     {
       "source": "/reference/construction-standards/",
@@ -2035,10 +2085,6 @@
     {
       "source": "/workflows/fabrication-engineer/part-naming.html",
       "target": "/workflows/fabrication-engineer/toolkit/"
-    },
-    {
-      "source": "/workflows/fabrication-engineer/part-naming.html",
-      "target": "/workflows/fabrication-engineer/toolkit/modeling.html"
     },
     {
       "source": "/workflows/fabrication-engineer/part-naming.html",
