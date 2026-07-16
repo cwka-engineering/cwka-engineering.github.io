@@ -17,6 +17,10 @@ corpus_tags: [fe-release, fe-submittal]
 
 Duplicate the finished geometry. Keep the same part name. Extend the face to an oversized dimension (larger than the actual part). Move to `04_CWKA-PE::REF` sublayer. Group with the finished geometry so PE can identify the scribe relationship. The scribe tells the CNC where to machine alignment marks on oversized stock before trimming to final size.
 
+### Scribes on Drawings
+
+Scribes **are** called out on shop drawings — they are not a field/PE-only detail omitted from the set. Convention: the **final, in-place (trimmed) dimension** is drawn as a **bold outline with infill hatch**; the **full oversized extent** continues past that outline as a **dashed line** out to where the untrimmed stock actually ends (e.g., baseboard scribed against a floor: the dashed line continues below the floor line to the bottom of the oversized stock). This applies to scribes generally, not just the floor-scribe case.
+
 ## How do I set up Named Positions for exploded views?
 {: #how-to-setup-named-positions}
 
