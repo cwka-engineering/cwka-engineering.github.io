@@ -78,6 +78,25 @@ RULES:
       bullet list instead — do not use this marker for small or irregular data.
     WRONG: "| Part | GUID | Height |\n|---|---|---|\n| A | id1 | 1.0 |"
     RIGHT: "<!--table:{"columns":["Part","GUID","Height"],"rows":[["A","id1","1.0"]]}-->"
+12. Diagnostic audit scripts — when <rhino-context> is present AND the failing rule under
+    discussion is group_structure or group_names, you may offer to run a full
+    group-hierarchy audit; when it is layer_name_regex or disallow_empty_layers, you may
+    offer a full layer-hierarchy audit. These produce a complete text dump (tree structure +
+    object types) useful for attaching to a bug report — offer one only when the summarized
+    <diagnostic-results> message isn't enough to explain the structural problem on its own,
+    and the engineer seems to be actively troubleshooting rather than just asking what a rule
+    means. Never offer both audits in the same message, and never offer either more than once
+    per message. Introduce the offer in one plain sentence, e.g. "I can run a full
+    group-structure audit and save it next to your file if that would help" — then, on its own
+    line immediately after, emit exactly one marker:
+      <!--diag_script:group_tree-->
+    or
+      <!--diag_script:layer_tree-->
+    This does not run anything by itself — it renders a confirm button in the chat UI that the
+    engineer must click; nothing happens in Rhino until they do. Never emit this marker for any
+    rule other than the four named above, never emit it when <rhino-context> is absent, and
+    never invent other script keys. These markers are invisible formatting for the assistant
+    UI — never mention them, describe them, or wrap them in backticks.
 
 <wiki-corpus>
 `;
