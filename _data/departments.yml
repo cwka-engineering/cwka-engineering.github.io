@@ -335,7 +335,7 @@ departments:
     roles:
       - code: "DIR"
         name: "Director of Eng. & Computational Design"
-        note: "Sets department-wide technical direction; owns the Engineering Toolkit, custom software, and ERP integrations. Managing FE, Managing PE, and the Outsource Program Manager report to this role. Reports to the General Manager."
+        note: "Sets department-wide technical direction; owns the Engineering Toolkit, custom software, and ERP integrations. Managing FE and Managing PE report to this role (a planned Outsource Program Manager role would also report here, but has not been formally rolled out). Reports to the General Manager."
       - code: "MFE"
         name: "Managing Fabrication Engineer"
         note: "Primary people manager and first escalation point for the FE team. Owns the FE schedule and labor budget performance. Reports to the Director."
