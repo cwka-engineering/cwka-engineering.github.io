@@ -1,14 +1,17 @@
 ---
 layout: default
-title: Master Scheduler Workflow
-permalink: /workflows/master-scheduler.html
-parent: Workflows
-nav_order: 4
+title: Master Scheduler Procedures
+permalink: /reference/adjacent-roles/master-scheduler.html
+parent: Adjacent Roles & Interfaces
+grand_parent: Reference
+nav_order: 1
 ---
 
-# Master Scheduler Workflow
+# Master Scheduler Procedures
 
-> **Related**: [Engineering Roles](/onboarding/engineering-roles.html) | [Epicor Usage](/tools/epicor/) | [Project Delivery Overview](/onboarding/project-delivery.html) | [Information and artifact flow](/onboarding/project-delivery.html#information-artifact-flow) | [Part Requests — Scheduler Guide](/tools/releases-and-requests/part-requests/scheduler-guide.html)
+> **Related**: [Adjacent Roles & Interfaces](/reference/adjacent-roles/) | [Engineering Roles](/onboarding/engineering-roles.html) | [Epicor Usage](/tools/epicor/) | [Project Delivery Overview](/onboarding/project-delivery.html) | [Information and artifact flow](/onboarding/project-delivery.html#information-artifact-flow) | [Part Requests — Scheduler Guide](/tools/releases-and-requests/part-requests/scheduler-guide.html)
+
+> **This documents the Master Scheduler's own process, for Engineering's awareness.** The Master Scheduler is an Operations-department role, not an Engineering one — read this if you need to understand what happens to a job after you request it; you won't perform these steps yourself. For the specific touchpoints where your work feeds into this process, see [Adjacent Roles & Interfaces — Master Scheduler](/reference/adjacent-roles/#master-scheduler).
 
 ## Position Overview
 
@@ -199,4 +202,4 @@ Creating and maintaining the Epicor materials database — including timely resp
 
 - For Epicor navigation and screens, see [Epicor Usage in Engineering](/tools/epicor/)
 - For job release procedures, see [FE to PE Release](/workflows/fe-to-pe-release.html)
-- For role overview, see [Engineering Roles](/onboarding/engineering-roles.html)
+- For the Engineering-facing touchpoints with this role, see [Adjacent Roles & Interfaces](/reference/adjacent-roles/)

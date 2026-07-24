@@ -9,7 +9,7 @@ nav_order: 2
 
 # Part Requests — Scheduler Guide
 
-> **Related**: [Engineer / PM Guide](/tools/releases-and-requests/part-requests/engineer-guide.html) | [Part Management](/tools/epicor/part-management.html) | [Master Scheduler Workflow](/workflows/master-scheduler.html)
+> **Related**: [Engineer / PM Guide](/tools/releases-and-requests/part-requests/engineer-guide.html) | [Part Management](/tools/epicor/part-management.html) | [Master Scheduler Procedures](/reference/adjacent-roles/master-scheduler.html)
 
 This guide is for the **Master Scheduler**. When an engineer or PM needs a new part that isn't in the Epicor catalog, you'll be automatically notified in Teams and assigned a Planner task. Your job is to create the part in Epicor and reply to the thread with the new part number.
 

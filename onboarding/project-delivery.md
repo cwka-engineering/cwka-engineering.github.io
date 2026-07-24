@@ -9,7 +9,7 @@ mermaid: true
 ---
 # Project Delivery Overview – Engineering Workflow
 
-> **Related**: [Engineering Roles](/onboarding/engineering-roles.html) | [Master Scheduler Workflow](/workflows/master-scheduler.html) | [FE Workflow](/workflows/fabrication-engineer/) | [PE Workflow](/workflows/production-engineer/) | [FE to PE Release](/workflows/fe-to-pe-release.html)
+> **Related**: [Engineering Roles](/onboarding/engineering-roles.html) | [Adjacent Roles & Interfaces](/reference/adjacent-roles/) | [FE Workflow](/workflows/fabrication-engineer/) | [PE Workflow](/workflows/production-engineer/) | [FE to PE Release](/workflows/fe-to-pe-release.html)
 
 This document provides a high-level overview of the complete engineering workflow from project assignment through closeout.
 
@@ -60,7 +60,7 @@ sequenceDiagram
     Note over PE: Programming · CNC
 ```
 
-- **Master Scheduler** work (job creation, part creation, scheduling) feeds the same Epicor project context FE and PE use—see [Master Scheduler Workflow](/workflows/master-scheduler.html).
+- **Master Scheduler** work (job creation, part creation, scheduling) feeds the same Epicor project context FE and PE use—see [Adjacent Roles & Interfaces](/reference/adjacent-roles/#master-scheduler).
 - **FE → PE** is the controlled handoff from fabrication-ready data to production programming; see [FE to PE Release](/workflows/fe-to-pe-release.html).
 
 ## Phase 1: Project Assignment & Initial Setup (Pre-Contract & Design Engineering Initiation)

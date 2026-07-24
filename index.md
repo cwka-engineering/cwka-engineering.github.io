@@ -43,12 +43,6 @@ Essential documents for PE work:
 - **[FE to PE Release](/workflows/fe-to-pe-release.html)** - What to expect from FE
 - **[Epicor Usage](/tools/epicor/)** - Epicor procedures for PE
 
-### Master Scheduler
-Essential documents for job creation and scheduling (Operations-department role; not an Engineering EA hire):
-
-- **[Master Scheduler Workflow](/workflows/master-scheduler.html)** - Complete workflow guide for job creation and management
-- **[Epicor Usage](/tools/epicor/)** - Epicor procedures and screens
-
 ### All Engineers
 Common resources:
 
@@ -107,10 +101,10 @@ Find step-by-step answers organized by section:
 - [Fabrication Engineer (FE) Workflow](/workflows/fabrication-engineer/) - Complete FE procedures
 - [Production Engineer (PE) Workflow](/workflows/production-engineer/) - Complete PE procedures
 - [FE to PE Release](/workflows/fe-to-pe-release.html) - Release procedures
-- [Master Scheduler Workflow](/workflows/master-scheduler.html) - Job creation and management
 
 ### Documentation
 - [Engineering Roles & Core Competencies](/onboarding/engineering-roles.html) - Role descriptions
 - [Project Delivery Overview](/onboarding/project-delivery.html) - Complete workflow
 - [Glossary](/reference/glossary.html) - Terms and definitions
+- [Adjacent Roles & Interfaces](/reference/adjacent-roles/) - How the Master Scheduler, PM, and Production Manager/Job Captain interface with Engineering
 

@@ -20,6 +20,7 @@ Quick lookups, glossaries, reference tables, and task-oriented indexes.
 - **[Industry References](/reference/industry-references.html)** — AWI and ANSI/HPVA standards for submittals and material specifications
 - **[Construction Standards](/reference/construction-standards/)** — Fabrication-level construction specs, starting with [Casework](/reference/construction-standards/casework/): carcase assembly, the 32mm system, cabinet dimensions, drawers, fillers, CNC boring, and type codes
 - **[Common Mistakes](/reference/common-mistakes.html)** — Recurring anecdotal failure modes and gotchas across construction, material modeling, part naming, and Epicor
+- **[Adjacent Roles & Interfaces](/reference/adjacent-roles/)** — How non-Engineering roles (Master Scheduler, Project Manager, Production Manager/Job Captain) interface with Engineering's work
 
 ## Quick References — "How do I…?"
 

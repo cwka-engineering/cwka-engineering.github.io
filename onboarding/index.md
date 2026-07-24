@@ -26,10 +26,10 @@ Essential information for new and current engineering team members.
 - **New to Engineering**: Start with [Onboarding Quick Start](/onboarding/quick-start.html)
 - **Fabrication Engineer**: See [FE Workflow](/workflows/fabrication-engineer/)
 - **Production Engineer**: See [PE Workflow](/workflows/production-engineer/)
-- **Job creation / scheduling**: See [Master Scheduler Workflow](/workflows/master-scheduler.html)
 
 ## Common Questions
 
 - **What's my role?** → [Engineering Roles](/onboarding/engineering-roles.html)
 - **What does this term mean?** → [Glossary](/reference/glossary.html)
 - **How does a project flow through engineering?** → [Project Delivery](/onboarding/project-delivery.html)
+- **Who handles job creation / scheduling, and how does that touch my work?** → [Adjacent Roles & Interfaces — Master Scheduler](/reference/adjacent-roles/#master-scheduler)

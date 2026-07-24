@@ -113,6 +113,4 @@ Clearly state actions and their purpose, proactively identify problems, effectiv
 
 ## Engineering Assistant (EA) — Not a Current Hiring Path
 
-A dedicated Engineering Assistant position is not expected to be hired going forward. Most of this scope — Epicor materials database management, job creation (primary, sample, mockup, manufacturing), and job scheduling — has moved to the **Master Scheduler**, a role in the Operations department. Engineers still track any associated labor under the existing EA-labeled Indirect codes where applicable.
-
-**For the current procedures**, see the [Master Scheduler Workflow](/workflows/master-scheduler.html).
+A dedicated Engineering Assistant position is not expected to be hired going forward. Most of this scope — Epicor materials database management, job creation (primary, sample, mockup, manufacturing), and job scheduling — has moved to the **Master Scheduler**, a role in the Operations department, not Engineering. Engineers still track any associated labor under the existing EA-labeled Indirect codes where applicable. For where the Master Scheduler's work touches Engineering's, see [Adjacent Roles & Interfaces](/reference/adjacent-roles/#master-scheduler); for their full Epicor procedures, see [Master Scheduler Procedures](/reference/adjacent-roles/master-scheduler.html).
