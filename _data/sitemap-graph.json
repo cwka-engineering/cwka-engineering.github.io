@@ -160,7 +160,7 @@
       "id": "/reference/glossary.html",
       "title": "Glossary",
       "section": "Home",
-      "degree": 22
+      "degree": 23
     },
     {
       "id": "/reference/",
@@ -430,7 +430,7 @@
       "id": "/tools/releases-and-requests/part-requests/scheduler-guide.html",
       "title": "Scheduler Guide",
       "section": "Home",
-      "degree": 4
+      "degree": 5
     },
     {
       "id": "/tools/releases-and-requests/part-requests.html",
@@ -466,19 +466,13 @@
       "id": "/tools/time-entry.html",
       "title": "Time Entry",
       "section": "Tools",
-      "degree": 12
+      "degree": 13
     },
     {
       "id": "/tools/",
       "title": "Tools",
       "section": "Tools",
       "degree": 6
-    },
-    {
-      "id": "/workflows/engineering-assistant.html",
-      "title": "Engineering Assistant (EA)",
-      "section": "Workflows",
-      "degree": 8
     },
     {
       "id": "/workflows/fabrication-engineer/bim-coordination.html",
@@ -595,6 +589,12 @@
       "degree": 33
     },
     {
+      "id": "/workflows/master-scheduler.html",
+      "title": "Master Scheduler Workflow",
+      "section": "Workflows",
+      "degree": 11
+    },
+    {
       "id": "/workflows/production-engineer/deliverables.html",
       "title": "Deliverables",
       "section": "Workflows",
@@ -678,15 +678,15 @@
     },
     {
       "source": "/",
-      "target": "/workflows/engineering-assistant.html"
-    },
-    {
-      "source": "/",
       "target": "/workflows/fabrication-engineer/"
     },
     {
       "source": "/",
       "target": "/workflows/fe-to-pe-release.html"
+    },
+    {
+      "source": "/",
+      "target": "/workflows/master-scheduler.html"
     },
     {
       "source": "/",
@@ -722,11 +722,11 @@
     },
     {
       "source": "/onboarding/",
-      "target": "/workflows/engineering-assistant.html"
+      "target": "/workflows/fabrication-engineer/"
     },
     {
       "source": "/onboarding/",
-      "target": "/workflows/fabrication-engineer/"
+      "target": "/workflows/master-scheduler.html"
     },
     {
       "source": "/onboarding/",
@@ -762,15 +762,15 @@
     },
     {
       "source": "/onboarding/engineering-roles.html",
-      "target": "/workflows/engineering-assistant.html"
-    },
-    {
-      "source": "/onboarding/engineering-roles.html",
       "target": "/workflows/fabrication-engineer/"
     },
     {
       "source": "/onboarding/engineering-roles.html",
       "target": "/workflows/fe-to-pe-release.html"
+    },
+    {
+      "source": "/onboarding/engineering-roles.html",
+      "target": "/workflows/master-scheduler.html"
     },
     {
       "source": "/onboarding/engineering-roles.html",
@@ -818,10 +818,6 @@
     },
     {
       "source": "/onboarding/project-delivery.html",
-      "target": "/workflows/engineering-assistant.html"
-    },
-    {
-      "source": "/onboarding/project-delivery.html",
       "target": "/workflows/fabrication-engineer/"
     },
     {
@@ -831,6 +827,10 @@
     {
       "source": "/onboarding/project-delivery.html",
       "target": "/workflows/fe-to-pe-release.html"
+    },
+    {
+      "source": "/onboarding/project-delivery.html",
+      "target": "/workflows/master-scheduler.html"
     },
     {
       "source": "/onboarding/project-delivery.html",
@@ -1207,6 +1207,10 @@
     {
       "source": "/reference/glossary.html",
       "target": "/workflows/fe-to-pe-release.html"
+    },
+    {
+      "source": "/reference/glossary.html",
+      "target": "/workflows/master-scheduler.html"
     },
     {
       "source": "/reference/reference-tables/",
@@ -1666,10 +1670,6 @@
     },
     {
       "source": "/tools/epicor/",
-      "target": "/workflows/engineering-assistant.html"
-    },
-    {
-      "source": "/tools/epicor/",
       "target": "/workflows/fabrication-engineer/"
     },
     {
@@ -1697,6 +1697,10 @@
       "target": "/workflows/fe-to-pe-release.html"
     },
     {
+      "source": "/tools/epicor/",
+      "target": "/workflows/master-scheduler.html"
+    },
+    {
       "source": "/tools/epicor/dashboards.html",
       "target": "/tools/epicor/job-management.html"
     },
@@ -1710,10 +1714,6 @@
     },
     {
       "source": "/tools/epicor/dashboards.html",
-      "target": "/workflows/engineering-assistant.html"
-    },
-    {
-      "source": "/tools/epicor/dashboards.html",
       "target": "/workflows/fabrication-engineer/material-transmittal.html"
     },
     {
@@ -1723,6 +1723,10 @@
     {
       "source": "/tools/epicor/dashboards.html",
       "target": "/workflows/fabrication-engineer/toolkit/drafting.html"
+    },
+    {
+      "source": "/tools/epicor/dashboards.html",
+      "target": "/workflows/master-scheduler.html"
     },
     {
       "source": "/tools/epicor/inventory-jobs.html",
@@ -1909,6 +1913,10 @@
       "target": "/workflows/fe-to-pe-release.html"
     },
     {
+      "source": "/tools/releases-and-requests/part-requests/scheduler-guide.html",
+      "target": "/workflows/master-scheduler.html"
+    },
+    {
       "source": "/tools/time-entry.html",
       "target": "/tools/time-entry/toggl.html"
     },
@@ -1921,12 +1929,12 @@
       "target": "/workflows/fabrication-engineer/toolkit/drafting.html"
     },
     {
-      "source": "/tools/time-entry/toggl.html",
-      "target": "/tools/time-entry/weekly-approval.html"
+      "source": "/tools/time-entry.html",
+      "target": "/workflows/master-scheduler.html"
     },
     {
-      "source": "/workflows/",
-      "target": "/workflows/engineering-assistant.html"
+      "source": "/tools/time-entry/toggl.html",
+      "target": "/tools/time-entry/weekly-approval.html"
     },
     {
       "source": "/workflows/",
@@ -1942,11 +1950,11 @@
     },
     {
       "source": "/workflows/",
-      "target": "/workflows/production-engineer/"
+      "target": "/workflows/master-scheduler.html"
     },
     {
-      "source": "/workflows/engineering-assistant.html",
-      "target": "/workflows/fe-to-pe-release.html"
+      "source": "/workflows/",
+      "target": "/workflows/production-engineer/"
     },
     {
       "source": "/workflows/fabrication-engineer/",
@@ -2163,6 +2171,10 @@
     {
       "source": "/workflows/fabrication-engineer/toolkit/modeling.html",
       "target": "/workflows/fe-to-pe-release.html"
+    },
+    {
+      "source": "/workflows/fe-to-pe-release.html",
+      "target": "/workflows/master-scheduler.html"
     },
     {
       "source": "/workflows/fe-to-pe-release.html",
