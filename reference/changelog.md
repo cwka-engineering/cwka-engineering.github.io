@@ -8,27 +8,22 @@ corpus_exclude: true
 
 # Wiki Changelog
 
-A record of significant additions and updates to the Engineering Wiki.
+A record of significant additions and updates to the Engineering Wiki, grouped by calendar week (Monday–Sunday).
 
 ---
 
-## 2026-07-23 – 2026-07-24
+## 2026-07-20 – 2026-07-26
 
 - **Engineering Leadership** — Documented the department's new management layer: [Director of Engineering & Computational Design, Managing Fabrication Engineer, and Managing Production Engineer](/onboarding/engineering-roles.html#engineering-leadership), summarized from both the candidate-facing and internal source job descriptions. Corrected several already-published facts that pre-dated this layer (FE load-balancing owner, who conducts progression 1:1s, process-question escalation, Fixed Quantity exception approval). Added the same roles to the [How We Work](/onboarding/how-we-work.html) interactive org map, split into a **Leadership** section (permanent positions) separate from **Transient Designations** (Project Advisor, Lead Engineer — ad hoc, project-level).
 - **[Weekly Time Approval Walkthrough](/tools/time-entry/weekly-approval.html)** *(new page)* — Step-by-step approver's guide (dashboards, status codes, PTO/overtime interaction, common coding issues), cross-linked from [Time Entry](/tools/time-entry.html).
 - **Engineering Assistant → Master Scheduler** — A dedicated EA hire is not expected going forward; most of that scope (Epicor materials database, primary/sample/mockup/MFG job creation, job scheduling) is now owned by the Master Scheduler role in Operations. Renamed the [Engineering Assistant Workflow to Master Scheduler Workflow](/workflows/master-scheduler.html) and reattributed references across 14 other pages (engineering-roles.md, glossary.md, the org map, troubleshooting pages, part-management.md, codes-and-tags.md, the Part Requests scheduler guide).
 - **[Solid Wood Components (WC)](/workflows/fabrication-engineer/solid-wood-components.html)** — Gaps filled from the 2026-07-24 Engineering All Hands: corrected the WC Purchase Information table (it's a Rhino block edited via Attribute User Text, not a drawing-layout field), added the raw-material board-footage BOM step, documented how the Master Scheduler sizes a WC job, and added glued-up blanks as a recognized exception with repeatability as the deciding factor for WC vs. modeling directly with the parent job.
 - **Removed** — Technical Steering Committee (TSC) references (not rolled out) from engineering-roles.md, engineer-progression-framework.md, and the glossary. Stripped hiring-qualification language (years of experience, software-proficiency bars, degree preferences) from engineering-roles.md — that page covers responsibilities and expectations, not hiring criteria.
-
----
-
-## 2026-07-20
-
 - **Diagnostic Assistant prompt** — Added a rule offering confirm-gated group/layer-hierarchy audit scripts when a group-structure or layer-naming issue is under discussion and Rhino context is available. The audit only runs after the engineer clicks a confirm button; nothing executes automatically.
 
 ---
 
-## 2026-07-16
+## 2026-07-13 – 2026-07-19
 
 - **[Construction Standards > Casework](/reference/construction-standards/casework/)** — Large content batch from the "1138 Recurring Issues" training review: [Hinge Hardware & Cup Boring](/reference/construction-standards/casework/hinge-hardware.html) *(new page)*, [Baseboard & Base Run Modeling](/reference/construction-standards/casework/baseboard.html) *(new page)*, an FE/PE dowel-vs-hardware responsibility split and drawer-slide orientation warning on [Construction Boring](/reference/construction-standards/casework/construction-boring.html), a scribe-allowance rule on [Fillers](/reference/construction-standards/casework/fillers.html), and custom/face-pull modeling on [Base Cabinets](/reference/construction-standards/casework/base-cabinets.html).
 - **[Material Modeling](/standards/layer-organization/material-modeling.html)** — Grain-direction rule, backer-vs-two-sided material selection, and pre-lam vs. post-lam buildup logic added. New [Actual Material Thicknesses](/reference/reference-tables/actual-material-thicknesses.html) reference table for nominal-vs-actual discrepancies (shop ply, bending ply).
@@ -38,19 +33,9 @@ A record of significant additions and updates to the Engineering Wiki.
 - **[Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html)** — New-hardware physical verification note: check center-to-center against the physical part before machining at scale.
 - **[Common Mistakes](/reference/common-mistakes.html)** *(new page)* — Consolidated scattered anecdotal "gotcha"/"red flag"/"common mistake" content (casework, material modeling, part naming, Epicor) that previously lived inline on topic pages into a single reference hub, distinct from the existing tool-troubleshooting pages.
 - **[Modeling Techniques — Scribes](/standards/layer-organization/modeling-techniques.html#how-to-create-scribes)** — Documented that scribes are called out on shop drawings (bold outline + infill hatch for the final trimmed dimension, dashed line for the full oversized extent) — the page previously covered only the Rhino-modeling side.
-
----
-
-## 2026-07-14
-
 - **Diagnostic Assistant prompt** — Table-rendering instructions iterated to a hard requirement: markdown pipe-table syntax is disabled for the diagnostic assistant in favor of a JSON table marker the client renders deterministically (three prior formatting-rule attempts didn't hold up in live testing).
 - **[Part Naming](/workflows/fabrication-engineer/part-naming.html)** — Documented that a negative thickness/length sample is a void-sample sentinel value, not a metadata error — and that it may indicate a legitimately hollow/cutout part rather than a geometry defect.
 - **[Folder Structure](/reference/folder-structure.html), [FE Troubleshooting](/workflows/fabrication-engineer/troubleshooting.html), [Epicor Troubleshooting](/tools/epicor/troubleshooting.html)** — Tagged into the fe-release corpus so the diagnostic assistant can cite them for release-gate checks.
-
----
-
-## 2026-07-13
-
 - **Corpus build** — Fixed the "general" corpus to be a true superset (every page, unfiltered) rather than an opt-in tag — it had been silently scoping out FE-technical content the public Wiki Assistant needs. Excluded pure-navigation index pages and quick-reference task-link tables from the corpus (still live in site nav) to cut redundant token cost.
 - **[Rhino Drafting — Cover Sheet & Layout Structure](/standards/rhino-drafting/cover-sheet-common-pages.html)** — Fixed BOM location: prints on the G00 page, not the 2XX shop-drawing series.
 - **[Glossary](/reference/glossary.html) / [Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html)** — Fixed the Master Parts List code (L000, not L00) and clarified L001 (Pick List) is deprecated.
@@ -59,19 +44,14 @@ A record of significant additions and updates to the Engineering Wiki.
 
 ---
 
-## 2026-07-07
+## 2026-07-06 – 2026-07-12
 
 - **Chat widget** — Added GFM pipe-table and markdown heading (H1–H6) rendering; the widget's homemade renderer previously printed both as literal raw text.
-
----
-
-## 2026-07-06
-
 - **[Construction Standards > Casework](/reference/construction-standards/casework/)** *(new section)* — Fabrication-level casework construction standards: [carcase assembly & the 32mm system](/reference/construction-standards/casework/carcase-and-line-bore.html), [base](/reference/construction-standards/casework/base-cabinets.html)/[upper](/reference/construction-standards/casework/upper-cabinets.html)/[tall](/reference/construction-standards/casework/tall-cabinets.html) cabinets, [drawer construction](/reference/construction-standards/casework/drawer-construction.html), [fillers](/reference/construction-standards/casework/fillers.html), [CNC boring specs](/reference/construction-standards/casework/construction-boring.html), a full [type code reference](/reference/construction-standards/casework/type-codes.html), and a [critical dimensions quick reference](/reference/construction-standards/casework/quick-reference.html). Sourced from the CWKA Standard Casework Construction Manual v2.
 
 ---
 
-## 2026-06-04
+## 2026-06-01 – 2026-06-07
 
 - **[Releases & Requests](/tools/releases-and-requests/)** *(new section)* — Documentation for the structured Teams channels: the new AI-assisted [Part Requests](/tools/releases-and-requests/part-requests.html) workflow ([engineer](/tools/releases-and-requests/part-requests/engineer-guide.html) and [scheduler](/tools/releases-and-requests/part-requests/scheduler-guide.html) guides), [Job Requests](/tools/releases-and-requests/job-requests.html), and the [FE to PE Releases](/tools/releases-and-requests/fe-to-pe-releases.html) channel flow.
 - **[Time Entry](/tools/time-entry.html)** — Two new operation codes documented: **020 Project Advisor** (indirect, for PA review duties) and **Scope Review Meeting (SCOPEMTG)** for scope-specific internal meetings on June 1, 2026+ projects. Added a [Corrections & Retroactive Entries](/tools/time-entry.html#corrections) section covering the prior-week correction window and the working-ahead-of-job-creation procedure.
@@ -80,7 +60,7 @@ A record of significant additions and updates to the Engineering Wiki.
 
 ---
 
-## 2026-05-28
+## 2026-05-25 – 2026-05-31
 
 - **[Onboarding](/onboarding/)** — Navigation restructured: Scheduling Chain and Purchasing Signal Chain are now child pages under [Project Delivery Overview](/onboarding/project-delivery.html); [Lead Engineer Responsibilities](/onboarding/lead-engineer.html) moved as a child page under [Engineering Roles & Core Competencies](/onboarding/engineering-roles.html).
 - **[How We Work](/onboarding/how-we-work.html)** — Interactive department map is now driven from a single YAML data file. The Wiki Assistant can answer questions about department responsibilities and collaboration and will surface direct deep links to individual department panels (e.g. `/onboarding/how-we-work.html#E` for Engineering).
@@ -92,7 +72,7 @@ A record of significant additions and updates to the Engineering Wiki.
 
 ---
 
-## 2026-05-20
+## 2026-05-18 – 2026-05-24
 
 - **[Time Entry — Operation Selection Guide](/tools/time-entry.html#operation-selection-guide)** — New section defining correct classification for all engineering labor operations: Submittal/Post-Submittal trigger rules, Design Engineering vs. Fabrication Engineering scope distinction (including parametric scripting), indirect operation definitions, labor note requirements, and a common misclassification table.
 - **[Toggl Setup & Upload](/tools/time-entry/toggl.html)** — Toggl content split into a dedicated child page under Time Entry (installation, structure & naming, entry creation, export, Epicor upload procedure).
@@ -102,11 +82,6 @@ A record of significant additions and updates to the Engineering Wiki.
 - **[Shipping Components — UD40 Company Code](/workflows/fabrication-engineer/shipping-components.html)** — Company number column is required for UD40 upload; missing or incorrect code creates bad rows that require an Epicor support ticket.
 - **[Overage & Extras — Manufactured Part Overage](/workflows/fabrication-engineer/overage-and-extras.html)** — Clarifies that PM cannot retroactively adjust manufactured part quantity once a job closes. Engineer must coordinate overage with production and PE before the original job releases.
 - **[Revision History — Rhino Revision Cloud Alias](/standards/rhino-drafting/revision-history.html)** — Alias macro for efficiently creating revision clouds in Rhino.
-
----
-
-## 2026-05-19
-
 - **[Material Transmittal](/workflows/fabrication-engineer/material-transmittal.html)** — Multiple updates:
   - PM exclusively owns TRA entries; engineers notify PM and cannot add tags directly.
   - Engineering Complete: engineer checks when BOM quantities are finalized, not before.
@@ -126,7 +101,7 @@ A record of significant additions and updates to the Engineering Wiki.
 
 ---
 
-## 2026-04-13
+## 2026-04-13 – 2026-04-19
 
 - **[Training Videos](/reference/training-videos.html)** *(new)* — Complete index of engineering training recordings with links to relevant wiki pages.
 - **[Site Map](/sitemap-graph.html)** — Interactive D3.js force-directed graph showing wiki page connectivity added.
@@ -134,31 +109,26 @@ A record of significant additions and updates to the Engineering Wiki.
 
 ---
 
-## 2026-04-07
+## 2026-04-06 – 2026-04-12
 
 - **Home page** — Wiki Assistant info added.
 - **[Inventory Jobs](/tools/epicor/inventory-jobs.html)** *(new)* — INV job workflow and purchasing flow documentation.
 
 ---
 
-## 2026-04-04
+## 2026-03-30 – 2026-04-05
 
 - **Wiki Assistant** — Cloudflare Worker / Claude integration launched; accessible from the home page.
-
----
-
-## 2026-04-01 – 2026-04-03
-
 - **Major content integration** — Large batch of content from training transcripts added across FE workflow, PE workflow, Epicor, and standards pages.
 
 ---
 
-## 2026-02-17 – 2026-02-18
+## 2026-02-16 – 2026-02-22
 
 - **Wiki restructure** — PE workflow split into dedicated pages; toolkit setup and drafting/modeling pages separated; page hierarchy introduced across all sections.
 
 ---
 
-## 2025-11-24 – 2025-11-26
+## 2025-11-24 – 2025-11-30
 
 - **Initial wiki** — Site created on Just the Docs theme; initial content structure established for Onboarding, Workflows, Standards, and Tools.
