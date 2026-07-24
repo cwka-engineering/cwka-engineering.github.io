@@ -45,7 +45,7 @@ The examples under each area are **illustrative** (common pathways), not an exha
 
 | Engineer I | Engineer II |
 | ---------- | ------------- |
-| Asks questions; reliable teammate | **At least one** path: **(A)** **Formal mentorship** of at least one Engineer I with measurable skill growth over 6+ months. **(B)** **Knowledge codification** — adds a significant new section to this **Engineering Wiki** under Director or TSC guidance. **(C)** **Public knowledge sharing** — leads an internal lunch-and-learn on a technical topic. |
+| Asks questions; reliable teammate | **At least one** path: **(A)** **Formal mentorship** of at least one Engineer I with measurable skill growth over 6+ months. **(B)** **Knowledge codification** — adds a significant new section to this **Engineering Wiki** under Director guidance. **(C)** **Public knowledge sharing** — leads an internal lunch-and-learn on a technical topic. |
 
 ### 4. Business impact and ROI
 
@@ -60,7 +60,3 @@ The examples under each area are **illustrative** (common pathways), not an exha
 3. **Formal proposal** — You organize evidence into a short written proposal for the Director.
 4. **Peer review** — The Director solicits **confidential feedback** from **two to three** relevant peers.
 5. **Final decision** — The Director reviews the proposal and peer input and decides.
-
-## Technical Steering Committee (TSC)
-
-Top-performing Engineer IIs may be invited to join the **TSC** to help lead department-wide R&D and standards work (scope varies by role). See role descriptions in [Engineering Roles](/onboarding/engineering-roles.html).

@@ -74,7 +74,7 @@ Core contributor: executes fabrication-level 3D and 2D with **minimal oversight*
 
 ### Fabrication Engineer II
 
-Senior contributor and **formal mentor**: leads complex modeling and client/PM-facing technical contact on significant work; solves hard geometry, data, or workflow problems (e.g. advanced parametric workflows); **mentors FE Is** on quality, time entry, and budgets; may be invited to the **TSC** for department standards and R&D. Typically **4–6 years** relevant experience; advanced Rhino and Grasshopper; demonstrated mentorship. *Preferred*: related degree; experience leading client-facing technical discussions.
+Senior contributor and **formal mentor**: leads complex modeling and client/PM-facing technical contact on significant work; solves hard geometry, data, or workflow problems (e.g. advanced parametric workflows); **mentors FE Is** on quality, time entry, and budgets. Typically **4–6 years** relevant experience; advanced Rhino and Grasshopper; demonstrated mentorship. *Preferred*: related degree; experience leading client-facing technical discussions.
 
 ## Production Engineer (PE)
 
@@ -92,7 +92,7 @@ Core execution: develops **3- and 5-axis** CNC programs and fixtures with increa
 
 ### Production Engineer II
 
-Senior expert and **mentor**: leads **complex production runs** and advanced CAM/fixture strategy; mentors PE Is; drives measurable workflow improvements; troubleshoots critical floor issues. Typically **5+ years** experience; strong Mastercam and advanced fabrication strategy. *Preferred*: degree in related field; **5-axis** experience. May be invited to **TSC** (e.g. production workflow initiatives).
+Senior expert and **mentor**: leads **complex production runs** and advanced CAM/fixture strategy; mentors PE Is; drives measurable workflow improvements; troubleshoots critical floor issues. Typically **5+ years** experience; strong Mastercam and advanced fabrication strategy. *Preferred*: degree in related field; **5-axis** experience.
 
 ## General Engineer Competencies
 
