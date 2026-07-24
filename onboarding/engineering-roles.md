@@ -25,15 +25,32 @@ Above the FE and PE levels, three roles set technical direction and manage peopl
 
 ### Director of Engineering & Computational Design
 
-Sets department-wide technical direction: owns the Engineering Toolkit and all custom engineering software, ERP integrations, and cross-platform automation — these systems responsibilities do not transfer to the managing engineers. Serves as the department's seniormost computational expert; leads early scaffolding on complex procedural/generative work beyond current team capability, engaging directly with engineering work only as a teaching/capability-building activity, not as a deliverable. Provides strategic direction to the Managing FE and Managing PE, who report to the Director; makes final hiring decisions for all engineering roles (managing engineers participate in interviews and advise); conducts department-wide annual reviews in partnership with the managing engineers. Maintains a direct relationship with a small number of senior engineers who take on **012 ENG Dept Improvement** work (toolkit development, standards authorship, SOP writing, R&D) as departmental technical contributors — an informal, individually-assigned relationship, not a formal designation — assigning and overseeing that work in coordination with the relevant managing engineer. Reports to the General Manager. Primary financial accountability is project engineering budget performance across the portfolio.
+Reports to the General Manager. Primary financial accountability is project engineering budget performance across the portfolio.
+
+- Owns the Engineering Toolkit, all custom engineering software, ERP integrations, and cross-platform automation — these systems responsibilities do not transfer to the managing engineers.
+- Department's seniormost computational expert; leads early scaffolding on complex procedural/generative work beyond current team capability. Engages directly with engineering work only as a teaching/capability-building activity, not as a deliverable.
+- Provides strategic direction to the Managing FE and Managing PE, who report to the Director.
+- Makes final hiring decisions for all engineering roles (managing engineers participate in interviews and advise); conducts department-wide annual reviews in partnership with the managing engineers.
+- Maintains a direct relationship with a small number of senior engineers who take on **012 ENG Dept Improvement** work (toolkit development, standards authorship, SOP writing, R&D) as departmental technical contributors — an informal, individually-assigned relationship, not a formal designation — assigning and overseeing that work in coordination with the relevant managing engineer.
 
 ### Managing Fabrication Engineer
 
-The primary people manager and day-to-day technical authority for the FE team, and the first escalation point for technical and workflow questions. Owns the FE schedule (weekly scheduling meetings, staff rebalancing), tracks FE labor budget performance, and coaches and develops FE staff. Serves as a first-line technical resource on **established** build strategies — novel build-strategy questions still escalate to the PA. Does **not** pre-approve individual FE releases (that stays engineer-driven via the diagnostic tool and checklist); focuses instead on process consistency, recurring-failure pattern recognition, and escalation on genuinely ambiguous release situations — the diagnostic tool automates roughly 70% of checklist items, and the Lead Engineer's informal pre-review (see [Lead Engineer Responsibilities](/onboarding/lead-engineer.html)) covers much of the judgment-dependent remainder. Reports to the Director.
+Reports to the Director.
+
+- Primary people manager and day-to-day technical authority for the FE team; first escalation point for technical and workflow questions.
+- Owns the FE schedule (weekly scheduling meetings, staff rebalancing) and tracks FE labor budget performance; coaches and develops FE staff.
+- First-line technical resource on **established** build strategies — novel build-strategy questions still escalate to the PA.
+- Does **not** pre-approve individual FE releases (that stays engineer-driven via the diagnostic tool and checklist); focuses instead on process consistency, recurring-failure pattern recognition, and escalation on genuinely ambiguous release situations. The diagnostic tool automates roughly 70% of checklist items, and the Lead Engineer's informal pre-review (see [Lead Engineer Responsibilities](/onboarding/lead-engineer.html)) covers much of the judgment-dependent remainder.
 
 ### Managing Production Engineer
 
-The primary people manager and day-to-day technical authority for the PE team across both manufacturing sites. The primary measure for this role is throughput and schedule performance — labor budget is secondary (the reverse emphasis from the Managing FE role). Leads cross-site PE alignment and is the first escalation point for CAM and production-package questions. PE intake QC (material layers match BOM, part names match shipping components, clean geometry, correct quantities) is performed by individual PEs as routine practice, not as a management sign-off — see [Model Processing](/workflows/production-engineer/processing.html#how-to-run-accuracy-checks). Owns and maintains the department's policy for handling FE release errors discovered during PE processing (fix-release-inform vs. unrelease-inform-halt) — calibrating between upstream friction that slows PE throughput and the downstream cost of releasing bad work; the specific criteria for choosing between the two aren't yet documented in this wiki. Reports to the Director.
+Reports to the Director.
+
+- Primary people manager and day-to-day technical authority for the PE team across both manufacturing sites.
+- Primary measure for this role is throughput and schedule performance — labor budget is secondary (the reverse emphasis from the Managing FE role).
+- Leads cross-site PE alignment; first escalation point for CAM and production-package questions.
+- PE intake QC (material layers match BOM, part names match shipping components, clean geometry, correct quantities) is performed by individual PEs as routine practice, not as a management sign-off — see [Model Processing](/workflows/production-engineer/processing.html#how-to-run-accuracy-checks).
+- Owns and maintains the department's policy for handling FE release errors discovered during PE processing (fix-release-inform vs. unrelease-inform-halt) — calibrating between upstream friction that slows PE throughput and the downstream cost of releasing bad work. The specific criteria for choosing between the two aren't yet documented in this wiki.
 
 ## Fabrication Engineer (FE)
 
