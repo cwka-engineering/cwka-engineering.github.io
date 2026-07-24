@@ -2,6 +2,25 @@
 
 Historical record of content processed from `ingest/` into the published wiki.
 
+## 2026-07 — Engineering All Hands transcript (2026-07-24)
+
+**Source archive**: [`ingest/archive/2026-07-eng-all-hands/`](archive/2026-07-eng-all-hands/).
+
+Compared against the current wiki to find gaps; findings presented to the requester before any edits, then filled in a follow-up pass once open questions were resolved.
+
+**Integrated into [solid-wood-components.md](../workflows/fabrication-engineer/solid-wood-components.html)**:
+- WC Purchase Information table corrected: it's a Rhino block edited via block Attribute User Text (not a drawing-layout text field) — includes the "not calculated, must match Epicor demand" gotcha, the length-row limit, and that it covers both purchased and in-house-milled material.
+- New "Supplying Raw Material to the WC Job" step: BOMing volumetric board footage of solid lumber to the WC job itself, distinct from BOMing the finished WC part to the primary job.
+- How the Master Scheduler sizes a WC job: sums linear footage demand across every BOM'd primary job.
+- Glued-up blanks added as a recognized exception, with repeatability (not the mere presence of machining) as the deciding factor.
+- Inverse rule added to "What Qualifies as a WC?": a one-off part needing unique machining, with no repeatability, generally isn't a WC.
+
+**Confirmed already correct, no changes needed**: Managing FE/Managing PE role assignments and reporting lines, the Master Scheduler rename, and the How We Work / AWI / ANSI / casework-standards wiki additions the Director referenced — all matched what was already live.
+
+**Deliberately not integrated**:
+- An open question raised in the meeting about whether a new WC-adjacent nomenclature is needed (to separate the prototypical cross-section/linear-footage case from buyouts, laser-etching, blanks, etc.) — explicitly unresolved pending discussion with other departments; not documented as a decision.
+- A comment assigning "Field Dimensions Received" checkbox ownership to the new Project Engineer role — made in a joking tone in the meeting, not treated as an actual policy.
+
 ## 2026-07 — Management layer job descriptions, LONG versions (`ingest/docs` batch)
 
 **Source archive**: added to [`ingest/archive/2026-07-management-roles/`](archive/2026-07-management-roles/) alongside the SHORT versions below. The SHORT versions were what was actually shared with candidates alongside offer letters; the LONG versions are the source they were distilled from, reviewed here for additional nuance.
