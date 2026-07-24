@@ -16,7 +16,7 @@
       "id": "/onboarding/engineering-roles.html",
       "title": "Engineering Roles & Core Competencies",
       "section": "Home",
-      "degree": 10
+      "degree": 12
     },
     {
       "id": "/onboarding/how-we-work.html",
@@ -238,7 +238,7 @@
       "id": "/standards/layer-organization/",
       "title": "Layer Organization",
       "section": "Standards",
-      "degree": 17
+      "degree": 16
     },
     {
       "id": "/standards/layer-organization/manufactured-parts.html",
@@ -256,7 +256,7 @@
       "id": "/standards/layer-organization/modeling-techniques.html",
       "title": "Modeling Techniques",
       "section": "Standards",
-      "degree": 6
+      "degree": 7
     },
     {
       "id": "/standards/layer-organization/standard-layers.html",
@@ -466,7 +466,7 @@
       "id": "/tools/time-entry.html",
       "title": "Time Entry",
       "section": "Tools",
-      "degree": 11
+      "degree": 12
     },
     {
       "id": "/tools/",
@@ -610,7 +610,7 @@
       "id": "/workflows/production-engineer/processing.html",
       "title": "Model Processing",
       "section": "Workflows",
-      "degree": 6
+      "degree": 7
     },
     {
       "id": "/workflows/production-engineer/setup.html",
@@ -758,6 +758,10 @@
     },
     {
       "source": "/onboarding/engineering-roles.html",
+      "target": "/tools/time-entry.html"
+    },
+    {
+      "source": "/onboarding/engineering-roles.html",
       "target": "/workflows/engineering-assistant.html"
     },
     {
@@ -771,6 +775,10 @@
     {
       "source": "/onboarding/engineering-roles.html",
       "target": "/workflows/production-engineer/"
+    },
+    {
+      "source": "/onboarding/engineering-roles.html",
+      "target": "/workflows/production-engineer/processing.html"
     },
     {
       "source": "/onboarding/lead-engineer.html",
@@ -1382,10 +1390,6 @@
     },
     {
       "source": "/standards/layer-organization/",
-      "target": "/workflows/production-engineer/processing.html"
-    },
-    {
-      "source": "/standards/layer-organization/",
       "target": "/workflows/production-engineer/setup.html"
     },
     {
@@ -1419,6 +1423,10 @@
     {
       "source": "/standards/layer-organization/modeling-techniques.html",
       "target": "/standards/rhino-drafting/layout-structure.html"
+    },
+    {
+      "source": "/standards/layer-organization/modeling-techniques.html",
+      "target": "/workflows/production-engineer/processing.html"
     },
     {
       "source": "/standards/layer-organization/standard-layers.html",
