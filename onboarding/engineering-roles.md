@@ -32,6 +32,7 @@ Reports to the General Manager. Primary financial accountability is project engi
 - Provides strategic direction to the Managing FE and Managing PE, who report to the Director.
 - Makes final hiring decisions for all engineering roles (managing engineers participate in interviews and advise); conducts department-wide annual reviews in partnership with the managing engineers.
 - Maintains a direct relationship with a small number of senior engineers who take on **012 ENG Dept Improvement** work (toolkit development, standards authorship, SOP writing, R&D) as departmental technical contributors — an informal, individually-assigned relationship, not a formal designation — assigning and overseeing that work in coordination with the relevant managing engineer.
+- Defines the department's technical roadmap and R&D priorities; collaborates with Sales, PM, and Operations on complex scope and business development; represents engineering at the executive level.
 
 ### Managing Fabrication Engineer
 
@@ -41,6 +42,8 @@ Reports to the Director.
 - Owns the FE schedule (weekly scheduling meetings, staff rebalancing) and tracks FE labor budget performance; coaches and develops FE staff.
 - First-line technical resource on **established** build strategies — novel build-strategy questions still escalate to the PA.
 - Does **not** pre-approve individual FE releases (that stays engineer-driven via the diagnostic tool and checklist); focuses instead on process consistency, recurring-failure pattern recognition, and escalation on genuinely ambiguous release situations. The diagnostic tool automates roughly 70% of checklist items, and the Lead Engineer's informal pre-review (see [Lead Engineer Responsibilities](/onboarding/lead-engineer.html)) covers much of the judgment-dependent remainder.
+- Pushes PMs, PAs, Production, and Sales for information engineers need to keep working, reassigning staff rather than letting them stall; establishes clear specifications with Leads/PMs at project launch and enforces the PA working session requirement.
+- Flags design changes during rework that warrant a Change Order rather than absorbing scope into the engineering budget; surfaces gaps or conflicts in existing standards observed in daily work for the Director to synthesize into wiki/toolkit updates.
 
 ### Managing Production Engineer
 
@@ -51,6 +54,8 @@ Reports to the Director.
 - Leads cross-site PE alignment; first escalation point for CAM and production-package questions.
 - PE intake QC (material layers match BOM, part names match shipping components, clean geometry, correct quantities) is performed by individual PEs as routine practice, not as a management sign-off — see [Model Processing](/workflows/production-engineer/processing.html#how-to-run-accuracy-checks).
 - Owns and maintains the department's policy for handling FE release errors discovered during PE processing (fix-release-inform vs. unrelease-inform-halt) — calibrating between upstream friction that slows PE throughput and the downstream cost of releasing bad work. The specific criteria for choosing between the two aren't yet documented in this wiki.
+- Maintains active engagement with Job Captains and Production Managers at both sites so floor issues feed back into PE workflow improvements; confirms PE scope is clearly defined with Leads and PMs at project launch.
+- Tracks FE Released throughput by site and coordinates with the Managing FE on reach-upstream opportunities when FE bottlenecks threaten PE utilization.
 
 ## Fabrication Engineer (FE)
 
