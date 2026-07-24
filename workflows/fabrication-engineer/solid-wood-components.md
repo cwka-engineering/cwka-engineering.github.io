@@ -30,12 +30,18 @@ Quick fallback test: a WC part is any solid wood piece that is **NOT** poplar bl
 
 **Standard blocking:** Two standard sizes for poplar blocking (**7/8" x 7/8"** and **1.5" x 1.5"**) are kept on the shelf as shop supply. They are pulled as needed by the shop and do **NOT** need to be BOM'd. Whenever possible, use a standard blocking size. Minimize different sizes — each new WC part requires its own drawing.
 
+**When NOT to use a WC:** A part that requires unique machining and has no repeatability — a one-off custom shape, not a run of identical pieces — is generally not a WC, even if it's solid wood. Model it directly with the parent job instead, oversized as needed so it can be cut to fit at the bench. WC nomenclature exists to capture repeatable production runs and scheduling benefit; a unique one-off gets neither, so tagging it as a WC is just overhead. See [Recognized Exceptions](#recognized-exceptions) for the blanks case, where repeatability is the deciding factor.
+
 ## Recognized Exceptions
 {: #recognized-exceptions}
 
 WC nomenclature is sometimes deliberately repurposed to solve other material- or part-tracking problems — for example, tying WC naming into the laser-engraving process on a project that needed to track engraved parts. This is a legitimate, recognized use, not a tribal workaround, but it's an exception to the mental model above, not the norm.
 
 **Standing exception — buyouts:** Buyout drawer boxes and buyout cabinet doors are handled as WCs, regardless of whether they fit the "in-house mill" mental model. This is a longstanding rule, not obvious from the threshold test alone.
+
+**Standing exception — glued-up blanks:** A quantity of solid wood glued up into a stack and then carved/machined into a shape (e.g., several identical guardrail caps cut from a shared glue-up) is a legitimate WC use, distinct from the cross-section/linear-footage case — the glue-up is produced by the mill as an intermediary step, ahead of the parent job, then final-machined afterward.
+
+**The deciding factor is repeatability, not the presence of machining.** If the blank is repeated across multiple identical parts, a WC makes sense — it lets the mill produce the glue-up on its own schedule, ahead of the parent job. If it's a one-off, unique glue-up or shape with no repeatability, it should **not** be a WC: model it directly with the parent job instead (oversized as needed so it can be cut to fit at the bench). Producing a one-off custom shape as a WC provides no scheduling benefit and is generally not worth the overhead.
 
 ## Creating the Part in Epicor
 {: #how-to-create-wc-part}
@@ -63,7 +69,17 @@ If uncertain, check with production. Knives take approximately **one week** to f
 
 1. Open the **WC Template** (available on Box — see [Onboarding Quick Start](/onboarding/quick-start.html)).
 2. Create a **one-page drawing** showing a section/profile of the part centered at full scale. If the part is too large for full scale, consult your lead.
-3. Fill out the **WC PURCHASE INFORMATION** table in the bottom-right corner (editable through Properties → Layout User Text).
+3. Insert the **WC Purchase Information** table — a Rhino block (in the block manager under the WC material block category), not a drawing-layout text field. After placing it, edit its fields via **Properties → Attribute User Text** on the block:
+   - **Total Linear Footage Required** — the sum of everything in the length rows below, and it must also match the actual Epicor demand total across every primary job this WC part is BOM'd to. **This field is not calculated** — keep it in sync manually.
+   - **Solid lumber part number** — the raw stock part used to produce the finished profile.
+   - **Range of lengths** — the specific lengths needed (e.g., 8', 16'), one row per length.
+   - **Purchasing note** — additional comments for the purchasing team.
+
+   The table currently supports a limited number of length rows. If your part needs more, contact your Lead or the toolkit team to have it expanded — don't just leave lengths off.
+
+   Despite the "Purchase Information" name, this table applies whether the material is being purchased externally **or** produced by the in-house mill — treat the in-house mill the same as an external vendor you're placing an order with.
+
+   The table ships **hidden** on the standard template. If you don't need it, leave its layer hidden or delete the block rather than leaving a stale, unfilled table on the drawing.
 
 ## BOM'ing a WC Part
 {: #how-to-bom-wc-part}
@@ -91,6 +107,13 @@ If uncertain, check with production. Knives take approximately **one week** to f
 - WC jobs are **one-to-one** (one part to one job)
 - One WC part **can** be BOM'd to multiple primary jobs — only one WC job is created for the total quantity across all primary jobs
 - Have **all** your primary jobs that use the same WC part BOM'd **before** requesting the job
+
+**How the job gets created:** The Master Scheduler works through Epicor, finds every primary job the part is BOM'd to, sums the linear footage demand across all of them, and creates a single WC job sized to that total. This is why every primary job needs to be BOM'd before you submit the request — a job requested before all the demand is BOM'd will undersize the total.
+
+## Supplying Raw Material to the WC Job
+{: #how-to-supply-wc-raw-material}
+
+Once the WC job itself exists, the engineer still needs to supply the raw material it will be built from — this is separate from BOM'ing the finished WC part to the primary job(s) above. Go into the WC job and BOM the **volumetric board footage** of solid lumber needed to produce the finished profile. This is a unit conversion: the WC part itself is tracked in linear footage of finished profile, but the raw stock going into the WC job is rough solid lumber, tracked in board footage. Don't skip this step or assume it's covered by the primary-job BOM — it isn't.
 
 ## Releasing a WC Job
 {: #how-to-release-wc-job}
