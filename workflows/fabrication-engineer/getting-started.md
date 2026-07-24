@@ -51,7 +51,7 @@ Every production job has a corresponding **engineering job** (prefixed with `E`)
 This means:
 - **Your engineering job has a ship date** — it's the date PE needs to start, not the date the product ships to the customer.
 - **Submittal approval must happen early enough** to allow time for long-lead procurement and production scheduling to proceed.
-- The Master Scheduler coordinates production job scheduling. The Director of Engineering and Director of Project Management are responsible for load balancing engineering across the department.
+- The Master Scheduler coordinates production job scheduling. The Managing Fabrication Engineer owns FE load balancing and staff assignment; the Director of Project Management coordinates the PM side.
 
 Check with your PM or Lead Engineer to confirm when your engineering deliverables (BOM-complete, PE release) are needed relative to the production schedule.
 

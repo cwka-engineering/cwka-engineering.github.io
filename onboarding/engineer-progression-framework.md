@@ -55,7 +55,7 @@ The examples under each area are **illustrative** (common pathways), not an exha
 
 ## Promotion process
 
-1. **Self-assessment and discussion** — You and the Engineering Director use this framework in 1:1s to set goals and track progress.
+1. **Self-assessment and discussion** — You and your Managing FE or Managing PE use this framework in 1:1s to set goals and track progress.
 2. **Evidence gathering** — You collect concrete evidence of senior-level contributions over the required timeframe.
 3. **Formal proposal** — You organize evidence into a short written proposal for the Director.
 4. **Peer review** — The Director solicits **confidential feedback** from **two to three** relevant peers.

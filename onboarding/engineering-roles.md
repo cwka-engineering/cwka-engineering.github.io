@@ -19,6 +19,24 @@ For definitions of acronyms and terms used in this document, see the [Glossary](
 
 **Lead Engineer designation**: In addition to role levels, any engineer may be designated Lead on a given project based on their relevant expertise for that scope. This is an ad hoc project-level assignment, not a permanent title. See [Lead Engineer Responsibilities](/onboarding/lead-engineer.html).
 
+## Engineering Leadership
+
+Above the FE and PE levels, three roles set technical direction and manage people day-to-day. Full job descriptions are held by HR; this is a summary.
+
+### Director of Engineering & Computational Design
+
+Sets department-wide technical direction: owns the Engineering Toolkit and all custom engineering software, ERP integrations, and cross-platform automation; serves as the department's seniormost computational expert; and leads early scaffolding on complex procedural/generative work beyond current team capability. Provides strategic direction to the Managing FE, Managing PE, and Outsource Program Manager, who report to the Director; makes final hiring decisions for all engineering roles. Reports to the General Manager. Primary financial accountability is project engineering budget performance across the portfolio.
+
+### Managing Fabrication Engineer
+
+The primary people manager and day-to-day technical authority for the FE team, and the first escalation point for technical and workflow questions. Owns the FE schedule (weekly scheduling meetings, staff rebalancing), tracks FE labor budget performance, and coaches and develops FE staff. Serves as a first-line technical resource on **established** build strategies — novel build-strategy questions still escalate to the PA. Reports to the Director.
+
+### Managing Production Engineer
+
+The primary people manager and day-to-day technical authority for the PE team across both manufacturing sites. The primary measure for this role is throughput and schedule performance — labor budget is secondary (the reverse emphasis from the Managing FE role). Leads cross-site PE alignment and is the first escalation point for CAM and production-package questions. Owns and maintains the department's policy for handling FE release errors discovered during PE processing (fix-release-inform vs. unrelease-inform-halt) — the criteria for choosing between the two aren't yet documented in this wiki. Reports to the Director.
+
+> **Note**: An Outsource Program Manager also reports to the Director, alongside the Managing FE and Managing PE. No dedicated role documentation exists in the wiki yet for this position.
+
 ## Fabrication Engineer (FE)
 
 Focuses on developing design engineering (DE) geometries into fabrication-ready geometries. The end goal is models that are manageable in programming and can be assembled after fabrication.

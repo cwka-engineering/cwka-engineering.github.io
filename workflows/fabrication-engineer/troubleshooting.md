@@ -44,7 +44,7 @@ corpus_tags: [fe-release]
 
 - **Toolkit Issues**: Check with senior FE or Engineering Director
 - **Epicor Issues**: Contact IT or EA
-- **Process Questions**: See [FE Workflow Overview](/workflows/fabrication-engineer/) or ask Engineering Director
+- **Process Questions**: See [FE Workflow Overview](/workflows/fabrication-engineer/) or ask your Managing Fabrication Engineer — the first escalation point for technical and workflow questions
 
 ## See Also
 

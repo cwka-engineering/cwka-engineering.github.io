@@ -2,6 +2,30 @@
 
 Historical record of content processed from `ingest/` into the published wiki.
 
+## 2026-07 — Management layer job descriptions (`ingest/docs` batch)
+
+**Source archive**: [`ingest/archive/2026-07-management-roles/`](archive/2026-07-management-roles/).
+
+| Source | Integrated into |
+| ------ | ----------------- |
+| Director of Engineering & Computational Design (2026-06-30) | Summarized in [onboarding/engineering-roles.md](../onboarding/engineering-roles.html) (new **Engineering Leadership** section); role added to the interactive org map ([`_data/departments.yml`](../_data/departments.yml)) |
+| Managing Fabrication Engineer (2026-06-30) | Same as above |
+| Managing Production Engineer (2026-06-30) | Same as above |
+
+**Stale-fact fixes surfaced by these JDs**: the new management layer's responsibilities contradicted several already-published facts that pre-dated it. Corrected: [getting-started.md](../workflows/fabrication-engineer/getting-started.html) (FE load balancing owner), [engineer-progression-framework.md](../onboarding/engineer-progression-framework.html) (who conducts 1:1s), [fabrication-engineer/troubleshooting.md](../workflows/fabrication-engineer/troubleshooting.html) (process-question escalation), and [fe-to-pe-release.md](../workflows/fe-to-pe-release.html) (Fixed Quantity exception approval). Left untouched: `troubleshooting.md`'s "Toolkit Issues → Engineering Director" line, since Toolkit/software ownership explicitly stays with the Director per the new JD.
+
+**Deliberately not migrated / flagged as gaps**: no JD was provided for the **Outsource Program Manager**, who the Director JD states reports alongside the Managing FE/PE — noted in engineering-roles.md as an unfilled documentation gap rather than inventing duties. The Managing PE JD references a specific **fix-release-inform vs. unrelease-inform-halt** policy for FE release errors, owned by that role — its actual criteria aren't documented anywhere in the wiki; noted as a gap rather than guessed at. The promotion-process steps in engineer-progression-framework.md (formal proposal to / decision by "the Director") were left as-is beyond the 1:1 fix — the JDs don't clearly state that final promotion-decision authority moved to the Managing FE/PE.
+
+## 2026-07 — Weekly time approval walkthrough (`ingest/docs` batch)
+
+**Source archive**: [`ingest/archive/2026-07-time-approval/`](archive/2026-07-time-approval/).
+
+| Source | Integrated into |
+| ------ | ----------------- |
+| Weekly Time Approval — Walkthrough (training session w/ Kevin Atchley, 2026-07-13) | New page [tools/time-entry/weekly-approval.md](../tools/time-entry/weekly-approval.html); cross-linked from [tools/time-entry.md](../tools/time-entry.html) |
+
+Source was already in wiki-ready markdown; migrated near-verbatim (added explicit anchor ids to each numbered step, dropped the emoji quirk-markers to match site convention). No stale facts elsewhere in the wiki referenced this process, since no approver-side documentation existed previously.
+
 ## 2026-07 — Casework construction standards (`ingest/docs` batch)
 
 **Source archive**: [`ingest/archive/2026-07-casework-standards/`](archive/2026-07-casework-standards/).

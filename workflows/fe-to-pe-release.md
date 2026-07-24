@@ -204,7 +204,7 @@ For more information on Epicor, see [Epicor Usage in Engineering](/tools/epicor/
 7. Go to Epicor **Job Entry**.
 8. For each BOM line:
    - **Engineering Complete**: Quantities verified.
-   - **Fixed Quantity**: Checked unless releasing catalog items — confirm with PM or Engineering Director.
+   - **Fixed Quantity**: Checked unless releasing catalog items — confirm with PM or Managing Fabrication Engineer.
    - **Make Direct**: For manufactured parts only.
    - All materials have a Part Master.
 9. **NOTE**: Job-specific engineering comments on BOM materials (e.g. pull from inventory, PM to verify, use alternate if unavailable) must be appended to the **part description** on the BOM.

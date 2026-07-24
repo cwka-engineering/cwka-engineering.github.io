@@ -333,6 +333,15 @@ departments:
   E:
     name: "Engineering"
     roles:
+      - code: "DIR"
+        name: "Director of Eng. & Computational Design"
+        note: "Sets department-wide technical direction; owns the Engineering Toolkit, custom software, and ERP integrations. Managing FE, Managing PE, and the Outsource Program Manager report to this role. Reports to the General Manager."
+      - code: "MFE"
+        name: "Managing Fabrication Engineer"
+        note: "Primary people manager and first escalation point for the FE team. Owns the FE schedule and labor budget performance. Reports to the Director."
+      - code: "MPE"
+        name: "Managing Production Engineer"
+        note: "Primary people manager and first escalation point for the PE team across both sites. Owns PE throughput/schedule performance. Reports to the Director."
       - code: "PA"
         name: "Project Advisor"
         note: "Senior designation — final authority on build strategy. Non-billable (indirect 017 ENG Admin). Drawn from senior Engineering, Production, or Executive staff. Always a separate person from the Lead Engineer on any given project."

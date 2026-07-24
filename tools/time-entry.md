@@ -255,3 +255,7 @@ Engineering work performed for projects not yet under contract. Use when assigne
 
 For engineers not using Office MES, time entry is done via Toggl and exported to Epicor. See **[Toggl Setup & Upload](/tools/time-entry/toggl.html)** for installation, structure, and the Epicor upload procedure.
 
+## Weekly Time Approval
+
+For the approver's side of this process — reviewing, reconciling, and approving a week's entries across both CW and DigiFab — see **[Weekly Time Approval Walkthrough](/tools/time-entry/weekly-approval.html)**.
+
