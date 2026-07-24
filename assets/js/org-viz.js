@@ -164,19 +164,27 @@
     if (code === 'PUR')  renamedNote = '<div class="oviz-renamed">Formerly: Supply Chain (SC)</div>';
     if (code === 'PROD') renamedNote = '<div class="oviz-renamed">Formerly: Operations (OPS)</div>';
 
-    /* transient roles section */
+    /* roles section — split into permanent leadership positions vs. ad hoc transient designations */
     var roleSection = '';
     if (dept.roles && dept.roles.length) {
-      var items = dept.roles.map(function (role) {
+      function roleItem(role) {
         return '<div class="oviz-role-item">' +
                '<span class="oviz-role-badge" style="background:' + c.bg +
                ';color:' + c.fg + ';border:1px solid ' + c.ac + '">' + role.code + '</span>' +
                '<div><div class="oviz-role-name">' + esc(role.name) + '</div>' +
                '<div class="oviz-role-note">' + esc(role.note) + '</div></div>' +
                '</div>';
-      }).join('');
-      roleSection = '<div class="oviz-section-label">Transient Designations</div>' +
-                    '<div class="oviz-roles">' + items + '</div>';
+      }
+      var leadership = dept.roles.filter(function (r) { return r.type === 'leadership'; });
+      var transient  = dept.roles.filter(function (r) { return r.type !== 'leadership'; });
+      if (leadership.length) {
+        roleSection += '<div class="oviz-section-label">Leadership</div>' +
+                        '<div class="oviz-roles">' + leadership.map(roleItem).join('') + '</div>';
+      }
+      if (transient.length) {
+        roleSection += '<div class="oviz-section-label">Transient Designations</div>' +
+                        '<div class="oviz-roles">' + transient.map(roleItem).join('') + '</div>';
+      }
     }
 
     /* task list */
