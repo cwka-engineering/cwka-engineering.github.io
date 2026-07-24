@@ -70,11 +70,11 @@ Focuses on developing design engineering (DE) geometries into fabrication-ready 
 
 ### Fabrication Engineer I
 
-Core contributor: executes fabrication-level 3D and 2D with **minimal oversight** once onboarded; partners with PMs and senior engineers; tracks time accurately and respects labor budgets; contributes observations to improve workflows. Typically **1–3 years** relevant experience; strong Rhino and drafting proficiency; detail-oriented. *Preferred*: related degree; basic Grasshopper.
+Core contributor: executes fabrication-level 3D and 2D with **minimal oversight** once onboarded; partners with PMs and senior engineers; tracks time accurately and respects labor budgets; contributes observations to improve workflows.
 
 ### Fabrication Engineer II
 
-Senior contributor and **formal mentor**: leads complex modeling and client/PM-facing technical contact on significant work; solves hard geometry, data, or workflow problems (e.g. advanced parametric workflows); **mentors FE Is** on quality, time entry, and budgets. Typically **4–6 years** relevant experience; advanced Rhino and Grasshopper; demonstrated mentorship. *Preferred*: related degree; experience leading client-facing technical discussions.
+Senior contributor and **formal mentor**: leads complex modeling and client/PM-facing technical contact on significant work; solves hard geometry, data, or workflow problems (e.g. advanced parametric workflows); **mentors FE Is** on quality, time entry, and budgets.
 
 ## Production Engineer (PE)
 
@@ -88,11 +88,11 @@ Handles program-related toolpaths, reference geometries, and information needed 
 
 ### Production Engineer I
 
-Core execution: develops **3- and 5-axis** CNC programs and fixtures with increasing independence; supports operators; documents best practices; tracks time and budgets accurately. Typically **1–3 years** relevant experience; **Mastercam** proficiency; solid machining fundamentals. *Preferred*: manufacturing technology credential; operator experience.
+Core execution: develops **3- and 5-axis** CNC programs and fixtures with increasing independence; supports operators; documents best practices; tracks time and budgets accurately.
 
 ### Production Engineer II
 
-Senior expert and **mentor**: leads **complex production runs** and advanced CAM/fixture strategy; mentors PE Is; drives measurable workflow improvements; troubleshoots critical floor issues. Typically **5+ years** experience; strong Mastercam and advanced fabrication strategy. *Preferred*: degree in related field; **5-axis** experience.
+Senior expert and **mentor**: leads **complex production runs** and advanced CAM/fixture strategy; mentors PE Is; drives measurable workflow improvements; troubleshoots critical floor issues.
 
 ## General Engineer Competencies
 
