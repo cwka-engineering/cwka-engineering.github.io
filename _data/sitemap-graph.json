@@ -16,7 +16,7 @@
       "id": "/onboarding/engineering-roles.html",
       "title": "Engineering Roles & Core Competencies",
       "section": "Home",
-      "degree": 12
+      "degree": 13
     },
     {
       "id": "/onboarding/how-we-work.html",
@@ -34,7 +34,7 @@
       "id": "/onboarding/lead-engineer.html",
       "title": "Lead Engineer Responsibilities",
       "section": "Home",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "/onboarding/manifesto.html",
@@ -46,7 +46,7 @@
       "id": "/onboarding/project-delivery.html",
       "title": "Project Delivery Overview",
       "section": "Overview",
-      "degree": 11
+      "degree": 12
     },
     {
       "id": "/onboarding/purchasing-signal-chain.html",
@@ -58,7 +58,19 @@
       "id": "/onboarding/scheduling-chain.html",
       "title": "Scheduling Chain",
       "section": "Overview",
-      "degree": 5
+      "degree": 6
+    },
+    {
+      "id": "/reference/adjacent-roles/",
+      "title": "Adjacent Roles & Interfaces",
+      "section": "Home",
+      "degree": 19
+    },
+    {
+      "id": "/reference/adjacent-roles/master-scheduler.html",
+      "title": "Master Scheduler Procedures",
+      "section": "Home",
+      "degree": 9
     },
     {
       "id": "/reference/ansi-standards.html",
@@ -166,7 +178,7 @@
       "id": "/reference/",
       "title": "Reference",
       "section": "Home",
-      "degree": 8
+      "degree": 9
     },
     {
       "id": "/reference/industry-references.html",
@@ -364,7 +376,7 @@
       "id": "/tools/epicor/inventory-jobs.html",
       "title": "Inventory Jobs (INV)",
       "section": "Tools",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "/tools/epicor/job-management.html",
@@ -406,7 +418,7 @@
       "id": "/tools/epicor/troubleshooting.html",
       "title": "Troubleshooting",
       "section": "Tools",
-      "degree": 4
+      "degree": 5
     },
     {
       "id": "/tools/releases-and-requests/fe-to-pe-releases.html",
@@ -430,7 +442,7 @@
       "id": "/tools/releases-and-requests/part-requests/scheduler-guide.html",
       "title": "Scheduler Guide",
       "section": "Home",
-      "degree": 5
+      "degree": 6
     },
     {
       "id": "/tools/releases-and-requests/part-requests.html",
@@ -508,7 +520,7 @@
       "id": "/workflows/fabrication-engineer/getting-started.html",
       "title": "Getting Started",
       "section": "Workflows",
-      "degree": 13
+      "degree": 14
     },
     {
       "id": "/workflows/fabrication-engineer/",
@@ -520,13 +532,13 @@
       "id": "/workflows/fabrication-engineer/material-transmittal.html",
       "title": "Material Transmittal Log (TRA)",
       "section": "Workflows",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "/workflows/fabrication-engineer/overage-and-extras.html",
       "title": "Overage, Extras & Process Waste",
       "section": "Workflows",
-      "degree": 6
+      "degree": 7
     },
     {
       "id": "/workflows/fabrication-engineer/part-naming.html",
@@ -544,13 +556,13 @@
       "id": "/workflows/fabrication-engineer/solid-wood-components.html",
       "title": "Solid Wood Components (WC)",
       "section": "Workflows",
-      "degree": 5
+      "degree": 6
     },
     {
       "id": "/workflows/fabrication-engineer/submittal-review.html",
       "title": "Submittal Review Cycle",
       "section": "Workflows",
-      "degree": 8
+      "degree": 9
     },
     {
       "id": "/workflows/fabrication-engineer/takeoffs.html",
@@ -580,19 +592,13 @@
       "id": "/workflows/fabrication-engineer/troubleshooting.html",
       "title": "Troubleshooting",
       "section": "Workflows",
-      "degree": 6
+      "degree": 7
     },
     {
       "id": "/workflows/fe-to-pe-release.html",
       "title": "FE to PE Release Procedure",
       "section": "Workflows",
       "degree": 33
-    },
-    {
-      "id": "/workflows/master-scheduler.html",
-      "title": "Master Scheduler Workflow",
-      "section": "Workflows",
-      "degree": 11
     },
     {
       "id": "/workflows/production-engineer/deliverables.html",
@@ -628,7 +634,7 @@
       "id": "/workflows/",
       "title": "Workflows",
       "section": "Workflows",
-      "degree": 5
+      "degree": 6
     }
   ],
   "edges": [
@@ -647,6 +653,10 @@
     {
       "source": "/",
       "target": "/onboarding/project-delivery.html"
+    },
+    {
+      "source": "/",
+      "target": "/reference/adjacent-roles/"
     },
     {
       "source": "/",
@@ -686,10 +696,6 @@
     },
     {
       "source": "/",
-      "target": "/workflows/master-scheduler.html"
-    },
-    {
-      "source": "/",
       "target": "/workflows/production-engineer/"
     },
     {
@@ -718,15 +724,15 @@
     },
     {
       "source": "/onboarding/",
+      "target": "/reference/adjacent-roles/"
+    },
+    {
+      "source": "/onboarding/",
       "target": "/reference/glossary.html"
     },
     {
       "source": "/onboarding/",
       "target": "/workflows/fabrication-engineer/"
-    },
-    {
-      "source": "/onboarding/",
-      "target": "/workflows/master-scheduler.html"
     },
     {
       "source": "/onboarding/",
@@ -754,6 +760,14 @@
     },
     {
       "source": "/onboarding/engineering-roles.html",
+      "target": "/reference/adjacent-roles/"
+    },
+    {
+      "source": "/onboarding/engineering-roles.html",
+      "target": "/reference/adjacent-roles/master-scheduler.html"
+    },
+    {
+      "source": "/onboarding/engineering-roles.html",
       "target": "/reference/glossary.html"
     },
     {
@@ -770,10 +784,6 @@
     },
     {
       "source": "/onboarding/engineering-roles.html",
-      "target": "/workflows/master-scheduler.html"
-    },
-    {
-      "source": "/onboarding/engineering-roles.html",
       "target": "/workflows/production-engineer/"
     },
     {
@@ -783,6 +793,10 @@
     {
       "source": "/onboarding/lead-engineer.html",
       "target": "/onboarding/project-delivery.html"
+    },
+    {
+      "source": "/onboarding/lead-engineer.html",
+      "target": "/reference/adjacent-roles/"
     },
     {
       "source": "/onboarding/lead-engineer.html",
@@ -814,6 +828,14 @@
     },
     {
       "source": "/onboarding/project-delivery.html",
+      "target": "/reference/adjacent-roles/"
+    },
+    {
+      "source": "/onboarding/project-delivery.html",
+      "target": "/reference/adjacent-roles/master-scheduler.html"
+    },
+    {
+      "source": "/onboarding/project-delivery.html",
       "target": "/tools/approvals-process.html"
     },
     {
@@ -827,10 +849,6 @@
     {
       "source": "/onboarding/project-delivery.html",
       "target": "/workflows/fe-to-pe-release.html"
-    },
-    {
-      "source": "/onboarding/project-delivery.html",
-      "target": "/workflows/master-scheduler.html"
     },
     {
       "source": "/onboarding/project-delivery.html",
@@ -858,11 +876,19 @@
     },
     {
       "source": "/onboarding/scheduling-chain.html",
+      "target": "/reference/adjacent-roles/"
+    },
+    {
+      "source": "/onboarding/scheduling-chain.html",
       "target": "/reference/glossary.html"
     },
     {
       "source": "/onboarding/scheduling-chain.html",
       "target": "/workflows/fe-to-pe-release.html"
+    },
+    {
+      "source": "/reference/",
+      "target": "/reference/adjacent-roles/"
     },
     {
       "source": "/reference/",
@@ -895,6 +921,78 @@
     {
       "source": "/reference/",
       "target": "/reference/training-videos.html"
+    },
+    {
+      "source": "/reference/adjacent-roles/",
+      "target": "/reference/adjacent-roles/master-scheduler.html"
+    },
+    {
+      "source": "/reference/adjacent-roles/",
+      "target": "/reference/glossary.html"
+    },
+    {
+      "source": "/reference/adjacent-roles/",
+      "target": "/tools/epicor/inventory-jobs.html"
+    },
+    {
+      "source": "/reference/adjacent-roles/",
+      "target": "/tools/epicor/troubleshooting.html"
+    },
+    {
+      "source": "/reference/adjacent-roles/",
+      "target": "/tools/releases-and-requests/part-requests/scheduler-guide.html"
+    },
+    {
+      "source": "/reference/adjacent-roles/",
+      "target": "/workflows/"
+    },
+    {
+      "source": "/reference/adjacent-roles/",
+      "target": "/workflows/fabrication-engineer/getting-started.html"
+    },
+    {
+      "source": "/reference/adjacent-roles/",
+      "target": "/workflows/fabrication-engineer/material-transmittal.html"
+    },
+    {
+      "source": "/reference/adjacent-roles/",
+      "target": "/workflows/fabrication-engineer/overage-and-extras.html"
+    },
+    {
+      "source": "/reference/adjacent-roles/",
+      "target": "/workflows/fabrication-engineer/solid-wood-components.html"
+    },
+    {
+      "source": "/reference/adjacent-roles/",
+      "target": "/workflows/fabrication-engineer/submittal-review.html"
+    },
+    {
+      "source": "/reference/adjacent-roles/",
+      "target": "/workflows/fabrication-engineer/troubleshooting.html"
+    },
+    {
+      "source": "/reference/adjacent-roles/master-scheduler.html",
+      "target": "/tools/epicor/"
+    },
+    {
+      "source": "/reference/adjacent-roles/master-scheduler.html",
+      "target": "/tools/epicor/dashboards.html"
+    },
+    {
+      "source": "/reference/adjacent-roles/master-scheduler.html",
+      "target": "/tools/releases-and-requests/part-requests/scheduler-guide.html"
+    },
+    {
+      "source": "/reference/adjacent-roles/master-scheduler.html",
+      "target": "/tools/time-entry.html"
+    },
+    {
+      "source": "/reference/adjacent-roles/master-scheduler.html",
+      "target": "/workflows/"
+    },
+    {
+      "source": "/reference/adjacent-roles/master-scheduler.html",
+      "target": "/workflows/fe-to-pe-release.html"
     },
     {
       "source": "/reference/ansi-standards.html",
@@ -1207,10 +1305,6 @@
     {
       "source": "/reference/glossary.html",
       "target": "/workflows/fe-to-pe-release.html"
-    },
-    {
-      "source": "/reference/glossary.html",
-      "target": "/workflows/master-scheduler.html"
     },
     {
       "source": "/reference/reference-tables/",
@@ -1697,10 +1791,6 @@
       "target": "/workflows/fe-to-pe-release.html"
     },
     {
-      "source": "/tools/epicor/",
-      "target": "/workflows/master-scheduler.html"
-    },
-    {
       "source": "/tools/epicor/dashboards.html",
       "target": "/tools/epicor/job-management.html"
     },
@@ -1723,10 +1813,6 @@
     {
       "source": "/tools/epicor/dashboards.html",
       "target": "/workflows/fabrication-engineer/toolkit/drafting.html"
-    },
-    {
-      "source": "/tools/epicor/dashboards.html",
-      "target": "/workflows/master-scheduler.html"
     },
     {
       "source": "/tools/epicor/inventory-jobs.html",
@@ -1913,10 +1999,6 @@
       "target": "/workflows/fe-to-pe-release.html"
     },
     {
-      "source": "/tools/releases-and-requests/part-requests/scheduler-guide.html",
-      "target": "/workflows/master-scheduler.html"
-    },
-    {
       "source": "/tools/time-entry.html",
       "target": "/tools/time-entry/toggl.html"
     },
@@ -1927,10 +2009,6 @@
     {
       "source": "/tools/time-entry.html",
       "target": "/workflows/fabrication-engineer/toolkit/drafting.html"
-    },
-    {
-      "source": "/tools/time-entry.html",
-      "target": "/workflows/master-scheduler.html"
     },
     {
       "source": "/tools/time-entry/toggl.html",
@@ -1947,10 +2025,6 @@
     {
       "source": "/workflows/",
       "target": "/workflows/fe-to-pe-release.html"
-    },
-    {
-      "source": "/workflows/",
-      "target": "/workflows/master-scheduler.html"
     },
     {
       "source": "/workflows/",
@@ -2171,10 +2245,6 @@
     {
       "source": "/workflows/fabrication-engineer/toolkit/modeling.html",
       "target": "/workflows/fe-to-pe-release.html"
-    },
-    {
-      "source": "/workflows/fe-to-pe-release.html",
-      "target": "/workflows/master-scheduler.html"
     },
     {
       "source": "/workflows/fe-to-pe-release.html",
