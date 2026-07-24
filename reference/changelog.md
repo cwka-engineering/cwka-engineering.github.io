@@ -21,6 +21,23 @@ A record of significant additions and updates to the Engineering Wiki.
 - **[FE to PE Release](/workflows/fe-to-pe-release.html)** — Checklist now explicitly prohibits releasing an exploded (non-assembled) model.
 - **[Modeling Toolkit](/workflows/fabrication-engineer/toolkit/modeling.html)** — New-hardware physical verification note: check center-to-center against the physical part before machining at scale.
 - **[Common Mistakes](/reference/common-mistakes.html)** *(new page)* — Consolidated scattered anecdotal "gotcha"/"red flag"/"common mistake" content (casework, material modeling, part naming, Epicor) that previously lived inline on topic pages into a single reference hub, distinct from the existing tool-troubleshooting pages.
+- **[Modeling Techniques — Scribes](/standards/layer-organization/modeling-techniques.html#how-to-create-scribes)** — Documented that scribes are called out on shop drawings (bold outline + infill hatch for the final trimmed dimension, dashed line for the full oversized extent) — the page previously covered only the Rhino-modeling side.
+
+---
+
+## 2026-07-23 – 2026-07-24
+
+- **Engineering Leadership** — Documented the department's new management layer: [Director of Engineering & Computational Design, Managing Fabrication Engineer, and Managing Production Engineer](/onboarding/engineering-roles.html#engineering-leadership), summarized from both the candidate-facing and internal source job descriptions. Corrected several already-published facts that pre-dated this layer (FE load-balancing owner, who conducts progression 1:1s, process-question escalation, Fixed Quantity exception approval). Added the same roles to the [How We Work](/onboarding/how-we-work.html) interactive org map, split into a **Leadership** section (permanent positions) separate from **Transient Designations** (Project Advisor, Lead Engineer — ad hoc, project-level).
+- **[Weekly Time Approval Walkthrough](/tools/time-entry/weekly-approval.html)** *(new page)* — Step-by-step approver's guide (dashboards, status codes, PTO/overtime interaction, common coding issues), cross-linked from [Time Entry](/tools/time-entry.html).
+- **Engineering Assistant → Master Scheduler** — A dedicated EA hire is not expected going forward; most of that scope (Epicor materials database, primary/sample/mockup/MFG job creation, job scheduling) is now owned by the Master Scheduler role in Operations. Renamed the [Engineering Assistant Workflow to Master Scheduler Workflow](/workflows/master-scheduler.html) and reattributed references across 14 other pages (engineering-roles.md, glossary.md, the org map, troubleshooting pages, part-management.md, codes-and-tags.md, the Part Requests scheduler guide).
+- **[Solid Wood Components (WC)](/workflows/fabrication-engineer/solid-wood-components.html)** — Gaps filled from the 2026-07-24 Engineering All Hands: corrected the WC Purchase Information table (it's a Rhino block edited via Attribute User Text, not a drawing-layout field), added the raw-material board-footage BOM step, documented how the Master Scheduler sizes a WC job, and added glued-up blanks as a recognized exception with repeatability as the deciding factor for WC vs. modeling directly with the parent job.
+- **Removed** — Technical Steering Committee (TSC) references (not rolled out) from engineering-roles.md, engineer-progression-framework.md, and the glossary. Stripped hiring-qualification language (years of experience, software-proficiency bars, degree preferences) from engineering-roles.md — that page covers responsibilities and expectations, not hiring criteria.
+
+---
+
+## 2026-07-20
+
+- **Diagnostic Assistant prompt** — Added a rule offering confirm-gated group/layer-hierarchy audit scripts when a group-structure or layer-naming issue is under discussion and Rhino context is available. The audit only runs after the engineer clicks a confirm button; nothing executes automatically.
 
 ---
 
