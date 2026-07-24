@@ -62,7 +62,7 @@ Before programming, verify: (1) material layers match Epicor BOM, (2) all parts 
     -   Check for missing or extra parts
 
 5.  **Scribe Requirements**
-    -   Ensure scribe is added if needed (see [Layer Organization - Scribes](/standards/layer-organization/#scribes))
+    -   Ensure scribe is added if needed (see [Modeling Techniques — Scribes](/standards/layer-organization/modeling-techniques.html#how-to-create-scribes))
     -   Verify scribe geometry is properly grouped
 
 6.  **Modeling Requirements**

@@ -213,7 +213,7 @@ Department-wide or company-wide meetings with no project-specific agenda: all-ha
 Any activity where the primary purpose is skill transfer, for both trainer and trainee: onboarding, software walkthroughs, Rhino/Epicor training, and standards reviews.
 
 **ENG Dept Improvement (012)**
-Assigned development of department assets: Engineering Toolkit work, plugin and script development, PE checklists, SOP writing, hardware library updates, and new machine setup and qualification. Work should be manager-sanctioned before logging here.
+Assigned development of department assets: Engineering Toolkit work, plugin and script development, PE checklists, SOP writing, hardware library updates, and new machine setup and qualification. Work should be manager-sanctioned before logging here — in practice, this work is assigned to a small number of senior engineers and overseen by the Director of Engineering & Computational Design, in coordination with the relevant Managing FE/PE. See [Engineering Leadership](/onboarding/engineering-roles.html#engineering-leadership).
 
 **Machine Maintenance (015)**
 Computer and software issues that interrupt work, threshold > 15 minutes: software installation for a new workstation, VPN troubleshooting, Rhino/GH plugin installs, and virus protection issues. Routine updates and brief restarts under 15 minutes do not qualify.

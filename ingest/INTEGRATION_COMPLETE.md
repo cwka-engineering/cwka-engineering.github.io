@@ -2,6 +2,24 @@
 
 Historical record of content processed from `ingest/` into the published wiki.
 
+## 2026-07 — Management layer job descriptions, LONG versions (`ingest/docs` batch)
+
+**Source archive**: added to [`ingest/archive/2026-07-management-roles/`](archive/2026-07-management-roles/) alongside the SHORT versions below. The SHORT versions were what was actually shared with candidates alongside offer letters; the LONG versions are the source they were distilled from, reviewed here for additional nuance.
+
+**New facts added to [onboarding/engineering-roles.md](../onboarding/engineering-roles.html)**:
+- A standing **weekly three-way strategy call** between the Director, Managing FE, and Managing PE.
+- Director oversight detail: engages directly with engineering work only as a teaching/capability-building activity, not as a deliverable; conducts annual reviews "in partnership with the managing engineers"; maintains a direct relationship with a small number of senior engineers who take on **012 ENG Dept Improvement** work as departmental technical contributors — an informal, individually-assigned relationship, **not** a formal title (this 012 tie-in didn't exist anywhere in the wiki before). Also cross-referenced from [tools/time-entry.md](../tools/time-entry.html)'s 012 code description.
+- Managing FE: explicit confirmation the role does **not** pre-approve individual releases (~70% diagnostic-automated, remainder covered by the Lead Engineer's informal pre-review).
+- Managing PE: PE intake QC is performed by individual PEs as routine practice, not a management sign-off — cross-referenced from [production-engineer/processing.md](../workflows/production-engineer/processing.html), which already documented this checklist. Enriched the fix-release-inform vs. unrelease-inform-halt description with the actual tradeoff (upstream friction vs. downstream cost) — still no documented criteria for choosing between them.
+- Outsource Program Manager note enriched with actual purpose (standing up offshore/outsource millwork partners for lower-complexity submittal drawing labor) — still no dedicated JD.
+
+**Incidental fix**: [production-engineer/processing.md](../workflows/production-engineer/processing.html) had a broken scribes anchor (`/standards/layer-organization/#scribes`, a page section with no such anchor) — corrected to the real target.
+
+**Deliberately excluded — flagged to requester, not added to the wiki**:
+- The Wrike/Dash/Epicor scheduling-hub integration architecture (4 "legs," 2 live/1 in-progress/1 deferred) — this is time-bound project status, not stable role/process definition, consistent with how "Current Strategic Priorities" sections were excluded from the SHORT-version integration. Flagged as valuable institutional knowledge with no current home in the wiki (a systems-roadmap page, if one is ever wanted).
+- **"Engineering Consultants" embedded in the FE workflow**, whom the Managing FE has "schedule coordination responsibility" for — this term appears nowhere else in the wiki and isn't explained by either JD. Not guessed at; flagged as an undefined term to clarify with the requester.
+- Promotion-process final authority in engineer-progression-framework.md — left as-is beyond the earlier 1:1 fix; the LONG version's "annual reviews... in partnership with the managing engineers" describes the review cycle, not the separate self-initiated promotion-proposal process, so the ambiguity flagged in the SHORT-version pass still stands.
+
 ## 2026-07 — Management layer job descriptions (`ingest/docs` batch)
 
 **Source archive**: [`ingest/archive/2026-07-management-roles/`](archive/2026-07-management-roles/).
