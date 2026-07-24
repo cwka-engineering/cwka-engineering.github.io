@@ -21,7 +21,7 @@ corpus_tags: [fe-release]
 
 ### Part number search returns no results
 - Verify naming convention (GM, Custom, WC).
-- Check with EA for next number.
+- Check with the Master Scheduler for next number.
 - Ensure correct part class search.
 
 ### BOM Complete checkbox won't check

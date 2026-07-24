@@ -26,7 +26,7 @@ Essential information for new and current engineering team members.
 - **New to Engineering**: Start with [Onboarding Quick Start](/onboarding/quick-start.html)
 - **Fabrication Engineer**: See [FE Workflow](/workflows/fabrication-engineer/)
 - **Production Engineer**: See [PE Workflow](/workflows/production-engineer/)
-- **Engineering Assistant**: See [EA Workflow](/workflows/engineering-assistant.html)
+- **Job creation / scheduling**: See [Master Scheduler Workflow](/workflows/master-scheduler.html)
 
 ## Common Questions
 

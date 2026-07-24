@@ -43,10 +43,10 @@ Essential documents for PE work:
 - **[FE to PE Release](/workflows/fe-to-pe-release.html)** - What to expect from FE
 - **[Epicor Usage](/tools/epicor/)** - Epicor procedures for PE
 
-### Engineering Assistant (EA)
-Essential documents for EA work:
+### Master Scheduler
+Essential documents for job creation and scheduling (Operations-department role; not an Engineering EA hire):
 
-- **[EA Workflow](/workflows/engineering-assistant.html)** - Complete workflow guide for job creation and management
+- **[Master Scheduler Workflow](/workflows/master-scheduler.html)** - Complete workflow guide for job creation and management
 - **[Epicor Usage](/tools/epicor/)** - Epicor procedures and screens
 
 ### All Engineers
@@ -107,7 +107,7 @@ Find step-by-step answers organized by section:
 - [Fabrication Engineer (FE) Workflow](/workflows/fabrication-engineer/) - Complete FE procedures
 - [Production Engineer (PE) Workflow](/workflows/production-engineer/) - Complete PE procedures
 - [FE to PE Release](/workflows/fe-to-pe-release.html) - Release procedures
-- [Engineering Assistant (EA) Workflow](/workflows/engineering-assistant.html) - Job creation and management
+- [Master Scheduler Workflow](/workflows/master-scheduler.html) - Job creation and management
 
 ### Documentation
 - [Engineering Roles & Core Competencies](/onboarding/engineering-roles.html) - Role descriptions

@@ -1,22 +1,22 @@
 ---
 layout: default
-title: Engineering Assistant (EA)
-permalink: /workflows/engineering-assistant.html
+title: Master Scheduler Workflow
+permalink: /workflows/master-scheduler.html
 parent: Workflows
 nav_order: 4
 ---
 
-# Engineering Assistant (EA) Workflow
+# Master Scheduler Workflow
 
-> **Related**: [Engineering Roles](/onboarding/engineering-roles.html) | [Epicor Usage](/tools/epicor/) | [Project Delivery Overview](/onboarding/project-delivery.html) | [Information and artifact flow](/onboarding/project-delivery.html#information-artifact-flow)
+> **Related**: [Engineering Roles](/onboarding/engineering-roles.html) | [Epicor Usage](/tools/epicor/) | [Project Delivery Overview](/onboarding/project-delivery.html) | [Information and artifact flow](/onboarding/project-delivery.html#information-artifact-flow) | [Part Requests — Scheduler Guide](/tools/releases-and-requests/part-requests/scheduler-guide.html)
 
 ## Position Overview
 
-The Engineering Assistant (EA) plays a central role in setting up and managing various job types within Epicor. This document covers the procedures for creating and managing different job types.
+The **Master Scheduler** is an Operations-department role responsible for creating, maintaining, and coordinating the company's manufacturing and engineering schedules. This includes breaking awarded projects down into discrete jobs, entering them into Epicor with labor hours and routing, and keeping schedules current as ship dates and scope change. This document covers the Epicor procedures for creating and managing the job types the Master Scheduler owns.
 
-> **In practice today**, Production Engineers (PEs) perform EA duties for their own project assignments rather than relying on a dedicated EA. The EA role as described here represents the full set of Epicor setup and scheduling responsibilities — regardless of who performs them on a given project.
+> **Historical note**: A dedicated Engineering Assistant (EA) position is not expected to be hired going forward. Before the Master Scheduler role existed, Production Engineers (PEs) performed this scope for their own project assignments; the Master Scheduler now formally owns it. Associated labor is still tracked under the existing EA-labeled Indirect codes where applicable — see [Time Entry](/tools/time-entry.html).
 
-The primary physical output of the EA/PE handoff to the shop floor is the **Traveler** — a printed binder of fabrication documents (shop drawings, CNC SKs, parts lists) organized by shipping component. The PE assembles and prints the traveler as part of the production handoff. See [FE to PE Release](/workflows/fe-to-pe-release.html) for the full handoff procedure.
+The primary physical output of this handoff to the shop floor is the **Traveler** — a printed binder of fabrication documents (shop drawings, CNC SKs, parts lists) organized by shipping component. The PE assembles and prints the traveler as part of the production handoff. See [FE to PE Release](/workflows/fe-to-pe-release.html) for the full handoff procedure.
 
 ## Table of Contents
 
@@ -24,6 +24,7 @@ The primary physical output of the EA/PE handoff to the shop floor is the **Trav
 2. [Sample Job Creation](#sample-job-creation)
 3. [Manufacturing Job Creation](#manufacturing-job-creation-wood-components---wc-and-metal-components---mt)
 4. [Job Scheduling](#job-scheduling)
+5. [New Part Requests](#new-part-requests)
 
 ## Primary Job Creation
 
@@ -184,13 +185,18 @@ Job scheduling is handled via the Scheduling Dashboards in Epicor. See [Epicor U
 
 ### Key Responsibilities
 
-- Update job scheduling due to ship date changes using scheduling workbenches in Epicor
-- Monitor data health and troubleshoot scheduling issues
-- Coordinate with PMs and Engineers on scheduling conflicts
+- Develop, control, and maintain integrated manufacturing and engineering schedules for all awarded projects; update job scheduling due to ship date changes using scheduling workbenches in Epicor
+- Import Epicor data into engineering scheduling software and coordinate with the Director of Engineering to allocate engineering resources across projects
+- Regularly report production and engineering schedule status to management and project teams, proactively identifying constraints, conflicts, and risks; deliver standardized weekly capacity reports
+- Organize and facilitate recurring meetings to review jobs that are over or under budget across all departments
+- Monitor data health and troubleshoot scheduling issues; coordinate with PMs and Engineers on scheduling conflicts
+
+## New Part Requests
+
+Creating and maintaining the Epicor materials database — including timely response to new part requests submitted through the Part Requests Teams workflow — is also part of this role. See [Part Requests — Scheduler Guide](/tools/releases-and-requests/part-requests/scheduler-guide.html) for the full procedure.
 
 ## Related Procedures
 
 - For Epicor navigation and screens, see [Epicor Usage in Engineering](/tools/epicor/)
 - For job release procedures, see [FE to PE Release](/workflows/fe-to-pe-release.html)
 - For role overview, see [Engineering Roles](/onboarding/engineering-roles.html)
-

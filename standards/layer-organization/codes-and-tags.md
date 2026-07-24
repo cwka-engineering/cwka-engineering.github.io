@@ -28,7 +28,7 @@ Example: `PRE_438_331_7_19`
 ### Lay-up Summary
 - Created by PE for Panel Lay-up team.
 - Includes: Code, description, materials, quantities.
-- Stored in Production Files, printed by EA.
+- Stored in Production Files, printed by the Master Scheduler.
 
 ### Lay-up Formula
 - Each face = 1/32" (0.03125")

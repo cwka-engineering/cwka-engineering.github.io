@@ -32,7 +32,7 @@ corpus_tags: [fe-release]
 
 - Verify job is assigned to you in Epicor
 - Check job status (should be Submittal or Post-Submittal)
-- Contact PM or EA if job assignment is incorrect
+- Contact PM or the Master Scheduler if job assignment is incorrect
 
 ### Shipping Components list won't export
 
@@ -43,7 +43,7 @@ corpus_tags: [fe-release]
 ## Getting Help
 
 - **Toolkit Issues**: Check with senior FE or Engineering Director
-- **Epicor Issues**: Contact IT or EA
+- **Epicor Issues**: Contact IT or the Master Scheduler
 - **Process Questions**: See [FE Workflow Overview](/workflows/fabrication-engineer/) or ask your Managing Fabrication Engineer — the first escalation point for technical and workflow questions
 
 ## See Also

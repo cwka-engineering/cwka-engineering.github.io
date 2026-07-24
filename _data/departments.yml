@@ -348,9 +348,6 @@ departments:
       - code: "LE"
         name: "Lead Engineer"
         note: "Ad hoc project-level designation — technical and administrative anchor for the scope. Billable to the Lead Coordination operation on the project's PROJ.ENG bucket job."
-      - code: "EA"
-        name: "Eng. Assistant"
-        note: "Epicor job creation, scheduling, and BOM setup. In practice today, Production Engineers perform EA duties for their own assignments."
     tasks:
       - task: "Receive CDs, learn the project — ask PM/PC questions"
         level: 1

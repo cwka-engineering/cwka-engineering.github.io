@@ -111,18 +111,8 @@ Develop reliable deliverable schedules, make timely decisions, track hours/progr
 ### Accountability
 Clearly state actions and their purpose, proactively identify problems, effectively communicate solutions, deliver results positively, and collaborate with peers.
 
-## Engineering Assistant (EA)
+## Engineering Assistant (EA) — Not a Current Hiring Path
 
-The Engineering Assistant plays a central role in setting up and managing various job types within Epicor.
+A dedicated Engineering Assistant position is not expected to be hired going forward. Most of this scope — Epicor materials database management, job creation (primary, sample, mockup, manufacturing), and job scheduling — has moved to the **Master Scheduler**, a role in the Operations department. Engineers still track any associated labor under the existing EA-labeled Indirect codes where applicable.
 
-**Key Responsibilities**:
-- Manage Epicor materials database, ensuring standardization of entries and timely response to new part requests
-- Create Jobs in coordination with PM and Engineers, updating sales orders and producing Epicor entries, including:
-  - Primary jobs
-  - Sample jobs (SMP)
-  - Mockups
-  - Manufacturing jobs (WC and MT)
-- Update job scheduling due to ship date changes using scheduling workbenches in Epicor
-- Monitor data health, troubleshoot part entries, and gain familiarity with all of Epicor's function and utility
-
-**For detailed procedures**, see the [Engineering Assistant (EA) Workflow](/workflows/engineering-assistant.html).
+**For the current procedures**, see the [Master Scheduler Workflow](/workflows/master-scheduler.html).

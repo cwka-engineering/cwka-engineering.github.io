@@ -10,7 +10,7 @@ The wiki is published via GitHub Pages. Visit the site at: **https://cwka-engine
 
 ```
 ├── onboarding/            # Manifesto, roles, quick start, project delivery, scheduling/purchasing chains
-├── workflows/             # Step-by-step workflows (FE, PE, EA)
+├── workflows/             # Step-by-step workflows (FE, PE, Master Scheduler)
 │   ├── fabrication-engineer/
 │   ├── production-engineer/
 │   └── ...
@@ -48,7 +48,7 @@ To update documentation:
 ### Content Organization
 
 - **Onboarding** (`onboarding/`) — Engineering manifesto, onboarding quick start, roles, project delivery, scheduling chain, purchasing signal chain, progression framework, quick reference
-- **Workflows** (`workflows/`) — Role-specific procedures (FE, PE, EA), FE-to-PE release, quick reference
+- **Workflows** (`workflows/`) — Role-specific procedures (FE, PE, Master Scheduler), FE-to-PE release, quick reference
 - **Standards** (`standards/`) — Rhino drafting (9 pages), layer organization (5 pages), quick reference
 - **Tools** (`tools/`) — Epicor (dashboards, multi-site, job/part management, inventory jobs), time entry, approvals, quick reference
 - **Reference** (`reference/`) — Glossary, folder structure, reference tables (6 pages), training videos
@@ -70,7 +70,7 @@ To add a new video: add an entry to the YAML file, then add `[^transcript-KEY]` 
 ### Navigation
 
 - **Onboarding** — Getting started, roles, project delivery, scheduling/purchasing chains
-- **Workflows** — Step-by-step procedures by role (FE, PE, EA)
+- **Workflows** — Step-by-step procedures by role (FE, PE, Master Scheduler)
 - **Standards** — Rhino drafting and layer organization conventions
 - **Tools** — Guides for software and systems (Epicor, Toggl, Teams)
 - **Reference** — Glossary, folder structure, reference tables, training videos

@@ -23,7 +23,7 @@ When creating a part directly:
    - **Custom**: Custom project-specific parts
    - **WC**: Wood Component parts
    - **MT**: Manufactured (metal) parts
-3. Consult with the EA if unsure.
+3. Consult with the Master Scheduler if unsure — see [Part Requests — Scheduler Guide](/tools/releases-and-requests/part-requests/scheduler-guide.html).
 
 **Required Fields**: Part Number, Description, UOM, Group, Class, Search.
 

@@ -9,7 +9,7 @@ mermaid: true
 ---
 # Project Delivery Overview – Engineering Workflow
 
-> **Related**: [Engineering Roles](/onboarding/engineering-roles.html) | [Engineering Assistant Workflow](/workflows/engineering-assistant.html) | [FE Workflow](/workflows/fabrication-engineer/) | [PE Workflow](/workflows/production-engineer/) | [FE to PE Release](/workflows/fe-to-pe-release.html)
+> **Related**: [Engineering Roles](/onboarding/engineering-roles.html) | [Master Scheduler Workflow](/workflows/master-scheduler.html) | [FE Workflow](/workflows/fabrication-engineer/) | [PE Workflow](/workflows/production-engineer/) | [FE to PE Release](/workflows/fe-to-pe-release.html)
 
 This document provides a high-level overview of the complete engineering workflow from project assignment through closeout.
 
@@ -22,14 +22,14 @@ This document provides a high-level overview of the complete engineering workflo
 sequenceDiagram
     participant Pre as Precon
     participant PM as Project Mgmt
-    participant EA as Eng Assistant
+    participant MS as Master Scheduler
     participant FE as Fabrication Eng
     participant CL as Client / Arch
     participant PE as Prod Eng
 
     Pre->>PM: Contract awarded + working set
     Pre->>FE: Kickoff handoff
-    EA->>FE: Epicor — jobs / ops / materials
+    MS->>FE: Epicor — jobs / ops / materials
 
     Note over FE: Review contract documents
 
@@ -60,7 +60,7 @@ sequenceDiagram
     Note over PE: Programming · CNC
 ```
 
-- **EA** work (job creation, part creation, scheduling) feeds the same Epicor project context FE and PE use—see [Engineering Assistant Workflow](/workflows/engineering-assistant.html).
+- **Master Scheduler** work (job creation, part creation, scheduling) feeds the same Epicor project context FE and PE use—see [Master Scheduler Workflow](/workflows/master-scheduler.html).
 - **FE → PE** is the controlled handoff from fabrication-ready data to production programming; see [FE to PE Release](/workflows/fe-to-pe-release.html).
 
 ## Phase 1: Project Assignment & Initial Setup (Pre-Contract & Design Engineering Initiation)

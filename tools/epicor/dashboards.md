@@ -76,7 +76,7 @@ Use Epicor's **Part Transaction History** or **Quantity Adjustment** views to ch
 - Coordinate with PMs and Engineers on conflicts.
 
 ## See Also
-- [Engineering Assistant Workflow](/workflows/engineering-assistant.html) - Job scheduling details
+- [Master Scheduler Workflow](/workflows/master-scheduler.html) - Job scheduling details
 
 ## Footnotes
 [^transcript-epicor-scheduling]: Source: [Training Video — "Epicor Eng. Scheduling"](https://digifabshop.sharepoint.com/:v:/s/Engineering/IQBFqFHaP_2RS7smowJrv3utAc1B524O73vQKAb27EQQDQc?e=yT7OQa)
