@@ -79,6 +79,24 @@ function dayName(dateStr: string): string {
   return WEEKDAY_NAMES[d.getUTCDay()];
 }
 
+// Sums PTO/Holiday hours (from Paylocity, via PA's per-run fetch) that fall
+// within [weekStart, weekEnd], optionally filtered to one leave_type. Used to
+// net PTO/Holiday out of the Miss calculation and to compute PTO_WASTED.
+// Returns 0 (not an error) if pto_holiday_hours is undefined — callers should
+// separately check pto_data_available on the request if they need to
+// distinguish "confirmed zero PTO" from "PTO data unavailable".
+function sumPtoHolidayHours(
+  ptoRows: { date: string; hours: number; leave_type: "PTO" | "Holiday" }[] | undefined,
+  weekStart: string,
+  weekEnd: string,
+  leaveTypeFilter?: "PTO" | "Holiday"
+): number {
+  if (!ptoRows) return 0;
+  return ptoRows
+    .filter(r => r.date >= weekStart && r.date <= weekEnd && (!leaveTypeFilter || r.leave_type === leaveTypeFilter))
+    .reduce((sum, r) => sum + r.hours, 0);
+}
+
 // Logical day boundary for midnight-crossing detection (4am).
 // Entries that start at or after this hour may span midnight; entries before it are
 // genuine early-morning starts and should not be wrapped.
@@ -138,6 +156,7 @@ function emptySummary(): ClockQCResponse["summary_stats"] {
     total_hours: 0, direct_hours: 0, indirect_hours: 0, indirect_percent: 0,
     missing_hours: 0, overtime_hours: 0, break_time_hours: 0,
     expected_break_time_hours: 0, work_days: 0,
+    pto_hours_applied: 0, holiday_hours_applied: 0, pto_wasted_hours: 0,
   };
 }
 
@@ -174,7 +193,7 @@ export function analyzeClockData(
     pay_period_end: string;
     context: "payroll" | "engineer";
     week_starts_sunday: boolean;
-    pto_holiday_dates?: string[];
+    pto_holiday_hours?: { date: string; hours: number; leave_type: "PTO" | "Holiday" }[];
   }
 ): AnalysisResult {
   const { dept_role, context, week_starts_sunday } = opts;
@@ -259,6 +278,8 @@ export function analyzeClockData(
   const byWeek = groupBy(normalized, r => weekStart(r.clock_in_date, week_starts_sunday));
 
   // OT + Miss flags
+  let total_pto_applied = 0;
+  let total_holiday_applied = 0;
   if (!exempt) {
     for (const [ws, weekRows] of byWeek) {
       const weekTotal = weekRows.reduce((a, r) => a + r.labor_hours, 0);
@@ -274,15 +295,29 @@ export function analyzeClockData(
       }
 
       if (isPayroll) {
-        const missing = Math.max(0, 40 - weekTotal);
-        // TODO: subtract 8h per date in pto_holiday_dates that falls within this week
-        // to avoid false-positive Miss flags on PTO/holiday weeks (wire from Paylocity API)
+        const weekEnd = addDays(ws, 6);
+        const ptoThisWeek = sumPtoHolidayHours(opts.pto_holiday_hours, ws, weekEnd, "PTO");
+        const holidayThisWeek = sumPtoHolidayHours(opts.pto_holiday_hours, ws, weekEnd, "Holiday");
+        total_pto_applied += ptoThisWeek;
+        total_holiday_applied += holidayThisWeek;
+
+        // Net PTO/Holiday out of the shortfall before flagging. If
+        // pto_holiday_hours is undefined (Paylocity fetch failed/degraded
+        // this run), both sums are 0 and this behaves exactly like the old
+        // unverified-PTO logic — the caller (route handler) is responsible
+        // for adding the "may include unverified PTO" caveat to the message
+        // in that case, based on pto_data_available on the request (a real
+        // API field, distinct from this function's opts).
+        const missing = Math.max(0, 40 - weekTotal - ptoThisWeek - holidayThisWeek);
         if (missing > 0) {
           issues.push({
             issue_type: "Miss",
             severity: "warn",
-            week_start: ws, week_end: addDays(ws, 6),
-            details: `missing_hours_week=${missing.toFixed(2)}`,
+            week_start: ws, week_end: weekEnd,
+            details: `missing_hours_week=${missing.toFixed(2)}` +
+              (ptoThisWeek > 0 || holidayThisWeek > 0
+                ? ` (already excludes ${ptoThisWeek.toFixed(2)}h PTO, ${holidayThisWeek.toFixed(2)}h Holiday this week)`
+                : ""),
           });
         }
       }
@@ -519,10 +554,29 @@ export function analyzeClockData(
     }
   }
 
-  // PTO wasted — disabled. CrossTimeReviewAPI never returns PTO rows (PTO lives
-  // exclusively in Paylocity), so this flag can never fire against ERP labor data
-  // alone. Re-enable once Paylocity API access lands and PA passes PTO records
-  // via pto_holiday_dates on ClockQCRequest.
+  // PTO wasted — now live. Previously disabled because Epicor never returns PTO
+  // rows (PTO lives exclusively in Paylocity); now that PA fetches real
+  // PTO/Holiday hours and passes them in, this compares actual worked hours
+  // against PTO used on the same week to catch PTO applied on top of an
+  // already-full 40h week (which doesn't carry over).
+  let total_pto_wasted = 0;
+  if (isPayroll) {
+    for (const [ws, weekRows] of byWeek) {
+      const weekEnd = addDays(ws, 6);
+      const worked = weekRows.reduce((a, r) => a + r.labor_hours, 0);
+      const pto = sumPtoHolidayHours(opts.pto_holiday_hours, ws, weekEnd, "PTO");
+      const wasted = Math.max(0, worked + pto - 40) - Math.max(0, worked - 40);
+      total_pto_wasted += wasted;
+      if (wasted > 0) {
+        issues.push({
+          issue_type: "PTO_WASTED",
+          severity: "warn",
+          week_start: ws, week_end: weekEnd,
+          details: `pto_wasted_hours=${wasted.toFixed(2)}`,
+        });
+      }
+    }
+  }
 
   // Deduplicate by issue_type + week_start; Notes! and Overlap! are per-occurrence
   const seen = new Set<string>();
@@ -534,9 +588,20 @@ export function analyzeClockData(
     return true;
   });
 
+  // Uses the same PTO/Holiday-netted formula as the per-week Miss flag above —
+  // recomputing this without the netting would make summary_stats.missing_hours
+  // disagree with the Miss flag's own details string, and since the digest
+  // reads missing_hours (not the details string) to build "missing X hrs"
+  // lines, that mismatch would show the wrong, pre-PTO number in every digest.
   const total_missing = !exempt && isPayroll
-    ? [...byWeek.values()].reduce((a, wr) =>
-        a + Math.max(0, 40 - wr.reduce((s, r) => s + r.labor_hours, 0)), 0)
+    ? [...byWeek.values()].reduce((a, wr) => {
+        const ws = weekStart(wr[0].clock_in_date, week_starts_sunday);
+        const weekEnd = addDays(ws, 6);
+        const worked = wr.reduce((s, r) => s + r.labor_hours, 0);
+        const pto = sumPtoHolidayHours(opts.pto_holiday_hours, ws, weekEnd, "PTO");
+        const holiday = sumPtoHolidayHours(opts.pto_holiday_hours, ws, weekEnd, "Holiday");
+        return a + Math.max(0, 40 - worked - pto - holiday);
+      }, 0)
     : 0;
   const total_ot = [...byWeek.values()].reduce((a, wr) =>
     a + Math.max(0, wr.reduce((s, r) => s + r.labor_hours, 0) - 40), 0);
@@ -553,6 +618,9 @@ export function analyzeClockData(
       break_time_hours: round2(break_time_hours),
       expected_break_time_hours: round2(expected_break_time_hours),
       work_days,
+      pto_hours_applied: round2(total_pto_applied),
+      holiday_hours_applied: round2(total_holiday_applied),
+      pto_wasted_hours: round2(total_pto_wasted),
     },
   };
 }

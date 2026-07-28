@@ -7,6 +7,7 @@ export interface DigestFinding {
   name: string;
   issue_count: number;
   issue_types: string[];           // e.g. ["Miss", "Notes!"] (full issue objects — see extraction note below)
+  category: "FabEng" | "ProdEng" | "Consultant" | "Unknown";  // set by PA (Compose_Category)
   summary_stats?: {                // pass-through of the per-engineer QC call's summary_stats
     total_hours: number;
     direct_hours: number;
@@ -17,6 +18,9 @@ export interface DigestFinding {
     break_time_hours: number;
     expected_break_time_hours: number;
     work_days: number;
+    pto_hours_applied: number;      // PTO hours subtracted from missing_hours this period
+    holiday_hours_applied: number;  // Holiday hours subtracted from missing_hours this period
+    pto_wasted_hours: number;       // total PTO_WASTED hours this period (0 if none / PTO unavailable)
   };
 }
 
@@ -29,11 +33,24 @@ export interface ClockQCRequest {
   context: "payroll" | "engineer" | "digest";
   labor_rows: Record<string, unknown>[];
   week_starts_sunday?: boolean;
-  pto_holiday_dates?: string[];    // TODO: wire from Paylocity API once available
+  // Paylocity PTO/Holiday integration. Real hours per date, not just dates —
+  // partial-day PTO is real, so a flat 8h/date assumption would be wrong.
+  pto_holiday_hours?: { date: string; hours: number; leave_type: "PTO" | "Holiday" }[];
+  pto_data_available?: boolean;    // false if this run's Paylocity fetch failed/degraded —
+                                    // triggers the fallback "may include PTO" caveat instead
+                                    // of trusting missing_hours as already-net-of-PTO
   // digest context only — labor_rows ignored when context === "digest"
   findings?: DigestFinding[];
   total_engineers?: number;
   flagged_count?: number;
+  // per-category totals — needed so each manager's own digest can report an
+  // accurate "X of Y" for their team specifically, not just the org-wide number
+  total_fabeng?: number;
+  flagged_fabeng?: number;
+  total_prodeng?: number;
+  flagged_prodeng?: number;
+  total_consultant?: number;
+  flagged_consultant?: number;
 }
 
 export interface QCIssue {
@@ -58,6 +75,9 @@ export interface ClockQCResponse {
     break_time_hours: number;
     expected_break_time_hours: number;
     work_days: number;
+    pto_hours_applied: number;      // PTO hours subtracted from missing_hours this period
+    holiday_hours_applied: number;  // Holiday hours subtracted from missing_hours this period
+    pto_wasted_hours: number;       // total PTO_WASTED hours this period
   };
   message_text: string | null;
 }
@@ -73,7 +93,7 @@ For all-clear weeks:
 Write 2–3 lines max: confirm the week looks clean, show the top-line hours (total, direct, indirect), and note that this check runs every Monday. No bullet points.
 
 Resolution instructions by issue type:
-- Miss: You may be short hours this week. If you took approved PTO or a holiday, you can disregard this — those hours aren't reflected yet. Otherwise, log the missing time to a job or indirect code in Epicor.
+- Miss: Check the PTO verification note near the top of the data you were given. If it says PTO/holiday data was successfully retrieved, this missing-hours figure already excludes approved PTO and holidays — treat it as real delinquency and tell the person to log the missing time to a job or indirect code in Epicor. If it says PTO/holiday data could not be retrieved, add the caveat that this may include approved PTO or a holiday not yet reflected — disregard if that applies, otherwise log the missing time.
 - OT: Verify hours are correct; if accurate, confirm with your manager.
 - D10+: Check for accidental duplicate entries on that day.
 - Break!: Add missing Break-Time (008) entries in CrossTimeReview for the flagged days.
@@ -82,6 +102,7 @@ Resolution instructions by issue type:
 - Overlap!: Open both overlapping rows in CrossTimeReview and adjust clock times so they don't overlap.
 - Idle: Idle Time entries over 1h need manager review. Confirm with your manager or correct the entry.
 - Lunch?: Days without a midday gap may be missing a Break-Time row — verify your clock-in/out are accurate.
+- PTO_WASTED: You used PTO on a week where you'd already reached 40 hours worked — those PTO hours don't carry over. Confirm with your manager whether this was intentional.
 - NO_LABOR_ROWS: No labor rows were found for this pay period. If you worked, submit your time immediately.`;
 
 export async function handleClockedTimeQC(request: Request, env: Env): Promise<Response | null> {
@@ -116,7 +137,7 @@ export async function handleClockedTimeQC(request: Request, env: Env): Promise<R
     pay_period_end: body.pay_period_end,
     context: body.context ?? "payroll",
     week_starts_sunday: body.week_starts_sunday ?? true,
-    pto_holiday_dates: body.pto_holiday_dates,
+    pto_holiday_hours: body.pto_holiday_hours,
   });
 
   let message_text: string | null = null;
@@ -126,9 +147,21 @@ export async function handleClockedTimeQC(request: Request, env: Env): Promise<R
       .map(i => `[${i.issue_type}]${i.week_start ? ` Week ${i.week_start}: ` : " "}${i.details}`)
       .join("\n");
 
+    // Only surface the PTO verification note when it's actually relevant to
+    // something in this message (a Miss or PTO_WASTED finding) — otherwise a
+    // run with unverified PTO would attach an irrelevant "may include PTO"
+    // caveat to messages containing only e.g. Overlap!/Notes! issues.
+    const relevantToPto = issues.some(i => i.issue_type === "Miss" || i.issue_type === "PTO_WASTED");
+    const ptoNote = relevantToPto
+      ? (body.pto_data_available
+          ? "PTO/holiday data was successfully retrieved from Paylocity for this run — missing-hours figures below already exclude approved PTO and holidays.\n\n"
+          : "PTO/holiday data could not be retrieved from Paylocity this run — missing-hours figures below may include approved PTO or holidays not yet reflected.\n\n")
+      : "";
+
     const userPrompt = issues.length > 0
       ? `Employee: ${body.employee_name}\nRole: ${body.dept_role}\n` +
         `Pay period: ${body.pay_period_start} – ${body.pay_period_end}\n\n` +
+        `${ptoNote}` +
         `Stats: ${summary_stats.total_hours}h total | ${summary_stats.direct_hours}h direct | ` +
         `${summary_stats.missing_hours}h missing\n` +
         `Break: ${summary_stats.break_time_hours}/${summary_stats.expected_break_time_hours}h expected\n\n` +
@@ -166,24 +199,97 @@ export async function handleClockedTimeQC(request: Request, env: Env): Promise<R
 // Digest handler — weekly manager summary across all engineers
 // ---------------------------------------------------------------------------
 
-const DIGEST_SYSTEM_PROMPT = `You write short, direct Monday morning Teams DMs to engineering managers at a custom architectural fabrication company summarizing the weekly clocked-time QC findings across the team. Tone is factual and concise — this is a brief heads-up, not a detailed report. Use plain Markdown (bold, bullets). No preamble, no sign-off.
+// Shared instruction block used by all three digest audiences (Director,
+// FabEng manager, ProdEng manager). Keeping this as one function avoids the
+// three prompts drifting out of sync on formatting rules over time.
+function digestSharedInstructions(): string {
+  return `Tone is factual and concise — this is a brief heads-up, not a detailed
+report. Use plain Markdown (bold, bullets). No preamble, no sign-off.
+
+CRITICAL — day-of-week labels: every date in the issue data already has its correct
+weekday name attached (e.g. "Thursday 2026-07-02"). Always use that exact weekday
+name verbatim when referencing the date. NEVER calculate, guess, or state a day of
+week yourself from a bare date — you will get it wrong. If a date appears without
+a weekday name attached, state the date alone (no day name) rather than inventing one.
+
+When listing flagged engineers: each engineer's line lists codes in this exact
+format: \`CodeName(field=value)\` for Miss/OT/PTO_WASTED, or \`CodeName:N\` for
+everything else — every code shown already has its number attached, so read the
+number directly from the code string itself rather than looking elsewhere in the
+line. Translate:
+- \`Miss(missing_hours=X)\` → "missing X hrs" (use the exact value shown)
+- \`OT(overtime_hours=X)\` → "X hrs overtime"
+- \`Notes!:N\` → "N indirect row(s) need notes"
+- \`Overlap!:N\` → "N overlapping clock entry/entries"
+- \`Break!:N\` → "missing breaks on N day(s)"
+- \`Idle:N\` → "idle time flagged Nx"
+- \`Lunch?:N\` → "no lunch gap on N day(s)"
+- \`D10+:N\` → "N day(s) over 10 hrs"
+- \`NO_LABOR_ROWS:N\` → "no time logged"
+- \`Miscode:N\` → "N indirect entries may be coded wrong (worth a second look)"
+- \`PTO_WASTED(pto_wasted_hours=X)\` → "X wasted PTO hrs (used on an already-full week)"
+If a code shows \`missing_hours=unknown\` or \`overtime_hours=unknown\`, omit the
+number for that one code only rather than guessing — but this should be rare.
+Never write "missing hours" or "overtime" with no number when the code string
+provided one. Keep each engineer's line concise — magnitudes first, roughly
+10-14 words after the name.
+
+A PTO verification note may appear in the data you're given, stating whether
+PTO/holiday data was retrieved from Paylocity this run. It is only included when
+relevant to a Miss or PTO_WASTED finding in this message. If present and it says
+PTO data WAS verified, do NOT add any PTO caveat — missing-hours figures already
+exclude approved PTO/holidays. If present and it says PTO data could NOT be
+verified, add one brief caveat line before the bullet list (not per-engineer):
+note that missing-hours figures may include approved PTO or holiday time not yet
+reflected, since this run couldn't verify PTO usage — so the real delinquency
+count may be lower than shown. If the note is absent entirely, don't mention PTO
+at all. Only ever add the caveat when the note is present and says verification
+failed, and only once per message, never per-engineer.
+
+One closing line noting engineers have been notified directly and corrections
+are due end of day today (Monday) — the same day this check runs.`;
+}
+
+const DIRECTOR_DIGEST_SYSTEM_PROMPT = `You write short, direct Monday morning
+Teams DMs to the Director of Engineering at a custom architectural fabrication
+company, summarizing the weekly clocked-time QC findings across the ENTIRE
+engineering team, organized into three sections.
+
+${digestSharedInstructions()}
+
+Structure for the Director's message specifically:
+- One-sentence org-wide summary (X of Y total engineers flagged, or all clear)
+- Three sections, each with its own bold header and its own "X of Y flagged"
+  line, in this order: **Fabrication Engineering**, **Production Engineering**,
+  **Engineering Consultants**. If a section has zero people in that category
+  entirely, write "No [category] this week" instead of an empty header. If a
+  section has people but none are flagged, write "All clear" under that header —
+  don't omit the section.
+- Within each section, bullet the flagged engineers in that category only,
+  using the same code-translation rules above.
+- The PTO caveat (if applicable) and closing deadline line apply once, at the
+  very end of the whole message — not repeated per section.`;
+
+// Shared builder for the two single-team manager digests (FabEng, ProdEng).
+// These are structurally identical except for which team they're scoped to,
+// so this is a function rather than two near-duplicate constants.
+function buildTeamDigestPrompt(teamLabel: string): string {
+  return `You write short, direct Monday morning Teams DMs to an engineering
+manager at a custom architectural fabrication company, summarizing the weekly
+clocked-time QC findings for their team specifically — ${teamLabel} — only.
+Do not mention other teams; this message is scoped to ${teamLabel} alone.
+
+${digestSharedInstructions()}
 
 Structure:
-- One-sentence team summary (X of Y engineers flagged, or all clear)
-- If any flagged: bullet list of named engineers, each with a short plain-language gist of their issues. Each engineer's line lists codes in this exact format: \`CodeName(field=value)\` for Miss/OT, or \`CodeName:N\` for everything else — every code shown already has its number attached, so read the number directly from the code string itself rather than looking elsewhere in the line. Translate:
-  - \`Miss(missing_hours=X)\` → "missing X hrs" (use the exact value shown)
-  - \`OT(overtime_hours=X)\` → "X hrs overtime"
-  - \`Notes!:N\` → "N indirect row(s) need notes"
-  - \`Overlap!:N\` → "N overlapping clock entry/entries"
-  - \`Break!:N\` → "missing breaks on N day(s)"
-  - \`Idle:N\` → "idle time flagged Nx"
-  - \`Lunch?:N\` → "no lunch gap on N day(s)"
-  - \`D10+:N\` → "N day(s) over 10 hrs"
-  - \`NO_LABOR_ROWS:N\` → "no time logged"
-  - \`Miscode:N\` → "N indirect entries may be coded wrong (worth a second look)"
-  If a code shows \`missing_hours=unknown\` or \`overtime_hours=unknown\`, omit the number for that one code only rather than guessing — but this should be rare. Never write "missing hours" or "overtime" with no number when the code string provided one. Keep each engineer's line concise — magnitudes first, roughly 10-14 words after the name.
-- If the team has multiple engineers flagged with "Miss" (missing hours), add one brief caveat line before the bullet list (not per-engineer): note that missing-hours figures may include approved PTO or holiday time not yet reflected in Epicor, since this check currently can't verify PTO usage — so the real delinquency count may be lower than shown. Skip this caveat entirely if no one has a "Miss" flag.
-- One closing line noting engineers have been notified directly and corrections are due end of day today (Monday) — the same day this check runs.`;
+- One-sentence team summary scoped to ${teamLabel} (X of Y ${teamLabel}
+  engineers flagged, or all clear)
+- If any flagged: bullet list of named engineers in ${teamLabel} only, using
+  the code-translation rules above.`;
+}
+
+const FABENG_DIGEST_SYSTEM_PROMPT = buildTeamDigestPrompt("Fabrication Engineering");
+const PRODENG_DIGEST_SYSTEM_PROMPT = buildTeamDigestPrompt("Production Engineering");
 
 // Extracts issue_type codes (not deduped) from a findings entry's issue_types
 // field. Handles both shapes defensively: a flat array of code strings, or (as
@@ -212,6 +318,20 @@ function countIssueTypes(issueTypesRaw: unknown): Record<string, number> {
   return counts;
 }
 
+// True if any of the given findings include a Miss or PTO_WASTED issue — the
+// only two issue types the PTO-verification caveat is actually about. Used to
+// gate whether the caveat note gets surfaced to Claude at all: without this
+// check, a run with unverified PTO would attach "may include unverified PTO"
+// to every digest regardless of whether anything in it concerns missing hours
+// (e.g. a section flagged only for Overlap!/Notes!), and to a fully clean
+// digest with nothing to caveat at all.
+function hasMissOrPtoWasted(findings: DigestFinding[]): boolean {
+  return findings.some(f => {
+    const codes = extractRawIssueTypeCodes(f.issue_types);
+    return codes.includes("Miss") || codes.includes("PTO_WASTED");
+  });
+}
+
 // Builds one self-contained string per issue code, with its magnitude embedded
 // directly (not left in a separate stats block). A prior version put
 // missing_hours/overtime_hours in a separate "stats" segment while counts lived
@@ -229,57 +349,120 @@ function buildCodeMagnitudeStrings(f: DigestFinding): string[] {
     if (code === "OT") {
       return `OT(overtime_hours=${stats?.overtime_hours ?? "unknown"})`;
     }
+    if (code === "PTO_WASTED") {
+      return `PTO_WASTED(pto_wasted_hours=${stats?.pto_wasted_hours ?? "unknown"})`;
+    }
     return `${code}:${n}`;
   });
 }
 
+// Formats one finding as a bullet-ready line: "- Name: N issues — codes..."
+function formatFindingLine(f: DigestFinding): string {
+  const codeStrings = buildCodeMagnitudeStrings(f);
+  const codesLine = codeStrings.length > 0 ? codeStrings.join(", ") : "none";
+  return `- ${f.name}: ${f.issue_count} issue${f.issue_count !== 1 ? "s" : ""} — ${codesLine}`;
+}
+
+// Builds the "PTO/holiday data was[not] retrieved..." note, or "" if omitted
+// entirely. Shared by the per-engineer path (above) and every digest audience
+// below so the exact wording can't drift between the two call sites.
+function buildPtoNote(ptoDataAvailable: boolean | undefined): string {
+  return ptoDataAvailable
+    ? "PTO/holiday data was successfully retrieved from Paylocity for this run — missing-hours figures below already exclude approved PTO and holidays.\n\n"
+    : "PTO/holiday data could not be retrieved from Paylocity this run — missing-hours figures below may include approved PTO or holidays not yet reflected.\n\n";
+}
+
 async function handleDigest(body: ClockQCRequest, env: Env): Promise<Response> {
   const {
-    pay_period_start,
-    pay_period_end,
-    findings = [],
-    total_engineers = 0,
-    flagged_count = 0,
+    pay_period_start, pay_period_end, findings = [],
+    total_engineers = 0, flagged_count = 0,
+    total_fabeng = 0, flagged_fabeng = 0,
+    total_prodeng = 0, flagged_prodeng = 0,
+    total_consultant = 0, flagged_consultant = 0,
+    pto_data_available,
   } = body;
 
-  const flaggedLines = findings
-    .map(f => {
-      const codeStrings = buildCodeMagnitudeStrings(f);
-      const codesLine = codeStrings.length > 0 ? codeStrings.join(", ") : "none";
-      return `- ${f.name}: ${f.issue_count} issue${f.issue_count !== 1 ? "s" : ""} — ${codesLine}`;
-    })
-    .join("\n");
+  const fabengFindings = findings.filter(f => f.category === "FabEng");
+  const prodengFindings = findings.filter(f => f.category === "ProdEng");
+  const consultantFindings = findings.filter(f => f.category === "Consultant");
 
-  const userPrompt = flagged_count > 0
+  // Diagnostic safety net for the PA-side dependency: this three-way split
+  // only works once PA's Compose_Category action is live and tagging every
+  // finding. If findings exist but none matched a known category, the three
+  // sections below will all silently render "(none flagged)" while the
+  // org-wide top-line count still looks correct — easy to miss without this
+  // warning. Check `wrangler tail` if this ever fires.
+  if (findings.length > 0 && fabengFindings.length + prodengFindings.length + consultantFindings.length === 0) {
+    console.warn(
+      "clocked-time-qc digest: findings present but none carry a recognized category " +
+      "(FabEng/ProdEng/Consultant) — PA's Compose_Category step may not be updated yet."
+    );
+  }
+
+  // Only surface the PTO note when it's relevant (a Miss or PTO_WASTED finding
+  // exists) — see hasMissOrPtoWasted for why an unconditional caveat is wrong.
+  const orgPtoNote = hasMissOrPtoWasted(findings) ? buildPtoNote(pto_data_available) : "";
+  const fabengPtoNote = hasMissOrPtoWasted(fabengFindings) ? buildPtoNote(pto_data_available) : "";
+  const prodengPtoNote = hasMissOrPtoWasted(prodengFindings) ? buildPtoNote(pto_data_available) : "";
+
+  // --- Director message: full org, three sections ---
+  const directorSectionsPrompt =
+    `Fabrication Engineering: ${flagged_fabeng} of ${total_fabeng} flagged\n` +
+    (fabengFindings.length > 0 ? fabengFindings.map(formatFindingLine).join("\n") : "(none flagged)") +
+    `\n\nProduction Engineering: ${flagged_prodeng} of ${total_prodeng} flagged\n` +
+    (prodengFindings.length > 0 ? prodengFindings.map(formatFindingLine).join("\n") : "(none flagged)") +
+    `\n\nEngineering Consultants: ${flagged_consultant} of ${total_consultant} flagged\n` +
+    (consultantFindings.length > 0 ? consultantFindings.map(formatFindingLine).join("\n") : "(none flagged)");
+
+  const directorUserPrompt =
+    `Pay period: ${pay_period_start} – ${pay_period_end}\n` +
+    `${orgPtoNote}` +
+    `Org-wide: ${flagged_count} of ${total_engineers} engineers flagged\n\n` +
+    `${directorSectionsPrompt}\n\nWrite the Director's three-section digest DM.`;
+
+  // --- FabEng manager message: FabEng only ---
+  const fabengUserPrompt = flagged_fabeng > 0
     ? `Pay period: ${pay_period_start} – ${pay_period_end}\n` +
-      `Team: ${flagged_count} of ${total_engineers} engineers flagged\n\n` +
-      `Flagged engineers (name: issue count — codes, each with its number already\n` +
-      `attached in parentheses or as a count). Translate each code+number pair into\n` +
-      `a natural phrase per the system prompt's table — every code listed here has\n` +
-      `a number attached; never drop it:\n` +
-      `${flaggedLines}\n\nWrite the manager digest DM.`
+      `${fabengPtoNote}` +
+      `Fabrication Engineering: ${flagged_fabeng} of ${total_fabeng} flagged\n\n` +
+      `${fabengFindings.map(formatFindingLine).join("\n")}\n\nWrite the manager digest DM.`
     : `Pay period: ${pay_period_start} – ${pay_period_end}\n` +
-      `Team: all ${total_engineers} engineers clear — no issues found.\n\n` +
+      `Fabrication Engineering: all ${total_fabeng} engineers clear — no issues found.\n\n` +
       `Write the all-clear manager digest DM.`;
 
-  let message_text: string | null = null;
+  // --- ProdEng manager message: ProdEng only ---
+  const prodengUserPrompt = flagged_prodeng > 0
+    ? `Pay period: ${pay_period_start} – ${pay_period_end}\n` +
+      `${prodengPtoNote}` +
+      `Production Engineering: ${flagged_prodeng} of ${total_prodeng} flagged\n\n` +
+      `${prodengFindings.map(formatFindingLine).join("\n")}\n\nWrite the manager digest DM.`
+    : `Pay period: ${pay_period_start} – ${pay_period_end}\n` +
+      `Production Engineering: all ${total_prodeng} engineers clear — no issues found.\n\n` +
+      `Write the all-clear manager digest DM.`;
+
+  let message_text_director: string | null = null;
+  let message_text_fabeng: string | null = null;
+  let message_text_prodeng: string | null = null;
+
   try {
-    message_text = await callClaude(
-      userPrompt,
-      DIGEST_SYSTEM_PROMPT,
-      env.TIME_ENTRY_ANTHROPIC_API_KEY,
-      env.PA_CLAUDE_MODEL,
-      768,
-    );
+    [message_text_director, message_text_fabeng, message_text_prodeng] = await Promise.all([
+      callClaude(directorUserPrompt, DIRECTOR_DIGEST_SYSTEM_PROMPT, env.TIME_ENTRY_ANTHROPIC_API_KEY, env.PA_CLAUDE_MODEL, 1024),
+      callClaude(fabengUserPrompt, FABENG_DIGEST_SYSTEM_PROMPT, env.TIME_ENTRY_ANTHROPIC_API_KEY, env.PA_CLAUDE_MODEL, 768),
+      callClaude(prodengUserPrompt, PRODENG_DIGEST_SYSTEM_PROMPT, env.TIME_ENTRY_ANTHROPIC_API_KEY, env.PA_CLAUDE_MODEL, 768),
+    ]);
   } catch (err) {
     console.error("clocked-time-qc digest Claude error:", err);
+    // Promise.all rejects if ANY call fails, which would leave all three null
+    // even if two succeeded. If partial failures matter more than simplicity
+    // here, switch to Promise.allSettled and handle each result individually —
+    // not done here since a fully-null response degrades cleanly on the PA
+    // side (skip any Teams send whose message is null).
   }
 
   return jsonResponse(200, JSON.stringify({
     has_issues: flagged_count > 0,
-    issue_count: flagged_count,
-    issues: [],
-    summary_stats: null,
-    message_text,
+    message_text_director,
+    message_text_fabeng,
+    message_text_prodeng,
   }));
 }
