@@ -230,14 +230,26 @@ export async function handleClockedTimeQC(request: Request, env: Env): Promise<R
   } satisfies ClockQCResponse));
 }
 
-// Formats the topline hours-summary line shared by the individual DM and all
-// three digest messages:
-//   2026-07-18 thru 2026-07-25
-//   1000 hrs Total, 700 hrs Direct, 250 hrs Indirect, 50 hrs PTO, 25 hrs OT
+// Formats the topline hours-summary table shared by the individual DM and all
+// three digest messages. Table, not a comma-separated sentence, per C9
+// feedback from a real run (the sentence format was hard to scan). Values
+// arrive pre-rounded — PA's Compose_Labor_Summary_* actions round the digest
+// path's inputs, and this Worker's own computeLaborSummary() rounds the
+// individual-DM path — so no rounding happens here.
+//
+// UNVERIFIED: whether Teams renders this as an actual table or literal
+// pipe/HTML text depends on a rendering pipeline this repo can't see (PA
+// wraps message_text in `<p class="editor-paragraph">@{...}</p>` for the
+// Teams "Post message" action). Bold/bullets in the rest of each message
+// already render correctly today, so *something* in that pipeline handles
+// markdown or HTML -- this assumes GFM-style pipe tables ride the same path.
+// If it renders as literal `| Total | Direct |...` text in a live message,
+// switch to an HTML <table> instead (see the C9 note in the build guide).
 function formatLaborSummaryLine(s: LaborSummary): string {
-  return `${s.pay_period_start} thru ${s.pay_period_end}\n` +
-    `${s.total_hours} hrs Total, ${s.direct_hours} hrs Direct, ` +
-    `${s.indirect_hours} hrs Indirect, ${s.pto_hours} hrs PTO, ${s.ot_hours} hrs OT\n\n`;
+  return `${s.pay_period_start} thru ${s.pay_period_end}\n\n` +
+    `| Total | Direct | Indirect | PTO | OT |\n` +
+    `|---|---|---|---|---|\n` +
+    `| ${s.total_hours} | ${s.direct_hours} | ${s.indirect_hours} | ${s.pto_hours} | ${s.ot_hours} |\n\n`;
 }
 
 // ---------------------------------------------------------------------------
