@@ -24,6 +24,20 @@ export interface DigestFinding {
   };
 }
 
+// Topline hours summary prepended to every message this Worker generates
+// (individual DM + all three digest messages). OT_hours is a SUBSET of
+// direct_hours, not additive — direct_hours + indirect_hours + pto_hours
+// equals total_hours; never add ot_hours into that sum.
+export interface LaborSummary {
+  pay_period_start: string;
+  pay_period_end: string;
+  total_hours: number;
+  direct_hours: number;
+  indirect_hours: number;
+  pto_hours: number;   // PTO + Holiday combined
+  ot_hours: number;    // subset of direct_hours, NOT additive to total_hours
+}
+
 export interface ClockQCRequest {
   employee_id: string;
   employee_name: string;
@@ -51,6 +65,16 @@ export interface ClockQCRequest {
   flagged_prodeng?: number;
   total_consultant?: number;
   flagged_consultant?: number;
+  // Scope-level hour aggregates PA computes and passes, mirroring
+  // total_fabeng/flagged_fabeng — this Worker never sees more than one
+  // engineer's data per payroll call, so it cannot derive these itself.
+  // Sent as literal null until PA sees a real (non-null) labor_summary come
+  // back from this Worker's own payroll-path response for at least one
+  // engineer in a run — never a zero-valued object. Already live on the PA
+  // side (2026-08-03), ahead of this Worker's support for it.
+  labor_summary_org?: LaborSummary | null;      // whole department — Director's message
+  labor_summary_fabeng?: LaborSummary | null;   // FabEng manager's message
+  labor_summary_prodeng?: LaborSummary | null;  // ProdEng manager's message
 }
 
 export interface QCIssue {
@@ -80,6 +104,7 @@ export interface ClockQCResponse {
     pto_wasted_hours: number;       // total PTO_WASTED hours this period
   };
   message_text: string | null;
+  labor_summary: LaborSummary | null;  // payroll context only; null for engineer/no-labor-rows
 }
 
 const CLOCKED_TIME_QC_SYSTEM_PROMPT = `You write short, direct Teams DMs to individual contributors at a custom architectural fabrication company about their prior pay-period clocked time. Tone is matter-of-fact and collegial — not scolding, not effusive. Use plain Markdown (bold, bullets). No preamble, no sign-off.
@@ -131,7 +156,7 @@ export async function handleClockedTimeQC(request: Request, env: Env): Promise<R
     return jsonResponse(400, JSON.stringify({ error: "employee_id and labor_rows required" }));
   }
 
-  const { issues, summary_stats } = analyzeClockData(body.labor_rows, {
+  const { issues, summary_stats, labor_summary } = analyzeClockData(body.labor_rows, {
     dept_role: body.dept_role,
     pay_period_start: body.pay_period_start,
     pay_period_end: body.pay_period_end,
@@ -184,6 +209,15 @@ export async function handleClockedTimeQC(request: Request, env: Env): Promise<R
       console.error("clocked-time-qc Claude error:", err);
       // Degrade gracefully — return issues without message_text
     }
+
+    // Prepend the topline hours line after Claude returns — string
+    // concatenation, never part of the prompt. The numbers have to be exact;
+    // an LLM paraphrasing an hours line is exactly the kind of thing that
+    // silently drifts (a digit transposed, a unit dropped) with no error to
+    // catch it.
+    if (message_text && labor_summary) {
+      message_text = formatLaborSummaryLine(labor_summary) + message_text;
+    }
   }
 
   return jsonResponse(200, JSON.stringify({
@@ -192,7 +226,18 @@ export async function handleClockedTimeQC(request: Request, env: Env): Promise<R
     issues,
     summary_stats,
     message_text,
+    labor_summary,
   } satisfies ClockQCResponse));
+}
+
+// Formats the topline hours-summary line shared by the individual DM and all
+// three digest messages:
+//   2026-07-18 thru 2026-07-25
+//   1000 hrs Total, 700 hrs Direct, 250 hrs Indirect, 50 hrs PTO, 25 hrs OT
+function formatLaborSummaryLine(s: LaborSummary): string {
+  return `${s.pay_period_start} thru ${s.pay_period_end}\n` +
+    `${s.total_hours} hrs Total, ${s.direct_hours} hrs Direct, ` +
+    `${s.indirect_hours} hrs Indirect, ${s.pto_hours} hrs PTO, ${s.ot_hours} hrs OT\n\n`;
 }
 
 // ---------------------------------------------------------------------------
@@ -380,6 +425,7 @@ async function handleDigest(body: ClockQCRequest, env: Env): Promise<Response> {
     total_prodeng = 0, flagged_prodeng = 0,
     total_consultant = 0, flagged_consultant = 0,
     pto_data_available,
+    labor_summary_org, labor_summary_fabeng, labor_summary_prodeng,
   } = body;
 
   const fabengFindings = findings.filter(f => f.category === "FabEng");
@@ -457,6 +503,23 @@ async function handleDigest(body: ClockQCRequest, env: Env): Promise<Response> {
     // here, switch to Promise.allSettled and handle each result individually —
     // not done here since a fully-null response degrades cleanly on the PA
     // side (skip any Teams send whose message is null).
+  }
+
+  // Prepend the topline hours line to each message, after the Claude calls
+  // resolve — string concatenation, never part of the prompt. PA sends these
+  // as literal null until it has seen a real (non-null) labor_summary come
+  // back from this Worker's own payroll-path response for at least one
+  // engineer in a run, so a null message stays null here — it never gets a
+  // summary line glued onto nothing, and a null labor_summary_* just means no
+  // line yet, not an error.
+  if (message_text_director && labor_summary_org) {
+    message_text_director = formatLaborSummaryLine(labor_summary_org) + message_text_director;
+  }
+  if (message_text_fabeng && labor_summary_fabeng) {
+    message_text_fabeng = formatLaborSummaryLine(labor_summary_fabeng) + message_text_fabeng;
+  }
+  if (message_text_prodeng && labor_summary_prodeng) {
+    message_text_prodeng = formatLaborSummaryLine(labor_summary_prodeng) + message_text_prodeng;
   }
 
   return jsonResponse(200, JSON.stringify({

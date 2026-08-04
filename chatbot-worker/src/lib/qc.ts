@@ -1,4 +1,4 @@
-import type { QCIssue, ClockQCResponse } from "../routes/clocked-time-qc";
+import type { QCIssue, ClockQCResponse, LaborSummary } from "../routes/clocked-time-qc";
 
 // ---------------------------------------------------------------------------
 // Field mapping — CrossTimeReviewAPI Epicor field names → normalized
@@ -183,6 +183,37 @@ const EXEMPT_ROLES = ["Director of Engineering", "Engineering Consultant"];
 export interface AnalysisResult {
   issues: QCIssue[];
   summary_stats: ClockQCResponse["summary_stats"];
+  labor_summary: LaborSummary | null;
+}
+
+// Builds the topline hours-summary line from figures analyzeClockData already
+// has on hand — direct/indirect hours (the existing "P"/"I" split, the same
+// check summary_stats.direct_hours/indirect_hours already use), the OT total
+// already computed for summary_stats.overtime_hours, and the PTO/Holiday
+// totals already accumulated for the Miss flag. Deliberately does NOT
+// re-derive any of these independently — a second code path computing the
+// same number a different way is exactly what drifts out of sync later, and
+// guarantees this line can never disagree with the Miss/OT figures elsewhere
+// in the same response.
+function computeLaborSummary(
+  direct_hours: number,
+  indirect_hours: number,
+  pto_hours_applied: number,
+  holiday_hours_applied: number,
+  total_ot: number,
+  pay_period_start: string,
+  pay_period_end: string,
+): LaborSummary {
+  const pto_hours = pto_hours_applied + holiday_hours_applied;
+  return {
+    pay_period_start,
+    pay_period_end,
+    total_hours: round2(direct_hours + indirect_hours + pto_hours),
+    direct_hours: round2(direct_hours),
+    indirect_hours: round2(indirect_hours),
+    pto_hours: round2(pto_hours),
+    ot_hours: round2(total_ot), // subset of direct_hours, not additive to total_hours
+  };
 }
 
 export function analyzeClockData(
@@ -215,7 +246,7 @@ export function analyzeClockData(
         details: `no clocked labor rows for ${opts.pay_period_start}..${opts.pay_period_end}`,
       });
     }
-    return { issues, summary_stats: emptySummary() };
+    return { issues, summary_stats: emptySummary(), labor_summary: null };
   }
 
   const normalized = rows
@@ -243,7 +274,7 @@ export function analyzeClockData(
         details: `no clocked labor rows for ${opts.pay_period_start}..${opts.pay_period_end}`,
       });
     }
-    return { issues, summary_stats: emptySummary() };
+    return { issues, summary_stats: emptySummary(), labor_summary: null };
   }
 
   // --- Summary stats ---
@@ -622,5 +653,13 @@ export function analyzeClockData(
       holiday_hours_applied: round2(total_holiday_applied),
       pto_wasted_hours: round2(total_pto_wasted),
     },
+    labor_summary: isPayroll
+      ? computeLaborSummary(
+          direct_hours, indirect_hours,
+          total_pto_applied, total_holiday_applied,
+          total_ot,
+          opts.pay_period_start, opts.pay_period_end,
+        )
+      : null,
   };
 }
