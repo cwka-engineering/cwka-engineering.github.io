@@ -9,6 +9,7 @@ interface NormalizedRow {
   labor_type: string;           // LaborDtl_LaborType     "P" | "I"
   labor_hours: number;          // LaborDtl_LaborHrs
   labor_operation: string;      // LaborDtl_OpCode (direct) | Indirect_IndirectCode (indirect)
+  job_num: string;              // LaborDtl_JobNum — used for the bucket-job (*.ENG) notes rule
   labor_note: string;           // LaborDtl_LaborNote
   clock_in_time: number | null; // LaborDtl_ClockinTime  (decimal hours, e.g. 8.75 = 8:45am)
   clock_out_time: number | null;// LaborDtl_ClockOutTime (decimal hours)
@@ -24,6 +25,7 @@ function normalizeRow(r: Record<string, unknown>): NormalizedRow {
     labor_type: String(r["LaborDtl_LaborType"] ?? "").trim().toUpperCase(),
     labor_hours: parseFloat(String(r["LaborDtl_LaborHrs"] ?? "0")) || 0,
     labor_operation: directOp || indirectOp,
+    job_num: String(r["LaborDtl_JobNum"] ?? "").trim(),
     labor_note: String(r["LaborDtl_LaborNote"] ?? "").trim(),
     clock_in_time: r["LaborDtl_ClockinTime"] != null
       ? parseFloat(String(r["LaborDtl_ClockinTime"])) || null
@@ -415,7 +417,7 @@ export function analyzeClockData(
     }
   }
 
-  // Missing notes flag
+  // Missing notes flag — Indirect rows (existing rule)
   for (const row of normalized) {
     if (row.labor_type === "I" && row.labor_hours >= note_threshold && !row.labor_note) {
       const ws = weekStart(row.clock_in_date, week_starts_sunday);
@@ -424,6 +426,31 @@ export function analyzeClockData(
         severity: "error",
         week_start: ws, week_end: addDays(ws, 6),
         details: `indirect row on ${row.clock_in_date} (op=${row.labor_operation}, ${row.labor_hours}h) has no note`,
+      });
+    }
+  }
+
+  // Missing notes flag — Direct rows on "bucket" jobs (job number ends in
+  // .ENG), for the specific ops most likely to support a future change-order
+  // request. Distinct issue_type from "Notes!" since that code is hard-coded
+  // in both system prompts' digest translation tables as "indirect row(s)" —
+  // reusing it here would mislabel these as Indirect in a rendered message.
+  const BUCKET_NOTE_REQUIRED_OPS = new Set(["FENG", "DENG", "LEAD", "BIM"]);
+  const isBucketJob = (jobNum: string) => /\.ENG$/i.test(jobNum.trim());
+  for (const row of normalized) {
+    if (
+      row.labor_type === "P" &&
+      isBucketJob(row.job_num) &&
+      BUCKET_NOTE_REQUIRED_OPS.has(row.labor_operation) &&
+      row.labor_hours >= note_threshold &&
+      !row.labor_note
+    ) {
+      const ws = weekStart(row.clock_in_date, week_starts_sunday);
+      issues.push({
+        issue_type: "EngNotes!",
+        severity: "error",
+        week_start: ws, week_end: addDays(ws, 6),
+        details: `bucket-job Direct row on ${row.clock_in_date} (job=${row.job_num}, op=${row.labor_operation}, ${row.labor_hours}h) has no note`,
       });
     }
   }

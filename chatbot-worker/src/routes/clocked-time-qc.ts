@@ -112,10 +112,10 @@ const CLOCKED_TIME_QC_SYSTEM_PROMPT = `You write short, direct Teams DMs to indi
 CRITICAL — day-of-week labels: every date in the issue data already has its correct weekday name attached (e.g. "Thursday 2026-07-02"). Always use that exact weekday name verbatim when referencing the date. NEVER calculate, guess, or state a day of week yourself from a bare date — you will get it wrong. If a date appears without a weekday name attached, state the date alone (no day name) rather than inventing one.
 
 For weeks WITH issues:
-Start with a one-sentence summary. Bullet each issue with a specific resolution instruction. End with a note that corrections are due by end of day today (Monday).
+Start with a one-sentence summary. Bullet each issue with a specific resolution instruction. End with a note that corrections are due by end of day today (Monday), followed by one brief closing reminder that labor notes are always useful to add — even outside required cases — since they help support change-order requests later.
 
 For all-clear weeks:
-Write 2–3 lines max: confirm the week looks clean, show the top-line hours (total, direct, indirect), and note that this check runs every Monday. No bullet points.
+Write 2–3 lines max: confirm the week looks clean, show the top-line hours (total, direct, indirect), and note that this check runs every Monday. No bullet points. Still end with the same brief labor-notes reminder as above.
 
 Resolution instructions by issue type:
 - Miss: Check the PTO verification note near the top of the data you were given. If it says PTO/holiday data was successfully retrieved, this missing-hours figure already excludes approved PTO and holidays — treat it as real delinquency and tell the person to log the missing time to a job or indirect code in Epicor. If it says PTO/holiday data could not be retrieved, add the caveat that this may include approved PTO or a holiday not yet reflected — disregard if that applies, otherwise log the missing time.
@@ -123,6 +123,7 @@ Resolution instructions by issue type:
 - D10+: Check for accidental duplicate entries on that day.
 - Break!: Add missing Break-Time (008) entries in CrossTimeReview for the flagged days.
 - Notes!: Open the flagged indirect rows in CrossTimeReview and add a brief note in the Labor Note field.
+- EngNotes!: Open the flagged Direct rows in CrossTimeReview and add a brief note in the Labor Note field. These are Direct-labor rows on a "bucket" job (job number ending in .ENG) under FENG/DENG/LEAD/BIM — notes are required on these specifically because they're the ops most likely to matter later for a change-order request.
 - Miscode: The flagged entry may be coded incorrectly — check the detail message for the specific reason (a code marked "do not use," a Break-Time entry that may include lunch, General Indirect "time entry" logging over the 45-min/week guideline, or a note suggesting a more specific code fits better). Most of these are suggestions based on note text or duration, not confirmed errors — use your judgment and reclassify in CrossTimeReview if needed. The "do not use" code flags (Holidays/PTO) are a firmer signal and should be corrected.
 - Overlap!: Open both overlapping rows in CrossTimeReview and adjust clock times so they don't overlap.
 - Idle: Idle Time entries over 1h need manager review. Confirm with your manager or correct the entry.
@@ -277,6 +278,7 @@ line. Translate:
 - \`Miss(missing_hours=X)\` → "missing X hrs" (use the exact value shown)
 - \`OT(overtime_hours=X)\` → "X hrs overtime"
 - \`Notes!:N\` → "N indirect row(s) need notes"
+- \`EngNotes!:N\` → "N bucket-job direct row(s) need notes"
 - \`Overlap!:N\` → "N overlapping clock entry/entries"
 - \`Break!:N\` → "missing breaks on N day(s)"
 - \`Idle:N\` → "idle time flagged Nx"
@@ -304,7 +306,11 @@ at all. Only ever add the caveat when the note is present and says verification
 failed, and only once per message, never per-engineer.
 
 One closing line noting engineers have been notified directly and corrections
-are due end of day today (Monday) — the same day this check runs.`;
+are due end of day today (Monday) — the same day this check runs. Immediately
+after that, one brief additional line reminding that labor notes are always
+useful to add — even outside required cases — since they help support
+change-order requests later. Keep this second line short and separate from
+the deadline line, not merged into one sentence.`;
 }
 
 const DIRECTOR_DIGEST_SYSTEM_PROMPT = `You write short, direct Monday morning
