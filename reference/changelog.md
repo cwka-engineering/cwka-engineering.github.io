@@ -12,6 +12,12 @@ A record of significant additions and updates to the Engineering Wiki, grouped b
 
 ---
 
+## 2026-08-17 – 2026-08-23
+
+- **[Time Entry — Labor note requirements](/tools/time-entry.html#labor-note-requirements)** — New best-practice guidance: Design Engineering, Fabrication Engineering, Lead Coordination, and BIM Coordination logged to the ENG bucket (`####.ENG`) now require a labor note, matching the existing Indirect-entry rule — these four operations carry the least job-specific context of any direct work and are the hardest to reconstruct for change-order back-calculation without one. Project Meeting on the bucket remains preferred, not required. Added matching per-operation note callouts under [ENG bucket operations](/tools/time-entry.html#direct-eng-bucket) and updated the approver's [Weekly Time Approval Walkthrough](/tools/time-entry/weekly-approval.html) checklist and quick-reference table to match. Mirrors a QC-bot rule change flagging missing notes on these same rows.
+
+---
+
 ## 2026-07-20 – 2026-07-26
 
 - **Engineering Leadership** — Documented the department's new management layer: [Director of Engineering & Computational Design, Managing Fabrication Engineer, and Managing Production Engineer](/onboarding/engineering-roles.html#engineering-leadership), summarized from both the candidate-facing and internal source job descriptions. Corrected several already-published facts that pre-dated this layer (FE load-balancing owner, who conducts progression 1:1s, process-question escalation, Fixed Quantity exception approval). Added the same roles to the [How We Work](/onboarding/how-we-work.html) interactive org map, split into a **Leadership** section (permanent positions) separate from **Transient Designations** (Project Advisor, Lead Engineer — ad hoc, project-level).
