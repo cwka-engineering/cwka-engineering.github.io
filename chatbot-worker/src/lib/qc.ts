@@ -246,7 +246,29 @@ export function analyzeClockData(
         details: `no clocked labor rows for ${opts.pay_period_start}..${opts.pay_period_end}`,
       });
     }
-    return { issues, summary_stats: emptySummary(), labor_summary: null };
+    // Zero labor rows doesn't mean zero PTO — an engineer fully out for the
+    // whole pay period has real Paylocity hours that must still reach the
+    // org/category digest rollups (which key off labor_summary being
+    // non-null). Only synthesize a labor_summary when there's real PTO/Holiday
+    // to report; otherwise stay null so a genuine data gap (fetch failure,
+    // no PTO on file) doesn't get zero-filled into a misleading "0 hrs" line.
+    const pto_hours_applied = isPayroll
+      ? sumPtoHolidayHours(opts.pto_holiday_hours, opts.pay_period_start, opts.pay_period_end, "PTO")
+      : 0;
+    const holiday_hours_applied = isPayroll
+      ? sumPtoHolidayHours(opts.pto_holiday_hours, opts.pay_period_start, opts.pay_period_end, "Holiday")
+      : 0;
+    return {
+      issues,
+      summary_stats: {
+        ...emptySummary(),
+        pto_hours_applied: round2(pto_hours_applied),
+        holiday_hours_applied: round2(holiday_hours_applied),
+      },
+      labor_summary: isPayroll && (pto_hours_applied > 0 || holiday_hours_applied > 0)
+        ? computeLaborSummary(0, 0, pto_hours_applied, holiday_hours_applied, 0, opts.pay_period_start, opts.pay_period_end)
+        : null,
+    };
   }
 
   const normalized = rows
@@ -274,7 +296,26 @@ export function analyzeClockData(
         details: `no clocked labor rows for ${opts.pay_period_start}..${opts.pay_period_end}`,
       });
     }
-    return { issues, summary_stats: emptySummary(), labor_summary: null };
+    // Same PTO/Holiday rescue as the rows.length===0 check above — this path
+    // hits when the wider 200-row fetch had data, just none inside the target
+    // pay period, which is exactly the shape of "fully out this week."
+    const pto_hours_applied = isPayroll
+      ? sumPtoHolidayHours(opts.pto_holiday_hours, opts.pay_period_start, opts.pay_period_end, "PTO")
+      : 0;
+    const holiday_hours_applied = isPayroll
+      ? sumPtoHolidayHours(opts.pto_holiday_hours, opts.pay_period_start, opts.pay_period_end, "Holiday")
+      : 0;
+    return {
+      issues,
+      summary_stats: {
+        ...emptySummary(),
+        pto_hours_applied: round2(pto_hours_applied),
+        holiday_hours_applied: round2(holiday_hours_applied),
+      },
+      labor_summary: isPayroll && (pto_hours_applied > 0 || holiday_hours_applied > 0)
+        ? computeLaborSummary(0, 0, pto_hours_applied, holiday_hours_applied, 0, opts.pay_period_start, opts.pay_period_end)
+        : null,
+    };
   }
 
   // --- Summary stats ---
