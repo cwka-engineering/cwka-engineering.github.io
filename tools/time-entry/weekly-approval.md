@@ -79,7 +79,7 @@ If something's wrong, go to **Time Entry** to correct it. After any change here,
 **Common coding issues to catch here:**
 - Breaks logged as General Indirect instead of Break
 - Broad/ambiguous categories (e.g., Design Engineering) used for what's actually rework — the entry should specify *whose* rework it is, not just that rework happened
-- Missing labor notes on indirect codes that require them (General Indirect, Project Management — break time does *not* need one), or on Design Engineering / Fabrication Engineering / Lead Coordination / BIM Coordination logged to the ENG bucket (`####.ENG`) — required there too, not just preferred like other direct work
+- Missing labor notes on indirect codes that require them (General Indirect, Project Management — break time does *not* need one), or on any operation (Design Engineering / Fabrication Engineering / Lead Coordination / Project Meeting / BIM Coordination) logged to the ENG bucket (`####.ENG`) — required on all bucket-job ops, not just preferred like other direct work
 - Indirect time lumped into one large end-of-day entry instead of logged incrementally — inflates that person's indirect total and makes it harder to audit, even when the underlying hours are accurate
 
 ## 6. Approve, log follow-ups, move on
@@ -95,7 +95,7 @@ Shift-select the week's entries and approve. If anything needs a fix you can't r
 | Pay Period filter | Equals the Monday of the week being reviewed |
 | Status codes | S = Submitted, A = Approved, E = Entered (not submitted), PA = Partially Approved (recall and resubmit to fix) |
 | DigiFab schedule | 8.5 hrs Mon–Thu / 6 hrs Fri, one Friday break instead of two |
-| Notes required on | General Indirect, Project Management, and other indirect codes; plus Design Engineering, Fabrication Engineering, Lead Coordination, and BIM Coordination on the ENG bucket (`####.ENG`) |
+| Notes required on | General Indirect, Project Management, and other indirect codes; plus every ENG-bucket (`####.ENG`) operation — Design Engineering, Fabrication Engineering, Lead Coordination, Project Meeting, and BIM Coordination |
 | Notes not required on | Break time |
 | PTO + OT interaction | PTO does not count toward the 40-hr overtime threshold; excess can be refunded by HR |
 | Holiday + OT interaction | Also does not count toward overtime, but excess holiday time cannot be refunded |

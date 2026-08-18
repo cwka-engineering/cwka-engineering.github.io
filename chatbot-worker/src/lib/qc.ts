@@ -431,17 +431,18 @@ export function analyzeClockData(
   }
 
   // Missing notes flag — Direct rows on "bucket" jobs (job number ends in
-  // .ENG), for the specific ops most likely to support a future change-order
-  // request. Distinct issue_type from "Notes!" since that code is hard-coded
-  // in both system prompts' digest translation tables as "indirect row(s)" —
-  // reusing it here would mislabel these as Indirect in a rendered message.
-  const BUCKET_NOTE_REQUIRED_OPS = new Set(["FENG", "DENG", "LEAD", "BIM"]);
+  // .ENG). All bucket-job ops require a note (FENG, DENG, LEAD, BIM, PROJ —
+  // every op that can land on a bucket job), since these carry the least
+  // job-specific context of any direct work and matter most for a future
+  // change-order request. Distinct issue_type from "Notes!" since that code
+  // is hard-coded in both system prompts' digest translation tables as
+  // "indirect row(s)" — reusing it here would mislabel these as Indirect in
+  // a rendered message.
   const isBucketJob = (jobNum: string) => /\.ENG$/i.test(jobNum.trim());
   for (const row of normalized) {
     if (
       row.labor_type === "P" &&
       isBucketJob(row.job_num) &&
-      BUCKET_NOTE_REQUIRED_OPS.has(row.labor_operation) &&
       row.labor_hours >= note_threshold &&
       !row.labor_note
     ) {
