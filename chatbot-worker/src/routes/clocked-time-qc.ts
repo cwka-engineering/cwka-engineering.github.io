@@ -543,13 +543,16 @@ async function handleDigest(body: ClockQCRequest, env: Env): Promise<Response> {
   // The director message alone posts into a shared, multi-topic Teams channel
   // (other bots post there too), so it needs its own topic/date banner even
   // when labor_summary_org hasn't landed yet — unlike the FabEng/ProdEng
-  // messages, which stay as private manager DMs and don't need one. The
-  // leading emoji (not a bare "**") matters: Teams' bold auto-formatting did
-  // not trigger when "**" was literally the first two characters of the
-  // message body — confirmed live, showed as literal asterisks.
+  // messages, which stay as private manager DMs and don't need one.
+  // Deliberately no "**" here: confirmed live (twice — as the literal first
+  // characters, and again after a leading emoji) that this connector's
+  // channel-post rendering does not reliably turn markdown bold into real
+  // bold for this banner, even though Claude's own mid-message bold in the
+  // same body renders fine. Caps instead of bold sidesteps that inconsistency
+  // entirely rather than chasing the exact rendering rule.
   if (message_text_director) {
     message_text_director =
-      `📋 **Time Entry QC — Weekly Digest** — ${pay_period_start} thru ${pay_period_end}\n\n` +
+      `📋 TIME ENTRY QC — WEEKLY DIGEST — ${pay_period_start} thru ${pay_period_end}\n\n` +
       message_text_director;
   }
 
