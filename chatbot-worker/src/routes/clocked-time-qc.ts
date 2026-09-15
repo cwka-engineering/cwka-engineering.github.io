@@ -540,6 +540,19 @@ async function handleDigest(body: ClockQCRequest, env: Env): Promise<Response> {
     message_text_prodeng = formatLaborSummaryLine(labor_summary_prodeng) + message_text_prodeng;
   }
 
+  // The director message alone posts into a shared, multi-topic Teams channel
+  // (other bots post there too), so it needs its own topic/date banner even
+  // when labor_summary_org hasn't landed yet — unlike the FabEng/ProdEng
+  // messages, which stay as private manager DMs and don't need one. The
+  // leading emoji (not a bare "**") matters: Teams' bold auto-formatting did
+  // not trigger when "**" was literally the first two characters of the
+  // message body — confirmed live, showed as literal asterisks.
+  if (message_text_director) {
+    message_text_director =
+      `📋 **Time Entry QC — Weekly Digest** — ${pay_period_start} thru ${pay_period_end}\n\n` +
+      message_text_director;
+  }
+
   return jsonResponse(200, JSON.stringify({
     has_issues: flagged_count > 0,
     message_text_director,
