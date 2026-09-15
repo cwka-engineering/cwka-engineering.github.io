@@ -541,19 +541,45 @@ async function handleDigest(body: ClockQCRequest, env: Env): Promise<Response> {
   }
 
   // The director message alone posts into a shared, multi-topic Teams channel
-  // (other bots post there too), so it needs its own topic/date banner even
-  // when labor_summary_org hasn't landed yet — unlike the FabEng/ProdEng
-  // messages, which stay as private manager DMs and don't need one.
-  // Deliberately no "**" here: confirmed live (twice — as the literal first
-  // characters, and again after a leading emoji) that this connector's
-  // channel-post rendering does not reliably turn markdown bold into real
-  // bold for this banner, even though Claude's own mid-message bold in the
-  // same body renders fine. Caps instead of bold sidesteps that inconsistency
-  // entirely rather than chasing the exact rendering rule.
+  // (other bots post there too), so it needs its own topic/date heading —
+  // unlike the FabEng/ProdEng messages, which stay as private manager DMs and
+  // don't need one. This tenant's Teams connector has no working `subject`
+  // parameter on any post/card operation (confirmed live against
+  // PostMessageToConversation, PostMessageToChannelV2, PostMessageToChannelV3,
+  // and PostCardToConversation — all reject it), and plain markdown `**bold**`
+  // in the message body doesn't reliably render as bold either (confirmed
+  // live, twice). An Adaptive Card sidesteps both: its title is a real
+  // TextBlock with native bold/size properties, not something Teams has to
+  // infer from text.
+  let card_director: Record<string, unknown> | null = null;
   if (message_text_director) {
-    message_text_director =
-      `📋 TIME ENTRY QC — WEEKLY DIGEST — ${pay_period_start} thru ${pay_period_end}\n\n` +
-      message_text_director;
+    card_director = {
+      $schema: "http://adaptivecards.io/schemas/adaptive-card.json",
+      type: "AdaptiveCard",
+      version: "1.4",
+      body: [
+        {
+          type: "TextBlock",
+          text: "📋 Time Entry QC — Weekly Digest",
+          weight: "Bolder",
+          size: "Large",
+          wrap: true,
+        },
+        {
+          type: "TextBlock",
+          text: `${pay_period_start} thru ${pay_period_end}`,
+          isSubtle: true,
+          spacing: "None",
+          wrap: true,
+        },
+        {
+          type: "TextBlock",
+          text: message_text_director,
+          wrap: true,
+          separator: true,
+        },
+      ],
+    };
   }
 
   return jsonResponse(200, JSON.stringify({
@@ -561,5 +587,6 @@ async function handleDigest(body: ClockQCRequest, env: Env): Promise<Response> {
     message_text_director,
     message_text_fabeng,
     message_text_prodeng,
+    card_director,
   }));
 }
