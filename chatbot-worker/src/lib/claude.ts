@@ -187,11 +187,16 @@ export async function callClaude(
   apiKey: string,
   model: string,
   maxTokens = 1024,
-  retries = 2
+  retries = 2,
+  // Haiku 5.5 thinks by default and thinking tokens count toward max_tokens, so
+  // a short cap can be consumed before any text is emitted ("No text block" or
+  // truncated JSON). These routes want short structured answers: keep effort low.
+  effort: "low" | "medium" | "high" = "low"
 ): Promise<string> {
   const reqBody = JSON.stringify({
     model,
     max_tokens: maxTokens,
+    output_config: { effort },
     system: systemPrompt,
     messages: [{ role: "user", content: userMessage }],
   });

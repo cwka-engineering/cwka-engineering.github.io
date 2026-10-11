@@ -204,7 +204,7 @@ export async function handleClockedTimeQC(request: Request, env: Env): Promise<R
         CLOCKED_TIME_QC_SYSTEM_PROMPT,
         env.TIME_ENTRY_ANTHROPIC_API_KEY,
         env.PA_CLAUDE_MODEL,
-        512,
+        1024,
       );
     } catch (err) {
       console.error("clocked-time-qc Claude error:", err);
@@ -510,9 +510,9 @@ async function handleDigest(body: ClockQCRequest, env: Env): Promise<Response> {
 
   try {
     [message_text_director, message_text_fabeng, message_text_prodeng] = await Promise.all([
-      callClaude(directorUserPrompt, DIRECTOR_DIGEST_SYSTEM_PROMPT, env.TIME_ENTRY_ANTHROPIC_API_KEY, env.PA_CLAUDE_MODEL, 1024),
-      callClaude(fabengUserPrompt, FABENG_DIGEST_SYSTEM_PROMPT, env.TIME_ENTRY_ANTHROPIC_API_KEY, env.PA_CLAUDE_MODEL, 768),
-      callClaude(prodengUserPrompt, PRODENG_DIGEST_SYSTEM_PROMPT, env.TIME_ENTRY_ANTHROPIC_API_KEY, env.PA_CLAUDE_MODEL, 768),
+      callClaude(directorUserPrompt, DIRECTOR_DIGEST_SYSTEM_PROMPT, env.TIME_ENTRY_ANTHROPIC_API_KEY, env.PA_CLAUDE_MODEL, 2048),
+      callClaude(fabengUserPrompt, FABENG_DIGEST_SYSTEM_PROMPT, env.TIME_ENTRY_ANTHROPIC_API_KEY, env.PA_CLAUDE_MODEL, 1536),
+      callClaude(prodengUserPrompt, PRODENG_DIGEST_SYSTEM_PROMPT, env.TIME_ENTRY_ANTHROPIC_API_KEY, env.PA_CLAUDE_MODEL, 1536),
     ]);
   } catch (err) {
     console.error("clocked-time-qc digest Claude error:", err);
