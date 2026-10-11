@@ -19,7 +19,7 @@
     const meta = document.querySelector('meta[name="cwk-chat-api"]');
     return meta
       ? meta.getAttribute("content")
-      : "https://cwka-wiki-chatbot.cmarhoover.workers.dev";
+      : "https://cwka-wiki-chatbot.cwka.workers.dev";
   })();
 
   const SESSION_KEY = "cwk-chat-messages";
