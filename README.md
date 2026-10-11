@@ -29,7 +29,7 @@ The wiki is published via GitHub Pages. Visit the site at: **https://cwka-engine
 │   ├── css/               # Custom CSS, chat widget, and sitemap graph styles
 │   └── js/                # Chat widget and sitemap graph JavaScript
 ├── scripts/               # Build scripts (corpus, sitemap graph — excluded from site)
-├── chatbot-worker/        # Cloudflare Worker — Claude API proxy for chat widget
+├── chatbot-worker/        # Cloudflare Worker — wiki-backed Claude routes (chat widget, diagnostic, time entry)
 ├── _includes/             # Custom includes (head_custom.html, nav_footer_custom.html)
 ├── _config.yml            # Jekyll configuration for GitHub Pages
 ├── index.md               # Main landing page (excluded from nav)
@@ -121,7 +121,7 @@ Each major document includes:
 Jekyll Site (GitHub Pages)          Cloudflare Worker              Claude API
 ┌──────────────────────┐    POST   ┌─────────────────────┐  API   ┌──────────┐
 │ chat-widget.js  ─────┼──────────▶│ Loads corpus from KV│───────▶│ Haiku    │
-│ chat-widget.css      │◀──SSE─────│ Rate limits (IP/KV) │◀───────│ 4.5      │
+│ chat-widget.css      │◀──SSE─────│ Rate limits (IP/KV) │◀───────│ 5.5      │
 └──────────────────────┘           │ Streams response    │        └──────────┘
                                    └─────────────────────┘
                                             ▲
@@ -132,9 +132,26 @@ Jekyll Site (GitHub Pages)          Cloudflare Worker              Claude API
 **Components**:
 - `assets/js/chat-widget.js` — Floating chat panel, SSE stream parsing, inline markdown rendering
 - `assets/css/chat-widget.css` — Widget styling (uses Just the Docs CSS variables for dark/light mode)
-- `chatbot-worker/src/index.ts` — Cloudflare Worker (CORS, rate limiting, Claude API proxy)
+- `chatbot-worker/src/index.ts` — Cloudflare Worker (CORS, rate limiting, Claude API proxy; routes listed under Worker Layout below)
 - `scripts/build_corpus.py` — Extracts wiki pages into structured JSON with titles, URLs, and anchors
 - `.github/workflows/sync-corpus.yml` — Auto-syncs corpus to Cloudflare KV when `.md` files change
+
+### Worker Layout
+
+Each Cloudflare Worker lives in the repo that owns its callers and rules. This repo's Worker (`cwka-wiki-chatbot`) serves the routes that read the wiki corpus or encode wiki guidance:
+
+| Route | Purpose |
+|---|---|
+| `/api/chat` | Wiki Q&A chat widget (public, CORS-gated, SSE) |
+| `/api/diagnostic`, `/api/summarize` | Grasshopper/Rhino diagnostic assistant and `rhino-qc` summaries (token-gated, SSE; read the `fe-release` corpus) |
+| `/api/time-entry` | CWK Time Companion (token-gated, SSE) |
+| `/api/parts-match`, `/api/clocked-time-qc` | Power Automate routes. **Moving to the PA worker** (`cwka-pa-worker`, in the `power-automate-flows` repo). They stay here until the flows are repointed and verified, then they are removed. |
+
+Related workers: `cwka-pa-worker` (`power-automate-flows/worker`, parts matching and weekly time QC) and a planned `rhino-qc` container worker that calls this Worker's `/api/summarize`.
+
+**Model:** `CLAUDE_MODEL` and `PA_CLAUDE_MODEL` in `chatbot-worker/wrangler.toml` are `claude-haiku-5-5`. Haiku 5.5 thinks by default and thinking tokens count toward `max_tokens`, so `callClaude` (in `src/lib/claude.ts`) sends `effort: "low"` and generous caps, and logs a warning if a reply hits `max_tokens`. The streaming routes were not changed; if an answer is cut off, raise their caps. Don't send `temperature`, `top_p`, `top_k`, `budget_tokens` or assistant prefill to this model.
+
+**Deploy:** `cd chatbot-worker && npm run deploy` (Wrangler is a local dev dependency, so use `npm run` or `npx wrangler`, not a bare `wrangler`). `.github/workflows/deploy-worker.yml` also deploys on pushes that touch the worker, when `CHATBOT_ENABLED` is `true`.
 
 ### Sitemap Graph
 
@@ -170,7 +187,8 @@ Jekyll Site (GitHub Pages)          Cloudflare Worker              Claude API
 - **Training video URLs** are managed in `_data/training-videos.yml` — update footnotes in wiki pages when adding/changing URLs
 - **Chatbot corpus** auto-syncs on push to `main` — no manual steps needed
 - **Sitemap graph** auto-regenerates on push to `main` when `.md` files change
-- **Claude model version** in `chatbot-worker/wrangler.toml` should be reviewed quarterly
+- **Claude model version** in `chatbot-worker/wrangler.toml` should be reviewed quarterly; re-test the diagnostic and chat routes after any model change (see Worker Layout)
+- **Time-entry rules are mirrored in code.** The weekly time-QC flags (labor-note requirements, Miscode heuristics, the 45-min/week "time entry" guideline) in `qc.ts` mirror [Time Entry](tools/time-entry.md). `qc.ts` now lives in the `power-automate-flows` repo (`worker/src/lib/qc.ts`); when you change the labor-note or coding rules on the Time Entry page, update `qc.ts` there too
 
 ## Future Enhancement Opportunities
 
