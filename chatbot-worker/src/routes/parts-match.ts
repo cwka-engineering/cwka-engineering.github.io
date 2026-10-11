@@ -271,7 +271,7 @@ export async function handlePartsMatch(request: Request, env: Env): Promise<Resp
       PARTS_MATCH_SYSTEM_PROMPT,
       env.PARTS_MATCH_ANTHROPIC_API_KEY,
       env.PA_CLAUDE_MODEL,
-      2048
+      4096
     );
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : "Unknown error";

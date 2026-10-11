@@ -226,7 +226,10 @@ export async function callClaude(
       throw new Error(`Claude API error ${response.status}: ${errorText}`);
     }
 
-    const data = await response.json() as { content: Array<{ type: string; text: string }> };
+    const data = await response.json() as { stop_reason?: string; content: Array<{ type: string; text: string }> };
+    if (data.stop_reason === "max_tokens") {
+      console.warn(`callClaude hit max_tokens (${maxTokens}) on ${model}; output may be truncated`);
+    }
     const block = data.content.find((b) => b.type === "text");
     if (!block) throw new Error("No text block in Claude response");
     return block.text;
