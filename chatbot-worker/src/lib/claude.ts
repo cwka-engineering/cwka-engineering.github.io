@@ -70,7 +70,11 @@ export async function streamClaudeDiagnostic(
   // for this model"). /api/summarize and /api/time-entry used to pass 0 and returned 502.
   const requestBody = JSON.stringify({
     model,
-    max_tokens: 2048,
+    // Haiku 5.5 thinks by default and thinking tokens count toward max_tokens; buildSseStream
+    // forwards only text_delta, so a budget spent on thinking reads as an empty response
+    // (the rhino-qc --llm summary hit exactly this). Same fix as callClaude: low effort, bigger cap.
+    max_tokens: 4096,
+    output_config: { effort: "low" },
     stream: true,
     system: dynamicContext
       ? [
@@ -162,6 +166,11 @@ export function buildSseStream(body: ReadableStream<Uint8Array>): ReadableStream
               controller.enqueue(
                 new TextEncoder().encode(`data: ${payload}\n\n`)
               );
+            } else if (
+              event.type === "message_delta" &&
+              event.delta?.stop_reason === "max_tokens"
+            ) {
+              console.warn("stream hit max_tokens; the answer may be truncated or empty");
             } else if (event.type === "message_stop") {
               controller.enqueue(
                 new TextEncoder().encode("data: [DONE]\n\n")
