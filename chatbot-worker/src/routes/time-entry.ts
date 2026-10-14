@@ -145,7 +145,6 @@ export async function handleTimeEntry(request: Request, env: Env): Promise<Respo
   const cached = prefix + JSON.stringify(body.cached_context ?? {}) + "\n</context>";
   const dynamic =
     "<current>\n" + JSON.stringify(body.dynamic_context ?? {}) + "\n</current>";
-  const temperature = body.mode === "chat" ? undefined : 0;
 
   try {
     const stream = await streamClaudeDiagnostic(
@@ -154,7 +153,6 @@ export async function handleTimeEntry(request: Request, env: Env): Promise<Respo
       dynamic,
       env.TIME_ENTRY_ANTHROPIC_API_KEY,
       env.CLAUDE_MODEL,
-      temperature,
     );
     return sseResponse(stream);
   } catch (err: unknown) {

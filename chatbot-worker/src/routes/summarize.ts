@@ -114,8 +114,7 @@ export async function handleSummarize(request: Request, env: Env): Promise<Respo
       cachedCorpus,
       dynamicContext,
       env.DIAGNOSTIC_ANTHROPIC_API_KEY,
-      env.CLAUDE_MODEL,
-      0  // deterministic output for structured action plan
+      env.CLAUDE_MODEL
     );
     return sseResponse(stream);
   } catch (err: unknown) {

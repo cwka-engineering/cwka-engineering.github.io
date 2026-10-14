@@ -64,14 +64,14 @@ export async function streamClaudeDiagnostic(
   dynamicContext: string,
   apiKey: string,
   model: string,
-  temperature?: number,
   maxRetries = 2
 ): Promise<ReadableStream> {
+  // No `temperature` parameter: Haiku 5.5 rejects it with a 400 ("`temperature` is deprecated
+  // for this model"). /api/summarize and /api/time-entry used to pass 0 and returned 502.
   const requestBody = JSON.stringify({
     model,
     max_tokens: 2048,
     stream: true,
-    ...(temperature !== undefined && { temperature }),
     system: dynamicContext
       ? [
           {
