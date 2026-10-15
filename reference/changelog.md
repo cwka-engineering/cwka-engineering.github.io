@@ -12,6 +12,12 @@ A record of significant additions and updates to the Engineering Wiki, grouped b
 
 ---
 
+## 2026-10-12 – 2026-10-18
+
+- **[Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html)** — Clarified that material approval status (and transmittal numbers) do not appear on the G00 cover sheet; G00 shows only the PM-maintained tag, description, and spec fields. Aligned wording in the Drafting Toolkit and Cover Sheet pages, which previously implied approval status prints on drawings.
+
+---
+
 ## 2026-08-17 – 2026-08-23
 
 - **[Time Entry — Labor note requirements](/tools/time-entry.html#labor-note-requirements)** — New best-practice guidance: every ENG-bucket (`####.ENG`) operation — Design Engineering, Fabrication Engineering, Lead Coordination, Project Meeting, and BIM Coordination — now requires a labor note, matching the existing Indirect-entry rule. Bucket-job work carries the least job-specific context of any direct work and is the hardest to reconstruct for change-order back-calculation without one; Project Meeting was initially left preferred rather than required, then folded into the same rule as the other four once the "always beneficial" intent behind this guidance made an exemption for one operation seem arbitrary. Added matching per-operation note callouts under [ENG bucket operations](/tools/time-entry.html#direct-eng-bucket) and updated the approver's [Weekly Time Approval Walkthrough](/tools/time-entry/weekly-approval.html) checklist and quick-reference table to match. Mirrors a QC-bot rule change flagging missing notes on these same rows.

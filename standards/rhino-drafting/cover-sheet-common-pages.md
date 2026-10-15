@@ -34,7 +34,8 @@ Finish and material tag schedules generated via the Engineering Toolkit from the
 - CWK material tag and ARCH tag cross-reference
 - Material descriptions
 - FSC certification, fire rating, moisture resistance
-- Transmittal numbers
+
+Approval status and transmittal numbers are internal PM tracking in the TRA and do not appear on G00.
 
 Populated via the [Drafting Toolkit](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-populate-g00) — do not manually edit linked fields.
 

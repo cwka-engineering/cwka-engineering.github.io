@@ -80,7 +80,7 @@ MtlSubmittalStatus and transmittal numbers are **internal PM tracking only** —
 - Sheen (where applicable)
 - FSC, fire rating, moisture resistance (PM-managed fields)
 
-The approval status visible on the cover sheet is only what the engineer sees after the PM has updated those fields and the G00 script is re-run.
+**Approval status does not appear on the G00 cover sheet.** The sheet shows only the PM-maintained tag, description, and spec fields as of the last time the G00 script was run, so it reflects the PM's latest updates only after the script is re-run.
 
 ---
 
@@ -102,7 +102,7 @@ The approval status visible on the cover sheet is only what the engineer sees af
 
 Before running the cover sheet script in the Drafting Toolkit, **confirm with the PM that the TRA is current.** The PM actively manages the TRA and may be a step behind during active submittal prep — approval statuses change and new entries may be pending.
 
-If you run the G00 script against a stale TRA, the material schedule on your drawings will not reflect current approvals. You will need to re-run the script and republish after the PM catches up. A one-minute check beforehand saves the extra cycle.
+If you run the G00 script against a stale TRA, the material schedule on your drawings will not reflect the PM's latest tags, descriptions, and spec fields. You will need to re-run the script and republish after the PM catches up. A one-minute check beforehand saves the extra cycle.
 
 See [How to populate G00](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-populate-g00) for the full script procedure.
 
