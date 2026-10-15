@@ -16,8 +16,14 @@ id = "457771cd577e47778a0e833100429156"
 # - DIAGNOSTIC_AUTH_TOKEN
 # - PA_AUTH_TOKEN
 # - PARTS_MATCH_ANTHROPIC_API_KEY  (/api/parts-match)
+# - AIRTABLE_PAT                  (/api/diagnostic-runs; write on the Releases & Requests base)
+# - RUNS_SERVER_TOKEN             (/api/diagnostic-runs; server-only credential for cloud runs)
 
 [vars]
+# /api/diagnostic-runs: Releases & Requests base, "Rhino Diagnostic Tool" and the synced "People" table
+RUNS_BASE_ID = "app2X7JU998GzDUWj"
+RUNS_TABLE_ID = "tblrQXzt3PswwORMP"
+PEOPLE_TABLE_ID = "tblc21jHmUiCiAOHI"
 ALLOWED_ORIGIN = "https://cwka-engineering.github.io"
 CLAUDE_MODEL = "claude-haiku-5-5"
 MAX_REQUESTS_PER_MINUTE = "20"

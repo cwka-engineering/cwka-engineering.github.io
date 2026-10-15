@@ -12,6 +12,12 @@ export interface Env {
   PA_CLAUDE_MODEL: string;
   TIME_ENTRY_AUTH_TOKEN: string;
   TIME_ENTRY_ANTHROPIC_API_KEY: string;
+  // /api/diagnostic-runs (run tracking in Airtable)
+  AIRTABLE_PAT: string;      // secret: write on the Releases & Requests base
+  RUNS_SERVER_TOKEN: string; // secret: server-only credential (container, FE>PE flow)
+  RUNS_BASE_ID: string;      // var
+  RUNS_TABLE_ID: string;     // var: Rhino Diagnostic Tool
+  PEOPLE_TABLE_ID: string;   // var: People (synced from the Engineering Schedule Roles table)
 }
 
 export interface ChatMessage {
