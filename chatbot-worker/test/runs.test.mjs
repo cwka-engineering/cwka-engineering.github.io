@@ -96,8 +96,18 @@ test("only provided values are written, so a later update can't blank earlier on
   const minimal = { run_id: good().run_id, source: "cli", run_at: good().run_at, file_name: "a.3dm", result: "passed" };
   const v = validateRun(minimal, "local", NOW);
   const f = buildFields(v.run, v.raw, []);
-  for (const k of [F.errors, F.warnings, F.infos, F.actionPlan, F.llm, F.erpChecks, F.jobNumber, F.user, F.userRaw, F.release]) {
+  for (const k of [F.errors, F.warnings, F.infos, F.actionPlan, F.llm, F.erpChecks, F.jobNumber, F.user, F.userRaw, F.release, F.fileUrl]) {
     assert.ok(!(k in f), `${k} should be absent`);
+  }
+});
+
+test("file_url is written when given and must be an https URL", () => {
+  const url = "https://digifabshop.box.com/s/abc123";
+  const v = validateRun({ ...good(), file_url: url }, "local", NOW);
+  assert.equal(buildFields(v.run, v.raw, [])[F.fileUrl], url);
+  for (const bad of ["http://box.com/s/x", "javascript:alert(1)", "", 5]) {
+    const r = validateRun({ ...good(), file_url: bad }, "local", NOW);
+    assert.equal(r.ok, false, String(bad));
   }
 });
 
