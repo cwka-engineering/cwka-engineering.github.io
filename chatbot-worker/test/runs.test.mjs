@@ -96,18 +96,23 @@ test("only provided values are written, so a later update can't blank earlier on
   const minimal = { run_id: good().run_id, source: "cli", run_at: good().run_at, file_name: "a.3dm", result: "passed" };
   const v = validateRun(minimal, "local", NOW);
   const f = buildFields(v.run, v.raw, []);
-  for (const k of [F.errors, F.warnings, F.infos, F.actionPlan, F.llm, F.erpChecks, F.jobNumber, F.user, F.userRaw, F.release, F.fileUrl]) {
+  for (const k of [F.errors, F.warnings, F.infos, F.actionPlan, F.llm, F.erpChecks, F.jobNumber, F.user, F.userRaw, F.release, F.fileUrl, F.findingsUrl]) {
     assert.ok(!(k in f), `${k} should be absent`);
   }
 });
 
-test("file_url is written when given and must be an https URL", () => {
+test("file_url and findings_url are written when given and must be https URLs", () => {
   const url = "https://digifabshop.box.com/s/abc123";
-  const v = validateRun({ ...good(), file_url: url }, "local", NOW);
-  assert.equal(buildFields(v.run, v.raw, [])[F.fileUrl], url);
-  for (const bad of ["http://box.com/s/x", "javascript:alert(1)", "", 5]) {
-    const r = validateRun({ ...good(), file_url: bad }, "local", NOW);
-    assert.equal(r.ok, false, String(bad));
+  const found = "https://app.box.com/file/1234567890";
+  const v = validateRun({ ...good(), file_url: url, findings_url: found }, "local", NOW);
+  const f = buildFields(v.run, v.raw, []);
+  assert.equal(f[F.fileUrl], url);
+  assert.equal(f[F.findingsUrl], found);
+  for (const key of ["file_url", "findings_url"]) {
+    for (const bad of ["http://box.com/s/x", "javascript:alert(1)", "", 5]) {
+      const r = validateRun({ ...good(), [key]: bad }, "local", NOW);
+      assert.equal(r.ok, false, `${key}: ${String(bad)}`);
+    }
   }
 });
 

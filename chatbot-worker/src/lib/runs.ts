@@ -26,6 +26,7 @@ export const F = {
   schemaVersion: "fldWp3buZZuCbc6yS",
   release: "fldS5iVaI3lqd25DR",
   fileUrl: "fldxyOZqFDn88OcHt",
+  findingsUrl: "fldPhS5ijjuuIbBuO",
 } as const;
 
 // Field IDs in the synced "People" table (a cross-base sync of the Engineering Schedule "Roles" table).
@@ -63,6 +64,7 @@ export interface RunInput {
   file_name: string;
   job_number?: string;
   file_url?: string;
+  findings_url?: string;
   result: string;
   errors?: number;
   warnings?: number;
@@ -105,8 +107,9 @@ export function validateRun(body: unknown, privilege: Privilege, now: number = D
   }
   if (!isStr(b.file_name, 255)) errors.push("file_name is required (max 255 chars)");
   if (b.job_number !== undefined && !isStr(b.job_number, 50)) errors.push("job_number must be a string (max 50 chars)");
-  if (b.file_url !== undefined && !(isStr(b.file_url, 2000) && /^https:\/\//i.test(b.file_url))) {
-    errors.push("file_url must be an https URL (max 2000 chars)");
+  for (const k of ["file_url", "findings_url"]) {
+    const v = b[k];
+    if (v !== undefined && !(isStr(v, 2000) && /^https:\/\//i.test(v))) errors.push(`${k} must be an https URL (max 2000 chars)`);
   }
   if (typeof b.result !== "string" || !(b.result in RESULTS)) errors.push(`result must be one of ${Object.keys(RESULTS).join(", ")}`);
   for (const k of ["errors", "warnings", "infos"]) {
@@ -171,6 +174,7 @@ export function buildFields(run: RunInput, raw: string, personRecordIds: string[
   if (personRecordIds.length) f[F.user] = personRecordIds;
   if (run.job_number !== undefined) f[F.jobNumber] = run.job_number;
   if (run.file_url !== undefined) f[F.fileUrl] = run.file_url;
+  if (run.findings_url !== undefined) f[F.findingsUrl] = run.findings_url;
   if (run.errors !== undefined) f[F.errors] = run.errors;
   if (run.warnings !== undefined) f[F.warnings] = run.warnings;
   if (run.infos !== undefined) f[F.infos] = run.infos;
