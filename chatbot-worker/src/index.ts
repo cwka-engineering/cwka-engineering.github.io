@@ -9,7 +9,7 @@
  *   POST /api/time-entry       — CWK Time Companion (token-gated, SSE streaming)
  *   POST /api/clocked-time-qc  — PA weekly time QC flow (token-gated, JSON)
  *   POST /api/diagnostic-runs  — records a diagnostic run in Airtable (token-gated, JSON; shared token = local
- *                                runs only, RUNS_SERVER_TOKEN = cloud runs too)
+ *                                runs only, DIAGNOSTIC_CLOUD_AUTH_TOKEN = cloud runs too)
  */
 
 import { handleChat }          from "./routes/chat";

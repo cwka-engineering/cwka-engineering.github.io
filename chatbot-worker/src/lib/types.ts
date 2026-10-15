@@ -14,7 +14,7 @@ export interface Env {
   TIME_ENTRY_ANTHROPIC_API_KEY: string;
   // /api/diagnostic-runs (run tracking in Airtable)
   AIRTABLE_PAT: string;      // secret: write on the Releases & Requests base
-  RUNS_SERVER_TOKEN: string; // secret: server-only credential (container, FE>PE flow)
+  DIAGNOSTIC_CLOUD_AUTH_TOKEN: string; // secret: server-only credential; same value as on cwka-rhino-qc
   RUNS_BASE_ID: string;      // var
   RUNS_TABLE_ID: string;     // var: Rhino Diagnostic Tool
   PEOPLE_TABLE_ID: string;   // var: People (synced from the Engineering Schedule Roles table)

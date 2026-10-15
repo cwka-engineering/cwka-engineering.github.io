@@ -33,7 +33,7 @@ const fresh = async () => (await import(`${bundle}?n=${++n}`)).handleDiagnosticR
 
 const kv = (stamps = []) => ({ get: async () => (stamps.length ? JSON.stringify(stamps) : null), put: async () => {} });
 const env = (over = {}) => ({
-  AIRTABLE_PAT: PAT, RUNS_SERVER_TOKEN: SERVER, DIAGNOSTIC_AUTH_TOKEN: DIAG,
+  AIRTABLE_PAT: PAT, DIAGNOSTIC_CLOUD_AUTH_TOKEN: SERVER, DIAGNOSTIC_AUTH_TOKEN: DIAG,
   RUNS_BASE_ID: BASE, RUNS_TABLE_ID: RUNS, PEOPLE_TABLE_ID: PEOPLE, RATE_LIMIT: kv(), ...over,
 });
 const body = (over = {}) => ({
@@ -80,7 +80,7 @@ test("503 when Airtable is not configured", async () => {
 
 test("401 with no, wrong, or unset-secret tokens (fails closed)", async () => {
   assert.equal((await run(post(body(), "nope"))).status, 401);
-  assert.equal((await run(post(body(), "undefined"), env({ DIAGNOSTIC_AUTH_TOKEN: undefined, RUNS_SERVER_TOKEN: undefined }))).status, 401);
+  assert.equal((await run(post(body(), "undefined"), env({ DIAGNOSTIC_AUTH_TOKEN: undefined, DIAGNOSTIC_CLOUD_AUTH_TOKEN: undefined }))).status, 401);
   assert.equal(calls.length, 0, "no Airtable call may happen before auth");
 });
 

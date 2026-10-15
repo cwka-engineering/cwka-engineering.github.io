@@ -17,7 +17,7 @@ id = "457771cd577e47778a0e833100429156"
 # - PA_AUTH_TOKEN
 # - PARTS_MATCH_ANTHROPIC_API_KEY  (/api/parts-match)
 # - AIRTABLE_PAT                  (/api/diagnostic-runs; write on the Releases & Requests base)
-# - RUNS_SERVER_TOKEN             (/api/diagnostic-runs; server-only credential for cloud runs)
+# - DIAGNOSTIC_CLOUD_AUTH_TOKEN   (/api/diagnostic-runs; server-only credential for cloud runs; same value as on cwka-rhino-qc)
 
 [vars]
 # /api/diagnostic-runs: Releases & Requests base, "Rhino Diagnostic Tool" and the synced "People" table

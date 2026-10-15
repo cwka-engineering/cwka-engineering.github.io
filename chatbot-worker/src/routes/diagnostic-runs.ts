@@ -9,7 +9,8 @@ import type { Env } from "../lib/types";
 // Two credentials, privilege decided by the token:
 //   DIAGNOSTIC_AUTH_TOKEN  (Grasshopper, exe, CLI; it ships inside the GH script and every exe build, so treat it as
 //                           an identifier) -> local runs only; cannot claim a cloud run or set release_record_id
-//   RUNS_SERVER_TOKEN      (the rhino-qc container and the FE>PE flow only)  -> everything
+//   DIAGNOSTIC_CLOUD_AUTH_TOKEN  (server-only; the same value as the cwka-rhino-qc Worker's /check token, used by
+//                           the rhino-qc container and the FE>PE flow)  -> everything
 // Best-effort for callers: a failure here must never fail or block a run, so clients fire and forget.
 
 const MAX_BODY_BYTES = 300_000;
@@ -25,7 +26,7 @@ async function safeEqual(a: string, b: string): Promise<boolean> {
 async function privilegeOf(request: Request, env: Env): Promise<Privilege | null> {
   const auth = request.headers.get("Authorization") ?? "";
   // An unset secret must never match: `Bearer ${undefined}` would be a valid bearer value.
-  if (env.RUNS_SERVER_TOKEN && (await safeEqual(auth, `Bearer ${env.RUNS_SERVER_TOKEN}`))) return "server";
+  if (env.DIAGNOSTIC_CLOUD_AUTH_TOKEN && (await safeEqual(auth, `Bearer ${env.DIAGNOSTIC_CLOUD_AUTH_TOKEN}`))) return "server";
   if (env.DIAGNOSTIC_AUTH_TOKEN && (await safeEqual(auth, `Bearer ${env.DIAGNOSTIC_AUTH_TOKEN}`))) return "local";
   return null;
 }
