@@ -18,6 +18,7 @@ export interface Env {
   RUNS_BASE_ID: string;      // var
   RUNS_TABLE_ID: string;     // var: Rhino Diagnostic Tool
   PEOPLE_TABLE_ID: string;   // var: People (synced from the Engineering Schedule Roles table)
+  RHINO_QC: Fetcher;         // service binding to cwka-rhino-qc (/resolve turns a Box Drive path into a Box link)
 }
 
 export interface ChatMessage {

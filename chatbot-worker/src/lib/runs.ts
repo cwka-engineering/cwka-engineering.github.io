@@ -27,6 +27,8 @@ export const F = {
   release: "fldS5iVaI3lqd25DR",
   fileUrl: "fldxyOZqFDn88OcHt",
   findingsUrl: "fldPhS5ijjuuIbBuO",
+  filePath: "fldDb4Hd7hknD5oEC",
+  logPath: "fldfivBLWYwszCv35",
 } as const;
 
 // Field IDs in the synced "People" table (a cross-base sync of the Engineering Schedule "Roles" table).
@@ -65,6 +67,8 @@ export interface RunInput {
   job_number?: string;
   file_url?: string;
   findings_url?: string;
+  file_path?: string;
+  log_path?: string;
   result: string;
   errors?: number;
   warnings?: number;
@@ -107,6 +111,9 @@ export function validateRun(body: unknown, privilege: Privilege, now: number = D
   }
   if (!isStr(b.file_name, 255)) errors.push("file_name is required (max 255 chars)");
   if (b.job_number !== undefined && !isStr(b.job_number, 50)) errors.push("job_number must be a string (max 50 chars)");
+  for (const k of ["file_path", "log_path"]) {
+    if (b[k] !== undefined && !isStr(b[k], 600)) errors.push(`${k} must be a string (max 600 chars)`);
+  }
   for (const k of ["file_url", "findings_url"]) {
     const v = b[k];
     if (v !== undefined && !(isStr(v, 2000) && /^https:\/\//i.test(v))) errors.push(`${k} must be an https URL (max 2000 chars)`);
@@ -157,6 +164,25 @@ export function validateRun(body: unknown, privilege: Privilege, now: number = D
   return { ok: true, run: b as unknown as RunInput, raw };
 }
 
+// A Box Drive path, trimmed to start at a Box top-level folder the whole team sees (Awarded, or DFW CWKA Internal for
+// tool logs). The Box Drive root differs between machines (one tree has an extra "Projects" level above these), so
+// the stored path starts at the anchor and works after C:\BoxSync\Box\ for everyone. A path with no anchor is kept
+// only when it is clearly inside the Box Drive root; anything else (a desktop file, a UNC path) is dropped so no
+// local folder names are stored.
+const BOX_ANCHORS = ["awarded", "dfw cwka internal"];
+export function normalizeBoxPath(p: string | undefined): string | undefined {
+  if (!p) return undefined;
+  const parts = p.split(/[\\/]+/).filter((s) => s.length > 0);
+  const anchor = parts.findIndex((s) => BOX_ANCHORS.includes(s.toLowerCase()));
+  if (anchor >= 0) return parts.slice(anchor).join("\\");
+  const root = parts.findIndex((s) => s.toLowerCase() === "boxsync");
+  if (root >= 0 && parts[root + 1]?.toLowerCase() === "box" && parts.length > root + 2) {
+    const rest = parts.slice(root + 2);
+    return (rest[0].toLowerCase() === "projects" ? rest.slice(1) : rest).join("\\") || undefined;
+  }
+  return undefined;
+}
+
 // Fields keyed by ID. Only provided values are included, so a later update (for example the LLM plan arriving
 // after the counts) never blanks what an earlier call wrote.
 export function buildFields(run: RunInput, raw: string, personRecordIds: string[]): Record<string, unknown> {
@@ -175,6 +201,10 @@ export function buildFields(run: RunInput, raw: string, personRecordIds: string[
   if (run.job_number !== undefined) f[F.jobNumber] = run.job_number;
   if (run.file_url !== undefined) f[F.fileUrl] = run.file_url;
   if (run.findings_url !== undefined) f[F.findingsUrl] = run.findings_url;
+  const filePath = normalizeBoxPath(run.file_path);
+  if (filePath) f[F.filePath] = filePath;
+  const logPath = normalizeBoxPath(run.log_path);
+  if (logPath) f[F.logPath] = logPath;
   if (run.errors !== undefined) f[F.errors] = run.errors;
   if (run.warnings !== undefined) f[F.warnings] = run.warnings;
   if (run.infos !== undefined) f[F.infos] = run.infos;

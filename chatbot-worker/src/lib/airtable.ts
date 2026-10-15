@@ -72,3 +72,33 @@ export async function upsertRun(env: Env, fields: Record<string, unknown>): Prom
   if (!id) throw new Error("Airtable run upsert returned no record");
   return { id, created: (data.createdRecords ?? []).includes(id) };
 }
+
+// Local run records (they carry a Box Drive path) that don't have a Box file link yet, newest first, recent only:
+// a record that still can't be resolved after a few days is left alone.
+export async function listRunsMissingFileLink(env: Env): Promise<{ id: string; filePath: string }[]> {
+  const formula = "AND({File path}!='',{Box file URL}='',IS_AFTER(CREATED_TIME(),DATEADD(NOW(),-3,'days')))";
+  const qs = new URLSearchParams({
+    filterByFormula: formula,
+    returnFieldsByFieldId: "true",
+    pageSize: "50",
+    maxRecords: "50",
+  });
+  qs.append("fields[]", F.filePath);
+  const res = await airtable(env, `${env.RUNS_BASE_ID}/${env.RUNS_TABLE_ID}?${qs.toString()}`);
+  if (!res.ok) return await fail(env, "list runs missing a file link", res);
+  const data = (await res.json()) as { records: { id: string; fields: Record<string, unknown> }[] };
+  return data.records
+    .map((r) => ({ id: r.id, filePath: String(r.fields[F.filePath] ?? "") }))
+    .filter((r) => r.filePath.length > 0);
+}
+
+// Update existing records (Airtable takes 10 per request).
+export async function patchRuns(env: Env, updates: { id: string; fields: Record<string, unknown> }[]): Promise<void> {
+  for (let i = 0; i < updates.length; i += 10) {
+    const res = await airtable(env, `${env.RUNS_BASE_ID}/${env.RUNS_TABLE_ID}`, {
+      method: "PATCH",
+      body: JSON.stringify({ records: updates.slice(i, i + 10), returnFieldsByFieldId: true }),
+    });
+    if (!res.ok) await fail(env, "run link update", res);
+  }
+}

@@ -20,6 +20,7 @@ import { handleTimeEntry }     from "./routes/time-entry";
 import { handleClockedTimeQC } from "./routes/clocked-time-qc";
 import { handleDiagnosticRuns } from "./routes/diagnostic-runs";
 import { corsHeaders, corsResponse } from "./lib/helpers";
+import { sweepBoxLinks } from "./lib/box-links";
 import type { Env } from "./lib/types";
 
 const ROUTE_HANDLERS = [
@@ -49,5 +50,15 @@ export default {
     }
 
     return corsResponse(404, JSON.stringify({ error: "Not found" }), origin, env.ALLOWED_ORIGIN);
+  },
+
+  // Cron (wrangler.toml): link local run records to their Box files. Never throws into the runtime.
+  async scheduled(_event: ScheduledController, env: Env, ctx: ExecutionContext): Promise<void> {
+    ctx.waitUntil(
+      sweepBoxLinks(env).then(
+        (r) => { if (r.checked) console.log(`box links: ${r.linked}/${r.checked} resolved`); },
+        (err) => console.error("box link sweep failed", String(err)),
+      ),
+    );
   },
 };

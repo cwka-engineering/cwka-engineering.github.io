@@ -10,6 +10,16 @@ id = "7b65b0b3e73e4608b0b29a412682c585"
 binding = "RATE_LIMIT"
 id = "457771cd577e47778a0e833100429156"
 
+# cwka-rhino-qc, called by the cron below to turn a Box Drive path into a Box file link (its /resolve route).
+# A service binding, because Workers on one account cannot call each other by workers.dev address.
+[[services]]
+binding = "RHINO_QC"
+service = "cwka-rhino-qc"
+
+# Every 5 minutes: link local run records (they carry a Box Drive path) to their Box files; see src/lib/box-links.ts.
+[triggers]
+crons = ["*/5 * * * *"]
+
 # Secrets (set via: npx wrangler secret put <NAME>)
 # - CHAT_ANTHROPIC_API_KEY        (/api/chat)
 # - DIAGNOSTIC_ANTHROPIC_API_KEY  (/api/diagnostic, /api/summarize)

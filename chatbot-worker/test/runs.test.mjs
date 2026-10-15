@@ -2,7 +2,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import {
-  validateRun, buildFields, identityKey, buildPeopleIndex, resolveUser, F, P, SCHEMA_VERSION,
+  validateRun, buildFields, normalizeBoxPath, identityKey, buildPeopleIndex, resolveUser, F, P, SCHEMA_VERSION,
 } from "../src/lib/runs.ts";
 
 const NOW = Date.parse("2026-10-14T12:00:00Z");
@@ -96,8 +96,35 @@ test("only provided values are written, so a later update can't blank earlier on
   const minimal = { run_id: good().run_id, source: "cli", run_at: good().run_at, file_name: "a.3dm", result: "passed" };
   const v = validateRun(minimal, "local", NOW);
   const f = buildFields(v.run, v.raw, []);
-  for (const k of [F.errors, F.warnings, F.infos, F.actionPlan, F.llm, F.erpChecks, F.jobNumber, F.user, F.userRaw, F.release, F.fileUrl, F.findingsUrl]) {
+  for (const k of [F.errors, F.warnings, F.infos, F.actionPlan, F.llm, F.erpChecks, F.jobNumber, F.user, F.userRaw, F.release, F.fileUrl, F.findingsUrl, F.filePath, F.logPath]) {
     assert.ok(!(k in f), `${k} should be absent`);
+  }
+});
+
+test("Box Drive paths are trimmed to start at Awarded or DFW CWKA Internal, and non-Box paths are dropped", () => {
+  const cases = [
+    ["C:\\BoxSync\\Box\\Awarded\\1105_Proj\\03 Engineering\\a.3dm", "Awarded\\1105_Proj\\03 Engineering\\a.3dm"],
+    ["C:\\BoxSync\\Box\\Projects\\Awarded\\1105_Proj\\a.3dm", "Awarded\\1105_Proj\\a.3dm"],
+    ["c:/boxsync/box/projects/dfw cwka internal/_ENG-RESOURCE/Shared GH/Toolkit Logs/Assistant/x.md",
+      "dfw cwka internal\\_ENG-RESOURCE\\Shared GH\\Toolkit Logs\\Assistant\\x.md"],
+    ["C:\\BoxSync\\Box\\Operations\\Misc\\a.3dm", "Operations\\Misc\\a.3dm"],
+    ["C:\\BoxSync\\Box\\Projects\\Other\\a.3dm", "Other\\a.3dm"],
+    ["C:\\Users\\someone\\Desktop\\a.3dm", undefined],
+    ["\\\\server\\share\\a.3dm", undefined],
+    ["C:\\BoxSync\\Box", undefined],
+    ["", undefined],
+  ];
+  for (const [input, want] of cases) assert.equal(normalizeBoxPath(input), want, input);
+  assert.equal(normalizeBoxPath(undefined), undefined);
+});
+
+test("file_path and log_path are written normalized, and omitted when not a Box path", () => {
+  const v = validateRun({ ...good(), file_path: "C:\\BoxSync\\Box\\Projects\\Awarded\\P\\a.3dm", log_path: "C:\\Users\\x\\log.md" }, "local", NOW);
+  const f = buildFields(v.run, v.raw, []);
+  assert.equal(f[F.filePath], "Awarded\\P\\a.3dm");
+  assert.ok(!(F.logPath in f));
+  for (const bad of ["", 5, "x".repeat(601)]) {
+    assert.equal(validateRun({ ...good(), file_path: bad }, "local", NOW).ok, false, String(bad).slice(0, 10));
   }
 });
 
