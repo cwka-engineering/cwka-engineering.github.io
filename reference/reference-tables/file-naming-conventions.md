@@ -36,18 +36,20 @@ corpus_tags: [fe-release]
 |-------------|-----------|---------|
 | FE job folder | `[PROJ.JOB]_ScopeDescription` | `1094.002_CashWrap` |
 | PE release folder | `[PROJ.JOB]_ScopeDescription` | `1105.007_MaitreDStand` |
-| MFG release folder | `[PROJ.M/W.000]` (Epicor job number) | `1130.M.005/` |
+| MFG release folder | `[PROJ.M/W.000]` (Epicor job number) | `1130.M.022/` |
 
 **Never rename a job or release folder once it exists.** Tools and people find it by its name, and a rename breaks every link and path that points at it. In particular, do not add suffixes such as `_Partial Releases`: a partial release goes into the job's existing release folder.
 
-**MFG naming distinction:** The enclosing folder uses the Epicor **job number** with three trailing digits (e.g., `1130.M.005`). The Rhino file within uses the Epicor **part number** with five trailing digits (e.g., `1130.MT.00022_PE.3dm`).
+**MFG naming distinction:** The enclosing folder uses the Epicor **job number** with three trailing digits (e.g., `1130.M.022`). The Rhino file within uses the Epicor **part number** with five trailing digits (e.g., `1130.MT.00022_PE.3dm`).
+
+**Part number to job number.** A manufactured part and the job that makes it share the project and the sequence number: `PROJ.MT.000NN` is made by job `PROJ.M.0NN`, and `PROJ.WC.000NN` by `PROJ.W.0NN` (`MT` becomes `M`, `WC` becomes `W`, and the sequence is padded to five digits on the part and three on the job). So `1130.MT.00022` is made by `1130.M.022`. Tools that need to go from one to the other apply this rule and, where they can, confirm it against Epicor, which wins if the two ever disagree.
 
 ## Job and Part Numbers
 
 | Type | Format | Example |
 |------|--------|---------|
-| WC job | `Project.W.000` | `1130.W.005` |
-| MT job | `Project.M.000` | `1130.M.005` |
+| WC job | `Project.W.000` | `1130.W.022` |
+| MT job | `Project.M.000` | `1130.M.022` |
 | WC part | `Project.WC.00000` | `1130.WC.00022` |
 | MT part | `Project.MT.00000` | `1130.MT.00022` |
 | TRA job | `Project.TRA` | `1086.TRA` |
