@@ -105,7 +105,7 @@ test("the People lookup only asks for active employees and the needed fields", a
   const c = calls.find((x) => x.url.includes(PEOPLE));
   const q = new URL(c.url).searchParams;
   assert.equal(q.get("filterByFormula"), "AND({Status}='active',{Kind}='employee')");
-  assert.deepEqual(q.getAll("fields[]").sort(), [P.employeeId, P.kind, P.status, P.email, P.epicorUserId].sort());
+  assert.deepEqual(q.getAll("fields[]").sort(), [P.employeeId, P.kind, P.status, P.email, P.epicorUserId, P.offboardDate].sort());
 });
 
 test("an unresolved user still records the run, with the raw identifier kept", async () => {

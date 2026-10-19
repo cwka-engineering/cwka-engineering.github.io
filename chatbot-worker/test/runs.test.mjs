@@ -210,3 +210,29 @@ test("two people colliding on a normalized key is ambiguous", () => {
   ]);
   assert.equal(resolveUser(idx, { epicor_handle: "jsmith" }).reason, "ambiguous");
 });
+
+test("a person past their offboard date is not a resolution target even when Status still says active", () => {
+  const row = (id, handle, offboard) => ({
+    id,
+    fields: { [P.status]: "active", [P.kind]: "employee", [P.epicorUserId]: handle, ...(offboard ? { [P.offboardDate]: offboard } : {}) },
+  });
+  const today = "2026-10-18";
+  const idx = buildPeopleIndex([
+    row("recGone", "gone", "2026-10-13"),
+    row("recLastDay", "lastday", "2026-10-18"),
+    row("recLeaving", "leaving", "2027-01-01"),
+    row("recStays", "stays", undefined),
+  ], today);
+  assert.equal(resolveUser(idx, { epicor_handle: "gone" }).resolved, false);
+  assert.equal(resolveUser(idx, { epicor_handle: "lastday" }).resolved, true);
+  assert.equal(resolveUser(idx, { epicor_handle: "leaving" }).resolved, true);
+  assert.equal(resolveUser(idx, { epicor_handle: "stays" }).resolved, true);
+});
+
+test("a rehire resolves to the new row, not the old one past its offboard date", () => {
+  const idx = buildPeopleIndex([
+    { id: "recOld", fields: { [P.status]: "active", [P.kind]: "employee", [P.epicorUserId]: "rcastillo", [P.offboardDate]: "2026-07-12" } },
+    { id: "recNew", fields: { [P.status]: "active", [P.kind]: "employee", [P.epicorUserId]: "rcastillo" } },
+  ], "2026-10-18");
+  assert.deepEqual(resolveUser(idx, { epicor_handle: "rcastillo" }).recordIds, ["recNew"]);
+});

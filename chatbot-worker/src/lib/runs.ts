@@ -38,6 +38,7 @@ export const P = {
   status: "fldGYno80SzQHdh3h",
   email: "fld3eDM0HIMl6dEJV",
   epicorUserId: "fldequaAG4gupr4Hb",
+  offboardDate: "fldFZoDcw92P3f6A3",
 } as const;
 
 // Client value -> single-select choice name in Airtable.
@@ -232,8 +233,10 @@ export interface PeopleRow {
 }
 export type PeopleIndex = Map<string, Set<string>>; // identity key -> People record ids
 
-// Only active employees are resolution targets (kind "employee", status "active").
-export function buildPeopleIndex(rows: PeopleRow[]): PeopleIndex {
+// Only active employees are resolution targets (kind "employee", status "active"). Status is set by hand in the source
+// Roles table and can lag, so a row whose offboard date has passed is skipped too: the person stays resolvable through
+// their last day, and a stale "active" never credits a run to someone who has left. today is YYYY-MM-DD (UTC).
+export function buildPeopleIndex(rows: PeopleRow[], today: string = new Date().toISOString().slice(0, 10)): PeopleIndex {
   const idx: PeopleIndex = new Map();
   const add = (key: string, id: string) => {
     if (!key) return;
@@ -244,6 +247,8 @@ export function buildPeopleIndex(rows: PeopleRow[]): PeopleIndex {
     const status = String(r.fields[P.status] ?? "");
     const kind = String(r.fields[P.kind] ?? "");
     if (status !== "active" || kind !== "employee") continue;
+    const offboard = String(r.fields[P.offboardDate] ?? "").slice(0, 10);
+    if (offboard && offboard < today) continue;
     add(identityKey(r.fields[P.epicorUserId] as string | undefined), r.id);
     add(identityKey(r.fields[P.email] as string | undefined), r.id);
   }

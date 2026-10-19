@@ -39,7 +39,7 @@ export async function getPeopleIndex(env: Env): Promise<PeopleIndex | null> {
         returnFieldsByFieldId: "true",
         pageSize: "100",
       });
-      for (const id of [P.employeeId, P.kind, P.status, P.email, P.epicorUserId]) q.append("fields[]", id);
+      for (const id of [P.employeeId, P.kind, P.status, P.email, P.epicorUserId, P.offboardDate]) q.append("fields[]", id);
       if (offset) q.set("offset", offset);
       const res = await airtable(env, `${env.RUNS_BASE_ID}/${env.PEOPLE_TABLE_ID}?${q}`);
       if (!res.ok) return await fail(env, "People read", res);
