@@ -14,7 +14,7 @@ corpus_tags: [fe-release]
 ## How do I set up the PE release folder?
 {: #how-to-setup-release-folder}
 
-Navigate to `03_PE_Releases` in the project's Engineering folder. Copy the template folder `_PROJ.JOB_ScopeDescription` and rename it (e.g., `1102.011_Maitre D Stand`). Subfolders include `Production_Files` (Rhino PE model, SC list) and `Production_Drawings` (PDF drawing set).
+Navigate to `03_PE_Releases` in the project's Engineering folder. Copy the template folder `_PROJ.JOB_ScopeDescription` and rename it (e.g., `1102.011_Maitre D Stand`). **Never rename the folder afterwards**, and never add suffixes such as `_Partial Releases`. Subfolders include `Production_Files` (Rhino PE model, SC list) and `Production_Drawings` (PDF drawing set).
 
 ## How do I set up a manufactured parts (MFG) folder?
 {: #how-to-setup-mfg-folder}
@@ -179,10 +179,16 @@ Include files in their respective folders:
   - Drawing set PDF
   - Any ancillary documents PE needs to process the job (veneer takeoff drawings, hardware cut sheets, specialty fabrication references, etc.) — copied here even if they also exist elsewhere in the project folder
 
+#### Partial releases
+
+A job whose parts are not all ready together is released in parts. Every partial release goes into the job's **existing** PE release folder: do not create a second folder and do not rename the first. Each partial adds its files (dated, as above) alongside the earlier ones; nothing is overwritten. Announce each one by replying in the job's original release post.
+
 #### File naming conventions
 
+> **Folders carry the scope description. File names never do.** A job folder is `[PROJ.JOB]_ScopeDescription` (for example `1105.007_Maitre D Stand`). Every file inside it is named from the job number alone, plus the type or date suffix shown below, and **never the scope description**, with one exception: PDF submittal drawings keep `[EpicorCode]_ScopeDescription.pdf`, because they are passed around outside their home folders and nobody viewing a PDF can see the folder it came from. We are already running into file path character limits, and a scope description repeated in both the folder name and the file name is what pushes paths over.
+
 - Rhino model: `[EpicorCode]_PE_YYYYMMDD` (see also **PE Rhino file names** in the checklist above for catalog/MFG patterns).
-- PDF drawings: `[EpicorCode]_ScopeDescription`
+- PDF drawings: `[EpicorCode]_ScopeDescription` (the exception to the rule above: PDFs travel outside their folders)
 - SC list: `[EpicorCode]_SHIPPING_COMPONENTS`
 
 ### 3. Model and drawing preparation

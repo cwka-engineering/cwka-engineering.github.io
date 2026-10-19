@@ -89,7 +89,7 @@ Navigate to `Box/Awarded/`. Copy the template project folder. Rename with 4-digi
 ## How do I set up a new FE job folder?
 {: #how-to-set-up-job-folder}
 
-Navigate to `01_FE_Models/`. Copy the `_PROJ.JOB_ScopeDescription` template. Rename to your job (e.g., `1094.002_CashWrap`).
+Navigate to `01_FE_Models/`. Copy the `_PROJ.JOB_ScopeDescription` template. Rename to your job (e.g., `1094.002_CashWrap`). The folder name carries the scope description; the files you save in it never do (they use the job number only, e.g. `1094.002_FE.3dm`).
 
 ## How do I create a new Rhino file from the template?
 {: #how-to-create-rhino-file}
