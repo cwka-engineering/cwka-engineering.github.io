@@ -75,8 +75,9 @@ corpus_tags: [fe-release, fe-submittal]
 
 ## Drawing & Layout Terms
 
-- **T00**: Title Sheet — project cover page with job index.
-- **G00**: General Requirements and Schedules — material/finish tags populated from TRA via the Engineering Toolkit, plus the BOM summary. See [Cover Sheet & Common Pages](/standards/rhino-drafting/cover-sheet-common-pages.html).
+- **C00**: Cover — the logo page that opens a drawing set; no text and no title block.
+- **T00**: Title Sheet — project name, address, client and architect, and a project index of every job under the project (the submittal's own jobs are bold and underlined).
+- **G00**: General Requirements and Schedules — item drawings list, material/finish/veneer tag tables populated from TRA via the Engineering Toolkit, and the bill of materials. See [Cover Sheet & Common Pages](/standards/rhino-drafting/cover-sheet-common-pages.html).
 - **1XX**: Reference Plans — overall floor plans, enlarged plans, RCPs, VIF plans.
 - **2XX**: Shop Drawings — ordered as: (1) Iso, (2) Plans, (3) Elevations, (4) Sections, (5) Details.
 - **3XX**: Install & Shipping Drawings — shipping components list and installation supplements (assembly instructions specific to site conditions).

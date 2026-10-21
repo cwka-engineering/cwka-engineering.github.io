@@ -85,7 +85,7 @@ Drafting Toolkit → **Setup tab**. The submittal scope is auto-populated from t
 ## How do I populate the T00 (Title/Project) page?
 {: #how-to-populate-t00}
 
-Drafting Toolkit → **Project tab** → **Publish Changes**. Manually fill fields not tracked in Epicor (architect, project address). The toolkit auto-populates project metadata from Epicor for the rest.
+Drafting Toolkit → **Project tab** → **Publish Changes**. Manually fill fields not tracked in Epicor (architect, project address, and the description lines under the project name). The toolkit auto-populates project metadata from Epicor for the rest.
 
 ## How do I populate the G00 (General Requirements/Schedules) page?
 {: #how-to-populate-g00}
@@ -106,9 +106,11 @@ Drafting Toolkit → **Schedules tab** → BOM section. Enter the job number, ca
 
 A Grouped Submittal (GS) combines interrelated scopes into one submittal package — either because they share construction details, or because a single large element has been sharded across multiple production jobs for manufacturing or shipping efficiency. GS jobs aren't pre-created by the master scheduler; request one from your PA and PM when a grouped submittal makes more sense than separate per-job submittals. See [Grouped Submittal (GS) jobs](/tools/time-entry.html#direct-gs-jobs) for the time-entry rules — a GS job only ever carries the Submittal operation.
 
-In the toolkit, set submittal scope to `PROJ.GS.001` format, then specify the individual jobs covered (e.g., 1091.008, 1091.009, 1091.010). BOM pulls will cover all specified jobs.
+In the toolkit, set submittal scope to `PROJ.GS.001` format, then specify the individual jobs covered (e.g., 1091.008, 1091.009, 1091.010). BOM pulls will cover all specified jobs. The title block's JOB # field lists the jobs (for example `1162.011, 013, 014, 015, 016, 026`), and T00 marks every one of them in the project index in bold and underlined.
 
 > **Submittal scope vs. job number**: The `PROJ.GS.001`-style submittal scope drives page numbering and appears throughout the drawing set — but it's a drawing-side label, not the Epicor job number, and never carries the `E` prefix. The actual Epicor GS job is `E####.GS.###` (e.g. `E1105.GS.001`) — same numeric sequence, with the `E` prefix. The title block still displays the actual constituent job numbers regardless of which scope label is used for page numbering.
+
+**Revisions and filing:** a revision applies to every job in the group (one revision log, one revision number; see [Revision History](/standards/rhino-drafting/revision-history.html)). The submittal drawing set is filed as a single cumulative PDF in the group's folder (for example `1162.GS.001_<title>` under `03_OUTGOING_Submittals`), while job releases to PE are still filed per job, as individual 3dm files.
 
 ## Tags Tables & BOM
 

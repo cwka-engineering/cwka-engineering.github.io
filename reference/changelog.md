@@ -12,6 +12,13 @@ A record of significant additions and updates to the Engineering Wiki, grouped b
 
 ---
 
+## 2026-10-19 – 2026-10-25
+
+- **[Cover Sheet & Common Pages](/standards/rhino-drafting/cover-sheet-common-pages.html) / [Layout Structure](/standards/rhino-drafting/layout-structure.html) / [Glossary](/reference/glossary.html)** — Closed the gaps against the current template: added the **C00** logo cover and **S000** nested sheets to the page-type tables; T00 is described as the project index (jobs, with the submittal's own jobs in bold and underlined) and the drawing set's table of contents is G00's Item Drawings table; G00 is now listed as its five tables (item drawings, general material tags, finish tags, veneer and solid wood tags, bill of materials), with no separate hardware tag table.
+- **[Drafting Toolkit — group submittals](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-handle-group-submittal) / [Revision History](/standards/rhino-drafting/revision-history.html)** — A grouped submittal's JOB # field lists its jobs and T00 marks each of them; a revision applies to every job in the set; the submittal set is filed as one cumulative PDF while job releases stay per-job 3dm files. The T00 description lines under the project name are noted as typed fields.
+
+---
+
 ## 2026-10-12 – 2026-10-18
 
 - **[Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html)** — Clarified that material approval status (and transmittal numbers) do not appear on the G00 cover sheet; G00 shows only the PM-maintained tag, description, and spec fields. Aligned wording in the Drafting Toolkit and Cover Sheet pages, which previously implied approval status prints on drawings.

@@ -34,14 +34,19 @@ Layouts follow a "Hundred level page number" system:
 
 ## Standard Page Types
 
+### XXXX.C00: Cover
+- The logo page (digifabshop | CWKA logo on a blank tabloid page); no text and no title block
+- Comes first in the set, ahead of T00
+
 ### XXXX.T00: Title Sheet
-- Project cover page with project index (table of contents for the drawing set)
-- May include a project photo (becoming standard practice)
-- Metadata fields populated via [Drafting Toolkit → Project tab](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-populate-t00)
+- Project front page: project name and description lines, address, issue date, client, architect
+- **Project index**: every job under the project, with this submittal's job(s) in bold and underlined (a grouped submittal marks each of its jobs). It indexes the project's jobs; the drawing set's own table of contents is the Item Drawings table on G00
+- May include a project photo or isometric view of the item (becoming standard practice)
+- The three description lines under the project name, the address and the architect are typed fields; the rest comes from Epicor. Populated via [Drafting Toolkit → Project tab](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-populate-t00)
 
 ### XXXX.G00: General Requirements
-- Material schedule (finish tags, general materials, veneer/wood, hardware)
-- BOM summary or transmittal-driven data
+- Five tables: **Item Drawings** (the set's table of contents), **General Material Tags**, **Finish Tags**, **Veneer and Solid Wood Tags**, and the **Bill of Materials** (hardware appears there by `GM.HW.#####` part number; there is no hardware tag table)
+- Tag tables are transmittal-driven; the BOM comes from the job's BOM in Epicor
 - Populated via [Drafting Toolkit → Schedules tab](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-populate-g00) pulling from the Material Transmittal Log
 - See also [Cover Sheet & Common Pages](/standards/rhino-drafting/cover-sheet-common-pages.html)
 
@@ -89,6 +94,9 @@ For shop team (internal use). Includes: [^transcript-layouts]
 - For quick feedback or pre-submittal sets
 - Not part of formal submission set
 - Useful for early PA/PM coordination
+
+### XXXX.S000 and XXXX.L000
+- **S000** (Nested Sheets) and **L000** (Master Parts List) are in the template and use the larger title-block layout rather than the standard one. L000 is still present but underused.
 
 ## Schedules
 

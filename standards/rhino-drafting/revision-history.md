@@ -32,6 +32,8 @@ A revision occurs each time a submittal drawing completes one full client review
 
 Each issue-and-return cycle produces exactly one revision increment, regardless of how many individual changes are made within that cycle.
 
+In a [grouped submittal](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-handle-group-submittal) the revision applies to every job in the set: the group has one revision log and one revision number, and a Revise and Resubmit on any of its jobs revises the whole set.
+
 ## What Does NOT Trigger a Revision
 
 Internal feedback — from any source, at any stage — does not constitute a revision. This includes:

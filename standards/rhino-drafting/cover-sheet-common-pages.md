@@ -26,14 +26,19 @@ See [Lead Engineer Responsibilities](/onboarding/lead-engineer.html) for setup o
 
 ## Standard Common Pages
 
-### Cover Sheet
-Full project job index listing all awarded scope items with job numbers.
+### Cover (C00)
+The logo page: the digifabshop | CWKA logo centred on an otherwise blank tabloid page. It has no text and no title block, so it carries no drawing number on the page.
+
+### Title Sheet (T00)
+The project's front page. It shows the project name (up to three title lines), address, issue date, project number, client and architect, a **project index** of every job under the project (this submittal's jobs are set in **bold and underlined**; a grouped submittal marks each of its jobs), a referenced-contract-documents section, and a view of the item on the right. The project index lists jobs, not drawings; the list of drawings in the set is on G00.
 
 ### General Requirements (G00)
-Finish and material tag schedules generated via the Engineering Toolkit from the Material Transmittal Log. Displays:
-- CWK material tag and ARCH tag cross-reference
-- Material descriptions
-- FSC certification, fire rating, moisture resistance
+Schedules generated via the Engineering Toolkit from the Material Transmittal Log and the job's BOM. Five tables:
+- **Item drawings** — drawing number, title and issue date of each sheet in the set (the drawing set's table of contents)
+- **General material tags** — CWK material tag and ARCH tag cross-reference, descriptions, FSC certification, fire rating, moisture resistance, emissions
+- **Finish tags** — tag, reference tag, description, sheen
+- **Veneer and solid wood tags** — tag, reference tag, species, cut, match, sequence
+- **Bill of materials** — part number and description (hardware appears here as `GM.HW.#####` part numbers; there is no separate hardware tag table)
 
 Approval status and transmittal numbers are internal PM tracking in the TRA and do not appear on G00.
 
@@ -62,12 +67,14 @@ This set is included with:
 
 | Code | Page Type | Content |
 |------|-----------|---------|
-| T00 | Title Sheet | Project cover page with job index |
-| G00 | General Requirements | Material/finish tag schedules from TRA, BOM summary |
+| C00 | Cover | Logo page; no text or title block |
+| T00 | Title Sheet | Project name, address, client and architect, project index of all jobs (this submittal's jobs in bold and underlined), item view |
+| G00 | General Requirements | Item drawings list, material/finish/veneer tag tables from TRA, bill of materials |
 | 1XX | Reference Plans | Floor plans, enlarged plans, RCPs, VIF plans |
 | 2XX | Shop Drawings | Iso → Plans → Elevations → Sections → Details |
 | 3XX | Install & Shipping | SC list, installation supplements for site conditions |
 | 4XX | Fabrication Supplements | Layups, veneer sequences, glue-up jigs (internal use) |
 | SKXX | Sketches | Quick feedback; not in submission set |
+| S000 | Nested Sheets | Nested sheet layouts; in the template with the larger title-block layout, as L000 has |
 | L000 | Master Parts List | Standardized parts schedule (still present, underused) |
 | L001 | Pick List | **Deprecated** — removed from the general Rhino tabloid template |
