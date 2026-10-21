@@ -14,12 +14,12 @@ corpus_tags: [fe-release]
 ## How do I set up the PE release folder?
 {: #how-to-setup-release-folder}
 
-Navigate to `03_PE_Releases` in the project's Engineering folder. Copy the template folder `_PROJ.JOB_ScopeDescription` and rename it (e.g., `1102.011_Maitre D Stand`). **Never rename the folder afterwards**, and never add suffixes such as `_Partial Releases`. Subfolders include `Production_Files` (Rhino PE model, SC list) and `Production_Drawings` (PDF drawing set).
+Navigate to `03_PE_Releases` in the project's Engineering folder. Copy the template folder `_PROJ.JOB_ScopeDescription` and rename it (e.g., `1102.011_Maitre D Stand`). **Never rename the folder afterwards**, and never add suffixes such as `_Partial Releases`. Subfolders include **`Fabrication_Handoff`** (everything FE passes to PE: the purged PE Rhino model, the shipping components list and the approved submittal drawing) and PE's own `Production_Drawings` and `Production_Files`. FE only ever puts files in `Fabrication_Handoff`.
 
 ## How do I set up a manufactured parts (MFG) folder?
 {: #how-to-setup-mfg-folder}
 
-If releasing a manufacturing job, create `00_MT_WC_IP_MfgParts` inside the release folder if not already present. Place MFG part files here using the naming convention: `PROJ.MT.XXXXX_PE.3dm` or `PROJ.WC.XXXXX_PE.3dm`.
+A manufacturing job (WC or MT) gets its own release folder directly in `03_PE_Releases`, copied from the same template and named with the Epicor **job number** (for example `1130.M.005` or `1130.W.005`). Its Rhino file is named with the Epicor **part number**: `PROJ.MT.XXXXX_PE_YYYYMMDD.3dm` or `PROJ.WC.XXXXX_PE_YYYYMMDD.3dm`. It goes in that folder's `Fabrication_Handoff` like any other release. There is no separate `00_MT_WC_IP_MfgParts` folder.
 
 ## How do I clean and prepare the PE Rhino file?
 {: #how-to-clean-pe-file}
@@ -121,8 +121,8 @@ See [Shipping Components](/workflows/fabrication-engineer/shipping-components.ht
   - **Catalog item**: two-character account + two-character category + three digits — e.g. `CM.BE.001_PE.3dm`  
   - **Catalog manufactured part**: account + MT or WC + five digits — e.g. `CM.MT.00005_PE.3dm`  
   - **Isodate** after `_PE` when using date form: `PROJ.JOB_PE_20250124.3dm`
-- **File organization**: Move the purged PE Rhino file to `03_PE_Releases/PROJ.JOB/Production_Files`. Copy the full PDF fabrication set (including finish/material schedules) to `Production_Drawings`. Also copy any ancillary documents PE needs to successfully process the job — see below.
-- **Ancillary documents**: Any document outside the standard submittal set that PE requires to process the job must be copied into `Production_Drawings` alongside the drawing set. Examples include veneer takeoff drawings, hardware cut sheets for non-standard components, or specialty fabrication references. These documents may also exist in their canonical location elsewhere in the project folder (e.g. `04 Purchasing/02_Approved Part Drawings`) — copy them; do not rely on PE to locate them independently.
+- **File organization**: Everything FE passes to PE goes in `03_PE_Releases/PROJ.JOB_ScopeDescription/Fabrication_Handoff`: the purged PE Rhino file, the shipping components list and the **approved submittal drawing** (the PDF the client approved; if a For Record version exists in the submittal folder's `01_Outgoing`, that one). Do not put files in PE's own `Production_Files` or `Production_Drawings`. Also add any ancillary documents PE needs to successfully process the job — see below.
+- **Ancillary documents**: Any document outside the standard submittal set that PE requires to process the job, and any additional pages FE creates, must be added by hand to `Fabrication_Handoff` alongside the approved submittal drawing. Examples include veneer takeoff drawings, hardware cut sheets for non-standard components, or specialty fabrication references. These documents may also exist in their canonical location elsewhere in the project folder (e.g. `04 Purchasing/02_Approved Part Drawings`) — copy them; do not rely on PE to locate them independently.
 - **Geometry state**: Model reflects geometry as it comes **off the machine** (e.g. sharp corners where round-overs are bench-applied).
 - **PDFs**: Prefer **vector** PDFs where possible; each shipping component called out clearly on drawings.
 - **Epicor (job level)**: **Engineering Complete** checked per material after quantity/part verification; **BOM Complete** and **Field Dimensions Received** complete; **Fabrication Engineer** (may appear as **Production Team** on Job Entry) set to your name.
@@ -166,18 +166,16 @@ C:\BoxSync\Box\Awarded\PROJECT\03 Engineering\02_WORKING_Drawings_Models\03_PE_R
 - Example: `1102.011_Maitre D Stand`
 - Create missing subfolders.
 
-If not present, and releasing a manufacturing job manually, create:
+A manufacturing job gets its own release folder in `03_PE_Releases` (see above); there is no `00_MT_WC_IP_MfgParts` folder.
 
-- `00_MT_WC_IP_MfgParts`
+Put the files in **`Fabrication_Handoff`**:
 
-Include files in their respective folders:
+- Rhino PE model file (purged)
+- Shipping components (SC) list — when releasing a primary job, not strictly required for manufacturing jobs.
+- The approved submittal drawing PDF (or its For Record version), keeping its original file name
+- Any additional pages FE creates, and any ancillary documents PE needs to process the job (veneer takeoff drawings, hardware cut sheets, specialty fabrication references, etc.) — added here even if they also exist elsewhere in the project folder
 
-- **Production_Files**
-  - Rhino PE model file
-  - Shipping components (SC) list — when releasing a primary job, not strictly required for manufacturing jobs.
-- **Production_Drawings**
-  - Drawing set PDF
-  - Any ancillary documents PE needs to process the job (veneer takeoff drawings, hardware cut sheets, specialty fabrication references, etc.) — copied here even if they also exist elsewhere in the project folder
+`Production_Drawings` and `Production_Files` belong to PE: leave them alone.
 
 #### Partial releases
 
@@ -188,7 +186,7 @@ A job whose parts are not all ready together is released in parts. Every partial
 > **Folders carry the scope description. File names never do.** A job folder is `[PROJ.JOB]_ScopeDescription` (for example `1105.007_Maitre D Stand`). Every file inside it is named from the job number alone, plus the type or date suffix shown below, and **never the scope description**, with one exception: PDF submittal drawings keep `[EpicorCode]_ScopeDescription.pdf`, because they are passed around outside their home folders and nobody viewing a PDF can see the folder it came from. We are already running into file path character limits, and a scope description repeated in both the folder name and the file name is what pushes paths over.
 
 - Rhino model: `[EpicorCode]_PE_YYYYMMDD` (see also **PE Rhino file names** in the checklist above for catalog/MFG patterns).
-- PDF drawings: `[EpicorCode]_ScopeDescription` (the exception to the rule above: PDFs travel outside their folders)
+- Approved submittal drawing PDF: keeps its original name, `[EpicorCode]_ScopeDescription` (the exception to the rule above: PDFs travel outside their folders). For Record versions have `FOR RECORD` appended to the end of the name and live in the submittal folder's `01_Outgoing`.
 - SC list: `[EpicorCode]_SHIPPING_COMPONENTS`
 
 ### 3. Model and drawing preparation

@@ -45,10 +45,11 @@ Box/
           02_CoverSheet_CommonPages/
           03_PE_Releases/
             [PROJ.JOB_ScopeDescription]/
+              Fabrication_Handoff/
               Production_Files/
               Production_Drawings/
-            00_MT_WC_IP_MfgParts/
-              [PROJ.M.000 or PROJ.W.000]/
+            [PROJ.M.000 or PROJ.W.000]/
+              (same layout as a job release folder)
         03_OUTGOING_Submittals/
           [PROJ.JOB_ScopeDescription]/
             00_Internal_Review/
@@ -141,11 +142,12 @@ Dedicated to completed work ready for production. Release contents and naming mu
 
 - Subfolders copied from `_PROJ.JOB_ScopeDescription` template and renamed per job.
 - Inside each release folder:
-  - **Production_Files/**: PE Rhino file, SC list, Master Parts List, Lay-Up Summary, optional SHOP model
-  - **Production_Drawings/**: Completed shop drawings by FE and SKs by PE. Also contains any ancillary documents PE needs to process the job — veneer takeoff drawings, hardware cut sheets, specialty fabrication references, etc. These are copied here from wherever they live in the project folder; PE should not need to search outside this directory to execute the release.
+  - **Fabrication_Handoff/**: everything FE passes to PE: the purged PE Rhino file, the shipping components list, and the approved submittal drawing PDF (or its For Record version). FE also adds any additional pages and ancillary documents PE needs to process the job — veneer takeoff drawings, hardware cut sheets, specialty fabrication references, etc. — copied here from wherever they live in the project folder; PE should not need to search outside this folder to execute the release. This is the only folder FE writes to.
+  - **Production_Files/**: PE's own working files: Master Parts List, Lay-Up Summary, machine programs, optional SHOP model
+  - **Production_Drawings/**: PE's own production drawings and SKs
 
-#### 00_MT_WC_IP_MfgParts
-Manufacturing part folders for WC, MT, and IP jobs.
+#### Manufacturing release folders
+WC and MT jobs get their own release folder directly in `03_PE_Releases`, copied from the same template (so it also has `Fabrication_Handoff`).
 
 **MFG parts naming convention:**
 - The enclosing **folder** is named using the Epicor **job number** with three trailing digits — e.g., `1130.M.005`
