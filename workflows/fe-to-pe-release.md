@@ -179,13 +179,13 @@ Put the files in **`Fabrication_Handoff`**:
 
 #### Partial releases
 
-A job whose parts are not all ready together is released in parts. Every partial release goes into the job's **existing** PE release folder: do not create a second folder and do not rename the first. Each partial adds its files (dated, as above) alongside the earlier ones; nothing is overwritten. Announce each one by replying in the job's original release post.
+A job whose parts are not all ready together is released in parts. Every partial release goes into the job's **existing** PE release folder: do not create a second folder and do not rename the first. Each partial adds its files (dated, as above) alongside the earlier ones; nothing is overwritten. Name each partial's Rhino model with `_PARTIAL-NN` after the date, counting up from `01`: `1105.009_PE_20260105_PARTIAL-02.3dm`. A release that is not partial has no suffix. Announce each one by replying in the job's original release post.
 
 #### File naming conventions
 
 > **Folders carry the scope description. File names never do.** A job folder is `[PROJ.JOB]_ScopeDescription` (for example `1105.007_Maitre D Stand`). Every file inside it is named from the job number alone, plus the type or date suffix shown below, and **never the scope description**, with one exception: PDF submittal drawings keep `[EpicorCode]_ScopeDescription.pdf`, because they are passed around outside their home folders and nobody viewing a PDF can see the folder it came from. We are already running into file path character limits, and a scope description repeated in both the folder name and the file name is what pushes paths over.
 
-- Rhino model: `[EpicorCode]_PE_YYYYMMDD` (see also **PE Rhino file names** in the checklist above for catalog/MFG patterns).
+- Rhino model: `[EpicorCode]_PE_YYYYMMDD`, or `[EpicorCode]_PE_YYYYMMDD_PARTIAL-NN` for a partial release (see also **PE Rhino file names** in the checklist above for catalog/MFG patterns).
 - Approved submittal drawing PDF: keeps its original name, `[EpicorCode]_ScopeDescription` (the exception to the rule above: PDFs travel outside their folders). For Record versions have `FOR RECORD` appended to the end of the name and live in the submittal folder's `01_Outgoing`.
 - SC list: `[EpicorCode]_SHIPPING_COMPONENTS`
 

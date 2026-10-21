@@ -20,6 +20,7 @@ corpus_tags: [fe-release]
 |-----------|-----------|---------|
 | FE Rhino model | `[PROJ.JOB]_FE.3dm` | `1094.002_FE.3dm` |
 | PE Rhino model | `[EpicorCode]_PE_YYYYMMDD.3dm` | `1105.007_PE_20250124.3dm` |
+| PE Rhino model, partial release | `[EpicorCode]_PE_YYYYMMDD_PARTIAL-NN.3dm` (NN starts at 01) | `1105.009_PE_20260105_PARTIAL-02.3dm` |
 | PE MFG model | `[PROJ.MFGCode.XXXXX]_PE.3dm` | `1130.MT.00022_PE.3dm` |
 | Catalog PE model | `[Acct.Cat.###]_PE.3dm` | `CM.BE.001_PE.3dm` |
 
