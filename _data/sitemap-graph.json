@@ -334,7 +334,7 @@
       "id": "/standards/rhino-drafting/revision-history.html",
       "title": "Revision History",
       "section": "Standards",
-      "degree": 3
+      "degree": 4
     },
     {
       "id": "/standards/rhino-drafting/sections-clipping.html",
@@ -574,7 +574,7 @@
       "id": "/workflows/fabrication-engineer/toolkit/drafting.html",
       "title": "Drafting Toolkit",
       "section": "Home",
-      "degree": 10
+      "degree": 11
     },
     {
       "id": "/workflows/fabrication-engineer/toolkit/",
@@ -1669,6 +1669,10 @@
     {
       "source": "/standards/rhino-drafting/revision-history.html",
       "target": "/workflows/fabrication-engineer/submittal-review.html"
+    },
+    {
+      "source": "/standards/rhino-drafting/revision-history.html",
+      "target": "/workflows/fabrication-engineer/toolkit/drafting.html"
     },
     {
       "source": "/tools/",
