@@ -11,7 +11,7 @@ corpus_tags: [fe-release]
 
 > **Related**: [FE Workflow](/workflows/fabrication-engineer/) | [PE Workflow](/workflows/production-engineer/) | [FE to PE Release](/workflows/fe-to-pe-release.html)
 
-> **Folders carry the scope description. File names never do.** A job folder is `[PROJ.JOB]_ScopeDescription` (for example `1105.007_Maitre D Stand`). Every file inside it is named from the job number alone, plus the type or date suffix shown below, and **never the scope description**, with one exception: PDF submittal drawings keep `[EpicorCode]_ScopeDescription.pdf`, because they are passed around outside their home folders and nobody viewing a PDF can see the folder it came from. We are already running into file path character limits, and a scope description repeated in both the folder name and the file name is what pushes paths over.
+> **Folders carry the scope description. File names never do.** A job folder is `[PROJ.JOB]_ScopeDescription` (for example `1105.007_Maitre D Stand`). Every file inside it is named from the job number alone, plus the type or date suffix shown below, and **never the scope description**. That includes submittal PDFs: the submittal front matter flow names them `[EpicorCode]_R<n>_YYYYMMDD.pdf` (revision number and date), and the file travels with that name. We are already running into file path character limits, and a scope description repeated in both the folder name and the file name is what pushes paths over.
 
 ## Project Organization Overview
 

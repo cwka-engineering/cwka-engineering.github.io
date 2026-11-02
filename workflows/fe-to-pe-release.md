@@ -149,6 +149,8 @@ For detailed definitions, see the [Glossary](/reference/glossary.html).
 - **WC Jobs**: Wood Component manufacturing jobs.
 - **MT Jobs**: Metal Component or Kit of Parts manufacturing jobs.
 
+**Outsourced (EXT) jobs.** Vendors do not return Rhino files. After the client approves the vendor's deliverables, the post-processing engineer assigned to the job translates them into a conformant Rhino file and creates the job's `01_FE_Models` assets. From there the release is the same as any other: the release finder and the QC check read the model in `01_FE_Models`, never the vendor's returned files.
+
 ### 2. File organization and folder setup
 {: #sop-file-organization}
 
@@ -183,10 +185,10 @@ A job whose parts are not all ready together is released in parts. Every partial
 
 #### File naming conventions
 
-> **Folders carry the scope description. File names never do.** A job folder is `[PROJ.JOB]_ScopeDescription` (for example `1105.007_Maitre D Stand`). Every file inside it is named from the job number alone, plus the type or date suffix shown below, and **never the scope description**, with one exception: PDF submittal drawings keep `[EpicorCode]_ScopeDescription.pdf`, because they are passed around outside their home folders and nobody viewing a PDF can see the folder it came from. We are already running into file path character limits, and a scope description repeated in both the folder name and the file name is what pushes paths over.
+> **Folders carry the scope description. File names never do.** A job folder is `[PROJ.JOB]_ScopeDescription` (for example `1105.007_Maitre D Stand`). Every file inside it is named from the job number alone, plus the type or date suffix shown below, and **never the scope description**. That includes submittal PDFs: the submittal front matter flow names them `[EpicorCode]_R<n>_YYYYMMDD.pdf` (revision number and date), and the file travels with that name. We are already running into file path character limits, and a scope description repeated in both the folder name and the file name is what pushes paths over.
 
 - Rhino model: `[EpicorCode]_PE_YYYYMMDD`, or `[EpicorCode]_PE_YYYYMMDD_PARTIAL-NN` for a partial release (see also **PE Rhino file names** in the checklist above for catalog/MFG patterns).
-- Approved submittal drawing PDF: keeps its original name, `[EpicorCode]_ScopeDescription` (the exception to the rule above: PDFs travel outside their folders). For Record versions have `FOR RECORD` appended to the end of the name and live in the submittal folder's `01_Outgoing`.
+- Approved submittal drawing PDF: keeps the name the submittal front matter flow gave it, `[EpicorCode]_R<n>_YYYYMMDD`. For Record versions have `FOR RECORD` appended to the end of the name and live in the submittal folder's `01_Outgoing`.
 - SC list: `[EpicorCode]_SHIPPING_COMPONENTS`
 
 ### 3. Model and drawing preparation

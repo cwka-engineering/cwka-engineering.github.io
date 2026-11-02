@@ -10,7 +10,7 @@ corpus_tags: [fe-release]
 
 # File Naming Conventions
 
-> **Folders carry the scope description. File names never do.** A job folder is `[PROJ.JOB]_ScopeDescription` (for example `1105.007_Maitre D Stand`). Every file inside it is named from the job number alone, plus the type or date suffix shown below, and **never the scope description**, with one exception: PDF submittal drawings keep `[EpicorCode]_ScopeDescription.pdf`, because they are passed around outside their home folders and nobody viewing a PDF can see the folder it came from. We are already running into file path character limits, and a scope description repeated in both the folder name and the file name is what pushes paths over.
+> **Folders carry the scope description. File names never do.** A job folder is `[PROJ.JOB]_ScopeDescription` (for example `1105.007_Maitre D Stand`). Every file inside it is named from the job number alone, plus the type or date suffix shown below, and **never the scope description**. That includes submittal PDFs: the submittal front matter flow names them `[EpicorCode]_R<n>_YYYYMMDD.pdf` (revision number and date), and the file travels with that name. We are already running into file path character limits, and a scope description repeated in both the folder name and the file name is what pushes paths over.
 
 > **Related**: [Folder Structure](/reference/folder-structure.html) | [Part Naming](/workflows/fabrication-engineer/part-naming.html) | [Shipping Components](/workflows/fabrication-engineer/shipping-components.html)
 
@@ -28,8 +28,8 @@ corpus_tags: [fe-release]
 
 | File Type | Convention | Example |
 |-----------|-----------|---------|
-| PDF drawings | `[EpicorCode]_ScopeDescription.pdf` | `1105.007_MaitreDStand.pdf` |
-| SC list | `[EpicorCode]_SHIPPING_COMPONENTS.csv` | `1105.007_SHIPPING_COMPONENTS.csv` |
+| Submittal PDF | `[EpicorCode]_R<n>_YYYYMMDD.pdf` (named by the submittal front matter flow; For Record versions append `FOR RECORD`) | `1105.007_R0_20261101.pdf` |
+| SC list | `[EpicorCode]_SHIPPING_COMPONENTS.xlsx` | `1105.007_SHIPPING_COMPONENTS.xlsx` |
 
 ## Folder Names
 
