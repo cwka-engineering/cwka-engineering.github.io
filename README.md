@@ -149,7 +149,9 @@ Each Cloudflare Worker lives in the repo that owns its callers and rules. This r
 
 Related workers: `cwka-pa-worker` (`power-automate-flows/worker`, parts matching and weekly time QC) and a planned `rhino-qc` container worker that calls this Worker's `/api/summarize`.
 
-**Model:** `CLAUDE_MODEL` and `PA_CLAUDE_MODEL` in `chatbot-worker/wrangler.toml` are `claude-haiku-5-5`. Haiku 5.5 thinks by default and thinking tokens count toward `max_tokens`, so `callClaude` (in `src/lib/claude.ts`) sends `effort: "low"` and generous caps, and logs a warning if a reply hits `max_tokens`. The streaming routes were not changed; if an answer is cut off, raise their caps. Don't send `temperature`, `top_p`, `top_k`, `budget_tokens` or assistant prefill to this model.
+**Model:** `CLAUDE_MODEL` and `PA_CLAUDE_MODEL` in `chatbot-worker/wrangler.toml` are `claude-haiku-5-5`. Haiku 5.5 thinks by default and thinking tokens count toward `max_tokens`, so every Claude call (`callClaude`, `streamClaude`, `streamClaudeDiagnostic` in `src/lib/claude.ts`) sends `effort: "low"` and a 4096 cap, and logs a warning if a reply hits `max_tokens`. Don't send `temperature`, `top_p`, `top_k`, `budget_tokens` or assistant prefill to this model.
+
+**Logs:** `[observability]` in `wrangler.toml` must stay. Wrangler treats a missing block as logs off and writes that on every deploy.
 
 **Deploy:** `cd chatbot-worker && npm run deploy` (Wrangler is a local dev dependency, so use `npm run` or `npx wrangler`, not a bare `wrangler`). `.github/workflows/deploy-worker.yml` also deploys on pushes that touch the worker, when `CHATBOT_ENABLED` is `true`.
 

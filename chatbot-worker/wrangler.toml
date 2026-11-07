@@ -2,6 +2,16 @@ name = "cwka-wiki-chatbot"
 main = "src/index.ts"
 compatibility_date = "2024-12-01"
 
+# Workers Logs. Omitting this makes `wrangler deploy` send observability.enabled = false,
+# which turns logs off — including a toggle set in the dashboard.
+[observability]
+enabled = true
+
+  [observability.logs]
+  enabled = true
+  invocation_logs = true
+  head_sampling_rate = 1
+
 [[kv_namespaces]]
 binding = "WIKI_CORPUS"
 id = "7b65b0b3e73e4608b0b29a412682c585"

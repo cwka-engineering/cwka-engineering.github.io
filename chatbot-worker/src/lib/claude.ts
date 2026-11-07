@@ -8,9 +8,13 @@ export async function streamClaude(
   model: string,
   maxRetries = 2
 ): Promise<ReadableStream> {
+  // Haiku 5.5 thinks by default and thinking tokens count toward max_tokens.
+  // buildSseStream forwards only text_delta, so a 1024 cap spent on thinking
+  // comes back as an empty or mid-sentence reply. Same fix as the other routes.
   const requestBody = JSON.stringify({
     model,
-    max_tokens: 1024,
+    max_tokens: 4096,
+    output_config: { effort: "low" },
     stream: true,
     system: [
       {
