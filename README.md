@@ -145,7 +145,7 @@ Each Cloudflare Worker lives in the repo that owns its callers and rules. This r
 | `/api/chat` | Wiki Q&A chat widget (public, CORS-gated, SSE) |
 | `/api/diagnostic`, `/api/summarize` | Grasshopper/Rhino diagnostic assistant and `rhino-qc` summaries (token-gated, SSE; read the `fe-release` corpus) |
 | `/api/time-entry` | CWK Time Companion (token-gated, SSE) |
-| `/api/parts-match`, `/api/clocked-time-qc` | Power Automate routes. **Moving to the PA worker** (`cwka-pa-worker`, in the `power-automate-flows` repo). They stay here until the flows are repointed and verified, then they are removed. |
+| `/api/parts-match`, `/api/clocked-time-qc` | Handlers still in this worker. The live Power Automate flows call `cwka-pa-worker` (repointed 11 October 2026). Remove these routes once nothing still calls them. |
 
 Related workers: `cwka-pa-worker` (`power-automate-flows/worker`, parts matching and weekly time QC) and a planned `rhino-qc` container worker that calls this Worker's `/api/summarize`.
 

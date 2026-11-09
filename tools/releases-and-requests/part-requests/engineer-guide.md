@@ -1,100 +1,109 @@
 ---
 layout: default
-title: Engineer / PM Guide
+title: Engineer Guide
 permalink: /tools/releases-and-requests/part-requests/engineer-guide.html
 parent: Part Requests
 grand_parent: Releases & Requests
 nav_order: 1
 ---
 
-# Part Requests — Engineer / PM Guide
+# Part Requests — Engineer Guide
 
 > **Related**: [Scheduler Guide](/tools/releases-and-requests/part-requests/scheduler-guide.html) | [Part Management](/tools/epicor/part-management.html) | [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html)
 
-When you need a material part that isn't in your BOM or that you can't find in Epicor, the Part Requests workflow handles the lookup for you. Submit a quick form, review the result in Teams, and reply with one word. The system does the rest.
+When a GM part you need is not one you already know, the New Part Request form looks for an existing part and posts the result in Teams. You accept one of the matches, or you ask the scheduler to create a new part.
 
-Everything happens in Teams — no emails or side conversations needed.
+The reply that counts is `@parts-bot` under that post.
 
----
+## Step 1: Submit the form
 
-## Step 1: Submit the Form
+Open the **New Part Request** form in the Airtable base **Releases & Requests**.
 
-Fill out the **Part Request** form in Microsoft Forms. You'll need:
+[New Part Request](https://airtable.com/app2X7JU998GzDUWj/pag1lahNDC9UDzw8Q/form)
 
-- **Material category** — Hardware, Sheet Goods, Solid Lumber, Inventory Metal, etc.
-- **Subcategory** — a more specific product type within the category (species for lumber, hardware type for HW, sheet type for SG, etc.) — shown where applicable
-- **Description** — describe the part in your own words. Include dimensions, material grade, finish, thread spec, or any other relevant attributes. The more specific you are, the better the result. If you have a McMaster-Carr SKU, include it here.
+1. **Requester.** Select your name. You have to be on the People list, with an email. Your Teams display name has to match that People name, on the full name.
+2. **Category.** Hardware, sheet goods, solid lumber, inventory metal, solid surface, fabric, glass, lighting, or stone.
+3. **Subcategory.** The Epicor search word. Choose **Other** and type one of 8 characters or less. Glass, lighting, and stone have no subcategory.
+4. **Description.** Measurements and units. Include a McMaster-Carr SKU, or the product link, when you have one.
+5. **Unknown** has no class. That submission stops, and nothing is posted. Pick the category that fits.
+6. One submission is one part.
 
----
-
-## Step 2: Review the Result in the Parts Requests Channel
-
-Within a minute or two, a post will appear in the **Part Requests** channel in Teams. You'll be **@mentioned** and will receive a notification.
-
-The post will show one of three outcomes:
-
-| Header | Meaning |
+| Category | Part numbers |
 |---|---|
-| 🟢 **Strong match found** | A high-confidence existing catalog part was found |
-| 🟡 **Possible match — review needed** | One or more candidates were found but confidence is not certain |
-| 🔵 **No match — new part needed** | Nothing in the catalog matches your description |
+| Hardware | GM.HW |
+| Sheet Goods | GM.SG |
+| Solid Lumber | GM.SL |
+| Inventory Metal | GM.IM |
+| Solid Surface | GM.SS |
+| Fabric/Upholstery | GM.FU |
+| Glass/Plastics | GM.GL |
+| Lighting/Electrical | GM.LE |
+| Stone | GM.ST |
 
-For match results, candidate parts are listed with their ERP numbers, descriptions, and confidence ratings. For no-match results, a suggested ERP description is shown for reference.
+## Step 2: Read the channel post
 
----
+Within a few minutes the **Parts Requests** channel gets a thread and you are @mentioned.
 
-## Step 3: Reply ACCEPT or DECLINE
+| Result | What you do |
+|---|---|
+| Strong match, or possible match | The post lists part numbers. Accept one of those numbers, or decline |
+| No existing part matched | Decline, so the scheduler creates one. If you have since found an existing part, accept that number |
 
-Reply in the thread — not as a new post — with one of two responses:
+Glass, lighting, and stone are not searched, so those posts say no existing part matched.
 
-**ACCEPT** — an existing candidate works for your project, or you're satisfied the assessment is correct. The request closes and no further action is needed on your end.
+If nothing arrives, ask Fernando Saucedo or Caleb Marhoover. A missing People email, or the category Unknown, never posts.
 
-**DECLINE** — none of the candidates work, or no match was found and you need a new part created.
+### A McMaster-Carr SKU
 
-> Keep your reply simple. The system reads for the keywords ACCEPT or DECLINE. You can add a note after if it's helpful for context, but the keyword must be present.
+Hardware requests are looked up from the SKU alone (`91251A540`, or a `mcmaster.com` link). Any other category is looked up when the description also says McMaster. The suggested description is rewritten from that product. The brand and the SKU stay out of the description. A length you typed is replaced when McMaster states a different one, and the notes say what changed. A pack is named in the notes. The inventory unit stays each. A metric product stays in millimeters. The search word stays the subcategory you picked. If McMaster does not answer, the post uses the description and sizes from what you typed.
 
----
+## Step 3: Reply under that post
 
-## Step 4 (DECLINE only): Wait for the Scheduler
+Mention the bot. `HELP` and `NEXT` work in any message. The other commands are replies in that thread.
 
-If you DECLINE, the scheduler is automatically notified in the same thread and a task is created for them in Planner. The scheduler typically has **3 business days** to create the new part in Epicor.
+| Reply | Effect |
+|---|---|
+| `@parts-bot ACCEPT GM.HW.00544` | Closes the request on that number. The number has to be one of the parts the post listed. When the post listed none, the number you type is the one you found |
+| `@parts-bot ACCEPT` or `ACCEPT 2` | Asks for the part number and leaves the request open |
+| `@parts-bot DECLINE` | Asks the scheduler to create a part. The thread shows the worksheet. Two Planner tasks open |
+| `@parts-bot STATUS` | Status, matches, the part you accepted, and the new part number once one exists |
+| `@parts-bot NEXT MT` | The next free number in that series. Metal is `MT` (`GM.IM`), fabric is `FA` (`GM.FU`), lighting is `LT` (`GM.LE`). The other classes use their own two letters. Nothing is written |
+| `@parts-bot HELP` | The command list |
 
-You don't need to do anything during this time. The thread will stay open until the part is confirmed.
+Only the person selected as Requester can accept or decline. Ask Fernando Saucedo or Caleb Marhoover to be added or renamed if the bot says the requester has to answer.
 
----
+A reply that does not mention `@parts-bot` is conversation, except a plain `DECLINE`, which an older path still picks up. Use the mention so the suggested number is the live one.
 
-## Step 5 (DECLINE only): Receive the Confirmed Part Number
+## Step 4: After you decline
 
-Once the scheduler has created the part, you'll be **@mentioned again** in the thread with a confirmation showing the new part number and its confirmed description directly from the Epicor catalog. Use that number for your BOM, RFQ, or order.
+The request stays with the scheduler until a part number is stored.
 
----
+- **Awaiting scheduler** — they have it.
+- **Creating** — the part is being saved.
+- **Complete** — a number is on the row.
 
-## Your Interactions at a Glance
+Use the **Chosen** number when you accepted an existing part. Use the **Part number** when a new part was created. That is the number for the BOM or the order.
+
+When that new part is active in both companies, the thread mentions you with the number. Until that reply, the NY site is still waiting on the push-pull.
+
+## Your interactions at a glance
 
 | When | What you do | Where |
 |---|---|---|
-| Need a part looked up | Fill out the Part Request form | Microsoft Forms |
-| Result posted | Reply ACCEPT or DECLINE | Part Requests channel in Teams |
-| New part confirmed | Note the part number from the thread | Part Requests channel in Teams |
-
-Three touchpoints at most.
-
----
+| You need a GM part | Submit the form | New Part Request |
+| The post lists matches | `@parts-bot ACCEPT` and one of those part numbers | The request's thread |
+| None of the matches work | `@parts-bot DECLINE` | The request's thread |
+| You want the next number in a class | `@parts-bot NEXT` and the class | Any message |
+| You want to know if it closed | `@parts-bot STATUS` | The request's thread |
+| The new part is active in both companies | Read the mention | The request's thread |
 
 ## Tips
 
-**Be specific.** Dimensions, grade, finish, thread spec, surface treatment — the more detail you include, the more accurate the match. "1/2 bolt" will produce a weaker result than "1/2-13 hex bolt 3 inch black oxide."
+- **Name the part number.** `ACCEPT` without it leaves the request open.
+- **The number has to be on the list** when the post listed matches. A different number is refused. Decline if none of them is the part.
+- **Put a McMaster-Carr SKU in the description when you have one.** The product link works too.
+- **Submit once.** A second form is a second request.
 
-**Include a McMaster SKU if you have one.** The system flags it for the scheduler, who can reference the product page when creating the part. Don't rely on the SKU alone — include a description too.
+## Questions or issues
 
-**Reply in the thread, not as a new post.** The system links your reply to your specific request by the thread. A reply to the wrong thread or a new post will not be processed.
-
-**Don't resubmit if something looks slow.** If the post hasn't appeared after a few minutes, contact **[engineering admin]** rather than submitting a second time — duplicate submissions create duplicate requests.
-
-**The scheduler may ask a clarifying question in the thread.** Reply as you normally would in Teams. These conversational replies won't accidentally trigger the workflow.
-
----
-
-## Questions or Issues
-
-Contact **[engineering admin / flow owner]** for anything that looks wrong with an assessment or if a request gets stuck.
+Contact Fernando Saucedo or Caleb Marhoover if the post never arrives, the bot will not take your reply, or `STATUS` does not match the thread.

@@ -32,15 +32,15 @@ Welcome to the Engineering Department documentation and workflows wiki.
 Essential documents for FE work:
 
 - **[FE Workflow](/workflows/fabrication-engineer/)** - Complete workflow guide
-- **[FE to PE Release](/workflows/fe-to-pe-release.html)** - Step-by-step release process
-- **[Approvals Process](/tools/approvals-process.html)** - How to submit for PA approval
+- **[FE to PE Release](/workflows/fe-to-pe-release.html)** - Checklist, then the form that files the handoff
+- **[Submittal Approval](/tools/approvals-process.html)** - The card the project's PMs answer
 - **[Epicor Usage](/tools/epicor/)** - Epicor dashboards and procedures
 
 ### Production Engineer (PE)
 Essential documents for PE work:
 
 - **[PE Workflow](/workflows/production-engineer/)** - Complete workflow guide
-- **[FE to PE Release](/workflows/fe-to-pe-release.html)** - What to expect from FE
+- **[FE to PE Release](/workflows/fe-to-pe-release.html)** - What the handoff contains, and how to read the Epicor line
 - **[Epicor Usage](/tools/epicor/)** - Epicor procedures for PE
 
 ### All Engineers
@@ -80,8 +80,8 @@ Find step-by-step answers organized by section:
 **Release a job:**
 - [FE to PE Release](/workflows/fe-to-pe-release.html) - Complete release process
 
-**Submit for approval:**
-- [Approvals Process](/tools/approvals-process.html) - PA approval workflow
+**Submit a submittal:**
+- [Submittal Approval](/tools/approvals-process.html) - The card, and where the package is filed
 
 ---
 
@@ -95,7 +95,7 @@ Find step-by-step answers organized by section:
 ### Tools & Systems
 - [Epicor Usage in Engineering](/tools/epicor/) - Epicor procedures
 - [Time Entry](/tools/time-entry.html) - Time logging
-- [Approvals Process](/tools/approvals-process.html) - Approval workflow
+- [Submittal Approval](/tools/approvals-process.html) - The submittal card
 
 ### Workflows
 - [Fabrication Engineer (FE) Workflow](/workflows/fabrication-engineer/) - Complete FE procedures

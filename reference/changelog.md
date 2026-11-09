@@ -12,6 +12,12 @@ A record of significant additions and updates to the Engineering Wiki, grouped b
 
 ---
 
+## 2026-11-09 – 2026-11-15
+
+- **Submittal approval, FE to PE release, and part requests** — Brought the published procedures in line with the live flows. The Submittal Approval Request form files the package and raises one card to the project's PMs. The FE to PE Release form checks the model, copies the handoff, and sets Released when its gates pass. Later partials use `@release-bot`. Part requests are answered with `@parts-bot`, and the scheduler saves the part with `CREATE` or records one with `USE`. Rewrote the seven procedure pages and corrected the satellite pages that still described the old handoffs. PA Approved and the Bluebeam stamp how-to are unchanged.
+
+---
+
 ## 2026-10-19 – 2026-10-25
 
 - **[Cover Sheet & Common Pages](/standards/rhino-drafting/cover-sheet-common-pages.html) / [Layout Structure](/standards/rhino-drafting/layout-structure.html) / [Glossary](/reference/glossary.html)** — Closed the gaps against the current template: added the **C00** logo cover and **S000** nested sheets to the page-type tables; T00 is described as the project index (jobs, with the submittal's own jobs in bold and underlined) and the drawing set's table of contents is G00's Item Drawings table; G00 is now listed as its five tables (item drawings, general material tags, finish tags, veneer and solid wood tags, bill of materials), with no separate hardware tag table.

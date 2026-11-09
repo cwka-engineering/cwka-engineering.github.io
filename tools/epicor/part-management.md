@@ -35,7 +35,7 @@ When creating a part directly:
 
 [^transcript-epicor-parts]
 
-- **GM (General Materials)**: Created in Colorado database first, then synced to Digifab (nightly, up to 24-hour lag).
+- **GM (General Materials)**: Created on company 157539, plant MfgSys, through the [Part Requests](/tools/releases-and-requests/part-requests/scheduler-guide.html) workflow. The NY site receives the part when the scheduler runs the site push-pull. The request thread says when it is active in both companies.
 - **Project-Specific Materials**: Only exist in the site where created (not synced).
 - **Best Practice**: Always use the Colorado version of "Part Entry and Update" for catalog management.
 
@@ -43,7 +43,7 @@ When creating a part directly:
 
 [^transcript-epicor-jobs]
 
-- **GM Materials**: Request via the [Part Requests workflow](/tools/releases-and-requests/part-requests/engineer-guide.html) — submit the form, review the catalog result in Teams, and reply ACCEPT or DECLINE. The scheduler creates the part if no match is found. Allow 24 hours for sync after creation.
+- **GM Materials**: Request via the [Part Requests workflow](/tools/releases-and-requests/part-requests/engineer-guide.html). Submit the form, then reply `@parts-bot ACCEPT` and a part number, or `@parts-bot DECLINE`. The scheduler saves a new part with `@parts-bot CREATE`, or records one already in Epicor with `USE`. The thread mentions the requester when the part is active in both companies. That mention is the cue that the NY site has it.
 - **Job/Project-Specific**: Engineers create directly.
 - **WC and MT Parts**: Engineers create and BOM directly.
 - **Custom Parts**: Request operations assignment after creation.

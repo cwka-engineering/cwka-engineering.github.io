@@ -56,7 +56,7 @@ Every BOM line must tie to a row in Epicor Parts — no part-on-the-fly entries.
 ## Requesting a Global Material Part
 {: #how-to-request-global-part}
 
-Submit a request via the [Part Requests workflow](/tools/releases-and-requests/part-requests/engineer-guide.html). Fill out the form, review the AI-assisted catalog result in the channel, and reply ACCEPT or DECLINE. New parts are typically created within 3 business days of a DECLINE. Allow **24 hours** after part creation for the Epicor sync before using the part number in a BOM.
+Submit a request via the [Part Requests workflow](/tools/releases-and-requests/part-requests/engineer-guide.html). Reply `@parts-bot ACCEPT` and a part number, or `@parts-bot DECLINE`. The create-part task is due in 3 days. Use the part number on the row once the request is Complete. Wait for the thread to say the part is active in both companies before counting on the NY site.
 
 ## BOM'ing a Material to a Job
 {: #how-to-bom-material}

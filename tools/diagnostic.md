@@ -89,4 +89,4 @@ The first time you run the tool (standalone or via toolkit), it will prompt for 
 
 ## Requirement
 
-All FEs are required to run their PE release handoff model through the diagnostic tool and resolve any failures before submitting the [FE to PE Release](/workflows/fe-to-pe-release.html) form. The checklist item for this is under [Pre-Release Checklist — ERP & File Validation](/workflows/fe-to-pe-release.html#pre-release-checklist).
+All FEs are required to run their PE release handoff model through the diagnostic tool and resolve any failures before submitting the [FE to PE Release](/workflows/fe-to-pe-release.html) form. That is the engineer's own bar. The form then runs a separate check. A failed form check still files the handoff. A check that cannot run files nothing. The checklist item for the diagnostic is under [Pre-Release Checklist](/workflows/fe-to-pe-release.html#pre-release-checklist).

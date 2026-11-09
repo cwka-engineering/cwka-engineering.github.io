@@ -140,14 +140,14 @@ This drawing set is also included with drawing packages given to the install tea
 
 Dedicated to completed work ready for production. Release contents and naming must also satisfy the [FE to PE Release](/workflows/fe-to-pe-release.html) checklist.
 
-- Subfolders copied from `_PROJ.JOB_ScopeDescription` template and renamed per job.
+- The [FE to PE Release](/workflows/fe-to-pe-release.html) form creates a missing job folder from the `_PROJ.JOB_ScopeDescription` template and leaves an existing folder's name as it is.
 - Inside each release folder:
-  - **Fabrication_Handoff/**: everything FE passes to PE: the purged PE Rhino file, the shipping components list, and the approved submittal drawing PDF (or its For Record version). FE also adds any additional pages and ancillary documents PE needs to process the job — veneer takeoff drawings, hardware cut sheets, specialty fabrication references, etc. — copied here from wherever they live in the project folder; PE should not need to search outside this folder to execute the release. This is the only folder FE writes to.
+  - **Fabrication_Handoff/**: the form copies the purged PE Rhino file, the shipping-components workbook from UD40, and the approved submittal drawing (a For Record PDF in `01_Outgoing`, or the newest PDF in `02_Returned`). A file already there under the same name is left alone. FE adds ancillary documents by hand — veneer takeoff drawings, hardware cut sheets, specialty fabrication references — and adds later partial files the same way. PE should not need to search outside this folder to execute the release.
   - **Production_Files/**: PE's own working files: Master Parts List, Lay-Up Summary, machine programs, optional SHOP model
   - **Production_Drawings/**: PE's own production drawings and SKs
 
 #### Manufacturing release folders
-WC and MT jobs get their own release folder directly in `03_PE_Releases`, copied from the same template (so it also has `Fabrication_Handoff`).
+WC and MT jobs get their own release folder directly in `03_PE_Releases`. The form creates it from the same template when it is missing, so it also has `Fabrication_Handoff`. A manufacturing release does not include a shipping-components workbook.
 
 **MFG parts naming convention:**
 - The enclosing **folder** is named using the Epicor **job number** with three trailing digits — e.g., `1130.M.005`
@@ -160,10 +160,10 @@ Three-folder submittal review workflow. See [Submittal Review Cycle](/workflows/
 Each job has its own subfolder (`PROJ.JOB_ScopeDescription/`) containing:
 
 #### 00_Internal_Review
-- Completed shop drawings placed here for QA before submission.
+- The Submittal Approval form files the review package here: cover, title sheet, and schedules in front of the engineer's PDF.
 
 #### 01_Outgoing
-- Reviewed and updated drawings sent to the client for approval. The PM exports a clean (comment-free) PDF copy here after PA approval.
+- On approval, the form copies that same file here. The PM still sends the set to the client. If the review file has markups, a comment-free export is still the PM's. Older files move to `Archive`.
 
 #### 02_Returned
 - Drawings returned by the architect with markups, to be reviewed and picked up by FE.

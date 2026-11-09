@@ -251,21 +251,13 @@ sequenceDiagram
 
 *   Finalize drawings with material, hardware, size, strategy
     
-*   Save in 03\_OUTGOING\_Submittals
+*   Submit the Submittal Approval Request form in Releases & Requests. Attach the PDF, or a Box link that opens the PDF
     
-*   Submit to Project Advisor (PA) via Approvals app in Teams
+*   The form files the package in 00_Internal_Review and sends one card to the project's PMs
     
-*   Naming: PROJ.JOB\_ScopeDescription
+*   On approval the file is copied to 01_Outgoing. The PM still sends it to the client
     
-*   Attach: BOX.com link to internal review PDF
-    
-*   PM → PA approval flow
-    
-*   PM adds Bluebeam comments
-    
-*   Approved PDF → 01\_Outgoing folder
-    
-*   Track status in Epicor → "Production Report"
+*   Drawing-package status in Epicor is written by the flow. See [Submittal Review](/workflows/fabrication-engineer/submittal-review.html)
     
 
 ### Solid Wood Components (WC Jobs)
@@ -311,22 +303,22 @@ Ensure:
 *   Finalized shop drawings
     
 
-Prepare Excel list of Shipping Components (SCs) Create clean PE file Check job is "Released in Epicor" Post release in CO Production Eng chat with file links
-
-Place:
-
-*   Shop drawings → Production\_Drawings
+*   Paste shipping components into UD40 (UD37 for a CMG list)
     
-*   SC file → Production\_Files
+*   Save the clean PE model in 01_FE_Models
     
-*   WC drawings → Box folder → Epicor → chat post
+*   Submit the FE to PE Release form, one job. See [FE to PE Release](/workflows/fe-to-pe-release.html)
+    
+*   The form copies the handoff into Fabrication_Handoff and posts it in FE to PE Releases
+    
+*   Released in Epicor is set only when the form's gates pass
+    
+*   Copy ancillary documents, such as a veneer takeoff or a hardware cut sheet, into Fabrication_Handoff by hand
     
 
 ## Phase 4: Production Engineering (PE) Phase
 
-*   Access job folder → Copy & rename template folders
-    
-*   Place PE Rhino file & SC list in Production Files
+*   The handoff is already in Fabrication_Handoff. The form filed the PE model and the shipping-components workbook there. PE works in Production_Files and Production_Drawings
     
 *   Copy & rename:
     

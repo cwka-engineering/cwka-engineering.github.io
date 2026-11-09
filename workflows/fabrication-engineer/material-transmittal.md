@@ -37,7 +37,7 @@ Each material/finish/hardware item is entered as a material (quantity set to zer
 
 ## Material Submittal Status & Transmittal Numbers
 
-> **Two separate tracking systems.** The TRA tracks the approval status of individual **materials and finishes** submitted to the architect. Drawing **package** submittal status (the shop drawing set as a whole) is tracked separately in the [Production Report](/tools/epicor/production-report.html) and visible on the [Submittal Dashboard](/tools/epicor/dashboards.html#submittal-dashboard). These are distinct fields with overlapping vocabulary — do not conflate them.
+> **Two separate tracking systems.** The TRA tracks the approval status of individual **materials and finishes** submitted to the architect. Drawing **package** submittal status (the shop drawing set as a whole) is written by the [Submittal Approval](/tools/approvals-process.html) flow and read on the [Production Report](/tools/epicor/production-report.html) and the [Submittal Dashboard](/tools/epicor/dashboards.html#submittal-dashboard). These are distinct fields with overlapping vocabulary — do not conflate them.
 
 ### Material Status Values
 {: #status-vocabulary}
@@ -100,9 +100,9 @@ MtlSubmittalStatus and transmittal numbers are **internal PM tracking only** —
 ### Before Running the G00 Script
 {: #tra-sync-before-g00}
 
-Before running the cover sheet script in the Drafting Toolkit, **confirm with the PM that the TRA is current.** The PM actively manages the TRA and may be a step behind during active submittal prep — approval statuses change and new entries may be pending.
+Before running the cover sheet script in the Drafting Toolkit, **confirm with the PM that the TRA is current.** The same log is printed onto the submittal package at the moment the [Submittal Approval Request](/workflows/fabrication-engineer/submittal-review.html) form is submitted. The PM actively manages the TRA and may be a step behind during active submittal prep — approval statuses change and new entries may be pending.
 
-If you run the G00 script against a stale TRA, the material schedule on your drawings will not reflect the PM's latest tags, descriptions, and spec fields. You will need to re-run the script and republish after the PM catches up. A one-minute check beforehand saves the extra cycle.
+If you run the G00 script, or submit the approval form, against a stale TRA, the material schedule will not reflect the PM's latest tags, descriptions, and spec fields. A one-minute check beforehand saves the extra cycle.
 
 See [How to populate G00](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-populate-g00) for the full script procedure.
 

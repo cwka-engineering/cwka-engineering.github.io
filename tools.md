@@ -15,11 +15,11 @@ Guides for using engineering software and systems.
 
 - **[Epicor](/tools/epicor/)** - Epicor ERP system usage for engineering workflows
 - **[Time Entry](/tools/time-entry.html)** - Time tracking procedures using Toggl and Epicor
-- **[Approvals Process](/tools/approvals-process.html)** - Project Advisor approvals using Microsoft Teams
+- **[Submittal Approval](/tools/approvals-process.html)** - The card the project's PMs answer in Teams
 - **[FE Release Diagnostic Tool](/tools/diagnostic.html)** - Automated validator for PE release handoff files
 
 ## Quick Links by Tool
 
 - **Epicor Dashboards**: [Submittal Dashboard](/tools/epicor/dashboards.html#submittal-dashboard) | [Production Report](/tools/epicor/production-report.html)
 - **Time Tracking**: [Toggl Setup](/tools/time-entry.html#time-entry---toggl)
-- **Approvals**: [Approvals Process](/tools/approvals-process.html)
+- **Approvals**: [Submittal Approval](/tools/approvals-process.html)

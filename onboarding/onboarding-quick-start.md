@@ -125,11 +125,11 @@ A structured path through the wiki for new engineers. Adapt timing to your pace 
 ### Week 5+: Drafting, Release & Advanced
 
 22. [Rhino Drafting Standards](/standards/rhino-drafting/) — Layout structure, sections, hatches, printing
-23. [Submittal Review](/workflows/fabrication-engineer/submittal-review.html) — Three-folder review cycle
+23. [Submittal Review](/workflows/fabrication-engineer/submittal-review.html) — Submit the approval form and read the result
 24. [Material Transmittal](/workflows/fabrication-engineer/material-transmittal.html) — TRA log
 25. [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html) — BOM validation and Epicor upload
-26. [Approvals Process](/tools/approvals-process.html) — PA approval workflow
-27. [FE to PE Release](/workflows/fe-to-pe-release.html) — Checklist and release procedure
+26. [Submittal Approval](/tools/approvals-process.html) — The card the project's PMs answer
+27. [FE to PE Release](/workflows/fe-to-pe-release.html) — Checklist, then the form that files the handoff
 28. [Solid Wood Components](/workflows/fabrication-engineer/solid-wood-components.html) — WC workflow
 29. [Engineer Progression Framework](/onboarding/engineer-progression-framework.html) — How advancement works
 
@@ -170,9 +170,9 @@ When you need help with specific systems or tools:
 
 The **Releases & Requests** Teams team houses the structured channels for submitting, routing, and confirming handoffs across the production pipeline. See [Releases & Requests](/tools/releases-and-requests/) for full documentation.
 
-- **[Part Requests](https://teams.microsoft.com/l/channel/19%3Acb7a4d5df99e473d87f8555bd25a03f8%40thread.tacv2/Part%20Requests?groupId=f7b33eed-e1f9-489d-82c9-072a70bfb5c1&tenantId=b628c2c4-2783-44e3-be45-7175c147108d)** — Submit when you need a global material part looked up or created. See [Engineer Guide](/tools/releases-and-requests/part-requests/engineer-guide.html).
+- **[Part Requests](https://teams.microsoft.com/l/channel/19%3Acb7a4d5df99e473d87f8555bd25a03f8%40thread.tacv2/Part%20Requests?groupId=f7b33eed-e1f9-489d-82c9-072a70bfb5c1&tenantId=b628c2c4-2783-44e3-be45-7175c147108d)** — The thread where a New Part Request is answered with `@parts-bot`. See the [Engineer Guide](/tools/releases-and-requests/part-requests/engineer-guide.html).
 - **[Job Requests](https://teams.microsoft.com/l/channel/19%3A3beb722a6dd343ec8deec4c5e9dc1e12%40thread.tacv2/Job%20Requests?groupId=f7b33eed-e1f9-489d-82c9-072a70bfb5c1&tenantId=b628c2c4-2783-44e3-be45-7175c147108d)** — Request new ERP jobs (manufactured parts, PM jobs, truck jobs). See [Job Requests](/tools/releases-and-requests/job-requests.html).
-- **[FE to PE Releases](https://teams.microsoft.com/l/channel/19%3Af18e835cfa85453488440493f348b2cc%40thread.tacv2/FE%20to%20PE%20Releases?groupId=f7b33eed-e1f9-489d-82c9-072a70bfb5c1&tenantId=b628c2c4-2783-44e3-be45-7175c147108d)** — Notify PE when a scope is ready for pickup. See [FE to PE Releases](/tools/releases-and-requests/fe-to-pe-releases.html).
+- **[FE to PE Releases](https://teams.microsoft.com/l/channel/19%3Af18e835cfa85453488440493f348b2cc%40thread.tacv2/FE%20to%20PE%20Releases?groupId=f7b33eed-e1f9-489d-82c9-072a70bfb5c1&tenantId=b628c2c4-2783-44e3-be45-7175c147108d)** — One thread per job for the release the form files, and for later partials. See [FE to PE Releases](/tools/releases-and-requests/fe-to-pe-releases.html).
 - **[PE to Shop Releases](https://teams.microsoft.com/l/channel/19%3A529a28ca1bfa4a65a06ddc54a9a7d3e6%40thread.tacv2/PE%20to%20Shop%20Releases?groupId=ab06ae12-f467-48d9-b9f8-e04ddc4d917a&tenantId=b628c2c4-2783-44e3-be45-7175c147108d&ngc=true)** — Currently in the Production team; will migrate to Releases & Requests.
 
 ### Epicor (Kinetic Implementation)
@@ -181,9 +181,9 @@ The **Releases & Requests** Teams team houses the structured channels for submit
 
 ## Microsoft Teams Apps
 
-- **Approvals App**: [Teams App Link](https://teams.microsoft.com/l/app/7c316234-ded0-4f95-8a83-8453d0876592)
+- **Approvals App**: [Teams App Link](https://teams.microsoft.com/l/app/7c316234-ded0-4f95-8a83-8453d0876592). The submittal card arrives here. The engineer submits the form. You do not build the request in the app.
 
-> **Related**: [Approvals Process](/tools/approvals-process.html)
+> **Related**: [Submittal Approval](/tools/approvals-process.html)
 
 ## Box.com Setup
 

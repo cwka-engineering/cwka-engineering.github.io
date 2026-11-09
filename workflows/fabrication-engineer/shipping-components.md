@@ -20,7 +20,7 @@ Modeling Toolkit → after naming, the toolkit identifies shipping components. P
 ## How do I export the SC list for PE release?
 {: #how-to-export-sc-list}
 
-Modeling Toolkit → after publishing SC descriptions, use the **Export** function to generate the shipping components Excel file. The exported file is formatted for paste-insert into Epicor UD40. Place the exported file in the PE release folder under `Fabrication_Handoff`.
+Modeling Toolkit → after publishing SC descriptions, use the **Export** function to generate the shipping components Excel file. The exported file is the paste source for Epicor UD40 (UD37 for a CMG list). The [FE to PE Release](/workflows/fe-to-pe-release.html) form reads UD40 and writes `<job>_SHIPPING_COMPONENTS.xlsx` into `Fabrication_Handoff`. A workbook already there is left alone. A manufacturing job gets no workbook from the form.
 
 ## Company Number Column — Required for UD40 Upload
 {: #company-number-column}
@@ -33,7 +33,7 @@ Always pull the current template from the project template folder rather than re
 
 - Use Excel template from:
   - `CWKA Team Folders > Engineering Team > PRODUCTION ENGINEERING > PE to Floor SOP > Shipping Components_Template`
-- For detailed SC creation process, see [FE to PE Release - File Organization](/workflows/fe-to-pe-release.html#2-file-organization--folder-setup).
+- For the paste into UD40 and what the form writes into the handoff, see [FE to PE Release](/workflows/fe-to-pe-release.html#how-to-upload-scs).
 
 ## Modeling Toolkit
 

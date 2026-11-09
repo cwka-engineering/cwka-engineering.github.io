@@ -21,7 +21,7 @@ corpus_tags: [fe-release, fe-submittal]
 2. Shop Drawings Approved
 3. BOM Complete
 
-Fabrication Engineers must also satisfy the full **[FE to PE Release checklist](/workflows/fe-to-pe-release.html#pre-release-checklist)** before marking **Released** and submitting the FE→PE form.
+Fabrication Engineers must also satisfy the full **[FE to PE Release checklist](/workflows/fe-to-pe-release.html#pre-release-checklist)** before submitting the FE to PE form. Released is set by that form when its gates pass, or later by `@release-bot`.
 
 **Special Jobs**:
 - Engineering Bucket Jobs
@@ -45,9 +45,9 @@ Fabrication Engineers must also satisfy the full **[FE to PE Release checklist](
 
 ### Job Status Updates
 - Ensure **Engineering Complete** is set appropriately on BOM lines.
-- Update submittal statuses (**Submittal Status**, **Submitted Date**, **PA Approved** as applicable).
+- Read drawing-package status on the Production Report. The [Submittal Approval](/tools/approvals-process.html) flow writes **Submittal Status** and **Submitted Date**. **PA Approved** stays a manual checkbox where the project still uses it.
 - Set **Fabrication Engineer** on the job (may display as **Production Team** on Job Entry) before release.
-- Release jobs and notify PE.
+- Submit the [FE to PE Release](/workflows/fe-to-pe-release.html) form. The form sets Released when its gates pass and posts the result for PE.
 
 ## Shipping components upload
 

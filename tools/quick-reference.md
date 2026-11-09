@@ -22,7 +22,7 @@ Task-oriented index for tool and system procedures. Each link goes directly to t
 | A5 | Install the Gotham font family | [Onboarding Quick Start](/onboarding/quick-start.html#how-to-install-fonts) |
 | A6 | Set up Bluebeam release stamps | [Onboarding Quick Start](/onboarding/quick-start.html#how-to-setup-bluebeam-stamps) |
 | A7 | Configure Rhino backup and autosave settings for Box | [Onboarding Quick Start](/onboarding/quick-start.html#how-to-configure-backups) |
-| A8 | Install the Approvals app in Microsoft Teams | [Approvals Process](/tools/approvals-process.html#how-to-install-approvals-app) |
+| A8 | Install the Approvals app in Microsoft Teams | [Submittal Approval](/tools/approvals-process.html#how-to-install-approvals-app) |
 | A9 | Set up Toggl for CWK time tracking | [Time Entry](/tools/time-entry.html#how-to-setup-toggl) |
 
 ## Time Tracking

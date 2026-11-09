@@ -11,34 +11,35 @@ mermaid: true
 
 # Part Requests
 
-The Part Requests workflow handles global material part lookups and new part creation through the **Part Requests** channel in Teams. Submit a form, review the AI-assisted result in the channel, and reply with one word — the system routes the rest.
+Global material lookups and new part creation run through the **New Part Request** form and the **Parts Requests** channel in Teams. Submit the form, then answer under that post with `@parts-bot`.
 
-> **Related**: [Engineer / PM Guide](/tools/releases-and-requests/part-requests/engineer-guide.html) | [Scheduler Guide](/tools/releases-and-requests/part-requests/scheduler-guide.html) | [Part Management](/tools/epicor/part-management.html) | [Reverse Lookup](/workflows/fabrication-engineer/toolkit/modeling.html#how-to-reverse-lookup)
+> **Related**: [Engineer Guide](/tools/releases-and-requests/part-requests/engineer-guide.html) | [Scheduler Guide](/tools/releases-and-requests/part-requests/scheduler-guide.html) | [Part Management](/tools/epicor/part-management.html) | [Reverse Lookup](/workflows/fabrication-engineer/toolkit/modeling.html#how-to-reverse-lookup)
 
 ## Workflow Overview
 
 ```mermaid
 flowchart TD
-  A([Engineer submits Part Request form]) --> B[AI-assisted catalog lookup]
-  B --> C{Result}
-  C -->|Strong match| D[🟢 Strong match posted in channel]
-  C -->|Possible match| E[🟡 Possible match — review needed]
-  C -->|No match| F[🔵 No match — new part needed]
-  D --> G{Engineer replies in thread}
-  E --> G
-  F --> G
-  G -->|ACCEPT| H([Request closed])
-  G -->|DECLINE| I[Scheduler @mentioned + Planner task created]
-  I --> J[Scheduler creates part in Epicor]
-  J --> K[Scheduler replies with new part number]
-  K --> L([Confirmation posted to engineer])
+  A["Engineer submits the New Part Request form"] --> B["Catalog lookup, except glass, lighting, and stone"]
+  B --> C{"Match"}
+  C -->|Strong or possible| D["Parts Requests thread lists the part numbers"]
+  C -->|None| E["Thread says a new part is needed"]
+  D --> F{"@parts-bot under that post"}
+  E --> F
+  F -->|ACCEPT and a part number| G["Complete. Chosen part stored"]
+  F -->|DECLINE| H["Worksheet in the thread. Two Planner tasks"]
+  H --> I{"Scheduler"}
+  I -->|CREATE| J["Part saved on MfgSys. Entry task closed"]
+  I -->|USE and a part number| J
+  J --> K["Requester mentioned when the part is active in both companies"]
 ```
+
+Glass, lighting, and stone are not searched. Those posts go out as no match. Category **Unknown** stops before a post.
 
 ## Who Does What
 
 | Role | Responsibilities |
 |---|---|
-| **Engineer / PM** | Submits the form; reviews the channel result; replies ACCEPT or DECLINE |
-| **Scheduler** | Receives DECLINE notifications; creates new parts in Epicor; replies with confirmed part number |
+| **Engineer** | Submits the form. Replies `@parts-bot ACCEPT` and a part number, or `@parts-bot DECLINE` |
+| **Scheduler** | On a decline, `@parts-bot CREATE` saves the next part, or `@parts-bot USE` records one already in Epicor. Runs the site push-pull |
 
-See the [Engineer / PM Guide](/tools/releases-and-requests/part-requests/engineer-guide.html) or [Scheduler Guide](/tools/releases-and-requests/part-requests/scheduler-guide.html) for step-by-step instructions.
+See the [Engineer Guide](/tools/releases-and-requests/part-requests/engineer-guide.html) or the [Scheduler Guide](/tools/releases-and-requests/part-requests/scheduler-guide.html).

@@ -48,7 +48,7 @@ corpus_tags: [fe-release, fe-submittal]
 ## Epicor Terms
 
 - **Submittal Dashboard**: Homepage for FEs showing submittal and post-submittal work. Must launch from CW site but includes assignments from both sites. Pulls in information from other dashboards (PE start dates, submittal status, hours).
-- **Production Report**: Screen for updating submittal statuses and tracking manufacturing jobs
+- **Production Report**: Screen where drawing-package submittal status is read. The [Submittal Approval](/tools/approvals-process.html) flow writes it. Also used to track manufacturing jobs.
   - **Global Production Report**: Read-only, all open jobs from both sites
   - **Site-Specific Production Report**: Updatable, jobs for one site (CW or DF)
 - **Job Entry**: Screen for managing and releasing jobs

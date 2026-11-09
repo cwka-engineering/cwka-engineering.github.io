@@ -13,7 +13,7 @@ corpus_tags: [fe-submittal]
 > **Related**: [Dashboards](/tools/epicor/dashboards.html) | [Job Management](/tools/epicor/job-management.html)
 
 ## Purpose
-Update submittal statuses and track manufacturing jobs. [^transcript-epicor-jobs]
+Read drawing-package submittal status and track manufacturing jobs. The [Submittal Approval](/tools/approvals-process.html) flow writes the drawing-package status. [^transcript-epicor-jobs]
 
 ## Types of Reports
 - **Global Production Report**: Read-only, shows all open jobs from both sites. Ideal for scheduling meetings.
@@ -24,7 +24,7 @@ Update submittal statuses and track manufacturing jobs. [^transcript-epicor-jobs
 
 - **Project ID & Job Number**
 - **Project Advisor (PA)**
-- **Submittal Status**: Tracks the status of the **shop drawing package** submittal as a whole — not material/finish approval status, which is tracked separately in the [Material Transmittal Log (TRA)](/workflows/fabrication-engineer/material-transmittal.html). Status values: Internal Review → Submitted → Revise and Resubmit → Approved. The same field is visible on the [Submittal Dashboard](/tools/epicor/dashboards.html#submittal-dashboard).
+- **Submittal Status**: The status of the **shop drawing package** as a whole. Material and finish approval is tracked separately in the [Material Transmittal Log (TRA)](/workflows/fabrication-engineer/material-transmittal.html). The approval flow writes Internal Review when a request goes out, and Submitted or Resubmitted when a PM approves. A rejection writes nothing. A job already further along is left as it is. The same field is visible on the [Submittal Dashboard](/tools/epicor/dashboards.html#submittal-dashboard).
 - **FE Assignment**
 - **Checkboxes**:
   - Field Dimensions Received
@@ -35,8 +35,8 @@ Update submittal statuses and track manufacturing jobs. [^transcript-epicor-jobs
 - **Production Status**: Production quantity, completed quantity, Production Complete checkbox.
 
 ## Usage
-- Engineers filter by name and job.
-- **Drawing package status options**: Internal Review, Submitted, Revise and Resubmit, Approved.
+- Engineers filter by name and job to read the drawing-package status.
+- **Drawing package status** is written by the approval flow: Internal Review, Submitted, or Resubmitted. Revise and Resubmit and Approved remain values the field can already hold. The flow does not set those two on an approval, and a rejection writes nothing.
 - **Final status**: Production Complete.
 
 **Best Practice for PE**: [^transcript-epicor-scheduling] Start each day by checking the Global Production Report or site-specific report.

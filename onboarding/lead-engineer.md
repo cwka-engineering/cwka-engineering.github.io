@@ -9,7 +9,7 @@ nav_order: 1
 
 # Lead Engineer Responsibilities
 
-> **Related**: [Engineering Roles](/onboarding/engineering-roles.html) | [Project Delivery](/onboarding/project-delivery.html) | [Engineer Progression Framework](/onboarding/engineer-progression-framework.html) | [PA Approvals Process](/tools/approvals-process.html)
+> **Related**: [Engineering Roles](/onboarding/engineering-roles.html) | [Project Delivery](/onboarding/project-delivery.html) | [Engineer Progression Framework](/onboarding/engineer-progression-framework.html) | [Submittal Approval](/tools/approvals-process.html)
 
 ## The Ad Hoc Designation
 
@@ -33,7 +33,7 @@ The Lead Engineer and the Project Advisor are **always separate people** on a pr
 |---|---|---|
 | Build strategy | **Final authority** — reviews proposals, provides feedback, approves the approach | Primary partner in strategy development; implements approved strategy across the team |
 | Detail development | Drives detail development and material selection (where not client-dictated) | First engineer to work through typical details alongside PA; ensures consistent deployment project-wide |
-| Internal review | Second approver in the formal PA approval chain | Informal pre-review gate before submittals go to PM/PA |
+| Internal review | Build-strategy review stays with the PA, separate from the submittal card | Informal pre-review before a submittal goes to the project's PMs |
 | Team consistency | Not responsible | Primary agent ensuring all engineers on the project follow the approved approach |
 
 Because PAs are typically among the most time-constrained senior staff, the lead acts as the PA's multiplier on the project floor — absorbing day-to-day technical questions from other engineers, flagging issues that require PA judgment, and keeping the team aligned with approved decisions.
@@ -72,9 +72,9 @@ The lead establishes the technical roadmap for the project in collaboration with
 
 ### Quality Assurance
 
-The lead provides an informal pre-review of project deliverables before they enter the formal PA approval process. This is especially important on teams with junior or recently onboarded engineers.
+The lead provides an informal pre-review of project deliverables before they are submitted for PM approval. This is especially important on teams with junior or recently onboarded engineers.
 
-- **Pre-review**: Review submittal sets and production handoffs for quality and consistency before they go to PM/PA — catch issues internally before they become formal denial cycles
+- **Pre-review**: Review submittal sets and production handoffs for quality and consistency before they go to the project's PMs — catch issues internally before they become a rejection
 - **Team feedback**: Review work produced by other engineers on the project and provide constructive technical feedback
 - **Standards enforcement**: Ensure the project team adheres to modeling, layering, naming, and documentation standards throughout the project lifecycle
 - **Detail consistency**: Verify that PA-approved typical details are being correctly and consistently deployed across all scopes and engineers on the project

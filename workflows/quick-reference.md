@@ -102,25 +102,25 @@ Task-oriented index for workflow procedures. Each link goes directly to the rele
 | H77 | Release a WC job | [Solid Wood Components](/workflows/fabrication-engineer/solid-wood-components.html#how-to-release-wc-job) |
 | H78 | Handle a WC quantity change after requesting the job | [Solid Wood Components](/workflows/fabrication-engineer/solid-wood-components.html#how-to-handle-wc-quantity-change) |
 
-## PA Approvals & Submittal
+## Submittal Approval
 
 | # | Task | Page |
 |---|------|------|
-| I79 | Submit a drawing set for PA approval | [Approvals Process](/tools/approvals-process.html#how-to-submit-for-approval) |
-| I80 | Respond to a denied approval | [Approvals Process](/tools/approvals-process.html#how-to-respond-to-denial) |
-| I81 | Stamp an approved drawing set | [Approvals Process](/tools/approvals-process.html#how-to-stamp-approved-set) |
-| I82 | Track submittal status in Epicor | [Approvals Process](/tools/approvals-process.html#how-to-track-submittal-status) |
+| I79 | Submit a submittal for PM approval | [Submittal Review](/workflows/fabrication-engineer/submittal-review.html#how-to-submit-for-approval) |
+| I80 | Respond when a PM requests revisions | [Submittal Review](/workflows/fabrication-engineer/submittal-review.html#how-to-respond-to-denial) |
+| I81 | Stamp an approved drawing set | [Submittal Approval](/tools/approvals-process.html#how-to-stamp-approved-set) |
+| I82 | Read submittal status in Epicor | [Submittal Approval](/tools/approvals-process.html#how-to-track-submittal-status) |
 
 ## FE-to-PE Release
 
 | # | Task | Page |
 |---|------|------|
-| J83 | Set up the PE release folder | [FE to PE Release](/workflows/fe-to-pe-release.html#how-to-setup-release-folder) |
-| J84 | Set up a MFG parts release folder | [FE to PE Release](/workflows/fe-to-pe-release.html#how-to-setup-mfg-folder) |
-| J85 | Create a clean PE file | [FE to PE Release](/workflows/fe-to-pe-release.html#how-to-create-pe-file) |
+| J83 | Leave the PE release folder for the form | [FE to PE Release](/workflows/fe-to-pe-release.html#how-to-setup-release-folder) |
+| J84 | Name a MFG parts release file | [FE to PE Release](/workflows/fe-to-pe-release.html#how-to-setup-mfg-folder) |
+| J85 | Create a clean PE file in 01_FE_Models | [FE to PE Release](/workflows/fe-to-pe-release.html#how-to-create-pe-file) |
 | J86 | Upload shipping components to Epicor (UD40) | [FE to PE Release](/workflows/fe-to-pe-release.html#how-to-upload-scs) |
-| J87 | Complete the Epicor release process | [FE to PE Release](/workflows/fe-to-pe-release.html#how-to-complete-epicor-release) |
-| J88 | Submit the FE-to-PE Release form | [FE to PE Release](/workflows/fe-to-pe-release.html#how-to-submit-release-form) |
+| J87 | Finish the Epicor boxes before the form sets Released | [FE to PE Release](/workflows/fe-to-pe-release.html#how-to-complete-epicor-release) |
+| J88 | Submit the FE to PE Release form | [FE to PE Release](/workflows/fe-to-pe-release.html#how-to-submit-release-form) |
 | J89 | Handle a late release (after PE start date) | [FE to PE Release](/workflows/fe-to-pe-release.html#how-to-handle-late-release) |
 | J90 | Determine if a handoff meeting is required | [FE to PE Release](/workflows/fe-to-pe-release.html#how-to-determine-handoff-meeting) |
 
