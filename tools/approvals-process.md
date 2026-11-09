@@ -13,6 +13,8 @@ corpus_tags: [fe-submittal]
 
 When an engineer asks you to approve a submittal, you get an approval card in Teams. The first PM to answer decides. Approve to file the package for the client. Reject to send it back with your comments.
 
+The card is this shop-drawing package. It arrives after the form files the package, once for this issue, and you answer before you send the set. Build strategy is reviewed with the Project Advisor in the working session before modeling, and with the lead as the approach is set. That sign-off is the **PA Approved** checkbox, checked before release to PE.
+
 You do not build the package. The form has already put a cover, a title sheet, and the schedules in front of the engineer's PDF. The engineer submits that form. This page is how you answer the card. The engineer's steps are the [Submittal Review Cycle](/workflows/fabrication-engineer/submittal-review.html).
 
 The finish, veneer, and general material tags on those sheets are the project's [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html) as it stands when the engineer submits. Keep that log accurate and current. A missing, old, or wrong entry is what the package shows.

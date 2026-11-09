@@ -32,6 +32,7 @@ sequenceDiagram
     MS->>FE: Epicor — jobs / ops / materials
 
     Note over FE: Review contract documents
+    Note over FE: PA working session — build strategy, before modeling
 
     FE->>PM: RFI (info gap identified)
     PM->>CL: RFI
@@ -47,14 +48,15 @@ sequenceDiagram
     Note over FE: Model · drawings · BOM · SC list · takeoffs
 
     loop Submittal cycle
-        FE->>PM: Shop drawings
-        Note over PM,FE: PA + PM internal review
+        FE->>PM: Shop drawings on the submittal card
+        Note over PM: PM reviews this package, then sends it
         PM->>CL: Transmittal
         CL->>PM: Markups
         PM->>FE: Redline direction
     end
 
     Note over CL,PM: Submittal approved
+    Note over FE: PA Approved — build strategy signed off
 
     FE->>PE: FE to PE release
     Note over PE: Programming · CNC
@@ -253,7 +255,9 @@ sequenceDiagram
     
 *   Submit the Submittal Approval Request form in Releases & Requests. Attach the PDF, or a Box link that opens the PDF
     
-*   The form files the package in 00_Internal_Review and sends one card to the project's PMs
+*   The form files the package in 00_Internal_Review and sends one card to the project's PMs. That card is this drawing package. The PM answers it before sending the set.
+    
+*   Build strategy was reviewed earlier, with the Project Advisor, in the working session before modeling. The sign-off is **PA Approved**, checked before release.
     
 *   On approval the file is copied to 01_Outgoing. The PM still sends it to the client
     
@@ -294,6 +298,8 @@ Check:
 
 Ensure:
 
+*   Build strategy is signed off. **PA Approved** is checked where the project uses it. That review is the working session before modeling and the work with the lead, and it is settled before this handoff.
+    
 *   All material/hardware/vendor work BOM'd, ordered, received
     
 *   All parts named correctly

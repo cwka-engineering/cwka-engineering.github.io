@@ -79,6 +79,8 @@ Before doing any substantive modeling or drafting, every engineer must:
 
 > **Do not begin modeling ahead of PA input.** The PA has often been engaged with the scope since the bid phase. That context must be transferred before work begins. Skipping or deferring this session is a common source of rework and misaligned details downstream.
 
+The session is where the Project Advisor reviews build strategy. Hold it at assignment, before modeling. The sign-off is **PA Approved**, checked before release to PE. The PM reviews the shop drawings later, on the submittal card, once each package is filed and ready to send.
+
 See [Lead Engineer Responsibilities](/onboarding/lead-engineer.html#pa-working-session--mandatory-kickoff) for how this fits into the broader project structure.
 
 ## How do I set up a new project folder on Box?

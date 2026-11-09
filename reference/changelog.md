@@ -15,6 +15,7 @@ A record of significant additions and updates to the Engineering Wiki, grouped b
 ## 2026-11-09 – 2026-11-15
 
 - **Submittal approval, FE to PE release, and part requests** — Brought the published procedures in line with the live flows. The Submittal Approval Request form files the package and raises one card to the project's PMs. The FE to PE Release form checks the model, copies the handoff, and sets Released when its gates pass. Later partials use `@release-bot`. Part requests are answered with `@parts-bot`, and the scheduler saves the part with `CREATE` or records one with `USE`. Rewrote the seven procedure pages and corrected the satellite pages that still described the old handoffs. PA Approved and the Bluebeam stamp how-to are unchanged.
+- **Two reviews** — The PM reviews each shop-drawing package on the submittal card, after the form files it and before the set goes to the client. The Project Advisor reviews build strategy in the working session before modeling, and with the lead as the approach is set. **PA Approved** records that sign-off before release. The glossary, the project-delivery diagram, the lead page, and the submittal, release, and Epicor pages now say so.
 
 ---
 

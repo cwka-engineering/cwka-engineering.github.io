@@ -38,8 +38,8 @@ In a [grouped submittal](/workflows/fabrication-engineer/toolkit/drafting.html#h
 
 Internal feedback — from any source, at any stage — does not constitute a revision. This includes:
 
-- PM comments during internal review
-- PA review comments before client submission
+- PM comments on the submittal card, before the set goes to the client
+- Project Advisor comments on the build strategy, from the working session or later strategy review
 - Engineering Director or lead engineer feedback
 - Any internal back-and-forth prior to the drawing leaving the building
 

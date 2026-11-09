@@ -25,6 +25,7 @@ corpus_tags: [fe-release, fe-submittal]
 ## Release in Epicor
 
 - Answer **Release job in Epicor?** on the [FE to PE Release](/workflows/fe-to-pe-release.html) form. The form sets Released when its gates pass. You still tick Engineering Complete and BOM Complete before you submit.
+- **PA Approved** is the build-strategy sign-off. Check it by hand before release, after the Project Advisor has reviewed the approach in the working session and with the lead. The submittal flow writes drawing-package status and leaves this checkbox alone.
 
 ## Next Steps
 

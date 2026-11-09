@@ -30,10 +30,10 @@ The FE workflow consists of these key phases:
 9. **[Solid Wood Components](/workflows/fabrication-engineer/solid-wood-components.html)** - WC workflow from identification to release
 10. **[BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html)** - BOM creation, validation, and Epicor upload
 11. **[Material Transmittal](/workflows/fabrication-engineer/material-transmittal.html)** - TRA log structure and engineer responsibilities
-12. **[Submittal Review](/workflows/fabrication-engineer/submittal-review.html)** - Submit the approval form, then the client return cycle
+12. **[Submittal Review](/workflows/fabrication-engineer/submittal-review.html)** - The PM's review of each drawing package, then the client return
 13. **[Overage, Extras & Process Waste](/workflows/fabrication-engineer/overage-and-extras.html)** - BOM quantity philosophy
 14. **[BIM Coordination](/workflows/fabrication-engineer/bim-coordination.html)** - When BIM applies, model preparation, upload, and clash detection
-15. **[FE to PE Release](/workflows/fe-to-pe-release.html)** - Full pre-release checklist and handoff procedure
+15. **[FE to PE Release](/workflows/fe-to-pe-release.html)** - Pre-release checklist, including the PA's build-strategy sign-off, and the handoff
 16. **[Troubleshooting](/workflows/fabrication-engineer/troubleshooting.html)** - Common issues and solutions
 
 ## Quick Links

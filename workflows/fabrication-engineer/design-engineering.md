@@ -37,7 +37,7 @@ Placeholder layers are acceptable during DE — they will be replaced with prope
 3. **Build construction geometry** — Create guide curves, reference surfaces, and construction lines on DE::CON.
 4. **Develop precise geometry** — Model materials at nominal dimensions on DE::PUR with placeholder material names.
 5. **Create SKs** — Produce sketches for quick feedback from relevant parties (structural, client meetings, pre-submittal).
-6. **Develop build strategy** — Determine how assemblies will be fabricated, shipped, and installed. Document decisions.
+6. **Develop build strategy** — With the Project Advisor, determine how assemblies will be fabricated, shipped, and installed. That review is the working session before modeling, then the work with the lead as the approach is set. Document the decisions. The PM reviews the shop drawings later, on the submittal card, once a package is ready to send.
 7. **Transition to FE** — Once the design is confirmed, move to the [FE Modeling](/workflows/fabrication-engineer/toolkit/) phase, working on the 03_CWKA-FE layers with proper Epicor part numbers.
 
 ## Key Principles

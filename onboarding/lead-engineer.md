@@ -33,8 +33,10 @@ The Lead Engineer and the Project Advisor are **always separate people** on a pr
 |---|---|---|
 | Build strategy | **Final authority** — reviews proposals, provides feedback, approves the approach | Primary partner in strategy development; implements approved strategy across the team |
 | Detail development | Drives detail development and material selection (where not client-dictated) | First engineer to work through typical details alongside PA; ensures consistent deployment project-wide |
-| Internal review | Build-strategy review stays with the PA, separate from the submittal card | Informal pre-review before a submittal goes to the project's PMs |
+| Reviews | Build strategy, in the working session before modeling and with the lead as the approach is set. Sign-off is **PA Approved**, before release to PE | Shop drawings: an informal look at the set, then the PM's card, once for each package, before it goes to the client |
 | Team consistency | Not responsible | Primary agent ensuring all engineers on the project follow the approved approach |
+
+Two reviews, two venues, two times. The Project Advisor reviews build strategy in the working session, held at assignment before modeling, and stays with that review as the lead sets the approach. The record is the **PA Approved** checkbox, checked before the job is released to PE. The project manager reviews the shop drawings on the submittal card. The card goes out after the form files a package, once for that issue, and the PM answers it before sending the set to the client. The lead's look at a set is informal and comes before that card.
 
 Because PAs are typically among the most time-constrained senior staff, the lead acts as the PA's multiplier on the project floor — absorbing day-to-day technical questions from other engineers, flagging issues that require PA judgment, and keeping the team aligned with approved decisions.
 

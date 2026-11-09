@@ -125,11 +125,11 @@ A structured path through the wiki for new engineers. Adapt timing to your pace 
 ### Week 5+: Drafting, Release & Advanced
 
 22. [Rhino Drafting Standards](/standards/rhino-drafting/) — Layout structure, sections, hatches, printing
-23. [Submittal Review](/workflows/fabrication-engineer/submittal-review.html) — Submit the approval form and read the result
+23. [Submittal Review](/workflows/fabrication-engineer/submittal-review.html) — The PM's review of each drawing package, on the card
 24. [Material Transmittal](/workflows/fabrication-engineer/material-transmittal.html) — TRA log
 25. [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html) — BOM validation and Epicor upload
 26. [Submittal Approval](/tools/approvals-process.html) — The card the project's PMs answer
-27. [FE to PE Release](/workflows/fe-to-pe-release.html) — Checklist, then the form that files the handoff
+27. [FE to PE Release](/workflows/fe-to-pe-release.html) — Checklist, including the PA's build-strategy sign-off, then the form that files the handoff
 28. [Solid Wood Components](/workflows/fabrication-engineer/solid-wood-components.html) — WC workflow
 29. [Engineer Progression Framework](/onboarding/engineer-progression-framework.html) — How advancement works
 
