@@ -46,7 +46,7 @@
       "id": "/onboarding/project-delivery.html",
       "title": "Project Delivery Overview",
       "section": "Overview",
-      "degree": 12
+      "degree": 13
     },
     {
       "id": "/onboarding/purchasing-signal-chain.html",
@@ -64,7 +64,7 @@
       "id": "/reference/adjacent-roles/",
       "title": "Adjacent Roles & Interfaces",
       "section": "Home",
-      "degree": 19
+      "degree": 20
     },
     {
       "id": "/reference/adjacent-roles/master-scheduler.html",
@@ -172,7 +172,7 @@
       "id": "/reference/glossary.html",
       "title": "Glossary",
       "section": "Home",
-      "degree": 23
+      "degree": 24
     },
     {
       "id": "/reference/",
@@ -350,9 +350,9 @@
     },
     {
       "id": "/tools/approvals-process.html",
-      "title": "Approvals Process",
+      "title": "Submittal Approval",
       "section": "Tools",
-      "degree": 10
+      "degree": 15
     },
     {
       "id": "/tools/diagnostic.html",
@@ -364,7 +364,7 @@
       "id": "/tools/epicor/dashboards.html",
       "title": "Dashboards",
       "section": "Tools",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "/tools/epicor/",
@@ -382,7 +382,7 @@
       "id": "/tools/epicor/job-management.html",
       "title": "Job Management",
       "section": "Tools",
-      "degree": 14
+      "degree": 15
     },
     {
       "id": "/tools/epicor/manufactured-parts-jobs.html",
@@ -412,7 +412,7 @@
       "id": "/tools/epicor/production-report.html",
       "title": "Production Report",
       "section": "Tools",
-      "degree": 7
+      "degree": 6
     },
     {
       "id": "/tools/epicor/troubleshooting.html",
@@ -424,7 +424,7 @@
       "id": "/tools/releases-and-requests/fe-to-pe-releases.html",
       "title": "FE to PE Releases",
       "section": "Tools",
-      "degree": 2
+      "degree": 3
     },
     {
       "id": "/tools/releases-and-requests/job-requests.html",
@@ -434,7 +434,7 @@
     },
     {
       "id": "/tools/releases-and-requests/part-requests/engineer-guide.html",
-      "title": "Engineer / PM Guide",
+      "title": "Engineer Guide",
       "section": "Home",
       "degree": 6
     },
@@ -454,7 +454,7 @@
       "id": "/tools/releases-and-requests/",
       "title": "Releases & Requests",
       "section": "Tools",
-      "degree": 8
+      "degree": 9
     },
     {
       "id": "/tools/remote-desktop.html",
@@ -514,7 +514,7 @@
       "id": "/workflows/fabrication-engineer/epicor-interaction.html",
       "title": "Epicor Interaction",
       "section": "Workflows",
-      "degree": 6
+      "degree": 7
     },
     {
       "id": "/workflows/fabrication-engineer/getting-started.html",
@@ -532,7 +532,7 @@
       "id": "/workflows/fabrication-engineer/material-transmittal.html",
       "title": "Material Transmittal Log (TRA)",
       "section": "Workflows",
-      "degree": 10
+      "degree": 11
     },
     {
       "id": "/workflows/fabrication-engineer/overage-and-extras.html",
@@ -562,7 +562,7 @@
       "id": "/workflows/fabrication-engineer/submittal-review.html",
       "title": "Submittal Review Cycle",
       "section": "Workflows",
-      "degree": 9
+      "degree": 10
     },
     {
       "id": "/workflows/fabrication-engineer/takeoffs.html",
@@ -598,7 +598,7 @@
       "id": "/workflows/fe-to-pe-release.html",
       "title": "FE to PE Release Procedure",
       "section": "Workflows",
-      "degree": 33
+      "degree": 32
     },
     {
       "id": "/workflows/production-engineer/deliverables.html",
@@ -610,7 +610,7 @@
       "id": "/workflows/production-engineer/",
       "title": "Production Engineer (PE)",
       "section": "Workflows",
-      "degree": 12
+      "degree": 13
     },
     {
       "id": "/workflows/production-engineer/processing.html",
@@ -848,6 +848,10 @@
     },
     {
       "source": "/onboarding/project-delivery.html",
+      "target": "/workflows/fabrication-engineer/submittal-review.html"
+    },
+    {
+      "source": "/onboarding/project-delivery.html",
       "target": "/workflows/fe-to-pe-release.html"
     },
     {
@@ -929,6 +933,10 @@
     {
       "source": "/reference/adjacent-roles/",
       "target": "/reference/glossary.html"
+    },
+    {
+      "source": "/reference/adjacent-roles/",
+      "target": "/tools/approvals-process.html"
     },
     {
       "source": "/reference/adjacent-roles/",
@@ -1261,6 +1269,10 @@
     {
       "source": "/reference/glossary.html",
       "target": "/standards/rhino-drafting/cover-sheet-common-pages.html"
+    },
+    {
+      "source": "/reference/glossary.html",
+      "target": "/tools/approvals-process.html"
     },
     {
       "source": "/reference/glossary.html",
@@ -1704,6 +1716,14 @@
     },
     {
       "source": "/tools/approvals-process.html",
+      "target": "/tools/epicor/dashboards.html"
+    },
+    {
+      "source": "/tools/approvals-process.html",
+      "target": "/tools/epicor/job-management.html"
+    },
+    {
+      "source": "/tools/approvals-process.html",
       "target": "/tools/epicor/production-report.html"
     },
     {
@@ -1716,11 +1736,15 @@
     },
     {
       "source": "/tools/approvals-process.html",
-      "target": "/workflows/fabrication-engineer/submittal-review.html"
+      "target": "/workflows/fabrication-engineer/epicor-interaction.html"
     },
     {
       "source": "/tools/approvals-process.html",
-      "target": "/workflows/fe-to-pe-release.html"
+      "target": "/workflows/fabrication-engineer/material-transmittal.html"
+    },
+    {
+      "source": "/tools/approvals-process.html",
+      "target": "/workflows/fabrication-engineer/submittal-review.html"
     },
     {
       "source": "/tools/diagnostic.html",
@@ -1947,10 +1971,6 @@
       "target": "/workflows/fabrication-engineer/material-transmittal.html"
     },
     {
-      "source": "/tools/epicor/production-report.html",
-      "target": "/workflows/fabrication-engineer/submittal-review.html"
-    },
-    {
       "source": "/tools/releases-and-requests/",
       "target": "/tools/releases-and-requests/fe-to-pe-releases.html"
     },
@@ -1972,11 +1992,19 @@
     },
     {
       "source": "/tools/releases-and-requests/",
+      "target": "/workflows/fabrication-engineer/submittal-review.html"
+    },
+    {
+      "source": "/tools/releases-and-requests/",
       "target": "/workflows/fe-to-pe-release.html"
     },
     {
       "source": "/tools/releases-and-requests/fe-to-pe-releases.html",
       "target": "/workflows/fe-to-pe-release.html"
+    },
+    {
+      "source": "/tools/releases-and-requests/fe-to-pe-releases.html",
+      "target": "/workflows/production-engineer/"
     },
     {
       "source": "/tools/releases-and-requests/part-requests.html",
