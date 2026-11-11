@@ -99,7 +99,7 @@ You do not type drawing-package status on the Production Report. The flow writes
 | Revise and resubmit | Internal Review | Resubmitted, and the date |
 | Submitted, Resubmitted, Approved, or anything further along | Left as it is | Left as it is |
 
-A rejection leaves Epicor as it is. A project whose name contains the word CMG is left unchanged either way. The Teams message names the Epicor result only when a status was written.
+A rejection leaves Epicor as it is. A project whose name contains the word CMG is left unchanged either way. The write is on the company that owns the job, CWK Associates or Digifabshop. A job on any other company is left unchanged. The Teams message names the Epicor result only when a status was written.
 
 The same field is visible on the [Submittal Dashboard](/tools/epicor/dashboards.html#submittal-dashboard). It tracks the drawing package as a whole. Material and finish approval is the [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html).
 

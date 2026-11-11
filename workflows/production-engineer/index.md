@@ -10,7 +10,7 @@ corpus_exclude: true
 
 # Production Engineer (PE) Workflow
 
-The Production Engineer (PE) workflow is focused on preparing jobs for production. This workflow begins after a job release from the Fabrication Engineer (FE). The record is that job's thread in [FE to PE Releases](/tools/releases-and-requests/fe-to-pe-releases.html). The files can be in `Fabrication_Handoff` when the check failed or when Epicor was left unchanged. Read the Epicor line on the post. Request a [handoff meeting](/workflows/fe-to-pe-release.html#communication-handoff-meeting) when review shows the need.
+The Production Engineer (PE) workflow is focused on preparing jobs for production. This workflow begins after a job release from the Fabrication Engineer (FE). The record is that job's thread in [FE to PE Releases](/tools/releases-and-requests/fe-to-pe-releases.html). The files can be in `Fabrication_Handoff` when the check failed or when Epicor was left unchanged. A repeated release of the same number leaves the earlier handoff file in place, with superseded in its name. Read the Epicor line on the post. Request a [handoff meeting](/workflows/fe-to-pe-release.html#communication-handoff-meeting) when review shows the need.
 
 > **Related**: [Project Delivery Overview](/onboarding/project-delivery.html) | [FE to PE Release](/workflows/fe-to-pe-release.html) (what FE certifies before handoff; [handoff meetings](/workflows/fe-to-pe-release.html#communication-handoff-meeting)) | [Layer Organization](/standards/layer-organization/)
 

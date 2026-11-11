@@ -84,7 +84,7 @@ The request stays with the scheduler until a part number is stored.
 
 Use the **Chosen** number when you accepted an existing part. Use the **Part number** when a new part was created. That is the number for the BOM or the order.
 
-When that new part is active in both companies, the thread mentions you with the number. Until that reply, the NY site is still waiting on the push-pull.
+The thread shows the new number when the part is created. When that part is active in both companies, the thread mentions you with the number. Until that mention, the NY site is still waiting on the push-pull.
 
 ## Your interactions at a glance
 

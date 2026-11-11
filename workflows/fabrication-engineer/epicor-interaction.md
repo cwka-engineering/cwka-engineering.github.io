@@ -15,7 +15,7 @@ corpus_tags: [fe-release, fe-submittal]
 ## Reading Submittal Status
 
 - Use Epicor (West site) > Production Report. See [Epicor Usage - Production Report](/tools/epicor/#2-production-report) for details.
-- Filter by your name to see the drawing-package status. The [Submittal Approval](/tools/approvals-process.html) flow writes it: Internal Review when the request goes out, then Submitted or Resubmitted when a PM approves. A rejection writes nothing.
+- Filter by your name to see the drawing-package status. The [Submittal Approval](/tools/approvals-process.html) flow writes it on the company that owns the job, CWK Associates or Digifabshop: Internal Review when the request goes out, then Submitted or Resubmitted when a PM approves. A rejection writes nothing. Read the report for that company.
 - Production Complete is a later production status. You do not type the drawing-package status yourself.
 
 ## Engineering & BOM Completion
@@ -24,7 +24,7 @@ corpus_tags: [fe-release, fe-submittal]
 
 ## Release in Epicor
 
-- Answer **Release job in Epicor?** on the [FE to PE Release](/workflows/fe-to-pe-release.html) form. The form sets Released when its gates pass. You still tick Engineering Complete and BOM Complete before you submit.
+- Answer **Release job in Epicor?** on the [FE to PE Release](/workflows/fe-to-pe-release.html) form. The form sets Released on the company that owns the job when its gates pass. You still tick Engineering Complete and BOM Complete before you submit.
 - **PA Approved** is the build-strategy sign-off. Check it by hand before release, after the Project Advisor has reviewed the approach in the working session and with the lead. The submittal flow writes drawing-package status and leaves this checkbox alone.
 
 ## Next Steps

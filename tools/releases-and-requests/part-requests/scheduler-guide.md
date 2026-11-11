@@ -55,9 +55,9 @@ Brand:
 - A line without a colon, a field that is not on the worksheet, or a dimension that is not a decimal (`0.75`, not `3/4`) is refused and nothing is created. Send `CREATE` again.
 - The part number, the class, type `P`, product group `RAW`, and plant MfgSys stay as the worksheet has them. Drop a line that tries to change one of those and send `CREATE` again.
 
-The bot takes the next free number, marks the request **Creating**, and saves the part in company 157539 on plant MfgSys. Plant CWNH is retired and is not written. The reply lists the fields it is saving and asks you to send `STATUS` in a minute.
+The bot takes the next free number, marks the request **Creating**, and saves the part in company 157539 on plant MfgSys. Plant CWNH is retired and is not written. The thread replies with the new number.
 
-`@parts-bot STATUS` then shows **Complete** and the part number. The create-part Planner task is closed. The push-pull reminder stays open until the part is active on the NY site.
+`@parts-bot STATUS` shows **Complete** and that same number. The create-part Planner task is closed. The push-pull reminder stays open until the part is active on the NY site.
 
 If the reply says the command is still working, wait and send `STATUS`. Sending `CREATE` again while it is running starts no second part. If Epicor does not save the part, the request returns to **Awaiting scheduler**. You can `CREATE` again, or save the part yourself and reply `USE` and the number. A number that is already in the catalog is left unwritten. Send `NEXT` and try `CREATE` again.
 

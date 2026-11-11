@@ -35,7 +35,7 @@ When creating a part directly:
 
 [^transcript-epicor-parts]
 
-- **GM (General Materials)**: Created on company 157539, plant MfgSys, through the [Part Requests](/tools/releases-and-requests/part-requests/scheduler-guide.html) workflow. The NY site receives the part when the scheduler runs the site push-pull. The request thread says when it is active in both companies.
+- **GM (General Materials)**: Created on company 157539, plant MfgSys, through the [Part Requests](/tools/releases-and-requests/part-requests/scheduler-guide.html) workflow. The request thread names the number when the part is created. The NY site receives the part when the scheduler runs the site push-pull. The thread says again when it is active in both companies.
 - **Project-Specific Materials**: Only exist in the site where created (not synced).
 - **Best Practice**: Always use the Colorado version of "Part Entry and Update" for catalog management.
 

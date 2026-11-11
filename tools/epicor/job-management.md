@@ -45,10 +45,10 @@ Fabrication Engineers must also satisfy the full **[FE to PE Release checklist](
 
 ### Job Status Updates
 - Ensure **Engineering Complete** is set appropriately on BOM lines.
-- Read drawing-package status on the Production Report. The [Submittal Approval](/tools/approvals-process.html) flow writes **Submittal Status** and **Submitted Date** when a package goes to the PMs and when a PM approves.
+- Read drawing-package status on the Production Report for the company that owns the job. The [Submittal Approval](/tools/approvals-process.html) flow writes **Submittal Status** and **Submitted Date** on that company, CWK Associates or Digifabshop, when a package goes to the PMs and when a PM approves. A job on any other company is left unchanged.
 - **PA Approved** is the build-strategy sign-off. Check it by hand when the Project Advisor has approved the approach, before release. The review is the working session before modeling and the work with the lead. The submittal flow leaves this checkbox alone.
 - Set **Fabrication Engineer** on the job (may display as **Production Team** on Job Entry) before release.
-- Submit the [FE to PE Release](/workflows/fe-to-pe-release.html) form. The form sets Released when its gates pass and posts the result for PE.
+- Submit the [FE to PE Release](/workflows/fe-to-pe-release.html) form. The form sets Released on the company that owns the job when its gates pass, and posts the result for PE.
 
 ## Shipping components upload
 

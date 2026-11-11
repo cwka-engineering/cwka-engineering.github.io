@@ -53,7 +53,7 @@ Reminders go to the approvers on working days. After three working days the requ
 ## Epicor
 {: #how-to-track-submittal-status}
 
-Approving sets the job to **Submitted**, or to **Resubmitted** when it was revise and resubmit, and stamps the date. A job that is already further along is left as it is. Rejecting leaves Epicor as it is. A project whose name contains the word CMG is left unchanged either way.
+Approving sets the job to **Submitted**, or to **Resubmitted** when it was revise and resubmit, and stamps the date. The write is on the company that owns the job, CWK Associates or Digifabshop. A job that is already further along is left as it is. Rejecting leaves Epicor as it is. A project whose name contains the word CMG is left unchanged either way. A job on any other company is left unchanged.
 
 You do not type this status yourself. The field is on the [Production Report](/tools/epicor/production-report.html) and the [Submittal Dashboard](/tools/epicor/dashboards.html#submittal-dashboard).
 

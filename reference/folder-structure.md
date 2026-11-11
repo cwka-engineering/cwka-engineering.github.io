@@ -59,7 +59,7 @@ Box/
       05 Shipping/
 ```
 
-Always use **Windows Explorer paths** (not Box links) when referencing file locations in release forms and team communications.
+The release form and the submittal form take a Box link to the file.
 
 ## PROJECT ROOT FOLDER
 
@@ -142,7 +142,7 @@ Dedicated to completed work ready for production. Release contents and naming mu
 
 - The [FE to PE Release](/workflows/fe-to-pe-release.html) form creates a missing job folder from the `_PROJ.JOB_ScopeDescription` template and leaves an existing folder's name as it is.
 - Inside each release folder:
-  - **Fabrication_Handoff/**: the form copies the purged PE Rhino file, the shipping-components workbook from UD40, and the approved submittal drawing (a For Record PDF in `01_Outgoing`, or the newest PDF in `02_Returned`). A file already there under the same name is left alone. FE adds ancillary documents by hand — veneer takeoff drawings, hardware cut sheets, specialty fabrication references — and adds later partial files the same way. PE should not need to search outside this folder to execute the release.
+  - **Fabrication_Handoff/**: the form copies the purged PE Rhino file, the shipping-components workbook from UD40, and the approved submittal drawing. A pasted PDF link is that drawing. A blank link takes a For Record PDF in `01_Outgoing`, or the newest PDF in `02_Returned`. Submitting the same release again replaces that handoff file and keeps the earlier file, with superseded and the time in its name. The shipping-components workbook already there is left alone. FE adds ancillary documents by hand — veneer takeoff drawings, hardware cut sheets, specialty fabrication references — and adds later partial files the same way. PE should not need to search outside this folder to execute the release.
   - **Production_Files/**: PE's own working files: Master Parts List, Lay-Up Summary, machine programs, optional SHOP model
   - **Production_Drawings/**: PE's own production drawings and SKs
 

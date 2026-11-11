@@ -44,14 +44,16 @@ The form reads UD40 and writes `<job>_SHIPPING_COMPONENTS.xlsx` into `Fabricatio
 
 In **Job Entry**, for each BOM line verify: **Engineering Complete** checked, **Fixed Quantity** checked (unless catalog), **Make Direct** for MFG parts, all materials have a Part Master. Append any engineering comments to the part description. Check **BOM Complete**.
 
-Answer **Release job in Epicor?** on the form. Yes sets Released only when the check found no errors, the job is already approved, it is a standard job, and the project name does not contain the word CMG. The form never clears Released. You do not click **Release** for a job you asked the form to release. `@release-bot` can set or clear Released later, without those gates. See [FE to PE Releases](/tools/releases-and-requests/fe-to-pe-releases.html).
+Answer **Release job in Epicor?** on the form. Yes sets Released only when the check found no errors, the job is already approved, it is a standard job, and the project name does not contain the word CMG. The write is on the company that owns the job, CWK Associates or Digifabshop. A job on any other company is left unchanged. The form never clears Released. You do not click **Release** for a job you asked the form to release. `@release-bot` can set or clear Released later, without those gates, and that change is a line on the job's log thread. See [FE to PE Releases](/tools/releases-and-requests/fe-to-pe-releases.html).
 
 ## How do I submit the FE to PE Release form?
 {: #how-to-submit-release-form}
 
-Open the **FE to PE Release** form in the Airtable base **Releases & Requests**. One submission is one job. Choose Complete, Partial, or Final partial. Answer **Release job in Epicor?** Paste a Box link to the PE file, or leave it blank and let the form take the newest PE-named `.3dm` from the job's `01_FE_Models` folder. Notes are copied onto the channel post, including a handoff-meeting request or late-start coordination.
+Open the **FE to PE Release** form in the Airtable base **Releases & Requests**. One submission is one job. The job stays on the form until Prod Eng is complete, so a released job can be filed again. Choose Complete, Partial, or Final partial. Answer **Release job in Epicor?** Paste a Box link to the PE `.3dm`. A name that contains `PE` is the model, including a description between `PE` and the date, and the link can sit anywhere. The handoff copy is renamed with the date. Leave the link blank, link a name without `PE`, or link a working `_FE` file, and the form takes the newest PE-named `.3dm` from the job's `01_FE_Models` folder. Paste a Box link to the submittal PDF, or leave it blank. A blank PDF link takes a For Record PDF in `01_Outgoing`, then the newest PDF in `02_Returned`. Notes are copied onto the channel post, including a handoff-meeting request or late-start coordination.
 
-The release post mentions the project's PM and one site tag, `@NY` or `@CO`. You do not type that mention on the form's post. The full field list, the two Teams messages, and later partials are on [FE to PE Releases](/tools/releases-and-requests/fe-to-pe-releases.html).
+Submitting the same release again, the same partial number or another complete release, replaces that handoff file. The earlier file stays in the folder, with superseded and the time in its name. The channel reply is one line and mentions only the site tag. The shipping-components workbook already in the folder is left alone.
+
+The release post mentions the project's PM and one site tag, `@NY` or `@CO`. You do not type that mention on the form's post. A CMG release is posted with `@CMG`. The PM and the site tag stay off that post, and the project's General channel is skipped. The full field list, the two Teams messages, and later partials are on [FE to PE Releases](/tools/releases-and-requests/fe-to-pe-releases.html).
 
 ## How do I handle a late release (after scheduled start date)?
 {: #how-to-handle-late-release}
@@ -134,7 +136,7 @@ See [Shipping Components](/workflows/fabrication-engineer/shipping-components.ht
   - **Catalog item**: two-character account + two-character category + three digits — e.g. `CM.BE.001_PE.3dm`  
   - **Catalog manufactured part**: account + MT or WC + five digits — e.g. `CM.MT.00005_PE.3dm`  
   - **Isodate** after `_PE` when using date form: `PROJ.JOB_PE_20250124.3dm`
-- **File organization**: The form copies the standard set into `03_PE_Releases/PROJ.JOB_ScopeDescription/Fabrication_Handoff`: the purged PE Rhino file, the shipping-components workbook from UD40, and the **approved submittal drawing** (a PDF in `01_Outgoing` whose name ends in `for record.pdf`, or the newest PDF in `02_Returned` when there is no For Record). A file already there under the same name is left alone. Do not put files in PE's own `Production_Files` or `Production_Drawings`. Add ancillary documents by hand — see below.
+- **File organization**: The form copies the standard set into `03_PE_Releases/PROJ.JOB_ScopeDescription/Fabrication_Handoff`: the purged PE Rhino file, the shipping-components workbook from UD40, and the **approved submittal drawing**. A pasted PDF link is that drawing. A blank link takes a PDF in `01_Outgoing` whose name ends in `for record.pdf`, or the newest PDF in `02_Returned` when there is no For Record. Submitting the same release again replaces that handoff file and keeps the earlier file, with superseded and the time in its name. The shipping-components workbook already there is left alone. Do not put files in PE's own `Production_Files` or `Production_Drawings`. Add ancillary documents by hand — see below.
 - **Ancillary documents**: Any document outside the standard submittal set that PE requires to process the job, and any additional pages FE creates, must be added by hand to `Fabrication_Handoff` alongside the approved submittal drawing. Examples include veneer takeoff drawings, hardware cut sheets for non-standard components, or specialty fabrication references. These documents may also exist in their canonical location elsewhere in the project folder (e.g. `04 Purchasing/02_Approved Part Drawings`) — copy them; do not rely on PE to locate them independently.
 - **Geometry state**: Model reflects geometry as it comes **off the machine** (e.g. sharp corners where round-overs are bench-applied).
 - **PDFs**: Prefer **vector** PDFs where possible; each shipping component called out clearly on drawings.
@@ -143,7 +145,7 @@ See [Shipping Components](/workflows/fabrication-engineer/shipping-components.ht
 ### Communication and handoff meeting
 {: #communication-handoff-meeting}
 
-- Submit the **FE to PE Release** form. The release post @mentions the project's PM and one site tag, `@NY` or `@CO`. On a later partial, type those mentions yourself in the reply. A project whose name contains the word CMG is posted and mentions nobody.
+- Submit the **FE to PE Release** form. The release post @mentions the project's PM and one site tag, `@NY` or `@CO`. On a later partial, type those mentions yourself in the reply. A CMG release is posted with `@CMG`. The PM and the site tag stay off that post.
 - If release is **after** the scheduled start date, coordinate with adjacent departments and state that coordination in the release post **Notes**.
 - **Mandatory handoff meeting** when any apply: custom tooling/dies; oversized parts needing special nesting; complex non-standard "By Others" integration; details that deviate from established company norms. Request the meeting in the form **Notes**; PE may also request a meeting after file review.
 
@@ -183,9 +185,11 @@ A manufacturing job gets its own release folder in `03_PE_Releases`. There is no
 
 The form copies this into **`Fabrication_Handoff`**:
 
-- The PE model from `01_FE_Models`, renamed with the date and, for a partial, the partial number
-- The approved submittal, when a For Record PDF is in `01_Outgoing` or a PDF is in `02_Returned`
-- The shipping-components workbook from UD40, for a standard job
+- The PE model, renamed with the date and, for a partial, the partial number. A linked `.3dm` whose name contains `PE` is that model, wherever the link sits. A blank link, a name without `PE`, or a working `_FE` file uses the newest PE-named model in `01_FE_Models`
+- The approved submittal. A pasted PDF link is the file. A blank link takes a For Record PDF in `01_Outgoing`, then the newest PDF in `02_Returned`
+- The shipping-components workbook from UD40, for a standard job. A workbook already in the folder is left alone
+
+Submitting the same release again replaces that handoff file. The earlier file stays beside it, with superseded and the time in its name.
 
 You add, by hand, any additional pages and any ancillary documents PE needs (veneer takeoff drawings, hardware cut sheets, specialty fabrication references), even when those files also live elsewhere in the project folder.
 
@@ -195,7 +199,7 @@ You add, by hand, any additional pages and any ancillary documents PE needs (ven
 
 A job whose parts are not all ready together is released in parts. Every partial goes into the job's **existing** PE release folder. Do not create a second folder and do not rename the first.
 
-The first release is the form. That opens the thread in **FE to PE Releases** and copies the first set. Each later partial is files you add to the same `Fabrication_Handoff`, then a reply under that post: `@release-bot PARTIAL RELEASE n`. Put `_PARTIAL-NN` in the file name, counting up from `01`: `1105.009_PE_20260105_PARTIAL-02.3dm`. A release that is not partial has no suffix. A file already in the folder under the same name is left alone. The bot records the partial and can set Released. It does not copy files. Include the last partial. `FULL RELEASE` on a thread that only has a form filing is stored as a complete release. The commands are on [FE to PE Releases](/tools/releases-and-requests/fe-to-pe-releases.html).
+The first release is the form. That opens the thread in **FE to PE Releases** and copies the first set. Each later partial is files you add to the same `Fabrication_Handoff`, then a reply under that post: `@release-bot PARTIAL RELEASE n`. Put `_PARTIAL-NN` in the file name, counting up from `01`: `1105.009_PE_20260105_PARTIAL-02.3dm`. A release that is not partial has no suffix. The bot records the partial and can set Released. It does not copy files and does not replace a file already there. Include the last partial. A CMG partial mentioned through the bot uses `@CMG`. `FULL RELEASE` on a thread that only has a form filing is stored as a complete release. The job stays on the form until Prod Eng is complete. Submit the form again, with the same release number, to replace that handoff file. The commands are on [FE to PE Releases](/tools/releases-and-requests/fe-to-pe-releases.html).
 
 #### File naming conventions
 
@@ -229,7 +233,7 @@ For more information on Epicor, see [Epicor Usage in Engineering](/tools/epicor/
    - All materials have a Part Master.
 9. **NOTE**: Job-specific engineering comments on BOM materials (e.g. pull from inventory, PM to verify, use alternate if unavailable) must be appended to the **part description** on the BOM.
 10. **BOM Complete**: All parts and materials accounted for.
-11. Leave **Release** for the form. Answer Yes on the form when you want Released set, and only when the gates on [FE to PE Releases](/tools/releases-and-requests/fe-to-pe-releases.html) are clear. A manufacturing job and a project whose name contains the word CMG are left unchanged by the form.
+11. Leave **Release** for the form. Answer Yes on the form when you want Released set, and only when the gates on [FE to PE Releases](/tools/releases-and-requests/fe-to-pe-releases.html) are clear. The write is on the company that owns the job, CWK Associates or Digifabshop. A manufacturing job, a project whose name contains the word CMG, and a job on any other company are left unchanged by the form.
 
 ### 5. Form submission (FE to PE release form)
 {: #sop-fe-pe-form}
@@ -240,9 +244,10 @@ One submission is one job. To release several jobs, submit once for each.
 
 - **Release type**: Complete, Partial, or Final partial
 - **Release job in Epicor?**: Yes or No
-- **Box link**: the PE file, or blank to take the model from `01_FE_Models`
+- **Box link**: the PE `.3dm`. A name that contains `PE` is filed, including a description between `PE` and the date, wherever the link sits. Blank, a name without `PE`, or a working `_FE` file takes the newest PE-named model from `01_FE_Models`
+- **Submittal PDF**: a Box link to the drawing, or blank. Blank takes a For Record PDF in `01_Outgoing`, then the newest PDF in `02_Returned`
 - **Notes**: included manufacturing jobs, a handoff meeting request, or late-start coordination
 
-The form posts in **FE to PE Releases** and mentions the project's PM and `@NY` or `@CO`. Field details, what the post means, and `@release-bot` are on [FE to PE Releases](/tools/releases-and-requests/fe-to-pe-releases.html).
+The form posts in **FE to PE Releases** and mentions the project's PM and `@NY` or `@CO`. A CMG release is posted with `@CMG`. The PM and the site tag stay off that post. Field details, what the post means, and `@release-bot` are on [FE to PE Releases](/tools/releases-and-requests/fe-to-pe-releases.html).
 
 A manufacturing job's approved submittal is taken from each parent job's submittal folder. Highlight that job's scope in the production drawing set yourself. The form does not build that callout. Submit the manufacturing job on its own form once its PE model is in place.

@@ -24,7 +24,7 @@ Read drawing-package submittal status and track manufacturing jobs. The [Submitt
 
 - **Project ID & Job Number**
 - **Project Advisor (PA)**
-- **Submittal Status**: The status of the **shop drawing package** as a whole. Material and finish approval is tracked separately in the [Material Transmittal Log (TRA)](/workflows/fabrication-engineer/material-transmittal.html). The approval flow writes Internal Review when a request goes out, and Submitted or Resubmitted when a PM approves. A rejection writes nothing. A job already further along is left as it is. The same field is visible on the [Submittal Dashboard](/tools/epicor/dashboards.html#submittal-dashboard).
+- **Submittal Status**: The status of the **shop drawing package** as a whole. Material and finish approval is tracked separately in the [Material Transmittal Log (TRA)](/workflows/fabrication-engineer/material-transmittal.html). The approval flow writes Internal Review when a request goes out, and Submitted or Resubmitted when a PM approves. The write is on the company that owns the job, CWK Associates or Digifabshop. A rejection writes nothing. A job already further along is left as it is. The same field is visible on the [Submittal Dashboard](/tools/epicor/dashboards.html#submittal-dashboard).
 - **FE Assignment**
 - **Checkboxes**:
   - Field Dimensions Received
