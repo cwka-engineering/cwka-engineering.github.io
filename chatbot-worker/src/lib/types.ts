@@ -8,7 +8,6 @@ export interface Env {
   MAX_REQUESTS_PER_MINUTE: string;
   DIAGNOSTIC_AUTH_TOKEN: string;
   PA_AUTH_TOKEN: string;
-  PARTS_MATCH_ANTHROPIC_API_KEY: string;
   PA_CLAUDE_MODEL: string;
   TIME_ENTRY_AUTH_TOKEN: string;
   TIME_ENTRY_ANTHROPIC_API_KEY: string;

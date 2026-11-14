@@ -145,9 +145,9 @@ Each Cloudflare Worker lives in the repo that owns its callers and rules. This r
 | `/api/chat` | Wiki Q&A chat widget (public, CORS-gated, SSE) |
 | `/api/diagnostic`, `/api/summarize` | Grasshopper/Rhino diagnostic assistant and `rhino-qc` summaries (token-gated, SSE; read the `fe-release` corpus) |
 | `/api/time-entry` | CWK Time Companion (token-gated, SSE) |
-| `/api/parts-match`, `/api/clocked-time-qc` | Handlers still in this worker. The live Power Automate flows call `cwka-pa-worker` (repointed 11 October 2026). Remove these routes once nothing still calls them. |
+| `/api/clocked-time-qc` | Handler still in this worker. The live Power Automate flows call `cwka-pa-worker` (repointed 11 October 2026). Remove this route once nothing still calls it. |
 
-Related workers: `cwka-pa-worker` (`power-automate-flows/worker`, parts matching and weekly time QC) and a planned `rhino-qc` container worker that calls this Worker's `/api/summarize`.
+Related workers: `cwka-pa-worker` (`power-automate-flows/worker`, parts matching and weekly time QC; `/api/parts-match` was removed from this worker) and a planned `rhino-qc` container worker that calls this Worker's `/api/summarize`.
 
 **Model:** `CLAUDE_MODEL` and `PA_CLAUDE_MODEL` in `chatbot-worker/wrangler.toml` are `claude-haiku-5-5`. Haiku 5.5 thinks by default and thinking tokens count toward `max_tokens`, so every Claude call (`callClaude`, `streamClaude`, `streamClaudeDiagnostic` in `src/lib/claude.ts`) sends `effort: "low"` and a 4096 cap, and logs a warning if a reply hits `max_tokens`. Don't send `temperature`, `top_p`, `top_k`, `budget_tokens` or assistant prefill to this model.
 

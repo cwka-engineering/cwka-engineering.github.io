@@ -35,7 +35,6 @@ crons = ["*/5 * * * *"]
 # - DIAGNOSTIC_ANTHROPIC_API_KEY  (/api/diagnostic, /api/summarize)
 # - DIAGNOSTIC_AUTH_TOKEN
 # - PA_AUTH_TOKEN
-# - PARTS_MATCH_ANTHROPIC_API_KEY  (/api/parts-match)
 # - AIRTABLE_PAT                  (/api/diagnostic-runs; write on the Releases & Requests base)
 # - DIAGNOSTIC_CLOUD_AUTH_TOKEN   (/api/diagnostic-runs; server-only credential for cloud runs; same value as on cwka-rhino-qc)
 
