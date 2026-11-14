@@ -77,6 +77,18 @@ test("action plans over the limit are rejected", () => {
   assert.equal(validateRun({ ...good(), action_plan: "x".repeat(90001) }, "local", NOW).ok, false);
 });
 
+test("rule_summary is validated and written to its field as JSON", () => {
+  const rs = { "Job Milestones": { error: 3, warning: 0, info: 0 }, "Filename Pattern": { error: 1, warning: 0, info: 2 } };
+  const v = validateRun({ ...good(), rule_summary: rs }, "local", NOW);
+  assert.equal(v.ok, true);
+  assert.deepEqual(JSON.parse(buildFields(v.run, v.raw, [])[F.ruleSummary]), rs);
+  for (const bad of ["x", [], { a: 1 }, { a: { error: -1, warning: 0, info: 0 } }, { a: { error: 1.5, warning: 0, info: 0 } },
+                     { "": { error: 1, warning: 0, info: 0 } }]) {
+    assert.equal(validateRun({ ...good(), rule_summary: bad }, "local", NOW).ok, false, JSON.stringify(bad));
+  }
+  assert.ok(!(F.ruleSummary in buildFields(validateRun(good(), "local", NOW).run, "{}", [])));
+});
+
 // ---- field mapping ----
 test("maps values to Airtable choice names, keyed by field ID", () => {
   const v = validateRun(good(), "local", NOW);

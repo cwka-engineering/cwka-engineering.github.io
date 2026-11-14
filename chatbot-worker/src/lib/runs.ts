@@ -29,6 +29,7 @@ export const F = {
   findingsUrl: "fldPhS5ijjuuIbBuO",
   filePath: "fldDb4Hd7hknD5oEC",
   logPath: "fldfivBLWYwszCv35",
+  ruleSummary: "fld3B3TckNbquePF4",
 } as const;
 
 // Field IDs in the synced "People" table (a cross-base sync of the Engineering Schedule "Roles" table).
@@ -77,6 +78,7 @@ export interface RunInput {
   erp_checks?: string;
   llm?: string;
   action_plan?: string;
+  rule_summary?: Record<string, { error: number; warning: number; info: number }>;
   release_record_id?: string;
 }
 
@@ -131,6 +133,18 @@ export function validateRun(body: unknown, privilege: Privilege, now: number = D
   }
   if (b.action_plan !== undefined && (typeof b.action_plan !== "string" || b.action_plan.length > MAX_ACTION_PLAN)) {
     errors.push(`action_plan must be a string (max ${MAX_ACTION_PLAN} chars)`);
+  }
+  if (b.rule_summary !== undefined) {
+    const rs = b.rule_summary as Record<string, unknown> | null;
+    const entries = rs && typeof rs === "object" && !Array.isArray(rs) ? Object.entries(rs) : null;
+    const countsOk = (v: unknown) => {
+      if (!v || typeof v !== "object" || Array.isArray(v)) return false;
+      const c = v as Record<string, unknown>;
+      return isCount(c.error) && isCount(c.warning) && isCount(c.info);
+    };
+    if (!entries || entries.length > 200 || !entries.every(([k, v]) => k.length > 0 && k.length <= 100 && countsOk(v))) {
+      errors.push("rule_summary must be an object of rule name to {error, warning, info} counts (max 200 rules)");
+    }
   }
   if (b.user !== undefined) {
     const u = b.user as Record<string, unknown> | null;
@@ -212,6 +226,7 @@ export function buildFields(run: RunInput, raw: string, personRecordIds: string[
   if (run.erp_checks !== undefined) f[F.erpChecks] = ERP[run.erp_checks];
   if (run.llm !== undefined) f[F.llm] = LLM[run.llm];
   if (run.action_plan !== undefined) f[F.actionPlan] = run.action_plan;
+  if (run.rule_summary !== undefined) f[F.ruleSummary] = JSON.stringify(run.rule_summary);
   if (run.release_record_id !== undefined) f[F.release] = [run.release_record_id];
   return f;
 }
