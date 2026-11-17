@@ -39,7 +39,12 @@ A dot release such as `1148.032.1` often has no folder of its own. Its PE file c
 
 You get two Teams messages. The same filing result is posted in **FE to PE Releases**, replied on the job's log thread (the thread the check opened), and posted in the project's **General** channel.
 
-1. **The check.** The verdict, the file name, the counts, and one link to the findings workbook. The workbook is also saved next to the model. A check that finds errors still files the handoff. Fix the errors before the next release. **Could not run** means nothing was checked and nothing was filed. Fix the link or the file and submit again.
+1. **The check.** The verdict, the job, and one link to the findings workbook with the totals. The workbook is also saved next to the model. A check that finds errors still files the handoff. When there are errors, the message groups them by who can act:
+   - **To fix in the model**: up to five actions, root causes first, with the rest in the workbook. When later fixes depend on earlier ones, it says to start at the top.
+   - **To fix in Epicor**: your own to-do, such as marking BOM Complete or marking materials Engineering Complete.
+   - **Waiting on others**: job milestones someone else sets, such as Field Dimensions Received, PA Approval, or Client Approval. These are not model fixes.
+
+   The message also compares with the job's earlier checks, for example "Down from 12 errors on the last check", "Same count as the last check", or "First check of this job." Fix the errors before the next release. **Could not run** means nothing was checked and nothing was filed. Fix the link or the file and submit again.
 2. **The filing.** What was copied into `Fabrication_Handoff`. Submitting the same release again, the same partial number or another complete release, replaces that handoff file. The earlier file stays in the folder, with superseded and the time in its name. The reply is one line and mentions only the site tag. A shipping-components workbook already in the folder is left alone. When `@release-bot` sets or clears Released, that change is its own line on the job log. A command that leaves Epicor alone adds no line.
 
 The handoff folder is:
