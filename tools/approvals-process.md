@@ -11,7 +11,7 @@ corpus_tags: [fe-submittal]
 
 > **Related**: [Submittal Review Cycle](/workflows/fabrication-engineer/submittal-review.html) | [Project Delivery Overview](/onboarding/project-delivery.html) | [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html)
 
-When an engineer asks you to approve a submittal, you get an approval card in Teams. The first PM to answer decides. Approve to file the package for the client. Reject to send it back with your comments.
+When an engineer asks you to approve a submittal, you get an approval card in Teams. If other approvers are named on the request, they sign first, one at a time, and you answer last as the project's PM. Your approval files the package for the client. Reject to send it back with your comments.
 
 The card is this shop-drawing package. It arrives after the form files the package, once for this issue, and you answer before you send the set. Build strategy is reviewed with the Project Advisor in the working session before modeling, and with the lead as the approach is set. That sign-off is the **PA Approved** checkbox, checked before release to PE.
 
@@ -30,7 +30,7 @@ The card arrives in the Approvals app in Microsoft Teams. Navigate to the Teams 
 1. Keep the Transmittal Log current before the engineer submits.
 2. The card names the scope and revision, who requested it, and the review file. It includes the drawing-check results.
 3. The same request is posted, in short form, in the project's **General** channel. A project whose name contains the word CMG skips that post. The card still comes to you.
-4. If several PMs are on the project, each can receive the card. The first answer is the one that counts. Agree with the other PMs before you answer when the decision is shared.
+4. If other approvers are named on the request, they get the card ahead of you, one at a time. Yours arrives only after they approve and says "Sign-off N of M". You, as the project's PM, are always last. A rejection earlier in the chain ends the request before it reaches you. When no PM is on record for the project, one card goes to everyone and the first answer counts.
 
 ## Open the file, then answer
 {: #how-to-respond-to-denial}
@@ -48,12 +48,12 @@ Open the review file from the link on the card before you answer. That file is t
 - **Reject.** The engineer is told, with your comments. Nothing is copied to `01_Outgoing`. General does not get an approval post. Epicor is left as it is. The engineer revises the drawings and submits again.
 - A newer request for the same submittal replaces yours. The earlier card no longer counts. Answer the new one.
 
-Reminders go to the approvers on working days. After three working days the requester is told the card is still open. A weekly reminder follows while it stays open.
+Reminders go on working days to whoever holds the card. After three working days the requester is told the card is still open. A weekly reminder follows while it stays open.
 
 ## Epicor
 {: #how-to-track-submittal-status}
 
-Approving sets the job to **Submitted**, or to **Resubmitted** when it was revise and resubmit, and stamps the date. The write is on the company that owns the job, CWK Associates or Digifabshop. A job that is already further along is left as it is. Rejecting leaves Epicor as it is. A project whose name contains the word CMG is left unchanged either way. A job on any other company is left unchanged.
+Raising the request sets the job to **Internal Review**, because the drawing is with the PM. Approving sets the job to **Submitted**, or to **Resubmitted** when it was revise and resubmit, and stamps the date. The write is on the company that owns the job, CWK Associates or Digifabshop. A job that is already further along is left as it is. Rejecting leaves Epicor as it is. A project whose name contains the word CMG is left unchanged either way. A job on any other company is left unchanged.
 
 You do not type this status yourself. The field is on the [Production Report](/tools/epicor/production-report.html) and the [Submittal Dashboard](/tools/epicor/dashboards.html#submittal-dashboard).
 
@@ -83,7 +83,7 @@ Stamps are available for marking a drawing package. They are formatted to fit th
 
 ## Notes
 
-- The first answer wins.
+- You answer last when other approvers are named. When no PM is on record, the first answer wins.
 - Comments on a rejection are the instruction the engineer revises from.
 - A CMG project still needs your answer. The General post and the Epicor update are skipped.
 - Avoid moving or renaming the review file in Windows Explorer. The card links to it.

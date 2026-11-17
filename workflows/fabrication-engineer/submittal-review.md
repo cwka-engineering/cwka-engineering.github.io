@@ -13,7 +13,7 @@ mermaid: true
 
 How a shop-drawing package is filed, approved, sent to the client, and revised. The [Submittal Approval](/tools/approvals-process.html) page is the project manager's side of the same card.
 
-This page is the drawing-package review. The project's PMs answer one card after the form files the package, once for that issue, before the set goes to the client. Build strategy is reviewed earlier, with the Project Advisor, in the working session before modeling and with the lead as the approach is set. That sign-off is **PA Approved** on the [release checklist](/workflows/fe-to-pe-release.html#approval-prerequisites).
+This page is the drawing-package review. After the form files the package, approval cards go out, once for that issue: other approvers named on the request sign first and the project's PM answers last, before the set goes to the client. Build strategy is reviewed earlier, with the Project Advisor, in the working session before modeling and with the lead as the approach is set. That sign-off is **PA Approved** on the [release checklist](/workflows/fe-to-pe-release.html#approval-prerequisites).
 
 > **Related**: [Submittal Approval](/tools/approvals-process.html) | [FE to PE Release](/workflows/fe-to-pe-release.html) | [Folder Structure](/reference/folder-structure.html) | [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html)
 
@@ -38,7 +38,7 @@ flowchart TD
   B -->|Failed| C["Teams message with the reason<br/>Nothing goes to the PM"]
   C --> A
   B -->|Package filed| D["00_Internal_Review<br/>scope_Rn_date.pdf"]
-  D --> E["One card to the project's PMs<br/>First answer decides"]
+  D --> E["Approval cards: other approvers first,<br/>the project's PM last"]
   E -->|Revisions requested| F["Revise the drawings<br/>Submit the form again"]
   F --> A
   E -->|Approved| G["File copied to 01_Outgoing<br/>Epicor Submitted or Resubmitted"]
@@ -58,7 +58,7 @@ flowchart TD
 Open the **Submittal Approval Request** form in the Airtable base **Releases & Requests**.
 
 1. Name the job, or the group, that this submittal covers. One submission is one package.
-2. Attach the printed submittal PDF, or paste a Box link that opens that PDF. The form builds from that file. A link to a folder fails. The form does not search Box for a plot.
+2. Attach the printed submittal PDF, or paste a Box link that opens that PDF. The form builds from that file. A link to a folder fails. The form does not search Box for a plot. Print the PDF from Rhino as a vector print with a text layer. The form reads each sheet's title block from that text, so a scanned or raster-only print can't be read.
 3. Type the revision. This is the client's revision. An internal reprint of the same issue stays at the same revision. Leave the revision blank for R0.
 
 The project folder under Awarded, and `03 Engineering / 03_OUTGOING_Submittals` inside it, have to already exist. If either is missing, the build fails and nothing goes to the PM.
@@ -72,18 +72,18 @@ Within a few minutes you get one message.
 - **Ready.** The package was built and the PM's card follows. The message names the scope and revision, links the PDF, and lists what the drawing check found. Findings do not stop the request.
 - **Failed.** Nothing went to the PM. The message says why. Check the PDF link or the job, then submit the form again. If it fails twice, ask Fernando Saucedo or Caleb Marhoover.
 
-The finished package is a new file, `<scope>_R<revision>_<yyyyMMdd>.pdf`, in `00_Internal_Review`. Your original PDF stays where you attached it from. Submitting the same submittal again, at the same revision, replaces the package. The previous file moves to `ARCHIVE` under `00_Internal_Review`.
+The finished package is a new file, `<scope>_R<revision>_<yyyyMMdd>.pdf`, in `00_Internal_Review`. Your original PDF stays where you attached it from. Submitting the same submittal again files a new package. The scope's earlier review files move to `ARCHIVE` under `00_Internal_Review`; other files there stay. Submitting twice on the same day at the same revision uploads a new version of the same file.
 
 ### 3. Wait for the PM
 
-The project's PMs get one approval card. The first person to answer decides. Reminders go out on working days. The project's **General** channel gets a short notice that the request went out. A project whose name contains the word CMG does not get that notice. The card still goes to the PMs.
+Extra approvers named on the request get the card first, one at a time, and each card says "Sign-off N of M". The project's PM is always last, and the PM's approval files the package. A rejection at any step ends the request. When no PM is on record, one card goes to everyone and the first answer decides. Reminders go out on working days, to whoever holds the card. The project's **General** channel gets a short notice that the request went out. A project whose name contains the word CMG does not get that notice. The card still goes to the PMs.
 
 Answer on the card. A reply in the job's General thread leaves the card waiting.
 
 ### 4. Read the decision
 {: #how-to-respond-to-denial}
 
-- **Approved.** The same PDF is copied to `01_Outgoing`. Older files there move to `Archive`. The PM still sends the set to the client. If the review file has markups, a comment-free copy for the client is still the PM's to export.
+- **Approved.** The same PDF is copied to `01_Outgoing`. The scope's earlier review files there move to `Archive`; `FOR RECORD` files and anything else a person put there stay. The PM still sends the set to the client. If the review file has markups, a comment-free copy for the client is still the PM's to export.
 - **Revisions requested.** Nothing is copied to `01_Outgoing`. The comments on the card are the instruction. Revise the drawings, then submit the form again. Do not reuse the rejected card.
 - **Replaced.** A newer request for the same submittal went out. The earlier card no longer counts.
 

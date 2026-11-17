@@ -100,7 +100,7 @@ sequenceDiagram
 
 *   Pull from internal templates → Save to 02\_WORKING\_Drawings\_Models/01\_FE\_Models/PROJ.JOB\_ScopeDescription
     
-*   Rename: 1094.002\_FE\_Cache
+*   Rename: 1094.002\_FE.3dm
     
 
 ### Design Engineering (DE) Phase
@@ -255,7 +255,7 @@ sequenceDiagram
     
 *   Submit the Submittal Approval Request form in Releases & Requests. Attach the PDF, or a Box link that opens the PDF
     
-*   The form files the package in 00_Internal_Review and sends one card to the project's PMs. That card is this drawing package. The PM answers it before sending the set.
+*   The form files the package in 00_Internal_Review and sends the approval cards: other named approvers first, the project's PM last. The cards are this drawing package. The PM's approval files it, before the PM sends the set.
     
 *   Build strategy was reviewed earlier, with the Project Advisor, in the working session before modeling. The sign-off is **PA Approved**, checked before release.
     

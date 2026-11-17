@@ -15,7 +15,7 @@ corpus_tags: [fe-submittal]
 ## How do I print to PDF from Rhino?
 {: #how-to-print-to-pdf}
 
-Use **Microsoft Print to PDF** (recommended — good balance of quality and file size). Always use **Print Preview** to review pages before printing. Locked objects will **not print** — check for locked geometry if output is missing content. For monochrome display mode, try raster output if vector has issues. Shading and shadows require raster output.
+Use **Microsoft Print to PDF** (recommended — good balance of quality and file size). Always use **Print Preview** to review pages before printing. Locked objects will **not print** — check for locked geometry if output is missing content. A print for the Submittal Approval Request form must be **vector**: the form reads each sheet's title block from the PDF's text layer, and a raster or scanned print has none. For other prints in monochrome display mode, try raster output if vector has issues. Shading and shadows require raster output.
 
 ## Basic Principles
 
@@ -30,7 +30,7 @@ Use **Microsoft Print to PDF** (recommended — good balance of quality and file
 
 ## Output Types
 
-- **Vector vs Raster**: [^transcript-printing][^transcript-raster-vs-vector] If using monochrome and struggling with vector output, try raster output instead.
+- **Vector vs Raster**: [^transcript-printing][^transcript-raster-vs-vector] If using monochrome and struggling with vector output, try raster output instead (not for a submittal going through the Submittal Approval Request form, which needs a vector print).
 - **Shading**: [^transcript-printing][^transcript-raster-vs-vector] Shading is a raster feature by definition - can only be printed in raster mode. Shadows and shading require raster output.
 
 ## Master Plan Integration

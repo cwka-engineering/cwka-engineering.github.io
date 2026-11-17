@@ -117,7 +117,7 @@ Houses working drawings and models:
 
 #### 01_FE_Models
 - Individual job folders copied from `_PROJ.JOB_ScopeDescription` template and renamed to your job.
-- **FE working file naming**: `[PROJ.JOB]_FE_[Description].3dm` — e.g., `1094.002_FE_CashWrap.3dm`
+- **FE working file naming**: `[PROJ.JOB]_FE.3dm` — e.g., `1094.002_FE.3dm` (the scope description goes in the folder name, not the file name)
 - **PE release file naming**: `[PROJ.JOB]_PE_YYYYMMDD.3dm` — e.g., `1105.007_PE_20250124.3dm`
 - `00_GS_Master_Models/`: Grouped submittal master models — see [Grouped Submittal (GS)](/reference/glossary.html) in the glossary and [time-entry rules for GS jobs](/tools/time-entry.html#direct-gs-jobs).
 

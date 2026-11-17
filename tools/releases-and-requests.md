@@ -27,7 +27,7 @@ Submit the FE to PE Release form when a job is ready for Production Engineering.
 > The checklist and the model prep are in [FE to PE Release](/workflows/fe-to-pe-release.html). The form is the filing step. Later partials stay on the channel thread.
 
 ### [Submittal Approval](/workflows/fabrication-engineer/submittal-review.html)
-Submit the Submittal Approval Request form when a shop-drawing package is ready for the project's PMs. The form files the package and raises one card. See [Submittal Review](/workflows/fabrication-engineer/submittal-review.html) and [Submittal Approval](/tools/approvals-process.html).
+Submit the Submittal Approval Request form when a shop-drawing package is ready for the project's PMs. The form files the package and raises the approval cards (other approvers first, the project's PM last). See [Submittal Review](/workflows/fabrication-engineer/submittal-review.html) and [Submittal Approval](/tools/approvals-process.html).
 
 ### PE to Shop Releases
 Currently housed in the Production team; will migrate to Releases & Requests. Documentation pending migration.

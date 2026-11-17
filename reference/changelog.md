@@ -12,6 +12,15 @@ A record of significant additions and updates to the Engineering Wiki, grouped b
 
 ---
 
+## 2026-11-16 – 2026-11-22
+
+- **[Submittal Approval](/tools/approvals-process.html) / [Submittal Review Cycle](/workflows/fabrication-engineer/submittal-review.html)** — Corrected the approval chain to match the live flow: other approvers named on the request sign first, one at a time, the project's PM always signs last, and the PM's approval files the package. "First answer decides" now applies only when no PM is on record. Also added the Internal Review Epicor step when the request goes out, what moves to `ARCHIVE` when a submittal is filed again (only that scope's earlier review files; a same-day re-run is a new version of the same file), and the requirement to print submittals as vector PDFs with a text layer. The same wording was aligned in [Adjacent Roles](/reference/adjacent-roles/), [Project Delivery](/onboarding/project-delivery.html), and [Releases & Requests](/tools/releases-and-requests.html).
+- **[FE to PE Releases](/tools/releases-and-requests/fe-to-pe-releases.html)** — The check's verdict now reads passed, passed with warnings, or issues found (it no longer says "failed"); the [Production Engineer workflow](/workflows/production-engineer/) wording was matched.
+- **FE working file name** — The FE model is `[PROJ.JOB]_FE.3dm`, with the scope description in the folder name only. Fixed the leftover `_FE_Description` examples in [Folder Structure](/reference/folder-structure.html), [Getting Started](/workflows/fabrication-engineer/getting-started.html), and [Project Delivery](/onboarding/project-delivery.html).
+- **[Revision History](/standards/rhino-drafting/revision-history.html) / [Printing](/standards/rhino-drafting/printing.html)** — The first issued set is R0 (the revision counts the client's Revise and Resubmit returns), and a print for the Submittal Approval Request form must be vector, not raster.
+
+---
+
 ## 2026-11-09 – 2026-11-15
 
 - **Submittal approval, FE to PE release, and part requests** — Brought the published procedures in line with the live flows. The Submittal Approval Request form files the package and raises one card to the project's PMs. The FE to PE Release form checks the model, copies the handoff, and sets Released when its gates pass. Later partials use `@release-bot`. Part requests are answered with `@parts-bot`, and the scheduler saves the part with `CREATE` or records one with `USE`. Rewrote the seven procedure pages and corrected the satellite pages that still described the old handoffs. PA Approved and the Bluebeam stamp how-to are unchanged.
@@ -20,8 +29,16 @@ A record of significant additions and updates to the Engineering Wiki, grouped b
 
 ---
 
+## 2026-11-02 – 2026-11-08
+
+- **[File Naming Conventions](/reference/reference-tables/file-naming-conventions.html) / [FE to PE Release](/workflows/fe-to-pe-release.html)** — Submittal PDFs follow the front-matter naming (`[EpicorCode]_R<n>_YYYYMMDD.pdf`, with `FOR RECORD` appended for For Record versions), the shipping components list is `.xlsx`, and outsourced (EXT) jobs release from the `01_FE_Models` assets the post-processing engineer builds after client approval.
+
+---
+
 ## 2026-10-19 – 2026-10-25
 
+- **[FE to PE Release](/workflows/fe-to-pe-release.html) / [Folder Structure](/reference/folder-structure.html)** — PE release folders now contain `Fabrication_Handoff` (everything FE passes to PE: the purged PE model, the shipping components list, and the approved submittal PDF); `Production_Files` and `Production_Drawings` are PE's own working files and drawings. The `00_MT_WC_IP_MfgParts` folder is gone: WC and MT jobs get their own release folder from the same template.
+- **[File Naming Conventions](/reference/reference-tables/file-naming-conventions.html)** — A partial release's PE model is named `[EpicorCode]_PE_YYYYMMDD_PARTIAL-NN.3dm`, with NN counting from 01 after the date.
 - **[Cover Sheet & Common Pages](/standards/rhino-drafting/cover-sheet-common-pages.html) / [Layout Structure](/standards/rhino-drafting/layout-structure.html) / [Glossary](/reference/glossary.html)** — Closed the gaps against the current template: added the **C00** logo cover and **S000** nested sheets to the page-type tables; T00 is described as the project index (jobs, with the submittal's own jobs in bold and underlined) and the drawing set's table of contents is G00's Item Drawings table; G00 is now listed as its five tables (item drawings, general material tags, finish tags, veneer and solid wood tags, bill of materials), with no separate hardware tag table.
 - **[Drafting Toolkit — group submittals](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-handle-group-submittal) / [Revision History](/standards/rhino-drafting/revision-history.html)** — A grouped submittal's JOB # field lists its jobs and T00 marks each of them; a revision applies to every job in the set; the submittal set is filed as one cumulative PDF while job releases stay per-job 3dm files. The T00 description lines under the project name are noted as typed fields.
 
@@ -29,6 +46,8 @@ A record of significant additions and updates to the Engineering Wiki, grouped b
 
 ## 2026-10-12 – 2026-10-18
 
+- **[File Naming Conventions](/reference/reference-tables/file-naming-conventions.html) / [Folder Structure](/reference/folder-structure.html) / [FE to PE Release](/workflows/fe-to-pe-release.html)** — Stated the naming rule: folders carry the scope description and file names never do (submittal PDFs excepted). Never rename a job or release folder once it exists, and put every partial release in the job's existing PE release folder.
+- **[File Naming Conventions](/reference/reference-tables/file-naming-conventions.html)** — Documented how a manufactured part number pairs with its job (`PROJ.MT.000NN` is made by `PROJ.M.0NN`, `PROJ.WC.000NN` by `PROJ.W.0NN`) and fixed the example pairing.
 - **[Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html)** — Clarified that material approval status (and transmittal numbers) do not appear on the G00 cover sheet; G00 shows only the PM-maintained tag, description, and spec fields. Aligned wording in the Drafting Toolkit and Cover Sheet pages, which previously implied approval status prints on drawings.
 
 ---

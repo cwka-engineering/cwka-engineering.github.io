@@ -26,7 +26,7 @@ The standard drawing template provides three revision tracking elements that mus
 
 A revision occurs each time a submittal drawing completes one full client review cycle:
 
-1. FE issues the drawing set to the client (Revision 1 is the first issued set)
+1. FE issues the drawing set to the client (the first issued set is **R0**; the revision number counts the client's Revise and Resubmit returns)
 2. Client returns the set as **Revise and Resubmit** or **Revise for Record**
 3. FE revises and reissues — this becomes the next revision number
 

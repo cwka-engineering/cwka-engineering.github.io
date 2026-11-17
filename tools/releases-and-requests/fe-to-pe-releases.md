@@ -38,7 +38,7 @@ A dot release such as `1148.032.1` often has no folder of its own. Its PE file c
 
 You get two Teams messages. The same filing result is posted in **FE to PE Releases**, replied on the job's log thread (the thread the check opened), and posted in the project's **General** channel.
 
-1. **The check.** The verdict, the file name, the counts, and one link to the findings workbook. The workbook is also saved next to the model. A failed check still files the handoff. Fix the errors before the next release. **Could not run** means nothing was checked and nothing was filed. Fix the link or the file and submit again.
+1. **The check.** The verdict, the file name, the counts, and one link to the findings workbook. The workbook is also saved next to the model. A check that finds errors still files the handoff. Fix the errors before the next release. **Could not run** means nothing was checked and nothing was filed. Fix the link or the file and submit again.
 2. **The filing.** What was copied into `Fabrication_Handoff`. Submitting the same release again, the same partial number or another complete release, replaces that handoff file. The earlier file stays in the folder, with superseded and the time in its name. The reply is one line and mentions only the site tag. A shipping-components workbook already in the folder is left alone. When `@release-bot` sets or clears Released, that change is its own line on the job log. A command that leaves Epicor alone adds no line.
 
 The handoff folder is:
@@ -91,7 +91,8 @@ You do not submit this form. Read the reply in **FE to PE Releases**. You are @m
 | A file marked already there | A previous release left that file in place |
 | Partial release n was updated | The same release was filed again. The earlier file is kept, with superseded in its name. The mention is the site tag |
 | QC check: passed | The model had no errors |
-| QC check: failed | The model had errors. The files were still handed off |
+| QC check: passed with warnings | The model had no errors. The check left warnings to look at in the workbook |
+| QC check: issues found | The model had errors. The files were still handed off |
 | Released in Epicor | The job was set Released |
 | Epicor: … | The job was not set Released. The rest of the line is the reason |
 

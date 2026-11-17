@@ -145,9 +145,10 @@ Each Cloudflare Worker lives in the repo that owns its callers and rules. This r
 | `/api/chat` | Wiki Q&A chat widget (public, CORS-gated, SSE) |
 | `/api/diagnostic`, `/api/summarize` | Grasshopper/Rhino diagnostic assistant and `rhino-qc` summaries (token-gated, SSE; read the `fe-release` corpus) |
 | `/api/time-entry` | CWK Time Companion (token-gated, SSE) |
+| `/api/diagnostic-runs` | Records a diagnostic run in Airtable (token-gated, JSON). Takes the run result, the checker's per-rule counts (`rule_summary`), and the file and findings links; skips people past their offboard date when resolving the user. |
 | `/api/clocked-time-qc` | Handler still in this worker. The live Power Automate flows call `cwka-pa-worker` (repointed 11 October 2026). Remove this route once nothing still calls it. |
 
-Related workers: `cwka-pa-worker` (`power-automate-flows/worker`, parts matching and weekly time QC; `/api/parts-match` was removed from this worker) and a planned `rhino-qc` container worker that calls this Worker's `/api/summarize`.
+Related workers: `cwka-pa-worker` (`power-automate-flows/worker`, parts matching and weekly time QC; `/api/parts-match` was removed from this worker) and the `cwka-rhino-qc` container worker (in `3dm-checker/cloudflare-worker`), which calls this Worker's `/api/summarize` and posts its run records to `/api/diagnostic-runs`. A cron here (`*/5 * * * *`) links local run records, which carry a Box Drive path, to their Box files through the `RHINO_QC` service binding (`src/lib/box-links.ts`).
 
 **Model:** `CLAUDE_MODEL` and `PA_CLAUDE_MODEL` in `chatbot-worker/wrangler.toml` are `claude-haiku-5-5`. Haiku 5.5 thinks by default and thinking tokens count toward `max_tokens`, so every Claude call (`callClaude`, `streamClaude`, `streamClaudeDiagnostic` in `src/lib/claude.ts`) sends `effort: "low"` and a 4096 cap, and logs a warning if a reply hits `max_tokens`. Don't send `temperature`, `top_p`, `top_k`, `budget_tokens` or assistant prefill to this model.
 

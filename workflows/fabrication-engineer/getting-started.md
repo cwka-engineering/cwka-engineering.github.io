@@ -97,7 +97,7 @@ Navigate to `01_FE_Models/`. Copy the `_PROJ.JOB_ScopeDescription` template. Ren
 {: #how-to-create-rhino-file}
 
 1. Open the latest template from `DFWCWKA internal > templates`. This file is locked — do not modify it directly.[^transcript-rhino8-kickoff-i]
-2. **Save As** to your job folder with correct naming: `PROJ.JOB_FE_Description.3dm`
+2. **Save As** to your job folder with correct naming: `PROJ.JOB_FE.3dm`
 3. See [Layout Structure — Sheet size](/standards/rhino-drafting/layout-structure.html#sheet-size-and-template) for template selection guidance.
 
 ## How do I import the working set plan into my Rhino model?
