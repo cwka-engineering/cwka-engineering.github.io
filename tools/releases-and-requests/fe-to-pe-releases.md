@@ -22,7 +22,7 @@ When a job is ready to leave fabrication engineering, submit the [FE to PE Relea
 | **Release type** | Complete, Partial, or Final partial. Leave the number blank unless you need a specific partial number |
 | **Release job in Epicor?** | Yes asks the flow to set the job Released when every gate below is clear. No leaves Epicor as it is |
 | **Box link** | A link that opens the PE `.3dm`, or blank. A name that contains `PE` is the model, including a description between `PE` and the date, wherever the link sits. The handoff copy is renamed with the date |
-| **Submittal PDF** | A Box link to the drawing, or blank. Blank takes a For Record PDF in `01_Outgoing`, then the newest PDF in `02_Returned` |
+| **Submittal PDF** | A Box link to the drawing, or blank. Blank takes a For Record PDF in `01_Outgoing`, then the newest PDF in `02_Returned`. For a job in a grouped submittal, always paste the link: the form does not look in the group's folder |
 | **Notes** | Copied onto the channel post. Handoff-meeting requests and late-start coordination go here |
 
 There is no site field. The release post mentions the project's PM and one site tag. CWK Associates is `@CO`. Digifabshop is `@NY`. A CMG release is posted with `@CMG`. The PM and the site tag stay off that post.

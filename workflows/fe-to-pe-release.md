@@ -250,4 +250,4 @@ One submission is one job. To release several jobs, submit once for each.
 
 The form posts in **FE to PE Releases** and mentions the project's PM and `@NY` or `@CO`. A CMG release is posted with `@CMG`. The PM and the site tag stay off that post. Field details, what the post means, and `@release-bot` are on [FE to PE Releases](/tools/releases-and-requests/fe-to-pe-releases.html).
 
-A manufacturing job's approved submittal is taken from each parent job's submittal folder. Highlight that job's scope in the production drawing set yourself. The form does not build that callout. Submit the manufacturing job on its own form once its PE model is in place.
+A job that is part of a grouped submittal has no submittal folder of its own for the group's approved PDF (`1162.GS.001_<title>`). The form does not look in the group's folder, so paste a link to that PDF in the **Submittal PDF** field. A manufacturing job's approved submittal is taken from each parent job's submittal folder. Highlight that job's scope in the production drawing set yourself. The form does not build that callout. Submit the manufacturing job on its own form once its PE model is in place.
