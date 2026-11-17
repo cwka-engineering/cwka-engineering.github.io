@@ -358,7 +358,7 @@
       "id": "/tools/diagnostic.html",
       "title": "FE Release Diagnostic Tool",
       "section": "Tools",
-      "degree": 4
+      "degree": 5
     },
     {
       "id": "/tools/epicor/dashboards.html",
@@ -424,7 +424,7 @@
       "id": "/tools/releases-and-requests/fe-to-pe-releases.html",
       "title": "FE to PE Releases",
       "section": "Tools",
-      "degree": 4
+      "degree": 5
     },
     {
       "id": "/tools/releases-and-requests/job-requests.html",
@@ -1753,6 +1753,10 @@
     {
       "source": "/tools/approvals-process.html",
       "target": "/workflows/fabrication-engineer/submittal-review.html"
+    },
+    {
+      "source": "/tools/diagnostic.html",
+      "target": "/tools/releases-and-requests/fe-to-pe-releases.html"
     },
     {
       "source": "/tools/diagnostic.html",
