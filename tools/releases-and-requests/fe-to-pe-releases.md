@@ -19,7 +19,7 @@ When a job is ready to leave fabrication engineering, submit the [FE to PE Relea
 | Field | What to enter |
 |---|---|
 | **Job** | One job. To release several jobs, submit once for each |
-| **Release type** | Complete, Partial, or Final partial. Leave the number blank unless you need a specific partial number |
+| **Release type** | Complete, Partial, or Final partial. Leave the number blank unless you need a specific partial number. A blank number is one more than the highest partial already filed for the job |
 | **Release job in Epicor?** | Yes asks the flow to set the job Released when every gate below is clear. No leaves Epicor as it is |
 | **Box link** | A link that opens the PE `.3dm`, or blank. A name that contains `PE` is the model, including a description between `PE` and the date, wherever the link sits. The handoff copy is renamed with the date |
 | **Submittal PDF** | A Box link to the drawing, or blank. Blank takes a For Record PDF in `01_Outgoing`, then the newest PDF in `02_Returned`. For a job in a grouped submittal, always paste the link: the form does not look in the group's folder |
