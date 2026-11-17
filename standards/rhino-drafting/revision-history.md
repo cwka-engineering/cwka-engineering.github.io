@@ -52,7 +52,7 @@ When a revision is required on any page of the drawing set:
 1. **Make the changes** to the design and all affected details
 2. **Cloud bubble**: Enclose the altered area within a revision cloud
 3. **Revision symbol**: Place the triangle symbol with the current revision number alongside the cloud bubble
-4. **Revision notes**: Briefly describe the change in the Revision Notes section of the titleblock
+4. **Revision notes**: Briefly describe the change in the Revision Notes section of the titleblock. The generated G00 and T00 draw six revision-note slots, and a note holds two lines. A longer note is cut with a warning, and any note past the sixth is dropped with a warning, so keep each note to two lines.
 5. **Revision log**: In the titleblock, enter your initials and the date of reissue by updating the Document UserText:
    - `REV_0_DATE` → date of reissue (where `0` = revision number)
    - `REV_0_INITIALS` → your initials

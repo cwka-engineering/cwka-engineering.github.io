@@ -36,7 +36,7 @@ corpus_tags: [fe-release]
 | Folder Type | Convention | Example |
 |-------------|-----------|---------|
 | FE job folder | `[PROJ.JOB]_ScopeDescription` | `1094.002_CashWrap` |
-| PE release folder | `[PROJ.JOB]_ScopeDescription` | `1105.007_MaitreDStand` |
+| PE release folder | `[PROJ.JOB]_ScopeDescription` | `1105.007_Maitre D Stand` |
 | MFG release folder | `[PROJ.M/W.000]` (Epicor job number) | `1130.M.022/` |
 
 **Never rename a job or release folder once it exists.** Tools and people find it by its name, and a rename breaks every link and path that points at it. In particular, do not add suffixes such as `_Partial Releases`: a partial release goes into the job's existing release folder.
