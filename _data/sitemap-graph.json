@@ -46,7 +46,7 @@
       "id": "/onboarding/project-delivery.html",
       "title": "Project Delivery Overview",
       "section": "Overview",
-      "degree": 13
+      "degree": 14
     },
     {
       "id": "/onboarding/purchasing-signal-chain.html",
@@ -172,7 +172,7 @@
       "id": "/reference/glossary.html",
       "title": "Glossary",
       "section": "Home",
-      "degree": 24
+      "degree": 25
     },
     {
       "id": "/reference/",
@@ -322,7 +322,7 @@
       "id": "/standards/rhino-drafting/layout-structure.html",
       "title": "Layout Structure",
       "section": "Standards",
-      "degree": 13
+      "degree": 14
     },
     {
       "id": "/standards/rhino-drafting/printing.html",
@@ -364,13 +364,13 @@
       "id": "/tools/epicor/dashboards.html",
       "title": "Dashboards",
       "section": "Tools",
-      "degree": 10
+      "degree": 11
     },
     {
       "id": "/tools/epicor/",
       "title": "Epicor Usage",
       "section": "Tools",
-      "degree": 19
+      "degree": 17
     },
     {
       "id": "/tools/epicor/inventory-jobs.html",
@@ -412,7 +412,7 @@
       "id": "/tools/epicor/production-report.html",
       "title": "Production Report",
       "section": "Tools",
-      "degree": 6
+      "degree": 7
     },
     {
       "id": "/tools/epicor/troubleshooting.html",
@@ -430,7 +430,7 @@
       "id": "/tools/releases-and-requests/job-requests.html",
       "title": "Job Requests",
       "section": "Tools",
-      "degree": 3
+      "degree": 4
     },
     {
       "id": "/tools/releases-and-requests/part-requests/engineer-guide.html",
@@ -837,6 +837,10 @@
     {
       "source": "/onboarding/project-delivery.html",
       "target": "/tools/approvals-process.html"
+    },
+    {
+      "source": "/onboarding/project-delivery.html",
+      "target": "/tools/releases-and-requests/job-requests.html"
     },
     {
       "source": "/onboarding/project-delivery.html",
@@ -1269,6 +1273,10 @@
     {
       "source": "/reference/glossary.html",
       "target": "/standards/rhino-drafting/cover-sheet-common-pages.html"
+    },
+    {
+      "source": "/reference/glossary.html",
+      "target": "/standards/rhino-drafting/layout-structure.html"
     },
     {
       "source": "/reference/glossary.html",
@@ -1796,14 +1804,6 @@
     },
     {
       "source": "/tools/epicor/",
-      "target": "/workflows/fabrication-engineer/epicor-interaction.html"
-    },
-    {
-      "source": "/tools/epicor/",
-      "target": "/workflows/fabrication-engineer/getting-started.html"
-    },
-    {
-      "source": "/tools/epicor/",
       "target": "/workflows/fabrication-engineer/takeoffs.html"
     },
     {
@@ -1829,6 +1829,10 @@
     {
       "source": "/tools/epicor/dashboards.html",
       "target": "/tools/epicor/production-report.html"
+    },
+    {
+      "source": "/tools/epicor/dashboards.html",
+      "target": "/workflows/fabrication-engineer/getting-started.html"
     },
     {
       "source": "/tools/epicor/dashboards.html",
@@ -1965,6 +1969,10 @@
     {
       "source": "/tools/epicor/production-quantity.html",
       "target": "/workflows/fabrication-engineer/bom-procedures.html"
+    },
+    {
+      "source": "/tools/epicor/production-report.html",
+      "target": "/workflows/fabrication-engineer/epicor-interaction.html"
     },
     {
       "source": "/tools/epicor/production-report.html",
