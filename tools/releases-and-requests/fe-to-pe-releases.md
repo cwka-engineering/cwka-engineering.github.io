@@ -59,7 +59,7 @@ Released is set only when every one of these is true:
 
 1. You answered Yes to **Release job in Epicor?**
 2. The check ran and found no errors, and the check's Epicor rules ran.
-3. The job is already approved.
+3. The job is already approved: its drawing-package status is Approved or N/A. N/A means client approval does not apply, and it does not hold the release. Internal Review still does.
 4. The job is a standard job. A manufacturing job is left as it is.
 5. The project name does not contain the word CMG.
 6. The job's company is CWK Associates or Digifabshop. The write goes to that company. Any other company is left unchanged.

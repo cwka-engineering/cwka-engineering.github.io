@@ -35,5 +35,8 @@ corpus_tags: [fe-release]
   - Field Dimensions Received
   - Shop Drawings Approved
   - BOM Complete
+- Check **PA Approved** is checked and the drawing-package **Submittal Status** is Approved or N/A. The FE to PE Release form's check treats both as release gates.
 - Check Engineering Complete is checked.
 - Ensure no error messages.
+- If the FE to PE Release form ran, read its post in **FE to PE Releases**. It names why Released was not set. See [When Epicor is set Released](/tools/releases-and-requests/fe-to-pe-releases.html#when-epicor-is-set-released).
+- `@release-bot` can set or clear Released without those gates.

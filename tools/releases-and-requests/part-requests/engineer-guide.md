@@ -68,6 +68,7 @@ Mention the bot. `HELP` and `NEXT` work in any message. The other commands are r
 | `@parts-bot DECLINE` | Asks the scheduler to create a part. The thread shows the worksheet. Two Planner tasks open |
 | `@parts-bot STATUS` | Status, matches, the part you accepted, and the new part number once one exists |
 | `@parts-bot NEXT MT` | The next free number in that series. Metal is `MT` (`GM.IM`), fabric is `FA` (`GM.FU`), lighting is `LT` (`GM.LE`). The other classes use their own two letters. Nothing is written |
+| `@parts-bot CLOSE` | Not available on your account. It ends a request from any open state, and only Caleb Marhoover can send it |
 | `@parts-bot HELP` | The command list |
 
 Only the person selected as Requester can accept or decline. Ask Fernando Saucedo or Caleb Marhoover to be added or renamed if the bot says the requester has to answer.

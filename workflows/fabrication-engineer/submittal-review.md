@@ -106,12 +106,14 @@ Answer on the card. A reply in the job's General thread leaves the card waiting.
 
 You do not type drawing-package status on the Production Report. The flow writes it, and only these moves:
 
-| Before | When the request goes out | When a PM approves |
+| Status before the request | When the request goes out | When a PM approves |
 |---|---|---|
-| Blank, not submitted, or revise and resubmit | Internal Review | — |
-| Blank, not submitted, or Internal Review | — | Submitted, and the date |
+| Blank or not submitted | Internal Review | Submitted, and the date |
 | Revise and resubmit | Internal Review | Resubmitted, and the date |
-| Submitted, Resubmitted, Approved, or anything further along | Left as it is | Left as it is |
+| Internal Review | Left as it is | Submitted, and the date |
+| N/A, Submitted, Resubmitted, Approved, or anything further along | Left as it is | Left as it is |
+
+N/A is Epicor's label for a job where client approval does not apply. The flow never changes it.
 
 A rejection leaves Epicor as it is. A project whose name contains the word CMG is left unchanged either way. The write is on the company that owns the job, CWK Associates or Digifabshop. A job on any other company is left unchanged. The Teams message names the Epicor result only when a status was written.
 

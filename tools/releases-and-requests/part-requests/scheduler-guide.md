@@ -13,7 +13,9 @@ nav_order: 2
 
 When an engineer declines the existing parts, you get the request in the Parts Requests channel and two Planner tasks. `@parts-bot CREATE` saves the next part in Epicor. If the part is already in Epicor, reply `@parts-bot USE` and that part number.
 
-`CREATE` and `USE` have to come from the Teams account named **Patrick Dobson**, in a reply under that request.
+`CREATE` and `USE` have to come from the Teams account named **Patrick Dobson**, or from Caleb Marhoover, in a reply under that request.
+
+`@parts-bot CLOSE` is not a scheduler command. Only Caleb Marhoover can send it, under the request, to end it from any open state. Both Planner tasks for that request are closed.
 
 ## When you are notified
 
@@ -59,7 +61,7 @@ The bot takes the next free number, marks the request **Creating**, and saves th
 
 `@parts-bot STATUS` shows **Complete** and that same number. The create-part Planner task is closed. The push-pull reminder stays open until the part is active on the NY site.
 
-If the reply says the command is still working, wait and send `STATUS`. Sending `CREATE` again while it is running starts no second part. If Epicor does not save the part, the request returns to **Awaiting scheduler**. You can `CREATE` again, or save the part yourself and reply `USE` and the number. A number that is already in the catalog is left unwritten. Send `NEXT` and try `CREATE` again.
+If the reply says the command is still working, wait and send `STATUS`. Sending `CREATE` again while it is running starts no second part. If Epicor does not answer the catalog lookup when `CREATE` starts, the bot tries once more, then asks you to send `CREATE` again, and nothing is created. If Epicor does not save the part, the request returns to **Awaiting scheduler**. You can `CREATE` again, or save the part yourself and reply `USE` and the number. A number that is already in the catalog is left unwritten. Send `NEXT` and try `CREATE` again.
 
 ## Record a part that is already in Epicor
 
@@ -139,7 +141,7 @@ The worksheet is already filled from that product. Length comes from McMaster's 
 
 ## Tips
 
-- **CREATE and USE are yours.** An engineer who sends them is told that only the scheduler can do that.
+- **CREATE and USE are yours** (and Caleb Marhoover's). An engineer who sends them is told that only the scheduler can do that.
 - **Corrections are lines under CREATE.**
 - **The reminder is the cue to sync the NY site.** Closing the create-part task leaves the reminder open.
 - **New parts are MfgSys.** CWNH stays unused.

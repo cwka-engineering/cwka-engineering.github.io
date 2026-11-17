@@ -291,6 +291,8 @@ Check:
     
 *   "BOM Complete"
     
+*   "PA Approved"
+    
 
 ## Phase 3: FE Release to Production Engineering (PE Handoff)
 

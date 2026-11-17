@@ -81,7 +81,7 @@ By submitting the **FE to PE Release** form, you certify that your deliverables 
 {: #approval-prerequisites}
 
 - **Build strategy**: The Project Advisor has reviewed how the work will be fabricated, shipped, and installed. The venue is the working session before modeling, then the ongoing work with the lead. The timing is before this release. **PA Approved** is checked in Epicor where the project uses it. The shop-drawing package has its own review: the PM's card, once for each issue, before the set goes to the client.
-- **Client review**: The client has reviewed the submittal (drawings, models, mockups, samples) and approved; **Submittal Status** is set to **Approved** in Epicor, and **Submitted Date** reflects the last submittal or resubmittal.
+- **Client review**: The client has reviewed the submittal (drawings, models, mockups, samples) and approved; **Submittal Status** is set to **Approved** in Epicor (or **N/A** when client approval does not apply), and **Submitted Date** reflects the last submittal or resubmittal.
 
 ### 1. Rhino model geometry and hygiene
 {: #checklist-rhino-geometry}

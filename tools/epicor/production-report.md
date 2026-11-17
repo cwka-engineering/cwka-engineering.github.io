@@ -36,7 +36,7 @@ Read drawing-package submittal status and track manufacturing jobs. The [Submitt
 
 ## Usage
 - Engineers filter by name and job to read the drawing-package status.
-- **Drawing package status** is written by the approval flow: Internal Review, Submitted, or Resubmitted. Revise and Resubmit and Approved remain values the field can already hold. The flow does not set those two on an approval, and a rejection writes nothing.
+- **Drawing package status** is written by the approval flow: Internal Review, Submitted, or Resubmitted. Revise and Resubmit, Approved, and N/A (client approval does not apply) remain values the field can already hold. The flow does not set those on an approval, leaves a job already at N/A alone, and a rejection writes nothing.
 - **Final status**: Production Complete.
 
 **Best Practice for PE**: [^transcript-epicor-scheduling] Start each day by checking the Global Production Report or site-specific report.
