@@ -115,7 +115,7 @@ In the toolkit, set submittal scope to `PROJ.GS.001` format, then specify the in
 ## Tags Tables & BOM
 
 - Pull material tags from Epicor (General Material, Finish, Veneer, Solid Wood).
-- BOM filters out hardware/manufactured materials by default.
+- In the Drafting Toolkit, the BOM filters out hardware and manufactured materials by default. The G00 that the [Submittal Approval Request form](/workflows/fabrication-engineer/submittal-review.html) generates is different: it shows everything unless the requester hides parts with the **BOM Exclusions** field.
 
 ## Data Table
 
