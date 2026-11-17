@@ -73,7 +73,7 @@ The number has to already exist in company 157539. The request closes, the part 
 
 ## Sync the NY site
 
-The part is saved for the CO site, company 157539 (CWK Associates), plant MfgSys. The NY site is company 157540 (Digifabshop). The **site push-pull** is the Epicor step that brings a part saved on the CO company over to the NY company. It runs on a schedule, and that scheduled run is the main way a part gets to the NY site. You can also run it on demand. The second Planner task is the cue to check that the part has arrived, or to run it yourself. The task closes once the part is active in both companies, and the requester is mentioned in the thread at the same time.
+The part is saved for the CO site, company 157539 (CWK Associates), plant MfgSys. The NY site is company 157540 (Digifabshop). The **site push-pull** is the Epicor step that brings a part saved on the CO company over to the NY company. It runs on a schedule, and that scheduled run is the main way a part gets to the NY site. It runs three times each weekday: push at 8:00 AM, 12:00 PM, and 5:00 PM MST, each followed by its pull five minutes later. You can also run it on demand. The second Planner task is the cue to check that the part has arrived, or to run it yourself. The task closes once the part is active in both companies, and the requester is mentioned in the thread at the same time.
 
 ## What the worksheet already contains
 

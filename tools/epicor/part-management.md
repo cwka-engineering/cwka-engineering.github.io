@@ -37,6 +37,17 @@ When creating a part directly:
 
 - **GM (General Materials)**: Created on company 157539 (CWK Associates, the Colorado site), plant MfgSys, through the [Part Requests](/tools/releases-and-requests/part-requests/scheduler-guide.html) workflow. The request thread names the number when the part is created. The NY site receives the part on the scheduled site push-pull, which the scheduler can also run on demand. The thread says again when it is active in both companies.
 - **Project-Specific Materials**: Only exist in the site where created (not synced).
+
+The scheduled site push-pull runs three times each weekday, Monday to Friday, in MST:
+
+| Push | Pull |
+|---|---|
+| 8:00 AM | 8:05 AM |
+| 12:00 PM | 12:05 PM |
+| 5:00 PM | 5:05 PM |
+
+A new GM part reaches the NY site on the first run after it is saved. A part saved after the 5:05 PM pull waits for the 8:00 AM run on the next weekday, and there are no runs on weekends. The scheduler can also run the push-pull on demand.
+
 - **Best Practice**: Always use the Colorado version of "Part Entry and Update" for catalog management.
 
 ## Permissions

@@ -85,7 +85,7 @@ The request stays with the scheduler until a part number is stored.
 
 Use the **Chosen** number when you accepted an existing part. Use the **Part number** when a new part was created. That is the number for the BOM or the order.
 
-The thread shows the new number when the part is created. When that part is active in both companies, the thread mentions you with the number. Until that mention, the NY site is still waiting on the push-pull.
+The thread shows the new number when the part is created. When that part is active in both companies, the thread mentions you with the number. Until that mention, the NY site is still waiting on the push-pull. It runs three times each weekday, so most parts arrive within a few hours. See [Part Management](/tools/epicor/part-management.html) for the times.
 
 ## Your interactions at a glance
 
