@@ -418,13 +418,13 @@
       "id": "/tools/epicor/troubleshooting.html",
       "title": "Troubleshooting",
       "section": "Tools",
-      "degree": 5
+      "degree": 6
     },
     {
       "id": "/tools/releases-and-requests/fe-to-pe-releases.html",
       "title": "FE to PE Releases",
       "section": "Tools",
-      "degree": 3
+      "degree": 4
     },
     {
       "id": "/tools/releases-and-requests/job-requests.html",
@@ -1969,6 +1969,10 @@
     {
       "source": "/tools/epicor/production-report.html",
       "target": "/workflows/fabrication-engineer/material-transmittal.html"
+    },
+    {
+      "source": "/tools/epicor/troubleshooting.html",
+      "target": "/tools/releases-and-requests/fe-to-pe-releases.html"
     },
     {
       "source": "/tools/releases-and-requests/",
