@@ -129,7 +129,7 @@ When the architect returns marked-up drawings:
 
 - The PM places them in `02_Returned`.
 - You review every redline and incorporate the changes. See [Tracking Markup Pickup](#tracking-markup-pickup).
-- If changes are required, submit the form again. Each client return that results in a reissue is one **revision**. Apply revision clouds, symbols, notes, and update the titleblock revision log. See [Revision History](/standards/rhino-drafting/revision-history.html).
+- If changes are required, submit the form again. Each client return that results in a reissue is one **revision**. A return marked Revise for Record is a revision like any other. The reissued set is marked FOR RECORD and the job's Epicor status goes to Approved. Apply revision clouds, symbols, notes, and update the titleblock revision log. See [Revision History](/standards/rhino-drafting/revision-history.html).
 
 ### 7. The job thread
 

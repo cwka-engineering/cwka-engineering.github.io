@@ -27,7 +27,7 @@ The standard drawing template provides three revision tracking elements that mus
 A revision occurs each time a submittal drawing completes one full client review cycle:
 
 1. FE issues the drawing set to the client (the first issued set is **R0**; the revision number counts the client's returns, whether Revise and Resubmit or Revise for Record)
-2. Client returns the set as **Revise and Resubmit** or **Revise for Record**. A Revise for Record issue is a revision like any other, and the resulting document is marked **FOR RECORD**
+2. Client returns the set as **Revise and Resubmit** or **Revise for Record**. A Revise for Record issue is a revision like any other, the resulting document is marked **FOR RECORD**, and the job's Epicor drawing-package status goes to **Approved**
 3. FE revises and reissues — this becomes the next revision number
 
 Each issue-and-return cycle produces exactly one revision increment, regardless of how many individual changes are made within that cycle.
