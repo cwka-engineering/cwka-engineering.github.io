@@ -15,7 +15,7 @@ An automated validator that checks a PE release handoff `.3dm` file against the 
 
 ## What It Does
 
-The tool opens a `.3dm` file, runs a set of validators across three categories, and reports which rules passed, which failed, and specifically which objects or layers are responsible. It covers approximately **70% of the items on the FE to PE Release Checklist** — the remaining items require human judgment and cannot be automated.
+The tool opens a `.3dm` file, runs a set of validators across three categories, and reports which rules passed, which failed, and specifically which objects or layers are responsible. It covers **most of the items on the FE to PE Release Checklist** — the remaining items require human judgment and cannot be automated.
 
 It does **not** require Rhino to be installed.
 
