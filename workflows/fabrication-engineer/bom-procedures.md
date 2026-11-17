@@ -51,7 +51,7 @@ For project-specific materials and manufactured parts:
 2. Set the part number, description, UOM, and class following naming conventions (see [File Naming Conventions](/reference/reference-tables/file-naming-conventions.html)).
 3. For WC/MT parts, use the project-specific format (`PROJ.WC.00000` or `PROJ.MT.00000`).
 
-Every BOM line must tie to a row in Epicor Parts — no part-on-the-fly entries. Allow **24 hours** for server sync.
+Every BOM line must tie to a row in Epicor Parts — no part-on-the-fly entries.
 
 ## Requesting a Global Material Part
 {: #how-to-request-global-part}
