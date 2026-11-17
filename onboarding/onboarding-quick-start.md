@@ -145,11 +145,6 @@ A structured path through the wiki for new engineers. Adapt timing to your pace 
 
 > **Related**: [Epicor Usage in Engineering](/tools/epicor/) | [Time Entry](/tools/time-entry.html)
 
-## Engineering Department Calendar
-
-- **Web view**: [Outlook Calendar](https://outlook.office365.com/owa/calendar/347aac1a230f4c0d82fc650a01e9b2f4@digifabshop.com/dd8fbebc6a7f48969a0baa8639ec11b49451338758022573081/calendar.html)
-- **ICS for Outlook**: [Calendar ICS File](https://outlook.office365.com/owa/calendar/347aac1a230f4c0d82fc650a01e9b2f4@digifabshop.com/dd8fbebc6a7f48969a0baa8639ec11b49451338758022573081/calendar.ics)
-
 ## Primary Troubleshooting Contacts
 
 When you need help with specific systems or tools:
