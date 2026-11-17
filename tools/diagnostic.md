@@ -55,6 +55,19 @@ Each rule returns one of four statuses:
 | ⚠️ Warning | Potential issue — review before release |
 | ❌ Failed | Rule not met — must be resolved before release |
 
+## Draft and release checks
+
+The same checks run at two stages. The standalone tool checks at the **draft** stage, which suits a file you are still working on. The check the [FE to PE Release form](/tools/releases-and-requests/fe-to-pe-releases.html) runs is the **release gate**. A few job milestones that other people set are softer while you draft:
+
+| Check | Release gate | Draft |
+|---|---|---|
+| BOM Complete not set | Error | Warning |
+| Field Dimensions Received, PA Approval, or Client Approval not set | Error | Note |
+| A material not marked Engineering Complete | Error | Warning |
+| Job already Released while other errors exist | Error | Warning |
+
+A clean standalone run can therefore still show errors at the form. The form also tells the checker the release type, so a partial or final partial release is not faulted for the job already being Released.
+
 ## Summarize Results
 
 After validation completes, click **Summarize Results**. The tool sends the findings to the wiki assistant backend and returns:
@@ -66,7 +79,7 @@ Use this when you have multiple failures and aren't sure where to start.
 
 ## Export to Excel
 
-Click **Export** to save the full issue list as an Excel file. The workbook has three sheets — Document Structure, Model Objects, ERP Integration — matching the validator categories. Each row is one object or layer; columns correspond to individual validators. Status cells display emoji indicators (✅ ℹ️ ⚠️ ❌ or N/A) that are sortable and filterable for quick triage.
+Click **Export** to save the full issue list as an Excel file. The default name is `<your file>_QC_Findings.xlsx`. The first sheet, **Action Plan**, gives the job and what to do next. It holds the plan from **Summarize Results**, so if you have not clicked that yet, the sheet says so. Click it and export again to add the plan. The detail sheets that follow are Document Structure, Model Objects, and ERP Integration, matching the validator categories. The FE to PE Release form's check saves the same workbook next to the model. Each row is one object or layer; columns correspond to individual validators. Status cells display emoji indicators (✅ ℹ️ ⚠️ ❌ or N/A) that are sortable and filterable for quick triage.
 
 The **GUID** column (Model Objects sheet only) lets you locate a specific object in Rhino using the `_SelId` command.
 
