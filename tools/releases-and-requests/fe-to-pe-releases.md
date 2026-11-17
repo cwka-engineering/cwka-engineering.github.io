@@ -12,7 +12,7 @@ corpus_tags: [fe-release]
 
 > This page is the form and the channel thread. The checklist, the model prep, and the Epicor boxes you still tick are in [FE to PE Release](/workflows/fe-to-pe-release.html).
 
-When a job is ready to leave fabrication engineering, submit the **FE to PE Release** form in the Airtable base **Releases & Requests**. One submission is one job. The job stays on the form until Prod Eng is complete, so a released job can still be submitted. The form checks the model, copies the handoff, and posts the result in this channel.
+When a job is ready to leave fabrication engineering, submit the [FE to PE Release form](https://airtable.com/app2X7JU998GzDUWj/pagcyNfJ6zPtbXXbv/form) in the Airtable base **Releases & Requests**. One submission is one job. The job stays on the form until Prod Eng is complete, so a released job can still be submitted. The form checks the model, copies the handoff, and posts the result in this channel.
 
 ## What you submit
 

@@ -49,7 +49,7 @@ Answer **Release job in Epicor?** on the form. Yes sets Released only when the c
 ## How do I submit the FE to PE Release form?
 {: #how-to-submit-release-form}
 
-Open the **FE to PE Release** form in the Airtable base **Releases & Requests**. One submission is one job. The job stays on the form until Prod Eng is complete, so a released job can be filed again. Choose Complete, Partial, or Final partial. Answer **Release job in Epicor?** Paste a Box link to the PE `.3dm`. A name that contains `PE` is the model, including a description between `PE` and the date, and the link can sit anywhere. The handoff copy is renamed with the date. Leave the link blank, link a name without `PE`, or link a working `_FE` file, and the form takes the newest PE-named `.3dm` from the job's `01_FE_Models` folder. Paste a Box link to the submittal PDF, or leave it blank. A blank PDF link takes a For Record PDF in `01_Outgoing`, then the newest PDF in `02_Returned`. Notes are copied onto the channel post, including a handoff-meeting request or late-start coordination.
+Open the [FE to PE Release form](https://airtable.com/app2X7JU998GzDUWj/pagcyNfJ6zPtbXXbv/form) in the Airtable base **Releases & Requests**. One submission is one job. The job stays on the form until Prod Eng is complete, so a released job can be filed again. Choose Complete, Partial, or Final partial. Answer **Release job in Epicor?** Paste a Box link to the PE `.3dm`. A name that contains `PE` is the model, including a description between `PE` and the date, and the link can sit anywhere. The handoff copy is renamed with the date. Leave the link blank, link a name without `PE`, or link a working `_FE` file, and the form takes the newest PE-named `.3dm` from the job's `01_FE_Models` folder. Paste a Box link to the submittal PDF, or leave it blank. A blank PDF link takes a For Record PDF in `01_Outgoing`, then the newest PDF in `02_Returned`. Notes are copied onto the channel post, including a handoff-meeting request or late-start coordination.
 
 Submitting the same release again, the same partial number or another complete release, replaces that handoff file. The earlier file stays in the folder, with superseded and the time in its name. The channel reply is one line and mentions only the site tag. The shipping-components workbook already in the folder is left alone.
 
@@ -238,7 +238,7 @@ For more information on Epicor, see [Epicor Usage in Engineering](/tools/epicor/
 ### 5. Form submission (FE to PE release form)
 {: #sop-fe-pe-form}
 
-Open the **FE to PE Release** form in the Airtable base **Releases & Requests**. Complete [Phase 3](/onboarding/project-delivery.html#phase-3-fe-release-to-production-engineering-pe-handoff) and the [pre-release checklist](#pre-release-checklist) before submitting.
+Open the [FE to PE Release form](https://airtable.com/app2X7JU998GzDUWj/pagcyNfJ6zPtbXXbv/form) in the Airtable base **Releases & Requests**. Complete [Phase 3](/onboarding/project-delivery.html#phase-3-fe-release-to-production-engineering-pe-handoff) and the [pre-release checklist](#pre-release-checklist) before submitting.
 
 One submission is one job. To release several jobs, submit once for each.
 

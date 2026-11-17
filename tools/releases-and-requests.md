@@ -16,18 +16,18 @@ has_children: true
 ## Channels
 
 ### [Part Requests](/tools/releases-and-requests/part-requests.html)
-Submit the New Part Request form when you need a global material part that is not already in your BOM. The catalog lookup posts in the Parts Requests channel. Reply with `@parts-bot`. See the [Engineer Guide](/tools/releases-and-requests/part-requests/engineer-guide.html) or the [Scheduler Guide](/tools/releases-and-requests/part-requests/scheduler-guide.html).
+Submit the [New Part Request form](https://airtable.com/app2X7JU998GzDUWj/pag1lahNDC9UDzw8Q/form) when you need a global material part that is not already in your BOM. The catalog lookup posts in the Parts Requests channel. Reply with `@parts-bot`. See the [Engineer Guide](/tools/releases-and-requests/part-requests/engineer-guide.html) or the [Scheduler Guide](/tools/releases-and-requests/part-requests/scheduler-guide.html).
 
 ### [Job Requests](/tools/releases-and-requests/job-requests.html)
 Request new Epicor jobs — manufactured parts requiring engineering attention, or PM-initiated jobs such as warranty or truck jobs. The Microsoft Form routes a Planner task and a Teams notification to the appropriate operations team by site.
 
 ### [FE to PE Releases](/tools/releases-and-requests/fe-to-pe-releases.html)
-Submit the FE to PE Release form when a job is ready for Production Engineering. One job per submission. The form checks the model, files the handoff, and posts the result on that job's thread. See [FE to PE Releases](/tools/releases-and-requests/fe-to-pe-releases.html).
+Submit the [FE to PE Release form](https://airtable.com/app2X7JU998GzDUWj/pagcyNfJ6zPtbXXbv/form) when a job is ready for Production Engineering. One job per submission. The form checks the model, files the handoff, and posts the result on that job's thread. See [FE to PE Releases](/tools/releases-and-requests/fe-to-pe-releases.html).
 
 > The checklist and the model prep are in [FE to PE Release](/workflows/fe-to-pe-release.html). The form is the filing step. Later partials stay on the channel thread.
 
 ### [Submittal Approval](/workflows/fabrication-engineer/submittal-review.html)
-Submit the Submittal Approval Request form when a shop-drawing package is ready for the project's PMs. The form files the package and raises the approval cards (other approvers first, the project's PM last). See [Submittal Review](/workflows/fabrication-engineer/submittal-review.html) and [Submittal Approval](/tools/approvals-process.html).
+Submit the [Submittal Approval Request form](https://airtable.com/app2X7JU998GzDUWj/pagn7ycolnWjLu5ra/form) when a shop-drawing package is ready for the project's PMs. The form files the package and raises the approval cards (other approvers first, the project's PM last). See [Submittal Review](/workflows/fabrication-engineer/submittal-review.html) and [Submittal Approval](/tools/approvals-process.html).
 
 ### PE to Shop Releases
 Currently housed in the Production team; will migrate to Releases & Requests. Documentation pending migration.

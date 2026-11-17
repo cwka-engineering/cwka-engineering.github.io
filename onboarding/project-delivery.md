@@ -253,7 +253,7 @@ sequenceDiagram
 
 *   Finalize drawings with material, hardware, size, strategy
     
-*   Submit the Submittal Approval Request form in Releases & Requests. Attach the PDF, or a Box link that opens the PDF
+*   Submit the [Submittal Approval Request form](https://airtable.com/app2X7JU998GzDUWj/pagn7ycolnWjLu5ra/form) in Releases & Requests. Attach the PDF, or a Box link that opens the PDF
     
 *   The form files the package in 00_Internal_Review and sends the approval cards: other named approvers first, the project's PM last. The cards are this drawing package. The PM's approval files it, before the PM sends the set.
     
@@ -315,7 +315,7 @@ Ensure:
     
 *   Save the clean PE model in 01_FE_Models
     
-*   Submit the FE to PE Release form, one job. See [FE to PE Release](/workflows/fe-to-pe-release.html)
+*   Submit the [FE to PE Release form](https://airtable.com/app2X7JU998GzDUWj/pagcyNfJ6zPtbXXbv/form), one job. See [FE to PE Release](/workflows/fe-to-pe-release.html)
     
 *   The form copies the handoff into Fabrication_Handoff and posts it in FE to PE Releases
     
