@@ -155,8 +155,8 @@ A structured path through the wiki for new engineers. Adapt timing to your pace 
 When you need help with specific systems or tools:
 
 - **Epicor**: @Fernando Saucedo
-- **Rhino Template**: @Gian Anovert
-- **Microsoft Account**: @JPMerc Support
+- **Rhino Template**: @Duncan Standridge
+- **Microsoft Account**: @Complete.net
 - **GH Toolkit**: @Caleb Marhoover
 
 ## Microsoft Teams Channels
