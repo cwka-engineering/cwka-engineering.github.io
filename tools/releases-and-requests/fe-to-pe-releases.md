@@ -64,6 +64,9 @@ Released is set only when every one of these is true:
 4. The job is a standard job. A manufacturing job is left as it is.
 5. The project name does not contain the word CMG.
 6. The job's company is CWK Associates or Digifabshop. The write goes to that company. Any other company is left unchanged.
+7. The release record exists, and its release type can be read.
+
+In practice, any QC error holds Released, including a job milestone that is not set yet: BOM Complete, Field Dimensions Received, PA Approval, Client Approval, or a material not marked Engineering Complete. Set the milestones, or use `@release-bot` to set Released.
 
 Any other case leaves the job as it is, and the post names the reason. The flow never clears Released. The files can still be in the handoff. `@release-bot`, below, can set or clear Released without these gates. That change is a line on the job's log thread.
 
