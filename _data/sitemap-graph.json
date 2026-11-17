@@ -562,7 +562,7 @@
       "id": "/workflows/fabrication-engineer/submittal-review.html",
       "title": "Submittal Review Cycle",
       "section": "Workflows",
-      "degree": 10
+      "degree": 11
     },
     {
       "id": "/workflows/fabrication-engineer/takeoffs.html",
@@ -574,7 +574,7 @@
       "id": "/workflows/fabrication-engineer/toolkit/drafting.html",
       "title": "Drafting Toolkit",
       "section": "Home",
-      "degree": 11
+      "degree": 12
     },
     {
       "id": "/workflows/fabrication-engineer/toolkit/",
@@ -2249,6 +2249,10 @@
     {
       "source": "/workflows/fabrication-engineer/shipping-components.html",
       "target": "/workflows/fe-to-pe-release.html"
+    },
+    {
+      "source": "/workflows/fabrication-engineer/submittal-review.html",
+      "target": "/workflows/fabrication-engineer/toolkit/drafting.html"
     },
     {
       "source": "/workflows/fabrication-engineer/submittal-review.html",
