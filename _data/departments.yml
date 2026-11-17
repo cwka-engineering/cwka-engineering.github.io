@@ -578,7 +578,7 @@ departments:
       - task: "Define where work will be produced (NH/CO)"
         level: 2
         collab: "EX"
-      - task: "Define detail level of job transfer — identify opportunities to build in-house vs. outsource"
+      - task: "Define detail level of job transfer — identify opportunities to build in-house vs. externally"
         level: 2
         collab: "EX"
       - task: "Participate in build strategy review (PA working session)"

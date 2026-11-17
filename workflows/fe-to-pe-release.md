@@ -164,7 +164,7 @@ For detailed definitions, see the [Glossary](/reference/glossary.html).
 - **WC Jobs**: Wood Component manufacturing jobs.
 - **MT Jobs**: Metal Component or Kit of Parts manufacturing jobs.
 
-**Outsourced (EXT) jobs.** Vendors do not return Rhino files. After the client approves the vendor's deliverables, post-processing begins. It is the usual post-submittal work plus a few vendor-specific steps: translating the vendor's files into a conformant Rhino file and creating the job's `01_FE_Models` assets. The Managing Fabrication Engineer assigns the job's Post-Submittal task on the engineering schedule by capacity, so the engineer doing it varies from job to job. From there the release is the same as any other: the release finder and the QC check read the model in `01_FE_Models`, never the vendor's returned files.
+**External Engineering (EXT) jobs.** Vendors do not return Rhino files. After the client approves the vendor's deliverables, post-processing begins. It is the usual post-submittal work plus a few vendor-specific steps: translating the vendor's files into a conformant Rhino file and creating the job's `01_FE_Models` assets. The Managing Fabrication Engineer assigns the job's Post-Submittal task on the engineering schedule by capacity, so the engineer doing it varies from job to job. From there the release is the same as any other: the release finder and the QC check read the model in `01_FE_Models`, never the vendor's returned files.
 
 ### 2. File organization and folder setup
 {: #sop-file-organization}
