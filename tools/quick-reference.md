@@ -23,16 +23,16 @@ Task-oriented index for tool and system procedures. Each link goes directly to t
 | A6 | Set up Bluebeam release stamps | [Onboarding Quick Start](/onboarding/quick-start.html#how-to-setup-bluebeam-stamps) |
 | A7 | Configure Rhino backup and autosave settings for Box | [Onboarding Quick Start](/onboarding/quick-start.html#how-to-configure-backups) |
 | A8 | Install the Approvals app in Microsoft Teams | [Submittal Approval](/tools/approvals-process.html#how-to-install-approvals-app) |
-| A9 | Set up Toggl for CWK time tracking | [Time Entry](/tools/time-entry.html#how-to-setup-toggl) |
+| A9 | Set up Toggl for CWK time tracking | [Toggl Setup & Upload](/tools/time-entry/toggl.html) |
 
 ## Time Tracking
 
 | # | Task | Page |
 |---|------|------|
 | K91 | Clock into a job using Office MES | [Time Entry](/tools/time-entry.html#how-to-clock-in-mes) |
-| K92 | Set up a Toggl time entry | [Time Entry](/tools/time-entry.html#how-to-setup-toggl-entry) |
-| K93 | Export Toggl time and upload to Epicor | [Time Entry](/tools/time-entry.html#how-to-export-toggl) |
-| K94 | Do a bulk time upload for the week | [Time Entry](/tools/time-entry.html#how-to-bulk-upload) |
+| K92 | Set up a Toggl time entry | [Toggl Setup & Upload](/tools/time-entry/toggl.html#how-to-create-toggl-entry) |
+| K93 | Export Toggl time and upload to Epicor | [Toggl Setup & Upload](/tools/time-entry/toggl.html#how-to-export-toggl) |
+| K94 | Do a bulk time upload for the week | [Toggl Setup & Upload](/tools/time-entry/toggl.html#how-to-bulk-upload) |
 | K95 | Record rework time | [Time Entry](/tools/time-entry.html#how-to-record-rework) |
 
 ## Epicor Navigation & Administration
@@ -41,7 +41,7 @@ Task-oriented index for tool and system procedures. Each link goes directly to t
 |---|------|------|
 | M103 | Import the engineering-specific Epicor home layout | [Epicor Usage](/tools/epicor/#how-to-import-layout) |
 | M104 | View all materials across a project | [Epicor Dashboards](/tools/epicor/dashboards.html#how-to-view-project-materials) |
-| M105 | Check material demand (where is a part BOM'd?) | [Epicor Dashboards](/tools/epicor/dashboards.html#how-to-check-material-demand) |
+| M105 | Check material demand (where is a part BOM'd?) | [Epicor Dashboards](/tools/epicor/dashboards.html#how-to-check-demand) |
 | M106 | Check on-hand inventory for a material | [Epicor Dashboards](/tools/epicor/dashboards.html#how-to-check-inventory) |
 | M107 | Personalize column displays in an Epicor dashboard | [Epicor Usage](/tools/epicor/#how-to-personalize-columns) |
 | M108 | Batch-edit the Material Transmittal Log via Excel | [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html#how-to-batch-edit-tra) |

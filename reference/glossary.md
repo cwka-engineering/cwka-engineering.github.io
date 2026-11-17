@@ -76,6 +76,7 @@ corpus_tags: [fe-release, fe-submittal]
 ## Drawing & Layout Terms
 
 - **C00**: Cover — the logo page that opens a drawing set; no text and no title block.
+- **S000**: Nested Sheets — a template page that uses the larger title-block layout rather than the standard one. See [Layout Structure](/standards/rhino-drafting/layout-structure.html).
 - **T00**: Title Sheet — project name, address, client and architect, and a project index of every job under the project (the submittal's own jobs are bold and underlined).
 - **G00**: General Requirements and Schedules — item drawings list, material/finish/veneer tag tables populated from TRA via the Engineering Toolkit, and the bill of materials. See [Cover Sheet & Common Pages](/standards/rhino-drafting/cover-sheet-common-pages.html).
 - **1XX**: Reference Plans — overall floor plans, enlarged plans, RCPs, VIF plans.

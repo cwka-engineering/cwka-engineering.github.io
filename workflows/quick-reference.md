@@ -65,12 +65,12 @@ Task-oriented index for workflow procedures. Each link goes directly to the rele
 | # | Task | Page |
 |---|------|------|
 | E43 | Group parts into shipping components | [Part Naming](/workflows/fabrication-engineer/part-naming.html#how-to-group-parts) |
-| E44 | Generate part names using the toolkit | [Part Naming](/workflows/fabrication-engineer/part-naming.html#how-to-generate-part-names) |
+| E44 | Generate part names using the toolkit | [Part Naming](/workflows/fabrication-engineer/part-naming.html#how-to-generate-names) |
 | E45 | Name manufactured parts (MT/WC) in the model | [Part Naming](/workflows/fabrication-engineer/part-naming.html#how-to-name-mfg-parts) |
 | E46 | Replace name segments (e.g., change the job number) | [Part Naming](/workflows/fabrication-engineer/part-naming.html#how-to-replace-name-segments) |
 | E47 | Add descriptions to shipping components | [Shipping Components](/workflows/fabrication-engineer/shipping-components.html#how-to-add-sc-descriptions) |
 | E48 | Export the shipping components list | [Shipping Components](/workflows/fabrication-engineer/shipping-components.html#how-to-export-sc-list) |
-| E49 | Audit part name uniqueness (SelName check) | [Part Naming](/workflows/fabrication-engineer/part-naming.html#how-to-audit-part-names) |
+| E49 | Audit part name uniqueness (SelName check) | [Part Naming](/workflows/fabrication-engineer/part-naming.html#how-to-audit-names) |
 
 ## BOM, Takeoffs, and Material Management
 
@@ -78,8 +78,8 @@ Task-oriented index for workflow procedures. Each link goes directly to the rele
 |---|------|------|
 | G62 | Run the Auto-BOM feature | [Takeoffs](/workflows/fabrication-engineer/takeoffs.html#how-to-run-auto-bom) |
 | G63 | Export BOM data for Epicor paste-insert | [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html#how-to-export-bom-for-epicor) |
-| G64 | Run 1D nesting (stick optimization) | [Takeoffs](/workflows/fabrication-engineer/takeoffs.html#how-to-run-1d-nesting) |
-| G65 | Run 2D nesting (sheet optimization) | [Takeoffs](/workflows/fabrication-engineer/takeoffs.html#how-to-run-2d-nesting) |
+| G64 | Run 1D nesting (stick optimization) | [Takeoffs](/workflows/fabrication-engineer/takeoffs.html#how-to-1d-nesting) |
+| G65 | Run 2D nesting (sheet optimization) | [Takeoffs](/workflows/fabrication-engineer/takeoffs.html#how-to-2d-nesting) |
 | G66 | Create a part in Epicor (project-specific material) | [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html#how-to-create-epicor-part) |
 | G67 | Request a general (global) material part | [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html#how-to-request-global-part) |
 | G68 | BOM a material to a job in Epicor | [BOM Procedures](/workflows/fabrication-engineer/bom-procedures.html#how-to-bom-material) |
@@ -129,7 +129,7 @@ Task-oriented index for workflow procedures. Each link goes directly to the rele
 | # | Task | Page |
 |---|------|------|
 | L96 | Set up a PE job folder | [PE Setup](/workflows/production-engineer/setup.html#how-to-setup-pe-folder) |
-| L97 | Create a SHOP model | [PE Setup](/workflows/production-engineer/setup.html#how-to-create-shop-model) |
+| L97 | Create a SHOP model | [PE Setup](/workflows/production-engineer/setup.html#how-to-setup-shop-model) |
 | L98 | Process parts using Grasshopper scripts | [PE Processing](/workflows/production-engineer/processing.html#how-to-process-parts) |
 | L99 | Create a Master Parts List | [PE Deliverables](/workflows/production-engineer/deliverables.html#how-to-create-master-parts-list) |
 | L100 | Create a Lay-Up Summary | [PE Deliverables](/workflows/production-engineer/deliverables.html#how-to-create-layup-summary) |

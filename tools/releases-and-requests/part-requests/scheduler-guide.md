@@ -73,7 +73,7 @@ The number has to already exist in company 157539. The request closes, the part 
 
 ## Sync the NY site
 
-The part is saved for the CO site, company 157539, plant MfgSys. The NY site picks it up when you run the site push-pull. That is the second Planner task. The task closes once the part is active in both companies, and the requester is mentioned in the thread at the same time.
+The part is saved for the CO site, company 157539 (CWK Associates), plant MfgSys. The NY site is company 157540 (Digifabshop). It picks the part up when you run the **site push-pull**, the Epicor step that brings a part saved on the CO company over to the NY company. That is the second Planner task. The task closes once the part is active in both companies, and the requester is mentioned in the thread at the same time.
 
 ## What the worksheet already contains
 

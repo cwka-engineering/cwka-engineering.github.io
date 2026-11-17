@@ -14,7 +14,7 @@ grand_parent: Workflows
 ## Finding Assignments
 {: #how-to-find-assignments}
 
-- Access the Epicor Submittal Dashboard via The CW site. See [Epicor Usage](/tools/epicor/#1-submittal-dashboard) for details.
+- Access the Epicor Submittal Dashboard via The CW site. See [Epicor Dashboards](/tools/epicor/dashboards.html#submittal-dashboard) for details.
 - Filter by your name to view submittal/post-submittal tasks not yet released to PE.
 - Understand job types (see [Glossary](/reference/glossary.html#job-types)):
   - **Engineering Jobs**: [^transcript-getting-started] Start with "E", match 1:1 with production jobs (e.g., E1094.009 corresponds with production job 1094.009). Exception: group submittals (1 submittal document feeds multiple production jobs) and engineering bucket jobs.
@@ -121,7 +121,7 @@ If you cannot locate the shared base file, contact the Lead Engineer before proc
 
 ## See Also
 
-- [Submittal Dashboard](/tools/epicor/#1-submittal-dashboard) - Finding your assignments
+- [Submittal Dashboard](/tools/epicor/dashboards.html#submittal-dashboard) - Finding your assignments
 - [Folder Structure](/reference/folder-structure.html) - File organization standards
 - [Glossary](/reference/glossary.html) - Term definitions
 

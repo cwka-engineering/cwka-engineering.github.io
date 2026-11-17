@@ -45,7 +45,7 @@ Open the review file from the link on the card before you answer. That file is t
 ### After you answer
 
 - **Approve.** The engineer is told, and the same PDF is copied to `01_Outgoing`. Older files there move to `Archive`. General gets the result. You still send the set to the client. If the review file has markups, the clean export is still yours. Architect markups still go in `02_Returned`.
-- **Reject.** The engineer is told, with your comments. Nothing is copied to `01_Outgoing`. General does not get an approval post. Epicor is left as it is. The engineer revises the drawings and submits again.
+- **Reject.** The engineer is told, with your comments, and the request is recorded as revisions requested. Nothing is copied to `01_Outgoing`. General does not get an approval post. Epicor is left as it is. The engineer revises the drawings and submits again.
 - A newer request for the same submittal replaces yours. The earlier card no longer counts. Answer the new one.
 
 Reminders go on working days to whoever holds the card. After three working days the requester is told the card is still open. A weekly reminder follows while it stays open.

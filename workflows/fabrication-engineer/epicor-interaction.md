@@ -14,7 +14,7 @@ corpus_tags: [fe-release, fe-submittal]
 
 ## Reading Submittal Status
 
-- Use Epicor (West site) > Production Report. See [Epicor Usage - Production Report](/tools/epicor/#2-production-report) for details.
+- Use Epicor (West site) > Production Report. See [Production Report](/tools/epicor/production-report.html) for details.
 - Filter by your name to see the drawing-package status. The [Submittal Approval](/tools/approvals-process.html) flow writes it on the company that owns the job, CWK Associates or Digifabshop: Internal Review when the request goes out, then Submitted or Resubmitted when a PM approves. A rejection writes nothing. Read the report for that company.
 - Production Complete is a later production status. You do not type the drawing-package status yourself.
 
@@ -34,5 +34,5 @@ corpus_tags: [fe-release, fe-submittal]
 
 ## See Also
 
-- [Production Report](/tools/epicor/#2-production-report) - Detailed Epicor procedures
+- [Production Report](/tools/epicor/production-report.html) - Detailed Epicor procedures
 - [FE to PE Release SOP](/workflows/fe-to-pe-release.html) - Complete release process

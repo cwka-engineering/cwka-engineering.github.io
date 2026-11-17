@@ -40,7 +40,7 @@ Must launch from the **CW site** but includes assignments from **both** sites.
 Time entry must be performed **per site**. You cannot enter hours for both Colorado and New York projects in a single batch. At minimum, you will need one bulk entry per site per week.
 
 ### Part Synchronization
-- **General materials (GM)** are created in Colorado first, then synced nightly to New York.
+- **General materials (GM)** are created on the Colorado company first. The scheduler runs the site push-pull to bring a new GM part to New York, and the request thread says when it is active in both companies. See [Part Management](/tools/epicor/part-management.html).
 - **Project-specific materials** are not synced — create them on the correct site.
 - Best practice: always create and verify parts on the **Colorado** version first.
 

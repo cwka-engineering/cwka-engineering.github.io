@@ -274,7 +274,7 @@ sequenceDiagram
     
 *   BOM WC part to job
     
-*   Request WC job via CWKA Forms Team
+*   Submit the Job Request Form (see [Job Requests](/tools/releases-and-requests/job-requests.html))
     
 *   Notify Production Planner if quantity changes
     

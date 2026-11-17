@@ -59,7 +59,9 @@ Open the **Submittal Approval Request** form in the Airtable base **Releases & R
 
 1. Name the job, or the group, that this submittal covers. One submission is one package.
 2. Attach the printed submittal PDF, or paste a Box link that opens that PDF. The form builds from that file. A link to a folder fails. The form does not search Box for a plot. Print the PDF from Rhino as a vector print with a text layer. The form reads each sheet's title block from that text, so a scanned or raster-only print can't be read.
-3. Type the revision. This is the client's revision. An internal reprint of the same issue stays at the same revision. Leave the revision blank for R0.
+3. Type the revision. This is the client's revision. An internal reprint of the same issue stays at the same revision. Leave the revision blank for R0. From revision 1 on, the form also asks for a **Revision note** (two lines).
+
+The form has more fields, all optional. Choose **Grouped Submittal** and type the group code (for example `1162.GS.001`) when the package covers a group. Add **Approvers** to have other people sign before the PM. Other fields: **Project Image**, **BOM Exclusions** (hide manufactured, project-purchased, hardware, glass, or lighting parts from the G00 BOM), **Engineer initials** (blank takes initials from your name), **Title lines** 1 to 3, **Address** lines 1 to 3, **Architect**, **Production notes** (up to 10 lines), and **Sheet notes** (up to 16 lines). A value you type wins over the Projects table and Epicor, and the Projects table fills the architect, address, and T00 image when you leave them blank. The engineer initials and revision log still come from your title block.
 
 The project folder under Awarded, and `03 Engineering / 03_OUTGOING_Submittals` inside it, have to already exist. If either is missing, the build fails and nothing goes to the PM.
 

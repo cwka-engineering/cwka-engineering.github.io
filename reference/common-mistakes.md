@@ -57,6 +57,6 @@ Epicor does not track the number of individual pieces within a kit — only the 
 - Forgetting to refresh after a site switch → stale data on homepage cards
 - Updating a Production Report from the wrong site → changes won't save
 - Submitting time for both sites in one batch → entries fail for the wrong site
-- Looking for a newly created GM part at NY before the 24-hour sync → part not found
+- Looking for a newly created GM part at NY before its request thread says it is active in both companies → part not found
 
 See [Multi-Site Operations](/tools/epicor/multi-site-operations.html).

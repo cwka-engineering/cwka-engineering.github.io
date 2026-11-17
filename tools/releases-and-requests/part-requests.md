@@ -29,8 +29,9 @@ flowchart TD
   F -->|DECLINE| H["Worksheet in the thread. Two Planner tasks"]
   H --> I{"Scheduler"}
   I -->|CREATE| J["Part saved on MfgSys. Entry task closed"]
-  I -->|USE and a part number| J
+  I -->|USE and a part number| J2["Existing part recorded. Nothing is written to Epicor. Entry task closed"]
   J --> K["Requester mentioned when the part is active in both companies"]
+  J2 --> K
 ```
 
 Glass, lighting, and stone are not searched. Those posts go out as no match. Category **Unknown** stops before a post.

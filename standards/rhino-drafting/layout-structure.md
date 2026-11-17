@@ -15,7 +15,7 @@ corpus_tags: [fe-submittal]
 ## Sheet size and template
 {: #sheet-size-and-template}
 
-- **Standard**: Engineering uses a **single Tabloid** layout template for **all** projects. Use the current FE template from the team location (see [Getting Started](/workflows/fabrication-engineer/getting-started.html#template-usage)).[^transcript-rhino8-kickoff-i]
+- **Standard**: Engineering uses a **single Tabloid** layout template for **all** projects. Use the current FE template from the team location (see [Getting Started](/workflows/fabrication-engineer/getting-started.html#how-to-create-rhino-file)).[^transcript-rhino8-kickoff-i]
 - **Other sizes**: Non-standard sheet sizes are reserved for **unusual circumstances only**. The department does **not** maintain alternate templates for other sizes—if an exception is required, coordinate with template owners and project leadership.
 
 ## Page Numbering System
