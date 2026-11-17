@@ -55,7 +55,7 @@ flowchart TD
 ### 1. Submit the form
 {: #how-to-submit-for-approval}
 
-Open the **Submittal Approval Request** form in the Airtable base **Releases & Requests**.
+Open the [Submittal Approval Request form](https://airtable.com/app2X7JU998GzDUWj/pagn7ycolnWjLu5ra/form) in the Airtable base **Releases & Requests**.
 
 1. Name the job, or the group, that this submittal covers. One submission is one package.
 2. Attach the printed submittal PDF, or paste a Box link that opens that PDF. The form builds from that file. A link to a folder fails. The form does not search Box for a plot. Print the PDF from Rhino as a vector print with a text layer. The form reads each sheet's title block from that text, so a scanned or raster-only print can't be read.
