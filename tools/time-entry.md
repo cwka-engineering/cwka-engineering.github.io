@@ -44,6 +44,30 @@ Reallocation can reach back into prior weeks as needed, but **must not alter tot
 
 **If the prior month closes before reallocation occurs**, the labor remains on the bucket job and cannot be properly attributed to the scope. This distorts project-level metrics for that job. Operations and engineering both have an interest in minimizing how often this happens — if you know an E-job is missing, flag it early rather than letting entries accumulate on the bucket.
 
+## The Monday time check
+{: #monday-time-check}
+
+Every Monday a check reads the previous week's labor in Epicor and sends each engineer and consultant a Teams message with anything to fix. The check runs at 6:00 AM Eastern, and each message goes out at 7:00 AM in your own time zone (Eastern if none is set). A week with nothing to fix gets a short all-clear. Fix anything it flags by **end of day Monday**, the same correction window as [Corrections & Retroactive Entries](#corrections).
+
+The check counts approved PTO and holiday time from Paylocity toward the week. If that lookup fails on a given Monday, the message says so and warns that missing hours may include PTO or a holiday that is not reflected yet.
+
+| Flag | What it means | What to do |
+|---|---|---|
+| **Miss** | Fewer than 40 hours worked for the week, after approved PTO and holiday time | Log the missing time to a job or an indirect code in Epicor |
+| **OT** | More than 40 hours worked in the week | Confirm the hours are right. If they are, confirm the overtime with your manager |
+| **D10+** | More than 10 hours logged on one day | Check for an accidental duplicate entry that day |
+| **Break!** | A day of 6 hours or more with no Break-Time (008) entry | Add the missing Break-Time entry in CrossTimeReview |
+| **Lunch?** | A day of 4 hours or more with no gap of about 30 to 60 minutes between entries | Check your clock-in and clock-out times, and add a Break-Time entry if one is missing. A suggestion, not an error |
+| **Notes!** | An indirect entry of 1 hour or more with no labor note | Add a note in CrossTimeReview. See [Labor note requirements](#labor-note-requirements) |
+| **EngNotes!** | A direct entry of 1 hour or more on an ENG bucket job (`####.ENG`) with no labor note | Add a note. Bucket-job operations always need one |
+| **Miscode** | An entry may be coded wrong. The message says why: a code marked do not use, a Break-Time entry that may include lunch, General Indirect "time entry" over the weekly guideline, or a note that fits a more specific code | Reclassify in CrossTimeReview if the message is right. Most of these are suggestions based on the note text or the duration. The do-not-use codes are firmer |
+| **Overlap!** | Two entries overlap in clock time | Open both entries and adjust the times so they do not overlap |
+| **Idle** | More than 1 hour of Idle Time in the week | Confirm with your manager, or correct the entry |
+| **PTO_WASTED** | PTO taken in a week where you already worked 40 hours | PTO beyond 40 hours does not carry over. Confirm with your manager whether it was intended. See [Weekly Time Approval](/tools/time-entry/weekly-approval.html) |
+| **No labor rows** | No entries at all for the period | If you worked, submit your time immediately |
+
+The Director of Engineering and Engineering Consultants are not checked for Miss, OT, Break!, Lunch?, or no labor rows. The other checks apply to everyone.
+
 ## How do I clock into a job using Office MES?
 {: #how-to-clock-in-mes}
 

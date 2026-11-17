@@ -36,7 +36,7 @@ Run **Purge** (remove unused blocks, layers, styles), **SelDup** (remove duplica
 
 Navigate to **UD40** (or **UD37** for a CMG list). Copy ProjectID, JobNum, SC PartNum, Description, and Order Qty columns from the SC Excel file (excluding headers). Right-click in the workbench → **Paste New**. Click **Update** and refresh. Open the **Project** filter to confirm records processed.
 
-The form reads UD40 and writes `<job>_SHIPPING_COMPONENTS.xlsx` into `Fabrication_Handoff`. A workbook already there is left alone. A CMG list stays in UD37, so the form writes no workbook for a CMG job. Do not place the export in the handoff yourself.
+The form reads UD40 and writes `<job>_SHIPPING_COMPONENTS.xlsx` into `Fabrication_Handoff`. A workbook already there is left alone. Shipping components that are in the model but not in UD40 are added to the list with `UNSET` for the description and the order quantity, so someone has to fill those in before the sheet is pasted into UD40. A CMG list stays in UD37, so the form writes no workbook for a CMG job. Do not place the export in the handoff yourself.
 
 ## How do I complete the Epicor release process?
 {: #how-to-epicor-release}

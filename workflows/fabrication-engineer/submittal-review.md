@@ -65,6 +65,8 @@ The project folder under Awarded, and `03 Engineering / 03_OUTGOING_Submittals` 
 
 Finish, veneer, and general material on the package print from the project's [Material Transmittal Log](/workflows/fabrication-engineer/material-transmittal.html) as it stands when you submit. Confirm with the PM that the log is current before you submit.
 
+**What the form does with your print.** It does not use the front matter in your print. It builds a new C00, T00, and G00 from Epicor, dated the day the form runs, and puts them in front of your sheets. A C00, T00, or G00 already in the print is dropped. It reads the drawing number, sheet title, and issue date from each sheet's title block to build the index, and it takes your engineer initials and revision log from the title block too, so fill those in before you print. When the request leaves them blank, it also fills the client, architect, and address from the print's own cover sheets. Sketch pages (`SK##`) stay in the PDF but are left out of the index. In the finished PDF every index row and every sheet is a link or a bookmark.
+
 ### 2. Read the Teams message
 
 Within a few minutes you get one message.
@@ -73,6 +75,18 @@ Within a few minutes you get one message.
 - **Failed.** Nothing went to the PM. The message says why. Check the PDF link or the job, then submit the form again. If it fails twice, ask Fernando Saucedo or Caleb Marhoover.
 
 The finished package is a new file, `<scope>_R<revision>_<yyyyMMdd>.pdf`, in `00_Internal_Review`. Your original PDF stays where you attached it from. Submitting the same submittal again files a new package. The scope's earlier review files move to `ARCHIVE` under `00_Internal_Review`; other files there stay. Submitting twice on the same day at the same revision uploads a new version of the same file.
+
+**What the drawing check looks at.** The message groups its findings under five headings, and each finding is an error, a warning, or a note. Findings never stop the request, but fix the errors before the PM sees the set.
+
+| Heading | Errors | Warnings |
+|---|---|---|
+| Title blocks | The JOB # in a title block does not match the jobs in the submittal (a group's short form such as `1162.011, 013, 014` is accepted). No title block could be read, because the print has no text layer | Issue dates differ across the sheets. A sheet has no readable title block or drawing number. The drawing numbers use a different prefix from the scope |
+| Tags and schedule | None | A material tag on a drawing is not in the Material Transmittal Log, or the log is empty. A part number called out on a drawing is not in the job's BOM, or the BOM is empty. The same schedule is entered in both companies. Two transmittal rows become the same tag after zero-padding, such as FN1 and FN01 |
+| Callouts and references | A callout or SEE PAGE note names a sheet that is not in the package | A callout links to the sheet only. Two views on one sheet share a number. Tags and callouts could not be linked on some sheets. An index row could not be linked |
+| Text | Placeholder text such as `GM.HW.XXXXX` is still on a drawing | Possible typos |
+| Output | None | Text was cut to fit. G00 revision notes did not fit. The T00 image could not be used. The package's cover sheets could not be read. Earlier review files were not moved to `ARCHIVE` |
+
+Notes need no action: a font that was substituted, sketch pages left out of the submission set, a scope folder made from the template, and the cover-sheet values the form filled in for you.
 
 ### 3. Wait for the PM
 

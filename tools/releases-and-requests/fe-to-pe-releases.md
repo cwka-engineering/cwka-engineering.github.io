@@ -51,6 +51,8 @@ A veneer takeoff, a cut sheet, or any other extra document is still copied into 
 
 The project's General channel gets the same filing result without the PM and site mentions. A CMG project skips that General post. The Releases channel still gets it.
 
+**What the check counts as an error.** The check the form runs is the release gate. Besides the model checks, these job milestones are errors when they are not set: BOM Complete, Field Dimensions Received, PA Approval, and Client Approval. So is a material that is not marked Engineering Complete. The checker also has a draft stage, which shows some of these as warnings or notes while a job is still in progress. The form's check never does, so an earlier clean run does not guarantee a clean check here. A partial or final partial release is not faulted because the job is already Released. A complete release of an already-Released job that has errors still is.
+
 ## When Epicor is set Released
 
 Released is set only when every one of these is true:
