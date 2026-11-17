@@ -20,7 +20,7 @@ All time for the week must be fully entered in Epicor by **EOD Friday (6pm EST)*
 
 - **Best practice**: Enter time at EOD every day — don't let it accumulate.
 - **PTO / sick days**: Enter your time before you leave. Do not assume you'll catch up Monday.
-- **Engineering Consultants**: Tell the department the dates you cannot work on the [Blackout Date notification form](https://airtable.com/app6Vg6lB7KeTGE7S/pagXwNJfgUEtWENrF/form). Those dates show on the time-off calendar and in the engineering schedule.
+- **Engineering Consultants**: Consultants do not use Paylocity, where employees request PTO. Tell the department the dates you cannot work on the [Blackout Date notification form](https://airtable.com/app6Vg6lB7KeTGE7S/pagXwNJfgUEtWENrF/form). Those dates show on the time-off calendar and in the engineering schedule.
 - **Weekend work**: Any time worked over the weekend must be entered before the start of work **Monday (9am EST)**.
 
 > The previous Monday 12pm EST deadline has been retired. Friday EOD is the new standard.
