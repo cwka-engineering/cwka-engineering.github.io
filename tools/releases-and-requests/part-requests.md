@@ -41,6 +41,6 @@ Glass, lighting, and stone are not searched. Those posts go out as no match. Cat
 | Role | Responsibilities |
 |---|---|
 | **Engineer** | Submits the form. Replies `@parts-bot ACCEPT` and a part number, or `@parts-bot DECLINE` |
-| **Scheduler** | On a decline, `@parts-bot CREATE` saves the next part, or `@parts-bot USE` records one already in Epicor. Runs the site push-pull |
+| **Scheduler** | On a decline, `@parts-bot CREATE` saves the next part, or `@parts-bot USE` records one already in Epicor. Can run the site push-pull on demand |
 
 See the [Engineer Guide](/tools/releases-and-requests/part-requests/engineer-guide.html) or the [Scheduler Guide](/tools/releases-and-requests/part-requests/scheduler-guide.html).

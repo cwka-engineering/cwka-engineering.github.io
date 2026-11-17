@@ -73,7 +73,7 @@ The number has to already exist in company 157539. The request closes, the part 
 
 ## Sync the NY site
 
-The part is saved for the CO site, company 157539 (CWK Associates), plant MfgSys. The NY site is company 157540 (Digifabshop). It picks the part up when you run the **site push-pull**, the Epicor step that brings a part saved on the CO company over to the NY company. That is the second Planner task. The task closes once the part is active in both companies, and the requester is mentioned in the thread at the same time.
+The part is saved for the CO site, company 157539 (CWK Associates), plant MfgSys. The NY site is company 157540 (Digifabshop). The **site push-pull** is the Epicor step that brings a part saved on the CO company over to the NY company. It runs on a schedule, and that scheduled run is the main way a part gets to the NY site. You can also run it on demand. The second Planner task is the cue to check that the part has arrived, or to run it yourself. The task closes once the part is active in both companies, and the requester is mentioned in the thread at the same time.
 
 ## What the worksheet already contains
 
@@ -137,7 +137,7 @@ The worksheet is already filled from that product. Length comes from McMaster's 
 | You want the live next number | `@parts-bot NEXT` and the class | Any message |
 | The part is already in Epicor | `@parts-bot USE` and that part number | The request's thread |
 | The save is still running | `@parts-bot STATUS` | The request's thread |
-| The part is on MfgSys | Run the site push-pull | Epicor, and Planner |
+| The part is on MfgSys | Let the scheduled push-pull bring it over, or run the site push-pull on demand | Epicor, and Planner |
 
 ## Tips
 
