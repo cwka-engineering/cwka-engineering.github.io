@@ -183,14 +183,14 @@ The boundary with Project Meeting: use the ENG bucket + Project Meeting for PM- 
 ### Direct operations — Grouped Submittal (GS) jobs (`E####.GS.###`)
 {: #direct-gs-jobs}
 
-A Grouped Submittal covers a set of interrelated scopes that are drawn and submitted together — either because they share construction details, or because a single large element (e.g. a facade or ceiling) has been sharded across multiple production jobs for manufacturing or shipping efficiency.
+A Grouped Submittal delivers a large or complicated scope that cannot reasonably be designed piecemeal, typically a single large element (e.g. a facade or ceiling) that has been sharded across multiple production jobs for manufacturing or shipping efficiency. It is not a wrapper for several small scopes: construction details are rarely transposed verbatim from one scope to another, so shared details are not a reason to group. A PM can bundle small submittals into a single Transmittal instead.
 
 **Submittal**
 The only operation a GS job carries. All FE modeling and drawing work for the grouped scope is clocked here, following the same Submittal/Post-Submittal boundary as a standard E-job (above).
 
 **Once client approval is issued, post-submittal work does not stay on the GS job.** Split it out to each constituent production job and clock post-submittal work there instead — a GS job never carries Post-Submittal or any other operation.
 
-GS jobs aren't pre-created by the master scheduler. Request one from your PA and PM when a grouped submittal makes more sense than separate per-job submittals.
+GS jobs aren't pre-created by the master scheduler. Request one from your PA and PM when a scope is too large or complicated to design piecemeal.
 
 > **Numbering note:** The Epicor job number is `E####.GS.###` (e.g. `E1105.GS.123`). Filenames and the toolkit's submittal-scope field never carry the `E` prefix — the same job appears as `####.GS.###` (e.g. `1105.GS.123`) there — see [group submittal handling in the toolkit](/workflows/fabrication-engineer/toolkit/drafting.html#how-to-handle-group-submittal). The drawing title block still lists the actual constituent job numbers.
 
